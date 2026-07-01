@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo Transversal 13 — Representações Analíticas: Tabular, Temporal e Grafos tem como finalidade especificar, construir, documentar, validar e disponibilizar diferentes formas de representação dos dados produzidos pelo modelo de referência UnespDataLens-RM, de modo que esses dados possam ser utilizados de maneira adequada em análises exploratórias…">
+  <title>Módulo 13 — Representações Analíticas: Tabular, Temporal e Grafos · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-transversal-13-representacoes-analiticas-tabular-temporal-e-grafos"></span><section class="hero">
+<span class="badge">Módulo 13</span>
+<h1>Módulo 13 — Representações Analíticas: Tabular, Temporal e Grafos</h1>
+<p>O Módulo Transversal 13 — Representações Analíticas: Tabular, Temporal e Grafos tem como finalidade especificar, construir, documentar, validar e disponibilizar diferentes formas de representação dos dados produzidos pelo modelo de referência UnespDataLens-RM, de modo que esses dados possam ser utilizados de maneira adequada em análises exploratórias…</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 30 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#tipos-de-representacoes-analiticas">Tipos de representações analíticas</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-tecnologias-aplicaveis">Técnicas, métodos e tecnologias aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a13-1-plano-de-representacao-analitica">Artefato A13.1 — Plano de Representação Analítica</a><a href="#artefato-a13-2-matriz-unidade-x-atributo">Artefato A13.2 — Matriz Unidade × Atributo</a><a href="#artefato-a13-3-especificacao-da-variavel-alvo-e-unidade-de-analise">Artefato A13.3 — Especificação da Variável-Alvo e Unidade de Análise</a><a href="#artefato-a13-4-representacao-temporal-ou-longitudinal">Artefato A13.4 — Representação Temporal ou Longitudinal</a><a href="#artefato-a13-5-registro-de-eventos-e-estados">Artefato A13.5 — Registro de Eventos e Estados</a><a href="#artefato-a13-6-modelo-de-grafo-analitico">Artefato A13.6 — Modelo de Grafo Analítico</a><a href="#artefato-a13-7-lista-de-nos-e-arestas">Artefato A13.7 — Lista de Nós e Arestas</a><a href="#artefato-a13-8-representacao-em-grafo-temporal">Artefato A13.8 — Representação em Grafo Temporal</a><a href="#artefato-a13-9-relatorio-de-metricas-da-representacao">Artefato A13.9 — Relatório de Métricas da Representação</a><a href="#artefato-a13-10-manifesto-da-representacao-analitica">Artefato A13.10 — Manifesto da Representação Analítica</a><a href="#artefato-a13-11-mapa-de-transformacao-entre-representacoes">Artefato A13.11 — Mapa de Transformação entre Representações</a><a href="#artefato-a13-12-relatorio-de-limitacoes-da-representacao">Artefato A13.12 — Relatório de Limitações da Representação</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-os-demais-modulos-do-modelo-de-referencia">Relação com os demais módulos do modelo de referência</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo Transversal 13 — Representações Analíticas: Tabular, Temporal e Grafos tem como finalidade especificar, construir, documentar, validar e disponibilizar diferentes formas de representação dos dados produzidos pelo modelo de referência UnespDataLens-RM, de modo que esses dados possam ser utilizados de maneira adequada em análises exploratórias, indicadores, dashboards, modelos preditivos, análises temporais, grafos, grafos temporais, sistemas de recomendação, agentes inteligentes e processos de tomada de decisão baseada em evidências.</p>
+<p>No contexto do UnespDataLens-RM, os dados não devem ser compreendidos apenas como tabelas estáticas. Um mesmo fenômeno pode ser representado sob diferentes perspectivas analíticas: como uma matriz tabular de atributos, como uma série temporal, como uma trajetória longitudinal, como uma sequência de <a class="term" href="../conceitos/eventos.html">eventos</a>, como um <a class="term" href="../conceitos/grafo.html">grafo</a> de relações entre entidades, como um <a class="term" href="../conceitos/grafo-heterogeneo.html">grafo heterogêneo</a>, como um <a class="term" href="../conceitos/grafo-bipartido.html">grafo bipartido</a> ou como um <a class="term" href="../conceitos/grafo-temporal.html">grafo temporal</a> que evolui ao longo do tempo.</p>
+<p>Essa multiplicidade de representações é fundamental porque diferentes problemas exigem diferentes formas de modelagem dos dados. Uma análise descritiva pode ser suficiente com uma representação tabular. Uma análise de evolução exige representação temporal. Uma análise de trajetória requer <a class="term" href="../conceitos/dados-longitudinais.html">dados longitudinais</a>. Uma análise de relações entre entidades exige grafos. Uma análise de interações dinâmicas exige grafos temporais ou redes evolutivas.</p>
+<p>Assim, o Módulo 13 formaliza a etapa em que os ativos analíticos produzidos pelos módulos anteriores são reorganizados em estruturas computacionais apropriadas ao uso analítico pretendido. Ele atua de forma transversal porque depende dos dados extraídos, integrados, tratados, validados, governados, versionados e rastreáveis, mas também influencia diretamente a criação de features, a modelagem preditiva, os produtos de consumo, o monitoramento e a explicabilidade dos resultados.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 13 é definir e operacionalizar representações analíticas tabulares, temporais, longitudinais, baseadas em eventos, relacionais e em grafos, garantindo que cada representação seja construída de forma documentada, rastreável, versionada, semanticamente coerente, adequada ao problema analítico e compatível com os módulos de <a class="term" href="../conceitos/feature-engineering.html">feature engineering</a>, modelagem, monitoramento, governança e consumo analítico do UnespDataLens-RM.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 13:</p>
+<ol class="steps">
+<li>definir a unidade de análise adequada para cada representação, como estudante, matrícula, curso, disciplina, território, atendimento, evento, instituição, período ou relação;</li>
+<li>especificar representações tabulares para análises exploratórias, indicadores, dashboards e modelos tradicionais de aprendizagem de máquina;</li>
+<li>especificar representações temporais para séries históricas, evolução de indicadores, dados longitudinais, trajetórias e janelas de observação;</li>
+<li>especificar representações baseadas em eventos para <a class="term" href="../conceitos/logs.html">logs</a>, interações, registros administrativos, ações de usuários, sensores ou fluxos operacionais;</li>
+<li>especificar representações em grafos para modelar relações entre entidades, atributos, eventos, pessoas, organizações, territórios, disciplinas, serviços ou processos;</li>
+<li>especificar grafos temporais para representar relações que surgem, desaparecem, se fortalecem ou se modificam ao longo do tempo;</li>
+<li>definir regras de construção das representações, incluindo seleção de atributos, <a class="term" href="../conceitos/granularidade.html">granularidade</a>, janelas temporais, relações, pesos, direções e tipos de arestas;</li>
+<li>documentar <a class="term" href="../conceitos/metadados.html">metadados</a>, origem, regras, versões, qualidade, limitações e finalidade de cada representação analítica;</li>
+<li>avaliar a adequação da representação ao problema analítico, ao tipo de modelo, ao indicador ou ao <a class="term" href="../conceitos/produto-de-dados.html">produto de dados</a>;</li>
+<li>preservar a <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a> entre dados originais, transformações, representações derivadas, features, modelos e produtos analíticos;</li>
+<li>apoiar a construção de features tabulares, temporais, relacionais e baseadas em grafos;</li>
+<li>permitir comparação entre diferentes paradigmas de representação de dados;</li>
+<li>viabilizar análises de evolução, estabilidade, recorrência, transição, <a class="term" href="../conceitos/centralidade.html">centralidade</a>, <a class="term" href="../conceitos/comunidade.html">comunidade</a>, conectividade e dinâmica relacional;</li>
+<li>fornecer estruturas adequadas para modelos preditivos, modelos explicáveis, algoritmos de grafos, modelos temporais, agentes inteligentes e visualizações analíticas.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>A escolha da representação analítica é uma decisão metodológica central em projetos de Engenharia Analítica de Dados. Dados provenientes de fontes heterogêneas podem ser organizados de formas distintas, e cada forma de representação evidencia aspectos diferentes do fenômeno analisado.</p>
+<p>Uma representação tabular organiza os dados em linhas e colunas, geralmente com uma unidade de análise por linha e atributos descritivos por coluna. Essa estrutura é adequada para análises exploratórias, estatísticas descritivas, dashboards, modelos preditivos clássicos, regressão, classificação, agrupamento e construção de indicadores.</p>
+<p>Uma representação temporal incorpora explicitamente a dimensão do tempo, permitindo analisar evolução, tendência, sazonalidade, recorrência, mudança, atraso, persistência, progressão ou ruptura. Ela pode assumir a forma de <a class="term" href="../conceitos/series-temporais.html">séries temporais</a>, painéis longitudinais, sequências de eventos ou janelas temporais.</p>
+<p>Uma representação longitudinal acompanha uma mesma entidade ao longo do tempo. No domínio educacional, por exemplo, pode representar a trajetória de um estudante por períodos letivos. Em políticas públicas, pode representar o histórico de atendimento de uma família ou território.</p>
+<p>Uma representação baseada em eventos organiza registros como acontecimentos situados no tempo, associados a uma entidade, ação, contexto e timestamp. Essa representação é especialmente relevante para logs de sistemas, interações em ambientes virtuais, atendimentos, notificações, sensores, transações e fluxos operacionais.</p>
+<p>Uma representação em grafos modela entidades como nós e relações como arestas. Essa estrutura é adequada quando o fenômeno depende de relações, conexões, dependências, interações, proximidades, fluxos ou estruturas de rede.</p>
+<p>Uma representação em grafos temporais amplia o grafo tradicional ao incorporar o tempo, permitindo analisar como nós, arestas, pesos, comunidades, centralidades e relações evoluem. Essa representação é importante para estudar redes dinâmicas, interações educacionais, trajetórias institucionais, redes de atendimento, mobilidade, vínculos, fluxos e mudanças estruturais.</p>
+<p>No UnespDataLens-RM, essas representações não competem entre si. Elas são complementares. Um mesmo conjunto de dados pode ser representado simultaneamente como:</p>
+<ul class="list">
+<li>uma tabela de atributos;</li>
+<li>uma série temporal de indicadores;</li>
+<li>uma trajetória longitudinal de entidades;</li>
+<li>uma sequência de eventos;</li>
+<li>um grafo de relações;</li>
+<li>um grafo temporal;</li>
+<li>uma matriz de features para modelagem.</li>
+</ul>
+<p>O papel do Módulo 13 é formalizar essa escolha, registrar sua justificativa e garantir que cada representação seja adequada, compreensível, rastreável, versionada e reutilizável.</p>
+<h2 class="section-title" id="tipos-de-representacoes-analiticas">5. Tipos de representações analíticas</h2>
+<p>O UnespDataLens-RM contempla diferentes tipos de representações analíticas.</p>
+<div class="table-wrap"><table class="table"><tr><th>Tipo de representação</th><th>Descrição</th><th>Exemplo</th></tr><tr><td>Representação tabular</td><td>Organiza dados em linhas e colunas, com unidade de análise e atributos.</td><td>Uma linha por estudante e colunas com idade, curso, frequência e desempenho.</td></tr><tr><td>Representação dimensional</td><td>Organiza fatos, dimensões e métricas para análise gerencial.</td><td>Fato matrícula, dimensão curso, dimensão tempo e métrica evasão.</td></tr><tr><td>Representação temporal</td><td>Organiza observações associadas a períodos ou instantes.</td><td>Taxa mensal de evasão por curso.</td></tr><tr><td>Representação longitudinal</td><td>Acompanha a mesma entidade em diferentes períodos.</td><td>Histórico acadêmico do estudante por semestre.</td></tr><tr><td>Representação baseada em eventos</td><td>Organiza ações ou ocorrências com timestamp.</td><td>Logs de acesso ao ambiente virtual.</td></tr><tr><td>Representação sequencial</td><td>Organiza eventos em ordem temporal.</td><td>Sequência de disciplinas cursadas por estudante.</td></tr><tr><td>Representação em janelas temporais</td><td>Agrega dados por intervalos de tempo definidos.</td><td>Features calculadas nos últimos 30, 60 ou 90 dias.</td></tr><tr><td>Representação em grafo homogêneo</td><td>Nós e arestas de um único tipo principal.</td><td>Rede de estudantes conectados por interação.</td></tr><tr><td>Representação em grafo heterogêneo</td><td>Nós e arestas de múltiplos tipos.</td><td>Estudantes, cursos, disciplinas, atividades e interações.</td></tr><tr><td>Representação bipartida</td><td>Relações entre dois tipos de entidades.</td><td>Estudantes conectados a disciplinas.</td></tr><tr><td>Representação ponderada</td><td>Arestas possuem pesos.</td><td>Número de interações entre estudante e atividade.</td></tr><tr><td>Representação direcionada</td><td>Relações possuem direção.</td><td>Fluxo de atendimento entre serviços.</td></tr><tr><td>Representação temporal em grafo</td><td>Relações variam ao longo do tempo.</td><td>Interações entre estudantes por semana.</td></tr><tr><td>Representação multimodal</td><td>Combina diferentes tipos de dados.</td><td><a class="term" href="../conceitos/dados-tabulares.html">Dados tabulares</a>, textos, logs e grafos no mesmo projeto.</td></tr></table></div>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">6. Formalização sintética do módulo</h2>
+<p>O Módulo 13 pode ser formalizado a partir de um conjunto de ativos analíticos já produzidos pelos módulos anteriores.</p>
+<p>Considerando o conjunto de ativos analíticos:</p>
+<div class="formula">A = {a₁, a₂, ..., aₙ}</div>
+<p>e o conjunto de representações possíveis:</p>
+<div class="formula">R = {r₁, r₂, ..., rₖ}</div>
+<p>cada representação rᵢ pode ser descrita por:</p>
+<div class="formula">rᵢ = {id, tipo, ativo_origem, unidade_análise, entidades, atributos, relações, tempo, granularidade, regras_construção, métricas, versão, finalidade, limitações, lineage}</div>
+<p>Para uma representação tabular, pode-se definir:</p>
+<div class="formula">T = (U, X, y)</div>
+<p>em que:</p>
+<ul class="list">
+<li>U representa o conjunto de unidades de análise;</li>
+<li>X representa a matriz de atributos;</li>
+<li>y representa a <a class="term" href="../conceitos/variavel-alvo.html">variável-alvo</a>, rótulo, indicador ou desfecho, quando aplicável.</li>
+</ul>
+<p>Para uma representação temporal, pode-se definir:</p>
+<div class="formula">S = {(u, t, xₜ)}</div>
+<p>em que:</p>
+<ul class="list">
+<li>u representa a unidade observada;</li>
+<li>t representa o instante, período ou janela temporal;</li>
+<li>xₜ representa os atributos observados naquele tempo.</li>
+</ul>
+<p>Para uma representação baseada em eventos, pode-se definir:</p>
+<div class="formula">E = {e₁, e₂, ..., eₘ}</div>
+<p>em que cada evento eᵢ pode ser descrito por:</p>
+<div class="formula">eᵢ = {id, entidade, tipo_evento, timestamp, contexto, atributos, fonte, versão}</div>
+<p>Para uma representação em grafo, pode-se definir:</p>
+<div class="formula">G = (V, E, Xᵥ, Xₑ)</div>
+<p>em que:</p>
+<ul class="list">
+<li>V representa o conjunto de nós;</li>
+<li>E representa o conjunto de arestas;</li>
+<li>Xᵥ representa atributos dos nós;</li>
+<li>Xₑ representa atributos das arestas.</li>
+</ul>
+<p>Para uma <a class="term" href="../artefatos/representacao-em-grafo-temporal.html">representação em grafo temporal</a>, pode-se definir:</p>
+<div class="formula">Gₜ = (Vₜ, Eₜ, Xᵥₜ, Xₑₜ, T)</div>
+<p>em que:</p>
+<ul class="list">
+<li>Vₜ representa os nós observados no tempo;</li>
+<li>Eₜ representa as arestas observadas no tempo;</li>
+<li>Xᵥₜ representa atributos temporais dos nós;</li>
+<li>Xₑₜ representa atributos temporais das arestas;</li>
+<li>T representa o conjunto de instantes, períodos ou janelas temporais.</li>
+</ul>
+<p>Essa formalização permite documentar de forma clara como os dados foram reorganizados para análise, quais decisões foram tomadas e como as representações se relacionam com os ativos originais.</p>
+<h2 class="section-title" id="entradas-do-modulo">7. Entradas do módulo</h2>
+<p>As entradas do Módulo 13 são os ativos analíticos produzidos pelos módulos anteriores.</p>
+<p>As principais entradas incluem:</p>
+<ul class="list">
+<li>datasets brutos;</li>
+<li>datasets integrados;</li>
+<li>datasets tratados;</li>
+<li>datasets curados;</li>
+<li>data marts;</li>
+<li>views analíticas;</li>
+<li>logs de eventos;</li>
+<li>séries históricas;</li>
+<li>dados longitudinais;</li>
+<li>registros transacionais;</li>
+<li>atributos temporais;</li>
+<li>atributos categóricos;</li>
+<li>atributos numéricos;</li>
+<li>identificadores de entidades;</li>
+<li>chaves de relacionamento;</li>
+<li>registros de interação;</li>
+<li>dados de redes;</li>
+<li>dados de sensores;</li>
+<li>dados textuais estruturados ou semiestruturados;</li>
+<li>metadados;</li>
+<li>dicionários de dados;</li>
+<li>glossários;</li>
+<li>regras de negócio;</li>
+<li>registros de qualidade;</li>
+<li>registros de lineage;</li>
+<li>versões de datasets;</li>
+<li>contratos de dados;</li>
+<li>registros de sensibilidade;</li>
+<li>rótulos ou variáveis-alvo;</li>
+<li>features previamente construídas;</li>
+<li>objetivos analíticos;</li>
+<li>requisitos de consumo;</li>
+<li>critérios de governança.</li>
+</ul>
+<h2 class="section-title" id="processamento">8. Processamento</h2>
+<p>O processamento do Módulo 13 envolve a definição da finalidade analítica, escolha da representação, construção da estrutura, validação, documentação e disponibilização da representação.</p>
+<h3 id="definicao-da-finalidade-analitica">8.1 Definição da finalidade analítica</h3>
+<p>A primeira atividade consiste em definir qual problema será analisado e qual tipo de representação é mais adequado. A finalidade pode ser descritiva, diagnóstica, preditiva, explicativa, relacional, temporal, prescritiva ou decisória.</p>
+<p>Exemplos de finalidade incluem:</p>
+<ul class="list">
+<li>calcular indicadores;</li>
+<li>criar dashboards;</li>
+<li>prever evasão;</li>
+<li>analisar trajetórias;</li>
+<li>identificar padrões temporais;</li>
+<li>detectar mudanças;</li>
+<li>modelar relações entre entidades;</li>
+<li>identificar comunidades;</li>
+<li>calcular centralidades;</li>
+<li>gerar features;</li>
+<li>alimentar agentes inteligentes;</li>
+<li>apoiar políticas públicas.</li>
+</ul>
+<h3 id="definicao-da-unidade-de-analise">8.2 Definição da unidade de análise</h3>
+<p>A segunda atividade consiste em definir a unidade de análise da representação. Essa decisão é fundamental porque determina o nível de agregação e a interpretação dos resultados.</p>
+<p>Exemplos de unidade de análise:</p>
+<ul class="list">
+<li>estudante;</li>
+<li>matrícula;</li>
+<li>curso;</li>
+<li>disciplina;</li>
+<li>turma;</li>
+<li>atividade;</li>
+<li>atendimento;</li>
+<li>cidadão;</li>
+<li>família;</li>
+<li>território;</li>
+<li>município;</li>
+<li>instituição;</li>
+<li>evento;</li>
+<li>relação;</li>
+<li>período;</li>
+<li>trajetória.</li>
+</ul>
+<h3 id="selecao-de-atributos-entidades-e-relacoes">8.3 Seleção de atributos, entidades e relações</h3>
+<p>A terceira atividade consiste em selecionar os atributos, entidades e relações relevantes. Para representações tabulares, selecionam-se colunas. Para representações temporais, selecionam-se atributos associados ao tempo. Para grafos, definem-se nós, arestas, tipos de relações, pesos, direções e atributos.</p>
+<h3 id="definicao-da-dimensao-temporal">8.4 Definição da dimensão temporal</h3>
+<p>A quarta atividade consiste em definir como o tempo será tratado. Essa etapa é essencial para dados históricos, longitudinais, eventos, séries temporais e grafos temporais.</p>
+<p>Devem ser definidos:</p>
+<ul class="list">
+<li>atributo temporal de referência;</li>
+<li>granularidade temporal;</li>
+<li>janela de observação;</li>
+<li>janela de predição, quando aplicável;</li>
+<li>período de agregação;</li>
+<li>ordem dos eventos;</li>
+<li><a class="term" href="../conceitos/periodicidade.html">periodicidade</a>;</li>
+<li>tratamento de <a class="term" href="../problemas/lacunas-temporais.html">lacunas temporais</a>;</li>
+<li>defasagens;</li>
+<li>alinhamento entre fontes com tempos diferentes.</li>
+</ul>
+<h3 id="construcao-da-representacao-tabular">8.5 Construção da representação tabular</h3>
+<p>A representação tabular organiza unidades de análise em linhas e atributos em colunas. Essa representação pode incluir atributos originais, derivados, agregados, temporais, categóricos, normalizados ou codificados.</p>
+<p>Exemplo:</p>
+<p>Estudante × atributos acadêmicos, socioeconômicos e comportamentais</p>
+<h3 id="construcao-da-representacao-temporal-ou-longitudinal">8.6 Construção da <a class="term" href="../artefatos/representacao-temporal-ou-longitudinal.html">representação temporal ou longitudinal</a></h3>
+<p>A representação temporal organiza observações ao longo do tempo. Pode ser estruturada como série temporal agregada, painel longitudinal, sequência de estados ou trajetória de eventos.</p>
+<p>Exemplo:</p>
+<p>Estudante × semestre × desempenho, frequência, situação acadêmica e interações</p>
+<h3 id="construcao-da-representacao-baseada-em-eventos">8.7 Construção da representação baseada em eventos</h3>
+<p>A representação baseada em eventos organiza ocorrências com timestamp, tipo de evento, entidade associada e contexto. Essa estrutura é adequada para logs e fluxos dinâmicos.</p>
+<p>Exemplo:</p>
+<div class="formula">Evento = {estudante, atividade, tipo_interação, timestamp, duração, recurso_acessado}</div>
+<h3 id="construcao-da-representacao-em-grafo">8.8 Construção da representação em grafo</h3>
+<p>A representação em grafo exige definir:</p>
+<ul class="list">
+<li>tipos de nós;</li>
+<li>tipos de arestas;</li>
+<li>direção das relações;</li>
+<li>pesos das arestas;</li>
+<li>atributos dos nós;</li>
+<li>atributos das arestas;</li>
+<li>critérios de criação de relações;</li>
+<li>filtros;</li>
+<li>períodos;</li>
+<li>regras de agregação.</li>
+</ul>
+<p>Exemplo:</p>
+<p>Grafo educacional com estudantes, disciplinas, cursos, atividades e interações</p>
+<h3 id="construcao-da-representacao-em-grafo-temporal">8.9 Construção da representação em grafo temporal</h3>
+<p>A representação em grafo temporal incorpora a evolução das relações ao longo do tempo. Pode ser construída por snapshots temporais, arestas com timestamps, janelas deslizantes ou eventos relacionais.</p>
+<p>Exemplo:</p>
+<p>Grafo semanal de interações entre estudantes e atividades no ambiente virtual</p>
+<h3 id="validacao-da-representacao">8.10 Validação da representação</h3>
+<p>A representação deve ser validada quanto a <a class="term" href="../metricas/completude.html">completude</a>, <a class="term" href="../metricas/consistencia.html">consistência</a>, <a class="term" href="../metricas/coerencia-semantica.html">coerência semântica</a>, <a class="term" href="../conceitos/cobertura-temporal.html">cobertura temporal</a>, granularidade, ausência de <a class="term" href="../problemas/duplicidade.html">duplicidade</a>, rastreabilidade, qualidade das relações e adequação à finalidade.</p>
+<h3 id="documentacao-e-versionamento">8.11 Documentação e <a class="term" href="../conceitos/versionamento.html">versionamento</a></h3>
+<p>Cada representação deve ser documentada e versionada. Devem ser registrados origem, regras de construção, parâmetros, atributos utilizados, período, filtros, versão, limitações e lineage.</p>
+<h3 id="disponibilizacao-para-consumo-analitico">8.12 Disponibilização para consumo analítico</h3>
+<p>A representação validada pode ser disponibilizada para dashboards, modelos, algoritmos de grafos, <a class="term" href="../conceitos/feature-store.html">feature store</a>, relatórios, APIs, agentes inteligentes ou outros produtos analíticos.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-tecnologias-aplicaveis">9. Técnicas, métodos e tecnologias aplicáveis</h2>
+<p>O Módulo 13 pode empregar diferentes técnicas, métodos e tecnologias, dependendo da representação adotada.</p>
+<p>Para representações tabulares, podem ser utilizadas:</p>
+<ul class="list">
+<li>seleção de atributos;</li>
+<li>agregação;</li>
+<li><a class="term" href="../metodos/normalizacao.html">normalização</a>;</li>
+<li>codificação de variáveis categóricas;</li>
+<li>transformação de variáveis;</li>
+<li><a class="term" href="../metodos/imputacao.html">imputação</a>;</li>
+<li>discretização;</li>
+<li><a class="term" href="../metodos/data-profiling.html">data profiling</a>;</li>
+<li>matriz de features;</li>
+<li>modelagem dimensional;</li>
+<li>SQL;</li>
+<li>pandas;</li>
+<li><a class="term" href="../tecnicas/pyspark.html">PySpark</a>;</li>
+<li><a class="term" href="../tecnicas/duckdb.html">DuckDB</a>.</li>
+</ul>
+<p>Para representações temporais e longitudinais, podem ser utilizadas:</p>
+<ul class="list">
+<li>séries temporais;</li>
+<li>janelas temporais;</li>
+<li>janelas deslizantes;</li>
+<li>defasagens;</li>
+<li>variáveis lag;</li>
+<li>médias móveis;</li>
+<li>tendências;</li>
+<li>sazonalidade;</li>
+<li>detecção de mudança;</li>
+<li>análise de trajetória;</li>
+<li>painéis longitudinais;</li>
+<li>sequências de eventos;</li>
+<li>time-aware feature engineering.</li>
+</ul>
+<p>Para representações em eventos, podem ser utilizadas:</p>
+<ul class="list">
+<li>event logs;</li>
+<li>event sourcing;</li>
+<li>timestamps;</li>
+<li>sessões;</li>
+<li>ordenação temporal;</li>
+<li>agregação por janela;</li>
+<li>análise de sequência;</li>
+<li>mineração de processos;</li>
+<li>detecção de padrões de eventos;</li>
+<li>processamento de logs.</li>
+</ul>
+<p>Para representações em grafos, podem ser utilizadas:</p>
+<ul class="list">
+<li>modelagem de nós e arestas;</li>
+<li>grafos homogêneos;</li>
+<li>grafos heterogêneos;</li>
+<li>grafos bipartidos;</li>
+<li>grafos direcionados;</li>
+<li>grafos ponderados;</li>
+<li>métricas de centralidade;</li>
+<li>componentes conectados;</li>
+<li>comunidades;</li>
+<li>caminhos;</li>
+<li>similaridade estrutural;</li>
+<li>embeddings de grafos;</li>
+<li><a class="term" href="../metodos/node2vec.html">Node2Vec</a>;</li>
+<li><a class="term" href="../metodos/graphsage.html">GraphSAGE</a>;</li>
+<li><a class="term" href="../metodos/gcn.html">GCN</a>;</li>
+<li><a class="term" href="../metodos/gat.html">GAT</a>.</li>
+</ul>
+<p>Para grafos temporais, podem ser utilizadas:</p>
+<ul class="list">
+<li>snapshots de grafos;</li>
+<li>arestas com timestamps;</li>
+<li>grafos dinâmicos;</li>
+<li>janelas temporais de rede;</li>
+<li>evolução de centralidade;</li>
+<li>persistência de arestas;</li>
+<li>detecção de comunidades dinâmicas;</li>
+<li>mudança estrutural;</li>
+<li>séries temporais de métricas de rede;</li>
+<li>modelos temporais em grafos.</li>
+</ul>
+<p>Tecnologias aplicáveis incluem:</p>
+<ul class="list">
+<li>pandas;</li>
+<li>PySpark;</li>
+<li>SQL;</li>
+<li>DuckDB;</li>
+<li><a class="term" href="../tecnicas/networkx.html">NetworkX</a>;</li>
+<li>igraph;</li>
+<li>graph-tool;</li>
+<li><a class="term" href="../tecnicas/neo4j.html">Neo4j</a>;</li>
+<li>ArangoDB;</li>
+<li><a class="term" href="../tecnicas/gephi.html">Gephi</a>;</li>
+<li>PyTorch Geometric;</li>
+<li>DGL;</li>
+<li>scikit-learn;</li>
+<li><a class="term" href="../tecnicas/mlflow.html">MLflow</a>;</li>
+<li>Featuretools;</li>
+<li><a class="term" href="../tecnicas/feast.html">Feast</a>;</li>
+<li>bancos relacionais;</li>
+<li>bancos de grafos;</li>
+<li>data warehouses;</li>
+<li>lakehouses;</li>
+<li>ferramentas de visualização.</li>
+</ul>
+<h2 class="section-title" id="metricas-do-modulo">10. Métricas do módulo</h2>
+<p>As métricas do Módulo 13 avaliam a qualidade, completude, coerência, cobertura temporal, adequação e utilidade das representações analíticas.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de representações documentadas</td><td>TRD</td><td>Proporção de representações com documentação completa.</td></tr><tr><td>Taxa de ativos representados</td><td>TAR</td><td>Proporção de ativos analíticos com representação definida.</td></tr><tr><td>Taxa de unidades com representação válida</td><td>TURV</td><td>Proporção de unidades de análise representadas corretamente.</td></tr><tr><td>Completude da representação tabular</td><td>CRT</td><td>Proporção de valores esperados presentes na matriz tabular.</td></tr><tr><td>Densidade tabular</td><td>DT</td><td>Proporção de células preenchidas em relação ao total esperado.</td></tr><tr><td>Taxa de atributos derivados documentados</td><td>TADD</td><td>Proporção de atributos derivados com regra documentada.</td></tr><tr><td>Cobertura temporal</td><td>CT</td><td>Proporção de períodos esperados representados.</td></tr><tr><td>Regularidade temporal</td><td>RT</td><td>Grau de consistência na periodicidade das observações.</td></tr><tr><td>Taxa de lacunas temporais</td><td>TLT</td><td>Proporção de períodos ausentes ou incompletos.</td></tr><tr><td>Taxa de eventos com timestamp válido</td><td>TETV</td><td>Proporção de eventos com marca temporal válida.</td></tr><tr><td>Taxa de eventos ordenáveis</td><td>TEO</td><td>Proporção de eventos que podem ser ordenados temporalmente.</td></tr><tr><td><a class="term" href="../metricas/densidade-do-grafo.html">Densidade do grafo</a></td><td>DG</td><td>Relação entre arestas existentes e arestas possíveis.</td></tr><tr><td>Número de nós</td><td>NN</td><td>Quantidade de entidades representadas no grafo.</td></tr><tr><td>Número de arestas</td><td>NA</td><td>Quantidade de relações representadas.</td></tr><tr><td><a class="term" href="../metricas/grau-medio.html">Grau médio</a></td><td>GM</td><td>Média de conexões por nó.</td></tr><tr><td>Número de componentes</td><td>NC</td><td>Quantidade de subestruturas desconectadas.</td></tr><tr><td><a class="term" href="../metricas/modularidade.html">Modularidade</a></td><td>MOD</td><td>Grau de estrutura comunitária do grafo.</td></tr><tr><td><a class="term" href="../metricas/taxa-de-arestas-persistentes.html">Taxa de arestas persistentes</a></td><td>TAP</td><td>Proporção de relações que permanecem em múltiplos períodos.</td></tr><tr><td>Taxa de arestas temporais válidas</td><td>TATV</td><td>Proporção de arestas com informação temporal válida.</td></tr><tr><td>Índice de adequação da representação</td><td>IAR</td><td>Grau de adequação da representação à finalidade analítica.</td></tr></table></div>
+<h3 id="cobertura-temporal-ct">10.1 Cobertura Temporal — CT</h3>
+<p>A Cobertura Temporal mede a proporção de períodos esperados que estão representados no <a class="term" href="../conceitos/ativo-analitico.html">ativo analítico</a>.</p>
+<div class="formula">CT = número de períodos representados / número de períodos esperados</div>
+<p>Essa métrica é importante para avaliar séries históricas, dados longitudinais, janelas temporais e grafos temporais.</p>
+<h3 id="taxa-de-lacunas-temporais-tlt">10.2 Taxa de Lacunas Temporais — TLT</h3>
+<p>A Taxa de Lacunas Temporais mede a proporção de períodos ausentes ou incompletos.</p>
+<div class="formula">TLT = número de períodos ausentes ou incompletos / número total de períodos esperados</div>
+<p>Valores elevados indicam problemas de continuidade temporal.</p>
+<h3 id="densidade-do-grafo-dg">10.3 Densidade do Grafo — DG</h3>
+<p>A Densidade do Grafo mede a proporção de relações existentes em comparação com o número máximo de relações possíveis.</p>
+<p>Para grafos simples não direcionados:</p>
+<div class="formula">DG = 2|E| / |V|(|V| − 1)</div>
+<p>em que:</p>
+<ul class="list">
+<li>|E| representa o número de arestas;</li>
+<li>|V| representa o número de nós.</li>
+</ul>
+<h3 id="taxa-de-arestas-persistentes-tap">10.4 Taxa de Arestas Persistentes — TAP</h3>
+<p>A Taxa de Arestas Persistentes mede a proporção de relações que se mantêm ao longo de múltiplos períodos.</p>
+<div class="formula">TAP = número de arestas presentes em mais de um período / número total de arestas observadas</div>
+<p>Essa métrica é relevante para grafos temporais e redes evolutivas.</p>
+<h3 id="indice-de-adequacao-da-representacao-iar">10.5 Índice de Adequação da Representação — IAR</h3>
+<p>O Índice de Adequação da Representação avalia se a forma escolhida é adequada à finalidade analítica.</p>
+<p>Uma formulação possível é:</p>
+<div class="formula">IAR = w₁U + w₂A + w₃T + w₄R + w₅Q + w₆L</div>
+<p>em que:</p>
+<ul class="list">
+<li>U representa adequação da unidade de análise;</li>
+<li>A representa adequação dos atributos;</li>
+<li>T representa adequação temporal;</li>
+<li>R representa adequação relacional;</li>
+<li>Q representa qualidade da representação;</li>
+<li>L representa rastreabilidade e lineage;</li>
+<li>wᵢ representa o peso de cada dimensão.</li>
+</ul>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">11. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 13 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A13.1</td><td><a class="term" href="../artefatos/plano-de-representacao-analitica.html">Plano de Representação Analítica</a></td><td>Documento técnico</td><td>IAR</td><td>Define finalidade, unidade de análise e tipo de representação.</td></tr><tr><td>A13.2</td><td><a class="term" href="../artefatos/matriz-unidade-atributo.html">Matriz Unidade × Atributo</a></td><td>Tabela ou matriz</td><td>CRT</td><td>Estrutura representação tabular.</td></tr><tr><td>A13.3</td><td>Especificação da Variável-Alvo e Unidade de Análise</td><td>Documento técnico</td><td>TRD</td><td>Define rótulo, unidade, período e escopo.</td></tr><tr><td>A13.4</td><td>Representação Temporal ou Longitudinal</td><td>Série, painel ou tabela temporal</td><td>CT, TLT</td><td>Representa evolução, trajetória ou histórico.</td></tr><tr><td>A13.5</td><td><a class="term" href="../artefatos/registro-de-eventos-e-estados.html">Registro de Eventos e Estados</a></td><td>Log estruturado</td><td>TETV, TEO</td><td>Organiza eventos, timestamps e sequências.</td></tr><tr><td>A13.6</td><td><a class="term" href="../artefatos/modelo-de-grafo-analitico.html">Modelo de Grafo Analítico</a></td><td>Documento ou grafo</td><td>DG, GM</td><td>Define nós, arestas, pesos, direção e atributos.</td></tr><tr><td>A13.7</td><td><a class="term" href="../artefatos/lista-de-nos-e-arestas.html">Lista de Nós e Arestas</a></td><td>Tabelas node list e edge list</td><td>NN, NA</td><td>Materializa o grafo em estrutura computacional.</td></tr><tr><td>A13.8</td><td>Representação em Grafo Temporal</td><td>Grafo dinâmico ou snapshots</td><td>TAP, TATV</td><td>Representa relações evolutivas no tempo.</td></tr><tr><td>A13.9</td><td>Relatório de Métricas da Representação</td><td>Relatório técnico</td><td>IAR</td><td>Avalia qualidade, cobertura e adequação.</td></tr><tr><td>A13.10</td><td><a class="term" href="../artefatos/manifesto-da-representacao-analitica.html">Manifesto da Representação Analítica</a></td><td>Documento reprodutível</td><td>TRD</td><td>Registra regras, parâmetros, versões, origem e lineage.</td></tr><tr><td>A13.11</td><td>Mapa de Transformação entre Representações</td><td>Diagrama ou tabela</td><td>IAR</td><td>Mostra como uma representação deriva de outra.</td></tr><tr><td>A13.12</td><td>Relatório de Limitações da Representação</td><td>Relatório técnico</td><td>TLT, IAR</td><td>Explicita restrições, lacunas, <a class="term" href="../conceitos/vies.html">viés</a> e incerteza.</td></tr></table></div>
+<h2 class="section-title" id="artefato-a13-1-plano-de-representacao-analitica">12. Artefato A13.1 — Plano de Representação Analítica</h2>
+<h3 id="finalidade">12.1 Finalidade</h3>
+<p>O Plano de Representação Analítica define qual representação será construída, por que ela é adequada ao problema, quais dados serão utilizados, qual será a unidade de análise, qual dimensão temporal será considerada e quais produtos ou modelos serão alimentados.</p>
+<h3 id="estrutura-minima">12.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador da representação</td><td>Código único.</td></tr><tr><td>Finalidade analítica</td><td>Objetivo da representação.</td></tr><tr><td>Tipo de representação</td><td>Tabular, temporal, longitudinal, evento, grafo ou grafo temporal.</td></tr><tr><td>Unidade de análise</td><td>Entidade principal representada.</td></tr><tr><td>Fontes utilizadas</td><td>Datasets ou ativos de origem.</td></tr><tr><td>Atributos selecionados</td><td>Variáveis consideradas.</td></tr><tr><td>Dimensão temporal</td><td>Período, timestamp, janela ou sequência.</td></tr><tr><td>Relações</td><td>Nós, arestas, pesos ou dependências, quando aplicável.</td></tr><tr><td>Regras de construção</td><td>Procedimentos utilizados.</td></tr><tr><td>Limitações</td><td>Restrições, lacunas ou incertezas.</td></tr><tr><td>Versão</td><td>Identificador da representação.</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe.</td></tr></table></div>
+<h3 id="metricas-associadas">12.3 Métricas associadas</h3>
+<ul class="list">
+<li>índice de adequação da representação;</li>
+<li>taxa de representações documentadas;</li>
+<li>cobertura temporal;</li>
+<li>completude da representação;</li>
+<li>taxa de unidades com representação válida.</li>
+</ul>
+<h3 id="criterios-de-validacao">12.4 Critérios de validação</h3>
+<p>O plano é válido quando justifica a escolha da representação e documenta unidade de análise, fontes, atributos, tempo, regras, finalidade e limitações.</p>
+<h3 id="contribuicao">12.5 Contribuição</h3>
+<p>Esse artefato evita que representações sejam construídas de forma implícita ou improvisada, tornando explícitas as decisões metodológicas.</p>
+<h2 class="section-title" id="artefato-a13-2-matriz-unidade-x-atributo">13. Artefato A13.2 — Matriz Unidade × Atributo</h2>
+<h3 id="finalidade-2">13.1 Finalidade</h3>
+<p>A Matriz Unidade × Atributo materializa a representação tabular dos dados, organizando unidades de análise em linhas e atributos em colunas.</p>
+<h3 id="estrutura-minima-2">13.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Unidade de análise</td><td>Entidade representada na linha.</td></tr><tr><td>Identificador da unidade</td><td>Código único.</td></tr><tr><td>Atributos originais</td><td>Variáveis oriundas das fontes.</td></tr><tr><td>Atributos derivados</td><td>Variáveis construídas.</td></tr><tr><td>Período de referência</td><td>Quando aplicável.</td></tr><tr><td>Variável-alvo</td><td>Rótulo ou desfecho, quando aplicável.</td></tr><tr><td>Qualidade dos atributos</td><td>Métricas de completude, <a class="term" href="../metricas/validade.html">validade</a> ou consistência.</td></tr><tr><td>Versão</td><td>Versão da matriz.</td></tr><tr><td>Lineage</td><td>Origem e transformações.</td></tr></table></div>
+<h3 id="metricas-associadas-2">13.3 Métricas associadas</h3>
+<ul class="list">
+<li>completude da representação tabular;</li>
+<li>densidade tabular;</li>
+<li>taxa de atributos derivados documentados;</li>
+<li>taxa de unidades com representação válida.</li>
+</ul>
+<h3 id="criterios-de-validacao-2">13.4 Critérios de validação</h3>
+<p>A matriz é válida quando possui unidade de análise clara, atributos documentados, qualidade mínima e rastreabilidade.</p>
+<h3 id="contribuicao-2">13.5 Contribuição</h3>
+<p>Esse artefato fornece a base para análises estatísticas, dashboards e modelos tradicionais de aprendizagem de máquina.</p>
+<h2 class="section-title" id="artefato-a13-3-especificacao-da-variavel-alvo-e-unidade-de-analise">14. Artefato A13.3 — Especificação da Variável-Alvo e Unidade de Análise</h2>
+<h3 id="finalidade-3">14.1 Finalidade</h3>
+<p>Este artefato define formalmente a unidade de análise e a variável-alvo ou rótulo, quando a representação será usada em modelos supervisionados, indicadores ou análises específicas.</p>
+<h3 id="estrutura-minima-3">14.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Unidade de análise</td><td>Entidade analisada.</td></tr><tr><td>Variável-alvo</td><td>Rótulo, classe, indicador ou desfecho.</td></tr><tr><td>Definição semântica</td><td>Significado do rótulo.</td></tr><tr><td>Regra de construção</td><td>Como o rótulo é calculado ou atribuído.</td></tr><tr><td>Janela de observação</td><td>Período usado para construir atributos.</td></tr><tr><td>Janela de predição</td><td>Período associado ao desfecho.</td></tr><tr><td>Categorias</td><td>Classes ou valores possíveis.</td></tr><tr><td>Fonte</td><td>Origem do rótulo.</td></tr><tr><td>Versão</td><td>Versão da regra.</td></tr><tr><td>Limitações</td><td>Restrições interpretativas.</td></tr></table></div>
+<h3 id="metricas-associadas-3">14.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de rótulos documentados;</li>
+<li>taxa de regras versionadas;</li>
+<li>taxa de rótulos rastreáveis;</li>
+<li>índice de qualidade de rótulos.</li>
+</ul>
+<h3 id="criterios-de-validacao-3">14.4 Critérios de validação</h3>
+<p>O artefato é válido quando permite compreender, reproduzir e auditar a variável-alvo e sua relação com a unidade de análise.</p>
+<h3 id="contribuicao-3">14.5 Contribuição</h3>
+<p>Esse artefato reduz ambiguidade, <a class="term" href="../problemas/data-leakage.html">data leakage</a> e inconsistência na modelagem analítica.</p>
+<h2 class="section-title" id="artefato-a13-4-representacao-temporal-ou-longitudinal">15. Artefato A13.4 — Representação Temporal ou Longitudinal</h2>
+<h3 id="finalidade-4">15.1 Finalidade</h3>
+<p>A Representação Temporal ou Longitudinal organiza dados de forma a representar evolução, trajetória, sequência ou histórico de uma entidade ou indicador.</p>
+<h3 id="estrutura-minima-4">15.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Unidade observada</td><td>Entidade acompanhada no tempo.</td></tr><tr><td>Atributo temporal</td><td>Data, período, semestre, mês, timestamp etc.</td></tr><tr><td>Granularidade</td><td>Dia, semana, mês, semestre, ano etc.</td></tr><tr><td>Atributos observados</td><td>Variáveis medidas no tempo.</td></tr><tr><td>Janela temporal</td><td>Período total coberto.</td></tr><tr><td>Frequência</td><td>Regularidade esperada.</td></tr><tr><td>Lacunas</td><td>Períodos ausentes.</td></tr><tr><td>Versão</td><td>Versão da representação.</td></tr><tr><td>Lineage</td><td>Origem e transformações.</td></tr></table></div>
+<h3 id="metricas-associadas-4">15.3 Métricas associadas</h3>
+<ul class="list">
+<li>cobertura temporal;</li>
+<li>regularidade temporal;</li>
+<li>taxa de lacunas temporais;</li>
+<li>taxa de eventos com timestamp válido.</li>
+</ul>
+<h3 id="criterios-de-validacao-4">15.4 Critérios de validação</h3>
+<p>A representação é válida quando permite analisar evolução temporal com períodos, granularidade, lacunas e regras documentadas.</p>
+<h3 id="contribuicao-4">15.5 Contribuição</h3>
+<p>Esse artefato permite análises históricas, longitudinais, de tendência, trajetória, recorrência e mudança.</p>
+<h2 class="section-title" id="artefato-a13-5-registro-de-eventos-e-estados">16. Artefato A13.5 — Registro de Eventos e Estados</h2>
+<h3 id="finalidade-5">16.1 Finalidade</h3>
+<p>O Registro de Eventos e Estados organiza acontecimentos, ações ou transições observadas ao longo do tempo.</p>
+<h3 id="estrutura-minima-5">16.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador do evento</td><td>Código único.</td></tr><tr><td>Entidade associada</td><td>Unidade vinculada ao evento.</td></tr><tr><td>Tipo de evento</td><td>Categoria da ocorrência.</td></tr><tr><td>Timestamp</td><td>Momento do evento.</td></tr><tr><td>Estado anterior</td><td>Quando aplicável.</td></tr><tr><td>Estado posterior</td><td>Quando aplicável.</td></tr><tr><td>Contexto</td><td>Curso, sistema, território, serviço, ambiente etc.</td></tr><tr><td>Fonte</td><td>Origem do evento.</td></tr><tr><td>Atributos do evento</td><td>Informações adicionais.</td></tr><tr><td>Versão</td><td>Versão do registro.</td></tr></table></div>
+<h3 id="metricas-associadas-5">16.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de eventos com timestamp válido;</li>
+<li>taxa de eventos ordenáveis;</li>
+<li>cobertura temporal;</li>
+<li>taxa de lacunas temporais.</li>
+</ul>
+<h3 id="criterios-de-validacao-5">16.4 Critérios de validação</h3>
+<p>O registro é válido quando eventos possuem entidade, tipo, timestamp, origem e contexto suficientes para análise.</p>
+<h3 id="contribuicao-5">16.5 Contribuição</h3>
+<p>Esse artefato permite análise de logs, trajetórias, sequências, transições e eventos em tempo real ou quase real.</p>
+<h2 class="section-title" id="artefato-a13-6-modelo-de-grafo-analitico">17. Artefato A13.6 — Modelo de Grafo Analítico</h2>
+<h3 id="finalidade-6">17.1 Finalidade</h3>
+<p>O Modelo de Grafo Analítico define como entidades e relações serão representadas como nós e arestas.</p>
+<h3 id="estrutura-minima-6">17.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Tipos de nós</td><td>Entidades representadas.</td></tr><tr><td>Tipos de arestas</td><td>Relações entre entidades.</td></tr><tr><td>Direção</td><td>Grafo direcionado ou não direcionado.</td></tr><tr><td>Peso</td><td>Critério de ponderação das relações.</td></tr><tr><td>Atributos dos nós</td><td>Características das entidades.</td></tr><tr><td>Atributos das arestas</td><td>Características das relações.</td></tr><tr><td>Critério de criação de <a class="term" href="../conceitos/aresta.html">aresta</a></td><td>Regra para estabelecer relação.</td></tr><tr><td>Período</td><td>Quando aplicável.</td></tr><tr><td>Fonte</td><td>Origem dos dados relacionais.</td></tr><tr><td>Limitações</td><td>Restrições e incertezas.</td></tr></table></div>
+<h3 id="metricas-associadas-6">17.3 Métricas associadas</h3>
+<ul class="list">
+<li>número de nós;</li>
+<li>número de arestas;</li>
+<li>densidade do grafo;</li>
+<li>grau médio;</li>
+<li>número de componentes;</li>
+<li>modularidade.</li>
+</ul>
+<h3 id="criterios-de-validacao-6">17.4 Critérios de validação</h3>
+<p>O modelo é válido quando define claramente entidades, relações, pesos, direção, atributos, critérios e finalidade.</p>
+<h3 id="contribuicao-6">17.5 Contribuição</h3>
+<p>Esse artefato permite analisar relações, conexões, estruturas de rede e dependências entre entidades.</p>
+<h2 class="section-title" id="artefato-a13-7-lista-de-nos-e-arestas">18. Artefato A13.7 — Lista de Nós e Arestas</h2>
+<h3 id="finalidade-7">18.1 Finalidade</h3>
+<p>A Lista de Nós e Arestas materializa o grafo em estruturas computacionais que podem ser carregadas em ferramentas de análise de redes ou bancos de grafos.</p>
+<h3 id="estrutura-minima-7">18.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Estrutura</th><th>Campos mínimos</th></tr><tr><td>Lista de nós</td><td>id_nó, tipo_nó, atributos, versão</td></tr><tr><td>Lista de arestas</td><td>id_origem, id_destino, tipo_aresta, peso, direção, período, atributos, versão</td></tr></table></div>
+<h3 id="metricas-associadas-7">18.3 Métricas associadas</h3>
+<ul class="list">
+<li>número de nós;</li>
+<li>número de arestas;</li>
+<li>densidade;</li>
+<li>grau médio;</li>
+<li>taxa de arestas válidas.</li>
+</ul>
+<h3 id="criterios-de-validacao-7">18.4 Critérios de validação</h3>
+<p>A lista é válida quando nós e arestas possuem identificadores consistentes, tipos definidos e relações verificáveis.</p>
+<h3 id="contribuicao-7">18.5 Contribuição</h3>
+<p>Esse artefato viabiliza implementação prática de grafos em ferramentas computacionais.</p>
+<h2 class="section-title" id="artefato-a13-8-representacao-em-grafo-temporal">19. Artefato A13.8 — Representação em Grafo Temporal</h2>
+<h3 id="finalidade-8">19.1 Finalidade</h3>
+<p>A Representação em Grafo Temporal modela relações entre entidades que evoluem ao longo do tempo.</p>
+<h3 id="estrutura-minima-8">19.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Nós temporais</td><td>Entidades observadas por período.</td></tr><tr><td>Arestas temporais</td><td>Relações com timestamp ou janela temporal.</td></tr><tr><td>Peso temporal</td><td>Intensidade da relação no tempo.</td></tr><tr><td>Janela</td><td>Período de agregação.</td></tr><tr><td><a class="term" href="../conceitos/snapshot.html">Snapshot</a></td><td>Versão do grafo em determinado tempo.</td></tr><tr><td>Métricas temporais</td><td>Centralidade, densidade, persistência etc.</td></tr><tr><td>Evolução</td><td>Mudanças observadas.</td></tr><tr><td>Lineage</td><td>Origem das relações.</td></tr></table></div>
+<h3 id="metricas-associadas-8">19.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de arestas persistentes;</li>
+<li>taxa de arestas temporais válidas;</li>
+<li>cobertura temporal;</li>
+<li>densidade por período;</li>
+<li>variação de centralidade.</li>
+</ul>
+<h3 id="criterios-de-validacao-8">19.4 Critérios de validação</h3>
+<p>O grafo temporal é válido quando as relações possuem dimensão temporal clara e podem ser analisadas por período, evento ou janela.</p>
+<h3 id="contribuicao-8">19.5 Contribuição</h3>
+<p>Esse artefato permite estudar redes dinâmicas, evolução de relações, interações e mudanças estruturais.</p>
+<h2 class="section-title" id="artefato-a13-9-relatorio-de-metricas-da-representacao">20. Artefato A13.9 — Relatório de Métricas da Representação</h2>
+<h3 id="finalidade-9">20.1 Finalidade</h3>
+<p>O Relatório de Métricas da Representação avalia a qualidade, adequação e características estruturais da representação analítica.</p>
+<h3 id="estrutura-minima-9">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Representação avaliada</td><td>Identificador.</td></tr><tr><td>Tipo</td><td>Tabular, temporal, evento, grafo etc.</td></tr><tr><td>Métricas calculadas</td><td>Completude, cobertura, densidade, lacunas etc.</td></tr><tr><td>Valores obtidos</td><td>Resultados das métricas.</td></tr><tr><td>Interpretação</td><td>Significado dos resultados.</td></tr><tr><td>Limitações</td><td>Restrições observadas.</td></tr><tr><td>Recomendações</td><td>Ajustes necessários.</td></tr></table></div>
+<h3 id="metricas-associadas-9">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>IAR;</li>
+<li>CRT;</li>
+<li>CT;</li>
+<li>TLT;</li>
+<li>DG;</li>
+<li>GM;</li>
+<li>MOD.</li>
+</ul>
+<h3 id="criterios-de-validacao-9">20.4 Critérios de validação</h3>
+<p>O relatório é válido quando permite avaliar se a representação é adequada à finalidade pretendida.</p>
+<h3 id="contribuicao-9">20.5 Contribuição</h3>
+<p>Esse artefato apoia comparação entre representações e seleção metodológica justificada.</p>
+<h2 class="section-title" id="artefato-a13-10-manifesto-da-representacao-analitica">21. Artefato A13.10 — Manifesto da Representação Analítica</h2>
+<h3 id="finalidade-10">21.1 Finalidade</h3>
+<p>O Manifesto da Representação Analítica registra as informações necessárias para reproduzir a construção de uma representação.</p>
+<h3 id="estrutura-minima-10">21.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Representação</td><td>Identificador.</td></tr><tr><td>Ativos de origem</td><td>Datasets utilizados.</td></tr><tr><td>Versões</td><td>Versões dos ativos de origem.</td></tr><tr><td>Regras</td><td>Regras de construção.</td></tr><tr><td>Parâmetros</td><td>Filtros, janelas, agregações, pesos.</td></tr><tr><td>Código ou processo</td><td>Script, notebook ou pipeline.</td></tr><tr><td>Ambiente</td><td>Ambiente computacional.</td></tr><tr><td>Saída</td><td>Representação gerada.</td></tr><tr><td>Data</td><td>Data de geração.</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe.</td></tr><tr><td>Limitações</td><td>Restrições conhecidas.</td></tr></table></div>
+<h3 id="metricas-associadas-10">21.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de representações documentadas;</li>
+<li>taxa de representações reprodutíveis;</li>
+<li>taxa de lineage associado;</li>
+<li>índice de adequação da representação.</li>
+</ul>
+<h3 id="criterios-de-validacao-10">21.4 Critérios de validação</h3>
+<p>O manifesto é válido quando permite reconstruir a representação a partir dos dados, regras, versões e parâmetros registrados.</p>
+<h3 id="contribuicao-10">21.5 Contribuição</h3>
+<p>Esse artefato conecta representação analítica, lineage, versionamento e <a class="term" href="../conceitos/reprodutibilidade.html">reprodutibilidade</a>.</p>
+<h2 class="section-title" id="artefato-a13-11-mapa-de-transformacao-entre-representacoes">22. Artefato A13.11 — Mapa de Transformação entre Representações</h2>
+<h3 id="finalidade-11">22.1 Finalidade</h3>
+<p>O Mapa de Transformação entre Representações documenta como uma representação deriva de outra, por exemplo, como uma tabela gera uma matriz de features, como eventos geram séries temporais ou como registros relacionais geram um grafo.</p>
+<h3 id="estrutura-minima-11">22.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Representação de origem</td><td>Estrutura inicial.</td></tr><tr><td>Representação de destino</td><td>Estrutura derivada.</td></tr><tr><td>Regras de transformação</td><td>Procedimentos aplicados.</td></tr><tr><td>Parâmetros</td><td>Janelas, filtros, agregações, pesos.</td></tr><tr><td>Perdas ou agregações</td><td>Informações removidas ou consolidadas.</td></tr><tr><td>Lineage</td><td>Relação entre origem e destino.</td></tr><tr><td>Limitações</td><td>Restrições da conversão.</td></tr></table></div>
+<h3 id="metricas-associadas-11">22.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de transformações documentadas;</li>
+<li>índice de adequação da representação;</li>
+<li>taxa de perda de informação;</li>
+<li>taxa de lineage associado.</li>
+</ul>
+<h3 id="criterios-de-validacao-11">22.4 Critérios de validação</h3>
+<p>O mapa é válido quando permite compreender como uma representação foi derivada de outra.</p>
+<h3 id="contribuicao-11">22.5 Contribuição</h3>
+<p>Esse artefato favorece comparação entre paradigmas de representação e reutilização analítica.</p>
+<h2 class="section-title" id="artefato-a13-12-relatorio-de-limitacoes-da-representacao">23. Artefato A13.12 — Relatório de Limitações da Representação</h2>
+<h3 id="finalidade-12">23.1 Finalidade</h3>
+<p>O Relatório de Limitações da Representação documenta restrições, lacunas, incertezas, vieses e cuidados de interpretação associados a uma representação analítica.</p>
+<h3 id="estrutura-minima-12">23.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Representação</td><td>Identificador.</td></tr><tr><td>Limitações de dados</td><td>Ausências, baixa cobertura, <a class="term" href="../problemas/inconsistencias.html">inconsistências</a>.</td></tr><tr><td>Limitações temporais</td><td>Lacunas, defasagens, irregularidades.</td></tr><tr><td>Limitações relacionais</td><td>Relações inferidas, incompletas ou incertas.</td></tr><tr><td>Limitações semânticas</td><td>Ambiguidade ou mudanças de significado.</td></tr><tr><td>Riscos de viés</td><td>Sub-representação ou distorção.</td></tr><tr><td>Impacto no uso</td><td>Como afeta análise ou modelo.</td></tr><tr><td>Recomendações</td><td>Cuidados ou ações corretivas.</td></tr></table></div>
+<h3 id="metricas-associadas-12">23.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de lacunas temporais;</li>
+<li>índice de incerteza;</li>
+<li>índice de adequação da representação;</li>
+<li>taxa de relações incertas.</li>
+</ul>
+<h3 id="criterios-de-validacao-12">23.4 Critérios de validação</h3>
+<p>O relatório é válido quando explicita limitações relevantes para interpretação e uso responsável.</p>
+<h3 id="contribuicao-12">23.5 Contribuição</h3>
+<p>Esse artefato fortalece transparência, governança e comunicação responsável dos resultados.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">24. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Datasets brutos, integrados, tratados e curados; logs; eventos; séries históricas; atributos temporais; chaves; entidades; relações; metadados; rótulos; regras; versões e objetivos analíticos.</td></tr><tr><td>Processamento</td><td>Definição da finalidade, unidade de análise, atributos, relações, dimensão temporal, construção de tabelas, séries, eventos, grafos, grafos temporais, validação, documentação e versionamento.</td></tr><tr><td>Artefatos</td><td>Plano de representação, matriz unidade × atributo, especificação de unidade e rótulo, representação temporal, registro de eventos, modelo de grafo, lista de nós e arestas, grafo temporal, relatório de métricas, manifesto e relatório de limitações.</td></tr><tr><td>Métricas</td><td>TRD, TAR, TURV, CRT, DT, CT, RT, TLT, TETV, TEO, DG, NN, NA, GM, NC, MOD, TAP, TATV e IAR.</td></tr><tr><td>Saídas</td><td>Representações analíticas documentadas, versionadas, rastreáveis e adequadas para dashboards, modelos, grafos, feature engineering, agentes inteligentes e tomada de decisão.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">25. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 13 pode ser considerado adequadamente implementado quando:</p>
+<ol class="steps">
+<li>a finalidade analítica da representação está definida;</li>
+<li>a unidade de análise está explicitada;</li>
+<li>os ativos de origem estão identificados;</li>
+<li>os atributos utilizados estão documentados;</li>
+<li>a dimensão temporal está definida quando aplicável;</li>
+<li>eventos possuem timestamp, tipo, entidade e contexto;</li>
+<li>grafos possuem nós, arestas, pesos, direção e regras de construção documentados;</li>
+<li>grafos temporais possuem janelas ou timestamps definidos;</li>
+<li>representações possuem métricas de qualidade e adequação calculadas;</li>
+<li>limitações, lacunas e incertezas estão documentadas;</li>
+<li>a representação está versionada;</li>
+<li>a representação possui lineage associado;</li>
+<li>a representação pode ser reproduzida a partir de manifesto;</li>
+<li>a representação é adequada ao uso pretendido;</li>
+<li>os artefatos podem ser consumidos pelos módulos de feature engineering, modelagem, monitoramento, agentes inteligentes e disponibilização analítica.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-do-modelo-de-referencia">26. Relação com os demais módulos do modelo de referência</h2>
+<p>O Módulo 13 depende diretamente dos módulos anteriores e fornece insumos para os módulos posteriores.</p>
+<p>Com o Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, utiliza informações sobre fontes, entidades, granularidade, cobertura temporal e restrições.</p>
+<p>Com o Módulo 2 — Extração, Ingestão e Armazenamento Bruto, utiliza dados brutos, logs, eventos, janelas temporais e snapshots.</p>
+<p>Com o Módulo 3 — Integração e Harmonização, utiliza dados integrados, chaves, entidades comuns e equivalências semânticas.</p>
+<p>Com o Módulo 4 — Transformação, Limpeza e Enriquecimento, utiliza dados tratados, atributos derivados e regras de padronização.</p>
+<p>Com o Módulo 5 — Qualidade e Validação de Dados, incorpora métricas de qualidade na avaliação das representações.</p>
+<p>Com o Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, considera representatividade, grupos, rótulos e riscos de viés.</p>
+<p>Com o Módulo 7 — Armazenamento Analítico, utiliza datasets curados e data marts como base de representação.</p>
+<p>Com o Módulo 8 — Disponibilização e Consumo Analítico, fornece representações para dashboards, APIs, relatórios e produtos de dados.</p>
+<p>Com o Módulo 9 — Metadados, Catálogo e Semântica dos Dados, documenta significado, estrutura, relações e finalidade das representações.</p>
+<p>Com o Módulo 10 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, respeita restrições de acesso, sensibilidade, finalidade e minimização.</p>
+<p>Com o Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e Rastreabilidade, registra origem, transformações e dependências das representações.</p>
+<p>Com o Módulo 12 — Versionamento e Reprodutibilidade, versiona representações, regras, parâmetros e manifestos.</p>
+<p>Com o Módulo 14 — Feature Engineering e Feature Store, fornece estruturas para criação de features tabulares, temporais, relacionais e de grafos.</p>
+<p>Com o Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, permite acompanhar mudanças nas distribuições, relações, eventos e estruturas ao longo do tempo.</p>
+<p>Com o Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline, fornece representações e metadados que podem ser consultados, explicados e recomendados por agentes.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">27. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, o Módulo 13 pode representar dados acadêmicos de diferentes formas.</p>
+<p>Uma representação tabular pode conter uma linha por estudante, com atributos como curso, idade, desempenho médio, frequência, forma de ingresso, quantidade de reprovações e situação acadêmica.</p>
+<p>Uma representação longitudinal pode acompanhar cada estudante por semestre, registrando evolução de desempenho, frequência, reprovações, trancamentos, interações no ambiente virtual e mudanças de situação acadêmica.</p>
+<p>Uma representação baseada em eventos pode registrar interações no ambiente virtual, como acesso a materiais, envio de atividades, participação em fóruns, visualização de vídeos e realização de avaliações.</p>
+<p>Uma representação em grafo pode modelar relações entre estudantes, disciplinas, cursos, atividades, docentes e interações.</p>
+<p>Um grafo temporal pode representar como as interações entre estudantes e atividades evoluem semanalmente, permitindo analisar engajamento, isolamento, centralidade e mudança de comportamento ao longo do tempo.</p>
+<p>Essas diferentes representações permitem estudar evasão, permanência, desempenho, engajamento, trajetórias, redes de aprendizagem e padrões temporais de forma mais rica do que uma única tabela estática.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">28. Exemplo de aplicação em políticas públicas</h2>
+<p>Em políticas públicas, o Módulo 13 pode representar dados de atendimento, território, serviços, famílias, escolas, unidades de saúde, programas sociais e indicadores socioeconômicos.</p>
+<p>Uma representação tabular pode conter indicadores agregados por território.</p>
+<p>Uma representação temporal pode mostrar evolução mensal de atendimentos, vulnerabilidade, demanda por serviços ou cobertura de programas.</p>
+<p>Uma representação longitudinal pode acompanhar famílias, territórios ou unidades ao longo do tempo.</p>
+<p>Uma representação baseada em eventos pode registrar atendimentos, encaminhamentos, visitas, notificações ou ocorrências.</p>
+<p>Uma representação em grafo pode modelar relações entre cidadãos, famílias, serviços, equipamentos públicos, territórios e programas.</p>
+<p>Um grafo temporal pode representar a evolução dos vínculos entre famílias e serviços públicos, permitindo analisar continuidade de atendimento, encaminhamentos, sobreposição de políticas e redes de suporte.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">29. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição técnico-científica do Módulo 13 está em reconhecer que a forma de representar os dados é uma decisão metodológica essencial para a validade, a utilidade e a interpretabilidade dos resultados analíticos.</p>
+<p>Em vez de restringir os dados a estruturas tabulares tradicionais, o UnespDataLens-RM propõe um módulo específico para formalizar representações tabulares, temporais, longitudinais, baseadas em eventos, relacionais e em grafos.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>ampliar a capacidade analítica do modelo de referência;</li>
+<li>representar fenômenos dinâmicos e relacionais;</li>
+<li>incorporar explicitamente a dimensão temporal;</li>
+<li>apoiar análise de trajetórias e eventos;</li>
+<li>permitir uso de grafos e grafos temporais;</li>
+<li>viabilizar features temporais e relacionais;</li>
+<li>melhorar modelagem preditiva e explicabilidade;</li>
+<li>apoiar visualizações mais adequadas;</li>
+<li>fortalecer rastreabilidade entre dados e modelos;</li>
+<li>reduzir ambiguidades na unidade de análise;</li>
+<li>melhorar comparação entre paradigmas de representação;</li>
+<li>apoiar pesquisas em diferentes domínios, como educação, políticas públicas, saúde e trabalho.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">30. Síntese do módulo</h2>
+<p>O Módulo Transversal 13 — Representações Analíticas: Tabular, Temporal e Grafos define como os dados produzidos pelo UnespDataLens-RM devem ser organizados para análise computacional, modelagem, visualização e tomada de decisão.</p>
+<p>Sua importância está em reconhecer que os dados não possuem uma única forma natural de representação. A escolha entre tabela, série temporal, trajetória longitudinal, evento, grafo ou grafo temporal depende da finalidade analítica, da unidade de análise, da temporalidade, das relações entre entidades, da qualidade dos dados e do tipo de produto esperado.</p>
+<p>Ao formalizar representações analíticas documentadas, versionadas, rastreáveis, avaliáveis e reprodutíveis, o Módulo 13 fortalece a capacidade do UnespDataLens-RM de tratar dados estáticos, históricos, dinâmicos, temporais, relacionais e evolutivos, ampliando sua relevância para análises avançadas, modelos preditivos, grafos, agentes inteligentes e tomada de decisão baseada em evidências.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

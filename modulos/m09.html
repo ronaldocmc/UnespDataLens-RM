@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo Transversal 9 — Metadados, Catálogo e Semântica dos Dados tem como finalidade estruturar, organizar, documentar, padronizar, enriquecer semanticamente e disponibilizar informações descritivas sobre todos os ativos de dados produzidos, utilizados ou disponibilizados no modelo de referência UnespDataLens-RM.">
+  <title>Módulo 9 — Metadados, Catálogo e Semântica dos Dados · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-transversal-9-metadados-catalogo-e-semantica-dos-dados"></span><section class="hero">
+<span class="badge">Módulo 09</span>
+<h1>Módulo 9 — Metadados, Catálogo e Semântica dos Dados</h1>
+<p>O Módulo Transversal 9 — Metadados, Catálogo e Semântica dos Dados tem como finalidade estruturar, organizar, documentar, padronizar, enriquecer semanticamente e disponibilizar informações descritivas sobre todos os ativos de dados produzidos, utilizados ou disponibilizados no modelo de referência UnespDataLens-RM.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 29 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#natureza-transversal-do-modulo">Natureza transversal do módulo</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-tecnologias-aplicaveis">Técnicas, métodos e tecnologias aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a9-1-modelo-transversal-de-metadados">Artefato A9.1 — Modelo Transversal de Metadados</a><a href="#artefato-a9-2-catalogo-unificado-de-dados">Artefato A9.2 — Catálogo Unificado de Dados</a><a href="#artefato-a9-3-dicionario-de-dados-consolidado">Artefato A9.3 — Dicionário de Dados Consolidado</a><a href="#artefato-a9-4-glossario-de-termos-do-dominio">Artefato A9.4 — Glossário de Termos do Domínio</a><a href="#artefato-a9-5-modelo-semantico-de-dados">Artefato A9.5 — Modelo Semântico de Dados</a><a href="#artefato-a9-6-mapa-de-equivalencia-semantica">Artefato A9.6 — Mapa de Equivalência Semântica</a><a href="#artefato-a9-7-ficha-de-documentacao-de-ativo">Artefato A9.7 — Ficha de Documentação de Ativo</a><a href="#artefato-a9-8-indice-de-descoberta-de-dados">Artefato A9.8 — Índice de Descoberta de Dados</a><a href="#artefato-a9-9-registro-de-curadoria-de-metadados">Artefato A9.9 — Registro de Curadoria de Metadados</a><a href="#artefato-a9-10-relatorio-de-qualidade-dos-metadados">Artefato A9.10 — Relatório de Qualidade dos Metadados</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-o-pipeline-principal">Relação com o pipeline principal</a><a href="#relacao-com-os-demais-modulos-transversais">Relação com os demais módulos transversais</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo Transversal 9 — <a class="term" href="../conceitos/metadados.html">Metadados</a>, Catálogo e Semântica dos Dados tem como finalidade estruturar, organizar, documentar, padronizar, enriquecer semanticamente e disponibilizar informações descritivas sobre todos os ativos de dados produzidos, utilizados ou disponibilizados no modelo de referência UnespDataLens-RM.</p>
+<p>Diferentemente dos módulos 1 a 8, que compõem o pipeline técnico-operacional principal — desde a identificação das fontes até a disponibilização e consumo analítico —, o Módulo 9 atua de forma transversal. Isso significa que ele não ocorre apenas em uma etapa isolada do pipeline, mas acompanha todo o ciclo de vida dos dados, registrando metadados, descrições, conceitos, relações, regras, versões, qualidade, sensibilidade, restrições, responsáveis e significados dos ativos produzidos em cada módulo.</p>
+<p>Esse módulo é responsável por garantir que os dados não sejam tratados apenas como arquivos, tabelas, colunas, registros, datasets, dashboards ou APIs, mas como ativos informacionais compreensíveis, documentados, localizáveis, reutilizáveis, governáveis, auditáveis e semanticamente interpretáveis.</p>
+<p>Em projetos de Engenharia Analítica de Dados, uma das fragilidades recorrentes é a produção de datasets, scripts, indicadores e produtos analíticos sem documentação adequada. Muitas vezes, os dados são extraídos, integrados, limpos, transformados, validados e disponibilizados, mas permanecem pouco compreensíveis para usuários que não participaram diretamente do pipeline. Essa ausência de documentação compromete a reutilização, dificulta auditorias, reduz a confiança, aumenta dependência de conhecimento tácito e favorece interpretações equivocadas.</p>
+<p>No contexto do UnespDataLens-RM, o Módulo 9 tem papel central porque transforma informações técnicas, operacionais e semânticas geradas ao longo de todo o pipeline em metadados estruturados e consultáveis. Ele organiza um <a class="term" href="../conceitos/catalogo-de-dados.html">catálogo de dados</a>, consolida dicionários, registra glossários, explicita relações semânticas, documenta produtos de dados, associa ativos a métricas de qualidade, registra restrições de acesso e prepara a base documental para governança, lineage, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, monitoramento e agentes inteligentes.</p>
+<p>Assim, o Módulo 9 não deve ser entendido como uma etapa final de documentação. Ele constitui uma infraestrutura transversal de conhecimento sobre os dados, responsável por tornar o ecossistema analítico compreensível, navegável e reutilizável.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 9 é formalizar, estruturar e manter metadados técnicos, semânticos, operacionais, analíticos, de qualidade e de governança sobre os ativos do UnespDataLens-RM, por meio de catálogos, dicionários, glossários, modelos semânticos e fichas de documentação que apoiem descoberta, compreensão, interoperabilidade, reuso, governança, <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a>, explicabilidade e tomada de decisão baseada em evidências.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 9:</p>
+<ol class="steps">
+<li>consolidar os metadados produzidos ao longo dos módulos do pipeline principal;</li>
+<li>definir um modelo padronizado de metadados para fontes, datasets, atributos, entidades, indicadores, features, dashboards, APIs, data marts e produtos de dados;</li>
+<li>organizar um catálogo de dados consultável, atualizado e integrado aos demais módulos do modelo de referência;</li>
+<li>consolidar dicionários de dados a partir de fontes, datasets brutos, datasets integrados, datasets tratados, ativos armazenados e produtos disponibilizados;</li>
+<li>registrar descrições semânticas de atributos, entidades, conceitos, indicadores, categorias e variáveis derivadas;</li>
+<li>construir e manter glossários de termos do domínio, reduzindo ambiguidades terminológicas e conceituais;</li>
+<li>mapear equivalências semânticas entre fontes, atributos, categorias, códigos e conceitos;</li>
+<li>associar ativos de dados a informações de qualidade, sensibilidade, restrição de acesso, versão, origem, finalidade, responsável e limitação de uso;</li>
+<li>apoiar a descoberta de dados por usuários humanos, sistemas computacionais e agentes inteligentes;</li>
+<li>fornecer base documental para governança, lineage, <a class="term" href="../conceitos/reprodutibilidade.html">reprodutibilidade</a>, monitoramento, auditoria e uso responsável dos ativos analíticos;</li>
+<li>definir métricas para avaliar cobertura, <a class="term" href="../metricas/completude.html">completude</a>, <a class="term" href="../metricas/atualidade.html">atualidade</a>, <a class="term" href="../metricas/consistencia.html">consistência</a>, qualidade semântica, utilidade e reuso dos metadados.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>Metadados são informações que descrevem dados. No contexto do UnespDataLens-RM, os metadados assumem papel estrutural, pois permitem compreender o que são os dados, de onde vieram, como foram processados, qual é sua qualidade, quem é responsável por eles, quais restrições possuem, como podem ser utilizados e quais conceitos representam.</p>
+<p>Os metadados podem ser classificados em diferentes categorias:</p>
+<div class="table-wrap"><table class="table"><tr><th>Categoria de metadado</th><th>Descrição</th><th>Exemplos</th></tr><tr><td>Metadados técnicos</td><td>Descrevem estrutura, formato e características computacionais dos dados.</td><td>Nome da tabela, tipo do atributo, schema, formato, encoding, chave, tamanho.</td></tr><tr><td>Metadados operacionais</td><td>Descrevem processos, execuções, atualizações e uso operacional.</td><td>Data de ingestão, pipeline, <a class="term" href="../conceitos/periodicidade.html">periodicidade</a>, <a class="term" href="../conceitos/logs.html">logs</a>, status da execução.</td></tr><tr><td>Metadados semânticos</td><td>Descrevem significado dos dados, conceitos e regras de negócio.</td><td>Definição de evasão, matrícula ativa, atendimento, vulnerabilidade, território.</td></tr><tr><td>Metadados de qualidade</td><td>Descrevem métricas, validações e status de qualidade dos ativos.</td><td>Completude, <a class="term" href="../metricas/validade.html">validade</a>, consistência, <a class="term" href="../metricas/unicidade.html">unicidade</a>, não conformidades, status de aprovação.</td></tr><tr><td>Metadados de governança</td><td>Descrevem responsabilidade, sensibilidade, acesso e <a class="term" href="../metricas/conformidade.html">conformidade</a>.</td><td>Responsável, restrição de acesso, <a class="term" href="../artefatos/classificacao-de-sensibilidade.html">classificação de sensibilidade</a>, finalidade de uso.</td></tr><tr><td>Metadados analíticos</td><td>Descrevem uso dos dados em análises, modelos, indicadores e dashboards.</td><td><a class="term" href="../conceitos/variavel-alvo.html">Variável-alvo</a>, features, indicadores, modelos consumidores, painéis associados.</td></tr><tr><td>Metadados de linhagem</td><td>Descrevem origem, dependências, transformações e trajetória dos dados.</td><td>Fonte original, regra aplicada, versão, dataset derivado, pipeline.</td></tr><tr><td>Metadados de consumo</td><td>Descrevem produtos disponibilizados e seus consumidores.</td><td>API, <a class="term" href="../artefatos/dashboard.html">dashboard</a>, relatório, público-alvo, frequência de acesso, feedback.</td></tr></table></div>
+<p>A dimensão semântica é especialmente importante. Em diferentes fontes ou instituições, o mesmo termo pode possuir significados distintos, enquanto termos diferentes podem representar conceitos equivalentes. Por exemplo, no domínio educacional, expressões como “evasão”, “abandono”, “cancelamento”, “trancamento”, “desistência” e “inatividade” podem indicar situações diferentes. Em políticas públicas, termos como “família”, “território”, “atendimento”, “benefício”, “vulnerabilidade” e “demanda” podem variar conforme o sistema, o órgão ou a regra institucional.</p>
+<p>Sem documentação semântica, análises podem ser tecnicamente corretas e, ao mesmo tempo, conceitualmente equivocadas. Por essa razão, o Módulo 9 formaliza a semântica dos dados como elemento essencial da Engenharia Analítica de Dados.</p>
+<p>À luz da Design Science Research, os artefatos do Módulo 9 podem ser compreendidos como constructos, modelos, métodos e instanciações. Eles formalizam o conhecimento sobre os dados, permitindo que o modelo de referência produza não apenas datasets e produtos analíticos, mas também uma estrutura de documentação, interpretação, descoberta e reuso.</p>
+<h2 class="section-title" id="natureza-transversal-do-modulo">5. Natureza transversal do módulo</h2>
+<p>O Módulo 9 é transversal porque acompanha e documenta todos os módulos do pipeline principal. Ele não ocorre apenas após a disponibilização dos dados. Ao contrário, seus artefatos são alimentados progressivamente desde o Módulo 1.</p>
+<p>No Módulo 1, o Módulo 9 recebe informações sobre fontes, responsáveis, formatos, periodicidade, <a class="term" href="../conceitos/cobertura-temporal.html">cobertura temporal</a>, <a class="term" href="../conceitos/granularidade.html">granularidade</a>, restrições e sensibilidade.</p>
+<p>No Módulo 2, recebe metadados de ingestão, logs, snapshots, manifestos, localizações e formatos dos dados brutos.</p>
+<p>No Módulo 3, recebe regras de integração, chaves, tabelas de mapeamento, equivalências semânticas, conflitos e datasets integrados.</p>
+<p>No Módulo 4, recebe regras de transformação, atributos derivados, parâmetros, fórmulas, registros de tratamento e datasets enriquecidos.</p>
+<p>No Módulo 5, recebe métricas de qualidade, status dos ativos, não conformidades, critérios de aprovação e histórico de validação.</p>
+<p>No Módulo 6, recebe informações sobre grupos, atributos sensíveis, <a class="term" href="../conceitos/desbalanceamento.html">desbalanceamento</a>, vieses, métricas de <a class="term" href="../conceitos/equidade.html">equidade</a>, riscos residuais e limitações de uso.</p>
+<p>No Módulo 7, recebe informações sobre armazenamento analítico, zonas, schemas, localização, particionamento, versões e estruturas persistidas.</p>
+<p>No Módulo 8, recebe informações sobre produtos de dados, consumidores, formas de acesso, dashboards, APIs, relatórios, versões publicadas e feedback de uso.</p>
+<p>Dessa forma, o Módulo 9 atua como uma camada documental e semântica persistente, conectando o pipeline principal aos módulos transversais de governança, lineage, versionamento, monitoramento e agentes inteligentes.</p>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">6. Formalização sintética do módulo</h2>
+<p>O Módulo 9 pode ser compreendido como um processo de associação sistemática de metadados aos ativos produzidos pelo UnespDataLens-RM.</p>
+<p>Considerando o conjunto de ativos de dados produzidos ou consumidos no modelo de referência:</p>
+<div class="formula">A = {a₁, a₂, ..., aₙ}</div>
+<p>em que cada aᵢ pode representar uma fonte, <a class="term" href="../artefatos/dataset-bruto.html">dataset bruto</a>, dataset integrado, <a class="term" href="../artefatos/dataset-tratado.html">dataset tratado</a>, <a class="term" href="../conceitos/data-mart.html">data mart</a>, atributo, feature, indicador, dashboard, API, relatório ou <a class="term" href="../conceitos/produto-de-dados.html">produto de dados</a>, o módulo associa a cada ativo um conjunto de metadados:</p>
+<div class="formula">M(aᵢ) = {m₁, m₂, ..., mₖ}</div>
+<p>em que cada mⱼ representa um metadado técnico, operacional, semântico, analítico, de qualidade, de governança, de linhagem ou de consumo.</p>
+<p>Cada ativo pode ser descrito formalmente por:</p>
+<div class="formula">aᵢ = {id, nome, tipo, descrição, origem, responsável, domínio, formato, granularidade, periodicidade, versão, qualidade, sensibilidade, restrição_acesso, lineage, consumidores, limitações}</div>
+<p>Além disso, o módulo define um conjunto de conceitos semânticos:</p>
+<div class="formula">C = {c₁, c₂, ..., cₚ}</div>
+<p>em que cada conceito cᵣ pode ser descrito por:</p>
+<div class="formula">cᵣ = {termo, definição, domínio, sinônimos, termos_relacionados, regra_negócio, exemplo, fonte_definição, status_validação}</div>
+<p>Também pode ser definido um <a class="term" href="../conceitos/grafo.html">grafo</a> semântico:</p>
+<div class="formula">Gₛ = (C, R)</div>
+<p>em que:</p>
+<ul class="list">
+<li>C representa conceitos, entidades, atributos e indicadores;</li>
+<li>R representa relações semânticas, como equivalência, especialização, composição, associação, dependência, hierarquia ou temporalidade.</li>
+</ul>
+<p>O resultado do módulo é um conjunto de artefatos documentais, semânticos e computacionais que tornam os ativos do UnespDataLens-RM compreensíveis, localizáveis, reutilizáveis, rastreáveis e governáveis.</p>
+<h2 class="section-title" id="entradas-do-modulo">7. Entradas do módulo</h2>
+<p>As entradas do Módulo 9 são produzidas ao longo de todo o pipeline principal e pelos demais módulos transversais.</p>
+<p>As principais entradas são:</p>
+<ul class="list">
+<li><a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a>;</li>
+<li>mapa de bases;</li>
+<li><a class="term" href="../artefatos/dicionario-preliminar-de-dados.html">dicionário preliminar de dados</a>;</li>
+<li><a class="term" href="../artefatos/matriz-de-relacionamento-entre-fontes.html">matriz de relacionamento entre fontes</a>;</li>
+<li><a class="term" href="../artefatos/registro-de-granularidade.html">registro de granularidade</a>;</li>
+<li>classificação de sensibilidade;</li>
+<li>manifestos de ingestão;</li>
+<li>logs de execução;</li>
+<li>registros de snapshots;</li>
+<li>datasets brutos;</li>
+<li>planos de integração;</li>
+<li>tabelas de mapeamento de atributos;</li>
+<li>tabelas de equivalência semântica;</li>
+<li>registros de chaves e entidades;</li>
+<li>manifestos de integração;</li>
+<li>datasets integrados;</li>
+<li>registros de transformação;</li>
+<li>catálogos de atributos derivados;</li>
+<li>manifestos de transformação;</li>
+<li>datasets tratados e enriquecidos;</li>
+<li>planos de validação;</li>
+<li>relatórios de qualidade;</li>
+<li>registros de não conformidades;</li>
+<li>status de qualidade dos ativos;</li>
+<li>registros de grupos e atributos sensíveis;</li>
+<li>relatórios de vieses e equidade;</li>
+<li>registros de armazenamento analítico;</li>
+<li>schemas analíticos;</li>
+<li>data marts;</li>
+<li>views;</li>
+<li>APIs;</li>
+<li>dashboards;</li>
+<li>relatórios;</li>
+<li>produtos de dados;</li>
+<li>regras de acesso;</li>
+<li>informações de consumidores;</li>
+<li>glossários existentes;</li>
+<li>documentação institucional;</li>
+<li>regras de negócio;</li>
+<li>conhecimento de especialistas do domínio.</li>
+</ul>
+<h2 class="section-title" id="processamento">8. Processamento</h2>
+<p>O processamento do Módulo 9 envolve atividades contínuas de captura, consolidação, padronização, enriquecimento, curadoria, validação e disponibilização de metadados.</p>
+<h3 id="captura-de-metadados-ao-longo-do-pipeline">8.1 Captura de metadados ao longo do pipeline</h3>
+<p>A primeira atividade consiste em capturar metadados produzidos por cada módulo do pipeline. Essa captura pode ser manual, semiautomatizada ou automatizada, dependendo das ferramentas utilizadas.</p>
+<p>O objetivo é evitar que informações importantes fiquem dispersas em scripts, notebooks, planilhas ou memória dos participantes do projeto.</p>
+<h3 id="consolidacao-dos-metadados">8.2 Consolidação dos metadados</h3>
+<p>A segunda atividade consiste em consolidar os metadados capturados em uma estrutura padronizada. Informações sobre fonte, ingestão, integração, transformação, qualidade, armazenamento e consumo devem ser integradas em uma visão coerente do ativo de dados.</p>
+<h3 id="padronizacao-do-modelo-de-metadados">8.3 Padronização do modelo de metadados</h3>
+<p>A terceira atividade consiste em definir campos obrigatórios e opcionais para cada tipo de ativo. Uma <a class="term" href="../conceitos/fonte-de-dados.html">fonte de dados</a>, um atributo, um dataset curado, uma API e um dashboard não possuem exatamente os mesmos metadados, mas devem seguir um modelo compatível.</p>
+<h3 id="construcao-e-manutencao-do-catalogo-de-dados">8.4 Construção e manutenção do catálogo de dados</h3>
+<p>A quarta atividade consiste em organizar os ativos em um catálogo consultável. O catálogo deve permitir localizar fontes, datasets, atributos, data marts, dashboards, APIs, indicadores, features, relatórios e produtos de dados.</p>
+<h3 id="consolidacao-do-dicionario-de-dados">8.5 Consolidação do <a class="term" href="../conceitos/dicionario-de-dados.html">dicionário de dados</a></h3>
+<p>A quinta atividade consiste em consolidar as descrições dos atributos produzidas ao longo do pipeline. O dicionário deve registrar nome técnico, nome semântico, descrição, tipo, domínio, formato, regra de preenchimento, origem, sensibilidade, exemplo de valor e limitações.</p>
+<h3 id="construcao-do-glossario-de-termos-do-dominio">8.6 Construção do glossário de termos do domínio</h3>
+<p>A sexta atividade consiste em construir e manter um glossário de conceitos relevantes ao domínio. O glossário deve reduzir ambiguidades terminológicas e permitir que diferentes usuários compartilhem um vocabulário comum.</p>
+<h3 id="enriquecimento-semantico-dos-ativos">8.7 Enriquecimento semântico dos ativos</h3>
+<p>A sétima atividade consiste em associar atributos, entidades, indicadores, produtos e datasets a conceitos do glossário, taxonomias, regras de negócio ou modelos semânticos.</p>
+<h3 id="mapeamento-de-equivalencias-semanticas">8.8 Mapeamento de equivalências semânticas</h3>
+<p>A oitava atividade consiste em registrar correspondências entre atributos, categorias, códigos e conceitos de diferentes fontes. Esse mapeamento apoia integração, harmonização, comparação entre bases e interpretação correta dos indicadores.</p>
+<h3 id="curadoria-e-validacao-dos-metadados">8.9 Curadoria e validação dos metadados</h3>
+<p>A nona atividade consiste em revisar e validar metadados críticos. A curadoria pode envolver especialistas do domínio, analistas de dados, gestores ou responsáveis pelas fontes.</p>
+<p>Metadados incompletos, ambíguos, desatualizados ou contraditórios devem ser sinalizados e corrigidos.</p>
+<h3 id="disponibilizacao-dos-metadados-para-uso-humano-e-computacional">8.10 Disponibilização dos metadados para uso humano e computacional</h3>
+<p>A décima atividade consiste em tornar os metadados disponíveis para consulta por usuários humanos, sistemas, ferramentas de BI, APIs, mecanismos de lineage, módulos de governança, componentes de monitoramento e agentes inteligentes.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-tecnologias-aplicaveis">9. Técnicas, métodos e tecnologias aplicáveis</h2>
+<p>O Módulo 9 pode empregar diferentes técnicas, métodos e tecnologias de documentação, catalogação e semântica.</p>
+<p>Entre as técnicas de documentação e organização, destacam-se:</p>
+<ul class="list">
+<li>catalogação de dados;</li>
+<li>modelagem de metadados;</li>
+<li>elaboração de dicionário de dados;</li>
+<li>construção de glossários;</li>
+<li>vocabulários controlados;</li>
+<li>taxonomias de domínio;</li>
+<li>modelagem conceitual;</li>
+<li>modelagem semântica;</li>
+<li>curadoria de metadados;</li>
+<li>documentação de regras de negócio;</li>
+<li>fichas de documentação de ativos;</li>
+<li>data cards;</li>
+<li>model cards;</li>
+<li>documentação de produtos de dados.</li>
+</ul>
+<p>Entre as técnicas computacionais, podem ser utilizadas:</p>
+<ul class="list">
+<li>extração automática de schema;</li>
+<li>inferência de tipos de dados;</li>
+<li>análise de cardinalidade;</li>
+<li>identificação de domínios de valores;</li>
+<li>indexação textual;</li>
+<li>busca semântica;</li>
+<li>classificação automática de metadados;</li>
+<li>sugestão automática de descrições;</li>
+<li>detecção de termos de domínio;</li>
+<li>vinculação entre atributos e conceitos;</li>
+<li>análise de similaridade entre nomes de atributos;</li>
+<li>agrupamento de atributos semelhantes;</li>
+<li>construção de grafos de conhecimento.</li>
+</ul>
+<p>Entre os métodos e algoritmos aplicáveis, destacam-se:</p>
+<ul class="list">
+<li>distância de Levenshtein;</li>
+<li>similaridade Jaro-Winkler;</li>
+<li>TF-IDF;</li>
+<li>embeddings textuais;</li>
+<li>similaridade por cosseno;</li>
+<li>clustering;</li>
+<li>classificação supervisionada;</li>
+<li>regras heurísticas;</li>
+<li>recuperação semântica de informações;</li>
+<li>busca vetorial;</li>
+<li>ontologias leves;</li>
+<li>grafos semânticos;</li>
+<li>modelos de linguagem para sugestão de documentação;</li>
+<li>validação assistida por especialista.</li>
+</ul>
+<p>Ferramentas possíveis incluem <a class="term" href="../tecnicas/apache-atlas.html">Apache Atlas</a>, <a class="term" href="../tecnicas/datahub.html">DataHub</a>, <a class="term" href="../tecnicas/openmetadata.html">OpenMetadata</a>, Amundsen, CKAN, <a class="term" href="../tecnicas/dbt.html">dbt</a> docs, <a class="term" href="../tecnicas/great-expectations.html">Great Expectations</a> Data Docs, repositórios Git, bancos relacionais, catálogos institucionais, bases vetoriais, APIs, planilhas estruturadas e interfaces de consulta.</p>
+<h2 class="section-title" id="metricas-do-modulo">10. Métricas do módulo</h2>
+<p>As métricas do Módulo 9 têm como objetivo avaliar cobertura, completude, consistência, atualidade, qualidade semântica, utilidade, descoberta e reuso dos metadados.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Cobertura do catálogo</td><td>CC</td><td>Proporção de ativos registrados no catálogo</td></tr><tr><td>Índice de completude de metadados</td><td>ICM</td><td>Grau de preenchimento dos campos obrigatórios</td></tr><tr><td>Percentual de atributos documentados</td><td>PAD</td><td>Proporção de atributos com descrição, tipo e domínio</td></tr><tr><td>Percentual de atributos com definição semântica</td><td>PADS</td><td>Proporção de atributos com significado documentado</td></tr><tr><td>Percentual de ativos com responsável definido</td><td>PARD</td><td>Proporção de ativos com responsável identificado</td></tr><tr><td>Percentual de ativos com sensibilidade documentada</td><td>PASD</td><td>Proporção de ativos com classificação de sensibilidade</td></tr><tr><td>Percentual de ativos com qualidade documentada</td><td>PAQD</td><td>Proporção de ativos com métricas ou status de qualidade</td></tr><tr><td>Percentual de ativos com lineage associado</td><td>PALA</td><td>Proporção de ativos com origem e dependências registradas</td></tr><tr><td>Atualidade dos metadados</td><td>AM</td><td>Tempo desde a última atualização dos metadados</td></tr><tr><td>Consistência terminológica</td><td>CT</td><td>Grau de padronização dos termos usados</td></tr><tr><td>Cobertura do glossário</td><td>CG</td><td>Proporção de termos críticos definidos</td></tr><tr><td>Taxa de atributos ambíguos</td><td>TAA</td><td>Proporção de atributos com significado incerto</td></tr><tr><td>Taxa de equivalências semânticas validadas</td><td>TESV</td><td>Proporção de equivalências validadas</td></tr><tr><td>Índice de qualidade semântica</td><td>IQS</td><td>Grau de clareza, associação e validação semântica</td></tr><tr><td>Taxa de reutilização de ativos</td><td>TRA</td><td>Proporção de ativos reutilizados em análises ou pipelines</td></tr><tr><td>Tempo médio de descoberta</td><td>TMD</td><td>Tempo médio para localizar um ativo no catálogo</td></tr><tr><td>Utilidade percebida do catálogo</td><td>UPC</td><td>Avaliação dos usuários sobre utilidade do catálogo</td></tr></table></div>
+<h3 id="indice-de-completude-de-metadados-icm">10.1 Índice de Completude de Metadados — ICM</h3>
+<p>O Índice de Completude de Metadados avalia o grau de preenchimento dos campos obrigatórios de metadados de um ativo.</p>
+<p>Para um ativo aᵢ, o índice pode ser definido como:</p>
+<div class="formula">ICM(aᵢ) = CPO(aᵢ) / TCO</div>
+<p>em que:</p>
+<ul class="list">
+<li>CPO(aᵢ) representa o número de campos obrigatórios preenchidos para o ativo aᵢ;</li>
+<li>TCO representa o total de campos obrigatórios definidos para aquele tipo de ativo.</li>
+</ul>
+<p>Como critério preliminar, um ativo pode ser considerado minimamente documentado quando apresentar:</p>
+<p>ICM(aᵢ) ≥ 0,80</p>
+<p>e possuir, obrigatoriamente, nome, descrição, origem, responsável, tipo, versão, sensibilidade, restrição de acesso e data de atualização.</p>
+<h3 id="indice-de-cobertura-do-catalogo-icc">10.2 Índice de Cobertura do Catálogo — ICC</h3>
+<p>O Índice de Cobertura do Catálogo mede a proporção de ativos registrados no catálogo em relação ao total de ativos identificados no modelo de referência.</p>
+<div class="formula">ICC = número de ativos catalogados / número total de ativos identificados</div>
+<p>Esse índice permite avaliar se o catálogo representa adequadamente o ecossistema analítico.</p>
+<h3 id="indice-de-qualidade-semantica-iqs">10.3 Índice de Qualidade Semântica — IQS</h3>
+<p>O Índice de Qualidade Semântica avalia o grau de clareza, padronização e validação das descrições semânticas.</p>
+<p>Uma formulação simples pode considerar:</p>
+<div class="formula">IQS(x) = itens semânticos atendidos / total de itens semânticos esperados</div>
+<p>em que x pode representar um atributo, entidade, indicador, conceito ou produto de dados.</p>
+<p>Os itens semânticos esperados podem incluir definição conceitual, domínio de valores, exemplo de uso, associação a termo do glossário, ausência de ambiguidade e validação por especialista.</p>
+<h3 id="taxa-de-ambiguidade-semantica-tas">10.4 Taxa de Ambiguidade Semântica — TAS</h3>
+<p>A Taxa de Ambiguidade Semântica mede a proporção de elementos catalogados que possuem significado incompleto, conflitante ou não validado.</p>
+<div class="formula">TAS = número de elementos com ambiguidade semântica / número total de elementos avaliados</div>
+<p>Valores elevados indicam necessidade de curadoria semântica.</p>
+<h3 id="taxa-de-ativos-com-lineage-associado-tala">10.5 Taxa de Ativos com Lineage Associado — TALA</h3>
+<p>A Taxa de Ativos com Lineage Associado mede a proporção de ativos catalogados que possuem origem, dependências ou transformações registradas.</p>
+<div class="formula">TALA = número de ativos com lineage associado / número total de ativos catalogados</div>
+<p>Essa métrica conecta o Módulo 9 ao módulo transversal de <a class="term" href="../conceitos/proveniencia.html">proveniência</a>, lineage e rastreabilidade.</p>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">11. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 9 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, regras de construção, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A9.1</td><td>Modelo Transversal de Metadados</td><td>Estrutura formal</td><td>ICM</td><td>Padroniza a descrição dos ativos</td></tr><tr><td>A9.2</td><td>Catálogo Unificado de Dados</td><td>Catálogo consultável</td><td>ICC</td><td>Apoia descoberta, governança e reuso</td></tr><tr><td>A9.3</td><td>Dicionário de Dados Consolidado</td><td>Tabela de atributos</td><td>PAD, IQS</td><td>Reduz ambiguidades estruturais e semânticas</td></tr><tr><td>A9.4</td><td>Glossário de Termos do Domínio</td><td>Vocabulário controlado</td><td>CG</td><td>Padroniza conceitos críticos</td></tr><tr><td>A9.5</td><td><a class="term" href="../artefatos/modelo-semantico.html">Modelo Semântico</a> de Dados</td><td>Grafo conceitual</td><td>IQS, TAS</td><td>Representa conceitos e relações</td></tr><tr><td>A9.6</td><td><a class="term" href="../artefatos/mapa-de-equivalencia-semantica.html">Mapa de Equivalência Semântica</a></td><td>Matriz ou tabela</td><td>TESV</td><td>Apoia harmonização entre fontes</td></tr><tr><td>A9.7</td><td>Ficha de Documentação de Ativo</td><td>Documento estruturado</td><td>ICM</td><td>Documenta ativos reutilizáveis</td></tr><tr><td>A9.8</td><td>Índice de Descoberta de Dados</td><td>Índice textual/semântico</td><td>TMD</td><td>Melhora localização e reuso</td></tr><tr><td>A9.9</td><td>Registro de Curadoria de Metadados</td><td>Tabela de revisão</td><td>AM, ICM</td><td>Controla atualização e revisão</td></tr><tr><td>A9.10</td><td><a class="term" href="../artefatos/relatorio-de-qualidade.html">Relatório de Qualidade</a> dos Metadados</td><td>Relatório técnico</td><td>ICM, IQS, TAS</td><td>Avalia a documentação produzida</td></tr></table></div>
+<h2 class="section-title" id="artefato-a9-1-modelo-transversal-de-metadados">12. Artefato A9.1 — Modelo Transversal de Metadados</h2>
+<h3 id="finalidade">12.1 Finalidade</h3>
+<p>O Modelo Transversal de Metadados define a estrutura mínima de informações que deve descrever os ativos produzidos ou utilizados no UnespDataLens-RM.</p>
+<p>Esse modelo deve ser capaz de representar diferentes tipos de ativos, como fontes, datasets brutos, datasets integrados, datasets tratados, data marts, atributos, features, indicadores, dashboards, APIs, relatórios e produtos de dados.</p>
+<h3 id="tipo-de-artefato-na-dsr">12.2 Tipo de artefato na DSR</h3>
+<p>Esse artefato é um modelo, pois formaliza a estrutura de descrição dos ativos, e também um constructo, pois define conceitos centrais utilizados pelo modelo de referência.</p>
+<h3 id="estrutura-formal">12.3 Estrutura formal</h3>
+<p>O conjunto de ativos catalogáveis pode ser representado como:</p>
+<div class="formula">A = {a₁, a₂, ..., aₙ}</div>
+<p>Cada ativo aᵢ pode ser descrito por:</p>
+<div class="formula">aᵢ = {id, nome, tipo, descrição, origem, responsável, domínio, formato, granularidade, periodicidade, versão, sensibilidade, restrição, qualidade, lineage, consumidores, tags, limitações}</div>
+<h3 id="campos-obrigatorios">12.4 Campos obrigatórios</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador</td><td>Código único do ativo</td></tr><tr><td>Nome</td><td>Nome oficial ou usual</td></tr><tr><td>Tipo</td><td>Fonte, dataset, atributo, feature, indicador, API, dashboard etc.</td></tr><tr><td>Descrição</td><td>Explicação sobre conteúdo ou finalidade</td></tr><tr><td>Origem</td><td>Fonte, módulo ou processo que gerou o ativo</td></tr><tr><td>Responsável</td><td>Pessoa, equipe, setor ou instituição responsável</td></tr><tr><td>Domínio</td><td>Área de aplicação</td></tr><tr><td>Formato</td><td>Estrutura técnica do ativo</td></tr><tr><td>Granularidade</td><td>Unidade de análise</td></tr><tr><td>Periodicidade</td><td>Frequência de atualização</td></tr><tr><td>Versão</td><td>Versão do ativo</td></tr><tr><td>Sensibilidade</td><td>Classificação de sensibilidade</td></tr><tr><td>Restrição de acesso</td><td>Política ou nível de acesso</td></tr><tr><td>Qualidade</td><td>Métricas ou status de qualidade</td></tr><tr><td>Lineage</td><td>Origem e dependências</td></tr><tr><td>Consumidores</td><td>Usuários, sistemas ou produtos que consomem o ativo</td></tr><tr><td>Tags</td><td>Palavras-chave</td></tr><tr><td>Limitações</td><td>Restrições ou cuidados de uso</td></tr></table></div>
+<h3 id="metricas-associadas">12.5 Métricas associadas</h3>
+<ul class="list">
+<li>Índice de Completude de Metadados;</li>
+<li>percentual de ativos com responsável;</li>
+<li>percentual de ativos com sensibilidade;</li>
+<li>percentual de ativos com qualidade documentada;</li>
+<li>percentual de ativos com lineage;</li>
+<li>percentual de ativos com descrição semântica.</li>
+</ul>
+<h3 id="criterios-de-validacao">12.6 Critérios de validação</h3>
+<p>O modelo é considerado válido quando permite descrever diferentes tipos de ativos de forma padronizada e suficiente para apoiar descoberta, governança, qualidade, reuso, rastreabilidade e interpretação.</p>
+<h3 id="contribuicao">12.7 Contribuição</h3>
+<p>Esse artefato fornece a base estrutural para a documentação transversal dos ativos do UnespDataLens-RM.</p>
+<h2 class="section-title" id="artefato-a9-2-catalogo-unificado-de-dados">13. Artefato A9.2 — Catálogo Unificado de Dados</h2>
+<h3 id="finalidade-2">13.1 Finalidade</h3>
+<p>O Catálogo Unificado de Dados organiza e disponibiliza os ativos do UnespDataLens-RM em uma estrutura consultável.</p>
+<p>Ele permite que usuários localizem fontes, atributos, datasets, indicadores, features, modelos, dashboards, APIs, relatórios e produtos de dados, compreendendo sua origem, significado, qualidade, restrições, versões, responsáveis e condições de uso.</p>
+<h3 id="tipo-de-artefato-na-dsr-2">13.2 Tipo de artefato na DSR</h3>
+<p>O catálogo é uma instanciação, quando implementado em ferramenta computacional, planilha estruturada, banco de dados, API ou interface web. Também é um modelo, pois organiza os ativos e seus metadados de forma sistemática.</p>
+<h3 id="estrutura-minima">13.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador do ativo</td><td>Código único</td></tr><tr><td>Nome do ativo</td><td>Nome do dado, tabela, dataset, feature ou produto</td></tr><tr><td>Tipo de ativo</td><td>Fonte, atributo, dataset, indicador, modelo, dashboard etc.</td></tr><tr><td>Descrição</td><td>Explicação do ativo</td></tr><tr><td>Domínio</td><td>Área ou tema relacionado</td></tr><tr><td>Responsável</td><td>Responsável pelo ativo</td></tr><tr><td>Origem</td><td>Fonte, módulo ou pipeline de origem</td></tr><tr><td>Versão</td><td>Versão atual</td></tr><tr><td>Status</td><td>Ativo, depreciado, em validação, em revisão</td></tr><tr><td>Sensibilidade</td><td>Classificação de sensibilidade</td></tr><tr><td>Restrição de acesso</td><td><a class="term" href="../artefatos/politica-de-acesso.html">Política de acesso</a></td></tr><tr><td>Qualidade</td><td>Resultado ou status de qualidade</td></tr><tr><td>Tags</td><td>Palavras-chave</td></tr><tr><td>Lineage</td><td>Origem e dependências</td></tr><tr><td>Data de atualização</td><td>Última atualização</td></tr><tr><td>Limitações</td><td>Cuidados e restrições de uso</td></tr></table></div>
+<h3 id="regras-de-construcao">13.4 Regras de construção</h3>
+<p>Todo ativo relevante produzido ou consumido pelo modelo de referência deve ser registrado no catálogo. Ativos sem metadados mínimos devem receber status de incompleto ou em validação. Ativos depreciados devem permanecer registrados com indicação de obsolescência para preservar rastreabilidade histórica.</p>
+<h3 id="metricas-associadas-2">13.5 Métricas associadas</h3>
+<ul class="list">
+<li>Índice de Cobertura do Catálogo;</li>
+<li>Índice de Completude de Metadados;</li>
+<li>percentual de ativos com tags;</li>
+<li>percentual de ativos com lineage;</li>
+<li>percentual de ativos com qualidade documentada;</li>
+<li>percentual de ativos com restrição de acesso definida.</li>
+</ul>
+<h3 id="criterios-de-validacao-2">13.6 Critérios de validação</h3>
+<p>O catálogo é considerado operacional quando possui cobertura satisfatória dos ativos principais, metadados obrigatórios preenchidos, responsáveis definidos, status dos ativos e capacidade de consulta.</p>
+<h3 id="contribuicao-2">13.7 Contribuição</h3>
+<p>O catálogo transforma ativos dispersos em recursos localizáveis, compreensíveis, reutilizáveis e governáveis.</p>
+<h2 class="section-title" id="artefato-a9-3-dicionario-de-dados-consolidado">14. Artefato A9.3 — Dicionário de Dados Consolidado</h2>
+<h3 id="finalidade-3">14.1 Finalidade</h3>
+<p>O Dicionário de Dados Consolidado documenta os atributos utilizados nos ativos de dados do modelo de referência, incorporando descrições refinadas, domínios de valores, tipos, regras de preenchimento, sensibilidade, exemplos, fontes de origem e relações com conceitos do glossário.</p>
+<h3 id="tipo-de-artefato-na-dsr-3">14.2 Tipo de artefato na DSR</h3>
+<p>Esse artefato é um modelo e uma instanciação, pois formaliza a descrição dos atributos e pode ser implementado em tabela, banco, catálogo ou ferramenta específica.</p>
+<h3 id="estrutura-formal-2">14.3 Estrutura formal</h3>
+<p>Considerando um conjunto de atributos:</p>
+<div class="formula">AT = {at₁, at₂, ..., atₘ}</div>
+<p>cada atributo atⱼ deve ser descrito por:</p>
+<div class="formula">atⱼ = {id, nome_técnico, nome_semântico, descrição, tipo, domínio, formato, obrigatoriedade, regra, sensibilidade, fonte, exemplo, termo_associado, limitações}</div>
+<h3 id="campos-obrigatorios-2">14.4 Campos obrigatórios</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador do atributo</td><td>Código único</td></tr><tr><td>Nome técnico</td><td>Nome físico no dataset</td></tr><tr><td>Nome semântico</td><td>Nome compreensível no domínio</td></tr><tr><td>Descrição</td><td>Significado do atributo</td></tr><tr><td>Tipo de dado</td><td>Texto, inteiro, decimal, data, booleano etc.</td></tr><tr><td>Domínio de valores</td><td>Valores permitidos ou categorias possíveis</td></tr><tr><td>Formato</td><td>Padrão esperado</td></tr><tr><td>Obrigatoriedade</td><td>Obrigatório ou opcional</td></tr><tr><td>Regra de preenchimento</td><td>Regra ou condição associada</td></tr><tr><td>Sensibilidade</td><td>Classificação do atributo</td></tr><tr><td>Fonte de origem</td><td>Fonte, tabela ou dataset de origem</td></tr><tr><td>Exemplo de valor</td><td>Exemplo ilustrativo</td></tr><tr><td>Termo do glossário</td><td>Conceito associado</td></tr><tr><td>Limitações</td><td>Cuidados de interpretação</td></tr></table></div>
+<h3 id="metricas-associadas-3">14.5 Métricas associadas</h3>
+<ul class="list">
+<li>percentual de atributos documentados;</li>
+<li>percentual de atributos com domínio definido;</li>
+<li>percentual de atributos com termo associado ao glossário;</li>
+<li>percentual de atributos com sensibilidade classificada;</li>
+<li>taxa de atributos ambíguos;</li>
+<li>índice de qualidade semântica dos atributos.</li>
+</ul>
+<h3 id="criterios-de-validacao-3">14.6 Critérios de validação</h3>
+<p>Um atributo é considerado adequadamente documentado quando possui nome, descrição, tipo, domínio, fonte, sensibilidade e, quando aplicável, regra de preenchimento e termo associado ao glossário.</p>
+<h3 id="contribuicao-3">14.7 Contribuição</h3>
+<p>Esse artefato reduz ambiguidades, melhora a <a class="term" href="../conceitos/interoperabilidade-semantica.html">interoperabilidade semântica</a> e apoia qualidade, transformação, integração, <a class="term" href="../conceitos/feature-engineering.html">feature engineering</a> e uso analítico dos dados.</p>
+<h2 class="section-title" id="artefato-a9-4-glossario-de-termos-do-dominio">15. Artefato A9.4 — Glossário de Termos do Domínio</h2>
+<h3 id="finalidade-4">15.1 Finalidade</h3>
+<p>O Glossário de Termos do Domínio define conceitos relevantes utilizados no projeto, estabelecendo vocabulário comum entre equipes técnicas, gestores, especialistas do domínio, pesquisadores e usuários dos dados.</p>
+<h3 id="tipo-de-artefato-na-dsr-4">15.2 Tipo de artefato na DSR</h3>
+<p>O glossário é um constructo, pois define conceitos fundamentais utilizados pelo modelo de referência e pelo domínio de aplicação.</p>
+<h3 id="estrutura-minima-2">15.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Termo</td><td>Palavra ou expressão definida</td></tr><tr><td>Definição</td><td>Explicação conceitual</td></tr><tr><td>Domínio</td><td>Área à qual o termo pertence</td></tr><tr><td>Sinônimos</td><td>Termos equivalentes ou próximos</td></tr><tr><td>Termos relacionados</td><td>Conceitos associados</td></tr><tr><td>Exemplo de uso</td><td>Situação concreta de aplicação</td></tr><tr><td>Fonte da definição</td><td>Documento, especialista ou regra institucional</td></tr><tr><td>Status</td><td>Validado, em revisão ou preliminar</td></tr><tr><td>Observações</td><td>Cuidados ou ambiguidades</td></tr></table></div>
+<h3 id="metricas-associadas-4">15.4 Métricas associadas</h3>
+<ul class="list">
+<li>cobertura do glossário;</li>
+<li>número de termos definidos;</li>
+<li>percentual de termos validados por especialista;</li>
+<li>número de termos ambíguos;</li>
+<li>número de sinônimos mapeados;</li>
+<li>taxa de conceitos sem definição.</li>
+</ul>
+<h3 id="criterios-de-validacao-4">15.5 Critérios de validação</h3>
+<p>Um termo é considerado validado quando possui definição clara, domínio associado, fonte da definição, exemplo de uso e, preferencialmente, validação por especialista.</p>
+<h3 id="contribuicao-4">15.6 Contribuição</h3>
+<p>O glossário reduz ambiguidades terminológicas e permite que atributos, indicadores e produtos de dados sejam interpretados de forma coerente.</p>
+<h2 class="section-title" id="artefato-a9-5-modelo-semantico-de-dados">16. Artefato A9.5 — Modelo Semântico de Dados</h2>
+<h3 id="finalidade-5">16.1 Finalidade</h3>
+<p>O Modelo Semântico de Dados representa conceitos, entidades, atributos, relações, regras de negócio e significados relevantes ao domínio do projeto.</p>
+<p>Ele atua como uma ponte entre a estrutura técnica dos dados e o significado analítico dos conceitos representados.</p>
+<h3 id="tipo-de-artefato-na-dsr-5">16.2 Tipo de artefato na DSR</h3>
+<p>Esse artefato é um modelo, pois representa relações conceituais e semânticas entre elementos do domínio.</p>
+<h3 id="estrutura-formal-3">16.3 Estrutura formal</h3>
+<p>O modelo semântico pode ser representado como um grafo:</p>
+<div class="formula">Gₛ = (C, R)</div>
+<p>em que:</p>
+<ul class="list">
+<li>C representa o conjunto de conceitos, entidades e atributos;</li>
+<li>R representa o conjunto de relações semânticas entre esses elementos.</li>
+</ul>
+<p>Cada relação pode indicar equivalência, especialização, composição, dependência, associação, hierarquia ou temporalidade.</p>
+<h3 id="exemplos-de-relacoes-semanticas">16.4 Exemplos de relações semânticas</h3>
+<div class="table-wrap"><table class="table"><tr><th>Relação</th><th>Exemplo</th></tr><tr><td>Equivalência</td><td>“aluno” equivalente a “estudante” em determinado contexto</td></tr><tr><td>Especialização</td><td>“evasão definitiva” como tipo de “evasão”</td></tr><tr><td>Composição</td><td>“curso” composto por “disciplinas”</td></tr><tr><td>Associação</td><td>“estudante” associado a “matrícula”</td></tr><tr><td>Hierarquia</td><td>“campus” pertence a “instituição”</td></tr><tr><td>Temporalidade</td><td>“situação acadêmica” varia ao longo do tempo</td></tr></table></div>
+<h3 id="metricas-associadas-5">16.5 Métricas associadas</h3>
+<ul class="list">
+<li>número de conceitos mapeados;</li>
+<li>número de relações semânticas;</li>
+<li>densidade do modelo semântico;</li>
+<li>percentual de atributos vinculados a conceitos;</li>
+<li>taxa de conceitos ambíguos;</li>
+<li>percentual de conceitos validados.</li>
+</ul>
+<h3 id="criterios-de-validacao-5">16.6 Critérios de validação</h3>
+<p>O modelo semântico é considerado válido quando representa conceitos críticos do domínio, explicita relações relevantes e reduz ambiguidades na interpretação dos dados.</p>
+<h3 id="contribuicao-5">16.7 Contribuição</h3>
+<p>Esse artefato apoia interoperabilidade semântica, integração, construção de indicadores, agentes inteligentes, explicabilidade e uso correto dos dados.</p>
+<h2 class="section-title" id="artefato-a9-6-mapa-de-equivalencia-semantica">17. Artefato A9.6 — Mapa de Equivalência Semântica</h2>
+<h3 id="finalidade-6">17.1 Finalidade</h3>
+<p>O Mapa de Equivalência Semântica registra correspondências entre atributos, categorias, códigos ou conceitos equivalentes, parcialmente equivalentes ou conflitantes presentes em diferentes fontes.</p>
+<h3 id="tipo-de-artefato-na-dsr-6">17.2 Tipo de artefato na DSR</h3>
+<p>Esse artefato é um modelo e um método, pois representa equivalências e orienta harmonizações entre fontes.</p>
+<h3 id="estrutura-minima-3">17.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Fonte A</td><td>Primeira fonte</td></tr><tr><td>Atributo ou conceito A</td><td>Elemento da primeira fonte</td></tr><tr><td>Fonte B</td><td>Segunda fonte</td></tr><tr><td>Atributo ou conceito B</td><td>Elemento da segunda fonte</td></tr><tr><td>Tipo de equivalência</td><td>Exata, parcial, aproximada, conflitante</td></tr><tr><td>Grau de confiança</td><td>Alto, médio ou baixo</td></tr><tr><td>Justificativa</td><td>Critério usado para indicar equivalência</td></tr><tr><td>Necessidade de transformação</td><td>Sim/não</td></tr><tr><td>Status</td><td>Validado, pendente, rejeitado</td></tr><tr><td>Observações</td><td>Limitações ou cuidados</td></tr></table></div>
+<h3 id="metricas-associadas-6">17.4 Métricas associadas</h3>
+<ul class="list">
+<li>número de equivalências identificadas;</li>
+<li>percentual de equivalências validadas;</li>
+<li>taxa de equivalência exata;</li>
+<li>taxa de equivalência parcial;</li>
+<li>taxa de conflitos semânticos;</li>
+<li><a class="term" href="../metricas/grau-medio.html">grau médio</a> de confiança das equivalências.</li>
+</ul>
+<h3 id="criterios-de-validacao-6">17.5 Critérios de validação</h3>
+<p>Uma equivalência é considerada validada quando possui justificativa documentada e, quando necessário, validação por especialista ou evidência técnica.</p>
+<h3 id="contribuicao-6">17.6 Contribuição</h3>
+<p>Esse artefato apoia integração, harmonização, transformação, interoperabilidade e redução de erros semânticos.</p>
+<h2 class="section-title" id="artefato-a9-7-ficha-de-documentacao-de-ativo">18. Artefato A9.7 — Ficha de Documentação de Ativo</h2>
+<h3 id="finalidade-7">18.1 Finalidade</h3>
+<p>A Ficha de Documentação de Ativo descreve, em formato sintético e padronizado, informações essenciais sobre um dataset, produto de dados, indicador, feature, dashboard, modelo analítico, API ou relatório.</p>
+<h3 id="tipo-de-artefato-na-dsr-7">18.2 Tipo de artefato na DSR</h3>
+<p>Esse artefato é uma instanciação e um modelo documental, pois padroniza a descrição de ativos reutilizáveis.</p>
+<h3 id="estrutura-minima-4">18.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Nome do ativo</td><td>Nome do dataset, indicador, API, dashboard ou produto</td></tr><tr><td>Tipo</td><td>Dataset, feature, indicador, dashboard, modelo, API etc.</td></tr><tr><td>Finalidade</td><td>Uso previsto</td></tr><tr><td>Origem</td><td>Fontes e pipelines associados</td></tr><tr><td>Responsável</td><td>Responsável técnico ou institucional</td></tr><tr><td>Versão</td><td>Versão atual</td></tr><tr><td>Data de criação</td><td>Data de geração</td></tr><tr><td>Data de atualização</td><td>Última atualização</td></tr><tr><td>Granularidade</td><td>Unidade de análise</td></tr><tr><td>Cobertura temporal</td><td>Período abrangido</td></tr><tr><td>Variáveis principais</td><td>Atributos ou features centrais</td></tr><tr><td>Métricas de qualidade</td><td>Indicadores de qualidade associados</td></tr><tr><td>Sensibilidade</td><td>Classificação de sensibilidade</td></tr><tr><td>Restrições de uso</td><td>Condições de acesso ou uso</td></tr><tr><td>Limitações</td><td>Restrições interpretativas</td></tr><tr><td>Lineage</td><td>Origem e transformações principais</td></tr><tr><td>Consumidores</td><td>Usuários, sistemas ou produtos consumidores</td></tr></table></div>
+<h3 id="metricas-associadas-7">18.4 Métricas associadas</h3>
+<ul class="list">
+<li>percentual de ativos com ficha;</li>
+<li>completude média das fichas;</li>
+<li>percentual de fichas atualizadas;</li>
+<li>percentual de fichas com lineage;</li>
+<li>percentual de fichas com qualidade documentada.</li>
+</ul>
+<h3 id="criterios-de-validacao-7">18.5 Critérios de validação</h3>
+<p>A ficha é considerada adequada quando permite que um usuário compreenda finalidade, origem, qualidade, restrições, limitações e condições de uso do ativo sem depender exclusivamente de conhecimento tácito.</p>
+<h3 id="contribuicao-7">18.6 Contribuição</h3>
+<p>Esse artefato apoia reutilização, transparência, documentação, governança, comunicação e transferência de conhecimento.</p>
+<h2 class="section-title" id="artefato-a9-8-indice-de-descoberta-de-dados">19. Artefato A9.8 — Índice de Descoberta de Dados</h2>
+<h3 id="finalidade-8">19.1 Finalidade</h3>
+<p>O Índice de Descoberta de Dados organiza mecanismos para localizar ativos no catálogo com base em palavras-chave, tags, conceitos, domínios, responsáveis, entidades, atributos, indicadores, restrições ou relações semânticas.</p>
+<h3 id="tipo-de-artefato-na-dsr-8">19.2 Tipo de artefato na DSR</h3>
+<p>Esse artefato é uma instanciação e um método, pois operacionaliza a descoberta de dados.</p>
+<h3 id="componentes">19.3 Componentes</h3>
+<ul class="list">
+<li>índice textual;</li>
+<li>tags;</li>
+<li>domínios;</li>
+<li>termos do glossário;</li>
+<li>entidades associadas;</li>
+<li>atributos relacionados;</li>
+<li>responsáveis;</li>
+<li>classificação de sensibilidade;</li>
+<li>status do ativo;</li>
+<li>data de atualização;</li>
+<li>relações com outros ativos;</li>
+<li>restrições de acesso;</li>
+<li>lineage associado;</li>
+<li>produtos consumidores.</li>
+</ul>
+<h3 id="metricas-associadas-8">19.4 Métricas associadas</h3>
+<ul class="list">
+<li>tempo médio para localizar um ativo;</li>
+<li>taxa de ativos encontrados por busca;</li>
+<li><a class="term" href="../metricas/precisao.html">precisão</a> da busca;</li>
+<li>taxa de reutilização de ativos;</li>
+<li>número de consultas realizadas;</li>
+<li>satisfação dos usuários.</li>
+</ul>
+<h3 id="contribuicao-8">19.5 Contribuição</h3>
+<p>Esse artefato reduz <a class="term" href="../problemas/sobrecarga-informacional.html">sobrecarga informacional</a>, melhora a descoberta de dados e apoia agentes inteligentes de consulta.</p>
+<h2 class="section-title" id="artefato-a9-9-registro-de-curadoria-de-metadados">20. Artefato A9.9 — Registro de Curadoria de Metadados</h2>
+<h3 id="finalidade-9">20.1 Finalidade</h3>
+<p>O Registro de Curadoria de Metadados documenta revisões, atualizações, correções e validações realizadas sobre os metadados dos ativos.</p>
+<h3 id="estrutura-minima-5">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Ativo cujos metadados foram revisados</td></tr><tr><td>Campo revisado</td><td>Metadado alterado</td></tr><tr><td>Valor anterior</td><td>Conteúdo antes da revisão</td></tr><tr><td>Valor atualizado</td><td>Conteúdo após a revisão</td></tr><tr><td>Motivo da alteração</td><td>Justificativa</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe responsável</td></tr><tr><td>Data da revisão</td><td>Momento da alteração</td></tr><tr><td>Status</td><td>Validado, pendente, em revisão</td></tr><tr><td>Evidência</td><td>Documento, fonte ou justificativa</td></tr></table></div>
+<h3 id="metricas-associadas-9">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>número de metadados revisados;</li>
+<li>percentual de ativos revisados;</li>
+<li>tempo médio desde a última atualização;</li>
+<li>percentual de revisões validadas;</li>
+<li>taxa de metadados desatualizados.</li>
+</ul>
+<h3 id="contribuicao-9">20.4 Contribuição</h3>
+<p>Esse artefato garante que o catálogo não se torne obsoleto, apoiando melhoria contínua, governança e confiabilidade da documentação.</p>
+<h2 class="section-title" id="artefato-a9-10-relatorio-de-qualidade-dos-metadados">21. Artefato A9.10 — Relatório de Qualidade dos Metadados</h2>
+<h3 id="finalidade-10">21.1 Finalidade</h3>
+<p>O Relatório de Qualidade dos Metadados avalia a condição documental e semântica dos metadados produzidos e mantidos pelo módulo.</p>
+<h3 id="estrutura-minima-6">21.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Escopo avaliado</td><td>Fontes, atributos, datasets, produtos ou catálogo completo</td></tr><tr><td>Cobertura do catálogo</td><td>Proporção de ativos catalogados</td></tr><tr><td>Completude dos metadados</td><td>Grau de preenchimento</td></tr><tr><td>Atualidade</td><td>Tempo desde última atualização</td></tr><tr><td>Ambiguidades</td><td>Elementos com significado incerto</td></tr><tr><td>Termos sem definição</td><td>Conceitos ausentes no glossário</td></tr><tr><td>Ativos sem responsável</td><td>Itens sem dono definido</td></tr><tr><td>Ativos sem qualidade</td><td>Itens sem métricas associadas</td></tr><tr><td>Ativos sem lineage</td><td>Itens sem origem/dependência</td></tr><tr><td>Recomendações</td><td>Ações de melhoria</td></tr></table></div>
+<h3 id="metricas-associadas-10">21.3 Métricas associadas</h3>
+<ul class="list">
+<li>ICM;</li>
+<li>ICC;</li>
+<li>IQS;</li>
+<li>TAS;</li>
+<li>TALA;</li>
+<li>cobertura do glossário;</li>
+<li>atualidade dos metadados.</li>
+</ul>
+<h3 id="contribuicao-10">21.4 Contribuição</h3>
+<p>Esse artefato permite avaliar a própria qualidade da documentação, evitando que o catálogo seja apenas uma coleção incompleta de descrições.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">22. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Inventários, datasets, manifestos, logs, regras, relatórios de qualidade, registros de vieses, estruturas de armazenamento, produtos de dados, dashboards, APIs e documentação institucional.</td></tr><tr><td>Processamento</td><td>Captura, consolidação, padronização, catalogação, enriquecimento semântico, construção de glossário, mapeamento de equivalências, curadoria e disponibilização dos metadados.</td></tr><tr><td>Artefatos</td><td>Modelo transversal de metadados, catálogo unificado, dicionário consolidado, glossário, modelo semântico, equivalências semânticas, fichas de ativos, índice de descoberta, curadoria e relatório de qualidade.</td></tr><tr><td>Métricas</td><td>ICM, ICC, PAD, PADS, PASD, PAQD, PALA, AM, CT, CG, TAS, TESV, IQS, TRA, TMD e UPC.</td></tr><tr><td>Saídas</td><td>Ativos documentados, catalogados, semanticamente descritos, localizáveis, governáveis, reutilizáveis e preparados para lineage, versionamento, monitoramento, auditoria e agentes inteligentes.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">23. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 9 pode ser considerado adequadamente implementado quando:</p>
+<ol class="steps">
+<li>os principais ativos produzidos pelo pipeline estão registrados no catálogo;</li>
+<li>os metadados obrigatórios dos ativos críticos estão preenchidos;</li>
+<li>fontes, datasets, atributos, indicadores, APIs, dashboards e produtos de dados possuem descrição mínima;</li>
+<li>responsáveis, versões, restrições de acesso e classificações de sensibilidade estão documentados;</li>
+<li>os principais termos do domínio estão definidos no glossário;</li>
+<li>os atributos críticos possuem significado, domínio e regra de uso documentados;</li>
+<li>equivalências semânticas relevantes entre fontes foram registradas;</li>
+<li>o catálogo pode ser consultado por usuários humanos ou sistemas;</li>
+<li>os ativos catalogados possuem relação com origem, versão, qualidade e lineage, quando aplicável;</li>
+<li>os metadados foram avaliados quanto à completude, atualidade e qualidade semântica;</li>
+<li>ambiguidades críticas foram identificadas e encaminhadas para curadoria;</li>
+<li>os metadados apoiam efetivamente governança, rastreabilidade, versionamento, monitoramento e agentes inteligentes.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-o-pipeline-principal">24. Relação com o pipeline principal</h2>
+<p>O Módulo 9 se relaciona com todos os módulos do pipeline principal do UnespDataLens-RM.</p>
+<p>Com o Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, recebe informações sobre fontes, responsáveis, formatos, periodicidade, granularidade, cobertura temporal, sensibilidade e restrições.</p>
+<p>Com o Módulo 2 — Extração, Ingestão e Armazenamento Bruto, registra metadados sobre origem, data de ingestão, logs, snapshots, formatos e parâmetros de execução.</p>
+<p>Com o Módulo 3 — Integração e Harmonização, incorpora regras de integração, chaves, entidades compartilhadas, equivalências semânticas, conflitos e datasets integrados.</p>
+<p>Com o Módulo 4 — Transformação, Limpeza e Enriquecimento, documenta regras de transformação, atributos derivados, fórmulas, parâmetros, impactos e datasets tratados.</p>
+<p>Com o Módulo 5 — Qualidade e Validação de Dados, incorpora métricas de qualidade, status de aprovação, não conformidades e histórico de validação.</p>
+<p>Com o Módulo 6 — Desbalanceamento, Vieses e Equidade, registra grupos, atributos sensíveis, métricas de <a class="term" href="../conceitos/fairness.html">fairness</a>, riscos residuais e limitações de uso.</p>
+<p>Com o Módulo 7 — Armazenamento Analítico, registra localização, estrutura, formato, schema, zona, versão e estado dos ativos armazenados.</p>
+<p>Com o Módulo 8 — Disponibilização e Consumo Analítico, registra produtos de dados, dashboards, APIs, consumidores, versões publicadas, formas de acesso e feedback de uso.</p>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-transversais">25. Relação com os demais módulos transversais</h2>
+<p>O Módulo 9 fornece base documental para os demais módulos transversais do UnespDataLens-RM.</p>
+<p>Para o módulo de Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e Conformidade, fornece informações sobre sensibilidade, restrições de acesso, responsáveis, finalidade de uso, qualidade e limitações dos ativos.</p>
+<p>Para o módulo de Proveniência, Lineage e Rastreabilidade, fornece identificadores, descrições, versões, relações entre ativos, fontes de origem e dependências.</p>
+<p>Para o módulo de Versionamento e Reprodutibilidade, fornece informações sobre versões, parâmetros, schemas, datasets, produtos e artefatos associados.</p>
+<p>Para o módulo de Representação Tabular, Temporal, Grafos e Grafos Temporais, fornece entidades, atributos, conceitos, relações e definições semânticas necessárias à modelagem.</p>
+<p>Para o módulo de Feature Engineering e <a class="term" href="../conceitos/feature-store.html">Feature Store</a>, fornece dicionários, definições, regras de cálculo, granularidade, origem e contexto das features.</p>
+<p>Para o módulo de Monitoramento, Drift e Evolução dos Ativos, fornece metadados de atualização, schemas, status, qualidade, versões e histórico dos ativos.</p>
+<p>Para o módulo de Agentes Inteligentes de Apoio ao Pipeline, fornece a base documental e semântica para busca, explicação, recomendação, validação, navegação e geração de respostas contextualizadas.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">26. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, o Módulo 9 pode organizar metadados sobre fontes como sistema acadêmico, ambiente virtual de aprendizagem, registros de matrícula, histórico escolar, notas, frequência, dados socioeconômicos, questionários, registros de evasão e atividades em plataformas digitais.</p>
+<p>O catálogo pode registrar ativos como:</p>
+<ul class="list">
+<li>base de matrículas por período letivo;</li>
+<li>histórico acadêmico;</li>
+<li>interações no AVA;</li>
+<li>indicadores de desempenho;</li>
+<li>features de permanência;</li>
+<li>base analítica de evasão;</li>
+<li>dashboard de evasão;</li>
+<li>API de indicadores educacionais;</li>
+<li>data mart de trajetória acadêmica.</li>
+</ul>
+<p>O dicionário consolidado pode documentar atributos como RA, curso, disciplina, turma, período letivo, nota final, frequência, situação acadêmica, forma de ingresso, escola de origem, renda familiar e participação em atividades.</p>
+<p>O glossário pode definir conceitos como estudante ativo, matrícula regular, trancamento, cancelamento, evasão, retenção, aprovação, reprovação, turma, curso, disciplina e período letivo.</p>
+<p>O modelo semântico pode representar relações como:</p>
+<ul class="list">
+<li>estudante realiza matrícula;</li>
+<li>estudante cursa disciplina;</li>
+<li>disciplina pertence a curso;</li>
+<li>estudante participa de turma;</li>
+<li>atividade pertence a ambiente virtual;</li>
+<li>evasão está associada à situação acadêmica;</li>
+<li>desempenho pode ser medido por nota, frequência e aprovação.</li>
+</ul>
+<p>Essa estrutura reduz ambiguidades e apoia a construção da UnespDataLens-RM como especialização educacional do UnespDataLens-RM.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">27. Exemplo de aplicação em políticas públicas</h2>
+<p>Em uma aplicação em políticas públicas, o Módulo 9 pode organizar metadados sobre fontes de saúde, educação, assistência social, território, habitação, trabalho, orçamento e atendimento ao cidadão.</p>
+<p>O catálogo pode registrar ativos como:</p>
+<ul class="list">
+<li>bases de famílias atendidas;</li>
+<li>indicadores territoriais;</li>
+<li>dados de equipamentos públicos;</li>
+<li>registros de atendimento;</li>
+<li>mapas de vulnerabilidade;</li>
+<li>painéis de gestão;</li>
+<li>datasets integrados por território;</li>
+<li>APIs de indicadores públicos;</li>
+<li>dashboards de cobertura de serviços.</li>
+</ul>
+<p>O glossário pode definir conceitos como família, território, vulnerabilidade, atendimento, benefício, equipamento público, unidade de saúde, escola, ocorrência, demanda reprimida e indicador social.</p>
+<p>O modelo semântico pode representar relações como:</p>
+<ul class="list">
+<li>cidadão pertence a família;</li>
+<li>família reside em território;</li>
+<li>território possui equipamentos públicos;</li>
+<li>atendimento ocorre em unidade;</li>
+<li>política pública atende população-alvo;</li>
+<li>indicador social descreve território.</li>
+</ul>
+<p>Esse modelo favorece a integração semântica entre secretarias, reduz duplicidades conceituais e apoia decisões baseadas em evidências.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">28. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição do Módulo 9 está em formalizar metadados, catálogo e semântica como componentes transversais da Engenharia Analítica de Dados.</p>
+<p>Em vez de tratar documentação como atividade secundária ou posterior ao processamento, o UnespDataLens-RM incorpora os metadados como artefatos centrais para descoberta, governança, qualidade, interoperabilidade, rastreabilidade, reprodutibilidade, explicabilidade, reutilização e apoio a agentes inteligentes.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>transformar conhecimento tácito sobre dados em conhecimento explícito;</li>
+<li>reduzir ambiguidades semânticas;</li>
+<li>padronizar conceitos e descrições;</li>
+<li>apoiar descoberta e reutilização de ativos;</li>
+<li>documentar qualidade, sensibilidade e restrições de uso;</li>
+<li>conectar dados a lineage, versionamento e governança;</li>
+<li>viabilizar consulta por usuários humanos e agentes inteligentes;</li>
+<li>fortalecer transparência, auditoria e reprodutibilidade;</li>
+<li>melhorar comunicação entre equipes técnicas, gestores e especialistas de domínio;</li>
+<li>sustentar a evolução contínua do ecossistema analítico.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">29. Síntese do módulo</h2>
+<p>O Módulo Transversal 9 — Metadados, Catálogo e Semântica dos Dados organiza o conhecimento sobre os dados no UnespDataLens-RM. Ele acompanha todo o pipeline principal, consolidando informações produzidas desde o inventário das fontes até a disponibilização dos produtos analíticos.</p>
+<p>Sua importância é transversal porque permite que os dados sejam compreendidos, localizados, interpretados, governados, rastreados, reutilizados e explicados. Ao documentar não apenas a estrutura técnica dos dados, mas também seu significado, origem, restrições, qualidade, versões, relações, consumidores e limitações, o módulo fortalece a confiabilidade, a transparência, a governança e a reprodutibilidade dos processos analíticos.</p>
+<p>Dessa forma, o Módulo 9 constitui uma contribuição central do UnespDataLens-RM, ao transformar metadados, catálogo e semântica em artefatos formais, avaliáveis e integrados ao ciclo completo de Engenharia Analítica de Dados.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Data Valuation refere-se ao processo de identificação, mensuração, interpretação e gestão do valor dos dados ao longo de seu ciclo de vida. Essa dimensão parte do pressuposto de que nem todos os dados possuem o mesmo valor analítico, operacional, estratégico, científico ou institucional.">
+  <title>Data Valuation · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a href="../modulos/index.html">Módulos</a><a class="active" href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="dimensao-complementar-data-valuation"></span><section class="hero">
+<span class="badge">Dimensão complementar</span>
+<h1>Data Valuation</h1>
+<p>Data Valuation refere-se ao processo de identificação, mensuração, interpretação e gestão do valor dos dados ao longo de seu ciclo de vida. Essa dimensão parte do pressuposto de que nem todos os dados possuem o mesmo valor analítico, operacional, estratégico, científico ou institucional.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 0 seções</summary></details><div class="prose module-full"><h3 id="definicao">1. Definição</h3>
+<p>Data Valuation refere-se ao processo de identificação, mensuração, interpretação e gestão do valor dos dados ao longo de seu ciclo de vida. Essa dimensão parte do pressuposto de que nem todos os dados possuem o mesmo valor analítico, operacional, estratégico, científico ou institucional. Em pipelines de dados, especialmente em contextos educacionais, o valor de um ativo de dados não depende apenas de sua existência ou volume, mas de sua capacidade de gerar conhecimento confiável, apoiar decisões, reduzir incertezas, melhorar modelos analíticos, orientar intervenções e produzir impacto mensurável para os atores envolvidos.</p>
+<p>No contexto do UnespDataLens-RM, a dimensão Data Valuation tem como objetivo estabelecer critérios para avaliar a relevância e a utilidade dos dados utilizados nos processos de extração, integração, transformação, modelagem, explicabilidade, governança e tomada de decisão. Essa avaliação permite distinguir dados críticos de dados redundantes, dados de alto valor de dados de baixo impacto, dados estratégicos de dados meramente operacionais e dados necessários de dados excessivos ou pouco justificáveis.</p>
+<p>Dessa forma, Data Valuation complementa dimensões como <a class="term" href="../conceitos/qualidade-de-dados.html">qualidade de dados</a>, observabilidade, minimização, governança, <a class="term" href="../conceitos/proveniencia.html">proveniência</a> e <a class="term" href="../conceitos/reprodutibilidade.html">reprodutibilidade</a>. Enquanto a qualidade de dados busca verificar se os dados são corretos, completos, consistentes e atualizados, a valoração de dados busca responder a uma questão adicional: qual é a contribuição efetiva desse dado para os objetivos analíticos, científicos, educacionais ou institucionais do pipeline?</p>
+<h3 id="objetivo-da-dimensao">2. Objetivo da dimensão</h3>
+<p>O objetivo da dimensão Data Valuation é fornecer mecanismos conceituais, metodológicos e operacionais para estimar o valor dos dados em função de sua utilidade, criticidade, impacto, custo, risco, reutilização e contribuição para a geração de conhecimento.</p>
+<p>Essa dimensão busca apoiar decisões como:</p>
+<ul class="list">
+<li>quais dados devem ser priorizados na coleta;</li>
+<li>quais fontes possuem maior valor analítico;</li>
+<li>quais atributos contribuem efetivamente para modelos preditivos ou explicativos;</li>
+<li>quais dados são essenciais para decisões educacionais;</li>
+<li>quais dados apresentam baixo valor e alto custo de manutenção;</li>
+<li>quais dados devem ser preservados, versionados ou descartados;</li>
+<li>quais ativos de dados justificam maior investimento em governança, qualidade e documentação.</li>
+</ul>
+<p>Assim, Data Valuation contribui para tornar o pipeline mais racional, sustentável, auditável e orientado a valor, evitando tanto a subutilização de dados relevantes quanto a manutenção indiscriminada de dados sem finalidade clara.</p>
+<h3 id="justificativa">3. Justificativa</h3>
+<p>Em projetos de <a class="term" href="../conceitos/ciencia-de-dados.html">Ciência de Dados</a>, Mineração de Dados Educacionais e Learning Analytics, é comum que grandes volumes de dados sejam coletados, armazenados e processados sem uma avaliação explícita de seu valor. Essa prática pode gerar aumento de complexidade, custos computacionais, riscos de <a class="term" href="../conceitos/privacidade.html">privacidade</a>, redundância, <a class="term" href="../problemas/baixa-governanca.html">baixa governança</a> e dificuldade de interpretação dos resultados.</p>
+<p>A ausência de uma dimensão de Data Valuation pode levar a problemas como:</p>
+<ul class="list">
+<li>coleta excessiva de dados sem justificativa analítica;</li>
+<li>manutenção de atributos irrelevantes para o objetivo do estudo;</li>
+<li>dependência de fontes com baixo impacto decisório;</li>
+<li>aumento desnecessário de custos de armazenamento e processamento;</li>
+<li>maior exposição a riscos éticos e legais;</li>
+<li>dificuldade de explicar por que determinados dados foram utilizados;</li>
+<li><a class="term" href="../problemas/baixa-rastreabilidade.html">baixa rastreabilidade</a> entre dados, modelos, métricas e decisões.</li>
+</ul>
+<p>No domínio educacional, essa questão é ainda mais sensível, pois os dados podem envolver informações acadêmicas, socioeconômicas, comportamentais e institucionais dos estudantes. Portanto, a valoração dos dados deve considerar não apenas sua contribuição estatística ou preditiva, mas também sua pertinência pedagógica, sua legitimidade institucional, seu potencial de apoio à decisão e seus riscos associados.</p>
+<p>Nesse sentido, Data Valuation atua como uma dimensão complementar essencial para evitar que o pipeline seja orientado apenas pela disponibilidade de dados. Em vez disso, propõe que os dados sejam avaliados por sua contribuição efetiva para a compreensão de fenômenos educacionais, para a melhoria de modelos analíticos e para o suporte a decisões responsáveis.</p>
+<h3 id="escopo-da-dimensao">4. Escopo da dimensão</h3>
+<p>A dimensão Data Valuation abrange a avaliação do valor dos dados em diferentes níveis do pipeline:</p>
+<h4 id="valor-da-fonte-de-dados">4.1 Valor da <a class="term" href="../conceitos/fonte-de-dados.html">fonte de dados</a></h4>
+<p>Avalia a relevância de cada fonte utilizada no pipeline, considerando sua cobertura, confiabilidade, <a class="term" href="../metricas/atualidade.html">atualidade</a>, <a class="term" href="../conceitos/granularidade.html">granularidade</a>, custo de obtenção, facilidade de integração e contribuição para os objetivos analíticos.</p>
+<p>Exemplos de fontes:</p>
+<ul class="list">
+<li>sistemas acadêmicos;</li>
+<li>ambientes virtuais de aprendizagem;</li>
+<li>questionários socioeconômicos;</li>
+<li>registros de matrícula;</li>
+<li>dados de desempenho;</li>
+<li>dados de frequência;</li>
+<li>dados administrativos;</li>
+<li>bases públicas;</li>
+<li><a class="term" href="../conceitos/dados-longitudinais.html">dados longitudinais</a>.</li>
+</ul>
+<h4 id="valor-do-atributo-ou-variavel">4.2 Valor do atributo ou variável</h4>
+<p>Avalia a contribuição de cada variável para análises, modelos, explicações ou decisões. Uma variável pode ter alto valor por ser fortemente associada ao fenômeno estudado, por melhorar o desempenho de um modelo, por favorecer a interpretação dos resultados ou por representar um fator educacionalmente relevante.</p>
+<p>Exemplos:</p>
+<ul class="list">
+<li>idade;</li>
+<li>renda familiar;</li>
+<li>desempenho em disciplinas iniciais;</li>
+<li>frequência;</li>
+<li>número de reprovações;</li>
+<li>tempo de acesso ao AVA;</li>
+<li>curso;</li>
+<li>modalidade;</li>
+<li>situação de matrícula.</li>
+</ul>
+<h4 id="valor-do-conjunto-de-dados">4.3 Valor do conjunto de dados</h4>
+<p>Avalia o valor do dataset como <a class="term" href="../conceitos/ativo-analitico.html">ativo analítico</a>, considerando <a class="term" href="../metricas/completude.html">completude</a>, representatividade, potencial de reutilização, documentação, histórico, granularidade, qualidade e aplicabilidade a diferentes problemas.</p>
+<h4 id="valor-do-dado-para-o-modelo">4.4 Valor do dado para o modelo</h4>
+<p>Analisa a contribuição dos dados para o desempenho, estabilidade, generalização, explicabilidade e robustez dos modelos analíticos.</p>
+<h4 id="valor-do-dado-para-a-decisao">4.5 Valor do dado para a decisão</h4>
+<p>Avalia se o dado contribui para apoiar decisões educacionais concretas, como identificação de estudantes em risco, planejamento de intervenções, revisão curricular, políticas de permanência, ações pedagógicas ou estratégias institucionais.</p>
+<h4 id="valor-do-dado-em-relacao-ao-risco">4.6 Valor do dado em relação ao risco</h4>
+<p>Considera se o valor analítico de um dado justifica seu custo, sensibilidade, risco de privacidade, risco de <a class="term" href="../conceitos/vies.html">viés</a>, risco de uso indevido ou esforço de governança.</p>
+<h3 id="componentes-da-dimensao-data-valuation">5. Componentes da dimensão Data Valuation</h3>
+<p>A dimensão pode ser organizada nos seguintes componentes:</p>
+<h4 id="criticidade">5.1 Criticidade</h4>
+<p>Indica o grau de importância do dado para o funcionamento do pipeline ou para a tomada de decisão. Dados críticos são aqueles cuja ausência, erro ou baixa qualidade compromete significativamente os resultados analíticos.</p>
+<h4 id="utilidade-analitica">5.2 Utilidade analítica</h4>
+<p>Representa a contribuição do dado para análises descritivas, diagnósticas, preditivas, prescritivas ou explicativas.</p>
+<h4 id="impacto-decisorio">5.3 Impacto decisório</h4>
+<p>Avalia se o dado contribui para decisões institucionais ou pedagógicas relevantes.</p>
+<h4 id="potencial-explicativo">5.4 Potencial explicativo</h4>
+<p>Indica se o dado ajuda a compreender os fatores associados a determinado fenômeno, como evasão, desempenho, retenção, engajamento ou permanência.</p>
+<h4 id="contribuicao-preditiva">5.5 Contribuição preditiva</h4>
+<p>Mensura a contribuição do dado para a melhoria do desempenho de modelos analíticos.</p>
+<h4 id="reutilizacao">5.6 Reutilização</h4>
+<p>Avalia se o dado pode ser reaproveitado em diferentes estudos, modelos, dashboards, relatórios ou processos institucionais.</p>
+<h4 id="custo-de-obtencao-e-manutencao">5.7 Custo de obtenção e manutenção</h4>
+<p>Considera o esforço técnico, operacional, computacional e institucional necessário para coletar, tratar, armazenar, atualizar e governar o dado.</p>
+<h4 id="risco-associado">5.8 Risco associado</h4>
+<p>Avalia riscos de privacidade, sensibilidade, discriminação, viés, exposição indevida, uso inadequado ou não <a class="term" href="../metricas/conformidade.html">conformidade</a> legal.</p>
+<h4 id="temporalidade-do-valor">5.9 Temporalidade do valor</h4>
+<p>Considera que o valor dos dados pode mudar ao longo do tempo. Dados altamente relevantes em determinado período podem perder valor analítico em outro contexto, especialmente quando ocorrem mudanças curriculares, institucionais, sociais ou tecnológicas.</p>
+<h3 id="relacao-com-outras-dimensoes-do-modelo">6. Relação com outras dimensões do modelo</h3>
+<p>A dimensão Data Valuation possui forte relação com outras dimensões complementares do UnespDataLens-RM.</p>
+<h4 id="relacao-com-data-quality">6.1 Relação com Data Quality</h4>
+<p>Dados de alto valor precisam ter qualidade suficiente para serem utilizados. Entretanto, um dado pode ter alta qualidade técnica e baixo valor analítico. Por exemplo, um atributo pode estar completo, correto e padronizado, mas não contribuir para os objetivos da análise.</p>
+<h4 id="relacao-com-data-minimization">6.2 Relação com <a class="term" href="../conceitos/data-minimization.html">Data Minimization</a></h4>
+<p>A valoração dos dados apoia a minimização, pois permite identificar quais dados são realmente necessários. Dados de baixo valor e alto risco devem ser questionados quanto à sua permanência no pipeline.</p>
+<h4 id="relacao-com-data-governance">6.3 Relação com Data Governance</h4>
+<p>A governança deve priorizar ativos de dados com maior valor estratégico, maior criticidade ou maior risco. Data Valuation ajuda a definir níveis diferenciados de controle, documentação, acesso e monitoramento.</p>
+<h4 id="relacao-com-proveniencia-e-linhagem">6.4 Relação com Proveniência e Linhagem</h4>
+<p>A valoração depende da capacidade de rastrear a origem, transformação e uso dos dados. Sem proveniência, torna-se difícil justificar o valor atribuído a uma fonte, variável ou dataset.</p>
+<h4 id="relacao-com-feature-engineering-e-feature-store">6.5 Relação com <a class="term" href="../conceitos/feature-engineering.html">Feature Engineering</a> e <a class="term" href="../conceitos/feature-store.html">Feature Store</a></h4>
+<p>A avaliação do valor das variáveis contribui para selecionar, documentar e reutilizar atributos relevantes em modelos analíticos.</p>
+<h4 id="relacao-com-data-observability">6.6 Relação com <a class="term" href="../conceitos/data-observability.html">Data Observability</a></h4>
+<p>A observabilidade permite monitorar se ativos de dados de alto valor continuam disponíveis, atualizados e confiáveis ao longo do tempo.</p>
+<h4 id="relacao-com-fairness-e-bias">6.7 Relação com <a class="term" href="../conceitos/fairness.html">Fairness</a> e Bias</h4>
+<p>Dados de alto valor preditivo podem apresentar riscos de viés ou discriminação. Portanto, a valoração não deve considerar apenas desempenho, mas também implicações éticas e sociais.</p>
+<h3 id="criterios-de-avaliacao-do-valor-dos-dados">7. Critérios de avaliação do valor dos dados</h3>
+<p>A avaliação do valor dos dados pode considerar os seguintes critérios:</p>
+<div class="table-wrap"><table class="table"><tr><th>Critério</th><th>Descrição</th><th>Pergunta orientadora</th></tr><tr><td>Relevância analítica</td><td>Grau de contribuição para os objetivos da análise</td><td>Este dado ajuda a responder ao problema investigado?</td></tr><tr><td>Contribuição preditiva</td><td>Impacto no desempenho dos modelos</td><td>A presença desse dado melhora a predição?</td></tr><tr><td>Potencial explicativo</td><td>Capacidade de apoiar interpretação</td><td>Este dado ajuda a explicar o fenômeno?</td></tr><tr><td>Utilidade decisória</td><td>Contribuição para decisões práticas</td><td>Este dado apoia alguma decisão concreta?</td></tr><tr><td>Criticidade</td><td>Impacto da ausência ou erro do dado</td><td>O pipeline é prejudicado sem esse dado?</td></tr><tr><td>Reutilização</td><td>Potencial de uso em outros processos</td><td>Este dado pode ser reaproveitado?</td></tr><tr><td>Custo</td><td>Esforço de coleta, tratamento e manutenção</td><td>O custo de manter esse dado é justificável?</td></tr><tr><td>Risco</td><td>Sensibilidade, privacidade ou viés</td><td>O uso desse dado pode gerar riscos?</td></tr><tr><td>Temporalidade</td><td>Manutenção do valor ao longo do tempo</td><td>Este dado continua relevante com o passar do tempo?</td></tr><tr><td>Governabilidade</td><td>Facilidade de controle e documentação</td><td>É possível governar esse dado adequadamente?</td></tr></table></div>
+<h3 id="metricas-associadas">8. Métricas associadas</h3>
+<p>A dimensão Data Valuation pode ser operacionalizada por meio de métricas quantitativas, qualitativas ou híbridas.</p>
+<h4 id="indice-de-valor-analitico-do-dado-ivad">8.1 Índice de Valor Analítico do Dado — IVAD</h4>
+<p>Representa o grau de contribuição de um dado para o objetivo analítico do pipeline.</p>
+<div class="formula">[ IVAD(d) = \frac{R_a(d) + U_d(d) + P_e(d) + C_p(d)}{4} ]</div>
+<p>Em que:</p>
+<ul class="list">
+<li>(R_a(d)) = relevância analítica do dado;</li>
+<li>(U_d(d)) = utilidade decisória;</li>
+<li>(P_e(d)) = potencial explicativo;</li>
+<li>(C_p(d)) = contribuição preditiva.</li>
+</ul>
+<p>Cada componente pode ser avaliado em escala de 0 a 1 ou de 1 a 5.</p>
+<h4 id="indice-de-custo-risco-do-dado-icrd">8.2 Índice de Custo-Risco do Dado — ICRD</h4>
+<p>Representa o custo e o risco associados ao uso de um dado.</p>
+<div class="formula">[ ICRD(d) = \frac{C_o(d) + R_p(d) + R_v(d) + E_g(d)}{4} ]</div>
+<p>Em que:</p>
+<ul class="list">
+<li>(C_o(d)) = custo operacional;</li>
+<li>(R_p(d)) = risco de privacidade;</li>
+<li>(R_v(d)) = risco de viés;</li>
+<li>(E_g(d)) = esforço de governança.</li>
+</ul>
+<h4 id="indice-de-valor-liquido-do-dado-ivld">8.3 Índice de Valor Líquido do Dado — IVLD</h4>
+<p>Representa a relação entre valor analítico e custo-risco.</p>
+<div class="formula">[ IVLD(d) = IVAD(d) - ICRD(d) ]</div>
+<p>Quanto maior o IVLD, maior a justificativa para uso e manutenção do dado no pipeline.</p>
+<h4 id="taxa-de-reutilizacao-do-dado-trd">8.4 Taxa de Reutilização do Dado — TRD</h4>
+<p>Mede a frequência com que um dado é reutilizado em diferentes análises, modelos ou produtos analíticos.</p>
+<div class="formula">[ TRD(d) = \frac{N_{usos}(d)}{N_{processos}} ]</div>
+<p>Em que:</p>
+<ul class="list">
+<li>(N_{usos}(d)) = número de processos em que o dado é utilizado;</li>
+<li>(N_{processos}) = número total de processos analíticos avaliados.</li>
+</ul>
+<h4 id="indice-de-criticidade-do-dado-icd">8.5 Índice de Criticidade do Dado — ICD</h4>
+<p>Mede o impacto da ausência ou degradação do dado no pipeline.</p>
+<div class="formula">[ ICD(d) = \frac{I_m(d) + I_d(d) + I_o(d)}{3} ]</div>
+<p>Em que:</p>
+<ul class="list">
+<li>(I_m(d)) = impacto no modelo;</li>
+<li>(I_d(d)) = impacto na decisão;</li>
+<li>(I_o(d)) = impacto operacional.</li>
+</ul>
+<h3 id="classificacao-dos-dados-por-valor">9. Classificação dos dados por valor</h3>
+<p>A partir dos critérios e métricas, os dados podem ser classificados em quatro categorias.</p>
+<h4 id="dados-de-alto-valor-estrategico">9.1 Dados de alto valor estratégico</h4>
+<p>São dados com alta relevância analítica, alto impacto decisório, forte potencial explicativo ou elevada contribuição para modelos. Devem ser priorizados em processos de qualidade, governança, documentação, <a class="term" href="../conceitos/versionamento.html">versionamento</a> e monitoramento.</p>
+<p>Exemplo: desempenho acadêmico inicial em estudos de evasão, quando comprovadamente associado ao abandono.</p>
+<h4 id="dados-de-valor-operacional">9.2 Dados de valor operacional</h4>
+<p>São dados necessários para funcionamento do pipeline, integração de bases, identificação de registros ou controle institucional, ainda que não tenham alta contribuição analítica direta.</p>
+<p>Exemplo: identificadores internos, códigos de curso, códigos de turma e datas de matrícula.</p>
+<h4 id="dados-de-valor-contextual">9.3 Dados de valor contextual</h4>
+<p>São dados que ajudam a interpretar resultados, segmentar análises ou contextualizar fenômenos, mas que isoladamente podem ter baixo poder preditivo.</p>
+<p>Exemplo: modalidade de ensino, turno, polo, ano de ingresso ou tipo de escola de origem.</p>
+<h4 id="dados-de-baixo-valor-ou-valor-questionavel">9.4 Dados de baixo valor ou valor questionável</h4>
+<p>São dados com pouca contribuição analítica, baixo uso, alto custo, alto risco ou ausência de justificativa clara. Devem ser revisados, descartados ou mantidos apenas mediante justificativa explícita.</p>
+<p>Exemplo: atributos coletados por disponibilidade, mas sem relação com os objetivos do estudo ou com decisões institucionais.</p>
+<h3 id="processo-de-aplicacao-da-dimensao">10. Processo de aplicação da dimensão</h3>
+<p>A aplicação da dimensão Data Valuation pode seguir o seguinte processo:</p>
+<h4 id="etapa-1-inventariar-os-ativos-de-dados">Etapa 1 — Inventariar os ativos de dados</h4>
+<p>Identificar fontes, datasets, tabelas, atributos, <a class="term" href="../conceitos/metadados.html">metadados</a>, variáveis derivadas e produtos analíticos utilizados no pipeline.</p>
+<h4 id="etapa-2-associar-dados-aos-objetivos-do-pipeline">Etapa 2 — Associar dados aos objetivos do pipeline</h4>
+<p>Relacionar cada dado aos objetivos analíticos, modelos, dashboards, decisões ou indicadores que ele apoia.</p>
+<h4 id="etapa-3-avaliar-valor-analitico-e-decisorio">Etapa 3 — Avaliar valor analítico e decisório</h4>
+<p>Mensurar ou qualificar a contribuição do dado para análise, explicação, predição, decisão e reutilização.</p>
+<h4 id="etapa-4-avaliar-custo-risco-e-governabilidade">Etapa 4 — Avaliar custo, risco e governabilidade</h4>
+<p>Identificar esforço de coleta e manutenção, riscos de privacidade, riscos de viés, sensibilidade e exigências de governança.</p>
+<h4 id="etapa-5-classificar-os-dados-por-valor">Etapa 5 — Classificar os dados por valor</h4>
+<p>Categorizar os dados em alto valor estratégico, valor operacional, valor contextual ou baixo valor.</p>
+<h4 id="etapa-6-definir-acoes-de-gestao">Etapa 6 — Definir ações de gestão</h4>
+<p>Decidir se o dado deve ser priorizado, documentado, monitorado, enriquecido, mantido, descartado, anonimizado, restringido ou revisado.</p>
+<h4 id="etapa-7-monitorar-a-evolucao-do-valor">Etapa 7 — Monitorar a evolução do valor</h4>
+<p>Reavaliar periodicamente o valor dos dados, considerando mudanças no contexto, nos modelos, nos objetivos institucionais e nas políticas educacionais.</p>
+<h3 id="artefatos-relacionados">11. Artefatos relacionados</h3>
+<div class="table-wrap"><table class="table"><tr><th>Artefato</th><th>Finalidade</th></tr><tr><td>Inventário de ativos de dados</td><td>Lista fontes, tabelas, atributos e datasets disponíveis</td></tr><tr><td>Matriz de valor dos dados</td><td>Relaciona cada dado a critérios de valor, custo e risco</td></tr><tr><td><a class="term" href="../conceitos/catalogo-de-dados.html">Catálogo de dados</a> valorados</td><td>Registra a classificação dos dados segundo seu valor</td></tr><tr><td>Relatório de criticidade</td><td>Identifica dados essenciais para o pipeline</td></tr><tr><td>Matriz dado-decisão</td><td>Relaciona dados às decisões educacionais apoiadas</td></tr><tr><td>Matriz dado-modelo</td><td>Relaciona dados aos modelos analíticos que os utilizam</td></tr><tr><td>Relatório de custo-risco</td><td>Documenta riscos, custos e exigências de governança</td></tr><tr><td>Plano de priorização de dados</td><td>Define quais ativos devem receber maior atenção</td></tr><tr><td>Histórico de reavaliação</td><td>Registra mudanças no valor dos dados ao longo do tempo</td></tr></table></div>
+<h3 id="exemplo-aplicado-ao-contexto-educacional">12. Exemplo aplicado ao contexto educacional</h3>
+<p>Em um estudo sobre evasão estudantil, diferentes dados podem apresentar valores distintos.</p>
+<p>O atributo “desempenho no primeiro semestre” pode ter alto valor analítico e preditivo, pois pode estar fortemente associado à evasão e contribuir para identificar estudantes em risco. Além disso, possui valor decisório, pois pode orientar ações de acompanhamento acadêmico.</p>
+<p>O atributo “renda familiar” pode ter valor contextual e explicativo, pois ajuda a compreender desigualdades e vulnerabilidades, mas também exige cuidado ético e governança adequada, por envolver informação sensível.</p>
+<p>O atributo “cor favorita do estudante”, caso eventualmente coletado, tende a ter baixo valor para o problema de evasão, pois dificilmente contribui para análise, predição, explicação ou decisão. Nesse caso, sua manutenção no pipeline seria questionável.</p>
+<p>Já o atributo “identificador do estudante” possui valor operacional, pois permite integração e rastreamento dos registros, mas deve ser protegido, anonimizado ou pseudonimizado em etapas analíticas.</p>
+<p>Esse exemplo mostra que a valoração dos dados não se limita à contribuição estatística. Ela envolve a relação entre utilidade, custo, risco, explicabilidade, governança e finalidade educacional.</p>
+<h3 id="riscos-e-desafios">13. Riscos e desafios</h3>
+<p>A implementação da dimensão Data Valuation apresenta alguns desafios:</p>
+<ul class="list">
+<li>dificuldade de mensurar valor de forma objetiva;</li>
+<li>dependência do contexto institucional;</li>
+<li>variação do valor dos dados ao longo do tempo;</li>
+<li>risco de supervalorizar dados com alto poder preditivo, mas baixo significado educacional;</li>
+<li>risco de subvalorizar dados contextuais importantes;</li>
+<li>conflito entre valor analítico e risco ético;</li>
+<li>necessidade de participação de especialistas de domínio;</li>
+<li>dificuldade de comparar dados de naturezas diferentes;</li>
+<li><a class="term" href="../problemas/ausencia-de-metadados.html">ausência de metadados</a> suficientes para avaliar valor;</li>
+<li>risco de decisões automatizadas baseadas em dados mal interpretados.</li>
+</ul>
+<p>Por isso, Data Valuation deve combinar critérios quantitativos e qualitativos, envolvendo tanto métricas computacionais quanto julgamento especializado.</p>
+<h3 id="boas-praticas">14. Boas práticas</h3>
+<p>A adoção da dimensão Data Valuation deve considerar as seguintes boas práticas:</p>
+<ol class="steps">
+<li>atribuir valor aos dados sempre em relação a um objetivo explícito;</li>
+<li>evitar considerar volume de dados como sinônimo de valor;</li>
+<li>documentar por que cada dado é utilizado;</li>
+<li>revisar periodicamente dados de baixo uso ou baixo impacto;</li>
+<li>avaliar conjuntamente valor, custo e risco;</li>
+<li>priorizar governança para dados críticos e sensíveis;</li>
+<li>envolver especialistas educacionais na interpretação do valor;</li>
+<li>distinguir valor preditivo de valor pedagógico;</li>
+<li>considerar a possibilidade de descarte ou minimização de dados sem finalidade clara;</li>
+<li>manter registro histórico das decisões de valoração.</li>
+</ol>
+<h3 id="contribuicao-para-o-unespdatalens-rm">15. Contribuição para o UnespDataLens-RM</h3>
+<p>A dimensão Data Valuation contribui para o UnespDataLens-RM ao introduzir uma perspectiva orientada a valor na gestão dos dados educacionais. Ela permite que o pipeline não seja avaliado apenas pela quantidade de dados processados ou pelo desempenho dos modelos, mas também pela relevância, utilidade, criticidade, explicabilidade, sustentabilidade e responsabilidade no uso dos dados.</p>
+<p>Ao incorporar Data Valuation, a arquitetura passa a oferecer suporte mais robusto para decisões como seleção de fontes, priorização de variáveis, descarte de dados redundantes, investimento em qualidade, definição de políticas de governança e justificativa do uso de dados sensíveis.</p>
+<p>Essa dimensão reforça o caráter técnico-metodológico do UnespDataLens-RM, pois transforma a gestão dos dados em um processo avaliável, documentado, rastreável e orientado à geração de valor educacional. Com isso, contribui para que os ativos de dados sejam tratados não apenas como insumos computacionais, mas como recursos estratégicos para a produção de conhecimento, a melhoria dos processos educacionais e o apoio à tomada de decisão baseada em evidências.</p>
+<h3 id="sintese-da-dimensao">16. Síntese da dimensão</h3>
+<p>A dimensão Data Valuation estabelece critérios para determinar o valor dos dados em um pipeline analítico educacional. Seu foco está em avaliar quanto cada fonte, atributo, dataset ou <a class="term" href="../conceitos/produto-de-dados.html">produto de dados</a> contribui para análise, predição, explicação, decisão, reutilização e impacto institucional, considerando simultaneamente custos, riscos e exigências de governança.</p>
+<p>Em síntese, essa dimensão responde às seguintes perguntas:</p>
+<ul class="list">
+<li>Este dado é necessário?</li>
+<li>Este dado contribui para o objetivo analítico?</li>
+<li>Este dado melhora a explicação ou a predição?</li>
+<li>Este dado apoia alguma decisão educacional?</li>
+<li>O valor desse dado justifica seu custo e seu risco?</li>
+<li>Este dado deve ser priorizado, mantido, monitorado, restringido ou descartado?</li>
+</ul>
+<p>Com isso, Data Valuation fortalece a capacidade do UnespDataLens-RM de produzir pipelines mais eficientes, responsáveis, sustentáveis e orientados à geração de valor.</p>
+<p>Essa dimensão ficou alinhada à lógica de artefatos metodológicos descrita no guia de DSR, especialmente na exigência de explicitar componentes, relações, procedimentos, critérios, entradas, saídas e mecanismos internos do artefato.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

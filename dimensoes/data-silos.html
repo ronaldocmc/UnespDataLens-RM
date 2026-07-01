@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A dimensão Data Silos, ou silos de dados, refere-se à condição em que dados relevantes para análise, gestão, pesquisa ou tomada de decisão permanecem isolados em sistemas, setores, equipes, bases, planilhas, plataformas ou repositórios distintos, sem integração adequada, sem interoperabilidade semântica, sem padronização técnica e sem mecanismos…">
+  <title>Data Silos · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a href="../modulos/index.html">Módulos</a><a class="active" href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="dimensao-complementar-data-silos"></span><section class="hero">
+<span class="badge">Dimensão complementar</span>
+<h1>Data Silos</h1>
+<p>A dimensão Data Silos, ou silos de dados, refere-se à condição em que dados relevantes para análise, gestão, pesquisa ou tomada de decisão permanecem isolados em sistemas, setores, equipes, bases, planilhas, plataformas ou repositórios distintos, sem integração adequada, sem interoperabilidade semântica, sem padronização técnica e sem mecanismos…</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 12 seções</summary><a href="#definicao-da-dimensao">Definição da dimensão</a><a href="#problema-tratado">Problema tratado</a><a href="#objetivo-da-dimensao">Objetivo da dimensão</a><a href="#relacao-com-o-unespdatalens-rm">Relação com o UnespDataLens-RM</a><a href="#estrategias-de-mitigacao">Estratégias de mitigação</a><a href="#metricas-associadas">Métricas associadas</a><a href="#artefatos-relacionados">Artefatos relacionados</a><a href="#criterios-de-validacao">Critérios de validação</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-para-o-modelo-de-referencia">Contribuição para o modelo de referência</a><a href="#sintese-da-dimensao">Síntese da dimensão</a></details><div class="prose module-full"><h2 class="section-title" id="definicao-da-dimensao">1. Definição da dimensão</h2>
+<p>A dimensão Data Silos, ou <a class="term" href="../problemas/silos-de-dados.html">silos de dados</a>, refere-se à condição em que dados relevantes para análise, gestão, pesquisa ou tomada de decisão permanecem isolados em sistemas, setores, equipes, bases, planilhas, plataformas ou repositórios distintos, sem integração adequada, sem <a class="term" href="../conceitos/interoperabilidade-semantica.html">interoperabilidade semântica</a>, sem padronização técnica e sem mecanismos consistentes de compartilhamento, governança e reutilização.</p>
+<p>No contexto do UnespDataLens-RM, os silos de dados representam uma das principais barreiras para a construção de ativos analíticos integrados, confiáveis e úteis à tomada de decisão baseada em evidências. Dados podem existir em diferentes sistemas institucionais, ambientes acadêmicos, plataformas administrativas, bases externas, arquivos locais, planilhas departamentais, dashboards isolados, repositórios de pesquisa ou bases públicas, mas sem articulação entre si.</p>
+<p>Essa fragmentação dificulta a compreensão ampla dos fenômenos analisados. Em muitos casos, cada fonte contém apenas uma parte da realidade: uma base registra matrícula, outra registra desempenho, outra registra frequência, outra registra interações, outra registra dados socioeconômicos e outra registra indicadores institucionais. Quando essas bases permanecem isoladas, torna-se difícil analisar trajetórias, padrões, relações, causas, riscos, desigualdades, impactos e oportunidades de intervenção.</p>
+<p>Assim, a dimensão Data Silos trata da necessidade de superar o isolamento dos dados por meio de inventário, integração, harmonização, interoperabilidade, <a class="term" href="../conceitos/metadados.html">metadados</a>, semântica, governança, lineage, armazenamento analítico e disponibilização controlada de ativos integrados.</p>
+<h2 class="section-title" id="problema-tratado">2. Problema tratado</h2>
+<p>Em ecossistemas analíticos complexos, os dados frequentemente são produzidos por diferentes sistemas e áreas organizacionais, cada uma com seus próprios formatos, regras, identificadores, periodicidades, definições, responsáveis, restrições e finalidades. Essa organização descentralizada pode ser necessária do ponto de vista operacional, mas tende a produzir fragmentação quando não há mecanismos adequados de integração e governança.</p>
+<p>Os silos de dados podem gerar problemas como:</p>
+<ul class="list">
+<li>dificuldade de localizar fontes relevantes;</li>
+<li>impossibilidade de cruzar dados de diferentes sistemas;</li>
+<li>duplicação de informações em bases distintas;</li>
+<li>divergência entre indicadores produzidos por diferentes áreas;</li>
+<li>ausência de visão integrada sobre estudantes, cidadãos, serviços, processos ou territórios;</li>
+<li>baixa interoperabilidade entre sistemas;</li>
+<li>uso de identificadores incompatíveis;</li>
+<li>ausência de chaves comuns para integração;</li>
+<li>diferença de <a class="term" href="../conceitos/granularidade.html">granularidade</a> entre bases;</li>
+<li>dificuldade de harmonizar conceitos e categorias;</li>
+<li>dependência de extrações manuais e planilhas paralelas;</li>
+<li><a class="term" href="../problemas/baixa-rastreabilidade.html">baixa rastreabilidade</a> da origem dos dados;</li>
+<li>aumento de <a class="term" href="../problemas/inconsistencias.html">inconsistências</a> e retrabalho;</li>
+<li>perda de qualidade analítica;</li>
+<li>enfraquecimento da governança institucional dos dados.</li>
+</ul>
+<p>No UnespDataLens-RM, os silos de dados são tratados como uma dimensão complementar porque o modelo de referência busca exatamente transformar dados dispersos e heterogêneos em ativos analíticos integrados, documentados, governados e reutilizáveis. A superação dos silos não significa centralizar tudo de forma indiscriminada, mas criar condições técnicas, semânticas e institucionais para que os dados possam ser conectados, compreendidos, governados e utilizados de forma adequada.</p>
+<h2 class="section-title" id="objetivo-da-dimensao">3. Objetivo da dimensão</h2>
+<p>O objetivo da dimensão Data Silos é reduzir o isolamento técnico, semântico, organizacional e operacional dos dados, promovendo integração, interoperabilidade, compartilhamento controlado, harmonização conceitual, <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a> e governança entre fontes, sistemas, áreas e produtos analíticos.</p>
+<p>Essa dimensão busca garantir que os dados do ecossistema UnespDataLens-RM possam ser articulados em uma visão analítica mais ampla, permitindo análises integradas, indicadores consistentes, produtos de dados reutilizáveis e decisões baseadas em evidências mais completas.</p>
+<h2 class="section-title" id="relacao-com-o-unespdatalens-rm">4. Relação com o UnespDataLens-RM</h2>
+<p>A dimensão Data Silos se articula diretamente com diversos módulos do UnespDataLens-RM.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, os silos são inicialmente identificados por meio do mapeamento das fontes, sistemas, responsáveis, formatos, periodicidades, granularidades, restrições e limitações conhecidas.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, os dados isolados são trazidos para um ambiente controlado, preservando sua forma original e sua <a class="term" href="../conceitos/proveniencia.html">proveniência</a>.</p>
+<p>No Módulo 3 — Integração e Harmonização, ocorre o enfrentamento mais direto dos silos, por meio da identificação de chaves, entidades comuns, regras de relacionamento, compatibilidade de granularidade, equivalências semânticas e resolução de conflitos.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, os dados oriundos de silos distintos são padronizados, limpos e enriquecidos para permitir uso conjunto.</p>
+<p>No Módulo 5 — Qualidade e Validação de Dados, são avaliadas inconsistências produzidas pela integração de fontes isoladas, como duplicidades, divergências, valores ausentes e conflitos de domínio.</p>
+<p>No Módulo 7 — Armazenamento Analítico, os dados integrados são organizados em estruturas persistentes, como datasets curados, data marts, views, lakehouses ou repositórios analíticos.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, os ativos integrados são disponibilizados como produtos de dados, dashboards, APIs, relatórios ou bases analíticas para consumo controlado.</p>
+<p>No Módulo 9 — Metadados, Catálogo e Semântica dos Dados, a redução de silos é apoiada pela documentação de fontes, atributos, conceitos, equivalências semânticas e relações entre ativos.</p>
+<p>No Módulo 10 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, são definidos critérios para compartilhamento controlado entre áreas, respeitando sensibilidade, finalidade, permissão e base institucional.</p>
+<p>No Módulo 11 — Proveniência, Linhagem e Rastreabilidade, registra-se como dados provenientes de silos distintos foram combinados, transformados e utilizados.</p>
+<p>No Módulo 13 — Representações Analíticas, dados antes isolados podem ser reorganizados em representações tabulares, temporais e em grafos, permitindo análises integradas de entidades e relações.</p>
+<p>No Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline, agentes podem auxiliar usuários a descobrir fontes relacionadas, compreender equivalências, identificar produtos integrados e sugerir conexões entre ativos.</p>
+<h2 class="section-title" id="estrategias-de-mitigacao">5. Estratégias de mitigação</h2>
+<p>A mitigação de silos de dados no UnespDataLens-RM pode envolver estratégias técnicas, semânticas, organizacionais e de governança.</p>
+<div class="table-wrap"><table class="table"><tr><th>Estratégia</th><th>Descrição</th></tr><tr><td><a class="term" href="../artefatos/inventario-de-fontes.html">Inventário de fontes</a></td><td>Mapear sistemas, bases, planilhas, APIs, repositórios e responsáveis pelos dados.</td></tr><tr><td>Mapeamento de entidades comuns</td><td>Identificar entidades compartilhadas entre fontes, como estudante, curso, município, território, cidadão, atendimento ou serviço.</td></tr><tr><td>Definição de chaves de integração</td><td>Estabelecer identificadores, chaves compostas ou regras de correspondência entre bases.</td></tr><tr><td>Harmonização semântica</td><td>Resolver diferenças conceituais entre termos, categorias, códigos e definições.</td></tr><tr><td>Padronização técnica</td><td>Compatibilizar formatos, tipos, domínios, codificações, datas e unidades de medida.</td></tr><tr><td>Integração controlada</td><td>Combinar fontes com registro de regras, conflitos, limitações e qualidade da integração.</td></tr><tr><td>Catálogo unificado</td><td>Registrar fontes e ativos em catálogo comum, permitindo descoberta e reutilização.</td></tr><tr><td>Governança de compartilhamento</td><td>Definir regras de acesso, finalidade, responsabilidade e restrições para uso entre áreas.</td></tr><tr><td>Modelos semânticos comuns</td><td>Criar vocabulários, glossários, ontologias leves ou modelos conceituais compartilhados.</td></tr><tr><td>APIs e produtos de dados integrados</td><td>Disponibilizar ativos integrados de forma controlada e reutilizável.</td></tr><tr><td>Data marts por domínio</td><td>Organizar dados integrados em estruturas analíticas orientadas a temas ou áreas.</td></tr><tr><td>Lineage entre fontes e produtos</td><td>Registrar como fontes isoladas foram combinadas para produzir ativos integrados.</td></tr></table></div>
+<h2 class="section-title" id="metricas-associadas">6. Métricas associadas</h2>
+<p>A dimensão Data Silos pode ser avaliada por métricas relacionadas à integração, interoperabilidade, compartilhamento, redundância e cobertura das fontes.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Número de fontes isoladas identificadas</td><td>NFII</td><td>Quantidade de fontes relevantes ainda não integradas ou catalogadas.</td></tr><tr><td>Taxa de fontes catalogadas</td><td>TFC</td><td>Proporção de fontes registradas em catálogo comum.</td></tr><tr><td>Taxa de fontes integradas</td><td>TFI</td><td>Proporção de fontes integradas ao ambiente analítico.</td></tr><tr><td>Taxa de entidades com chave comum</td><td>TECC</td><td>Proporção de entidades que possuem identificador ou regra de correspondência.</td></tr><tr><td>Taxa de atributos harmonizados</td><td>TAH</td><td>Proporção de atributos equivalentes harmonizados entre fontes.</td></tr><tr><td>Taxa de conflitos semânticos resolvidos</td><td>TCSR</td><td>Proporção de conflitos conceituais tratados.</td></tr><tr><td>Taxa de ativos integrados reutilizados</td><td>TAIR</td><td>Proporção de ativos integrados usados em mais de um produto ou análise.</td></tr><tr><td>Taxa de redundância entre silos</td><td>TRS</td><td>Proporção de informações duplicadas em fontes distintas.</td></tr><tr><td>Índice de interoperabilidade analítica</td><td>IIA</td><td>Grau em que fontes podem ser combinadas para análise.</td></tr><tr><td>Índice de redução de silos</td><td>IRS</td><td>Indicador composto de catalogação, integração, harmonização e reuso.</td></tr></table></div>
+<p>Uma formulação possível para o Índice de Redução de Silos é:</p>
+<div class="formula">IRS = w₁TFC + w₂TFI + w₃TECC + w₄TAH + w₅TAIR − w₆TRS</div>
+<p>em que:</p>
+<ul class="list">
+<li>TFC representa a taxa de fontes catalogadas;</li>
+<li>TFI representa a taxa de fontes integradas;</li>
+<li>TECC representa a taxa de entidades com chave comum;</li>
+<li>TAH representa a taxa de atributos harmonizados;</li>
+<li>TAIR representa a taxa de ativos integrados reutilizados;</li>
+<li>TRS representa a taxa de redundância entre silos;</li>
+<li>wᵢ representa o peso atribuído a cada dimensão.</li>
+</ul>
+<p>Quanto maior o IRS, maior o grau de superação dos silos no ecossistema analítico.</p>
+<h2 class="section-title" id="artefatos-relacionados">7. Artefatos relacionados</h2>
+<p>A dimensão Data Silos pode ser operacionalizada por meio de artefatos complementares, articulados aos módulos de inventário, integração, catálogo, governança e linhagem.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Finalidade</th></tr><tr><td>DS1</td><td>Mapa de Silos de Dados</td><td>Identificar fontes, sistemas, áreas e bases isoladas.</td></tr><tr><td>DS2</td><td>Matriz de Fontes por Domínio</td><td>Relacionar fontes a áreas, temas, entidades e finalidades.</td></tr><tr><td>DS3</td><td>Mapa de Entidades Compartilhadas</td><td>Identificar entidades comuns entre diferentes fontes.</td></tr><tr><td>DS4</td><td>Matriz de Chaves de Integração</td><td>Registrar chaves, identificadores e regras de correspondência.</td></tr><tr><td>DS5</td><td><a class="term" href="../artefatos/mapa-de-equivalencia-semantica.html">Mapa de Equivalência Semântica</a></td><td>Harmonizar termos, atributos, categorias e conceitos.</td></tr><tr><td>DS6</td><td>Registro de Conflitos entre Fontes</td><td>Documentar divergências técnicas, semânticas e operacionais.</td></tr><tr><td>DS7</td><td><a class="term" href="../artefatos/plano-de-integracao.html">Plano de Integração</a> entre Silos</td><td>Definir prioridade, regras, riscos e estratégia de integração.</td></tr><tr><td>DS8</td><td>Catálogo Unificado de Fontes</td><td>Disponibilizar visão integrada das fontes existentes.</td></tr><tr><td>DS9</td><td>Relatório de Interoperabilidade</td><td>Avaliar capacidade de combinação entre fontes.</td></tr><tr><td>DS10</td><td>Registro de Ativos Integrados</td><td>Documentar datasets, data marts ou produtos resultantes da integração.</td></tr></table></div>
+<h2 class="section-title" id="criterios-de-validacao">8. Critérios de validação</h2>
+<p>A dimensão Data Silos pode ser considerada adequadamente tratada quando:</p>
+<ol class="steps">
+<li>as principais fontes isoladas foram identificadas;</li>
+<li>os responsáveis por cada fonte estão documentados;</li>
+<li>as fontes relevantes estão catalogadas;</li>
+<li>entidades comuns entre fontes foram mapeadas;</li>
+<li>chaves de integração foram definidas ou justificadas como inexistentes;</li>
+<li>conflitos técnicos e semânticos foram registrados;</li>
+<li>atributos equivalentes foram harmonizados;</li>
+<li>restrições de acesso e compartilhamento foram documentadas;</li>
+<li>ativos integrados foram produzidos com lineage registrado;</li>
+<li>produtos analíticos integrados são reutilizados por diferentes análises ou usuários;</li>
+<li>redundâncias entre bases foram identificadas e reduzidas;</li>
+<li>usuários conseguem localizar fontes relacionadas a um mesmo domínio ou fenômeno;</li>
+<li>a integração de fontes respeita regras de governança, segurança e privacidade;</li>
+<li>a visão analítica integrada melhora a compreensão do fenômeno estudado.</li>
+</ol>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">9. Exemplo de aplicação no domínio educacional</h2>
+<p>Em um projeto educacional, os dados de interesse podem estar distribuídos em diferentes silos: sistema acadêmico, ambiente virtual de aprendizagem, questionários socioeconômicos, registros de bolsas, histórico escolar, frequência, biblioteca, sistemas de apoio pedagógico e bases institucionais externas.</p>
+<p>Cada sistema pode utilizar identificadores, formatos, períodos e conceitos próprios. A situação acadêmica de um estudante pode estar em uma base, seu desempenho em outra, suas interações no AVA em outra e seu perfil socioeconômico em outra. Se essas fontes permanecem isoladas, análises sobre evasão, permanência, desempenho ou engajamento ficam incompletas.</p>
+<p>A dimensão Data Silos permite mapear essas fontes, identificar entidades comuns, definir chaves de integração, harmonizar conceitos como matrícula, evasão, trancamento, aprovação e reprovação, produzir datasets integrados e disponibilizar produtos analíticos que representem a trajetória educacional de forma mais completa.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">10. Exemplo de aplicação em políticas públicas</h2>
+<p>Em políticas públicas, os silos de dados são recorrentes porque diferentes secretarias e órgãos mantêm bases próprias sobre saúde, educação, assistência social, habitação, trabalho, território, orçamento, atendimento e infraestrutura.</p>
+<p>Uma família em situação de vulnerabilidade pode aparecer em bases distintas, como cadastro social, atendimento de saúde, matrícula escolar, programas habitacionais e benefícios públicos. Se essas bases não forem integradas ou, ao menos, interoperáveis, o gestor terá uma visão fragmentada da realidade.</p>
+<p>A dimensão Data Silos permite mapear fontes por secretaria, identificar entidades comuns, harmonizar conceitos territoriais, compatibilizar períodos, documentar restrições de acesso e criar produtos integrados que apoiem análise intersetorial, priorização de ações e avaliação de políticas públicas.</p>
+<h2 class="section-title" id="contribuicao-para-o-modelo-de-referencia">11. Contribuição para o modelo de referência</h2>
+<p>A dimensão Data Silos contribui para o UnespDataLens-RM ao reconhecer que a fragmentação dos dados é uma barreira central para análises robustas, integradas e confiáveis.</p>
+<p>Essa dimensão fortalece o modelo de referência ao:</p>
+<ul class="list">
+<li>tornar visíveis fontes antes isoladas;</li>
+<li>reduzir fragmentação informacional;</li>
+<li>apoiar integração entre sistemas e áreas;</li>
+<li>melhorar interoperabilidade técnica e semântica;</li>
+<li>reduzir duplicidades e divergências entre bases;</li>
+<li>permitir visão analítica mais completa dos fenômenos;</li>
+<li>apoiar governança do compartilhamento de dados;</li>
+<li>preservar rastreabilidade entre fontes e produtos integrados;</li>
+<li>fortalecer o catálogo como ponto comum de descoberta;</li>
+<li>permitir análises interdisciplinares, intersetoriais e longitudinais;</li>
+<li>ampliar a reutilização de ativos integrados;</li>
+<li>reduzir dependência de planilhas e extrações manuais.</li>
+</ul>
+<h2 class="section-title" id="sintese-da-dimensao">12. Síntese da dimensão</h2>
+<p>A dimensão Data Silos trata do isolamento de dados em sistemas, áreas, bases, planilhas, plataformas ou repositórios distintos, sem integração técnica, semântica e governada. No UnespDataLens-RM, essa dimensão atua como capacidade complementar para transformar fontes dispersas em ativos analíticos integrados, documentados, rastreáveis, interoperáveis e reutilizáveis.</p>
+<p>Ao incorporar estratégias de inventário, integração, harmonização, catálogo unificado, governança de compartilhamento, lineage e produtos de dados integrados, o modelo de referência reduz a fragmentação informacional e amplia a capacidade de análise e tomada de decisão baseada em evidências.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

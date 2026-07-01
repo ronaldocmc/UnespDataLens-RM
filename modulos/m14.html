@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo Transversal 14 — Feature Engineering e Feature Store tem como finalidade especificar, construir, documentar, validar, armazenar, versionar, reutilizar e monitorar atributos analíticos, também denominados features, produzidos a partir dos dados processados no modelo de referência UnespDataLens-RM.">
+  <title>Módulo 14 — Feature Engineering e Feature Store · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-transversal-14-feature-engineering-e-feature-store"></span><section class="hero">
+<span class="badge">Módulo 14</span>
+<h1>Módulo 14 — Feature Engineering e Feature Store</h1>
+<p>O Módulo Transversal 14 — Feature Engineering e Feature Store tem como finalidade especificar, construir, documentar, validar, armazenar, versionar, reutilizar e monitorar atributos analíticos, também denominados features, produzidos a partir dos dados processados no modelo de referência UnespDataLens-RM.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 29 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#natureza-transversal-do-modulo">Natureza transversal do módulo</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-algoritmos-aplicaveis">Técnicas, métodos e algoritmos aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a14-1-plano-de-feature-engineering">Artefato A14.1 — Plano de Feature Engineering</a><a href="#artefato-a14-2-catalogo-de-features">Artefato A14.2 — Catálogo de Features</a><a href="#artefato-a14-3-registro-de-regras-de-calculo-de-features">Artefato A14.3 — Registro de Regras de Cálculo de Features</a><a href="#artefato-a14-4-matriz-de-features">Artefato A14.4 — Matriz de Features</a><a href="#artefato-a14-5-registro-de-features-temporais">Artefato A14.5 — Registro de Features Temporais</a><a href="#artefato-a14-6-registro-de-features-relacionais-e-de-grafos">Artefato A14.6 — Registro de Features Relacionais e de Grafos</a><a href="#artefato-a14-7-relatorio-de-qualidade-das-features">Artefato A14.7 — Relatório de Qualidade das Features</a><a href="#artefato-a14-8-registro-de-vazamento-e-riscos-de-feature">Artefato A14.8 — Registro de Vazamento e Riscos de Feature</a><a href="#artefato-a14-9-feature-store">Artefato A14.9 — Feature Store</a><a href="#artefato-a14-10-manifesto-de-feature-set">Artefato A14.10 — Manifesto de Feature Set</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-o-pipeline-principal">Relação com o pipeline principal</a><a href="#relacao-com-os-demais-modulos-transversais">Relação com os demais módulos transversais</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo Transversal 14 — <a class="term" href="../conceitos/feature-engineering.html">Feature Engineering</a> e <a class="term" href="../conceitos/feature-store.html">Feature Store</a> tem como finalidade especificar, construir, documentar, validar, armazenar, versionar, reutilizar e monitorar atributos analíticos, também denominados features, produzidos a partir dos dados processados no modelo de referência UnespDataLens-RM.</p>
+<p>Esse módulo atua de forma transversal porque a criação de features pode ocorrer em diferentes momentos do ciclo de dados. As features podem ser derivadas de fontes originais, dados integrados, dados tratados, dados validados, representações tabulares, <a class="term" href="../conceitos/series-temporais.html">séries temporais</a>, grafos, indicadores, data marts, produtos de dados ou registros de consumo. Portanto, o módulo não pertence apenas a uma etapa linear do pipeline, mas se conecta a praticamente todos os módulos do UnespDataLens-RM.</p>
+<p>No contexto da Engenharia Analítica de Dados, feature engineering corresponde ao processo de transformar dados disponíveis em atributos mais informativos, úteis e adequados para análises, modelos preditivos, indicadores, dashboards, sistemas de recomendação, análise de risco, agrupamentos, explicabilidade, tomada de decisão e agentes inteligentes. Esse processo envolve selecionar, construir, combinar, transformar, agregar, normalizar, codificar, temporalizar, contextualizar ou representar variáveis de modo que elas capturem melhor o fenômeno investigado.</p>
+<p>A feature store, por sua vez, corresponde a uma estrutura organizada para armazenar, documentar, versionar, controlar, reutilizar e disponibilizar features de forma consistente. Ela permite que atributos criados em um projeto não fiquem dispersos em scripts, notebooks, planilhas ou pipelines isolados, mas sejam tratados como ativos analíticos reutilizáveis, governados, rastreáveis e monitoráveis.</p>
+<p>No UnespDataLens-RM, esse módulo é essencial porque grande parte do valor analítico dos dados depende da qualidade das features construídas. Um modelo preditivo, um painel de indicadores ou uma análise exploratória podem ser fortemente influenciados por como as variáveis foram definidas, calculadas, agregadas, temporalizadas e disponibilizadas. Features mal definidas, sem documentação, sem <a class="term" href="../conceitos/versionamento.html">versionamento</a> ou sem controle de qualidade podem comprometer resultados, gerar vieses, dificultar <a class="term" href="../conceitos/reprodutibilidade.html">reprodutibilidade</a> e reduzir confiança nos produtos analíticos.</p>
+<p>Assim, o Módulo 14 formaliza feature engineering e feature store como componentes transversais da Engenharia Analítica de Dados, garantindo que atributos analíticos sejam produzidos, avaliados e reutilizados de forma sistemática, documentada, rastreável e adequada ao uso.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 14 é formalizar o processo de criação, documentação, validação, armazenamento, versionamento, reutilização e monitoramento de features no UnespDataLens-RM, garantindo que atributos analíticos sejam semanticamente coerentes, tecnicamente corretos, rastreáveis, governados, reprodutíveis e adequados para análises, modelos, dashboards, indicadores, grafos, APIs e agentes inteligentes.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 14:</p>
+<ol class="steps">
+<li>identificar atributos candidatos à criação de features a partir de fontes, datasets tratados, data marts, representações analíticas e produtos de dados;</li>
+<li>definir regras formais para criação de features derivadas, agregadas, temporais, relacionais, estatísticas, categóricas, textuais, semânticas ou baseadas em grafos;</li>
+<li>documentar origem, fórmula, <a class="term" href="../conceitos/granularidade.html">granularidade</a>, janela temporal, atributos de entrada, regra de cálculo, versão, finalidade e limitações de cada feature;</li>
+<li>avaliar a qualidade das features quanto à <a class="term" href="../metricas/completude.html">completude</a>, <a class="term" href="../metricas/validade.html">validade</a>, estabilidade, distribuição, correlação, redundância, vazamento de informação, sensibilidade e risco de <a class="term" href="../conceitos/vies.html">viés</a>;</li>
+<li>armazenar features em uma estrutura organizada, reutilizável, versionada e controlada;</li>
+<li>diferenciar features exploratórias, features aprovadas, features depreciadas, features sensíveis, features restritas e features prontas para produção;</li>
+<li>evitar duplicação de atributos derivados e <a class="term" href="../problemas/inconsistencias.html">inconsistências</a> entre cálculos realizados por diferentes equipes, scripts ou projetos;</li>
+<li>garantir <a class="term" href="../metricas/consistencia.html">consistência</a> entre features usadas em treinamento, validação, testes, dashboards, APIs e aplicações de consumo;</li>
+<li>integrar features aos módulos de <a class="term" href="../conceitos/metadados.html">metadados</a>, governança, linhagem, versionamento, representações analíticas, monitoramento e agentes inteligentes;</li>
+<li>produzir artefatos formais que permitam auditoria, reprodutibilidade, reuso e avaliação da contribuição das features para análises e modelos.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>Features são atributos analíticos utilizados para representar aspectos relevantes de uma unidade de análise. Elas podem ser atributos originais, atributos derivados, indicadores, agregações, transformações, medidas temporais, métricas relacionais, embeddings, variáveis categorizadas, estatísticas por janela, scores, sinais de comportamento ou representações computacionais extraídas dos dados.</p>
+<p>No UnespDataLens-RM, uma feature deve ser tratada como um <a class="term" href="../conceitos/ativo-analitico.html">ativo analítico</a>, e não apenas como uma coluna criada em um script. Isso significa que cada feature deve possuir definição, finalidade, origem, regra de cálculo, granularidade, versão, qualidade, restrição, sensibilidade, linhagem e condição de uso.</p>
+<p>As features podem assumir diferentes tipos:</p>
+<div class="table-wrap"><table class="table"><tr><th>Tipo de feature</th><th>Descrição</th><th>Exemplo</th></tr><tr><td>Original</td><td>Atributo preservado de uma fonte ou dataset.</td><td>idade, sexo, curso, município</td></tr><tr><td>Derivada</td><td>Atributo calculado a partir de outros atributos.</td><td>idade no ingresso, tempo desde matrícula</td></tr><tr><td>Agregada</td><td>Atributo calculado por grupo, período ou entidade.</td><td>média de notas por semestre</td></tr><tr><td>Temporal</td><td>Atributo associado a janelas, evolução ou sequência.</td><td>frequência acumulada nos últimos 3 meses</td></tr><tr><td>Categórica transformada</td><td>Codificação de categorias.</td><td>curso codificado, faixa de renda</td></tr><tr><td>Estatística</td><td>Medida resumida de distribuição ou comportamento.</td><td>média, desvio padrão, tendência</td></tr><tr><td>Relacional</td><td>Atributo derivado de relações entre entidades.</td><td>número de disciplinas conectadas ao estudante</td></tr><tr><td>Baseada em grafos</td><td>Métrica ou embedding extraído de <a class="term" href="../conceitos/grafo.html">grafo</a>.</td><td>grau, <a class="term" href="../conceitos/centralidade.html">centralidade</a>, PageRank, <a class="term" href="../metodos/node2vec.html">Node2Vec</a></td></tr><tr><td>Semântica ou textual</td><td>Atributo extraído de texto, categoria ou significado.</td><td>tópico dominante, embedding textual</td></tr><tr><td>Indicador composto</td><td>Combinação de múltiplas variáveis.</td><td>índice de vulnerabilidade, score de risco</td></tr></table></div>
+<p>A feature store tem como função organizar essas features em uma estrutura reutilizável. Ela pode ser simples, como um catálogo estruturado de features com tabelas versionadas, ou mais sofisticada, envolvendo repositórios online e offline, APIs, pipelines automatizados, validação, monitoramento e integração com modelos.</p>
+<p>No contexto do UnespDataLens-RM, a feature store pode cumprir funções como:</p>
+<ul class="list">
+<li>armazenar features validadas;</li>
+<li>documentar regras de cálculo;</li>
+<li>controlar versões;</li>
+<li>registrar linhagem;</li>
+<li>evitar <a class="term" href="../problemas/duplicidade.html">duplicidade</a> de features;</li>
+<li>garantir consistência entre treinamento e consumo;</li>
+<li>apoiar reuso em diferentes projetos;</li>
+<li>controlar acesso a features sensíveis;</li>
+<li>monitorar estabilidade e drift das features;</li>
+<li>fornecer insumos para modelos, dashboards, indicadores e agentes inteligentes.</li>
+</ul>
+<p>À luz da Design Science Research, o Módulo 14 formaliza feature engineering e feature store como artefatos técnico-metodológicos voltados a resolver problemas recorrentes em pipelines analíticos: criação dispersa de variáveis, ausência de documentação, <a class="term" href="../problemas/baixa-reprodutibilidade.html">baixa reprodutibilidade</a>, duplicação de cálculos, inconsistência entre ambientes, vazamento de informação, falta de controle de qualidade e dificuldade de reuso.</p>
+<h2 class="section-title" id="natureza-transversal-do-modulo">5. Natureza transversal do módulo</h2>
+<p>O Módulo 14 é transversal porque features podem ser produzidas, consumidas, avaliadas e monitoradas em diferentes pontos do UnespDataLens-RM.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, identifica atributos candidatos e unidades de análise relevantes.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, utiliza dados brutos e snapshots como base para features reprocessáveis.</p>
+<p>No Módulo 3 — Integração e Harmonização, utiliza entidades integradas, chaves e relações entre fontes para criar features combinadas.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, recebe atributos tratados, padronizados e enriquecidos, além de produzir atributos derivados.</p>
+<p>No Módulo 5 — Qualidade e Validação de Dados, utiliza métricas de qualidade para aprovar, rejeitar ou sinalizar features.</p>
+<p>No Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, avalia se features afetam grupos de forma desigual, se funcionam como proxies sensíveis ou se introduzem riscos de viés.</p>
+<p>No Módulo 7 — Armazenamento Analítico, utiliza data marts, views e datasets persistidos para armazenar ou materializar features.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, disponibiliza features para dashboards, APIs, modelos, produtos de dados e agentes inteligentes.</p>
+<p>No Módulo 9 — Metadados, Catálogo e Semântica, registra definições, descrições, termos, domínios, significado e uso das features.</p>
+<p>No Módulo 10 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, controla acesso, sensibilidade, restrição de uso e finalidade das features.</p>
+<p>No Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e <a class="term" href="../conceitos/rastreabilidade.html">Rastreabilidade</a>, registra origem, atributos de entrada, regras e dependências das features.</p>
+<p>No Módulo 12 — Versionamento e Reprodutibilidade, controla versões, parâmetros, regras e ambientes usados para gerar features.</p>
+<p>No Módulo 13 — Representações Analíticas, consome representações tabulares, temporais e em grafos para criar features específicas dessas estruturas.</p>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">6. Formalização sintética do módulo</h2>
+<p>O Módulo 14 pode ser formalizado como um processo de geração e gestão de features a partir de ativos analíticos.</p>
+<p>Considerando o conjunto de ativos disponíveis:</p>
+<div class="formula">A = {a₁, a₂, ..., aₙ}</div>
+<p>e o conjunto de unidades de análise:</p>
+<div class="formula">U = {u₁, u₂, ..., uₘ}</div>
+<p>o módulo produz um conjunto de features:</p>
+<div class="formula">F = {f₁, f₂, ..., fₖ}</div>
+<p>Cada feature fᵢ pode ser descrita por:</p>
+<div class="formula">fᵢ = {id, nome, descrição, tipo, unidade_análise, atributos_origem, regra_cálculo, parâmetros, janela_temporal, granularidade, versão, qualidade, sensibilidade, finalidade, lineage}</div>
+<p>A matriz de features pode ser representada por:</p>
+<p>X ∈ Rⁿˣᵖ</p>
+<p>em que:</p>
+<ul class="list">
+<li>n representa o número de unidades de análise;</li>
+<li>p representa o número de features;</li>
+<li>Xᵢⱼ representa o valor da feature j para a unidade i.</li>
+</ul>
+<p>A feature store pode ser representada como um repositório estruturado:</p>
+<div class="formula">FS = {F, M, V, Q, G, L}</div>
+<p>em que:</p>
+<ul class="list">
+<li>F representa o conjunto de features;</li>
+<li>M representa metadados das features;</li>
+<li>V representa versões;</li>
+<li>Q representa métricas de qualidade;</li>
+<li>G representa regras de governança;</li>
+<li>L representa linhagem.</li>
+</ul>
+<p>Dessa forma, uma feature não é apenas uma variável calculada, mas um ativo com definição, origem, regra, qualidade, versão, governança e rastreabilidade.</p>
+<h2 class="section-title" id="entradas-do-modulo">7. Entradas do módulo</h2>
+<p>As entradas do Módulo 14 são compostas por ativos produzidos pelo pipeline principal e por informações dos módulos transversais.</p>
+<p>As principais entradas são:</p>
+<ul class="list">
+<li>datasets brutos;</li>
+<li>datasets integrados;</li>
+<li>datasets tratados;</li>
+<li>datasets validados;</li>
+<li>datasets balanceados ou sinalizados;</li>
+<li>data marts;</li>
+<li>views analíticas;</li>
+<li>produtos de dados;</li>
+<li>representações tabulares;</li>
+<li>representações temporais;</li>
+<li>grafos;</li>
+<li>grafos temporais;</li>
+<li>atributos originais;</li>
+<li>atributos derivados;</li>
+<li>indicadores;</li>
+<li><a class="term" href="../conceitos/logs.html">logs</a>;</li>
+<li><a class="term" href="../conceitos/eventos.html">eventos</a>;</li>
+<li>registros de interação;</li>
+<li>tabelas de entidades;</li>
+<li>tabelas de relações;</li>
+<li>variáveis-alvo;</li>
+<li>unidades de análise;</li>
+<li>janelas temporais;</li>
+<li>metadados;</li>
+<li>dicionários de dados;</li>
+<li>glossários;</li>
+<li>regras de negócio;</li>
+<li>métricas de qualidade;</li>
+<li>registros de viés;</li>
+<li>registros de linhagem;</li>
+<li>versões;</li>
+<li>requisitos de modelos;</li>
+<li>requisitos de dashboards;</li>
+<li>requisitos de APIs;</li>
+<li>requisitos de análise.</li>
+</ul>
+<h2 class="section-title" id="processamento">8. Processamento</h2>
+<p>O processamento do Módulo 14 envolve identificação, criação, validação, documentação, armazenamento, versionamento, disponibilização e monitoramento das features.</p>
+<h3 id="identificacao-de-necessidades-analiticas">8.1 Identificação de necessidades analíticas</h3>
+<p>A primeira atividade consiste em identificar quais features são necessárias para responder a uma pergunta analítica, construir um modelo, alimentar um <a class="term" href="../artefatos/dashboard.html">dashboard</a>, gerar um indicador, compor um grafo, apoiar uma decisão ou disponibilizar um <a class="term" href="../conceitos/produto-de-dados.html">produto de dados</a>.</p>
+<p>Essa identificação deve considerar a finalidade, a unidade de análise, a <a class="term" href="../conceitos/variavel-alvo.html">variável-alvo</a>, a temporalidade, as relações, os grupos relevantes e as restrições de uso.</p>
+<h3 id="selecao-de-atributos-e-fontes-de-origem">8.2 Seleção de atributos e fontes de origem</h3>
+<p>A segunda atividade consiste em selecionar os atributos, datasets, eventos, relações ou indicadores que servirão de base para criação das features. Essa seleção deve considerar qualidade, sensibilidade, completude, rastreabilidade e adequação semântica dos atributos.</p>
+<h3 id="definicao-das-regras-de-criacao-de-features">8.3 Definição das regras de criação de features</h3>
+<p>A terceira atividade consiste em definir regras formais para gerar features. Essas regras podem envolver agregações, transformações, codificações, janelas temporais, cálculos estatísticos, métricas de grafos, combinações de atributos, normalizações, discretizações ou embeddings.</p>
+<p>Cada regra deve ser documentada com fórmula, parâmetros, atributos de origem, granularidade, unidade de análise, janela temporal e justificativa.</p>
+<h3 id="construcao-de-features-tabulares">8.4 Construção de features tabulares</h3>
+<p>A quarta atividade consiste em construir features em formato tabular. Essas features podem incluir atributos originais, atributos derivados, indicadores, codificações categóricas, agregações por unidade de análise, normalizações e variáveis de contexto.</p>
+<h3 id="construcao-de-features-temporais">8.5 Construção de features temporais</h3>
+<p>A quinta atividade consiste em criar features que capturam evolução temporal, como médias móveis, tendências, variações, contagens por janela, eventos recentes, tempo desde o último evento, sequência de estados, persistência, recorrência ou sazonalidade.</p>
+<h3 id="construcao-de-features-relacionais-e-baseadas-em-grafos">8.6 Construção de features relacionais e baseadas em grafos</h3>
+<p>A sexta atividade consiste em criar features a partir de relações entre entidades. Isso pode incluir grau, grau ponderado, centralidade, PageRank, número de vizinhos, pertencimento a comunidades, distância média, componentes, densidade local, embeddings de nós ou métricas de grafos temporais.</p>
+<h3 id="avaliacao-de-qualidade-das-features">8.7 Avaliação de qualidade das features</h3>
+<p>A sétima atividade consiste em avaliar as features quanto à completude, validade, distribuição, estabilidade, redundância, multicolinearidade, correlação, sensibilidade, risco de vazamento de informação e <a class="term" href="../metricas/adequacao-ao-uso.html">adequação ao uso</a>.</p>
+<p>Features com baixa qualidade, instabilidade ou risco elevado devem ser sinalizadas, revisadas ou excluídas.</p>
+<h3 id="avaliacao-de-vazamento-de-informacao">8.8 Avaliação de vazamento de informação</h3>
+<p>A oitava atividade consiste em verificar se uma feature contém informação que não estaria disponível no momento da predição ou decisão. Esse problema, conhecido como <a class="term" href="../problemas/data-leakage.html">data leakage</a>, pode gerar resultados artificialmente elevados e comprometer a validade de modelos.</p>
+<p>A verificação deve considerar janela de observação, janela de predição, data de disponibilidade do atributo e sequência temporal dos eventos.</p>
+<h3 id="registro-e-documentacao-das-features">8.9 Registro e documentação das features</h3>
+<p>A nona atividade consiste em registrar cada feature em um catálogo ou feature store, documentando nome, descrição, tipo, origem, regra, unidade de análise, granularidade, janela temporal, versão, qualidade, sensibilidade, limitações e consumidores.</p>
+<h3 id="armazenamento-e-disponibilizacao-na-feature-store">8.10 Armazenamento e disponibilização na feature store</h3>
+<p>A décima atividade consiste em armazenar features aprovadas em uma estrutura organizada, permitindo reuso por modelos, dashboards, APIs, análises e agentes inteligentes.</p>
+<p>A feature store deve preservar versões, metadados, lineage, status de qualidade e regras de acesso.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-algoritmos-aplicaveis">9. Técnicas, métodos e algoritmos aplicáveis</h2>
+<p>O Módulo 14 pode empregar diferentes técnicas de feature engineering.</p>
+<p>Entre as técnicas tabulares, destacam-se:</p>
+<ul class="list">
+<li>seleção de atributos;</li>
+<li>criação de atributos derivados;</li>
+<li><a class="term" href="../metodos/normalizacao.html">normalização</a>;</li>
+<li>padronização;</li>
+<li>discretização;</li>
+<li>binarização;</li>
+<li>one-hot encoding;</li>
+<li>ordinal encoding;</li>
+<li>target encoding, quando adequado;</li>
+<li>agregações por grupo;</li>
+<li>interações entre variáveis;</li>
+<li>transformação logarítmica;</li>
+<li>cálculo de proporções;</li>
+<li>criação de faixas;</li>
+<li>tratamento de categorias raras;</li>
+<li>redução de dimensionalidade;</li>
+<li>análise de correlação;</li>
+<li>análise de multicolinearidade.</li>
+</ul>
+<p>Entre as técnicas temporais, destacam-se:</p>
+<ul class="list">
+<li>janelas móveis;</li>
+<li>médias móveis;</li>
+<li>somatórios por janela;</li>
+<li>contagens por período;</li>
+<li>defasagens temporais;</li>
+<li>tempo desde o último evento;</li>
+<li>frequência recente;</li>
+<li>tendência;</li>
+<li>variação percentual;</li>
+<li>volatilidade;</li>
+<li>sequência de estados;</li>
+<li>persistência;</li>
+<li>recorrência;</li>
+<li>sazonalidade;</li>
+<li>extração de eventos;</li>
+<li>agregações por período.</li>
+</ul>
+<p>Entre as técnicas relacionais e baseadas em grafos, destacam-se:</p>
+<ul class="list">
+<li>grau;</li>
+<li>grau ponderado;</li>
+<li>centralidade de intermediação;</li>
+<li>centralidade de proximidade;</li>
+<li>centralidade de autovetor;</li>
+<li>PageRank;</li>
+<li>coeficiente de agrupamento;</li>
+<li>número de vizinhos;</li>
+<li>densidade local;</li>
+<li>componentes conectados;</li>
+<li><a class="term" href="../metricas/modularidade.html">modularidade</a>;</li>
+<li>pertencimento a <a class="term" href="../conceitos/comunidade.html">comunidade</a>;</li>
+<li>Louvain;</li>
+<li><a class="term" href="../conceitos/label.html">Label</a> Propagation;</li>
+<li>distância média;</li>
+<li>métricas bipartidas;</li>
+<li>projeções de grafos;</li>
+<li>persistência de vínculos;</li>
+<li>embeddings como Node2Vec, DeepWalk, <a class="term" href="../metodos/graphsage.html">GraphSAGE</a>, <a class="term" href="../metodos/gcn.html">GCN</a> ou <a class="term" href="../metodos/gat.html">GAT</a>, quando aplicável.</li>
+</ul>
+<p>Entre as técnicas de avaliação de features, destacam-se:</p>
+<ul class="list">
+<li>análise de completude;</li>
+<li>análise de distribuição;</li>
+<li>estabilidade temporal;</li>
+<li>Population Stability Index;</li>
+<li>correlação;</li>
+<li>VIF;</li>
+<li>mutual information;</li>
+<li>feature importance;</li>
+<li>permutation importance;</li>
+<li><a class="term" href="../metodos/shap.html">SHAP</a>, quando houver modelo;</li>
+<li>testes de vazamento;</li>
+<li>análise por grupos;</li>
+<li>análise de <a class="term" href="../conceitos/fairness.html">fairness</a>;</li>
+<li>avaliação de redundância;</li>
+<li>avaliação de drift.</li>
+</ul>
+<p>Ferramentas possíveis incluem Python, pandas, scikit-learn, <a class="term" href="../tecnicas/pyspark.html">PySpark</a>, SQL, <a class="term" href="../tecnicas/duckdb.html">DuckDB</a>, <a class="term" href="../tecnicas/dbt.html">dbt</a>, Featuretools, <a class="term" href="../tecnicas/feast.html">Feast</a>, Tecton, Hopsworks, <a class="term" href="../tecnicas/mlflow.html">MLflow</a>, DVC, <a class="term" href="../tecnicas/networkx.html">NetworkX</a>, igraph, <a class="term" href="../tecnicas/neo4j.html">Neo4j</a>, PyTorch Geometric, DGL e ambientes de <a class="term" href="../conceitos/lakehouse.html">lakehouse</a>.</p>
+<h2 class="section-title" id="metricas-do-modulo">10. Métricas do módulo</h2>
+<p>As métricas do Módulo 14 avaliam cobertura, qualidade, estabilidade, reuso, rastreabilidade, contribuição analítica e governança das features.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Número de features criadas</td><td>NFC</td><td>Quantidade total de features produzidas</td></tr><tr><td>Taxa de features documentadas</td><td>TFD</td><td>Proporção de features com documentação mínima</td></tr><tr><td>Taxa de features com lineage</td><td>TFL</td><td>Proporção de features com origem e regra rastreáveis</td></tr><tr><td>Taxa de features versionadas</td><td>TFV</td><td>Proporção de features com versão registrada</td></tr><tr><td>Taxa de features aprovadas</td><td>TFA</td><td>Proporção de features aprovadas para uso</td></tr><tr><td>Taxa de features reutilizadas</td><td>TFR</td><td>Proporção de features usadas em mais de um produto ou modelo</td></tr><tr><td>Completude média das features</td><td>CMF</td><td><a class="term" href="../metricas/grau-medio.html">Grau médio</a> de preenchimento das features</td></tr><tr><td>Estabilidade temporal das features</td><td>ETF</td><td>Grau de estabilidade ao longo do tempo</td></tr><tr><td>Taxa de features com drift</td><td>TFDri</td><td>Proporção de features com mudança significativa de distribuição</td></tr><tr><td>Taxa de features sensíveis</td><td>TFS</td><td>Proporção de features sensíveis ou restritas</td></tr><tr><td>Taxa de features com risco de proxy</td><td>TFRP</td><td>Proporção de features que podem representar atributo sensível indiretamente</td></tr><tr><td>Taxa de features com vazamento</td><td>TFVaz</td><td>Proporção de features com risco de data leakage</td></tr><tr><td>Redundância entre features</td><td>RF</td><td>Grau de correlação ou sobreposição entre features</td></tr><tr><td>Contribuição preditiva média</td><td>CPM</td><td>Importância média das features em modelos</td></tr><tr><td>Índice de qualidade da feature</td><td>IQF</td><td>Indicador composto de qualidade de uma feature</td></tr><tr><td>Taxa de features monitoradas</td><td>TFM</td><td>Proporção de features acompanhadas ao longo do tempo</td></tr></table></div>
+<h3 id="taxa-de-features-documentadas-tfd">10.1 Taxa de Features Documentadas — TFD</h3>
+<p>A Taxa de Features Documentadas mede a proporção de features com documentação mínima.</p>
+<div class="formula">TFD = número de features documentadas / número total de features criadas</div>
+<p>Uma feature pode ser considerada documentada quando possui nome, descrição, origem, regra de cálculo, unidade de análise, granularidade, versão e finalidade.</p>
+<h3 id="taxa-de-features-com-lineage-tfl">10.2 Taxa de Features com Lineage — TFL</h3>
+<p>A Taxa de Features com Lineage mede a proporção de features cuja origem e regra de derivação estão registradas.</p>
+<div class="formula">TFL = número de features com lineage / número total de features criadas</div>
+<p>Essa métrica é essencial para auditoria, explicabilidade e reprodutibilidade.</p>
+<h3 id="completude-media-das-features-cmf">10.3 Completude Média das Features — CMF</h3>
+<p>A Completude Média das Features avalia o grau médio de preenchimento das features.</p>
+<div class="formula">CMF = soma das taxas de completude das features / número total de features avaliadas</div>
+<p>Features com baixa completude podem ser inadequadas para modelos ou dashboards.</p>
+<h3 id="taxa-de-features-com-vazamento-tfvaz">10.4 Taxa de Features com Vazamento — TFVaz</h3>
+<p>A Taxa de Features com Vazamento mede a proporção de features que apresentam risco de utilizar informação futura, indevida ou indisponível no momento da decisão.</p>
+<div class="formula">TFVaz = número de features com risco de vazamento / número total de features avaliadas</div>
+<p>Essa métrica é especialmente importante em problemas preditivos temporais.</p>
+<h3 id="indice-de-qualidade-da-feature-iqf">10.5 Índice de Qualidade da Feature — IQF</h3>
+<p>O Índice de Qualidade da Feature pode ser definido como um indicador composto que considera completude, validade, estabilidade, rastreabilidade, documentação e ausência de vazamento.</p>
+<p>Uma formulação possível é:</p>
+<div class="formula">IQF(fᵢ) = w₁C + w₂V + w₃E + w₄L + w₅D + w₆(1 − Z)</div>
+<p>em que:</p>
+<ul class="list">
+<li>C representa completude;</li>
+<li>V representa validade;</li>
+<li>E representa estabilidade;</li>
+<li>L representa lineage;</li>
+<li>D representa documentação;</li>
+<li>Z representa risco de vazamento;</li>
+<li>wᵢ representa o peso de cada dimensão.</li>
+</ul>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">11. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 14 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, regras de construção, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A14.1</td><td>Plano de Feature Engineering</td><td>Documento técnico</td><td>IQF</td><td>Define features, finalidade e regras</td></tr><tr><td>A14.2</td><td><a class="term" href="../artefatos/catalogo-de-features.html">Catálogo de Features</a></td><td>Catálogo estruturado</td><td>TFD</td><td>Documenta features disponíveis</td></tr><tr><td>A14.3</td><td>Registro de Regras de Cálculo de Features</td><td>Tabela técnica</td><td>TFL</td><td>Formaliza origem e fórmulas</td></tr><tr><td>A14.4</td><td>Matriz de Features</td><td>Tabela unidade × features</td><td>CMF</td><td>Materializa features por unidade</td></tr><tr><td>A14.5</td><td>Registro de Features Temporais</td><td>Tabela temporal</td><td>ETF, TFDri</td><td>Documenta janelas e evolução</td></tr><tr><td>A14.6</td><td>Registro de Features Relacionais e de Grafos</td><td>Tabela/grafo</td><td>TFL</td><td>Documenta métricas relacionais</td></tr><tr><td>A14.7</td><td><a class="term" href="../artefatos/relatorio-de-qualidade.html">Relatório de Qualidade</a> das Features</td><td>Relatório técnico</td><td>IQF</td><td>Avalia qualidade e adequação</td></tr><tr><td>A14.8</td><td>Registro de Vazamento e Riscos de Feature</td><td>Relatório/tabela</td><td>TFVaz</td><td>Identifica leakage e riscos</td></tr><tr><td>A14.9</td><td>Feature Store</td><td>Repositório estruturado</td><td>TFR, TFV</td><td>Armazena e reutiliza features</td></tr><tr><td>A14.10</td><td>Manifesto de <a class="term" href="../conceitos/feature-set.html">Feature Set</a></td><td>Documento estruturado</td><td>TFD, TFL</td><td>Registra conjunto de features usado</td></tr></table></div>
+<h2 class="section-title" id="artefato-a14-1-plano-de-feature-engineering">12. Artefato A14.1 — Plano de Feature Engineering</h2>
+<h3 id="finalidade">12.1 Finalidade</h3>
+<p>O Plano de Feature Engineering define quais features serão criadas, para qual finalidade, com quais dados de origem, unidade de análise, regras de cálculo, janelas temporais, granularidade e critérios de validação.</p>
+<h3 id="tipo-de-artefato-na-dsr">12.2 Tipo de artefato na DSR</h3>
+<p>Esse artefato é um método, pois orienta a construção das features, e uma instanciação, quando documentado em relatório, planilha, notebook, arquivo YAML, JSON ou ferramenta específica.</p>
+<h3 id="estrutura-minima">12.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Objetivo analítico</td><td>Finalidade da feature ou conjunto de features</td></tr><tr><td>Unidade de análise</td><td>Estudante, matrícula, município, família, atendimento etc.</td></tr><tr><td>Variável-alvo</td><td>Quando aplicável</td></tr><tr><td>Features previstas</td><td>Lista de atributos a criar</td></tr><tr><td>Dados de origem</td><td>Datasets e atributos utilizados</td></tr><tr><td>Regra de cálculo</td><td>Fórmula ou procedimento</td></tr><tr><td>Janela temporal</td><td>Quando aplicável</td></tr><tr><td>Granularidade</td><td>Nível de detalhe</td></tr><tr><td>Critério de validação</td><td>Condição para aceitar a feature</td></tr><tr><td>Riscos</td><td>Vazamento, viés, sensibilidade ou instabilidade</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe</td></tr></table></div>
+<h3 id="metricas-associadas">12.4 Métricas associadas</h3>
+<ul class="list">
+<li>número de features planejadas;</li>
+<li>taxa de features documentadas;</li>
+<li>taxa de features com regra definida;</li>
+<li>taxa de features com risco avaliado;</li>
+<li>índice de qualidade da feature.</li>
+</ul>
+<h3 id="criterios-de-validacao">12.5 Critérios de validação</h3>
+<p>O plano é considerado válido quando cada feature prevista possui finalidade, origem, regra de cálculo, unidade de análise, granularidade, versão e critério de validação.</p>
+<h3 id="contribuicao">12.6 Contribuição</h3>
+<p>Esse artefato evita criação improvisada de atributos e torna o processo de feature engineering explícito, auditável e reprodutível.</p>
+<h2 class="section-title" id="artefato-a14-2-catalogo-de-features">13. Artefato A14.2 — Catálogo de Features</h2>
+<h3 id="finalidade-2">13.1 Finalidade</h3>
+<p>O Catálogo de Features registra as features disponíveis, suas definições, regras, versões, status, qualidade, origem, restrições e consumidores.</p>
+<h3 id="estrutura-minima-2">13.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador da feature</td><td>Código único</td></tr><tr><td>Nome da feature</td><td>Nome técnico ou semântico</td></tr><tr><td>Descrição</td><td>Significado analítico</td></tr><tr><td>Tipo</td><td>Original, derivada, temporal, grafo, textual etc.</td></tr><tr><td>Unidade de análise</td><td>Entidade à qual se aplica</td></tr><tr><td>Dados de origem</td><td>Ativos utilizados</td></tr><tr><td>Regra de cálculo</td><td>Fórmula ou procedimento</td></tr><tr><td>Versão</td><td>Versão da feature</td></tr><tr><td>Qualidade</td><td>Status ou métricas</td></tr><tr><td>Sensibilidade</td><td>Classificação</td></tr><tr><td>Status</td><td>Experimental, aprovada, depreciada, restrita</td></tr><tr><td>Consumidores</td><td>Modelos, dashboards, APIs, análises</td></tr><tr><td>Limitações</td><td>Cuidados de uso</td></tr></table></div>
+<h3 id="metricas-associadas-2">13.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de features documentadas;</li>
+<li>taxa de features aprovadas;</li>
+<li>taxa de features reutilizadas;</li>
+<li>taxa de features versionadas;</li>
+<li>taxa de features com lineage.</li>
+</ul>
+<h3 id="contribuicao-2">13.4 Contribuição</h3>
+<p>Esse artefato transforma features em ativos reutilizáveis, reduzindo duplicidade e aumentando consistência entre projetos.</p>
+<h2 class="section-title" id="artefato-a14-3-registro-de-regras-de-calculo-de-features">14. Artefato A14.3 — Registro de Regras de Cálculo de Features</h2>
+<h3 id="finalidade-3">14.1 Finalidade</h3>
+<p>O Registro de Regras de Cálculo de Features documenta como cada feature é produzida.</p>
+<h3 id="estrutura-formal">14.2 Estrutura formal</h3>
+<p>Cada regra pode ser descrita por:</p>
+<div class="formula">rᵢ = {feature, atributos_origem, fórmula, parâmetros, janela, granularidade, condição, versão, responsável}</div>
+<h3 id="estrutura-minima-3">14.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Feature</td><td>Nome ou identificador</td></tr><tr><td>Atributos de origem</td><td>Campos utilizados</td></tr><tr><td>Datasets de origem</td><td>Ativos de entrada</td></tr><tr><td>Fórmula ou regra</td><td>Como a feature é calculada</td></tr><tr><td>Parâmetros</td><td>Valores utilizados</td></tr><tr><td>Janela temporal</td><td>Quando aplicável</td></tr><tr><td>Condição de aplicação</td><td>Filtros ou critérios</td></tr><tr><td>Granularidade</td><td>Unidade de cálculo</td></tr><tr><td>Versão da regra</td><td>Controle de versão</td></tr><tr><td>Responsável</td><td>Pessoa ou sistema</td></tr></table></div>
+<h3 id="metricas-associadas-3">14.4 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de features com regra documentada;</li>
+<li>taxa de features com lineage;</li>
+<li>taxa de regras versionadas;</li>
+<li>taxa de regras com parâmetros documentados.</li>
+</ul>
+<h3 id="contribuicao-3">14.5 Contribuição</h3>
+<p>Esse artefato permite reproduzir features e auditar sua construção.</p>
+<h2 class="section-title" id="artefato-a14-4-matriz-de-features">15. Artefato A14.4 — Matriz de Features</h2>
+<h3 id="finalidade-4">15.1 Finalidade</h3>
+<p>A Matriz de Features materializa as features em formato unidade × atributo, permitindo uso em modelos, análises, dashboards ou produtos de dados.</p>
+<h3 id="estrutura-formal-2">15.2 Estrutura formal</h3>
+<p>A matriz pode ser representada por:</p>
+<p>X ∈ Rⁿˣᵖ</p>
+<p>em que:</p>
+<ul class="list">
+<li>n representa o número de unidades de análise;</li>
+<li>p representa o número de features;</li>
+<li>Xᵢⱼ representa o valor da feature j para a unidade i.</li>
+</ul>
+<h3 id="estrutura-minima-4">15.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador da unidade</td><td>Chave da unidade de análise</td></tr><tr><td>Features</td><td>Atributos calculados</td></tr><tr><td>Versão das features</td><td>Versões utilizadas</td></tr><tr><td>Data de geração</td><td>Momento de criação</td></tr><tr><td>Janela temporal</td><td>Quando aplicável</td></tr><tr><td>Qualidade</td><td>Status da matriz</td></tr><tr><td>Sensibilidade</td><td>Classificação</td></tr><tr><td>Variável-alvo</td><td>Quando aplicável</td></tr></table></div>
+<h3 id="metricas-associadas-4">15.4 Métricas associadas</h3>
+<ul class="list">
+<li>completude média das features;</li>
+<li>dimensionalidade;</li>
+<li>taxa de features derivadas;</li>
+<li>taxa de features sensíveis;</li>
+<li>taxa de features com drift.</li>
+</ul>
+<h3 id="contribuicao-4">15.5 Contribuição</h3>
+<p>Esse artefato permite utilizar features de forma estruturada e consistente em análises e modelos.</p>
+<h2 class="section-title" id="artefato-a14-5-registro-de-features-temporais">16. Artefato A14.5 — Registro de Features Temporais</h2>
+<h3 id="finalidade-5">16.1 Finalidade</h3>
+<p>O Registro de Features Temporais documenta atributos criados a partir de janelas, sequências, trajetórias, eventos e evolução temporal.</p>
+<h3 id="estrutura-minima-5">16.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Feature temporal</td><td>Nome da feature</td></tr><tr><td>Unidade de análise</td><td>Entidade acompanhada</td></tr><tr><td>Janela temporal</td><td>Período considerado</td></tr><tr><td>Função de agregação</td><td>Média, soma, contagem, tendência etc.</td></tr><tr><td>Evento base</td><td>Evento que gera a feature</td></tr><tr><td>Data de referência</td><td>Ponto temporal usado</td></tr><tr><td>Atributos de origem</td><td>Campos utilizados</td></tr><tr><td>Regra de cálculo</td><td>Fórmula</td></tr><tr><td>Risco de vazamento</td><td>Avaliação</td></tr><tr><td>Versão</td><td>Versão da regra</td></tr></table></div>
+<h3 id="metricas-associadas-5">16.3 Métricas associadas</h3>
+<ul class="list">
+<li>estabilidade temporal das features;</li>
+<li>taxa de features com drift;</li>
+<li>taxa de features com vazamento;</li>
+<li><a class="term" href="../conceitos/cobertura-temporal.html">cobertura temporal</a>;</li>
+<li>taxa de <a class="term" href="../problemas/lacunas-temporais.html">lacunas temporais</a>.</li>
+</ul>
+<h3 id="contribuicao-5">16.4 Contribuição</h3>
+<p>Esse artefato permite construir atributos que capturam trajetória, mudança, recorrência e comportamento ao longo do tempo.</p>
+<h2 class="section-title" id="artefato-a14-6-registro-de-features-relacionais-e-de-grafos">17. Artefato A14.6 — Registro de Features Relacionais e de Grafos</h2>
+<h3 id="finalidade-6">17.1 Finalidade</h3>
+<p>O Registro de Features Relacionais e de Grafos documenta features construídas a partir de relações entre entidades e métricas de grafos.</p>
+<h3 id="estrutura-minima-6">17.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Feature relacional</td><td>Nome da feature</td></tr><tr><td>Grafo de origem</td><td>Representação utilizada</td></tr><tr><td>Tipo de nó</td><td>Entidade associada</td></tr><tr><td>Tipo de <a class="term" href="../conceitos/aresta.html">aresta</a></td><td>Relação utilizada</td></tr><tr><td>Métrica</td><td>Grau, centralidade, PageRank etc.</td></tr><tr><td>Peso</td><td>Critério de ponderação</td></tr><tr><td>Janela temporal</td><td>Quando aplicável</td></tr><tr><td>Regra de cálculo</td><td>Procedimento</td></tr><tr><td>Versão</td><td>Versão da representação</td></tr><tr><td>Limitações</td><td>Cuidados de interpretação</td></tr></table></div>
+<h3 id="metricas-associadas-6">17.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de features relacionais documentadas;</li>
+<li>taxa de features com grafo de origem identificado;</li>
+<li>taxa de features com versão;</li>
+<li>estabilidade das métricas de grafo;</li>
+<li>contribuição preditiva das features relacionais.</li>
+</ul>
+<h3 id="contribuicao-6">17.4 Contribuição</h3>
+<p>Esse artefato permite incorporar estrutura relacional e dinâmica de redes em análises e modelos.</p>
+<h2 class="section-title" id="artefato-a14-7-relatorio-de-qualidade-das-features">18. Artefato A14.7 — Relatório de Qualidade das Features</h2>
+<h3 id="finalidade-7">18.1 Finalidade</h3>
+<p>O Relatório de Qualidade das Features avalia se as features são adequadas ao uso analítico.</p>
+<h3 id="estrutura-minima-7">18.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Feature avaliada</td><td>Nome da feature</td></tr><tr><td>Completude</td><td>Percentual de valores preenchidos</td></tr><tr><td>Validade</td><td>Conformidade com domínio</td></tr><tr><td>Distribuição</td><td>Perfil estatístico</td></tr><tr><td>Estabilidade</td><td>Variação temporal</td></tr><tr><td>Correlação</td><td>Relação com outras features</td></tr><tr><td>Redundância</td><td>Sobreposição com outras features</td></tr><tr><td>Sensibilidade</td><td>Classificação</td></tr><tr><td>Risco de viés</td><td>Avaliação por grupos</td></tr><tr><td>Status</td><td>Aprovada, ressalva, rejeitada</td></tr></table></div>
+<h3 id="metricas-associadas-7">18.3 Métricas associadas</h3>
+<ul class="list">
+<li>índice de qualidade da feature;</li>
+<li>completude média;</li>
+<li>taxa de features aprovadas;</li>
+<li>taxa de features sensíveis;</li>
+<li>taxa de features com drift.</li>
+</ul>
+<h3 id="contribuicao-7">18.4 Contribuição</h3>
+<p>Esse artefato evita uso de features sem avaliação de qualidade, estabilidade ou risco.</p>
+<h2 class="section-title" id="artefato-a14-8-registro-de-vazamento-e-riscos-de-feature">19. Artefato A14.8 — Registro de Vazamento e Riscos de Feature</h2>
+<h3 id="finalidade-8">19.1 Finalidade</h3>
+<p>O Registro de Vazamento e Riscos de Feature identifica features com risco de vazamento de informação, uso inadequado, proxy sensível, instabilidade ou interpretação equivocada.</p>
+<h3 id="estrutura-minima-8">19.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Feature</td><td>Nome da feature</td></tr><tr><td>Tipo de risco</td><td>Leakage, proxy, sensibilidade, instabilidade etc.</td></tr><tr><td>Evidência</td><td>Motivo da identificação</td></tr><tr><td>Severidade</td><td>Baixa, média, alta ou crítica</td></tr><tr><td>Impacto</td><td>Consequência possível</td></tr><tr><td>Ação recomendada</td><td>Remover, restringir, revisar, monitorar</td></tr><tr><td>Status</td><td>Aberto, mitigado, aceito, rejeitado</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe</td></tr></table></div>
+<h3 id="metricas-associadas-8">19.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de features com vazamento;</li>
+<li>taxa de features com risco de proxy;</li>
+<li>taxa de riscos mitigados;</li>
+<li>número de features rejeitadas por risco;</li>
+<li>severidade média dos riscos.</li>
+</ul>
+<h3 id="contribuicao-8">19.4 Contribuição</h3>
+<p>Esse artefato reduz risco de modelos artificialmente bons, decisões enviesadas ou uso inadequado de atributos sensíveis.</p>
+<h2 class="section-title" id="artefato-a14-9-feature-store">20. Artefato A14.9 — Feature Store</h2>
+<h3 id="finalidade-9">20.1 Finalidade</h3>
+<p>A Feature Store é o repositório estruturado de features aprovadas, documentadas, versionadas, governadas e reutilizáveis.</p>
+<h3 id="estrutura-minima-9">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Componente</th><th>Descrição</th></tr><tr><td>Repositório offline</td><td>Features para treinamento, análise e histórico</td></tr><tr><td>Repositório online</td><td>Features para consumo em tempo real ou APIs, quando aplicável</td></tr><tr><td>Catálogo de features</td><td>Definições e metadados</td></tr><tr><td><a class="term" href="../artefatos/registro-de-versoes.html">Registro de versões</a></td><td>Histórico das features</td></tr><tr><td>Registro de qualidade</td><td>Métricas e status</td></tr><tr><td>Registro de lineage</td><td>Origem e regras</td></tr><tr><td><a class="term" href="../conceitos/controle-de-acesso.html">Controle de acesso</a></td><td>Permissões e restrições</td></tr><tr><td>Monitoramento</td><td>Estabilidade e drift</td></tr></table></div>
+<h3 id="metricas-associadas-9">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de features reutilizadas;</li>
+<li>taxa de features versionadas;</li>
+<li>taxa de features monitoradas;</li>
+<li>número de consumidores por feature;</li>
+<li>taxa de features depreciadas.</li>
+</ul>
+<h3 id="contribuicao-9">20.4 Contribuição</h3>
+<p>Esse artefato transforma features em ativos governados e reutilizáveis, reduzindo inconsistências e retrabalho.</p>
+<h2 class="section-title" id="artefato-a14-10-manifesto-de-feature-set">21. Artefato A14.10 — Manifesto de Feature Set</h2>
+<h3 id="finalidade-10">21.1 Finalidade</h3>
+<p>O Manifesto de Feature Set documenta o conjunto de features utilizado em uma análise, modelo, dashboard, API ou produto de dados.</p>
+<h3 id="estrutura-minima-10">21.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Feature set</td><td>Nome do conjunto</td></tr><tr><td>Finalidade</td><td>Uso previsto</td></tr><tr><td>Features incluídas</td><td>Lista de features</td></tr><tr><td>Versões</td><td>Versões de cada feature</td></tr><tr><td>Unidade de análise</td><td>Entidade representada</td></tr><tr><td>Janela temporal</td><td>Quando aplicável</td></tr><tr><td>Variável-alvo</td><td>Quando aplicável</td></tr><tr><td>Qualidade</td><td>Status das features</td></tr><tr><td>Restrições</td><td>Sensibilidade ou acesso</td></tr><tr><td>Consumidor</td><td>Modelo, dashboard, relatório ou API</td></tr><tr><td>Data de criação</td><td>Momento da geração</td></tr></table></div>
+<h3 id="metricas-associadas-10">21.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de feature sets documentados;</li>
+<li>taxa de features com lineage;</li>
+<li>taxa de features versionadas;</li>
+<li>completude do manifesto;</li>
+<li>índice de qualidade do feature set.</li>
+</ul>
+<h3 id="contribuicao-10">21.4 Contribuição</h3>
+<p>Esse artefato garante que análises, modelos e produtos possam ser auditados e reproduzidos a partir das features utilizadas.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">22. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Datasets tratados, integrados, validados e armazenados; representações tabulares, temporais e em grafos; atributos, eventos, relações, metadados, qualidade, linhagem, versões e requisitos analíticos.</td></tr><tr><td>Processamento</td><td>Identificação de necessidades, seleção de atributos, criação de features tabulares, temporais e relacionais, avaliação de qualidade, verificação de vazamento, documentação, armazenamento e disponibilização na feature store.</td></tr><tr><td>Artefatos</td><td>Plano de feature engineering, catálogo de features, regras de cálculo, matriz de features, features temporais, features relacionais/grafos, relatório de qualidade, registro de riscos, feature store e manifesto de feature set.</td></tr><tr><td>Métricas</td><td>NFC, TFD, TFL, TFV, TFA, TFR, CMF, ETF, TFDri, TFS, TFRP, TFVaz, RF, CPM, IQF e TFM.</td></tr><tr><td>Saídas</td><td>Features documentadas, validadas, versionadas, rastreáveis, governadas, armazenadas e reutilizáveis para modelos, dashboards, APIs, análises, grafos, indicadores e agentes inteligentes.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">23. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 14 pode ser considerado adequadamente implementado quando:</p>
+<ol class="steps">
+<li>as necessidades analíticas foram identificadas;</li>
+<li>a unidade de análise das features foi definida;</li>
+<li>os atributos de origem foram documentados;</li>
+<li>as regras de cálculo foram registradas;</li>
+<li>as features possuem versionamento;</li>
+<li>a qualidade das features foi avaliada;</li>
+<li>riscos de vazamento foram verificados;</li>
+<li>features sensíveis ou proxies foram identificadas;</li>
+<li>features aprovadas foram armazenadas na feature store;</li>
+<li>features possuem lineage suficiente para auditoria;</li>
+<li>features usadas em modelos, dashboards ou APIs possuem manifesto;</li>
+<li>features críticas são monitoradas quanto a drift, estabilidade e uso.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-o-pipeline-principal">24. Relação com o pipeline principal</h2>
+<p>O Módulo 14 se relaciona com todos os módulos do pipeline principal.</p>
+<p>Com o Módulo 1 — Fontes e Inventário de Dados, utiliza atributos, entidades, granularidade e fontes candidatas para criação de features.</p>
+<p>Com o Módulo 2 — Extração, Ingestão e Armazenamento Bruto, utiliza snapshots e dados brutos para garantir reprocessabilidade.</p>
+<p>Com o Módulo 3 — Integração e Harmonização, utiliza relações entre fontes e entidades integradas para criar features combinadas.</p>
+<p>Com o Módulo 4 — Transformação, Limpeza e Enriquecimento, utiliza dados tratados e também formaliza atributos derivados mais complexos.</p>
+<p>Com o Módulo 5 — Qualidade e Validação de Dados, utiliza métricas de qualidade para aprovar ou rejeitar features.</p>
+<p>Com o Módulo 6 — Desbalanceamento, Vieses e Equidade, avalia risco de viés, proxies sensíveis e impacto por grupo.</p>
+<p>Com o Módulo 7 — Armazenamento Analítico, utiliza data marts e estruturas persistidas como base para features.</p>
+<p>Com o Módulo 8 — Disponibilização e Consumo Analítico, fornece features para produtos, dashboards, APIs, modelos e agentes inteligentes.</p>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-transversais">25. Relação com os demais módulos transversais</h2>
+<p>O Módulo 14 depende do Módulo 9 — Metadados, Catálogo e Semântica dos Dados, pois cada feature deve possuir definição, descrição, conceito associado, domínio, finalidade e documentação semântica.</p>
+<p>Relaciona-se com o Módulo 10 — Governança, Segurança, Privacidade e Conformidade, pois features podem ser sensíveis, restritas ou funcionar como proxies de atributos protegidos.</p>
+<p>Relaciona-se com o Módulo 11 — Proveniência, Linhagem e Rastreabilidade, pois cada feature deve apontar para seus atributos de origem, regras, versões e processos.</p>
+<p>Relaciona-se com o Módulo 12 — Versionamento e Reprodutibilidade, pois features devem possuir versão, parâmetros, ambiente e manifestos de execução.</p>
+<p>Relaciona-se com o Módulo 13 — Representações Analíticas, pois features podem ser derivadas de tabelas, séries temporais, eventos, grafos e grafos temporais.</p>
+<p>Relaciona-se com o módulo de Monitoramento, Drift e Evolução dos Ativos, pois features devem ser monitoradas quanto a estabilidade, drift, degradação, obsolescência e alteração de distribuição.</p>
+<p>Relaciona-se com o módulo de Agentes Inteligentes de Apoio ao Pipeline, pois agentes podem consultar o catálogo de features, sugerir novas features, explicar regras de cálculo, detectar redundâncias e recomendar reuso.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">26. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, o Módulo 14 pode criar features para análise de evasão, desempenho, permanência ou engajamento estudantil.</p>
+<p>Exemplos de features tabulares incluem idade no ingresso, escola de origem, curso, turno, forma de ingresso, renda familiar, média geral, número de reprovações e frequência média.</p>
+<p>Exemplos de features temporais incluem evolução da média por semestre, frequência acumulada nos últimos períodos, número de reprovações recentes, tempo desde a última matrícula ativa, variação de desempenho e sequência de situações acadêmicas.</p>
+<p>Exemplos de features relacionais ou de grafos incluem número de disciplinas conectadas ao estudante, centralidade em rede de interações no AVA, grau em grafo estudante-disciplina, proximidade com estudantes de mesmo curso, participação em comunidades acadêmicas ou embeddings de nós.</p>
+<p>Essas features poderiam ser armazenadas em uma feature store educacional, documentadas com regras, versões, qualidade, sensibilidade e riscos de uso.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">27. Exemplo de aplicação em políticas públicas</h2>
+<p>Em uma aplicação em políticas públicas, o Módulo 14 pode criar features para análise de vulnerabilidade, cobertura de serviços, risco territorial ou priorização de atendimento.</p>
+<p>Exemplos de features tabulares incluem renda média territorial, número de equipamentos públicos, taxa de atendimento, índice de escolaridade, cobertura de saúde e indicadores socioeconômicos.</p>
+<p>Exemplos de features temporais incluem evolução mensal de atendimentos, crescimento da demanda, frequência de ocorrência por território, tendência de vulnerabilidade e sazonalidade de serviços.</p>
+<p>Exemplos de features relacionais ou de grafos incluem centralidade de equipamentos públicos, distância relacional entre famílias e serviços, número de vínculos com políticas públicas, comunidades territoriais e persistência de atendimentos ao longo do tempo.</p>
+<p>Essas features poderiam alimentar painéis, modelos de priorização, indicadores territoriais ou APIs de apoio à gestão pública.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">28. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição do Módulo 14 está em formalizar feature engineering e feature store como componentes transversais da Engenharia Analítica de Dados.</p>
+<p>Em vez de tratar features como colunas criadas informalmente em scripts isolados, o UnespDataLens-RM propõe que elas sejam tratadas como ativos analíticos documentados, avaliados, versionados, rastreáveis, governados e reutilizáveis.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>aumentar o valor analítico dos dados;</li>
+<li>reduzir duplicidade e inconsistência de cálculos;</li>
+<li>melhorar reprodutibilidade de modelos e dashboards;</li>
+<li>documentar origem e regra de cada feature;</li>
+<li>avaliar qualidade, estabilidade e risco de vazamento;</li>
+<li>apoiar análise tabular, temporal e relacional;</li>
+<li>permitir reutilização de features em diferentes produtos;</li>
+<li>controlar features sensíveis ou com risco de proxy;</li>
+<li>fortalecer a integração entre dados, modelos, dashboards e agentes inteligentes;</li>
+<li>estruturar uma base reutilizável de atributos analíticos no ecossistema UnespDataLens-RM.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">29. Síntese do módulo</h2>
+<p>O Módulo Transversal 14 — Feature Engineering e Feature Store organiza o processo de criação, documentação, validação, armazenamento e reutilização de atributos analíticos no UnespDataLens-RM. Ele transforma variáveis derivadas, indicadores, métricas temporais, métricas relacionais e embeddings em ativos formais, governados e rastreáveis.</p>
+<p>Sua importância é transversal porque features podem ser produzidas a partir de diferentes representações e consumidas por diversos produtos, como modelos, dashboards, APIs, relatórios, grafos e agentes inteligentes.</p>
+<p>Ao formalizar feature engineering e feature store por meio de artefatos, métricas, regras, manifestos e critérios de validação, o módulo fortalece a qualidade, a reprodutibilidade, a governança e o reuso dos atributos analíticos produzidos pelo UnespDataLens-RM.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

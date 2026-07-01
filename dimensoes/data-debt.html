@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A dimensão Data Debt, ou dívida de dados, refere-se ao acúmulo de problemas, pendências, improvisações, inconsistências, lacunas documentais, decisões técnicas provisórias e fragilidades estruturais nos dados, nos pipelines e nos produtos analíticos, que passam a comprometer gradualmente a qualidade, a confiabilidade, a rastreabilidade, a manutenção e a…">
+  <title>Data Debt · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a href="../modulos/index.html">Módulos</a><a class="active" href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="dimensao-complementar-data-debt"></span><section class="hero">
+<span class="badge">Dimensão complementar</span>
+<h1>Data Debt</h1>
+<p>A dimensão Data Debt, ou dívida de dados, refere-se ao acúmulo de problemas, pendências, improvisações, inconsistências, lacunas documentais, decisões técnicas provisórias e fragilidades estruturais nos dados, nos pipelines e nos produtos analíticos, que passam a comprometer gradualmente a qualidade, a confiabilidade, a rastreabilidade, a manutenção e a…</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 12 seções</summary><a href="#definicao-da-dimensao">Definição da dimensão</a><a href="#problema-tratado">Problema tratado</a><a href="#objetivo-da-dimensao">Objetivo da dimensão</a><a href="#relacao-com-o-unespdatalens-rm">Relação com o UnespDataLens-RM</a><a href="#estrategias-de-mitigacao">Estratégias de mitigação</a><a href="#metricas-associadas">Métricas associadas</a><a href="#artefatos-relacionados">Artefatos relacionados</a><a href="#criterios-de-validacao">Critérios de validação</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-para-o-modelo-de-referencia">Contribuição para o modelo de referência</a><a href="#sintese-da-dimensao">Síntese da dimensão</a></details><div class="prose module-full"><h2 class="section-title" id="definicao-da-dimensao">1. Definição da dimensão</h2>
+<p>A dimensão Data Debt, ou <a class="term" href="../problemas/divida-de-dados.html">dívida de dados</a>, refere-se ao acúmulo de problemas, pendências, improvisações, <a class="term" href="../problemas/inconsistencias.html">inconsistências</a>, lacunas documentais, decisões técnicas provisórias e fragilidades estruturais nos dados, nos pipelines e nos produtos analíticos, que passam a comprometer gradualmente a qualidade, a confiabilidade, a <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a>, a manutenção e a capacidade de evolução de um ecossistema de dados.</p>
+<p>No contexto do UnespDataLens-RM, a dívida de dados representa o conjunto de passivos técnicos, metodológicos, semânticos e organizacionais associados ao ciclo de vida dos dados. Ela pode surgir quando fontes são incorporadas sem inventário adequado, datasets são criados sem documentação, transformações são realizadas manualmente, regras de negócio não são versionadas, atributos derivados são gerados sem rastreabilidade, dashboards são publicados sem validação, dados são armazenados sem política de retenção, ou produtos analíticos permanecem ativos mesmo após se tornarem obsoletos.</p>
+<p>A dívida de dados não se manifesta necessariamente como erro imediato. Muitas vezes, ela aparece como uma solução provisória que permite avançar rapidamente em um projeto, mas que cria dificuldades futuras para manutenção, reprocessamento, auditoria, integração, governança e reuso. Assim como ocorre com a dívida técnica em desenvolvimento de software, a dívida de dados pode crescer silenciosamente até tornar o ecossistema analítico difícil de compreender, corrigir, reproduzir ou escalar.</p>
+<p>No UnespDataLens-RM, essa dimensão é tratada como uma capacidade complementar e transversal, pois a dívida de dados pode se acumular em qualquer módulo do modelo de referência: no <a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a>, na ingestão, na integração, na transformação, na qualidade, na governança, na linhagem, no <a class="term" href="../conceitos/versionamento.html">versionamento</a>, nas representações analíticas, na <a class="term" href="../conceitos/feature-store.html">feature store</a>, no monitoramento e nos produtos de consumo.</p>
+<h2 class="section-title" id="problema-tratado">2. Problema tratado</h2>
+<p>Em muitos ambientes institucionais, projetos analíticos são desenvolvidos sob pressão de tempo, com dados incompletos, documentação limitada, sistemas legados, integrações manuais, planilhas paralelas, regras implícitas e conhecimento concentrado em poucas pessoas. Essas condições favorecem a criação de soluções pontuais, funcionais no curto prazo, mas frágeis no médio e longo prazo.</p>
+<p>A dívida de dados pode se manifestar de diversas formas:</p>
+<ul class="list">
+<li>fontes utilizadas sem documentação adequada;</li>
+<li>ausência de responsável institucional ou técnico pelo dado;</li>
+<li>regras de transformação registradas apenas em scripts ou planilhas;</li>
+<li>datasets sem versão, sem lineage ou sem descrição;</li>
+<li>indicadores calculados de forma diferente por equipes distintas;</li>
+<li>atributos derivados sem fórmula documentada;</li>
+<li>dashboards publicados sem indicação de origem, data ou regra de cálculo;</li>
+<li>dados duplicados em diferentes repositórios;</li>
+<li>schemas alterados sem comunicação ou registro;</li>
+<li>pipelines dependentes de execução manual;</li>
+<li>ausência de testes de qualidade automatizados;</li>
+<li><a class="term" href="../conceitos/metadados.html">metadados</a> incompletos ou desatualizados;</li>
+<li>features criadas sem avaliação de vazamento, <a class="term" href="../conceitos/vies.html">viés</a> ou estabilidade;</li>
+<li>produtos de dados obsoletos mantidos em uso;</li>
+<li>decisões analíticas baseadas em conhecimento tácito.</li>
+</ul>
+<p>Esses problemas aumentam o esforço necessário para compreender, corrigir ou reutilizar os dados. Com o tempo, a dívida de dados reduz a velocidade de novos projetos, aumenta o risco de erro, dificulta auditoria, reduz confiança nos produtos analíticos e compromete a sustentabilidade do ecossistema de dados.</p>
+<p>No UnespDataLens-RM, a dimensão Data Debt busca tornar essa dívida visível, mensurável e gerenciável, evitando que fragilidades acumuladas comprometam a confiabilidade dos ativos analíticos.</p>
+<h2 class="section-title" id="objetivo-da-dimensao">3. Objetivo da dimensão</h2>
+<p>O objetivo da dimensão Data Debt é identificar, classificar, mensurar, priorizar e reduzir passivos acumulados nos dados, pipelines, metadados, regras, versões, produtos e processos analíticos, promovendo melhoria contínua, governança, rastreabilidade, documentação, <a class="term" href="../conceitos/reprodutibilidade.html">reprodutibilidade</a> e sustentabilidade do ecossistema UnespDataLens-RM.</p>
+<p>Essa dimensão busca transformar problemas ocultos ou dispersos em registros explícitos, passíveis de acompanhamento, priorização e correção.</p>
+<h2 class="section-title" id="relacao-com-o-unespdatalens-rm">4. Relação com o UnespDataLens-RM</h2>
+<p>A dimensão Data Debt se articula com todos os módulos do UnespDataLens-RM.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, a dívida pode surgir quando fontes são utilizadas sem responsável, descrição, <a class="term" href="../conceitos/periodicidade.html">periodicidade</a>, <a class="term" href="../conceitos/cobertura-temporal.html">cobertura temporal</a>, restrição de acesso ou limitação documentada.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, a dívida pode ocorrer quando ingestões são manuais, <a class="term" href="../conceitos/logs.html">logs</a> são incompletos, snapshots não são preservados ou dados brutos são armazenados sem manifesto.</p>
+<p>No Módulo 3 — Integração e Harmonização, a dívida aparece quando regras de integração não são documentadas, chaves são escolhidas informalmente, conflitos são ignorados ou equivalências semânticas não são registradas.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, a dívida se acumula quando transformações são executadas sem registro, atributos derivados não possuem fórmula ou tratamentos de ausentes, duplicidades e outliers não são justificados.</p>
+<p>No Módulo 5 — Qualidade e Validação de Dados, a dívida ocorre quando não existem testes de qualidade, limiares, relatórios de validação ou histórico de não conformidades.</p>
+<p>No Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, a dívida pode surgir quando distribuições de grupos não são avaliadas, atributos sensíveis são ignorados ou riscos de viés não são documentados.</p>
+<p>No Módulo 7 — Armazenamento Analítico, a dívida aparece em estruturas sem organização por zonas, datasets duplicados, schemas não versionados, data marts sem responsável ou ativos sem política de retenção.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, a dívida se manifesta em dashboards sem documentação, APIs sem versão, produtos sem uso, datasets disponibilizados sem restrição clara ou relatórios sem data de referência.</p>
+<p>No Módulo 9 — Metadados, Catálogo e Semântica, a dívida é reduzida por meio de documentação, glossários, dicionários, modelos semânticos e fichas de ativos.</p>
+<p>No Módulo 10 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, a dívida é mitigada por políticas, papéis, permissões, <a class="term" href="../artefatos/classificacao-de-sensibilidade.html">classificação de sensibilidade</a> e registros de conformidade.</p>
+<p>No Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e Rastreabilidade, a dívida é enfrentada pela capacidade de reconstruir origem, trajetória e dependências dos dados.</p>
+<p>No Módulo 12 — Versionamento e Reprodutibilidade, a dívida é reduzida por versões, manifestos, ambientes preservados e pacotes de reprodutibilidade.</p>
+<p>No Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, a dívida é acompanhada por meio da identificação de ativos obsoletos, inconsistentes, desatualizados ou não monitorados.</p>
+<p>No Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline, agentes podem auxiliar na identificação de lacunas documentais, ativos sem responsável, produtos obsoletos, regras ausentes e prioridades de correção.</p>
+<h2 class="section-title" id="estrategias-de-mitigacao">5. Estratégias de mitigação</h2>
+<p>A mitigação da dívida de dados no UnespDataLens-RM pode envolver estratégias de documentação, governança, automação, revisão, padronização e melhoria contínua.</p>
+<div class="table-wrap"><table class="table"><tr><th>Estratégia</th><th>Descrição</th></tr><tr><td>Inventário de passivos de dados</td><td>Identificar fontes, datasets, regras, produtos e processos com lacunas ou fragilidades.</td></tr><tr><td>Classificação da dívida</td><td>Organizar problemas por tipo: documentação, qualidade, lineage, versão, governança, segurança, automação ou uso.</td></tr><tr><td>Priorização por impacto</td><td>Classificar dívidas conforme risco, criticidade, frequência de uso e impacto decisório.</td></tr><tr><td>Plano de redução de dívida</td><td>Definir ações para corrigir, documentar, versionar, reprocessar, consolidar ou descontinuar ativos.</td></tr><tr><td>Documentação mínima obrigatória</td><td>Exigir metadados essenciais para fontes, datasets, features, dashboards e produtos.</td></tr><tr><td>Automação de validações</td><td>Implantar testes de qualidade, checks de schema, logs e monitoramento recorrente.</td></tr><tr><td>Versionamento e changelog</td><td>Registrar mudanças em dados, regras, produtos e pipelines.</td></tr><tr><td>Curadoria periódica</td><td>Revisar ativos obsoletos, redundantes, pouco utilizados ou sem responsável.</td></tr><tr><td>Lineage obrigatório para ativos críticos</td><td>Garantir rastreabilidade mínima para datasets, indicadores e produtos relevantes.</td></tr><tr><td>Governança de publicação</td><td>Impedir disponibilização de produtos sem documentação, qualidade e responsável definidos.</td></tr><tr><td>Descontinuação controlada</td><td>Arquivar ou substituir ativos que aumentam complexidade sem gerar valor.</td></tr><tr><td>Revisão pós-incidente</td><td>Registrar causas e correções após falhas, inconsistências ou erros analíticos.</td></tr></table></div>
+<h2 class="section-title" id="metricas-associadas">6. Métricas associadas</h2>
+<p>A dimensão Data Debt pode ser avaliada por métricas relacionadas à documentação, qualidade, rastreabilidade, versionamento, automação, obsolescência e governança dos ativos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de ativos com dívida identificada</td><td>TADI</td><td>Proporção de ativos com algum passivo registrado.</td></tr><tr><td>Taxa de ativos sem responsável</td><td>TASR</td><td>Proporção de ativos sem responsável técnico ou institucional.</td></tr><tr><td>Taxa de ativos sem documentação mínima</td><td>TADM</td><td>Proporção de ativos sem metadados essenciais.</td></tr><tr><td>Taxa de ativos sem lineage</td><td>TASL</td><td>Proporção de ativos sem rastreabilidade suficiente.</td></tr><tr><td>Taxa de ativos sem versão</td><td>TASV</td><td>Proporção de ativos críticos sem versionamento.</td></tr><tr><td>Taxa de produtos obsoletos</td><td>TPO</td><td>Proporção de produtos desatualizados ou sem manutenção.</td></tr><tr><td>Taxa de regras não documentadas</td><td>TRND</td><td>Proporção de regras de transformação, integração ou cálculo sem registro.</td></tr><tr><td>Taxa de pipelines manuais</td><td>TPM</td><td>Proporção de processos dependentes de execução manual.</td></tr><tr><td>Taxa de dívidas críticas</td><td>TDC</td><td>Proporção de dívidas classificadas como críticas.</td></tr><tr><td>Taxa de resolução da dívida</td><td>TRD</td><td>Proporção de dívidas tratadas em determinado período.</td></tr><tr><td><a class="term" href="../metricas/tempo-medio-de-resolucao.html">Tempo médio de resolução</a> da dívida</td><td>TMRD</td><td>Tempo médio para corrigir ou mitigar uma dívida registrada.</td></tr><tr><td>Índice de dívida de dados</td><td>IDD</td><td>Indicador composto do nível de dívida acumulada no ecossistema.</td></tr></table></div>
+<p>Uma formulação possível para o Índice de Dívida de Dados é:</p>
+<div class="formula">IDD = w₁TADM + w₂TASL + w₃TASV + w₄TRND + w₅TPM + w₆TPO + w₇TDC − w₈TRD</div>
+<p>em que:</p>
+<ul class="list">
+<li>TADM representa ativos sem documentação mínima;</li>
+<li>TASL representa ativos sem lineage;</li>
+<li>TASV representa ativos sem versão;</li>
+<li>TRND representa regras não documentadas;</li>
+<li>TPM representa pipelines manuais;</li>
+<li>TPO representa produtos obsoletos;</li>
+<li>TDC representa dívidas críticas;</li>
+<li>TRD representa resolução da dívida;</li>
+<li>wᵢ representa o peso atribuído a cada dimensão.</li>
+</ul>
+<p>Quanto maior o IDD, maior o nível de dívida de dados acumulada no ecossistema analítico.</p>
+<h2 class="section-title" id="artefatos-relacionados">7. Artefatos relacionados</h2>
+<p>A dimensão Data Debt pode ser operacionalizada por meio de artefatos complementares, integrados aos módulos de catálogo, qualidade, lineage, versionamento, governança e monitoramento.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Finalidade</th></tr><tr><td>DD1</td><td>Inventário de Dívida de Dados</td><td>Registrar passivos identificados em fontes, datasets, produtos e pipelines.</td></tr><tr><td>DD2</td><td>Matriz de Classificação da Dívida</td><td>Classificar dívidas por tipo, severidade, origem e impacto.</td></tr><tr><td>DD3</td><td>Registro de Regras Não Documentadas</td><td>Identificar regras de negócio, transformação ou cálculo sem documentação.</td></tr><tr><td>DD4</td><td>Mapa de Ativos sem Responsável</td><td>Identificar ativos sem ownership definido.</td></tr><tr><td>DD5</td><td>Relatório de Ativos sem Lineage</td><td>Listar datasets, dashboards, features e produtos sem rastreabilidade.</td></tr><tr><td>DD6</td><td>Relatório de Produtos Obsoletos</td><td>Identificar produtos desatualizados, depreciados ou sem uso.</td></tr><tr><td>DD7</td><td>Plano de Redução da Dívida de Dados</td><td>Definir ações, responsáveis, prazos e prioridades de correção.</td></tr><tr><td>DD8</td><td>Registro de Ações de Mitigação</td><td>Acompanhar correções, reprocessamentos, documentação e descontinuação.</td></tr><tr><td>DD9</td><td>Painel de Dívida de Dados</td><td>Monitorar evolução da dívida por tipo, módulo e criticidade.</td></tr><tr><td>DD10</td><td>Relatório de Maturidade da Dívida de Dados</td><td>Avaliar evolução da gestão da dívida no ecossistema.</td></tr></table></div>
+<h2 class="section-title" id="criterios-de-validacao">8. Critérios de validação</h2>
+<p>A dimensão Data Debt pode ser considerada adequadamente tratada quando:</p>
+<ol class="steps">
+<li>os principais tipos de dívida de dados foram identificados;</li>
+<li>ativos críticos foram avaliados quanto à documentação, lineage, versão, responsável e qualidade;</li>
+<li>dívidas foram classificadas por severidade, origem e impacto;</li>
+<li>dívidas críticas possuem plano de mitigação;</li>
+<li>regras de transformação, integração e cálculo foram documentadas;</li>
+<li>ativos críticos possuem responsável definido;</li>
+<li>datasets e produtos relevantes possuem versionamento e lineage mínimos;</li>
+<li>produtos obsoletos ou sem uso foram revisados;</li>
+<li>pipelines manuais críticos foram documentados ou automatizados;</li>
+<li>ações de mitigação são registradas e acompanhadas;</li>
+<li>há redução mensurável do índice de dívida de dados ao longo do tempo;</li>
+<li>novas dívidas são prevenidas por critérios de publicação, documentação e governança.</li>
+</ol>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">9. Exemplo de aplicação no domínio educacional</h2>
+<p>Em um projeto educacional, a dívida de dados pode ocorrer quando diferentes bases sobre matrícula, frequência, notas, evasão, desempenho e interações em ambiente virtual são utilizadas sem documentação padronizada, sem versões preservadas e sem definição clara das regras de cálculo.</p>
+<p>Por exemplo, uma taxa de evasão pode ter sido calculada em diferentes dashboards com regras distintas, sem registro da versão da base, sem definição formal de evasão e sem indicação do período de referência. Esse cenário cria dívida de dados porque dificulta comparar resultados, reproduzir indicadores e explicar divergências.</p>
+<p>A dimensão Data Debt permite identificar esse passivo, registrar as diferentes regras existentes, definir uma regra oficial, versionar os datasets utilizados, documentar o indicador, descontinuar dashboards obsoletos e reduzir a dependência de conhecimento tácito.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">10. Exemplo de aplicação em políticas públicas</h2>
+<p>Em políticas públicas, a dívida de dados pode ocorrer quando diferentes secretarias mantêm planilhas históricas, bases locais, relatórios manuais e dashboards sem documentação, sem governança e sem integração.</p>
+<p>Por exemplo, um indicador de vulnerabilidade territorial pode ser produzido a partir de múltiplas planilhas, com regras de agregação não documentadas e sem registro das fontes originais. Se o responsável técnico deixar a equipe, a instituição pode perder a capacidade de atualizar ou reproduzir o indicador.</p>
+<p>A dimensão Data Debt permite mapear esses passivos, documentar fontes e regras, criar lineage, definir responsáveis, migrar processos manuais para pipelines controlados e instituir critérios mínimos para novos produtos de dados.</p>
+<h2 class="section-title" id="contribuicao-para-o-modelo-de-referencia">11. Contribuição para o modelo de referência</h2>
+<p>A dimensão Data Debt contribui para o UnespDataLens-RM ao reconhecer que problemas acumulados nos dados, pipelines e produtos analíticos podem comprometer a sustentabilidade do ecossistema de dados.</p>
+<p>Essa dimensão fortalece o modelo de referência ao:</p>
+<ul class="list">
+<li>tornar visíveis passivos ocultos nos dados;</li>
+<li>reduzir dependência de conhecimento tácito;</li>
+<li>melhorar documentação e rastreabilidade;</li>
+<li>aumentar capacidade de manutenção dos pipelines;</li>
+<li>apoiar reprodutibilidade de resultados;</li>
+<li>reduzir risco de uso de produtos obsoletos;</li>
+<li>orientar priorização de correções;</li>
+<li>prevenir acúmulo de novas fragilidades;</li>
+<li>melhorar governança e responsabilidade sobre os dados;</li>
+<li>apoiar monitoramento da maturidade analítica;</li>
+<li>aumentar confiança nos ativos produzidos;</li>
+<li>sustentar evolução controlada do UnespDataLens-RM.</li>
+</ul>
+<h2 class="section-title" id="sintese-da-dimensao">12. Síntese da dimensão</h2>
+<p>A dimensão Data Debt trata do acúmulo de passivos técnicos, metodológicos, semânticos e organizacionais nos dados, pipelines, regras, metadados, produtos e processos analíticos. No UnespDataLens-RM, essa dimensão atua como capacidade complementar para identificar, mensurar, priorizar e reduzir fragilidades que comprometem qualidade, governança, rastreabilidade, versionamento, reprodutibilidade e manutenção dos ativos analíticos.</p>
+<p>Ao incorporar estratégias de inventário da dívida, classificação de severidade, documentação mínima, lineage, versionamento, curadoria, automação, monitoramento e planos de mitigação, o modelo de referência reduz riscos acumulados e fortalece a sustentabilidade do ecossistema de Engenharia Analítica de Dados.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

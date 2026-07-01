@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A dimensão Data Discoverability, ou descoberta de dados, refere-se à capacidade de localizar, identificar, compreender, avaliar e selecionar ativos de dados relevantes dentro de um ecossistema analítico. Essa dimensão envolve os mecanismos, metadados, catálogos, descrições, classificações, buscas, recomendações, filtros, glossários, relações semânticas e…">
+  <title>Data Discoverability · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a href="../modulos/index.html">Módulos</a><a class="active" href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="dimensao-complementar-data-discoverability"></span><section class="hero">
+<span class="badge">Dimensão complementar</span>
+<h1>Data Discoverability</h1>
+<p>A dimensão Data Discoverability, ou descoberta de dados, refere-se à capacidade de localizar, identificar, compreender, avaliar e selecionar ativos de dados relevantes dentro de um ecossistema analítico. Essa dimensão envolve os mecanismos, metadados, catálogos, descrições, classificações, buscas, recomendações, filtros, glossários, relações semânticas e…</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 13 seções</summary><a href="#definicao-da-dimensao">Definição da dimensão</a><a href="#problema-tratado">Problema tratado</a><a href="#objetivo-da-dimensao">Objetivo da dimensão</a><a href="#relacao-com-o-unespdatalens-rm">Relação com o UnespDataLens-RM</a><a href="#componentes-da-descoberta-de-dados">Componentes da descoberta de dados</a><a href="#estrategias-de-implementacao">Estratégias de implementação</a><a href="#metricas-associadas">Métricas associadas</a><a href="#artefatos-relacionados">Artefatos relacionados</a><a href="#criterios-de-validacao">Critérios de validação</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-para-o-modelo-de-referencia">Contribuição para o modelo de referência</a><a href="#sintese-da-dimensao">Síntese da dimensão</a></details><div class="prose module-full"><h2 class="section-title" id="definicao-da-dimensao">1. Definição da dimensão</h2>
+<p>A dimensão <a class="term" href="../conceitos/data-discoverability.html">Data Discoverability</a>, ou descoberta de dados, refere-se à capacidade de localizar, identificar, compreender, avaliar e selecionar ativos de dados relevantes dentro de um ecossistema analítico. Essa dimensão envolve os mecanismos, <a class="term" href="../conceitos/metadados.html">metadados</a>, catálogos, descrições, classificações, buscas, recomendações, filtros, glossários, relações semânticas e informações de qualidade que permitem aos usuários encontrar os dados mais adequados para uma finalidade específica.</p>
+<p>No contexto do UnespDataLens-RM, a descoberta de dados não significa apenas “procurar uma base” em um repositório. Ela envolve a capacidade de responder a perguntas como: quais dados existem? onde estão? quem é o responsável? qual é a versão vigente? qual é a origem? quais atributos estão disponíveis? qual é a qualidade? quais restrições de acesso existem? quais produtos utilizam esses dados? quais dados são oficiais, experimentais, obsoletos ou recomendados? quais ativos podem ser reutilizados em uma nova análise?</p>
+<p>A Data Discoverability é, portanto, uma condição fundamental para que dados, datasets, dashboards, APIs, relatórios, features, indicadores, grafos, modelos e produtos analíticos sejam efetivamente utilizados. Um ativo de dados pode existir e possuir qualidade técnica, mas, se não puder ser encontrado, compreendido ou avaliado por seus potenciais usuários, seu valor analítico e institucional é reduzido.</p>
+<p>No UnespDataLens-RM, essa dimensão é complementar e transversal porque depende da articulação entre <a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a>, metadados, catálogo, semântica, governança, qualidade, lineage, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, disponibilização, consumo analítico, <a class="term" href="../conceitos/feature-store.html">feature store</a>, monitoramento e agentes inteligentes.</p>
+<h2 class="section-title" id="problema-tratado">2. Problema tratado</h2>
+<p>Em ecossistemas analíticos complexos, é comum que diferentes equipes, sistemas e projetos produzam grande quantidade de fontes, datasets, relatórios, dashboards, indicadores, APIs e features. Entretanto, esses ativos muitas vezes permanecem dispersos, pouco documentados, sem padronização de nomes, sem descrição clara, sem responsável identificado, sem indicação de qualidade, sem versão registrada e sem mecanismo eficiente de busca.</p>
+<p>Essa situação gera um paradoxo: os dados existem, mas não são encontrados; os produtos foram produzidos, mas não são reutilizados; os indicadores estão disponíveis, mas não são compreendidos; as features foram calculadas, mas são recriadas por outras equipes; as bases estão armazenadas, mas os usuários não sabem se podem utilizá-las.</p>
+<p>A baixa capacidade de descoberta de dados pode gerar problemas como:</p>
+<ul class="list">
+<li>dificuldade de localizar fontes, datasets, dashboards, APIs e features relevantes;</li>
+<li>duplicação de esforços analíticos;</li>
+<li>criação repetida de produtos semelhantes;</li>
+<li>baixa reutilização de ativos existentes;</li>
+<li>dependência de conhecimento tácito de pessoas específicas;</li>
+<li>uso de dados inadequados por falta de alternativas visíveis;</li>
+<li>dificuldade de distinguir ativos oficiais, experimentais, obsoletos ou depreciados;</li>
+<li>demora na preparação de novas análises;</li>
+<li>pouca transparência sobre origem, qualidade e restrições dos dados;</li>
+<li>aumento da <a class="term" href="../problemas/sobrecarga-informacional.html">sobrecarga informacional</a>;</li>
+<li>perda de confiança no ecossistema analítico;</li>
+<li>redução do valor dos ativos produzidos.</li>
+</ul>
+<p>No UnespDataLens-RM, a dimensão Data Discoverability busca resolver esse problema ao estruturar mecanismos que tornem os ativos de dados localizáveis, compreensíveis, avaliáveis e reutilizáveis.</p>
+<h2 class="section-title" id="objetivo-da-dimensao">3. Objetivo da dimensão</h2>
+<p>O objetivo da dimensão Data Discoverability é ampliar a capacidade de descoberta, compreensão, avaliação e reutilização dos ativos analíticos do UnespDataLens-RM, por meio de catálogos, metadados qualificados, glossários, mecanismos de busca, filtros, classificações, recomendações, indicadores de qualidade, lineage, versionamento e agentes inteligentes.</p>
+<p>Essa dimensão busca reduzir o tempo e o esforço necessários para encontrar dados relevantes, ao mesmo tempo em que aumenta a confiança do usuário na escolha do ativo mais adequado à sua finalidade analítica.</p>
+<h2 class="section-title" id="relacao-com-o-unespdatalens-rm">4. Relação com o UnespDataLens-RM</h2>
+<p>A dimensão Data Discoverability se articula com diversos módulos do UnespDataLens-RM.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, a descoberta começa com o mapeamento das fontes existentes, seus responsáveis, domínios, formatos, periodicidades, coberturas temporais, granularidades e restrições.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, os registros de ingestão, snapshots e manifestos ajudam a tornar visíveis os dados incorporados ao ambiente analítico.</p>
+<p>No Módulo 3 — Integração e Harmonização, a descoberta é ampliada pela documentação de entidades comuns, chaves, equivalências semânticas e relações entre fontes.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, atributos tratados, variáveis derivadas e datasets enriquecidos precisam ser documentados para serem localizados e reutilizados.</p>
+<p>No Módulo 5 — Qualidade e Validação de Dados, métricas de qualidade auxiliam o usuário a avaliar se um ativo descoberto é adequado ao uso pretendido.</p>
+<p>No Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, registros de representatividade, grupos avaliados, limitações e riscos de <a class="term" href="../conceitos/vies.html">viés</a> contribuem para uma descoberta responsável.</p>
+<p>No Módulo 7 — Armazenamento Analítico, a organização de zonas, data marts, views e datasets curados facilita a localização de ativos prontos para consumo.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, produtos como dashboards, APIs, relatórios e datasets curados devem ser encontráveis, descritos e classificados por finalidade, público-alvo e restrição de acesso.</p>
+<p>No Módulo 9 — Metadados, Catálogo e Semântica dos Dados, ocorre a principal sustentação da descoberta de dados, por meio de catálogo, dicionário, glossário, modelos semânticos, fichas de ativos e índices de busca.</p>
+<p>No Módulo 10 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, a descoberta deve respeitar permissões, <a class="term" href="../artefatos/classificacao-de-sensibilidade.html">classificação de sensibilidade</a>, finalidade de uso e políticas de acesso.</p>
+<p>No Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e <a class="term" href="../conceitos/rastreabilidade.html">Rastreabilidade</a>, a descoberta é enriquecida pela possibilidade de localizar ativos relacionados por origem, transformação, dependência e consumo.</p>
+<p>No Módulo 12 — Versionamento e <a class="term" href="../conceitos/reprodutibilidade.html">Reprodutibilidade</a>, a descoberta deve permitir identificar versões vigentes, históricas, experimentais, depreciadas ou reproduzíveis.</p>
+<p>No Módulo 13 — Representações Analíticas, os usuários podem descobrir representações tabulares, temporais, relacionais e em grafos adequadas ao problema analítico.</p>
+<p>No Módulo 14 — <a class="term" href="../conceitos/feature-engineering.html">Feature Engineering</a> e Feature Store, a descoberta de features permite reuso, evita duplicação e apoia construção de modelos e indicadores.</p>
+<p>No Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, informações de uso, atualização, obsolescência e estabilidade contribuem para recomendar ou depreciar ativos.</p>
+<p>No Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline, agentes podem apoiar consultas em linguagem natural, recomendação de ativos, explicação de produtos, busca semântica e orientação ao usuário.</p>
+<h2 class="section-title" id="componentes-da-descoberta-de-dados">5. Componentes da descoberta de dados</h2>
+<p>A descoberta de dados envolve diferentes componentes que, combinados, aumentam a capacidade de localização e compreensão dos ativos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Componente</th><th>Descrição</th><th>Exemplo</th></tr><tr><td><a class="term" href="../conceitos/catalogo-de-dados.html">Catálogo de dados</a></td><td>Registro centralizado dos ativos disponíveis.</td><td>Catálogo de datasets, dashboards e APIs.</td></tr><tr><td>Metadados descritivos</td><td>Informações sobre nome, descrição, domínio, responsável e finalidade.</td><td>Dataset de matrículas semestrais.</td></tr><tr><td>Metadados técnicos</td><td>Informações sobre formato, schema, tipo, localização e versão.</td><td>Tabela em Parquet, versão 2.1.</td></tr><tr><td>Metadados de qualidade</td><td>Indicadores sobre <a class="term" href="../metricas/completude.html">completude</a>, <a class="term" href="../metricas/validade.html">validade</a>, <a class="term" href="../metricas/consistencia.html">consistência</a> e <a class="term" href="../metricas/atualidade.html">atualidade</a>.</td><td>Completude de 97% no campo curso.</td></tr><tr><td>Metadados de governança</td><td>Sensibilidade, acesso, finalidade e restrições.</td><td>Uso restrito a análise agregada.</td></tr><tr><td>Glossário e semântica</td><td>Definição de termos, conceitos e equivalências.</td><td>Definição institucional de evasão.</td></tr><tr><td>Lineage</td><td>Origem, transformações e dependências.</td><td><a class="term" href="../artefatos/dashboard.html">Dashboard</a> depende da base de matrícula.</td></tr><tr><td>Busca textual e semântica</td><td>Localização por palavras-chave, conceitos ou similaridade.</td><td>Buscar “evasão”, “abandono”, “permanência”.</td></tr><tr><td>Filtros e facetas</td><td>Refinamento por domínio, tipo, qualidade, versão ou responsável.</td><td>Filtrar por dados educacionais e ativos oficiais.</td></tr><tr><td>Recomendação de ativos</td><td>Sugestão de dados relevantes para determinada finalidade.</td><td>Recomendar <a class="term" href="../conceitos/feature-set.html">feature set</a> para evasão.</td></tr><tr><td>Sinalização de status</td><td>Indicação de ativo oficial, experimental, obsoleto ou depreciado.</td><td>Dashboard oficial de evasão.</td></tr><tr><td>Feedback de usuários</td><td>Avaliação de utilidade, clareza e adequação dos ativos.</td><td>Usuários avaliam dataset como útil.</td></tr></table></div>
+<h2 class="section-title" id="estrategias-de-implementacao">6. Estratégias de implementação</h2>
+<p>A implementação da Data Discoverability no UnespDataLens-RM pode envolver estratégias técnicas, semânticas, metodológicas e de governança.</p>
+<div class="table-wrap"><table class="table"><tr><th>Estratégia</th><th>Descrição</th></tr><tr><td>Catálogo unificado de ativos</td><td>Centralizar fontes, datasets, data marts, dashboards, APIs, relatórios, features e produtos.</td></tr><tr><td>Indexação de metadados</td><td>Tornar nomes, descrições, atributos, tags e glossários pesquisáveis.</td></tr><tr><td>Busca semântica</td><td>Permitir localização por conceitos relacionados, sinônimos e termos do domínio.</td></tr><tr><td>Tags e classificações</td><td>Classificar ativos por domínio, finalidade, status, sensibilidade, tipo e qualidade.</td></tr><tr><td>Ficha de ativo</td><td>Apresentar informações essenciais para compreensão e uso de cada ativo.</td></tr><tr><td>Sinalização de qualidade</td><td>Exibir métricas ou status de qualidade para apoiar seleção de ativos.</td></tr><tr><td>Sinalização de status</td><td>Indicar se o ativo é oficial, experimental, em validação, depreciado ou obsoleto.</td></tr><tr><td>Relacionamento entre ativos</td><td>Mostrar fontes, derivados, consumidores, versões e produtos relacionados.</td></tr><tr><td>Glossário integrado</td><td>Associar termos do domínio a datasets, atributos, indicadores e produtos.</td></tr><tr><td>Recomendação baseada em uso</td><td>Sugerir ativos mais utilizados, mais recentes ou mais adequados ao contexto.</td></tr><tr><td><a class="term" href="../conceitos/controle-de-acesso.html">Controle de acesso</a> na busca</td><td>Exibir apenas ativos permitidos ou metadados compatíveis com o perfil do usuário.</td></tr><tr><td>Feedback e avaliação de utilidade</td><td>Coletar percepções dos usuários sobre clareza, relevância e adequação dos ativos.</td></tr><tr><td>Agentes inteligentes de descoberta</td><td>Permitir consultas em linguagem natural sobre dados, indicadores, features e produtos.</td></tr><tr><td>Curadoria contínua do catálogo</td><td>Revisar ativos duplicados, obsoletos, mal descritos ou sem responsável.</td></tr></table></div>
+<h2 class="section-title" id="metricas-associadas">7. Métricas associadas</h2>
+<p>A dimensão Data Discoverability pode ser avaliada por métricas relacionadas à cobertura, busca, localização, uso, relevância, reutilização e satisfação dos usuários.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de ativos catalogados</td><td>TAC</td><td>Proporção de ativos existentes registrados no catálogo.</td></tr><tr><td>Taxa de ativos pesquisáveis</td><td>TAP</td><td>Proporção de ativos indexados e recuperáveis por busca.</td></tr><tr><td>Taxa de ativos com descrição adequada</td><td>TADA</td><td>Proporção de ativos com descrição clara, finalidade e contexto de uso.</td></tr><tr><td>Taxa de ativos com tags ou classificações</td><td>TATC</td><td>Proporção de ativos classificados por domínio, tipo, status ou finalidade.</td></tr><tr><td>Taxa de ativos com qualidade visível</td><td>TAQV</td><td>Proporção de ativos com métricas ou status de qualidade acessíveis ao usuário.</td></tr><tr><td>Taxa de ativos com lineage visível</td><td>TALV</td><td>Proporção de ativos com origem, dependências ou consumidores disponíveis para consulta.</td></tr><tr><td>Tempo médio de descoberta</td><td>TMD</td><td>Tempo necessário para localizar um ativo adequado.</td></tr><tr><td>Taxa de sucesso na busca</td><td>TSB</td><td>Proporção de consultas que retornam ativos úteis.</td></tr><tr><td>Taxa de reutilização de ativos descobertos</td><td>TRAD</td><td>Proporção de ativos localizados que são reutilizados em análises ou produtos.</td></tr><tr><td>Taxa de consultas sem resultado útil</td><td>TCSU</td><td>Proporção de buscas que não retornam ativos relevantes.</td></tr><tr><td>Índice de satisfação com descoberta</td><td>ISD</td><td>Grau de satisfação dos usuários com a localização e compreensão dos ativos.</td></tr><tr><td>Índice de descobribilidade de dados</td><td>IDD</td><td>Indicador composto da capacidade de localização, avaliação e reutilização dos ativos.</td></tr></table></div>
+<p>Uma formulação possível para o Índice de Descobribilidade de Dados é:</p>
+<div class="formula">IDD = w₁TAC + w₂TAP + w₃TADA + w₄TATC + w₅TAQV + w₆TALV + w₇TSB + w₈TRAD − w₉TCSU − w₁₀TMDₙ</div>
+<p>em que:</p>
+<ul class="list">
+<li>TAC representa a taxa de ativos catalogados;</li>
+<li>TAP representa a taxa de ativos pesquisáveis;</li>
+<li>TADA representa a taxa de ativos com descrição adequada;</li>
+<li>TATC representa a taxa de ativos com tags ou classificações;</li>
+<li>TAQV representa a taxa de ativos com qualidade visível;</li>
+<li>TALV representa a taxa de ativos com lineage visível;</li>
+<li>TSB representa a taxa de sucesso na busca;</li>
+<li>TRAD representa a taxa de reutilização de ativos descobertos;</li>
+<li>TCSU representa a taxa de consultas sem resultado útil;</li>
+<li>TMDₙ representa o tempo médio de descoberta normalizado;</li>
+<li>wᵢ representa o peso atribuído a cada dimensão.</li>
+</ul>
+<p>Quanto maior o IDD, maior a capacidade do ecossistema de tornar seus ativos localizáveis, compreensíveis e reutilizáveis.</p>
+<h2 class="section-title" id="artefatos-relacionados">8. Artefatos relacionados</h2>
+<p>A dimensão Data Discoverability pode ser operacionalizada por meio de artefatos complementares, integrados aos módulos de inventário, catálogo, metadados, semântica, governança, lineage, consumo analítico, feature store, monitoramento e agentes inteligentes.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Finalidade</th></tr><tr><td>DDI1</td><td>Catálogo de Ativos Descobertos</td><td>Catálogo ou repositório pesquisável</td><td>Registrar fontes, datasets, data marts, dashboards, APIs, features, grafos, modelos e produtos disponíveis.</td></tr><tr><td>DDI2</td><td>Ficha de Descoberta do Ativo</td><td>Documento ou página de catálogo</td><td>Apresentar descrição, finalidade, responsável, versão, qualidade, restrições, origem e consumidores.</td></tr><tr><td>DDI3</td><td>Índice de Busca de Dados</td><td>Índice textual ou semântico</td><td>Permitir busca por nomes, atributos, tags, glossário, descrições e conceitos relacionados.</td></tr><tr><td>DDI4</td><td>Taxonomia de Classificação de Ativos</td><td>Tabela ou modelo classificatório</td><td>Organizar ativos por domínio, tipo, finalidade, status, sensibilidade e qualidade.</td></tr><tr><td>DDI5</td><td>Mapa de Relações entre Ativos</td><td><a class="term" href="../conceitos/grafo.html">Grafo</a> ou matriz de dependências</td><td>Mostrar relações entre fontes, datasets, features, dashboards, APIs, modelos e produtos.</td></tr><tr><td>DDI6</td><td>Registro de Termos de Busca e Lacunas</td><td>Tabela de consultas</td><td>Identificar buscas frequentes, termos sem resultado, ambiguidade e necessidades não atendidas.</td></tr><tr><td>DDI7</td><td>Relatório de Uso e Reutilização</td><td>Relatório técnico-gerencial</td><td>Avaliar quais ativos descobertos são acessados, reutilizados ou abandonados.</td></tr><tr><td>DDI8</td><td>Registro de Recomendações de Ativos</td><td>Tabela ou serviço de recomendação</td><td>Sugerir ativos relevantes com base em finalidade, contexto, qualidade, uso e permissões.</td></tr><tr><td>DDI9</td><td>Painel de Discoverability</td><td>Dashboard</td><td>Monitorar cobertura do catálogo, sucesso de busca, tempo de descoberta e reutilização.</td></tr><tr><td>DDI10</td><td>Plano de Curadoria da Descoberta</td><td>Documento operacional</td><td>Definir ações para melhorar descrição, tags, indexação, classificação e organização dos ativos.</td></tr><tr><td>DDI11</td><td>Registro de Ativos Oficiais e Recomendados</td><td>Lista controlada</td><td>Diferenciar ativos oficiais, experimentais, depreciados, obsoletos e recomendados.</td></tr><tr><td>DDI12</td><td>Relatório de Experiência de Descoberta</td><td>Relatório qualitativo e quantitativo</td><td>Avaliar satisfação, dificuldades, termos ambíguos e efetividade da busca para os usuários.</td></tr></table></div>
+<h2 class="section-title" id="criterios-de-validacao">9. Critérios de validação</h2>
+<p>A dimensão Data Discoverability pode ser considerada adequadamente tratada quando:</p>
+<ol class="steps">
+<li>os ativos relevantes estão registrados em catálogo;</li>
+<li>os ativos possuem descrições claras e compreensíveis;</li>
+<li>fontes, datasets, dashboards, APIs, features e produtos podem ser encontrados por busca;</li>
+<li>usuários conseguem filtrar ativos por domínio, tipo, finalidade, status, qualidade e restrição;</li>
+<li>ativos oficiais, experimentais, depreciados e obsoletos são distinguíveis;</li>
+<li>métricas de qualidade estão visíveis ou acessíveis durante a descoberta;</li>
+<li>lineage, versões e dependências podem ser consultados;</li>
+<li>termos relevantes estão definidos em glossário e associados aos ativos;</li>
+<li>buscas por termos comuns retornam resultados úteis;</li>
+<li>consultas sem resultado útil são registradas e analisadas;</li>
+<li>ativos descobertos são efetivamente reutilizados;</li>
+<li>usuários conseguem identificar se um ativo é adequado à sua finalidade;</li>
+<li>agentes inteligentes conseguem apoiar a descoberta por linguagem natural;</li>
+<li>o tempo médio de descoberta diminui ao longo do tempo.</li>
+</ol>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">10. Exemplo de aplicação no domínio educacional</h2>
+<p>Em um projeto educacional, a Data Discoverability permite que pesquisadores, gestores e equipes técnicas encontrem rapidamente bases relacionadas a matrícula, histórico acadêmico, evasão, frequência, desempenho, interações em ambiente virtual, perfil socioeconômico, bolsas, permanência e indicadores institucionais.</p>
+<p>Por exemplo, ao buscar por “evasão”, o usuário poderia encontrar datasets oficiais, dashboards relacionados, features disponíveis, indicadores validados, definições no glossário, modelos que utilizam essa variável, versões históricas e restrições de acesso. Também poderia distinguir entre produtos oficiais, experimentais e depreciados.</p>
+<p>Essa capacidade reduz duplicação de análises, melhora a escolha dos dados, aumenta a reutilização de ativos e fortalece a confiabilidade dos estudos educacionais.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">11. Exemplo de aplicação em políticas públicas</h2>
+<p>Em políticas públicas, a descoberta de dados pode apoiar gestores e analistas na localização de bases sobre território, vulnerabilidade, saúde, educação, assistência social, atendimento, infraestrutura, orçamento e indicadores socioeconômicos.</p>
+<p>Por exemplo, ao buscar por “vulnerabilidade territorial”, o usuário poderia encontrar indicadores oficiais, bases de origem, dashboards territoriais, mapas, relatórios, regras de cálculo, <a class="term" href="../conceitos/periodicidade.html">periodicidade</a> de atualização, nível de agregação e restrições de uso.</p>
+<p>Com isso, a Data Discoverability reduz a dependência de contatos informais entre áreas, melhora a transparência dos dados disponíveis e apoia decisões intersetoriais baseadas em evidências.</p>
+<h2 class="section-title" id="contribuicao-para-o-modelo-de-referencia">12. Contribuição para o modelo de referência</h2>
+<p>A dimensão Data Discoverability contribui para o UnespDataLens-RM ao transformar a localização e compreensão dos ativos de dados em uma capacidade explícita do modelo de referência.</p>
+<p>Essa dimensão fortalece o modelo de referência ao:</p>
+<ul class="list">
+<li>tornar ativos de dados localizáveis e compreensíveis;</li>
+<li>reduzir dependência de conhecimento tácito;</li>
+<li>aumentar reutilização de datasets, dashboards, APIs e features;</li>
+<li>reduzir duplicação de esforços;</li>
+<li>melhorar governança do catálogo;</li>
+<li>apoiar seleção de dados adequados à finalidade;</li>
+<li>diminuir sobrecarga informacional;</li>
+<li>reduzir <a class="term" href="../problemas/silos-de-dados.html">silos de dados</a>;</li>
+<li>melhorar qualidade dos metadados;</li>
+<li>apoiar agentes inteligentes na recomendação de ativos;</li>
+<li>ampliar confiança dos usuários nos produtos analíticos;</li>
+<li>acelerar análises e processos decisórios.</li>
+</ul>
+<h2 class="section-title" id="sintese-da-dimensao">13. Síntese da dimensão</h2>
+<p>A dimensão Data Discoverability trata da capacidade de tornar ativos de dados localizáveis, compreensíveis, avaliáveis e reutilizáveis. No UnespDataLens-RM, essa dimensão atua como capacidade complementar para assegurar que fontes, datasets, features, dashboards, APIs, indicadores, grafos, modelos e produtos analíticos possam ser encontrados e selecionados com base em finalidade, qualidade, versão, governança, lineage e <a class="term" href="../metricas/adequacao-ao-uso.html">adequação ao uso</a>.</p>
+<p>Ao incorporar catálogos, metadados qualificados, glossários, busca textual e semântica, filtros, recomendações, lineage visível, sinalização de status, métricas de qualidade e agentes inteligentes, o modelo de referência amplia a capacidade de transformar dados disponíveis em ativos efetivamente úteis para análise, pesquisa, gestão e tomada de decisão baseada em evidências.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

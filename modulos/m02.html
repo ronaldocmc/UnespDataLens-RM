@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo 2 — Extração, Ingestão e Armazenamento Bruto tem como finalidade operacionalizar a entrada controlada dos dados no ambiente analítico do modelo de referência UnespDataLens-RM, a partir das fontes previamente identificadas, caracterizadas e documentadas no Módulo 1 — Fontes e Inventário de Dados.">
+  <title>Módulo 2 — Extração, Ingestão e Armazenamento Bruto · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-2-extracao-ingestao-e-armazenamento-bruto"></span><section class="hero">
+<span class="badge">Módulo 02</span>
+<h1>Módulo 2 — Extração, Ingestão e Armazenamento Bruto</h1>
+<p>O Módulo 2 — Extração, Ingestão e Armazenamento Bruto tem como finalidade operacionalizar a entrada controlada dos dados no ambiente analítico do modelo de referência UnespDataLens-RM, a partir das fontes previamente identificadas, caracterizadas e documentadas no Módulo 1 — Fontes e Inventário de Dados.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 29 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-tecnologias-aplicaveis">Técnicas, métodos e tecnologias aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a2-1-plano-de-extracao-e-ingestao">Artefato A2.1 — Plano de Extração e Ingestão</a><a href="#artefato-a2-2-configuracao-de-ingestao">Artefato A2.2 — Configuração de Ingestão</a><a href="#artefato-a2-3-log-de-execucao-da-ingestao">Artefato A2.3 — Log de Execução da Ingestão</a><a href="#artefato-a2-4-dataset-bruto">Artefato A2.4 — Dataset Bruto</a><a href="#artefato-a2-5-registro-de-snapshot">Artefato A2.5 — Registro de Snapshot</a><a href="#artefato-a2-6-manifesto-de-ingestao">Artefato A2.6 — Manifesto de Ingestão</a><a href="#artefato-a2-7-relatorio-de-falhas-e-rejeicoes">Artefato A2.7 — Relatório de Falhas e Rejeições</a><a href="#artefato-a2-8-registro-de-integridade">Artefato A2.8 — Registro de Integridade</a><a href="#artefato-a2-9-mapa-de-armazenamento-bruto">Artefato A2.9 — Mapa de Armazenamento Bruto</a><a href="#artefato-a2-10-registro-de-permissoes-de-ingestao">Artefato A2.10 — Registro de Permissões de Ingestão</a><a href="#artefato-a2-11-registro-de-janelas-temporais-de-ingestao">Artefato A2.11 — Registro de Janelas Temporais de Ingestão</a><a href="#artefato-a2-12-registro-de-eventos-ou-streaming">Artefato A2.12 — Registro de Eventos ou Streaming</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-os-demais-modulos-do-modelo-de-referencia">Relação com os demais módulos do modelo de referência</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo 2 — Extração, Ingestão e Armazenamento Bruto tem como finalidade operacionalizar a entrada controlada dos dados no ambiente analítico do modelo de referência UnespDataLens-RM, a partir das fontes previamente identificadas, caracterizadas e documentadas no Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>.</p>
+<p>Esse módulo é responsável por definir, executar, registrar, validar e preservar os procedimentos de extração e ingestão de dados provenientes de múltiplas fontes, garantindo que os dados sejam capturados de forma controlada, mantidos em estado bruto, acompanhados de <a class="term" href="../conceitos/metadados.html">metadados</a> técnicos e operacionais, versionados, auditáveis e preparados para as etapas posteriores de integração, harmonização, transformação, qualidade, governança, <a class="term" href="../conceitos/proveniencia.html">proveniência</a>, linhagem, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, <a class="term" href="../conceitos/reprodutibilidade.html">reprodutibilidade</a>, monitoramento e disponibilização analítica.</p>
+<p>No contexto do UnespDataLens-RM, a extração e a ingestão não são tratadas apenas como operações técnicas de cópia, importação ou movimentação de dados. Elas são concebidas como processos formais, documentados, monitoráveis e auditáveis, nos quais cada execução deve registrar a origem dos dados, data e hora da extração, método utilizado, volume capturado, schema observado, parâmetros de conexão, formato dos arquivos, falhas, registros rejeitados, evidências de <a class="term" href="../metricas/integridade.html">integridade</a>, versão da fonte, responsável pela execução, restrições de acesso e condições de uso.</p>
+<p>A preservação dos dados em estado bruto constitui um princípio central deste módulo. Ao armazenar uma cópia original, ou o mais próximo possível da origem, o modelo de referência cria condições para auditoria, reprocessamento, comparação entre versões, reconstrução de pipelines, análise de mudanças ao longo do tempo e avaliação de eventuais alterações estruturais, semânticas ou operacionais ocorridas nas fontes.</p>
+<p>O Módulo 2 também deve contemplar diferentes formas de ingestão, incluindo ingestão em lote, <a class="term" href="../metodos/ingestao-incremental.html">ingestão incremental</a>, ingestão por APIs, ingestão por arquivos, ingestão por conectores, ingestão orientada a <a class="term" href="../conceitos/eventos.html">eventos</a>, ingestão quase em tempo real e, quando aplicável, ingestão por <a class="term" href="../metodos/streaming.html">streaming</a>. Essa ampliação é importante porque o UnespDataLens-RM não se limita a bases estáticas ou históricas; ele deve ser capaz de lidar com <a class="term" href="../conceitos/dados-temporais.html">dados temporais</a>, registros longitudinais, <a class="term" href="../conceitos/logs.html">logs</a>, eventos, séries históricas, atualizações periódicas e fluxos dinâmicos de dados.</p>
+<p>Dessa forma, o Módulo 2 constitui a primeira materialização dos dados no pipeline analítico do UnespDataLens-RM. Ele transforma fontes documentadas em datasets brutos armazenados, com rastros de execução, evidências técnicas, metadados operacionais, registros de integridade, snapshots e permissões de acesso. Sua contribuição é essencial para garantir que os módulos seguintes trabalhem sobre dados cuja origem, forma de captura, versão, estrutura e condições de ingestão sejam conhecidas e verificáveis.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 2 é extrair, ingerir e armazenar dados brutos de forma controlada, documentada, versionável, auditável e reprodutível, preservando sua origem, estrutura inicial, parâmetros de coleta, registros de execução, metadados operacionais, evidências de integridade e condições de acesso, de modo a apoiar os módulos posteriores do modelo de referência UnespDataLens-RM.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 2:</p>
+<ol class="steps">
+<li>definir estratégias de extração adequadas às fontes identificadas no Módulo 1;</li>
+<li>estabelecer procedimentos de ingestão compatíveis com diferentes formatos, periodicidades, volumes e restrições de acesso;</li>
+<li>preservar os dados em estado bruto, evitando transformações irreversíveis no momento da ingestão;</li>
+<li>registrar logs completos de execução, incluindo data, hora, responsável, status, falhas, volume extraído, tempo de execução e destino dos dados;</li>
+<li>criar snapshots ou versões iniciais dos dados capturados;</li>
+<li>registrar metadados técnicos e operacionais associados à ingestão;</li>
+<li>validar preliminarmente estrutura, formato, volume, integridade, disponibilidade e <a class="term" href="../metricas/conformidade.html">conformidade</a> mínima dos dados ingeridos;</li>
+<li>detectar falhas de extração, divergências de schema, <a class="term" href="../problemas/dados-ausentes.html">dados ausentes</a>, arquivos corrompidos, registros rejeitados ou incompatibilidades de formato;</li>
+<li>controlar diferentes modalidades de ingestão, como batch, incremental, <a class="term" href="../conceitos/near-real-time.html">near real-time</a> e streaming;</li>
+<li>registrar parâmetros de conexão, filtros, janelas temporais, endpoints, credenciais controladas, formatos e condições de acesso;</li>
+<li>calcular evidências de integridade, como checksums, contagens de registros, tamanho de arquivos e comparação entre origem e destino;</li>
+<li>classificar o armazenamento bruto conforme sensibilidade, restrição de acesso, finalidade e política de retenção;</li>
+<li>fornecer evidências para os módulos de governança, lineage, versionamento, reprodutibilidade, observabilidade e <a class="term" href="../conceitos/dataops.html">DataOps</a>;</li>
+<li>preparar datasets brutos para integração, transformação, validação e armazenamento analítico;</li>
+<li>permitir auditoria, reprocessamento e comparação entre extrações realizadas em diferentes momentos.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>O Módulo 2 fundamenta-se na ideia de que a entrada dos dados no ambiente analítico é uma etapa crítica do ciclo de Engenharia Analítica de Dados. A confiabilidade dos produtos finais depende da capacidade de demonstrar de onde os dados vieram, quando foram capturados, como foram capturados, em que formato foram preservados, quais parâmetros foram utilizados, quais falhas ocorreram e qual versão da fonte foi materializada.</p>
+<p>A extração corresponde ao processo de obter dados a partir de uma fonte. Essa fonte pode ser um banco de dados, uma API, um arquivo, uma planilha, um sistema institucional, um log, um sensor, um repositório público, uma base governamental, uma aplicação web, um ambiente virtual de aprendizagem ou qualquer outro recurso capaz de fornecer dados ao projeto analítico.</p>
+<p>A ingestão corresponde à entrada desses dados no ambiente controlado do modelo de referência. Essa entrada pode ocorrer por carga em lote, atualização incremental, captura contínua de eventos, sincronização por API, envio de arquivos, leitura de logs ou consumo de fluxos de mensagens.</p>
+<p>O armazenamento bruto corresponde à preservação dos dados em seu estado original ou em uma representação mínima de persistência, sem aplicar transformações analíticas definitivas. O objetivo é manter uma referência confiável daquilo que foi recebido ou capturado, permitindo <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a>, auditoria e reprocessamento.</p>
+<p>No UnespDataLens-RM, esse módulo deve contemplar diferentes padrões de ingestão:</p>
+<div class="table-wrap"><table class="table"><tr><th>Tipo de ingestão</th><th>Descrição</th><th>Exemplo</th></tr><tr><td>Batch</td><td>Extração periódica em lotes.</td><td>Carga mensal de base acadêmica.</td></tr><tr><td>Incremental</td><td>Captura apenas de registros novos ou alterados.</td><td>Matrículas atualizadas desde a última execução.</td></tr><tr><td>Full load</td><td>Cópia completa da fonte a cada execução.</td><td>Exportação completa de uma base institucional.</td></tr><tr><td>API-based</td><td>Captura por chamadas a serviços ou endpoints.</td><td>Consulta a <a class="term" href="../artefatos/api-de-dados.html">API de dados</a> governamentais.</td></tr><tr><td>File-based</td><td>Ingestão por arquivos enviados ou disponibilizados.</td><td>CSV, JSON, XML, Parquet ou planilha.</td></tr><tr><td>Event-based</td><td>Captura de eventos gerados por sistemas.</td><td>Logs de acesso em ambiente virtual.</td></tr><tr><td>Near real-time</td><td>Ingestão frequente com baixa <a class="term" href="../conceitos/latencia.html">latência</a>.</td><td>Atualizações a cada poucos minutos.</td></tr><tr><td>Streaming</td><td>Captura contínua de eventos em fluxo.</td><td>Mensagens Kafka ou eventos de sensores.</td></tr></table></div>
+<p>A inclusão explícita dessas modalidades é importante porque o modelo de referência deve lidar tanto com dados históricos e administrativos quanto com dados temporais, logs, eventos, trajetórias e fluxos dinâmicos.</p>
+<p>À luz da Design Science Research, os artefatos deste módulo são tratados como unidades técnico-metodológicas projetadas para resolver problemas concretos de ingestão, preservação, rastreabilidade e reprodutibilidade. Cada artefato possui finalidade, estrutura mínima, regras de construção, métricas associadas, critérios de validação e relação com os demais módulos do modelo de referência.</p>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">5. Formalização sintética do módulo</h2>
+<p>O Módulo 2 pode ser compreendido como um processo de transformação de fontes documentadas em datasets brutos preservados, acompanhados de registros operacionais e evidências de integridade.</p>
+<p>Considerando o conjunto de fontes documentadas no Módulo 1:</p>
+<div class="formula">F = {f₁, f₂, ..., fₙ}</div>
+<p>em que cada fᵢ representa uma <a class="term" href="../conceitos/fonte-de-dados.html">fonte de dados</a> identificada, o Módulo 2 define um conjunto de processos de extração e ingestão:</p>
+<div class="formula">E = {e₁, e₂, ..., eₖ}</div>
+<p>em que cada processo eᵢ pode ser descrito por:</p>
+<div class="formula">eᵢ = {id, fonte, método, parâmetros, janela_temporal, data_execução, responsável, volume_extraído, schema_detectado, status, logs, erros, destino_bruto, versão, evidência_integridade}</div>
+<p>O módulo produz um conjunto de ativos brutos:</p>
+<div class="formula">B = {b₁, b₂, ..., bₘ}</div>
+<p>em que cada ativo bruto bⱼ pode ser representado por:</p>
+<div class="formula">bⱼ = {id, fonte_origem, caminho, formato, tamanho, número_registros, número_atributos, data_ingestão, checksum, versão, <a class="term" href="../conceitos/periodicidade.html">periodicidade</a>, janela_temporal, sensibilidade, restrição_acesso, log_execução, manifesto, status_integridade}</div>
+<p>Dessa forma, os dados deixam de ser tratados apenas como arquivos copiados para um repositório e passam a ser representados como ativos brutos documentados, versionáveis, auditáveis e reutilizáveis no ciclo de Engenharia Analítica de Dados.</p>
+<h2 class="section-title" id="entradas-do-modulo">6. Entradas do módulo</h2>
+<p>As entradas do Módulo 2 incluem as fontes identificadas e documentadas no Módulo 1, bem como as informações técnicas e contextuais necessárias para sua extração e ingestão.</p>
+<p>As principais entradas são:</p>
+<ul class="list">
+<li>fontes de dados inventariadas;</li>
+<li>credenciais ou mecanismos autorizados de acesso;</li>
+<li>endpoints de APIs;</li>
+<li>conexões com bancos de dados;</li>
+<li>arquivos disponibilizados para ingestão;</li>
+<li>planilhas eletrônicas;</li>
+<li>logs de sistemas;</li>
+<li>fluxos de eventos;</li>
+<li>sensores;</li>
+<li>bases públicas;</li>
+<li>bases governamentais;</li>
+<li>bases históricas;</li>
+<li>registros operacionais;</li>
+<li>dados acadêmicos;</li>
+<li>dados administrativos;</li>
+<li>dados territoriais;</li>
+<li>dados socioeconômicos;</li>
+<li>dados educacionais;</li>
+<li>dados de saúde;</li>
+<li>dados de políticas públicas;</li>
+<li>dados de trabalho;</li>
+<li>documentação técnica das fontes;</li>
+<li>periodicidade de atualização;</li>
+<li>regras de acesso;</li>
+<li><a class="term" href="../artefatos/classificacao-de-sensibilidade.html">classificação de sensibilidade</a>;</li>
+<li>restrições institucionais;</li>
+<li>janelas temporais de extração;</li>
+<li>parâmetros de consulta;</li>
+<li>schemas esperados;</li>
+<li>contratos de dados, quando disponíveis.</li>
+</ul>
+<p>Também são entradas relevantes os metadados produzidos no Módulo 1, como:</p>
+<ul class="list">
+<li>identificador da fonte;</li>
+<li>nome da fonte;</li>
+<li>origem;</li>
+<li>responsável;</li>
+<li>formato;</li>
+<li><a class="term" href="../conceitos/granularidade.html">granularidade</a>;</li>
+<li><a class="term" href="../conceitos/cobertura-temporal.html">cobertura temporal</a>;</li>
+<li>periodicidade;</li>
+<li>restrição de acesso;</li>
+<li>sensibilidade;</li>
+<li>finalidade;</li>
+<li>documentação existente;</li>
+<li>limitações conhecidas;</li>
+<li>relações potenciais com outras fontes.</li>
+</ul>
+<h2 class="section-title" id="processamento">7. Processamento</h2>
+<p>O processamento do Módulo 2 envolve atividades de planejamento, extração, ingestão, validação preliminar, armazenamento bruto, registro de logs, geração de manifestos, controle de integridade e organização dos dados em zonas apropriadas.</p>
+<h3 id="planejamento-da-extracao">7.1 Planejamento da extração</h3>
+<p>A primeira atividade consiste em definir como cada fonte será extraída. Devem ser considerados formato, volume, periodicidade, mecanismo de acesso, restrições, sensibilidade, janela temporal, necessidade de anonimização, latência esperada, custo operacional e impacto na fonte de origem.</p>
+<p>O plano de extração deve indicar se a captura será completa, incremental, periódica, sob demanda, orientada a eventos, quase em tempo real ou contínua.</p>
+<h3 id="configuracao-da-conexao-ou-mecanismo-de-captura">7.2 Configuração da conexão ou mecanismo de captura</h3>
+<p>A segunda atividade consiste em configurar os mecanismos técnicos necessários para acessar a fonte. Isso pode incluir conexões com bancos de dados, chamadas a APIs, leitura de arquivos, conectores, credenciais, tokens, parâmetros de autenticação, filas de mensagens, buckets de armazenamento, pastas monitoradas ou endpoints externos.</p>
+<p>Essa configuração deve ser documentada e, quando possível, versionada.</p>
+<h3 id="execucao-da-extracao">7.3 Execução da extração</h3>
+<p>A terceira atividade consiste em executar a captura dos dados. Durante essa execução, devem ser registrados volume extraído, tempo de execução, data e hora, filtros utilizados, janela temporal, quantidade de registros, quantidade de atributos, status da operação, mensagens de erro e eventuais registros rejeitados.</p>
+<h3 id="ingestao-no-ambiente-controlado">7.4 Ingestão no ambiente controlado</h3>
+<p>A quarta atividade consiste em transferir os dados capturados para o ambiente analítico do UnespDataLens-RM. A ingestão deve preservar a forma original dos dados sempre que possível, mantendo arquivos, tabelas ou registros em uma zona bruta.</p>
+<p>A ingestão pode ocorrer em:</p>
+<ul class="list">
+<li>zona raw;</li>
+<li>staging area;</li>
+<li>object storage;</li>
+<li>banco relacional;</li>
+<li>banco NoSQL;</li>
+<li><a class="term" href="../conceitos/data-lake.html">data lake</a>;</li>
+<li><a class="term" href="../conceitos/lakehouse.html">lakehouse</a>;</li>
+<li>repositório de arquivos;</li>
+<li>armazenamento de logs;</li>
+<li>fila ou tópico de eventos;</li>
+<li>estrutura particionada por data, fonte ou domínio.</li>
+</ul>
+<h3 id="validacao-preliminar-da-ingestao">7.5 Validação preliminar da ingestão</h3>
+<p>A quinta atividade consiste em realizar validações iniciais, sem ainda aplicar transformações analíticas profundas. Essas validações podem verificar:</p>
+<ul class="list">
+<li>existência do arquivo ou tabela;</li>
+<li>legibilidade;</li>
+<li>formato esperado;</li>
+<li>schema observado;</li>
+<li>número de registros;</li>
+<li>tamanho do arquivo;</li>
+<li>presença de campos obrigatórios;</li>
+<li>conformidade mínima com contrato de dados;</li>
+<li>integridade por checksum;</li>
+<li>divergência entre origem e destino;</li>
+<li><a class="term" href="../problemas/duplicidade.html">duplicidade</a> de arquivos;</li>
+<li>registros corrompidos;</li>
+<li>falhas de codificação;</li>
+<li><a class="term" href="../metricas/atualidade.html">atualidade</a> da carga.</li>
+</ul>
+<h3 id="preservacao-de-snapshots">7.6 Preservação de snapshots</h3>
+<p>A sexta atividade consiste em preservar snapshots ou versões dos dados ingeridos. Um <a class="term" href="../conceitos/snapshot.html">snapshot</a> representa uma materialização dos dados em determinado momento, com data, origem, versão, parâmetros e evidências associadas.</p>
+<p>Snapshots são essenciais para reprocessamento, auditoria, comparação temporal, versionamento e reprodutibilidade.</p>
+<h3 id="registro-de-logs-e-metadados-operacionais">7.7 Registro de logs e metadados operacionais</h3>
+<p>A sétima atividade consiste em registrar logs estruturados da execução. Esses logs devem permitir responder:</p>
+<ul class="list">
+<li>quando a ingestão ocorreu?</li>
+<li>quem ou qual processo executou?</li>
+<li>qual fonte foi utilizada?</li>
+<li>quais parâmetros foram aplicados?</li>
+<li>quantos registros foram capturados?</li>
+<li>houve erro?</li>
+<li>houve registros rejeitados?</li>
+<li>qual foi o destino?</li>
+<li>qual versão foi gerada?</li>
+<li>quais evidências de integridade foram calculadas?</li>
+</ul>
+<h3 id="geracao-do-manifesto-de-ingestao">7.8 Geração do <a class="term" href="../artefatos/manifesto-de-ingestao.html">manifesto de ingestão</a></h3>
+<p>A oitava atividade consiste em gerar um manifesto de ingestão, isto é, um documento estruturado contendo as informações necessárias para reconstruir ou auditar a execução.</p>
+<p>O manifesto deve registrar fonte, versão, parâmetros, ambiente, arquivos gerados, logs, checksums, schema observado, tempo de execução, status, responsável e destino.</p>
+<h3 id="organizacao-do-armazenamento-bruto">7.9 Organização do armazenamento bruto</h3>
+<p>A nona atividade consiste em organizar os dados brutos conforme uma convenção de estrutura, nomenclatura, particionamento e retenção.</p>
+<p>Exemplo de organização:</p>
+<p>/raw/{dominio}/{fonte}/{ano}/{mes}/{dia}/{versao}/</p>
+<p>Essa estrutura facilita descoberta, versionamento, <a class="term" href="../conceitos/controle-de-acesso.html">controle de acesso</a>, lineage, observabilidade e reprocessamento.</p>
+<h3 id="tratamento-de-falhas-de-ingestao">7.10 Tratamento de falhas de ingestão</h3>
+<p>A décima atividade consiste em registrar falhas, rejeições, exceções e <a class="term" href="../problemas/inconsistencias.html">inconsistências</a> encontradas durante a extração ou ingestão. O módulo deve indicar severidade, causa provável, impacto, responsável e ação recomendada.</p>
+<p>Falhas críticas podem bloquear a disponibilização dos dados para módulos posteriores.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-tecnologias-aplicaveis">8. Técnicas, métodos e tecnologias aplicáveis</h2>
+<p>O Módulo 2 pode empregar diferentes técnicas, métodos e tecnologias para extração, ingestão e armazenamento bruto.</p>
+<p>Entre as técnicas de extração, destacam-se:</p>
+<ul class="list">
+<li>extração batch;</li>
+<li>extração incremental;</li>
+<li>extração full load;</li>
+<li>captura por API;</li>
+<li>leitura de arquivos;</li>
+<li>consulta SQL;</li>
+<li>exportação de sistemas;</li>
+<li>coleta por conectores;</li>
+<li>captura de logs;</li>
+<li>ingestão orientada a eventos;</li>
+<li>captura near real-time;</li>
+<li>streaming de dados;</li>
+<li><a class="term" href="../metodos/change-data-capture.html">change data capture</a>;</li>
+<li>web services;</li>
+<li>filas e tópicos de mensagens.</li>
+</ul>
+<p>Entre as técnicas de ingestão e persistência, podem ser utilizadas:</p>
+<ul class="list">
+<li>staging area;</li>
+<li>zona raw;</li>
+<li>data lake;</li>
+<li>lakehouse;</li>
+<li>object storage;</li>
+<li>particionamento por data;</li>
+<li>particionamento por fonte;</li>
+<li>organização por domínio;</li>
+<li>armazenamento em CSV;</li>
+<li>armazenamento em JSON;</li>
+<li>armazenamento em XML;</li>
+<li>armazenamento em Parquet;</li>
+<li>armazenamento em Avro;</li>
+<li>armazenamento em ORC;</li>
+<li>tabelas relacionais;</li>
+<li>armazenamento de eventos;</li>
+<li>armazenamento de logs.</li>
+</ul>
+<p>Entre os métodos de validação preliminar, destacam-se:</p>
+<ul class="list">
+<li>validação de schema;</li>
+<li>validação de formato;</li>
+<li>contagem de registros;</li>
+<li>verificação de campos obrigatórios;</li>
+<li>comparação de volume com extrações anteriores;</li>
+<li>cálculo de checksum;</li>
+<li>verificação de duplicidade de arquivos;</li>
+<li>verificação de tamanho;</li>
+<li>validação de encoding;</li>
+<li>validação de data de referência;</li>
+<li>detecção de arquivos corrompidos;</li>
+<li>conformidade com contrato de dados;</li>
+<li>registro de divergências entre origem e destino.</li>
+</ul>
+<p>Entre as tecnologias aplicáveis, podem ser consideradas:</p>
+<ul class="list">
+<li><a class="term" href="../tecnicas/apache-airflow.html">Apache Airflow</a>;</li>
+<li><a class="term" href="../tecnicas/prefect.html">Prefect</a>;</li>
+<li><a class="term" href="../tecnicas/dagster.html">Dagster</a>;</li>
+<li><a class="term" href="../tecnicas/apache-nifi.html">Apache NiFi</a>;</li>
+<li><a class="term" href="../tecnicas/apache-kafka.html">Apache Kafka</a>;</li>
+<li><a class="term" href="../tecnicas/spark.html">Spark</a>;</li>
+<li><a class="term" href="../tecnicas/pyspark.html">PySpark</a>;</li>
+<li>pandas;</li>
+<li>SQL;</li>
+<li><a class="term" href="../tecnicas/dbt.html">dbt</a>;</li>
+<li><a class="term" href="../tecnicas/duckdb.html">DuckDB</a>;</li>
+<li><a class="term" href="../tecnicas/postgresql.html">PostgreSQL</a>;</li>
+<li>object storage;</li>
+<li>Delta Lake;</li>
+<li>Apache Iceberg;</li>
+<li>Apache Hudi;</li>
+<li>LakeFS;</li>
+<li>DVC;</li>
+<li><a class="term" href="../tecnicas/mlflow.html">MLflow</a>;</li>
+<li><a class="term" href="../tecnicas/great-expectations.html">Great Expectations</a>;</li>
+<li><a class="term" href="../tecnicas/pandera.html">Pandera</a>;</li>
+<li><a class="term" href="../tecnicas/soda-core.html">Soda Core</a>;</li>
+<li><a class="term" href="../tecnicas/deequ.html">Deequ</a>;</li>
+<li><a class="term" href="../tecnicas/openlineage.html">OpenLineage</a>;</li>
+<li><a class="term" href="../tecnicas/marquez.html">Marquez</a>;</li>
+<li><a class="term" href="../tecnicas/datahub.html">DataHub</a>;</li>
+<li><a class="term" href="../tecnicas/openmetadata.html">OpenMetadata</a>.</li>
+</ul>
+<h2 class="section-title" id="metricas-do-modulo">9. Métricas do módulo</h2>
+<p>As métricas do Módulo 2 avaliam a efetividade, confiabilidade, <a class="term" href="../metricas/completude.html">completude</a>, integridade, rastreabilidade e desempenho dos processos de extração, ingestão e armazenamento bruto.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Número de fontes ingeridas</td><td>NFIg</td><td>Quantidade total de fontes efetivamente ingeridas no ambiente analítico.</td></tr><tr><td><a class="term" href="../metricas/taxa-de-ingestao-bem-sucedida.html">Taxa de ingestão bem-sucedida</a></td><td>TIBS</td><td>Proporção de execuções de ingestão concluídas sem falhas críticas.</td></tr><tr><td>Volume de dados ingeridos</td><td>VDI</td><td>Quantidade de registros, arquivos ou bytes ingeridos.</td></tr><tr><td><a class="term" href="../metricas/taxa-de-registros-rejeitados.html">Taxa de registros rejeitados</a></td><td>TRR</td><td>Proporção de registros não aceitos na ingestão.</td></tr><tr><td>Taxa de falhas de ingestão</td><td>TFI</td><td>Proporção de execuções com erro.</td></tr><tr><td>Tempo médio de ingestão</td><td>TMI</td><td>Tempo médio necessário para extrair e ingerir os dados.</td></tr><tr><td><a class="term" href="../metricas/taxa-de-conformidade-de-schema.html">Taxa de conformidade de schema</a></td><td>TCS</td><td>Proporção de ingestões compatíveis com o schema esperado.</td></tr><tr><td>Taxa de atualização no prazo</td><td>TAP</td><td>Proporção de ingestões executadas conforme periodicidade esperada.</td></tr><tr><td><a class="term" href="../metricas/cobertura-de-logs-de-execucao.html">Cobertura de logs de execução</a></td><td>CLE</td><td>Proporção de execuções com logs estruturados completos.</td></tr><tr><td>Cobertura de manifestos operacionais</td><td>CMO</td><td>Proporção de execuções com manifesto de ingestão.</td></tr><tr><td>Taxa de snapshots gerados</td><td>TSG</td><td>Proporção de ingestões que geraram snapshot preservado.</td></tr><tr><td>Taxa de fontes com armazenamento bruto</td><td>TFAB</td><td>Proporção de fontes ingeridas preservadas em zona bruta.</td></tr><tr><td>Taxa de rastreabilidade da origem</td><td>TRO</td><td>Proporção de datasets brutos associados à fonte original e metadados de ingestão.</td></tr><tr><td>Taxa de ativos com checksum preservado</td><td>TACP</td><td>Proporção de arquivos ou datasets brutos com evidência de integridade.</td></tr><tr><td>Taxa de ingestão incremental correta</td><td>TIIC</td><td>Proporção de ingestões incrementais sem duplicação ou perda de registros.</td></tr><tr><td>Latência de ingestão</td><td>LI</td><td>Tempo entre a geração do dado na fonte e sua disponibilidade no ambiente bruto.</td></tr><tr><td>Taxa de eventos processados</td><td>TEP</td><td>Proporção de eventos capturados e armazenados corretamente em fluxos contínuos.</td></tr></table></div>
+<h3 id="taxa-de-ingestao-bem-sucedida-tibs">9.1 Taxa de Ingestão Bem-Sucedida — TIBS</h3>
+<p>A Taxa de Ingestão Bem-Sucedida mede a proporção de execuções concluídas sem falhas críticas.</p>
+<div class="formula">TIBS = número de ingestões bem-sucedidas / número total de ingestões executadas</div>
+<p>Essa métrica indica a estabilidade operacional do processo de ingestão.</p>
+<h3 id="taxa-de-registros-rejeitados-trr">9.2 Taxa de Registros Rejeitados — TRR</h3>
+<p>A Taxa de Registros Rejeitados mede a proporção de registros descartados, inválidos, corrompidos ou não ingeridos.</p>
+<div class="formula">TRR = número de registros rejeitados / número total de registros extraídos</div>
+<p>Valores elevados indicam problemas de formato, schema, qualidade, encoding, integridade ou regra de ingestão.</p>
+<h3 id="taxa-de-conformidade-de-schema-tcs">9.3 Taxa de Conformidade de Schema — TCS</h3>
+<p>A Taxa de Conformidade de Schema mede se os dados ingeridos mantêm compatibilidade com o schema esperado.</p>
+<div class="formula">TCS = número de ingestões compatíveis com schema esperado / número total de ingestões avaliadas</div>
+<p>Essa métrica é importante para detectar <a class="term" href="../conceitos/schema-drift.html">schema drift</a> logo na entrada dos dados.</p>
+<h3 id="cobertura-de-logs-de-execucao-cle">9.4 Cobertura de Logs de Execução — CLE</h3>
+<p>A Cobertura de Logs de Execução mede a proporção de execuções com logs completos.</p>
+<div class="formula">CLE = número de execuções com logs estruturados / número total de execuções</div>
+<p>Logs completos são fundamentais para DataOps, observabilidade, auditoria e reprodutibilidade.</p>
+<h3 id="cobertura-de-manifestos-operacionais-cmo">9.5 Cobertura de Manifestos Operacionais — CMO</h3>
+<p>A Cobertura de Manifestos Operacionais mede a proporção de ingestões acompanhadas de manifesto.</p>
+<div class="formula">CMO = número de ingestões com manifesto / número total de ingestões</div>
+<p>O manifesto registra dados, parâmetros, versões, ambiente, destino e evidências da execução.</p>
+<h3 id="latencia-de-ingestao-li">9.6 Latência de Ingestão — LI</h3>
+<p>A Latência de Ingestão mede o tempo entre a geração ou atualização do dado na fonte e sua disponibilidade no ambiente bruto.</p>
+<div class="formula">LI = horário de disponibilidade no ambiente bruto − horário de geração ou atualização na fonte</div>
+<p>Essa métrica é especialmente relevante para ingestões near real-time, streaming, logs e dados operacionais com atualização frequente.</p>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">10. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 2 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A2.1</td><td><a class="term" href="../artefatos/plano-de-extracao-e-ingestao.html">Plano de Extração e Ingestão</a></td><td>Documento técnico</td><td>TIBS</td><td>Define estratégia de captura e entrada dos dados.</td></tr><tr><td>A2.2</td><td><a class="term" href="../artefatos/configuracao-de-ingestao.html">Configuração de Ingestão</a></td><td>Arquivo YAML, JSON, script ou tabela</td><td>CMO</td><td>Registra parâmetros, fonte, conexão e método de ingestão.</td></tr><tr><td>A2.3</td><td><a class="term" href="../artefatos/log-de-execucao-da-ingestao.html">Log de Execução da Ingestão</a></td><td>Log estruturado</td><td>CLE</td><td>Documenta execução, falhas, volumes e status.</td></tr><tr><td>A2.4</td><td><a class="term" href="../artefatos/dataset-bruto.html">Dataset Bruto</a></td><td>Arquivo, tabela ou objeto armazenado</td><td>TFAB</td><td>Preserva dados no estado original.</td></tr><tr><td>A2.5</td><td><a class="term" href="../artefatos/registro-de-snapshot.html">Registro de Snapshot</a></td><td>Tabela ou manifesto versionado</td><td>TSG</td><td>Preserva versões temporais dos dados ingeridos.</td></tr><tr><td>A2.6</td><td>Manifesto de Ingestão</td><td>Documento estruturado</td><td>CMO</td><td>Permite auditoria e reprodutibilidade da ingestão.</td></tr><tr><td>A2.7</td><td><a class="term" href="../artefatos/relatorio-de-falhas-e-rejeicoes.html">Relatório de Falhas e Rejeições</a></td><td>Relatório técnico</td><td>TRR, TFI</td><td>Registra erros, registros rejeitados e ações necessárias.</td></tr><tr><td>A2.8</td><td><a class="term" href="../artefatos/registro-de-integridade.html">Registro de Integridade</a></td><td>Checksums e contagens</td><td>TACP</td><td>Verifica integridade entre origem e destino.</td></tr><tr><td>A2.9</td><td><a class="term" href="../artefatos/mapa-de-armazenamento-bruto.html">Mapa de Armazenamento Bruto</a></td><td>Diagrama ou tabela</td><td>TFAB</td><td>Organiza localização, zonas, formatos e partições.</td></tr><tr><td>A2.10</td><td><a class="term" href="../artefatos/registro-de-permissoes-de-ingestao.html">Registro de Permissões de Ingestão</a></td><td>Matriz de acesso</td><td>TACP</td><td>Controla acesso, credenciais, restrições e responsáveis.</td></tr><tr><td>A2.11</td><td><a class="term" href="../artefatos/registro-de-janelas-temporais-de-ingestao.html">Registro de Janelas Temporais de Ingestão</a></td><td>Tabela temporal</td><td>LI, TAP</td><td>Documenta períodos extraídos, recortes e atualização.</td></tr><tr><td>A2.12</td><td><a class="term" href="../artefatos/registro-de-eventos-ou-streaming.html">Registro de Eventos ou Streaming</a></td><td>Log de eventos ou tópico monitorado</td><td>TEP</td><td>Documenta ingestões orientadas a eventos ou fluxos contínuos.</td></tr></table></div>
+<h2 class="section-title" id="artefato-a2-1-plano-de-extracao-e-ingestao">11. Artefato A2.1 — Plano de Extração e Ingestão</h2>
+<h3 id="finalidade">11.1 Finalidade</h3>
+<p>O Plano de Extração e Ingestão define como cada fonte será capturada, com qual periodicidade, por qual método, com quais parâmetros, restrições, responsáveis, formato de destino e critérios de validação preliminar.</p>
+<h3 id="tipo-de-artefato-na-dsr">11.2 Tipo de artefato na DSR</h3>
+<p>Na perspectiva da Design Science Research, esse artefato é simultaneamente:</p>
+<ul class="list">
+<li>um método, pois define o procedimento de extração e ingestão;</li>
+<li>um modelo, pois estrutura os elementos necessários ao planejamento da captura;</li>
+<li>uma instanciação, quando implementado em documentação, planilha, workflow, YAML, JSON ou ferramenta de orquestração.</li>
+</ul>
+<h3 id="estrutura-minima">11.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador da ingestão</td><td>Código único do processo.</td></tr><tr><td>Fonte</td><td>Fonte de dados associada.</td></tr><tr><td>Tipo de ingestão</td><td>Batch, incremental, full load, API, evento, streaming etc.</td></tr><tr><td>Método de extração</td><td>SQL, API, arquivo, conector, log, evento etc.</td></tr><tr><td>Periodicidade</td><td>Frequência esperada da ingestão.</td></tr><tr><td>Janela temporal</td><td>Período a ser capturado.</td></tr><tr><td>Formato de origem</td><td>CSV, JSON, API, tabela, log etc.</td></tr><tr><td>Formato de destino</td><td>CSV, Parquet, JSON, tabela, tópico etc.</td></tr><tr><td>Zona de destino</td><td>Raw, staging, landing ou outra.</td></tr><tr><td>Responsável</td><td>Pessoa, equipe ou sistema responsável.</td></tr><tr><td>Critérios de validação</td><td>Schema, volume, checksum, campos obrigatórios etc.</td></tr><tr><td>Restrições</td><td>Acesso, sensibilidade, <a class="term" href="../conceitos/privacidade.html">privacidade</a> ou limitação técnica.</td></tr></table></div>
+<h3 id="metricas-associadas">11.4 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ingestão bem-sucedida;</li>
+<li>taxa de atualização no prazo;</li>
+<li>tempo médio de ingestão;</li>
+<li>taxa de falhas de ingestão;</li>
+<li>cobertura de manifestos operacionais.</li>
+</ul>
+<h3 id="criterios-de-validacao">11.5 Critérios de validação</h3>
+<p>O plano é considerado válido quando define fonte, método, periodicidade, responsável, destino, formato, critérios de validação e restrições de acesso.</p>
+<h3 id="contribuicao">11.6 Contribuição</h3>
+<p>Esse artefato reduz improvisação na entrada dos dados e transforma a ingestão em um processo planejado, controlável e avaliável.</p>
+<h2 class="section-title" id="artefato-a2-2-configuracao-de-ingestao">12. Artefato A2.2 — Configuração de Ingestão</h2>
+<h3 id="finalidade-2">12.1 Finalidade</h3>
+<p>A Configuração de Ingestão registra os parâmetros técnicos necessários para executar a captura dos dados.</p>
+<h3 id="estrutura-minima-2">12.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador da configuração</td><td>Código único.</td></tr><tr><td>Fonte</td><td>Fonte associada.</td></tr><tr><td>Tipo de conexão</td><td>Banco, API, arquivo, fila, tópico etc.</td></tr><tr><td>Parâmetros</td><td>Host, endpoint, caminho, filtros, período etc.</td></tr><tr><td>Credenciais</td><td>Referência segura, nunca senha em texto aberto.</td></tr><tr><td>Formato esperado</td><td>CSV, JSON, XML, Parquet, tabela etc.</td></tr><tr><td>Schema esperado</td><td>Estrutura prevista dos dados.</td></tr><tr><td>Frequência</td><td>Agendamento ou gatilho.</td></tr><tr><td>Ambiente</td><td>Desenvolvimento, teste, homologação ou produção.</td></tr><tr><td>Versão da configuração</td><td>Controle de mudança.</td></tr></table></div>
+<h3 id="metricas-associadas-2">12.3 Métricas associadas</h3>
+<ul class="list">
+<li>percentual de configurações versionadas;</li>
+<li>taxa de execuções com configuração identificada;</li>
+<li>taxa de falhas por configuração inválida;</li>
+<li>taxa de conformidade com schema esperado.</li>
+</ul>
+<h3 id="criterios-de-validacao-2">12.4 Critérios de validação</h3>
+<p>A configuração é válida quando permite executar a ingestão de forma controlada, segura, versionável e auditável.</p>
+<h3 id="contribuicao-2">12.5 Contribuição</h3>
+<p>Esse artefato permite automação, reprodutibilidade e governança operacional das ingestões.</p>
+<h2 class="section-title" id="artefato-a2-3-log-de-execucao-da-ingestao">13. Artefato A2.3 — Log de Execução da Ingestão</h2>
+<h3 id="finalidade-3">13.1 Finalidade</h3>
+<p>O Log de Execução da Ingestão registra os eventos operacionais associados a cada execução de extração e ingestão.</p>
+<h3 id="estrutura-minima-3">13.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>ID da execução</td><td>Código único da execução.</td></tr><tr><td>Fonte</td><td>Fonte ingerida.</td></tr><tr><td>Data e hora de início</td><td>Momento inicial.</td></tr><tr><td>Data e hora de término</td><td>Momento final.</td></tr><tr><td>Responsável ou executor</td><td>Usuário, sistema ou orquestrador.</td></tr><tr><td>Status</td><td>Sucesso, falha, parcial, cancelado.</td></tr><tr><td>Volume extraído</td><td>Registros, arquivos ou bytes.</td></tr><tr><td>Volume ingerido</td><td>Quantidade efetivamente armazenada.</td></tr><tr><td>Registros rejeitados</td><td>Quantidade descartada ou inválida.</td></tr><tr><td>Erros</td><td>Mensagens ou códigos de falha.</td></tr><tr><td>Destino</td><td>Local de armazenamento bruto.</td></tr><tr><td>Versão gerada</td><td>Versão ou snapshot associado.</td></tr></table></div>
+<h3 id="metricas-associadas-3">13.3 Métricas associadas</h3>
+<ul class="list">
+<li>cobertura de logs de execução;</li>
+<li>taxa de falhas de ingestão;</li>
+<li>tempo médio de ingestão;</li>
+<li>taxa de registros rejeitados;</li>
+<li>taxa de ingestão bem-sucedida.</li>
+</ul>
+<h3 id="criterios-de-validacao-3">13.4 Critérios de validação</h3>
+<p>O log é válido quando permite reconstruir o que ocorreu durante a execução, incluindo status, volume, erro, origem, destino e responsável.</p>
+<h3 id="contribuicao-3">13.5 Contribuição</h3>
+<p>Esse artefato fornece evidências para auditoria, observabilidade, DataOps, lineage e reprodutibilidade.</p>
+<h2 class="section-title" id="artefato-a2-4-dataset-bruto">14. Artefato A2.4 — Dataset Bruto</h2>
+<h3 id="finalidade-4">14.1 Finalidade</h3>
+<p>O Dataset Bruto representa a cópia preservada dos dados ingeridos, mantida em estado original ou minimamente adaptado para armazenamento.</p>
+<h3 id="estrutura-minima-4">14.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador do dataset</td><td>Código único.</td></tr><tr><td>Fonte de origem</td><td>Fonte associada.</td></tr><tr><td>Data de ingestão</td><td>Momento de entrada no ambiente.</td></tr><tr><td>Formato</td><td>CSV, JSON, Parquet, tabela etc.</td></tr><tr><td>Localização</td><td>Caminho, bucket, tabela ou repositório.</td></tr><tr><td>Schema observado</td><td>Estrutura detectada.</td></tr><tr><td>Número de registros</td><td>Total ingerido.</td></tr><tr><td>Número de atributos</td><td>Total de colunas ou campos.</td></tr><tr><td>Checksum</td><td>Evidência de integridade.</td></tr><tr><td>Versão</td><td>Identificador da versão ou snapshot.</td></tr><tr><td>Sensibilidade</td><td>Classificação herdada ou atribuída.</td></tr><tr><td>Restrição de acesso</td><td>Política aplicável.</td></tr></table></div>
+<h3 id="metricas-associadas-4">14.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de fontes com armazenamento bruto;</li>
+<li>volume de dados ingeridos;</li>
+<li>taxa de ativos com checksum preservado;</li>
+<li>taxa de rastreabilidade da origem.</li>
+</ul>
+<h3 id="criterios-de-validacao-4">14.4 Critérios de validação</h3>
+<p>O dataset bruto é válido quando está armazenado, localizado, identificado, associado à fonte de origem e acompanhado de metadados mínimos.</p>
+<h3 id="contribuicao-4">14.5 Contribuição</h3>
+<p>Esse artefato preserva a referência original dos dados, permitindo auditoria, reprocessamento e comparação entre versões.</p>
+<h2 class="section-title" id="artefato-a2-5-registro-de-snapshot">15. Artefato A2.5 — Registro de Snapshot</h2>
+<h3 id="finalidade-5">15.1 Finalidade</h3>
+<p>O Registro de Snapshot documenta uma versão temporal dos dados ingeridos em determinado momento.</p>
+<h3 id="estrutura-minima-5">15.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>ID do snapshot</td><td>Código único.</td></tr><tr><td>Dataset associado</td><td>Dataset bruto correspondente.</td></tr><tr><td>Fonte</td><td>Fonte de origem.</td></tr><tr><td>Data de referência</td><td>Data dos dados na fonte.</td></tr><tr><td>Data de captura</td><td>Data da ingestão.</td></tr><tr><td>Janela temporal</td><td>Período abrangido.</td></tr><tr><td>Versão</td><td>Identificador da versão.</td></tr><tr><td>Checksum</td><td>Evidência de integridade.</td></tr><tr><td>Volume</td><td>Registros ou bytes.</td></tr><tr><td>Status</td><td>Válido, parcial, rejeitado, em revisão.</td></tr></table></div>
+<h3 id="metricas-associadas-5">15.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de snapshots gerados;</li>
+<li>número de versões por fonte;</li>
+<li>taxa de ingestões com janela temporal documentada;</li>
+<li>taxa de comparação entre snapshots.</li>
+</ul>
+<h3 id="criterios-de-validacao-5">15.4 Critérios de validação</h3>
+<p>O snapshot é válido quando possui fonte, data de captura, data de referência, versão, localização, volume e evidência de integridade.</p>
+<h3 id="contribuicao-5">15.5 Contribuição</h3>
+<p>Esse artefato permite reconstruir estados históricos dos dados e avaliar mudanças ao longo do tempo.</p>
+<h2 class="section-title" id="artefato-a2-6-manifesto-de-ingestao">16. Artefato A2.6 — Manifesto de Ingestão</h2>
+<h3 id="finalidade-6">16.1 Finalidade</h3>
+<p>O Manifesto de Ingestão registra de forma estruturada todas as informações necessárias para auditar ou reproduzir uma execução de ingestão.</p>
+<h3 id="estrutura-minima-6">16.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>ID do manifesto</td><td>Código único.</td></tr><tr><td>ID da execução</td><td>Execução associada.</td></tr><tr><td>Fonte</td><td>Fonte ingerida.</td></tr><tr><td>Configuração usada</td><td>Parâmetros e versão.</td></tr><tr><td>Dados de entrada</td><td>Origem, formato e localização.</td></tr><tr><td>Dados de saída</td><td>Destino bruto gerado.</td></tr><tr><td>Ambiente</td><td>Sistema, ferramenta ou ambiente de execução.</td></tr><tr><td>Parâmetros</td><td>Filtros, datas, credenciais de referência, limites.</td></tr><tr><td>Schema observado</td><td>Estrutura detectada.</td></tr><tr><td>Métricas de execução</td><td>Volume, tempo, erros, rejeições.</td></tr><tr><td>Checksums</td><td>Evidências de integridade.</td></tr><tr><td>Logs associados</td><td>Referências aos logs.</td></tr><tr><td>Responsável</td><td>Executor ou sistema responsável.</td></tr></table></div>
+<h3 id="metricas-associadas-6">16.3 Métricas associadas</h3>
+<ul class="list">
+<li>cobertura de manifestos operacionais;</li>
+<li>taxa de execuções reprodutíveis;</li>
+<li>taxa de rastreabilidade da origem;</li>
+<li>cobertura de logs de execução.</li>
+</ul>
+<h3 id="criterios-de-validacao-6">16.4 Critérios de validação</h3>
+<p>O manifesto é válido quando permite compreender, auditar e, quando possível, reproduzir a ingestão realizada.</p>
+<h3 id="contribuicao-6">16.5 Contribuição</h3>
+<p>Esse artefato conecta ingestão, versionamento, reprodutibilidade, DataOps e lineage.</p>
+<h2 class="section-title" id="artefato-a2-7-relatorio-de-falhas-e-rejeicoes">17. Artefato A2.7 — Relatório de Falhas e Rejeições</h2>
+<h3 id="finalidade-7">17.1 Finalidade</h3>
+<p>O Relatório de Falhas e Rejeições documenta erros, registros rejeitados, arquivos inválidos, problemas de schema, falhas de conexão, inconsistências de formato e exceções ocorridas durante a ingestão.</p>
+<h3 id="estrutura-minima-7">17.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Execução</td><td>ID da execução.</td></tr><tr><td>Fonte</td><td>Fonte associada.</td></tr><tr><td>Tipo de falha</td><td>Conexão, schema, formato, integridade, acesso etc.</td></tr><tr><td>Registros rejeitados</td><td>Quantidade ou lista de registros.</td></tr><tr><td>Severidade</td><td>Baixa, média, alta ou crítica.</td></tr><tr><td>Causa provável</td><td>Interpretação técnica.</td></tr><tr><td>Impacto</td><td>Módulos ou produtos afetados.</td></tr><tr><td>Ação recomendada</td><td>Correção, reprocessamento, bloqueio ou revisão.</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe.</td></tr><tr><td>Status</td><td>Aberta, resolvida, aceita, em análise.</td></tr></table></div>
+<h3 id="metricas-associadas-7">17.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de falhas de ingestão;</li>
+<li>taxa de registros rejeitados;</li>
+<li>taxa de incidentes críticos;</li>
+<li><a class="term" href="../metricas/tempo-medio-de-resolucao.html">tempo médio de resolução</a> de falhas.</li>
+</ul>
+<h3 id="criterios-de-validacao-7">17.4 Critérios de validação</h3>
+<p>O relatório é válido quando documenta a falha, sua severidade, causa provável, impacto e ação recomendada.</p>
+<h3 id="contribuicao-7">17.5 Contribuição</h3>
+<p>Esse artefato transforma falhas técnicas em evidências gerenciáveis, apoiando observabilidade, DataOps e qualidade.</p>
+<h2 class="section-title" id="artefato-a2-8-registro-de-integridade">18. Artefato A2.8 — Registro de Integridade</h2>
+<h3 id="finalidade-8">18.1 Finalidade</h3>
+<p>O Registro de Integridade documenta evidências que permitem verificar se os dados ingeridos correspondem ao que foi extraído da fonte.</p>
+<h3 id="estrutura-minima-8">18.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset</td><td>Dataset bruto associado.</td></tr><tr><td>Fonte</td><td>Fonte original.</td></tr><tr><td>Checksum</td><td>Hash ou assinatura de integridade.</td></tr><tr><td>Contagem de registros</td><td>Total extraído e total ingerido.</td></tr><tr><td>Tamanho do arquivo</td><td>Tamanho esperado e observado.</td></tr><tr><td>Data de verificação</td><td>Momento da validação.</td></tr><tr><td>Status</td><td>Íntegro, divergente, parcial, corrompido.</td></tr><tr><td>Observações</td><td>Comentários técnicos.</td></tr></table></div>
+<h3 id="metricas-associadas-8">18.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos com checksum preservado;</li>
+<li>taxa de divergência entre origem e destino;</li>
+<li>taxa de datasets íntegros;</li>
+<li>número de falhas de integridade.</li>
+</ul>
+<h3 id="criterios-de-validacao-8">18.4 Critérios de validação</h3>
+<p>O registro é válido quando permite verificar integridade, detectar divergências e comprovar preservação dos dados.</p>
+<h3 id="contribuicao-8">18.5 Contribuição</h3>
+<p>Esse artefato fortalece confiabilidade, auditoria e reprodutibilidade.</p>
+<h2 class="section-title" id="artefato-a2-9-mapa-de-armazenamento-bruto">19. Artefato A2.9 — Mapa de Armazenamento Bruto</h2>
+<h3 id="finalidade-9">19.1 Finalidade</h3>
+<p>O Mapa de Armazenamento Bruto documenta onde e como os dados brutos estão armazenados.</p>
+<h3 id="estrutura-minima-9">19.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset bruto</td><td>Identificador do ativo.</td></tr><tr><td>Fonte</td><td>Fonte de origem.</td></tr><tr><td>Zona</td><td>Raw, landing, staging etc.</td></tr><tr><td>Localização</td><td>Caminho, bucket, tabela ou repositório.</td></tr><tr><td>Formato</td><td>CSV, JSON, Parquet, tabela etc.</td></tr><tr><td>Particionamento</td><td>Data, fonte, domínio, versão etc.</td></tr><tr><td>Versão</td><td>Versão ou snapshot.</td></tr><tr><td>Restrição de acesso</td><td>Política aplicável.</td></tr><tr><td>Política de retenção</td><td>Prazo e condição de preservação.</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe.</td></tr></table></div>
+<h3 id="metricas-associadas-9">19.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de fontes com armazenamento bruto;</li>
+<li>taxa de ativos com localização documentada;</li>
+<li>taxa de ativos com política de retenção;</li>
+<li>taxa de ativos com restrição de acesso definida.</li>
+</ul>
+<h3 id="criterios-de-validacao-9">19.4 Critérios de validação</h3>
+<p>O mapa é válido quando permite localizar, acessar, auditar e governar os datasets brutos.</p>
+<h3 id="contribuicao-9">19.5 Contribuição</h3>
+<p>Esse artefato organiza o ambiente bruto e reduz perda de rastreabilidade, duplicidade e descontrole operacional.</p>
+<h2 class="section-title" id="artefato-a2-10-registro-de-permissoes-de-ingestao">20. Artefato A2.10 — Registro de Permissões de Ingestão</h2>
+<h3 id="finalidade-10">20.1 Finalidade</h3>
+<p>O Registro de Permissões de Ingestão documenta quem pode executar, configurar, acessar ou consultar processos e ativos de ingestão.</p>
+<h3 id="estrutura-minima-10">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Fonte</td><td>Fonte associada.</td></tr><tr><td>Processo de ingestão</td><td>Pipeline ou execução.</td></tr><tr><td>Usuário ou sistema</td><td>Entidade autorizada.</td></tr><tr><td>Tipo de permissão</td><td>Leitura, execução, configuração, administração.</td></tr><tr><td>Justificativa</td><td>Finalidade da permissão.</td></tr><tr><td><a class="term" href="../metricas/validade.html">Validade</a></td><td>Período autorizado.</td></tr><tr><td>Restrição</td><td>Sensibilidade ou limitação.</td></tr><tr><td>Responsável pela autorização</td><td>Pessoa ou setor.</td></tr><tr><td>Log de acesso</td><td>Referência de auditoria.</td></tr></table></div>
+<h3 id="metricas-associadas-10">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>percentual de processos com permissões documentadas;</li>
+<li>taxa de acessos autorizados;</li>
+<li>taxa de acessos indevidos;</li>
+<li>taxa de permissões vencidas.</li>
+</ul>
+<h3 id="criterios-de-validacao-10">20.4 Critérios de validação</h3>
+<p>O registro é válido quando permissões, responsáveis, finalidades e restrições estão documentados.</p>
+<h3 id="contribuicao-10">20.5 Contribuição</h3>
+<p>Esse artefato conecta ingestão à governança, segurança, privacidade e conformidade.</p>
+<h2 class="section-title" id="artefato-a2-11-registro-de-janelas-temporais-de-ingestao">21. Artefato A2.11 — Registro de Janelas Temporais de Ingestão</h2>
+<h3 id="finalidade-11">21.1 Finalidade</h3>
+<p>O Registro de Janelas Temporais de Ingestão documenta o período de dados capturado em cada execução, permitindo controle de dados históricos, incrementais, longitudinais e temporais.</p>
+<h3 id="estrutura-minima-11">21.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Execução</td><td>ID da ingestão.</td></tr><tr><td>Fonte</td><td>Fonte associada.</td></tr><tr><td>Tipo de janela</td><td>Completa, incremental, evento, período fixo etc.</td></tr><tr><td>Data inicial</td><td>Início do período capturado.</td></tr><tr><td>Data final</td><td>Fim do período capturado.</td></tr><tr><td>Campo temporal usado</td><td>Atributo de referência temporal.</td></tr><tr><td>Critério de seleção</td><td>Regra de filtro temporal.</td></tr><tr><td>Registros capturados</td><td>Quantidade.</td></tr><tr><td><a class="term" href="../problemas/lacunas-temporais.html">Lacunas temporais</a></td><td>Períodos ausentes ou incompletos.</td></tr><tr><td>Observações</td><td>Limitações temporais.</td></tr></table></div>
+<h3 id="metricas-associadas-11">21.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ingestões com janela temporal documentada;</li>
+<li>latência de ingestão;</li>
+<li>taxa de atualização no prazo;</li>
+<li>número de lacunas temporais detectadas.</li>
+</ul>
+<h3 id="criterios-de-validacao-11">21.4 Critérios de validação</h3>
+<p>O registro é válido quando permite saber exatamente qual período foi capturado e quais lacunas temporais existem.</p>
+<h3 id="contribuicao-11">21.5 Contribuição</h3>
+<p>Esse artefato reforça a capacidade do UnespDataLens-RM de lidar com dados temporais, séries históricas, logs, eventos e trajetórias.</p>
+<h2 class="section-title" id="artefato-a2-12-registro-de-eventos-ou-streaming">22. Artefato A2.12 — Registro de Eventos ou Streaming</h2>
+<h3 id="finalidade-12">22.1 Finalidade</h3>
+<p>O Registro de Eventos ou Streaming documenta fluxos de dados contínuos ou orientados a eventos, quando o projeto exigir ingestão near real-time ou streaming.</p>
+<h3 id="estrutura-minima-12">22.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Fluxo ou tópico</td><td>Identificador do stream.</td></tr><tr><td>Fonte geradora</td><td>Sistema, sensor ou aplicação.</td></tr><tr><td>Tipo de evento</td><td>Categoria do evento capturado.</td></tr><tr><td>Timestamp</td><td>Data e hora do evento.</td></tr><tr><td>Latência</td><td>Tempo entre evento e ingestão.</td></tr><tr><td>Volume de eventos</td><td>Quantidade por período.</td></tr><tr><td>Status</td><td>Ativo, interrompido, parcial, falho.</td></tr><tr><td>Erros</td><td>Falhas de captura ou processamento.</td></tr><tr><td>Destino bruto</td><td>Local de armazenamento do evento.</td></tr><tr><td>Política de retenção</td><td>Prazo de preservação do fluxo.</td></tr></table></div>
+<h3 id="metricas-associadas-12">22.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de eventos processados;</li>
+<li>latência de ingestão;</li>
+<li>taxa de perda de eventos;</li>
+<li>volume de eventos por período;</li>
+<li>taxa de disponibilidade do fluxo.</li>
+</ul>
+<h3 id="criterios-de-validacao-12">22.4 Critérios de validação</h3>
+<p>O registro é válido quando permite acompanhar, auditar e monitorar fluxos contínuos de eventos.</p>
+<h3 id="contribuicao-12">22.5 Contribuição</h3>
+<p>Esse artefato explicita a capacidade do modelo de referência de tratar dados dinâmicos, eventos e atualizações em tempo quase real.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">23. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Fontes documentadas, APIs, bancos, arquivos, planilhas, logs, eventos, conectores, credenciais autorizadas, parâmetros, schemas esperados, contratos e metadados do Módulo 1.</td></tr><tr><td>Processamento</td><td>Planejamento da extração, configuração da ingestão, execução, validação preliminar, armazenamento bruto, geração de logs, criação de snapshots, cálculo de checksums, registro de falhas e geração de manifestos.</td></tr><tr><td>Artefatos</td><td>Plano de extração, configuração de ingestão, logs, datasets brutos, snapshots, manifestos, relatórios de falhas, registros de integridade, mapa de armazenamento, permissões, janelas temporais e registros de eventos.</td></tr><tr><td>Métricas</td><td>TIBS, VDI, TRR, TFI, TMI, TCS, TAP, CLE, CMO, TSG, TFAB, TRO, TACP, TIIC, LI e TEP.</td></tr><tr><td>Saídas</td><td>Dados brutos preservados, versionados, rastreáveis, auditáveis e preparados para integração, transformação, qualidade, governança, lineage, versionamento e disponibilização analítica.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">24. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 2 pode ser considerado adequadamente implementado quando:</p>
+<ol class="steps">
+<li>as fontes prioritárias identificadas no Módulo 1 possuem estratégia de extração definida;</li>
+<li>os processos de ingestão possuem configuração documentada;</li>
+<li>cada execução gera log estruturado;</li>
+<li>os dados ingeridos são preservados em estado bruto;</li>
+<li>os datasets brutos possuem localização, versão, formato e fonte de origem documentados;</li>
+<li>snapshots são gerados para fontes críticas ou periódicas;</li>
+<li>manifestos de ingestão são produzidos para execuções relevantes;</li>
+<li>checksums ou evidências equivalentes de integridade são calculados;</li>
+<li>falhas, rejeições e exceções são registradas;</li>
+<li>janelas temporais de extração são documentadas quando aplicável;</li>
+<li>ingestões incrementais evitam perda ou duplicação de registros;</li>
+<li>ingestões near real-time ou streaming possuem controle de latência e eventos processados;</li>
+<li>permissões de acesso aos dados brutos estão documentadas;</li>
+<li>ativos sensíveis possuem restrições compatíveis com sua classificação;</li>
+<li>os dados brutos podem ser auditados e reprocessados;</li>
+<li>os artefatos produzidos são consumíveis pelos módulos posteriores.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-do-modelo-de-referencia">25. Relação com os demais módulos do modelo de referência</h2>
+<p>O Módulo 2 conecta o inventário das fontes ao restante do pipeline analítico.</p>
+<p>Com o Módulo 1 — Fontes e Inventário de Dados, utiliza informações sobre origem, formato, periodicidade, granularidade, restrição de acesso, sensibilidade e limitações das fontes.</p>
+<p>Com o Módulo 3 — Integração e Harmonização, fornece datasets brutos, schemas observados, chaves preliminares, janelas temporais e registros de origem.</p>
+<p>Com o Módulo 4 — Transformação, Limpeza e Enriquecimento, fornece os dados brutos que serão tratados, padronizados, recodificados, filtrados ou enriquecidos.</p>
+<p>Com o Módulo 5 — Qualidade e Validação de Dados, fornece dados e metadados necessários para avaliação de completude, validade, <a class="term" href="../metricas/consistencia.html">consistência</a>, atualidade, schema e integridade.</p>
+<p>Com o Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, preserva os dados originais para comparação de perdas, distribuição de grupos, representatividade e vieses introduzidos em etapas posteriores.</p>
+<p>Com o Módulo 7 — Armazenamento Analítico, fornece insumos brutos que posteriormente serão organizados em zonas tratadas, integradas, curadas e de consumo.</p>
+<p>Com o Módulo 8 — Disponibilização e Consumo Analítico, fornece evidências de origem e atualização dos produtos publicados.</p>
+<p>Com o Módulo 9 — Metadados, Catálogo e Semântica dos Dados, produz metadados operacionais, schemas observados, formatos, logs, snapshots e registros de ingestão.</p>
+<p>Com o Módulo 10 — Governança, Segurança, Privacidade e Conformidade, fornece registros de acesso, restrições, permissões, sensibilidade e evidências de uso autorizado.</p>
+<p>Com o Módulo 11 — Proveniência, Linhagem e Rastreabilidade, fornece os primeiros eventos materiais de linhagem, conectando fontes originais a datasets brutos.</p>
+<p>Com o Módulo 12 — Versionamento e Reprodutibilidade, fornece snapshots, manifestos, logs, checksums, configurações e versões necessárias para reconstrução de execuções.</p>
+<p>Com o Módulo 13 — Representações Analíticas, preserva atributos temporais, eventos, entidades e relações que poderão ser usados em representações tabulares, temporais e em grafos.</p>
+<p>Com o Módulo 14 — <a class="term" href="../conceitos/feature-engineering.html">Feature Engineering</a> e <a class="term" href="../conceitos/feature-store.html">Feature Store</a>, fornece dados brutos e históricos que permitem construir features reprodutíveis.</p>
+<p>Com o Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, fornece logs, volumes, schemas, janelas temporais e dados de referência para detectar drift, atrasos, falhas e mudanças estruturais.</p>
+<p>Com o Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline, fornece metadados operacionais, logs e manifestos que podem ser consultados para explicações, recomendações e diagnóstico de problemas.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">26. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, o Módulo 2 pode ser utilizado para extrair e ingerir dados de sistemas acadêmicos, ambientes virtuais de aprendizagem, registros de matrícula, histórico escolar, notas, frequência, questionários socioeconômicos, registros de evasão e logs de interação.</p>
+<p>Por exemplo, uma ingestão mensal pode capturar dados de matrícula e situação acadêmica em lote, enquanto logs de acesso ao ambiente virtual podem ser capturados diariamente ou em tempo quase real. Cada ingestão deve registrar fonte, data, período letivo, volume, schema observado, registros rejeitados, dados ausentes, checksum, snapshot e destino bruto.</p>
+<p>Se uma base de interações do ambiente virtual apresentar queda abrupta no volume de eventos, o log de ingestão e o registro de janelas temporais permitirão identificar se houve falha na fonte, interrupção na API, mudança de formato ou ausência real de eventos.</p>
+<p>Essa estrutura permite que o UnespDataLens-RM trabalhe com <a class="term" href="../conceitos/dados-tabulares.html">dados tabulares</a>, temporais, longitudinais, relacionais e de interação com maior confiabilidade e rastreabilidade.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">27. Exemplo de aplicação em políticas públicas</h2>
+<p>Em uma aplicação em políticas públicas, o Módulo 2 pode capturar dados provenientes de secretarias municipais, bases públicas, sistemas de atendimento, cadastros territoriais, registros de saúde, educação, assistência social, habitação, trabalho e orçamento.</p>
+<p>Algumas fontes podem ser atualizadas mensalmente, outras por arquivo enviado manualmente, outras por API e outras por fluxo de eventos. O módulo deve registrar a periodicidade de cada uma, o momento da ingestão, a janela temporal capturada, os dados ausentes, os registros rejeitados e as restrições de acesso.</p>
+<p>Por exemplo, se uma secretaria envia uma base mensal de atendimentos sociais, o Módulo 2 deve preservar o arquivo original, registrar checksum, data de recebimento, mês de referência, volume de registros, campos disponíveis, responsável e eventuais problemas de schema. Caso a base não seja entregue no prazo, a falha deve ser registrada como incidente operacional e sinalizada aos módulos de observabilidade e monitoramento.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">28. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição técnico-científica do Módulo 2 está em formalizar a extração, ingestão e preservação dos dados brutos como uma etapa mensurável, auditável, rastreável e reprodutível da Engenharia Analítica de Dados.</p>
+<p>Em vez de tratar a ingestão como uma operação técnica isolada, o UnespDataLens-RM propõe que cada processo de entrada de dados produza artefatos formais, como planos de ingestão, configurações versionáveis, logs, manifestos, snapshots, registros de integridade, relatórios de falhas, registros de janelas temporais e evidências de permissões.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>reduzir perda de rastreabilidade na origem dos dados;</li>
+<li>preservar dados brutos para auditoria e reprocessamento;</li>
+<li>aumentar a reprodutibilidade dos pipelines;</li>
+<li>documentar parâmetros e versões de ingestão;</li>
+<li>identificar falhas de extração de forma estruturada;</li>
+<li>apoiar governança e controle de acesso;</li>
+<li>fornecer evidências para lineage;</li>
+<li>preparar a base para qualidade, integração e transformação;</li>
+<li>permitir comparação entre extrações realizadas em diferentes momentos;</li>
+<li>contemplar dados históricos, temporais, incrementais, eventos e fluxos quase em tempo real;</li>
+<li>fortalecer DataOps, observabilidade e monitoramento desde a entrada dos dados.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">29. Síntese do módulo</h2>
+<p>O Módulo 2 — Extração, Ingestão e Armazenamento Bruto operacionaliza a entrada dos dados no ambiente analítico do UnespDataLens-RM. Ele transforma fontes documentadas em datasets brutos armazenados, acompanhados de logs, metadados operacionais, manifestos, registros de integridade, snapshots, janelas temporais, registros de falhas e permissões de acesso.</p>
+<p>Sua importância para o modelo de referência é central, pois estabelece a primeira materialização dos dados no pipeline analítico. Ao preservar a origem, registrar a execução e manter dados brutos auditáveis, o módulo fortalece a governança, a proveniência, a reprodutibilidade, o versionamento, a observabilidade e a confiabilidade dos processos analíticos.</p>
+<p>Dessa forma, o Módulo 2 complementa o Módulo 1 e prepara as condições necessárias para integração, transformação, qualidade, governança, lineage, versionamento, monitoramento, representação temporal, feature engineering e disponibilização analítica dos dados.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

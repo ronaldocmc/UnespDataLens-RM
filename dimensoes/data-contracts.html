@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A dimensão Data Contracts, ou contratos de dados, refere-se ao conjunto de acordos formais, explícitos e verificáveis que definem as responsabilidades, expectativas, regras, estruturas, padrões de qualidade, periodicidade, segurança, governança, versionamento e condições de uso associadas ao fornecimento, processamento, compartilhamento e consumo de dados…">
+  <title>Data Contracts · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a href="../modulos/index.html">Módulos</a><a class="active" href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="dimensao-complementar-data-contracts"></span><section class="hero">
+<span class="badge">Dimensão complementar</span>
+<h1>Data Contracts</h1>
+<p>A dimensão Data Contracts, ou contratos de dados, refere-se ao conjunto de acordos formais, explícitos e verificáveis que definem as responsabilidades, expectativas, regras, estruturas, padrões de qualidade, periodicidade, segurança, governança, versionamento e condições de uso associadas ao fornecimento, processamento, compartilhamento e consumo de dados…</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 13 seções</summary><a href="#definicao-da-dimensao">Definição da dimensão</a><a href="#problema-tratado">Problema tratado</a><a href="#objetivo-da-dimensao">Objetivo da dimensão</a><a href="#relacao-com-o-unespdatalens-rm">Relação com o UnespDataLens-RM</a><a href="#componentes-de-um-contrato-de-dados">Componentes de um contrato de dados</a><a href="#estrategias-de-implementacao">Estratégias de implementação</a><a href="#metricas-associadas">Métricas associadas</a><a href="#artefatos-relacionados">Artefatos relacionados</a><a href="#criterios-de-validacao">Critérios de validação</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-para-o-modelo-de-referencia">Contribuição para o modelo de referência</a><a href="#sintese-da-dimensao">Síntese da dimensão</a></details><div class="prose module-full"><h2 class="section-title" id="definicao-da-dimensao">1. Definição da dimensão</h2>
+<p>A dimensão Data Contracts, ou contratos de dados, refere-se ao conjunto de acordos formais, explícitos e verificáveis que definem as responsabilidades, expectativas, regras, estruturas, padrões de qualidade, <a class="term" href="../conceitos/periodicidade.html">periodicidade</a>, segurança, governança, <a class="term" href="../conceitos/versionamento.html">versionamento</a> e condições de uso associadas ao fornecimento, processamento, compartilhamento e consumo de dados entre produtores e consumidores.</p>
+<p>No contexto do UnespDataLens-RM, os contratos de dados funcionam como instrumentos técnico-metodológicos para reduzir ambiguidades, prevenir falhas, controlar mudanças, melhorar a comunicação entre áreas, proteger pipelines contra alterações inesperadas e assegurar que os dados utilizados em análises, dashboards, APIs, features, modelos e produtos analíticos atendam a requisitos mínimos previamente definidos.</p>
+<p>Um contrato de dados pode estabelecer, por exemplo, quais campos uma fonte deve fornecer, quais tipos de dados são esperados, quais atributos são obrigatórios, qual a periodicidade de atualização, quais domínios de valores são aceitos, quais regras de qualidade devem ser respeitadas, quais mudanças precisam ser comunicadas previamente, quais restrições de acesso se aplicam e quais produtos dependem daquele ativo.</p>
+<p>Assim, contratos de dados não são apenas documentos administrativos. Eles representam uma forma de governança técnica dos dados, permitindo que fontes, pipelines e produtos analíticos sejam tratados com maior previsibilidade, confiabilidade e responsabilidade.</p>
+<p>No UnespDataLens-RM, essa dimensão é complementar e transversal porque contratos de dados podem ser aplicados a fontes, datasets, APIs, tabelas, data marts, features, produtos de dados, dashboards, modelos e processos de integração. Eles se relacionam diretamente com inventário, ingestão, integração, qualidade, governança, lineage, versionamento, <a class="term" href="../conceitos/schema-drift.html">schema drift</a>, observabilidade e monitoramento.</p>
+<h2 class="section-title" id="problema-tratado">2. Problema tratado</h2>
+<p>Em ecossistemas analíticos complexos, muitos problemas decorrem da ausência de acordos explícitos entre quem produz os dados e quem os consome. Fontes podem mudar de estrutura sem aviso, atributos podem ser removidos, categorias podem ser alteradas, periodicidades podem deixar de ser cumpridas, campos obrigatórios podem passar a vir vazios, APIs podem mudar sua resposta, regras de negócio podem ser modificadas e produtos analíticos podem ser impactados sem que os responsáveis sejam informados.</p>
+<p>A ausência de contratos de dados pode gerar problemas como:</p>
+<ul class="list">
+<li>pipelines quebrados por mudanças inesperadas em fontes;</li>
+<li>alterações de schema não comunicadas;</li>
+<li>dados entregues fora da periodicidade esperada;</li>
+<li>queda de qualidade sem responsabilização;</li>
+<li>ausência de definição sobre atributos obrigatórios;</li>
+<li>divergência entre produtores e consumidores sobre o significado dos dados;</li>
+<li>dificuldade de estabelecer expectativas de atualização;</li>
+<li>uso de dados sem clareza sobre finalidade e restrições;</li>
+<li>ausência de critérios mínimos para publicação de produtos;</li>
+<li>conflitos entre áreas sobre responsabilidade pelos dados;</li>
+<li>maior ocorrência de schema drift não planejado;</li>
+<li>aumento de <a class="term" href="../problemas/falhas-silenciosas.html">falhas silenciosas</a>;</li>
+<li>dificuldade de auditoria e <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a>;</li>
+<li>perda de confiança nos produtos analíticos.</li>
+</ul>
+<p>No UnespDataLens-RM, a dimensão Data Contracts busca prevenir esses problemas por meio da formalização de expectativas técnicas, semânticas, operacionais e de governança entre os diversos componentes do ecossistema analítico.</p>
+<h2 class="section-title" id="objetivo-da-dimensao">3. Objetivo da dimensão</h2>
+<p>O objetivo da dimensão Data Contracts é formalizar acordos explícitos entre produtores e consumidores de dados, definindo estrutura, qualidade, periodicidade, responsabilidade, versionamento, governança, segurança, mudanças permitidas e condições de uso dos ativos analíticos do UnespDataLens-RM.</p>
+<p>Essa dimensão busca aumentar a previsibilidade e a confiabilidade dos pipelines, reduzir falhas decorrentes de mudanças não comunicadas, melhorar a governança dos dados e fortalecer a relação entre fontes, processos e produtos analíticos.</p>
+<h2 class="section-title" id="relacao-com-o-unespdatalens-rm">4. Relação com o UnespDataLens-RM</h2>
+<p>A dimensão Data Contracts se articula com diversos módulos do UnespDataLens-RM.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, os contratos ajudam a definir o que se espera de cada fonte: responsável, periodicidade, formato, <a class="term" href="../conceitos/cobertura-temporal.html">cobertura temporal</a>, <a class="term" href="../conceitos/granularidade.html">granularidade</a>, atributos obrigatórios e restrições de acesso.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, os contratos orientam a validação inicial dos dados recebidos, verificando se estrutura, volume, formato, campos obrigatórios e periodicidade estão conforme o esperado.</p>
+<p>No Módulo 3 — Integração e Harmonização, os contratos contribuem para estabilizar chaves de integração, entidades compartilhadas, domínios de valores e regras de correspondência entre fontes.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, os contratos indicam quais atributos devem existir, quais regras de transformação dependem deles e quais alterações exigem revisão do pipeline.</p>
+<p>No Módulo 5 — Qualidade e Validação de Dados, os contratos fornecem critérios explícitos para testes de qualidade, limiares, domínios válidos, obrigatoriedade, <a class="term" href="../metricas/completude.html">completude</a> mínima e <a class="term" href="../metricas/consistencia.html">consistência</a>.</p>
+<p>No Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, podem estabelecer requisitos mínimos para preservação de atributos necessários à avaliação de grupos, representatividade e equidade.</p>
+<p>No Módulo 7 — Armazenamento Analítico, orientam a persistência de ativos em estruturas compatíveis com schemas contratados, versões e requisitos de consumo.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, definem condições para consumo de datasets, dashboards, APIs, relatórios e produtos de dados, incluindo atualização, disponibilidade, granularidade e restrições.</p>
+<p>No Módulo 9 — <a class="term" href="../conceitos/metadados.html">Metadados</a>, Catálogo e Semântica dos Dados, os contratos são registrados como metadados formais dos ativos, associados a definições, domínios, responsáveis, regras e limitações.</p>
+<p>No Módulo 10 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, estabelecem responsabilidades, permissões, bases de uso, finalidades, restrições e obrigações de segurança.</p>
+<p>No Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e Rastreabilidade, permitem identificar quais produtos dependem de um contrato e quais impactos ocorrem quando ele é violado.</p>
+<p>No Módulo 12 — Versionamento e <a class="term" href="../conceitos/reprodutibilidade.html">Reprodutibilidade</a>, os contratos são versionados, permitindo comparar versões e reconstruir quais regras estavam vigentes em determinado momento.</p>
+<p>No Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, os contratos fornecem baselines e critérios para geração de alertas quando há violação de estrutura, qualidade, periodicidade ou disponibilidade.</p>
+<p>No Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline, agentes podem consultar contratos para explicar violações, orientar usuários e recomendar ações corretivas.</p>
+<h2 class="section-title" id="componentes-de-um-contrato-de-dados">5. Componentes de um contrato de dados</h2>
+<p>Um contrato de dados no UnespDataLens-RM pode conter componentes técnicos, semânticos, operacionais e de governança.</p>
+<div class="table-wrap"><table class="table"><tr><th>Componente</th><th>Descrição</th><th>Exemplo</th></tr><tr><td>Identificação do ativo</td><td>Nome, código, descrição e tipo do ativo contratado.</td><td>Base de matrículas semestrais.</td></tr><tr><td>Produtor dos dados</td><td>Área, sistema ou responsável pela geração dos dados.</td><td>Sistema acadêmico institucional.</td></tr><tr><td>Consumidores</td><td>Pipelines, produtos, equipes ou sistemas que dependem do ativo.</td><td><a class="term" href="../artefatos/dashboard.html">Dashboard</a> de evasão, <a class="term" href="../conceitos/feature-store.html">feature store</a>.</td></tr><tr><td>Schema esperado</td><td>Atributos, tipos, obrigatoriedade, chaves e domínios.</td><td>id_estudante, curso, situacao, periodo.</td></tr><tr><td>Periodicidade</td><td>Frequência esperada de atualização ou entrega.</td><td>Mensal, semestral, diária.</td></tr><tr><td>Critérios de qualidade</td><td>Requisitos mínimos de completude, <a class="term" href="../metricas/validade.html">validade</a>, consistência e <a class="term" href="../metricas/unicidade.html">unicidade</a>.</td><td>Completude mínima de 95% no campo curso.</td></tr><tr><td>Regras semânticas</td><td>Definições de conceitos, categorias e códigos.</td><td>Definição de estudante ativo.</td></tr><tr><td>Política de mudança</td><td>Regras para alteração de schema, periodicidade ou domínio.</td><td>Mudanças críticas devem ser avisadas previamente.</td></tr><tr><td>SLA de dados</td><td>Expectativas de disponibilidade, atualização e resposta.</td><td>Atualização até o quinto dia útil.</td></tr><tr><td>Restrições de uso</td><td>Condições de acesso, privacidade e finalidade.</td><td>Uso apenas para análise institucional agregada.</td></tr><tr><td>Versionamento</td><td>Histórico de versões do contrato e do schema.</td><td>Contrato v1.2.</td></tr><tr><td>Ações em caso de violação</td><td>Procedimentos quando o contrato não for cumprido.</td><td>Bloquear ingestão, gerar alerta, notificar responsável.</td></tr></table></div>
+<h2 class="section-title" id="estrategias-de-implementacao">6. Estratégias de implementação</h2>
+<p>A implementação de Data Contracts no UnespDataLens-RM pode envolver estratégias técnicas, metodológicas e institucionais.</p>
+<div class="table-wrap"><table class="table"><tr><th>Estratégia</th><th>Descrição</th></tr><tr><td>Definição de contratos por fonte crítica</td><td>Criar contratos para fontes relevantes que alimentam produtos, indicadores ou modelos importantes.</td></tr><tr><td>Contratos legíveis por humanos e máquinas</td><td>Manter documentação textual e representação estruturada em YAML, JSON, tabelas ou catálogo.</td></tr><tr><td>Validação automática contra contratos</td><td>Verificar se dados recebidos atendem a schema, tipos, domínios, obrigatoriedade e qualidade mínima.</td></tr><tr><td>Versionamento de contratos</td><td>Registrar mudanças nos contratos e permitir comparação entre versões.</td></tr><tr><td>Governança de mudanças</td><td>Exigir comunicação ou aprovação para alterações críticas em fontes contratadas.</td></tr><tr><td>Alertas de violação contratual</td><td>Gerar notificações quando periodicidade, schema, qualidade ou disponibilidade não forem cumpridos.</td></tr><tr><td>Integração com <a class="term" href="../conceitos/catalogo-de-dados.html">catálogo de dados</a></td><td>Registrar contratos junto aos metadados dos ativos.</td></tr><tr><td>Integração com lineage</td><td>Identificar produtos impactados por violação de contrato.</td></tr><tr><td>Definição de responsáveis</td><td>Associar produtores, consumidores e responsáveis técnicos a cada contrato.</td></tr><tr><td>Critérios de severidade</td><td>Classificar violações como baixa, média, alta ou crítica.</td></tr><tr><td>Revisão periódica</td><td>Atualizar contratos conforme evolução das fontes, regras e necessidades analíticas.</td></tr><tr><td><a class="term" href="../artefatos/registro-de-excecoes.html">Registro de exceções</a></td><td>Documentar casos em que uma violação é aceita temporariamente.</td></tr></table></div>
+<h2 class="section-title" id="metricas-associadas">7. Métricas associadas</h2>
+<p>A dimensão Data Contracts pode ser avaliada por métricas relacionadas à cobertura, conformidade, estabilidade, qualidade, violação e resolução de contratos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de ativos críticos com contrato</td><td>TACC</td><td>Proporção de ativos críticos que possuem contrato formal.</td></tr><tr><td>Taxa de contratos versionados</td><td>TCV</td><td>Proporção de contratos com histórico de versões.</td></tr><tr><td>Taxa de contratos com schema definido</td><td>TCSD</td><td>Proporção de contratos que especificam atributos, tipos, chaves e domínios.</td></tr><tr><td>Taxa de contratos com qualidade mínima definida</td><td>TCQM</td><td>Proporção de contratos com critérios mínimos de qualidade.</td></tr><tr><td>Taxa de contratos com SLA definido</td><td>TCSLA</td><td>Proporção de contratos com periodicidade, atualização ou disponibilidade definida.</td></tr><tr><td>Taxa de conformidade contratual</td><td>TCC</td><td>Proporção de execuções ou entregas que cumprem o contrato.</td></tr><tr><td>Taxa de violações contratuais</td><td>TVC</td><td>Proporção de execuções ou entregas com descumprimento do contrato.</td></tr><tr><td>Taxa de violações críticas</td><td>TVCr</td><td>Proporção de violações classificadas como críticas.</td></tr><tr><td><a class="term" href="../metricas/tempo-medio-de-resolucao.html">Tempo médio de resolução</a> de violação</td><td>TMRV</td><td>Tempo médio entre detecção e correção da violação.</td></tr><tr><td>Taxa de mudanças comunicadas</td><td>TMC</td><td>Proporção de mudanças estruturais comunicadas antes de afetar consumidores.</td></tr><tr><td>Taxa de contratos revisados</td><td>TCR</td><td>Proporção de contratos revisados em determinado período.</td></tr><tr><td>Índice de maturidade de contratos de dados</td><td>IMCD</td><td>Indicador composto de cobertura, conformidade, versionamento e revisão.</td></tr></table></div>
+<p>Uma formulação possível para o Índice de Maturidade de Contratos de Dados é:</p>
+<div class="formula">IMCD = w₁TACC + w₂TCV + w₃TCSD + w₄TCQM + w₅TCSLA + w₆TCC + w₇TMC − w₈TVC − w₉TVCr</div>
+<p>em que:</p>
+<ul class="list">
+<li>TACC representa a taxa de ativos críticos com contrato;</li>
+<li>TCV representa a taxa de contratos versionados;</li>
+<li>TCSD representa a taxa de contratos com schema definido;</li>
+<li>TCQM representa a taxa de contratos com qualidade mínima definida;</li>
+<li>TCSLA representa a taxa de contratos com SLA definido;</li>
+<li>TCC representa a taxa de conformidade contratual;</li>
+<li>TMC representa a taxa de mudanças comunicadas;</li>
+<li>TVC representa a taxa de violações contratuais;</li>
+<li>TVCr representa a taxa de violações críticas;</li>
+<li>wᵢ representa o peso atribuído a cada dimensão.</li>
+</ul>
+<p>Quanto maior o IMCD, maior a maturidade do ecossistema na formalização e gestão de contratos de dados.</p>
+<h2 class="section-title" id="artefatos-relacionados">8. Artefatos relacionados</h2>
+<p>A dimensão Data Contracts pode ser operacionalizada por meio de artefatos complementares, integrados aos módulos de inventário, ingestão, qualidade, governança, metadados, lineage, versionamento, observabilidade e monitoramento.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Finalidade</th></tr><tr><td>DC1</td><td>Modelo de Contrato de Dados</td><td>Documento técnico ou template estruturado</td><td>Padronizar os elementos mínimos de um contrato de dados.</td></tr><tr><td>DC2</td><td>Registro de Contratos de Dados</td><td>Catálogo ou tabela de contratos</td><td>Manter inventário dos contratos existentes, seus responsáveis, versões e status.</td></tr><tr><td>DC3</td><td>Especificação de Schema Contratado</td><td>Tabela, YAML, JSON ou <a class="term" href="../conceitos/data-contract.html">data contract</a></td><td>Definir atributos, tipos, domínios, chaves, obrigatoriedade e granularidade esperados.</td></tr><tr><td>DC4</td><td>Regras de Qualidade Contratadas</td><td>Tabela de regras ou arquivo validável</td><td>Definir completude mínima, validade, unicidade, consistência e limites aceitáveis.</td></tr><tr><td>DC5</td><td>Registro de SLA de Dados</td><td>Tabela ou documento de compromisso</td><td>Definir periodicidade, atualização, disponibilidade e tempo de resposta esperado.</td></tr><tr><td>DC6</td><td>Registro de Violações Contratuais</td><td>Log ou tabela de incidentes</td><td>Documentar descumprimentos de schema, qualidade, periodicidade, disponibilidade ou domínio.</td></tr><tr><td>DC7</td><td>Relatório de Conformidade Contratual</td><td>Relatório técnico-gerencial</td><td>Avaliar o grau de cumprimento dos contratos por fonte, ativo ou período.</td></tr><tr><td>DC8</td><td>Registro de Mudanças Contratuais</td><td>Changelog de contrato</td><td>Documentar alterações de schema, regras, periodicidade, qualidade ou responsáveis.</td></tr><tr><td>DC9</td><td>Matriz Produtor–Consumidor</td><td>Matriz de dependências</td><td>Identificar produtores, consumidores e produtos impactados por cada contrato.</td></tr><tr><td>DC10</td><td>Plano de Resposta a Violações</td><td>Documento operacional</td><td>Definir ações diante de violações, como alerta, bloqueio, reprocessamento ou exceção.</td></tr><tr><td>DC11</td><td>Registro de Exceções Contratuais</td><td>Tabela de exceções aprovadas</td><td>Documentar violações temporariamente aceitas, justificativas, prazos e responsáveis.</td></tr><tr><td>DC12</td><td>Painel de Contratos de Dados</td><td>Dashboard de acompanhamento</td><td>Monitorar cobertura, conformidade, violações, revisões e maturidade dos contratos.</td></tr></table></div>
+<h2 class="section-title" id="criterios-de-validacao">9. Critérios de validação</h2>
+<p>A dimensão Data Contracts pode ser considerada adequadamente tratada quando:</p>
+<ol class="steps">
+<li>ativos críticos possuem contratos de dados formalizados;</li>
+<li>contratos especificam produtor, consumidor, finalidade e responsável;</li>
+<li>schemas esperados estão documentados;</li>
+<li>atributos obrigatórios, tipos, domínios e chaves estão definidos;</li>
+<li>critérios mínimos de qualidade estão explicitados;</li>
+<li>periodicidade, atualização ou disponibilidade esperada estão registradas;</li>
+<li>regras de <a class="term" href="../problemas/mudanca-de-schema.html">mudança de schema</a> ou domínio estão estabelecidas;</li>
+<li>contratos possuem versionamento;</li>
+<li>violações contratuais geram alertas e registros;</li>
+<li>impactos sobre consumidores são identificados por lineage;</li>
+<li>mudanças críticas são comunicadas previamente;</li>
+<li>exceções são registradas, justificadas e acompanhadas;</li>
+<li>contratos são revisados periodicamente;</li>
+<li>consumidores conseguem verificar se um ativo está em conformidade com seu contrato.</li>
+</ol>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">10. Exemplo de aplicação no domínio educacional</h2>
+<p>Em um projeto educacional, um contrato de dados pode ser estabelecido para a base de matrículas utilizada em análises de evasão, desempenho e permanência.</p>
+<p>Esse contrato pode definir que a base deve ser atualizada semestralmente, conter os campos id_estudante, curso, periodo_letivo, situacao_academica, data_matricula e forma_ingresso, além de especificar quais campos são obrigatórios, quais categorias são aceitas para situação acadêmica, qual é a regra de identificação do estudante e quais alterações precisam ser comunicadas previamente.</p>
+<p>Se a fonte passar a incluir uma nova categoria de situação acadêmica, como “mobilidade” ou “abandono”, o contrato orienta que a mudança seja registrada, comunicada, versionada e avaliada quanto ao impacto nos indicadores de evasão e nos modelos preditivos.</p>
+<p>Dessa forma, o contrato reduz o risco de que dashboards e features educacionais sejam afetados por mudanças estruturais ou semânticas não tratadas.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">11. Exemplo de aplicação em políticas públicas</h2>
+<p>Em políticas públicas, um contrato de dados pode ser definido entre uma secretaria fornecedora de dados de atendimento social e o ecossistema analítico responsável por produzir indicadores territoriais.</p>
+<p>O contrato pode estabelecer periodicidade mensal, campos obrigatórios, códigos válidos de tipo de atendimento, identificadores territoriais, critérios mínimos de completude, restrições de acesso e regras para alteração de categorias.</p>
+<p>Se uma secretaria deixar de enviar dados no prazo ou modificar códigos de atendimento sem comunicação, o contrato permite gerar alerta, registrar violação, identificar dashboards e indicadores afetados e acionar o responsável pela fonte.</p>
+<p>Assim, contratos de dados contribuem para tornar a integração intersetorial mais previsível, auditável e confiável.</p>
+<h2 class="section-title" id="contribuicao-para-o-modelo-de-referencia">12. Contribuição para o modelo de referência</h2>
+<p>A dimensão Data Contracts contribui para o UnespDataLens-RM ao formalizar expectativas entre produtores e consumidores de dados, reduzindo falhas causadas por mudanças inesperadas, ambiguidade semântica, baixa qualidade, ausência de periodicidade e falta de responsabilização.</p>
+<p>Essa dimensão fortalece o modelo de referência ao:</p>
+<ul class="list">
+<li>aumentar previsibilidade no uso de fontes e ativos;</li>
+<li>reduzir impactos de schema drift;</li>
+<li>formalizar requisitos mínimos de qualidade;</li>
+<li>melhorar comunicação entre produtores e consumidores;</li>
+<li>apoiar governança de mudanças;</li>
+<li>permitir validação automática de dados recebidos;</li>
+<li>fortalecer rastreabilidade entre contratos, fontes e produtos;</li>
+<li>reduzir falhas silenciosas;</li>
+<li>apoiar observabilidade e monitoramento;</li>
+<li>melhorar confiabilidade dos produtos analíticos;</li>
+<li>reduzir <a class="term" href="../problemas/divida-de-dados.html">dívida de dados</a>;</li>
+<li>sustentar evolução controlada do ecossistema.</li>
+</ul>
+<h2 class="section-title" id="sintese-da-dimensao">13. Síntese da dimensão</h2>
+<p>A dimensão Data Contracts trata da formalização de acordos explícitos entre produtores e consumidores de dados, especificando estrutura, qualidade, periodicidade, responsabilidade, versionamento, governança, segurança e regras de mudança dos ativos analíticos.</p>
+<p>No UnespDataLens-RM, essa dimensão atua como capacidade complementar para tornar o ciclo de dados mais previsível, confiável, rastreável e governado. Ao incorporar contratos de dados, validação automática, versionamento, SLAs, registros de violação, análise de impacto e planos de resposta, o modelo de referência reduz riscos operacionais e fortalece a confiança nos dados utilizados para análise, modelagem, dashboards, APIs, produtos e tomada de decisão baseada em evidências.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

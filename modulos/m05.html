@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo 5 — Qualidade e Validação de Dados tem como finalidade avaliar, mensurar, documentar e validar a qualidade dos dados produzidos ao longo do modelo de referência UnespDataLens-RM, considerando os dados brutos, integrados, harmonizados, transformados, limpos e enriquecidos nos módulos anteriores.">
+  <title>Módulo 5 — Qualidade e Validação de Dados · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-5-qualidade-e-validacao-de-dados"></span><section class="hero">
+<span class="badge">Módulo 05</span>
+<h1>Módulo 5 — Qualidade e Validação de Dados</h1>
+<p>O Módulo 5 — Qualidade e Validação de Dados tem como finalidade avaliar, mensurar, documentar e validar a qualidade dos dados produzidos ao longo do modelo de referência UnespDataLens-RM, considerando os dados brutos, integrados, harmonizados, transformados, limpos e enriquecidos nos módulos anteriores.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 27 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-algoritmos-aplicaveis">Técnicas, métodos e algoritmos aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a5-1-modelo-de-dimensoes-de-qualidade">Artefato A5.1 — Modelo de Dimensões de Qualidade</a><a href="#artefato-a5-2-plano-de-validacao-de-dados">Artefato A5.2 — Plano de Validação de Dados</a><a href="#artefato-a5-3-catalogo-de-regras-de-qualidade">Artefato A5.3 — Catálogo de Regras de Qualidade</a><a href="#artefato-a5-4-registro-de-testes-de-qualidade">Artefato A5.4 — Registro de Testes de Qualidade</a><a href="#artefato-a5-5-relatorio-de-qualidade-de-dados">Artefato A5.5 — Relatório de Qualidade de Dados</a><a href="#artefato-a5-6-registro-de-nao-conformidades">Artefato A5.6 — Registro de Não Conformidades</a><a href="#artefato-a5-7-matriz-de-severidade-e-impacto">Artefato A5.7 — Matriz de Severidade e Impacto</a><a href="#artefato-a5-8-registro-de-acoes-corretivas">Artefato A5.8 — Registro de Ações Corretivas</a><a href="#artefato-a5-9-selo-ou-status-de-qualidade-do-ativo">Artefato A5.9 — Selo ou Status de Qualidade do Ativo</a><a href="#artefato-a5-10-historico-de-qualidade">Artefato A5.10 — Histórico de Qualidade</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-os-demais-modulos-do-modelo-de-referencia">Relação com os demais módulos do modelo de referência</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo 5 — Qualidade e Validação de Dados tem como finalidade avaliar, mensurar, documentar e validar a qualidade dos dados produzidos ao longo do modelo de referência UnespDataLens-RM, considerando os dados brutos, integrados, harmonizados, transformados, limpos e enriquecidos nos módulos anteriores.</p>
+<p>Esse módulo atua como um componente central de controle da confiabilidade dos ativos analíticos. Sua função é verificar se os dados atendem a critérios mínimos de <a class="term" href="../metricas/completude.html">completude</a>, <a class="term" href="../metricas/consistencia.html">consistência</a>, <a class="term" href="../metricas/validade.html">validade</a>, <a class="term" href="../metricas/unicidade.html">unicidade</a>, <a class="term" href="../metricas/integridade.html">integridade</a>, <a class="term" href="../metricas/atualidade.html">atualidade</a>, <a class="term" href="../metricas/conformidade.html">conformidade</a>, estabilidade, <a class="term" href="../metricas/coerencia-semantica.html">coerência semântica</a> e <a class="term" href="../metricas/adequacao-ao-uso.html">adequação ao uso</a> pretendido.</p>
+<p>Em projetos de Engenharia Analítica de Dados, a qualidade dos dados não pode ser tratada apenas como uma inspeção pontual ou uma etapa final antes da modelagem. Problemas de qualidade podem surgir desde a origem, durante a ingestão, na integração entre fontes, na transformação, na criação de atributos derivados ou na disponibilização dos ativos. Por isso, o UnespDataLens-RM propõe que a qualidade seja tratada como um processo formal, contínuo, mensurável e rastreável.</p>
+<p>No contexto do modelo de referência, o Módulo 5 recebe como insumos os artefatos dos módulos anteriores, como inventários, datasets brutos, manifestos de ingestão, datasets integrados, regras de harmonização, datasets tratados, registros de transformação e catálogos preliminares. A partir desses insumos, o módulo define <a class="term" href="../artefatos/regras-de-validacao.html">regras de validação</a>, executa testes, calcula métricas, registra não conformidades e produz relatórios de qualidade que orientam decisões sobre uso, correção, rejeição, reprocessamento ou liberação dos dados.</p>
+<p>Assim, o Módulo 5 transforma a avaliação da qualidade dos dados em uma etapa técnico-metodológica formal, capaz de produzir evidências objetivas sobre a confiabilidade dos ativos analíticos gerados pelo UnespDataLens-RM.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 5 é avaliar e validar a qualidade dos dados em diferentes etapas do pipeline analítico, por meio da definição de dimensões de qualidade, regras de validação, métricas, testes automatizados, registros de não conformidade e critérios de aceitação dos ativos de dados.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 5:</p>
+<ol class="steps">
+<li>definir dimensões de qualidade adequadas ao domínio e à finalidade analítica do projeto;</li>
+<li>estabelecer regras de validação para fontes, atributos, registros, datasets, chaves, domínios de valores, relações e variáveis derivadas;</li>
+<li>calcular métricas de qualidade antes e depois das etapas de integração, transformação, limpeza e enriquecimento;</li>
+<li>identificar problemas de completude, inconsistência, <a class="term" href="../problemas/duplicidade.html">duplicidade</a>, invalidade, quebra de integridade referencial, desatualização, anomalias e violações de regras de negócio;</li>
+<li>registrar não conformidades e classificá-las quanto à severidade, impacto, origem provável e possibilidade de correção;</li>
+<li>produzir relatórios de qualidade para orientar decisões de correção, reprocessamento, aceitação ou rejeição de ativos analíticos;</li>
+<li>documentar testes de validação e critérios mínimos de qualidade para cada tipo de ativo;</li>
+<li>fornecer insumos para os módulos de governança, <a class="term" href="../conceitos/metadados.html">metadados</a>, lineage, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, monitoramento, <a class="term" href="../conceitos/feature-engineering.html">feature engineering</a> e disponibilização analítica;</li>
+<li>criar evidências de qualidade que possam ser auditadas, reproduzidas e acompanhadas ao longo do ciclo de vida dos dados.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>A qualidade dos dados pode ser compreendida como o grau em que os dados são adequados para determinado propósito analítico, decisório, operacional ou científico. No contexto do UnespDataLens-RM, qualidade não significa apenas ausência de erros, mas envolve a capacidade dos dados de representar adequadamente entidades, <a class="term" href="../conceitos/eventos.html">eventos</a>, atributos, relações e fenômenos relevantes ao problema investigado.</p>
+<p>A avaliação da qualidade deve considerar múltiplas dimensões. Entre as principais, destacam-se:</p>
+<div class="table-wrap"><table class="table"><tr><th>Dimensão</th><th>Descrição</th></tr><tr><td>Completude</td><td>Grau em que os dados necessários estão presentes.</td></tr><tr><td>Consistência</td><td>Ausência de contradições entre campos, registros ou fontes.</td></tr><tr><td>Validade</td><td>Conformidade dos valores com domínios, formatos e regras esperadas.</td></tr><tr><td>Unicidade</td><td>Ausência de duplicidades indevidas.</td></tr><tr><td>Integridade</td><td>Preservação de relações válidas entre entidades, chaves e tabelas.</td></tr><tr><td>Atualidade</td><td>Grau em que os dados estão atualizados em relação ao fenômeno representado.</td></tr><tr><td>Conformidade</td><td>Aderência a padrões, schemas, contratos e regras institucionais.</td></tr><tr><td><a class="term" href="../metricas/precisao.html">Precisão</a></td><td>Grau em que os valores representam corretamente a realidade ou a fonte de referência.</td></tr><tr><td>Coerência semântica</td><td>Compatibilidade entre o significado dos dados, suas categorias e seu uso analítico.</td></tr><tr><td>Adequação ao uso</td><td>Grau em que o ativo atende ao propósito analítico declarado.</td></tr></table></div>
+<p>No UnespDataLens-RM, a qualidade dos dados deve ser avaliada de forma contextual. Uma base pode ser adequada para análise exploratória agregada, mas inadequada para modelagem preditiva individual. Da mesma forma, um atributo pode ser útil para descrever tendências gerais, mas não confiável para decisões sensíveis ou automatizadas.</p>
+<p>À luz da Design Science Research, o Módulo 5 formaliza a qualidade dos dados como um conjunto de artefatos avaliáveis, composto por regras, métricas, testes, relatórios, registros de não conformidade e critérios de validação. Essa formalização permite transformar avaliações subjetivas ou informais em evidências mensuráveis e reproduzíveis.</p>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">5. Formalização sintética do módulo</h2>
+<p>O Módulo 5 pode ser compreendido como um processo de avaliação de qualidade aplicado a ativos de dados produzidos pelos módulos anteriores.</p>
+<p>Considerando um conjunto de datasets ou ativos analíticos:</p>
+<div class="formula">D = {d₁, d₂, ..., dₙ}</div>
+<p>o módulo define um conjunto de dimensões de qualidade:</p>
+<div class="formula">Q = {q₁, q₂, ..., qₖ}</div>
+<p>em que cada dimensão qᵢ representa um aspecto avaliável, como completude, consistência, validade, unicidade, integridade ou atualidade.</p>
+<p>Para cada dataset dⱼ, são aplicadas regras de validação:</p>
+<div class="formula">R = {r₁, r₂, ..., rₘ}</div>
+<p>em que cada regra rₗ pode ser descrita por:</p>
+<div class="formula">rₗ = {id, dimensão, atributo_alvo, condição, critério, limiar, severidade, ação_recomendada}</div>
+<p>A avaliação produz um conjunto de resultados de qualidade:</p>
+<div class="formula">V = {v₁, v₂, ..., vₚ}</div>
+<p>em que cada resultado vₚ registra a execução de uma regra de validação sobre um dataset, atributo ou conjunto de registros.</p>
+<p>Cada resultado pode ser descrito por:</p>
+<div class="formula">vₚ = {dataset, regra, status, valor_obtido, limiar, registros_afetados, severidade, data_execução, recomendação}</div>
+<p>Dessa forma, a qualidade dos dados deixa de ser uma percepção subjetiva e passa a ser representada por métricas, regras, evidências e critérios de aceitação.</p>
+<h2 class="section-title" id="entradas-do-modulo">6. Entradas do módulo</h2>
+<p>As entradas do Módulo 5 incluem datasets, artefatos, metadados e registros produzidos pelos módulos anteriores.</p>
+<p>As principais entradas são:</p>
+<ul class="list">
+<li>datasets brutos do Módulo 2;</li>
+<li>datasets integrados e harmonizados do Módulo 3;</li>
+<li>datasets tratados e enriquecidos do Módulo 4;</li>
+<li><a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a>;</li>
+<li><a class="term" href="../artefatos/dicionario-preliminar-de-dados.html">dicionário preliminar de dados</a>;</li>
+<li>dicionário consolidado, quando disponível;</li>
+<li>manifestos de ingestão;</li>
+<li>manifestos de integração;</li>
+<li>manifestos de transformação;</li>
+<li><a class="term" href="../conceitos/logs.html">logs</a> de execução;</li>
+<li>registros de conflitos;</li>
+<li>registros de valores ausentes;</li>
+<li>registros de duplicidades;</li>
+<li>registros de outliers;</li>
+<li>catálogo de atributos derivados;</li>
+<li>regras de negócio;</li>
+<li>domínios de valores;</li>
+<li>schemas esperados;</li>
+<li>restrições de integridade;</li>
+<li>contratos de dados;</li>
+<li>critérios de aceitação;</li>
+<li>parâmetros de validação;</li>
+<li>conhecimento de especialistas do domínio.</li>
+</ul>
+<h2 class="section-title" id="processamento">7. Processamento</h2>
+<p>O processamento do Módulo 5 envolve atividades de definição de dimensões, elaboração de regras, execução de testes, cálculo de métricas, identificação de não conformidades, classificação de severidade, recomendação de ações e documentação dos resultados.</p>
+<h3 id="definicao-das-dimensoes-de-qualidade">7.1 Definição das dimensões de qualidade</h3>
+<p>A primeira atividade consiste em definir quais dimensões de qualidade serão avaliadas em cada dataset ou <a class="term" href="../conceitos/ativo-analitico.html">ativo analítico</a>. Nem todas as dimensões precisam ser aplicadas da mesma forma a todos os dados. A seleção deve considerar domínio, finalidade, sensibilidade, <a class="term" href="../conceitos/granularidade.html">granularidade</a>, uso pretendido e riscos associados.</p>
+<p>Por exemplo, em dados educacionais individuais, completude, consistência, integridade, atualidade e sensibilidade podem ser críticas. Em indicadores territoriais agregados, <a class="term" href="../conceitos/cobertura-temporal.html">cobertura temporal</a>, validade de domínio e coerência semântica podem ser prioritárias.</p>
+<h3 id="definicao-das-regras-de-validacao">7.2 Definição das regras de validação</h3>
+<p>A segunda atividade consiste em transformar dimensões de qualidade em regras verificáveis. Uma regra de validação pode indicar que um atributo não deve possuir valores nulos, que uma data deve respeitar determinado intervalo, que uma chave deve ser única, que uma categoria deve pertencer a um conjunto válido ou que uma relação entre tabelas deve preservar integridade referencial.</p>
+<p>Cada regra deve possuir descrição, atributo alvo, condição, limiar, severidade, justificativa e ação recomendada.</p>
+<h3 id="execucao-dos-testes-de-qualidade">7.3 Execução dos testes de qualidade</h3>
+<p>A terceira atividade consiste em executar testes de qualidade sobre os datasets. Esses testes podem ser manuais, semiautomatizados ou automatizados. A execução deve gerar resultados documentados, indicando regras aprovadas, regras violadas, número de registros afetados, exemplos de problemas e impacto potencial.</p>
+<h3 id="calculo-das-metricas-de-qualidade">7.4 Cálculo das métricas de qualidade</h3>
+<p>A quarta atividade consiste em calcular métricas associadas às dimensões avaliadas. Essas métricas podem ser calculadas por atributo, por dataset, por fonte, por período, por grupo, por entidade ou por ativo analítico.</p>
+<p>Os resultados podem ser comparados com valores de referência, limiares mínimos ou métricas de execuções anteriores.</p>
+<h3 id="identificacao-e-classificacao-de-nao-conformidades">7.5 Identificação e classificação de não conformidades</h3>
+<p>A quinta atividade consiste em registrar problemas encontrados durante a validação. As não conformidades devem ser classificadas quanto à dimensão afetada, severidade, origem provável, impacto analítico e possibilidade de correção.</p>
+<p>Essa classificação permite priorizar ações e evitar que problemas críticos sejam tratados da mesma forma que problemas de baixo impacto.</p>
+<h3 id="recomendacoes-de-correcao-ou-reprocessamento">7.6 Recomendações de correção ou reprocessamento</h3>
+<p>A sexta atividade consiste em indicar ações recomendadas para tratar os problemas encontrados. Essas ações podem incluir retorno ao Módulo 4 para nova transformação, revisão da integração no Módulo 3, nova ingestão no Módulo 2, complementação documental no Módulo 7 ou restrição de uso do ativo no Módulo 8.</p>
+<h3 id="geracao-de-relatorio-de-qualidade">7.7 Geração de <a class="term" href="../artefatos/relatorio-de-qualidade.html">relatório de qualidade</a></h3>
+<p>A sétima atividade consiste em produzir um relatório consolidado de qualidade, contendo métricas, regras aplicadas, não conformidades, severidade, recomendações e decisão sobre o status do dataset.</p>
+<p>O relatório deve permitir responder se o ativo está aprovado, aprovado com ressalvas, rejeitado ou pendente de correção.</p>
+<h3 id="registro-dos-resultados-para-monitoramento">7.8 Registro dos resultados para monitoramento</h3>
+<p>Os resultados das avaliações devem ser preservados para permitir comparação futura. Isso permite acompanhar evolução da qualidade, detectar degradação, monitorar melhorias e apoiar o Módulo 14 — Monitoramento, Drift e Evolução dos Ativos.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-algoritmos-aplicaveis">8. Técnicas, métodos e algoritmos aplicáveis</h2>
+<p>O Módulo 5 pode empregar diferentes técnicas, métodos e ferramentas de validação.</p>
+<p>Entre as técnicas de avaliação de qualidade, destacam-se:</p>
+<ul class="list">
+<li><a class="term" href="../metodos/data-profiling.html">data profiling</a>;</li>
+<li>validação de schema;</li>
+<li>validação de domínio;</li>
+<li>validação de tipos;</li>
+<li>validação de chaves;</li>
+<li>validação de unicidade;</li>
+<li>validação de integridade referencial;</li>
+<li>validação de consistência entre campos;</li>
+<li>validação de regras de negócio;</li>
+<li>verificação de completude;</li>
+<li>análise de duplicidade;</li>
+<li>detecção de valores inválidos;</li>
+<li>detecção de outliers;</li>
+<li>comparação entre fontes;</li>
+<li>comparação temporal;</li>
+<li>análise de distribuição;</li>
+<li>detecção de anomalias;</li>
+<li>validação por amostragem;</li>
+<li>validação por especialista de domínio.</li>
+</ul>
+<p>Entre os métodos e algoritmos aplicáveis, destacam-se:</p>
+<ul class="list">
+<li>testes de constraints;</li>
+<li>regras booleanas;</li>
+<li>expressões regulares;</li>
+<li>validação por intervalo;</li>
+<li>validação por conjunto de valores permitidos;</li>
+<li>análise de cardinalidade;</li>
+<li>análise de frequência;</li>
+<li>comparação de distribuições;</li>
+<li>teste Kolmogorov-Smirnov;</li>
+<li>Population Stability Index;</li>
+<li>divergência de Kullback-Leibler;</li>
+<li>Jensen-Shannon divergence;</li>
+<li>z-score;</li>
+<li>IQR;</li>
+<li>Isolation Forest;</li>
+<li>Local Outlier Factor;</li>
+<li>regras de integridade relacional;</li>
+<li>validação de dependências funcionais;</li>
+<li>testes automatizados de dados.</li>
+</ul>
+<p>Ferramentas possíveis incluem SQL, Python, pandas, <a class="term" href="../tecnicas/pyspark.html">PySpark</a>, <a class="term" href="../tecnicas/great-expectations.html">Great Expectations</a>, <a class="term" href="../tecnicas/pandera.html">Pandera</a>, <a class="term" href="../tecnicas/deequ.html">Deequ</a>, <a class="term" href="../tecnicas/soda-core.html">Soda Core</a>, <a class="term" href="../tecnicas/dbt.html">dbt</a> tests, ydata-profiling, Evidently, notebooks versionados e ferramentas de observabilidade de dados.</p>
+<h2 class="section-title" id="metricas-do-modulo">9. Métricas do módulo</h2>
+<p>As métricas do Módulo 5 têm como objetivo mensurar a qualidade dos dados em diferentes dimensões.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de completude</td><td>TC</td><td>Proporção de valores preenchidos em relação ao total esperado</td></tr><tr><td>Taxa de valores ausentes</td><td>TVA</td><td>Proporção de valores nulos ou ausentes</td></tr><tr><td>Taxa de validade</td><td>TV</td><td>Proporção de valores que respeitam domínio, tipo ou formato</td></tr><tr><td>Taxa de inconsistência</td><td>TI</td><td>Proporção de registros que violam regras de consistência</td></tr><tr><td>Taxa de duplicidade</td><td>TD</td><td>Proporção de registros duplicados</td></tr><tr><td>Taxa de unicidade</td><td>TU</td><td>Proporção de valores únicos onde unicidade é esperada</td></tr><tr><td>Taxa de integridade referencial</td><td>TIR</td><td>Proporção de relações válidas entre chaves</td></tr><tr><td><a class="term" href="../metricas/taxa-de-conformidade-de-schema.html">Taxa de conformidade de schema</a></td><td>TCS</td><td>Proporção de atributos compatíveis com o schema esperado</td></tr><tr><td>Taxa de atualidade</td><td>TA</td><td>Grau de atualização dos dados em relação à <a class="term" href="../conceitos/periodicidade.html">periodicidade</a> esperada</td></tr><tr><td>Taxa de registros válidos</td><td>TRV</td><td>Proporção de registros que passam em todas as regras críticas</td></tr><tr><td>Taxa de regras aprovadas</td><td>TRA</td><td>Proporção de regras de qualidade aprovadas</td></tr><tr><td>Taxa de regras violadas</td><td>TRVi</td><td>Proporção de regras de qualidade violadas</td></tr><tr><td>Índice geral de qualidade</td><td>IGQ</td><td>Indicador composto de qualidade do dataset</td></tr><tr><td>Severidade média das não conformidades</td><td>SMNC</td><td><a class="term" href="../metricas/grau-medio.html">Grau médio</a> de severidade dos problemas encontrados</td></tr><tr><td>Taxa de ativos aprovados</td><td>TAA</td><td>Proporção de ativos aprovados para uso analítico</td></tr></table></div>
+<h3 id="taxa-de-completude-tc">9.1 Taxa de Completude — TC</h3>
+<p>A Taxa de Completude mede a proporção de valores presentes em relação ao total esperado.</p>
+<div class="formula">TC = número de valores preenchidos / número total de valores esperados</div>
+<p>Essa métrica pode ser calculada por atributo, por registro, por dataset ou por grupo.</p>
+<h3 id="taxa-de-validade-tv">9.2 Taxa de Validade — TV</h3>
+<p>A Taxa de Validade mede a proporção de valores que respeitam domínios, formatos, tipos ou regras esperadas.</p>
+<div class="formula">TV = número de valores válidos / número total de valores avaliados</div>
+<p>Valores inválidos podem incluir datas fora do intervalo esperado, códigos inexistentes, categorias não permitidas ou formatos incompatíveis.</p>
+<h3 id="taxa-de-integridade-referencial-tir">9.3 Taxa de Integridade Referencial — TIR</h3>
+<p>A Taxa de Integridade Referencial avalia a proporção de relações entre chaves que estão corretamente preservadas.</p>
+<div class="formula">TIR = número de relações válidas / número total de relações avaliadas</div>
+<p>Essa métrica é essencial para datasets integrados ou relacionais.</p>
+<h3 id="taxa-de-regras-aprovadas-tra">9.4 Taxa de Regras Aprovadas — TRA</h3>
+<p>A Taxa de Regras Aprovadas mede a proporção de regras de validação que foram atendidas.</p>
+<div class="formula">TRA = número de regras aprovadas / número total de regras executadas</div>
+<p>Essa métrica permite avaliar rapidamente o grau de conformidade do dataset.</p>
+<h3 id="indice-geral-de-qualidade-igq">9.5 Índice Geral de Qualidade — IGQ</h3>
+<p>O Índice Geral de Qualidade pode ser definido como uma composição ponderada das dimensões avaliadas.</p>
+<p>Uma formulação possível é:</p>
+<div class="formula">IGQ(d) = w₁TC + w₂TV + w₃TIR + w₄TU + w₅TA + w₆(1 − TI)</div>
+<p>em que:</p>
+<ul class="list">
+<li>TC representa completude;</li>
+<li>TV representa validade;</li>
+<li>TIR representa integridade referencial;</li>
+<li>TU representa unicidade;</li>
+<li>TA representa atualidade;</li>
+<li>TI representa inconsistência;</li>
+<li>wᵢ representa o peso atribuído a cada dimensão.</li>
+</ul>
+<p>Os pesos podem variar conforme o domínio, a finalidade e o risco do uso analítico.</p>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">10. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 5 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, regras de construção, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A5.1</td><td>Modelo de Dimensões de Qualidade</td><td>Documento/taxonomia</td><td>Cobertura de dimensões</td><td>Define dimensões avaliáveis</td></tr><tr><td>A5.2</td><td>Plano de Validação de Dados</td><td>Documento técnico</td><td>Taxa de regras definidas</td><td>Formaliza critérios de validação</td></tr><tr><td>A5.3</td><td>Catálogo de Regras de Qualidade</td><td>Tabela estruturada</td><td>TRA, TRVi</td><td>Documenta regras aplicáveis</td></tr><tr><td>A5.4</td><td>Registro de Testes de Qualidade</td><td>Log ou tabela</td><td>TRA</td><td>Registra execução dos testes</td></tr><tr><td>A5.5</td><td>Relatório de <a class="term" href="../conceitos/qualidade-de-dados.html">Qualidade de Dados</a></td><td>Relatório técnico</td><td>IGQ</td><td>Consolida resultados da avaliação</td></tr><tr><td>A5.6</td><td>Registro de Não Conformidades</td><td>Tabela técnica</td><td>SMNC</td><td>Documenta problemas encontrados</td></tr><tr><td>A5.7</td><td>Matriz de Severidade e Impacto</td><td>Matriz de risco</td><td>Severidade média</td><td>Prioriza problemas de qualidade</td></tr><tr><td>A5.8</td><td>Registro de Ações Corretivas</td><td>Tabela de acompanhamento</td><td>Taxa de correção</td><td>Acompanha tratamento dos problemas</td></tr><tr><td>A5.9</td><td>Selo ou Status de Qualidade do Ativo</td><td>Classificação</td><td>TAA</td><td>Indica condição de uso do ativo</td></tr><tr><td>A5.10</td><td>Histórico de Qualidade</td><td>Série temporal ou tabela</td><td>Evolução do IGQ</td><td>Permite acompanhar qualidade ao longo do tempo</td></tr></table></div>
+<h2 class="section-title" id="artefato-a5-1-modelo-de-dimensoes-de-qualidade">11. Artefato A5.1 — Modelo de Dimensões de Qualidade</h2>
+<h3 id="finalidade">11.1 Finalidade</h3>
+<p>O Modelo de Dimensões de Qualidade define quais dimensões serão utilizadas para avaliar os dados no UnespDataLens-RM.</p>
+<h3 id="tipo-de-artefato-na-dsr">11.2 Tipo de artefato na DSR</h3>
+<p>Na perspectiva da Design Science Research, esse artefato é um constructo e um modelo, pois define os conceitos centrais utilizados para avaliar a qualidade dos dados.</p>
+<h3 id="estrutura-minima">11.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Dimensão</th><th>Definição</th><th>Métrica associada</th><th>Aplicação</th><th>Exemplo</th></tr><tr><td>Completude</td><td>Presença de valores esperados</td><td>TC, TVA</td><td>Atributos e registros</td><td>Campo renda preenchido</td></tr><tr><td>Validade</td><td>Conformidade com domínio</td><td>TV</td><td>Atributos</td><td>Código de curso válido</td></tr><tr><td>Consistência</td><td>Ausência de contradições</td><td>TI</td><td>Registros e fontes</td><td>Data de saída posterior à entrada</td></tr><tr><td>Unicidade</td><td>Ausência de duplicidade</td><td>TD, TU</td><td>Chaves e registros</td><td>Um RA por estudante</td></tr><tr><td>Integridade</td><td>Preservação de relações</td><td>TIR</td><td>Bases relacionais</td><td>Matrícula associada a curso existente</td></tr><tr><td>Atualidade</td><td>Dados atualizados</td><td>TA</td><td>Fontes periódicas</td><td>Base atualizada no mês esperado</td></tr><tr><td>Conformidade</td><td>Aderência a schema/contrato</td><td>TCS</td><td>Datasets</td><td>Campo com tipo esperado</td></tr></table></div>
+<h3 id="metricas-associadas">11.4 Métricas associadas</h3>
+<ul class="list">
+<li>número de dimensões definidas;</li>
+<li>percentual de dimensões aplicadas por dataset;</li>
+<li>cobertura das dimensões de qualidade;</li>
+<li>percentual de dimensões com métricas associadas.</li>
+</ul>
+<h3 id="contribuicao">11.5 Contribuição</h3>
+<p>Esse artefato padroniza a avaliação da qualidade no modelo de referência, evitando que cada projeto utilize critérios diferentes e pouco comparáveis.</p>
+<h2 class="section-title" id="artefato-a5-2-plano-de-validacao-de-dados">12. Artefato A5.2 — Plano de Validação de Dados</h2>
+<h3 id="finalidade-2">12.1 Finalidade</h3>
+<p>O Plano de Validação de Dados define como um dataset ou ativo analítico será avaliado quanto à qualidade.</p>
+<h3 id="tipo-de-artefato-na-dsr-2">12.2 Tipo de artefato na DSR</h3>
+<p>Esse artefato é um método, pois orienta o processo de validação, e uma instanciação, quando implementado em documento técnico, planilha, arquivo YAML, JSON, notebook ou ferramenta de validação.</p>
+<h3 id="estrutura-minima-2">12.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador do plano</td><td>Código único</td></tr><tr><td>Dataset avaliado</td><td>Ativo submetido à validação</td></tr><tr><td>Finalidade do dataset</td><td>Uso pretendido</td></tr><tr><td>Dimensões avaliadas</td><td>Completude, validade, consistência etc.</td></tr><tr><td>Regras aplicadas</td><td>Regras de qualidade</td></tr><tr><td>Limiar de aceitação</td><td>Valor mínimo aceitável</td></tr><tr><td>Severidade</td><td>Baixa, média, alta, crítica</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe</td></tr><tr><td>Periodicidade</td><td>Frequência da validação</td></tr><tr><td>Critério de aprovação</td><td>Condição para liberar o ativo</td></tr><tr><td>Ações recomendadas</td><td>Correção, rejeição, reprocessamento etc.</td></tr></table></div>
+<h3 id="metricas-associadas-2">12.4 Métricas associadas</h3>
+<ul class="list">
+<li>percentual de datasets com plano de validação;</li>
+<li>percentual de planos com limiares definidos;</li>
+<li>percentual de planos com critérios de aprovação;</li>
+<li>percentual de planos com responsáveis;</li>
+<li>taxa de regras executáveis.</li>
+</ul>
+<h3 id="criterios-de-validacao">12.5 Critérios de validação</h3>
+<p>O plano é considerado válido quando define dimensões, regras, limiares, severidades, responsáveis e critérios de aprovação.</p>
+<h3 id="contribuicao-2">12.6 Contribuição</h3>
+<p>Esse artefato transforma a validação dos dados em um processo explícito, padronizado e reprodutível.</p>
+<h2 class="section-title" id="artefato-a5-3-catalogo-de-regras-de-qualidade">13. Artefato A5.3 — Catálogo de Regras de Qualidade</h2>
+<h3 id="finalidade-3">13.1 Finalidade</h3>
+<p>O Catálogo de Regras de Qualidade registra as regras utilizadas para avaliar os datasets.</p>
+<h3 id="estrutura-formal">13.2 Estrutura formal</h3>
+<p>Cada regra de qualidade pode ser representada por:</p>
+<div class="formula">rᵢ = {id, dimensão, dataset, atributo, condição, limiar, severidade, mensagem, ação_recomendada}</div>
+<h3 id="estrutura-minima-3">13.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador da regra</td><td>Código único</td></tr><tr><td>Dimensão de qualidade</td><td>Completude, validade, consistência etc.</td></tr><tr><td>Dataset</td><td>Ativo avaliado</td></tr><tr><td>Atributo</td><td>Campo avaliado</td></tr><tr><td>Condição</td><td>Regra lógica ou estatística</td></tr><tr><td>Limiar</td><td>Valor mínimo ou máximo aceitável</td></tr><tr><td>Severidade</td><td>Baixa, média, alta ou crítica</td></tr><tr><td>Justificativa</td><td>Motivo da regra</td></tr><tr><td>Ação recomendada</td><td>Correção, revisão, bloqueio, alerta</td></tr><tr><td>Status</td><td>Ativa, inativa, em revisão</td></tr></table></div>
+<h3 id="metricas-associadas-3">13.4 Métricas associadas</h3>
+<ul class="list">
+<li>número de regras cadastradas;</li>
+<li>taxa de regras aprovadas;</li>
+<li>taxa de regras violadas;</li>
+<li>percentual de regras críticas;</li>
+<li>percentual de regras com limiar definido;</li>
+<li>percentual de regras com ação recomendada.</li>
+</ul>
+<h3 id="criterios-de-validacao-2">13.5 Critérios de validação</h3>
+<p>Uma regra é considerada válida quando possui dimensão, condição, limiar, severidade e ação recomendada documentados.</p>
+<h3 id="contribuicao-3">13.6 Contribuição</h3>
+<p>Esse artefato formaliza o conhecimento de validação, permitindo reutilização, auditoria e automação dos testes de qualidade.</p>
+<h2 class="section-title" id="artefato-a5-4-registro-de-testes-de-qualidade">14. Artefato A5.4 — Registro de Testes de Qualidade</h2>
+<h3 id="finalidade-4">14.1 Finalidade</h3>
+<p>O Registro de Testes de Qualidade documenta a execução das regras de validação sobre os datasets.</p>
+<h3 id="estrutura-minima-4">14.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Execução</td><td>Identificador da execução</td></tr><tr><td>Dataset</td><td>Dataset avaliado</td></tr><tr><td>Regra aplicada</td><td>Regra de qualidade</td></tr><tr><td>Data da execução</td><td>Momento da validação</td></tr><tr><td>Resultado</td><td>Aprovado, violado, alerta</td></tr><tr><td>Valor obtido</td><td>Resultado calculado</td></tr><tr><td>Limiar esperado</td><td>Valor de referência</td></tr><tr><td>Registros afetados</td><td>Quantidade ou percentual</td></tr><tr><td>Exemplos</td><td>Amostra de registros problemáticos</td></tr><tr><td>Responsável</td><td>Executor humano ou sistema</td></tr></table></div>
+<h3 id="metricas-associadas-4">14.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de regras aprovadas;</li>
+<li>taxa de regras violadas;</li>
+<li>número de registros afetados;</li>
+<li>percentual de execuções documentadas;</li>
+<li>taxa de testes automatizados.</li>
+</ul>
+<h3 id="contribuicao-4">14.4 Contribuição</h3>
+<p>Esse artefato cria evidências auditáveis da validação dos dados, permitindo rastrear quando, como e com quais resultados cada teste foi executado.</p>
+<h2 class="section-title" id="artefato-a5-5-relatorio-de-qualidade-de-dados">15. Artefato A5.5 — Relatório de Qualidade de Dados</h2>
+<h3 id="finalidade-5">15.1 Finalidade</h3>
+<p>O Relatório de Qualidade de Dados consolida os resultados das avaliações realizadas sobre um dataset ou conjunto de ativos.</p>
+<h3 id="estrutura-minima-5">15.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset avaliado</td><td>Ativo analisado</td></tr><tr><td>Finalidade</td><td>Uso pretendido</td></tr><tr><td>Dimensões avaliadas</td><td>Completude, validade, consistência etc.</td></tr><tr><td>Métricas obtidas</td><td>Resultados calculados</td></tr><tr><td>Regras aprovadas</td><td>Quantidade ou percentual</td></tr><tr><td>Regras violadas</td><td>Quantidade ou percentual</td></tr><tr><td>Não conformidades</td><td>Problemas encontrados</td></tr><tr><td>Severidade</td><td>Classificação dos problemas</td></tr><tr><td>Recomendações</td><td>Ações sugeridas</td></tr><tr><td>Status final</td><td>Aprovado, aprovado com ressalvas, rejeitado, pendente</td></tr></table></div>
+<h3 id="metricas-associadas-5">15.3 Métricas associadas</h3>
+<ul class="list">
+<li>índice geral de qualidade;</li>
+<li>taxa de regras aprovadas;</li>
+<li>taxa de registros válidos;</li>
+<li>severidade média das não conformidades;</li>
+<li>taxa de ativos aprovados.</li>
+</ul>
+<h3 id="criterios-de-validacao-3">15.4 Critérios de validação</h3>
+<p>O relatório é considerado completo quando apresenta dimensões avaliadas, regras aplicadas, métricas, não conformidades, severidade, recomendações e status final.</p>
+<h3 id="contribuicao-5">15.5 Contribuição</h3>
+<p>Esse artefato sintetiza a condição de qualidade do ativo e apoia decisões de uso, correção, rejeição ou disponibilização.</p>
+<h2 class="section-title" id="artefato-a5-6-registro-de-nao-conformidades">16. Artefato A5.6 — Registro de Não Conformidades</h2>
+<h3 id="finalidade-6">16.1 Finalidade</h3>
+<p>O Registro de Não Conformidades documenta problemas identificados durante a validação de qualidade.</p>
+<h3 id="estrutura-minima-6">16.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador</td><td>Código da não conformidade</td></tr><tr><td>Dataset</td><td>Ativo afetado</td></tr><tr><td>Dimensão</td><td>Dimensão de qualidade afetada</td></tr><tr><td>Regra violada</td><td>Regra não atendida</td></tr><tr><td>Descrição</td><td>Descrição do problema</td></tr><tr><td>Registros afetados</td><td>Quantidade ou percentual</td></tr><tr><td>Severidade</td><td>Baixa, média, alta ou crítica</td></tr><tr><td>Origem provável</td><td>Fonte, ingestão, integração, transformação etc.</td></tr><tr><td>Impacto</td><td>Consequência analítica potencial</td></tr><tr><td>Ação recomendada</td><td>Correção, alerta, bloqueio, revisão</td></tr><tr><td>Status</td><td>Aberta, em tratamento, resolvida, aceita</td></tr></table></div>
+<h3 id="metricas-associadas-6">16.3 Métricas associadas</h3>
+<ul class="list">
+<li>número de não conformidades;</li>
+<li>severidade média;</li>
+<li>percentual de não conformidades críticas;</li>
+<li>percentual de não conformidades resolvidas;</li>
+<li><a class="term" href="../metricas/tempo-medio-de-resolucao.html">tempo médio de resolução</a>.</li>
+</ul>
+<h3 id="contribuicao-6">16.4 Contribuição</h3>
+<p>Esse artefato permite priorizar problemas de qualidade e acompanhar seu tratamento ao longo do pipeline.</p>
+<h2 class="section-title" id="artefato-a5-7-matriz-de-severidade-e-impacto">17. Artefato A5.7 — Matriz de Severidade e Impacto</h2>
+<h3 id="finalidade-7">17.1 Finalidade</h3>
+<p>A Matriz de Severidade e Impacto classifica problemas de qualidade conforme sua gravidade e consequência para o uso analítico.</p>
+<h3 id="estrutura-minima-7">17.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Severidade</th><th>Descrição</th><th>Exemplo</th><th>Ação recomendada</th></tr><tr><td>Baixa</td><td>Problema localizado e de baixo impacto</td><td>Pequena variação de formato</td><td>Corrigir ou documentar</td></tr><tr><td>Média</td><td>Problema relevante, mas controlável</td><td>Ausência moderada em atributo secundário</td><td>Corrigir antes de uso crítico</td></tr><tr><td>Alta</td><td>Problema com impacto analítico significativo</td><td>Chave incompleta em integração</td><td>Reprocessar ou restringir uso</td></tr><tr><td>Crítica</td><td>Problema que inviabiliza o uso</td><td><a class="term" href="../conceitos/variavel-alvo.html">Variável-alvo</a> inconsistente</td><td>Bloquear ou rejeitar ativo</td></tr></table></div>
+<h3 id="metricas-associadas-7">17.3 Métricas associadas</h3>
+<ul class="list">
+<li>severidade média;</li>
+<li>número de problemas críticos;</li>
+<li>proporção de problemas por nível;</li>
+<li>taxa de ativos bloqueados por severidade;</li>
+<li>impacto potencial por dimensão.</li>
+</ul>
+<h3 id="contribuicao-7">17.4 Contribuição</h3>
+<p>Esse artefato evita que todos os problemas sejam tratados da mesma forma, permitindo priorização baseada em risco.</p>
+<h2 class="section-title" id="artefato-a5-8-registro-de-acoes-corretivas">18. Artefato A5.8 — Registro de Ações Corretivas</h2>
+<h3 id="finalidade-8">18.1 Finalidade</h3>
+<p>O Registro de Ações Corretivas acompanha as ações propostas e executadas para corrigir problemas de qualidade.</p>
+<h3 id="estrutura-minima-8">18.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Não conformidade associada</td><td>Problema que originou a ação</td></tr><tr><td>Ação proposta</td><td>Correção, reprocessamento, revisão etc.</td></tr><tr><td>Módulo responsável</td><td>Módulo em que a correção deve ocorrer</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe</td></tr><tr><td>Prazo</td><td>Data prevista</td></tr><tr><td>Status</td><td>Planejada, em execução, concluída</td></tr><tr><td>Resultado</td><td>Efeito da ação</td></tr><tr><td>Evidência</td><td>Log, manifesto, relatório ou dataset corrigido</td></tr></table></div>
+<h3 id="metricas-associadas-8">18.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ações concluídas;</li>
+<li>tempo médio de correção;</li>
+<li>percentual de problemas reabertos;</li>
+<li>taxa de redução de não conformidades;</li>
+<li>impacto das ações sobre o IGQ.</li>
+</ul>
+<h3 id="contribuicao-8">18.4 Contribuição</h3>
+<p>Esse artefato conecta avaliação de qualidade a melhoria efetiva dos dados, evitando que relatórios de qualidade não produzam ação concreta.</p>
+<h2 class="section-title" id="artefato-a5-9-selo-ou-status-de-qualidade-do-ativo">19. Artefato A5.9 — Selo ou Status de Qualidade do Ativo</h2>
+<h3 id="finalidade-9">19.1 Finalidade</h3>
+<p>O Selo ou Status de Qualidade do Ativo classifica o dataset quanto à sua condição de uso.</p>
+<h3 id="estrutura-minima-9">19.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Status</th><th>Interpretação</th><th>Condição de uso</th></tr><tr><td>Aprovado</td><td>Atende aos critérios mínimos</td><td>Liberado para uso</td></tr><tr><td>Aprovado com ressalvas</td><td>Possui limitações documentadas</td><td>Uso permitido com cautela</td></tr><tr><td>Pendente</td><td>Necessita correção ou revisão</td><td>Uso restrito</td></tr><tr><td>Rejeitado</td><td>Não atende critérios mínimos</td><td>Uso não recomendado</td></tr><tr><td>Bloqueado</td><td>Risco crítico identificado</td><td>Uso proibido até correção</td></tr></table></div>
+<h3 id="metricas-associadas-9">19.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos aprovados;</li>
+<li>taxa de ativos aprovados com ressalvas;</li>
+<li>taxa de ativos rejeitados;</li>
+<li>taxa de ativos pendentes;</li>
+<li>taxa de ativos bloqueados.</li>
+</ul>
+<h3 id="contribuicao-9">19.4 Contribuição</h3>
+<p>Esse artefato traduz métricas complexas de qualidade em uma decisão operacional clara sobre uso do ativo.</p>
+<h2 class="section-title" id="artefato-a5-10-historico-de-qualidade">20. Artefato A5.10 — Histórico de Qualidade</h2>
+<h3 id="finalidade-10">20.1 Finalidade</h3>
+<p>O Histórico de Qualidade registra a evolução das métricas de qualidade ao longo do tempo.</p>
+<h3 id="estrutura-minima-10">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset</td><td>Ativo monitorado</td></tr><tr><td>Data da avaliação</td><td>Momento da validação</td></tr><tr><td>Versão</td><td>Versão do dataset</td></tr><tr><td>Métricas</td><td>Indicadores de qualidade</td></tr><tr><td>Status</td><td>Classificação do ativo</td></tr><tr><td>Não conformidades</td><td>Problemas registrados</td></tr><tr><td>Ações corretivas</td><td>Ações associadas</td></tr><tr><td>Observações</td><td>Mudanças relevantes</td></tr></table></div>
+<h3 id="metricas-associadas-10">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>evolução do IGQ;</li>
+<li>variação da completude;</li>
+<li>variação da validade;</li>
+<li>variação da consistência;</li>
+<li>número de problemas recorrentes;</li>
+<li>tendência de melhoria ou degradação.</li>
+</ul>
+<h3 id="contribuicao-10">20.4 Contribuição</h3>
+<p>Esse artefato permite monitorar a qualidade dos dados ao longo do tempo, apoiando observabilidade, governança e melhoria contínua.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">21. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Datasets brutos, integrados e tratados; dicionários; schemas; regras de negócio; contratos de dados; manifestos; logs; registros de transformação e metadados.</td></tr><tr><td>Processamento</td><td>Definição de dimensões, regras e limiares; execução de testes; cálculo de métricas; registro de não conformidades; classificação de severidade; recomendação de ações.</td></tr><tr><td>Artefatos</td><td>Modelo de dimensões, plano de validação, catálogo de regras, registros de testes, relatório de qualidade, não conformidades, matriz de severidade, ações corretivas, status de qualidade e histórico.</td></tr><tr><td>Métricas</td><td>TC, TVA, TV, TI, TD, TU, TIR, TCS, TA, TRV, TRA, TRVi, IGQ, SMNC e TAA.</td></tr><tr><td>Saídas</td><td>Ativos avaliados, relatórios de qualidade, status de aprovação, não conformidades documentadas e recomendações de correção ou uso.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">22. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 5 pode ser considerado concluído quando:</p>
+<ol class="steps">
+<li>as dimensões de qualidade foram definidas para os ativos avaliados;</li>
+<li>os datasets possuem plano de validação;</li>
+<li>as regras de qualidade estão documentadas;</li>
+<li>os testes foram executados e registrados;</li>
+<li>as métricas de qualidade foram calculadas;</li>
+<li>as não conformidades foram identificadas e classificadas;</li>
+<li>problemas críticos possuem recomendação de ação;</li>
+<li>os relatórios de qualidade foram produzidos;</li>
+<li>o status de qualidade dos ativos foi definido;</li>
+<li>os resultados podem ser utilizados pelos módulos posteriores;</li>
+<li>o histórico de qualidade foi preservado para monitoramento futuro.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-do-modelo-de-referencia">23. Relação com os demais módulos do modelo de referência</h2>
+<p>O Módulo 5 depende do Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, pois utiliza informações sobre origem, estrutura, documentação, granularidade e limitações conhecidas das fontes.</p>
+<p>Depende do Módulo 2 — Extração, Ingestão e Armazenamento Bruto, pois utiliza logs, manifestos, schemas iniciais, registros de integridade e datasets brutos para avaliar qualidade desde a entrada dos dados.</p>
+<p>Depende do Módulo 3 — Integração e Harmonização, pois utiliza métricas de pareamento, registros de conflitos, chaves, entidades e regras de integração.</p>
+<p>Depende do Módulo 4 — Transformação, Limpeza e Enriquecimento, pois utiliza registros de transformação, atributos derivados, datasets tratados e métricas antes/depois.</p>
+<p>Para o Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, fornece indicadores de qualidade que ajudam a identificar problemas que podem gerar vieses ou afetar grupos específicos.</p>
+<p>Para o Módulo 7 — Metadados, Catálogo e Semântica dos Dados, fornece métricas, status de qualidade, regras e relatórios que devem ser incorporados ao catálogo.</p>
+<p>Para o Módulo 8 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e Conformidade, fornece evidências sobre confiabilidade, restrições, problemas críticos e status de uso dos ativos.</p>
+<p>Para o Módulo 9 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Lineage e <a class="term" href="../conceitos/rastreabilidade.html">Rastreabilidade</a>, fornece registros de validação e não conformidades associados a cada etapa do pipeline.</p>
+<p>Para o Módulo 10 — Versionamento e <a class="term" href="../conceitos/reprodutibilidade.html">Reprodutibilidade</a>, fornece histórico de qualidade por versão dos datasets.</p>
+<p>Para o Módulo 12 — Feature Engineering e <a class="term" href="../conceitos/feature-store.html">Feature Store</a>, fornece critérios para selecionar atributos confiáveis e documentar qualidade das features.</p>
+<p>Para o Módulo 13 — Disponibilização Analítica, define se o ativo pode ser disponibilizado, disponibilizado com ressalvas, corrigido ou bloqueado.</p>
+<p>Para o Módulo 14 — Monitoramento, Drift e Evolução dos Ativos, fornece baseline de qualidade para acompanhamento contínuo.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">24. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, o Módulo 5 poderia avaliar a qualidade de uma base integrada contendo dados de matrícula, notas, frequência, situação acadêmica, dados socioeconômicos e interações em ambiente virtual.</p>
+<p>As regras poderiam verificar se todos os estudantes possuem identificador válido, se códigos de curso existem no catálogo institucional, se datas de matrícula são compatíveis com o período letivo, se notas estão no intervalo permitido, se frequência está entre 0% e 100%, se a situação acadêmica pertence a categorias válidas e se há <a class="term" href="../problemas/inconsistencias.html">inconsistências</a> entre matrícula ativa e ausência total de registros acadêmicos.</p>
+<p>As métricas poderiam indicar taxa de completude dos dados socioeconômicos, taxa de integridade entre estudante e curso, taxa de valores inválidos em notas, duplicidade de matrículas, consistência temporal da trajetória acadêmica e status geral da base para uso em modelos de evasão ou dashboards de acompanhamento.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">25. Exemplo de aplicação em políticas públicas</h2>
+<p>Em uma aplicação em políticas públicas, o Módulo 5 poderia avaliar bases integradas de saúde, educação, assistência social e território.</p>
+<p>As regras poderiam verificar se códigos territoriais são válidos, se registros de atendimento possuem data, se unidades públicas existem no cadastro oficial, se famílias não aparecem duplicadas em uma mesma base, se indicadores agregados respeitam intervalos plausíveis e se a periodicidade de atualização está adequada.</p>
+<p>O relatório de qualidade poderia classificar determinados ativos como aprovados para uso em painéis públicos, aprovados com ressalvas para análise interna ou bloqueados para uso decisório devido a problemas críticos de consistência ou completude.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">26. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição do Módulo 5 está em formalizar a qualidade dos dados como um processo mensurável, auditável, reprodutível e integrado ao ciclo de Engenharia Analítica de Dados.</p>
+<p>Em vez de tratar qualidade como uma percepção subjetiva ou uma inspeção manual isolada, o UnespDataLens-RM propõe que cada ativo seja avaliado por dimensões, regras, métricas, testes, relatórios, não conformidades, critérios de aprovação e histórico de qualidade.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>tornar explícitos os critérios de qualidade;</li>
+<li>avaliar objetivamente os ativos de dados;</li>
+<li>identificar problemas antes da modelagem ou disponibilização;</li>
+<li>reduzir risco de decisões baseadas em dados inadequados;</li>
+<li>apoiar governança e auditoria;</li>
+<li>documentar não conformidades e ações corretivas;</li>
+<li>acompanhar evolução da qualidade ao longo do tempo;</li>
+<li>integrar qualidade com metadados, lineage, versionamento e monitoramento;</li>
+<li>definir status de uso dos ativos analíticos.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">27. Síntese do módulo</h2>
+<p>O Módulo 5 — Qualidade e Validação de Dados avalia a confiabilidade dos dados produzidos no UnespDataLens-RM por meio de dimensões, regras, métricas, testes, relatórios e critérios de aceitação. Ele transforma a qualidade dos dados em um componente formal, documentado, mensurável e auditável do modelo de referência.</p>
+<p>Sua importância é central porque ativos analíticos só devem ser utilizados em indicadores, dashboards, modelos, grafos ou decisões se sua qualidade for conhecida, avaliada e documentada. Ao formalizar a validação dos dados, o módulo fortalece a confiabilidade, a transparência, a governança e a reprodutibilidade dos resultados produzidos pelo modelo de referência.</p>
+<p>Dessa forma, o Módulo 5 cria a base para que o UnespDataLens-RM produza dados não apenas integrados e tratados, mas também avaliados, validados e adequados ao uso analítico pretendido.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

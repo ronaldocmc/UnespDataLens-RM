@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo Transversal 11 — Proveniência, Linhagem e Rastreabilidade tem como finalidade registrar, representar, acompanhar e permitir a reconstrução da trajetória dos dados ao longo de todo o ciclo analítico do modelo de referência UnespDataLens-RM.">
+  <title>Módulo 11 — Proveniência, Linhagem e Rastreabilidade · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-transversal-11-proveniencia-linhagem-e-rastreabilidade"></span><section class="hero">
+<span class="badge">Módulo 11</span>
+<h1>Módulo 11 — Proveniência, Linhagem e Rastreabilidade</h1>
+<p>O Módulo Transversal 11 — Proveniência, Linhagem e Rastreabilidade tem como finalidade registrar, representar, acompanhar e permitir a reconstrução da trajetória dos dados ao longo de todo o ciclo analítico do modelo de referência UnespDataLens-RM.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 29 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#natureza-transversal-do-modulo">Natureza transversal do módulo</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-tecnologias-aplicaveis">Técnicas, métodos e tecnologias aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a11-1-modelo-de-proveniencia-dos-dados">Artefato A11.1 — Modelo de Proveniência dos Dados</a><a href="#artefato-a11-2-grafo-de-linhagem-dos-dados">Artefato A11.2 — Grafo de Linhagem dos Dados</a><a href="#artefato-a11-3-registro-de-eventos-de-linhagem">Artefato A11.3 — Registro de Eventos de Linhagem</a><a href="#artefato-a11-4-manifesto-de-linhagem-do-ativo">Artefato A11.4 — Manifesto de Linhagem do Ativo</a><a href="#artefato-a11-5-matriz-de-dependencia-entre-ativos">Artefato A11.5 — Matriz de Dependência entre Ativos</a><a href="#artefato-a11-6-registro-de-linhagem-de-atributos">Artefato A11.6 — Registro de Linhagem de Atributos</a><a href="#artefato-a11-7-registro-de-transformacoes-rastreaveis">Artefato A11.7 — Registro de Transformações Rastreáveis</a><a href="#artefato-a11-8-relatorio-de-impacto-de-mudancas">Artefato A11.8 — Relatório de Impacto de Mudanças</a><a href="#artefato-a11-9-trilha-de-auditoria-analitica">Artefato A11.9 — Trilha de Auditoria Analítica</a><a href="#artefato-a11-10-relatorio-de-completude-da-linhagem">Artefato A11.10 — Relatório de Completude da Linhagem</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-o-pipeline-principal">Relação com o pipeline principal</a><a href="#relacao-com-os-demais-modulos-transversais">Relação com os demais módulos transversais</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo Transversal 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e <a class="term" href="../conceitos/rastreabilidade.html">Rastreabilidade</a> tem como finalidade registrar, representar, acompanhar e permitir a reconstrução da trajetória dos dados ao longo de todo o ciclo analítico do modelo de referência UnespDataLens-RM. Esse módulo atua de forma transversal sobre os módulos do pipeline principal, documentando a origem dos dados, os processos executados, as transformações aplicadas, as versões utilizadas, os artefatos gerados, as dependências entre ativos e os consumidores finais dos produtos de dados.</p>
+<p>No contexto do UnespDataLens-RM, proveniência, linhagem e rastreabilidade são elementos fundamentais para garantir transparência, auditabilidade, <a class="term" href="../conceitos/reprodutibilidade.html">reprodutibilidade</a>, governança e confiança nos ativos analíticos produzidos. Sem esses elementos, torna-se difícil responder a perguntas essenciais, tais como: de onde veio determinado dado? Qual versão da fonte foi utilizada? Quais transformações foram aplicadas? Quais registros foram removidos, integrados ou enriquecidos? Qual regra gerou determinada variável? Qual dataset alimentou um <a class="term" href="../artefatos/dashboard.html">dashboard</a>, modelo ou indicador? Quem consumiu determinado <a class="term" href="../conceitos/produto-de-dados.html">produto de dados</a>? Quais decisões foram tomadas com base nele?</p>
+<p>A proveniência refere-se ao registro da origem dos dados, indicando fontes, sistemas, responsáveis, versões, datas de extração e condições iniciais de obtenção. A linhagem dos dados refere-se ao percurso dos dados ao longo do pipeline, incluindo ingestões, integrações, transformações, validações, armazenamentos, versões, produtos derivados e relações de dependência entre artefatos. A rastreabilidade corresponde à capacidade de acompanhar, auditar e reconstruir esse percurso, permitindo verificar como determinado ativo foi produzido e quais etapas, regras e decisões contribuíram para sua geração.</p>
+<p>Por atuar transversalmente, o Módulo 11 não deve ser tratado como uma etapa final do pipeline. Ele acompanha todos os módulos do UnespDataLens-RM, desde o inventário das fontes até a disponibilização e consumo analítico. Em cada etapa, captura evidências, registros, manifestos, <a class="term" href="../conceitos/logs.html">logs</a>, versões, parâmetros, regras e relações que permitem reconstruir a história dos dados.</p>
+<p>Assim, esse módulo transforma o pipeline em um processo transparente e auditável, no qual cada <a class="term" href="../conceitos/ativo-analitico.html">ativo analítico</a> pode ser associado à sua origem, às suas transformações, às suas versões, aos seus responsáveis, às suas métricas de qualidade e aos seus usos.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 11 é formalizar e operacionalizar a proveniência, a linhagem e a rastreabilidade dos dados no UnespDataLens-RM, registrando origens, processos, transformações, versões, dependências, artefatos e consumidores, de modo a permitir auditoria, reprodutibilidade, explicabilidade, governança e reconstrução dos ativos analíticos produzidos pelo modelo de referência.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 11:</p>
+<ol class="steps">
+<li>registrar a origem das fontes de dados utilizadas no modelo de referência;</li>
+<li>documentar as versões, snapshots, datas de extração e responsáveis associados a cada fonte;</li>
+<li>capturar evidências dos processos de ingestão, integração, transformação, validação, armazenamento e disponibilização;</li>
+<li>representar relações de dependência entre fontes, datasets, atributos, regras, features, indicadores, dashboards, APIs, modelos e produtos de dados;</li>
+<li>documentar regras, parâmetros, scripts, consultas, workflows e decisões que produziram cada ativo analítico;</li>
+<li>permitir reconstruir o percurso de um dado desde sua origem até seu uso final;</li>
+<li>apoiar auditorias técnicas, institucionais e metodológicas sobre os ativos produzidos;</li>
+<li>fornecer base para reprodutibilidade dos pipelines e comparação entre versões;</li>
+<li>identificar impactos decorrentes de mudanças em fontes, schemas, regras ou datasets;</li>
+<li>apoiar governança, segurança, <a class="term" href="../conceitos/privacidade.html">privacidade</a>, qualidade, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, monitoramento e agentes inteligentes;</li>
+<li>produzir artefatos formais de proveniência, linhagem e rastreabilidade, avaliáveis por métricas específicas.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>A proveniência, a linhagem e a rastreabilidade são conceitos relacionados, mas não equivalentes. No UnespDataLens-RM, esses conceitos devem ser tratados de forma articulada.</p>
+<div class="table-wrap"><table class="table"><tr><th>Conceito</th><th>Definição</th><th>Questão respondida</th></tr><tr><td>Proveniência</td><td>Registro da origem dos dados, incluindo fonte, responsável, versão, data, sistema e contexto de obtenção.</td><td>De onde o dado veio?</td></tr><tr><td>Linhagem dos dados</td><td>Registro do percurso dos dados ao longo do pipeline, incluindo transformações, integrações, dependências e produtos derivados.</td><td>Por onde o dado passou e como foi transformado?</td></tr><tr><td>Rastreabilidade</td><td>Capacidade de acompanhar, auditar e reconstruir o caminho dos dados, regras, versões e artefatos.</td><td>Como reconstruir, verificar ou auditar o resultado?</td></tr></table></div>
+<p>A proveniência é o ponto inicial da rastreabilidade. Ela documenta a origem dos dados. A linhagem amplia essa visão, registrando o fluxo e as transformações ao longo do pipeline. A rastreabilidade, por sua vez, representa a capacidade prática de seguir esse caminho, verificar as evidências e reconstruir o processo.</p>
+<p>No UnespDataLens-RM, esses conceitos são essenciais porque os dados passam por múltiplas etapas: fontes são inventariadas, extraídas, armazenadas em estado bruto, integradas, harmonizadas, transformadas, limpas, enriquecidas, avaliadas, armazenadas analiticamente, disponibilizadas e consumidas. Cada etapa pode alterar o conteúdo, a estrutura, a semântica, a qualidade, a sensibilidade ou a finalidade de uso dos dados.</p>
+<p>Sem linhagem, um indicador pode ser visualizado em um dashboard sem que se saiba quais fontes foram usadas, quais regras foram aplicadas ou quais registros foram excluídos. Sem proveniência, um modelo pode ser treinado com dados cuja origem não é verificável. Sem rastreabilidade, um resultado analítico não pode ser auditado nem reproduzido.</p>
+<p>À luz da Design Science Research, o Módulo 11 formaliza a proveniência, a linhagem e a rastreabilidade como artefatos técnico-metodológicos que tornam explícitas as relações entre dados, processos, decisões e produtos. Esses artefatos contribuem para transformar pipelines analíticos em processos auditáveis, explicáveis e cientificamente reprodutíveis.</p>
+<h2 class="section-title" id="natureza-transversal-do-modulo">5. Natureza transversal do módulo</h2>
+<p>O Módulo 11 é transversal porque acompanha todos os módulos do pipeline principal e se relaciona diretamente com os demais módulos transversais.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, registra a origem institucional, técnica e semântica das fontes, seus responsáveis, <a class="term" href="../conceitos/cobertura-temporal.html">cobertura temporal</a>, <a class="term" href="../conceitos/periodicidade.html">periodicidade</a>, restrições e versões iniciais.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, registra a execução da ingestão, os logs, manifestos, snapshots, checksums, parâmetros, datas e destinos dos dados brutos.</p>
+<p>No Módulo 3 — Integração e Harmonização, registra quais fontes foram integradas, quais chaves foram utilizadas, quais regras de pareamento foram aplicadas, quais conflitos foram encontrados e quais datasets integrados foram gerados.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, registra regras de transformação, atributos afetados, atributos derivados, registros removidos, imputações, parâmetros e impactos das alterações.</p>
+<p>No Módulo 5 — Qualidade e Validação de Dados, registra <a class="term" href="../artefatos/regras-de-validacao.html">regras de validação</a>, métricas de qualidade, não conformidades, status de aprovação e ações corretivas.</p>
+<p>No Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, registra grupos avaliados, perdas por etapa, técnicas de mitigação, versões balanceadas, métricas de <a class="term" href="../conceitos/fairness.html">fairness</a> e riscos residuais.</p>
+<p>No Módulo 7 — Armazenamento Analítico, registra onde os ativos foram persistidos, em qual zona, formato, schema, versão, partição e condição de acesso.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, registra quais produtos foram publicados, quais ativos os alimentam, quais consumidores os utilizam, em qual versão e com qual finalidade.</p>
+<p>Com o Módulo 9 — <a class="term" href="../conceitos/metadados.html">Metadados</a>, Catálogo e Semântica dos Dados, compartilha descrições, identificadores, versões, relações semânticas e localização dos ativos.</p>
+<p>Com o Módulo 10 — Governança, Segurança, Privacidade e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, compartilha trilhas de auditoria, registros de acesso, responsáveis, permissões, riscos e evidências de conformidade.</p>
+<p>Dessa forma, o Módulo 11 cria uma visão encadeada do ciclo de vida dos dados, conectando fontes, processos, regras, artefatos, versões e consumidores.</p>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">6. Formalização sintética do módulo</h2>
+<p>O Módulo 11 pode ser formalizado como um <a class="term" href="../artefatos/grafo-de-linhagem.html">grafo de linhagem</a> dos dados.</p>
+<p>Considerando o conjunto de ativos do UnespDataLens-RM:</p>
+<div class="formula">A = {a₁, a₂, ..., aₙ}</div>
+<p>em que cada aᵢ representa uma fonte, <a class="term" href="../artefatos/dataset-bruto.html">dataset bruto</a>, dataset integrado, <a class="term" href="../artefatos/dataset-tratado.html">dataset tratado</a>, <a class="term" href="../conceitos/data-mart.html">data mart</a>, feature, indicador, dashboard, API, modelo ou produto de dados, e considerando o conjunto de processos:</p>
+<div class="formula">P = {p₁, p₂, ..., pₖ}</div>
+<p>em que cada pⱼ representa uma operação de ingestão, integração, transformação, validação, armazenamento ou disponibilização, a linhagem pode ser representada por um <a class="term" href="../conceitos/grafo.html">grafo</a> direcionado:</p>
+<div class="formula">Gᴸ = (V, E)</div>
+<p>em que:</p>
+<ul class="list">
+<li>V representa o conjunto de vértices, incluindo ativos, processos, regras, versões e produtos;</li>
+<li>E representa o conjunto de arestas direcionadas, indicando dependências, transformações, consumo ou derivação.</li>
+</ul>
+<p>Uma <a class="term" href="../conceitos/aresta.html">aresta</a> pode ser representada por:</p>
+<div class="formula">eᵢⱼ = {origem, destino, tipo_relação, processo, regra, versão, data, responsável, evidência}</div>
+<p>Cada ativo de dados pode ser descrito, sob a perspectiva da linhagem, por:</p>
+<div class="formula">aᵢ = {id, nome, tipo, fonte_origem, processos_aplicados, versões, predecessores, sucessores, regras, parâmetros, qualidade, responsável, consumidores}</div>
+<p>Cada processo pode ser descrito por:</p>
+<div class="formula">pⱼ = {id, tipo, entrada, saída, regra, parâmetro, executor, data_execução, versão, log, status}</div>
+<p>O resultado do módulo é um grafo de linhagem capaz de responder a consultas como:</p>
+<ul class="list">
+<li>quais fontes originaram determinado dashboard?</li>
+<li>quais transformações produziram determinada feature?</li>
+<li>quais datasets serão afetados se uma fonte mudar?</li>
+<li>qual versão de dados alimentou determinado relatório?</li>
+<li>quais produtos consumiram determinado dataset?</li>
+<li>quais regras foram aplicadas antes da disponibilização?</li>
+</ul>
+<h2 class="section-title" id="entradas-do-modulo">7. Entradas do módulo</h2>
+<p>As entradas do Módulo 11 são produzidas por todos os módulos do pipeline principal e pelos módulos transversais.</p>
+<p>As principais entradas são:</p>
+<ul class="list">
+<li><a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a>;</li>
+<li>identificadores de fontes;</li>
+<li>responsáveis pelas fontes;</li>
+<li>versões e snapshots;</li>
+<li>manifestos de ingestão;</li>
+<li>logs de execução;</li>
+<li>registros de checksum;</li>
+<li>datasets brutos;</li>
+<li>planos de integração;</li>
+<li>matrizes de relacionamento;</li>
+<li>tabelas de mapeamento;</li>
+<li>regras de integração;</li>
+<li>registros de conflitos;</li>
+<li>manifestos de integração;</li>
+<li>datasets integrados;</li>
+<li>registros de transformação;</li>
+<li>regras de limpeza;</li>
+<li>regras de enriquecimento;</li>
+<li>catálogos de atributos derivados;</li>
+<li>manifestos de transformação;</li>
+<li>datasets tratados;</li>
+<li>regras de validação;</li>
+<li>relatórios de qualidade;</li>
+<li>registros de não conformidades;</li>
+<li>ações corretivas;</li>
+<li>registros de mitigação de <a class="term" href="../conceitos/vies.html">viés</a>;</li>
+<li>datasets balanceados ou sinalizados;</li>
+<li>mapas de armazenamento analítico;</li>
+<li>schemas analíticos;</li>
+<li>registros de versionamento;</li>
+<li>data marts;</li>
+<li>views;</li>
+<li>dashboards;</li>
+<li>APIs;</li>
+<li>relatórios;</li>
+<li>produtos de dados;</li>
+<li>registros de publicação;</li>
+<li>registros de consumo;</li>
+<li>metadados;</li>
+<li>políticas de governança;</li>
+<li>registros de acesso;</li>
+<li>registros de auditoria.</li>
+</ul>
+<h2 class="section-title" id="processamento">8. Processamento</h2>
+<p>O processamento do Módulo 11 envolve captura, padronização, associação, representação, validação e consulta da linhagem dos dados.</p>
+<h3 id="captura-de-eventos-de-linhagem">8.1 Captura de <a class="term" href="../conceitos/eventos.html">eventos</a> de linhagem</h3>
+<p>A primeira atividade consiste em capturar eventos relevantes do pipeline. Cada execução de ingestão, integração, transformação, validação, armazenamento ou disponibilização deve gerar um evento de linhagem.</p>
+<p>Um evento de linhagem registra o que foi executado, quando, por quem, sobre quais dados, com quais parâmetros, produzindo quais saídas.</p>
+<h3 id="padronizacao-dos-registros-de-linhagem">8.2 Padronização dos registros de linhagem</h3>
+<p>A segunda atividade consiste em padronizar os registros de linhagem. Logs, manifestos, scripts, notebooks, workflows e relatórios devem ser traduzidos para uma estrutura comum de metadados de linhagem.</p>
+<p>Essa padronização permite consultar e comparar eventos produzidos por diferentes ferramentas e módulos.</p>
+<h3 id="associacao-entre-entradas-processos-e-saidas">8.3 Associação entre entradas, processos e saídas</h3>
+<p>A terceira atividade consiste em associar cada processo às suas entradas e saídas. Um dataset tratado, por exemplo, deve apontar para o dataset integrado que o originou, para as regras aplicadas, para a versão do processo e para o artefato resultante.</p>
+<p>Essa associação é a base para reconstruir o caminho dos dados.</p>
+<h3 id="construcao-do-grafo-de-linhagem">8.4 Construção do grafo de linhagem</h3>
+<p>A quarta atividade consiste em representar os ativos, processos e dependências em um grafo direcionado. Nesse grafo, fontes e datasets alimentam processos; processos produzem novos datasets; datasets alimentam dashboards, APIs, modelos e relatórios.</p>
+<p>O grafo permite navegação para frente e para trás: da fonte ao produto ou do produto à fonte.</p>
+<h3 id="registro-de-linhagem-em-nivel-de-ativo">8.5 Registro de linhagem em nível de ativo</h3>
+<p>A quinta atividade consiste em registrar a linhagem em nível de ativo. Esse nível indica relações entre fontes, datasets, tabelas, data marts, dashboards, APIs e modelos.</p>
+<p>Por exemplo: “Dashboard de evasão” deriva do “Data Mart de permanência”, que deriva do “Dataset tratado de trajetória acadêmica”, que deriva das fontes “Matrícula”, “Histórico”, “AVA” e “Questionário socioeconômico”.</p>
+<h3 id="registro-de-linhagem-em-nivel-de-atributo">8.6 Registro de linhagem em nível de atributo</h3>
+<p>A sexta atividade consiste em registrar, quando necessário, a linhagem em nível de atributo. Esse nível é mais detalhado e indica quais atributos de origem contribuíram para gerar determinado atributo derivado, indicador ou feature.</p>
+<p>Por exemplo: o atributo “taxa de aprovação acumulada” pode derivar de nota final, situação de matrícula, disciplina cursada e período letivo.</p>
+<h3 id="registro-de-linhagem-em-nivel-de-processo">8.7 Registro de linhagem em nível de processo</h3>
+<p>A sétima atividade consiste em documentar os processos que transformam dados. Isso inclui scripts, consultas SQL, notebooks, workflows, parâmetros, bibliotecas, versões, ambiente de execução e status.</p>
+<p>Esse nível é essencial para reprodutibilidade.</p>
+<h3 id="validacao-da-rastreabilidade">8.8 Validação da rastreabilidade</h3>
+<p>A oitava atividade consiste em verificar se os ativos críticos possuem linhagem suficiente para auditoria. Um produto de dados crítico deve permitir identificar suas fontes, versões, transformações, validações, armazenamento e publicação.</p>
+<p>Ativos sem linhagem suficiente devem ser sinalizados como incompletos ou de uso restrito.</p>
+<h3 id="consultas-de-impacto">8.9 Consultas de impacto</h3>
+<p>A nona atividade consiste em permitir análise de impacto. Caso uma fonte, atributo, regra ou dataset seja alterado, o grafo de linhagem deve permitir identificar quais ativos derivados podem ser afetados.</p>
+<h3 id="disponibilizacao-da-linhagem-para-auditoria-e-explicacao">8.10 Disponibilização da linhagem para auditoria e explicação</h3>
+<p>A décima atividade consiste em disponibilizar a linhagem para usuários autorizados, auditores, gestores, analistas, módulos de governança e agentes inteligentes, de modo que seja possível explicar como um resultado foi produzido.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-tecnologias-aplicaveis">9. Técnicas, métodos e tecnologias aplicáveis</h2>
+<p>O Módulo 11 pode empregar diferentes técnicas, métodos e tecnologias para capturar, representar e consultar proveniência e linhagem.</p>
+<p>Entre as técnicas e métodos, destacam-se:</p>
+<ul class="list">
+<li>captura de logs estruturados;</li>
+<li>manifestos de execução;</li>
+<li>registros de transformação;</li>
+<li>versionamento de datasets;</li>
+<li>rastreamento de dependências;</li>
+<li>grafos de linhagem;</li>
+<li>modelagem de proveniência;</li>
+<li>trilhas de auditoria;</li>
+<li>análise de impacto;</li>
+<li>rastreamento em nível de dataset;</li>
+<li>rastreamento em nível de atributo;</li>
+<li>rastreamento em nível de processo;</li>
+<li><a class="term" href="../conceitos/data-lineage.html">data lineage</a>;</li>
+<li>workflow lineage;</li>
+<li>provenance tracking;</li>
+<li><a class="term" href="../conceitos/data-observability.html">data observability</a>;</li>
+<li>auditoria de pipelines;</li>
+<li>comparação de versões;</li>
+<li>documentação de dependências.</li>
+</ul>
+<p>Entre os padrões e abordagens possíveis, destacam-se:</p>
+<ul class="list">
+<li><a class="term" href="../tecnicas/openlineage.html">OpenLineage</a>;</li>
+<li>W3C PROV;</li>
+<li>modelos de grafos direcionados;</li>
+<li>registros baseados em eventos;</li>
+<li>metadados de execução;</li>
+<li>data contracts;</li>
+<li>manifestos de pipeline;</li>
+<li>versionamento por snapshots;</li>
+<li>identificadores persistentes;</li>
+<li>hashes e checksums;</li>
+<li>logs de auditoria.</li>
+</ul>
+<p>Entre as tecnologias possíveis, destacam-se:</p>
+<ul class="list">
+<li><a class="term" href="../tecnicas/apache-atlas.html">Apache Atlas</a>;</li>
+<li><a class="term" href="../tecnicas/datahub.html">DataHub</a>;</li>
+<li><a class="term" href="../tecnicas/openmetadata.html">OpenMetadata</a>;</li>
+<li><a class="term" href="../tecnicas/marquez.html">Marquez</a>;</li>
+<li>OpenLineage;</li>
+<li>Airflow;</li>
+<li><a class="term" href="../tecnicas/dbt.html">dbt</a>;</li>
+<li><a class="term" href="../tecnicas/spark.html">Spark</a>;</li>
+<li>NiFi;</li>
+<li><a class="term" href="../tecnicas/mlflow.html">MLflow</a>, quando houver modelos;</li>
+<li>DVC;</li>
+<li>LakeFS;</li>
+<li>Git;</li>
+<li><a class="term" href="../tecnicas/neo4j.html">Neo4j</a>;</li>
+<li>bancos de grafos;</li>
+<li>catálogos de dados;</li>
+<li>ferramentas de observabilidade;</li>
+<li>sistemas de logs centralizados.</li>
+</ul>
+<h2 class="section-title" id="metricas-do-modulo">10. Métricas do módulo</h2>
+<p>As métricas do Módulo 11 têm como objetivo avaliar cobertura, <a class="term" href="../metricas/completude.html">completude</a>, profundidade, auditabilidade e utilidade da linhagem dos dados.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Cobertura de linhagem de ativos</td><td>CLA</td><td>Proporção de ativos com linhagem registrada</td></tr><tr><td>Cobertura de proveniência</td><td>CP</td><td>Proporção de ativos com origem documentada</td></tr><tr><td>Cobertura de linhagem de atributos</td><td>CLAtr</td><td>Proporção de atributos críticos com linhagem registrada</td></tr><tr><td>Cobertura de processos rastreáveis</td><td>CPR</td><td>Proporção de processos com entrada, saída e parâmetros documentados</td></tr><tr><td>Taxa de ativos auditáveis</td><td>TAA</td><td>Proporção de ativos cuja trajetória pode ser reconstruída</td></tr><tr><td>Taxa de produtos com fontes identificáveis</td><td>TPFI</td><td>Proporção de produtos que permitem identificar fontes originais</td></tr><tr><td>Taxa de transformações rastreáveis</td><td>TTR</td><td>Proporção de transformações com regra, entrada e saída documentadas</td></tr><tr><td>Profundidade média da linhagem</td><td>PML</td><td>Número médio de etapas rastreáveis entre fonte e produto</td></tr><tr><td>Taxa de dependências documentadas</td><td>TDD</td><td>Proporção de relações entre ativos formalmente registradas</td></tr><tr><td>Taxa de impacto rastreável</td><td>TIR</td><td>Proporção de mudanças cuja propagação pode ser identificada</td></tr><tr><td>Taxa de linhagem incompleta</td><td>TLI</td><td>Proporção de ativos com lacunas de rastreabilidade</td></tr><tr><td>Tempo médio de reconstrução</td><td>TMR</td><td>Tempo necessário para reconstruir a trajetória de um ativo</td></tr><tr><td>Taxa de evidências associadas</td><td>TEA</td><td>Proporção de eventos com logs, manifestos ou registros associados</td></tr><tr><td>Taxa de consultas de linhagem respondidas</td><td>TCLR</td><td>Proporção de consultas respondidas pelo grafo de linhagem</td></tr><tr><td>Índice de auditabilidade do ativo</td><td>IAA</td><td>Grau em que um ativo pode ser auditado a partir de sua linhagem</td></tr></table></div>
+<h3 id="cobertura-de-linhagem-de-ativos-cla">10.1 Cobertura de Linhagem de Ativos — CLA</h3>
+<p>A Cobertura de Linhagem de Ativos mede a proporção de ativos que possuem relações de origem, transformação ou dependência registradas.</p>
+<div class="formula">CLA = número de ativos com linhagem registrada / número total de ativos catalogados</div>
+<p>Essa métrica indica se os ativos do modelo de referência possuem rastreabilidade mínima.</p>
+<h3 id="cobertura-de-proveniencia-cp">10.2 Cobertura de Proveniência — CP</h3>
+<p>A Cobertura de Proveniência mede a proporção de ativos com origem documentada.</p>
+<div class="formula">CP = número de ativos com fonte de origem documentada / número total de ativos avaliados</div>
+<p>Essa métrica avalia se é possível identificar de onde os dados vieram.</p>
+<h3 id="taxa-de-transformacoes-rastreaveis-ttr">10.3 Taxa de Transformações Rastreáveis — TTR</h3>
+<p>A Taxa de Transformações Rastreáveis mede a proporção de transformações com entrada, saída, regra, parâmetro e evidência documentados.</p>
+<div class="formula">TTR = número de transformações rastreáveis / número total de transformações aplicadas</div>
+<p>Essa métrica é fundamental para reprodutibilidade.</p>
+<h3 id="taxa-de-ativos-auditaveis-taa">10.4 Taxa de Ativos Auditáveis — TAA</h3>
+<p>A Taxa de Ativos Auditáveis mede a proporção de ativos cuja trajetória pode ser reconstruída de forma suficiente para auditoria.</p>
+<div class="formula">TAA = número de ativos auditáveis / número total de ativos críticos</div>
+<p>Um ativo é considerado auditável quando possui origem, versões, processos, regras, responsáveis, métricas e produtos derivados documentados.</p>
+<h3 id="indice-de-auditabilidade-do-ativo-iaa">10.5 Índice de Auditabilidade do Ativo — IAA</h3>
+<p>O Índice de Auditabilidade do Ativo pode ser definido como a proporção de elementos obrigatórios de linhagem preenchidos para um ativo.</p>
+<div class="formula">IAA(aᵢ) = ELP(aᵢ) / ELO</div>
+<p>em que:</p>
+<ul class="list">
+<li>ELP(aᵢ) representa o número de elementos de linhagem preenchidos para o ativo aᵢ;</li>
+<li>ELO representa o total de elementos de linhagem obrigatórios.</li>
+</ul>
+<p>Elementos obrigatórios podem incluir fonte, versão, processo, regra, parâmetro, entrada, saída, responsável, data e evidência.</p>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">11. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 11 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, regras de construção, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A11.1</td><td>Modelo de Proveniência dos Dados</td><td>Modelo conceitual</td><td>CP</td><td>Define como a origem dos dados será registrada</td></tr><tr><td>A11.2</td><td>Grafo de Linhagem dos Dados</td><td>Grafo direcionado</td><td>CLA, TAA</td><td>Representa dependências entre ativos e processos</td></tr><tr><td>A11.3</td><td>Registro de Eventos de Linhagem</td><td>Log estruturado</td><td>TEA</td><td>Captura execuções relevantes do pipeline</td></tr><tr><td>A11.4</td><td>Manifesto de Linhagem do Ativo</td><td>Documento estruturado</td><td>IAA</td><td>Resume trajetória de um ativo</td></tr><tr><td>A11.5</td><td>Matriz de Dependência entre Ativos</td><td>Matriz ativo × ativo</td><td>TDD</td><td>Mapeia relações e impactos</td></tr><tr><td>A11.6</td><td>Registro de Linhagem de Atributos</td><td>Tabela atributo-origem</td><td>CLAtr</td><td>Rastreia atributos críticos e derivados</td></tr><tr><td>A11.7</td><td>Registro de Transformações Rastreáveis</td><td>Tabela técnica</td><td>TTR</td><td>Documenta regras e processos aplicados</td></tr><tr><td>A11.8</td><td><a class="term" href="../artefatos/relatorio-de-impacto.html">Relatório de Impacto</a> de Mudanças</td><td>Relatório técnico</td><td>TIR</td><td>Avalia propagação de alterações</td></tr><tr><td>A11.9</td><td><a class="term" href="../artefatos/trilha-de-auditoria.html">Trilha de Auditoria</a> Analítica</td><td>Log/relatório</td><td>TAA</td><td>Permite verificar produção e uso dos ativos</td></tr><tr><td>A11.10</td><td>Relatório de Completude da Linhagem</td><td>Relatório técnico</td><td>CLA, TLI</td><td>Avalia lacunas de rastreabilidade</td></tr></table></div>
+<h2 class="section-title" id="artefato-a11-1-modelo-de-proveniencia-dos-dados">12. Artefato A11.1 — Modelo de Proveniência dos Dados</h2>
+<h3 id="finalidade">12.1 Finalidade</h3>
+<p>O Modelo de Proveniência dos Dados define quais informações devem ser registradas para documentar a origem dos dados utilizados no UnespDataLens-RM.</p>
+<h3 id="tipo-de-artefato-na-dsr">12.2 Tipo de artefato na DSR</h3>
+<p>Esse artefato é um modelo e um constructo, pois formaliza os elementos essenciais para descrever a origem dos dados.</p>
+<h3 id="estrutura-minima">12.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Fonte de origem</td><td>Sistema, base, arquivo, API ou repositório</td></tr><tr><td>Responsável pela fonte</td><td>Pessoa, setor ou instituição</td></tr><tr><td>Data de obtenção</td><td>Momento de extração ou acesso</td></tr><tr><td>Versão da fonte</td><td><a class="term" href="../conceitos/snapshot.html">Snapshot</a>, data ou número de versão</td></tr><tr><td>Método de obtenção</td><td>API, SQL, arquivo, exportação etc.</td></tr><tr><td>Cobertura temporal</td><td>Período representado</td></tr><tr><td><a class="term" href="../conceitos/granularidade.html">Granularidade</a></td><td>Unidade de análise</td></tr><tr><td>Restrição de acesso</td><td>Condição de uso</td></tr><tr><td>Sensibilidade</td><td>Classificação dos dados</td></tr><tr><td>Evidência</td><td>Manifesto, log, checksum ou documentação</td></tr></table></div>
+<h3 id="metricas-associadas">12.4 Métricas associadas</h3>
+<ul class="list">
+<li>cobertura de proveniência;</li>
+<li>percentual de fontes com responsável;</li>
+<li>percentual de fontes com versão;</li>
+<li>percentual de fontes com evidência de origem;</li>
+<li>percentual de fontes com restrição documentada.</li>
+</ul>
+<h3 id="criterios-de-validacao">12.5 Critérios de validação</h3>
+<p>A proveniência é considerada adequada quando a origem, responsável, data, versão, método de obtenção, cobertura, sensibilidade e evidência estão documentados.</p>
+<h3 id="contribuicao">12.6 Contribuição</h3>
+<p>Esse artefato garante que os dados possam ser vinculados à sua origem, evitando uso de informações sem procedência verificável.</p>
+<h2 class="section-title" id="artefato-a11-2-grafo-de-linhagem-dos-dados">13. Artefato A11.2 — Grafo de Linhagem dos Dados</h2>
+<h3 id="finalidade-2">13.1 Finalidade</h3>
+<p>O Grafo de Linhagem dos Dados representa as relações entre fontes, processos, datasets, atributos, produtos e consumidores ao longo do pipeline.</p>
+<h3 id="tipo-de-artefato-na-dsr-2">13.2 Tipo de artefato na DSR</h3>
+<p>Esse artefato é um modelo, pois representa relações e dependências, e uma instanciação, quando implementado em banco de grafos, catálogo, ferramenta de lineage ou estrutura computacional.</p>
+<h3 id="estrutura-formal">13.3 Estrutura formal</h3>
+<p>O grafo pode ser representado como:</p>
+<div class="formula">Gᴸ = (V, E)</div>
+<p>em que:</p>
+<ul class="list">
+<li>V representa ativos, processos, versões, regras e produtos;</li>
+<li>E representa relações de origem, transformação, derivação, dependência ou consumo.</li>
+</ul>
+<p>Cada vértice pode conter:</p>
+<div class="formula">vᵢ = {id, tipo, nome, versão, módulo, responsável, status}</div>
+<p>Cada aresta pode conter:</p>
+<div class="formula">eᵢⱼ = {origem, destino, tipo_relação, processo, regra, data, evidência}</div>
+<h3 id="tipos-de-vertices">13.4 Tipos de vértices</h3>
+<ul class="list">
+<li>fonte;</li>
+<li>dataset bruto;</li>
+<li>dataset integrado;</li>
+<li>dataset tratado;</li>
+<li>dataset validado;</li>
+<li>data mart;</li>
+<li>atributo;</li>
+<li>feature;</li>
+<li>indicador;</li>
+<li>processo;</li>
+<li>regra;</li>
+<li>modelo;</li>
+<li>dashboard;</li>
+<li>API;</li>
+<li>relatório;</li>
+<li>produto de dados;</li>
+<li>consumidor.</li>
+</ul>
+<h3 id="tipos-de-relacoes">13.5 Tipos de relações</h3>
+<ul class="list">
+<li>originou;</li>
+<li>foi extraído de;</li>
+<li>foi integrado com;</li>
+<li>foi transformado por;</li>
+<li>gerou;</li>
+<li>derivou de;</li>
+<li>validou;</li>
+<li>alimentou;</li>
+<li>consumiu;</li>
+<li>substituiu;</li>
+<li>depende de.</li>
+</ul>
+<h3 id="metricas-associadas-2">13.6 Métricas associadas</h3>
+<ul class="list">
+<li>cobertura de linhagem de ativos;</li>
+<li>profundidade média da linhagem;</li>
+<li>taxa de dependências documentadas;</li>
+<li>taxa de produtos com fontes identificáveis;</li>
+<li>taxa de consultas de linhagem respondidas.</li>
+</ul>
+<h3 id="contribuicao-2">13.7 Contribuição</h3>
+<p>Esse artefato permite visualizar e consultar a trajetória dos dados, apoiando auditoria, impacto de mudanças, governança, explicabilidade e reprodutibilidade.</p>
+<h2 class="section-title" id="artefato-a11-3-registro-de-eventos-de-linhagem">14. Artefato A11.3 — Registro de Eventos de Linhagem</h2>
+<h3 id="finalidade-3">14.1 Finalidade</h3>
+<p>O Registro de Eventos de Linhagem captura eventos relevantes ocorridos durante a execução do pipeline.</p>
+<h3 id="estrutura-minima-2">14.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador do evento</td><td>Código único</td></tr><tr><td>Tipo de evento</td><td>Ingestão, integração, transformação, validação, publicação etc.</td></tr><tr><td>Ativos de entrada</td><td>Dados ou artefatos consumidos</td></tr><tr><td>Ativos de saída</td><td>Dados ou artefatos produzidos</td></tr><tr><td>Processo executado</td><td>Pipeline, script, notebook, consulta ou workflow</td></tr><tr><td>Parâmetros</td><td>Configurações utilizadas</td></tr><tr><td>Executor</td><td>Pessoa, sistema ou agente</td></tr><tr><td>Data e hora</td><td>Momento da execução</td></tr><tr><td>Status</td><td>Sucesso, falha, parcial</td></tr><tr><td>Evidência</td><td>Log, manifesto, checksum ou relatório</td></tr></table></div>
+<h3 id="metricas-associadas-3">14.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de evidências associadas;</li>
+<li>cobertura de processos rastreáveis;</li>
+<li>taxa de eventos com status;</li>
+<li>taxa de eventos com parâmetros documentados;</li>
+<li>taxa de eventos com entrada e saída registradas.</li>
+</ul>
+<h3 id="contribuicao-3">14.4 Contribuição</h3>
+<p>Esse artefato transforma execuções do pipeline em eventos auditáveis, preservando a história operacional dos dados.</p>
+<h2 class="section-title" id="artefato-a11-4-manifesto-de-linhagem-do-ativo">15. Artefato A11.4 — Manifesto de Linhagem do Ativo</h2>
+<h3 id="finalidade-4">15.1 Finalidade</h3>
+<p>O Manifesto de Linhagem do Ativo resume a trajetória de um ativo específico, indicando suas fontes, processos, versões, transformações, validações, armazenamento e consumo.</p>
+<h3 id="estrutura-minima-3">15.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Dataset, indicador, dashboard, API ou produto</td></tr><tr><td>Fontes de origem</td><td>Fontes que contribuíram para o ativo</td></tr><tr><td>Versões utilizadas</td><td>Versões ou snapshots</td></tr><tr><td>Processos aplicados</td><td>Ingestão, integração, transformação etc.</td></tr><tr><td>Regras aplicadas</td><td>Regras de limpeza, integração, validação etc.</td></tr><tr><td>Datasets intermediários</td><td>Ativos gerados no percurso</td></tr><tr><td>Métricas de qualidade</td><td>Status ou indicadores associados</td></tr><tr><td>Responsáveis</td><td>Pessoas ou sistemas envolvidos</td></tr><tr><td>Produtos consumidores</td><td>Dashboards, APIs, modelos, relatórios</td></tr><tr><td>Evidências</td><td>Logs, manifestos, registros, checksums</td></tr></table></div>
+<h3 id="metricas-associadas-4">15.3 Métricas associadas</h3>
+<ul class="list">
+<li>índice de auditabilidade do ativo;</li>
+<li>taxa de ativos auditáveis;</li>
+<li>cobertura de proveniência;</li>
+<li>taxa de transformações rastreáveis.</li>
+</ul>
+<h3 id="contribuicao-4">15.4 Contribuição</h3>
+<p>Esse artefato permite compreender a história completa de um ativo e apoiar auditoria, explicação e reprodutibilidade.</p>
+<h2 class="section-title" id="artefato-a11-5-matriz-de-dependencia-entre-ativos">16. Artefato A11.5 — Matriz de Dependência entre Ativos</h2>
+<h3 id="finalidade-5">16.1 Finalidade</h3>
+<p>A Matriz de Dependência entre Ativos registra relações de dependência entre fontes, datasets, atributos, produtos e consumidores.</p>
+<h3 id="estrutura-minima-4">16.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo de origem</td><td>Ativo predecessor</td></tr><tr><td>Ativo dependente</td><td>Ativo sucessor</td></tr><tr><td>Tipo de dependência</td><td>Derivação, transformação, consumo, validação etc.</td></tr><tr><td>Processo associado</td><td>Processo que conecta os ativos</td></tr><tr><td>Nível</td><td>Dataset, atributo, produto ou processo</td></tr><tr><td>Criticidade</td><td>Baixa, média, alta, crítica</td></tr><tr><td>Evidência</td><td>Manifesto, log ou regra</td></tr><tr><td>Observações</td><td>Limitações ou cuidados</td></tr></table></div>
+<h3 id="metricas-associadas-5">16.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de dependências documentadas;</li>
+<li>número de dependências por ativo;</li>
+<li>número de ativos críticos dependentes;</li>
+<li>taxa de impacto rastreável;</li>
+<li>grau de <a class="term" href="../conceitos/centralidade.html">centralidade</a> dos ativos.</li>
+</ul>
+<h3 id="contribuicao-5">16.4 Contribuição</h3>
+<p>Esse artefato apoia análise de impacto, identificação de ativos críticos e gestão de mudanças no pipeline.</p>
+<h2 class="section-title" id="artefato-a11-6-registro-de-linhagem-de-atributos">17. Artefato A11.6 — Registro de Linhagem de Atributos</h2>
+<h3 id="finalidade-6">17.1 Finalidade</h3>
+<p>O Registro de Linhagem de Atributos documenta a origem e as transformações de atributos críticos, derivados, sensíveis ou utilizados em indicadores, modelos e decisões.</p>
+<h3 id="estrutura-minima-5">17.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Atributo final</td><td>Nome do atributo no ativo resultante</td></tr><tr><td>Ativo final</td><td>Dataset ou produto onde aparece</td></tr><tr><td>Atributos de origem</td><td>Campos que contribuíram para sua criação</td></tr><tr><td>Fontes de origem</td><td>Fontes ou datasets originais</td></tr><tr><td>Regra de derivação</td><td>Fórmula ou transformação</td></tr><tr><td>Transformações aplicadas</td><td>Limpeza, <a class="term" href="../metodos/imputacao.html">imputação</a>, agregação etc.</td></tr><tr><td>Granularidade</td><td>Unidade de análise</td></tr><tr><td>Versão</td><td>Versão da regra ou atributo</td></tr><tr><td>Evidência</td><td>Script, manifesto ou registro</td></tr><tr><td>Limitações</td><td>Cuidados de interpretação</td></tr></table></div>
+<h3 id="metricas-associadas-6">17.3 Métricas associadas</h3>
+<ul class="list">
+<li>cobertura de linhagem de atributos;</li>
+<li>percentual de atributos derivados rastreáveis;</li>
+<li>percentual de atributos sensíveis rastreáveis;</li>
+<li>taxa de atributos sem origem identificada.</li>
+</ul>
+<h3 id="contribuicao-6">17.4 Contribuição</h3>
+<p>Esse artefato é essencial para explicar indicadores, features, variáveis derivadas e atributos utilizados em modelos ou dashboards.</p>
+<h2 class="section-title" id="artefato-a11-7-registro-de-transformacoes-rastreaveis">18. Artefato A11.7 — Registro de Transformações Rastreáveis</h2>
+<h3 id="finalidade-7">18.1 Finalidade</h3>
+<p>O Registro de Transformações Rastreáveis documenta regras, parâmetros, entradas, saídas e evidências associadas a transformações aplicadas aos dados.</p>
+<h3 id="estrutura-minima-6">18.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Transformação</td><td>Código ou nome da transformação</td></tr><tr><td>Tipo</td><td>Limpeza, integração, enriquecimento, validação etc.</td></tr><tr><td>Entrada</td><td>Dataset ou atributo de entrada</td></tr><tr><td>Saída</td><td>Dataset ou atributo resultante</td></tr><tr><td>Regra</td><td>Descrição da regra aplicada</td></tr><tr><td>Parâmetros</td><td>Valores utilizados</td></tr><tr><td>Registros afetados</td><td>Quantidade ou percentual</td></tr><tr><td>Executor</td><td>Pessoa ou sistema</td></tr><tr><td>Data</td><td>Data da execução</td></tr><tr><td>Evidência</td><td>Script, notebook, log, manifesto</td></tr></table></div>
+<h3 id="metricas-associadas-7">18.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de transformações rastreáveis;</li>
+<li>taxa de evidências associadas;</li>
+<li>percentual de transformações com parâmetros;</li>
+<li>percentual de transformações com impacto documentado.</li>
+</ul>
+<h3 id="contribuicao-7">18.4 Contribuição</h3>
+<p>Esse artefato permite verificar como os dados foram modificados e sustenta reprodutibilidade das etapas de preparação.</p>
+<h2 class="section-title" id="artefato-a11-8-relatorio-de-impacto-de-mudancas">19. Artefato A11.8 — Relatório de Impacto de Mudanças</h2>
+<h3 id="finalidade-8">19.1 Finalidade</h3>
+<p>O Relatório de Impacto de Mudanças avalia quais ativos podem ser afetados por alterações em fontes, schemas, regras, atributos ou processos.</p>
+<h3 id="estrutura-minima-7">19.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Mudança analisada</td><td>Alteração em fonte, atributo, regra ou processo</td></tr><tr><td>Ativo alterado</td><td>Elemento de origem da mudança</td></tr><tr><td>Ativos impactados</td><td>Datasets, produtos, dashboards ou modelos afetados</td></tr><tr><td>Tipo de impacto</td><td>Estrutural, semântico, qualidade, consumo etc.</td></tr><tr><td>Severidade</td><td>Baixa, média, alta ou crítica</td></tr><tr><td>Ação recomendada</td><td>Reprocessar, revisar, bloquear, comunicar</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe</td></tr><tr><td>Status</td><td>Aberto, tratado, encerrado</td></tr></table></div>
+<h3 id="metricas-associadas-8">19.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de impacto rastreável;</li>
+<li>número de ativos impactados;</li>
+<li>número de impactos críticos;</li>
+<li>tempo médio de avaliação de impacto;</li>
+<li>taxa de impactos tratados.</li>
+</ul>
+<h3 id="contribuicao-8">19.4 Contribuição</h3>
+<p>Esse artefato permite gerenciar mudanças de forma controlada, evitando efeitos não percebidos em produtos de dados.</p>
+<h2 class="section-title" id="artefato-a11-9-trilha-de-auditoria-analitica">20. Artefato A11.9 — Trilha de Auditoria Analítica</h2>
+<h3 id="finalidade-9">20.1 Finalidade</h3>
+<p>A Trilha de Auditoria Analítica consolida registros que permitem verificar a produção, alteração, publicação e consumo dos ativos analíticos.</p>
+<h3 id="estrutura-minima-8">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Dado, dataset, indicador ou produto</td></tr><tr><td>Ação</td><td>Criação, alteração, validação, publicação, consumo</td></tr><tr><td>Usuário ou sistema</td><td>Quem executou a ação</td></tr><tr><td>Data e hora</td><td>Momento da ação</td></tr><tr><td>Módulo</td><td>Etapa do modelo de referência</td></tr><tr><td>Evidência</td><td>Log, manifesto, relatório, versão</td></tr><tr><td>Resultado</td><td>Sucesso, falha, pendente</td></tr><tr><td>Observações</td><td>Informações adicionais</td></tr></table></div>
+<h3 id="metricas-associadas-9">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos auditáveis;</li>
+<li>taxa de ações com evidência;</li>
+<li>taxa de auditoria por produto;</li>
+<li>tempo médio de reconstrução.</li>
+</ul>
+<h3 id="contribuicao-9">20.4 Contribuição</h3>
+<p>Esse artefato apoia responsabilização, governança, investigação de problemas e validação institucional dos resultados analíticos.</p>
+<h2 class="section-title" id="artefato-a11-10-relatorio-de-completude-da-linhagem">21. Artefato A11.10 — Relatório de Completude da Linhagem</h2>
+<h3 id="finalidade-10">21.1 Finalidade</h3>
+<p>O Relatório de Completude da Linhagem avalia lacunas de proveniência, linhagem e rastreabilidade dos ativos do modelo de referência.</p>
+<h3 id="estrutura-minima-9">21.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Escopo avaliado</td><td>Ativos, módulo ou pipeline completo</td></tr><tr><td>Ativos avaliados</td><td>Quantidade e tipos</td></tr><tr><td>Ativos com proveniência</td><td>Percentual</td></tr><tr><td>Ativos com linhagem completa</td><td>Percentual</td></tr><tr><td>Ativos com lacunas</td><td>Quantidade e descrição</td></tr><tr><td>Processos sem evidência</td><td>Processos não rastreáveis</td></tr><tr><td>Atributos sem origem</td><td>Atributos críticos sem linhagem</td></tr><tr><td>Severidade</td><td>Classificação das lacunas</td></tr><tr><td>Recomendações</td><td>Ações de melhoria</td></tr></table></div>
+<h3 id="metricas-associadas-10">21.3 Métricas associadas</h3>
+<ul class="list">
+<li>cobertura de linhagem de ativos;</li>
+<li>taxa de linhagem incompleta;</li>
+<li>cobertura de proveniência;</li>
+<li>taxa de processos rastreáveis;</li>
+<li>índice de auditabilidade.</li>
+</ul>
+<h3 id="contribuicao-10">21.4 Contribuição</h3>
+<p>Esse artefato permite avaliar a própria qualidade da rastreabilidade, identificando pontos frágeis do pipeline.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">22. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Inventários, logs, manifestos, snapshots, regras, datasets, transformações, relatórios de qualidade, registros de armazenamento, produtos de dados, versões e registros de consumo.</td></tr><tr><td>Processamento</td><td>Captura de eventos, padronização de registros, associação entre entradas/processos/saídas, construção de grafo de linhagem, validação da rastreabilidade, análise de impacto e disponibilização para auditoria.</td></tr><tr><td>Artefatos</td><td>Modelo de proveniência, grafo de linhagem, eventos de linhagem, manifesto de ativo, matriz de dependência, linhagem de atributos, transformações rastreáveis, relatório de impacto, trilha de auditoria e relatório de completude.</td></tr><tr><td>Métricas</td><td>CLA, CP, CLAtr, CPR, TAA, TPFI, TTR, PML, TDD, TIR, TLI, TMR, TEA, TCLR e IAA.</td></tr><tr><td>Saídas</td><td>Ativos com origem, percurso, dependências, versões, transformações, consumidores e evidências documentadas, permitindo auditoria, reprodutibilidade e análise de impacto.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">23. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 11 pode ser considerado adequadamente implementado quando:</p>
+<ol class="steps">
+<li>os ativos críticos possuem origem documentada;</li>
+<li>os datasets brutos possuem registros de proveniência;</li>
+<li>as ingestões possuem logs e manifestos associados;</li>
+<li>as integrações possuem fontes, chaves, regras e saídas documentadas;</li>
+<li>as transformações possuem entrada, saída, regra, parâmetro e evidência;</li>
+<li>os datasets tratados possuem vínculo com datasets de origem;</li>
+<li>os produtos de dados possuem relação com os ativos que os alimentam;</li>
+<li>os atributos derivados críticos possuem linhagem documentada;</li>
+<li>as versões e snapshots estão associados aos ativos correspondentes;</li>
+<li>é possível navegar da fonte ao produto e do produto à fonte;</li>
+<li>mudanças em fontes ou regras permitem análise de impacto;</li>
+<li>os ativos críticos possuem índice de auditabilidade satisfatório.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-o-pipeline-principal">24. Relação com o pipeline principal</h2>
+<p>O Módulo 11 se relaciona com todos os módulos do pipeline principal do UnespDataLens-RM.</p>
+<p>Com o Módulo 1 — Fontes e Inventário de Dados, registra a proveniência inicial das fontes.</p>
+<p>Com o Módulo 2 — Extração, Ingestão e Armazenamento Bruto, registra eventos de ingestão, snapshots, logs e datasets brutos.</p>
+<p>Com o Módulo 3 — Integração e Harmonização, registra chaves, regras de pareamento, conflitos e datasets integrados.</p>
+<p>Com o Módulo 4 — Transformação, Limpeza e Enriquecimento, registra regras, parâmetros, atributos afetados, atributos derivados e impactos.</p>
+<p>Com o Módulo 5 — Qualidade e Validação de Dados, registra testes, métricas, não conformidades, status e ações corretivas.</p>
+<p>Com o Módulo 6 — Desbalanceamento, Vieses e Equidade, registra perdas por grupo, mitigação, versões balanceadas e riscos residuais.</p>
+<p>Com o Módulo 7 — Armazenamento Analítico, registra zonas, localizações, versões, schemas e estruturas persistidas.</p>
+<p>Com o Módulo 8 — Disponibilização e Consumo Analítico, registra produtos publicados, consumidores, dashboards, APIs, relatórios e versões de consumo.</p>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-transversais">25. Relação com os demais módulos transversais</h2>
+<p>O Módulo 11 depende do Módulo 9 — Metadados, Catálogo e Semântica dos Dados, pois utiliza identificadores, descrições, schemas, termos, relações semânticas e metadados dos ativos.</p>
+<p>Relaciona-se com o Módulo 10 — Governança, Segurança, Privacidade e Conformidade, pois compartilha trilhas de auditoria, responsáveis, acessos, evidências, finalidades e registros de conformidade.</p>
+<p>Relaciona-se com o módulo de Versionamento e Reprodutibilidade, pois a linhagem depende de versões, snapshots, parâmetros, ambientes e artefatos preservados.</p>
+<p>Relaciona-se com o módulo de Monitoramento, Drift e Evolução dos Ativos, pois a linhagem permite identificar o impacto de mudanças, degradações, alterações de schema e evolução dos ativos.</p>
+<p>Relaciona-se com o módulo de Agentes Inteligentes de Apoio ao Pipeline, pois agentes podem usar o grafo de linhagem para responder perguntas, explicar indicadores, rastrear erros, sugerir reprocessamentos e identificar impactos.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">26. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, o Módulo 11 poderia registrar a linhagem de um painel de evasão.</p>
+<p>O painel poderia ser derivado de um data mart de permanência, que por sua vez foi construído a partir de um dataset tratado de trajetória acadêmica. Esse dataset tratado poderia ter origem em bases de matrícula, histórico acadêmico, notas, frequência, ambiente virtual de aprendizagem e questionários socioeconômicos.</p>
+<p>A linhagem permitiria responder:</p>
+<ul class="list">
+<li>quais fontes alimentam o indicador de evasão?</li>
+<li>qual definição de evasão foi utilizada?</li>
+<li>quais períodos letivos foram considerados?</li>
+<li>quais registros foram removidos por inconsistência?</li>
+<li>quais atributos foram derivados?</li>
+<li>qual versão da base alimentou o painel?</li>
+<li>quais dashboards ou relatórios dependem desse dataset?</li>
+<li>quais produtos seriam afetados se a regra de evasão fosse alterada?</li>
+</ul>
+<p>Esse tipo de rastreabilidade é essencial para garantir transparência e confiança em análises educacionais.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">27. Exemplo de aplicação em políticas públicas</h2>
+<p>Em uma aplicação em políticas públicas, o Módulo 11 poderia registrar a linhagem de um indicador de vulnerabilidade territorial.</p>
+<p>Esse indicador poderia ser derivado de bases de assistência social, saúde, educação, território, cadastro populacional e indicadores socioeconômicos externos. A linhagem permitiria identificar quais fontes contribuíram para o indicador, quais regras de agregação foram usadas, quais territórios foram considerados, quais versões das bases foram utilizadas e quais painéis consomem o resultado.</p>
+<p>Se uma base de atendimento social fosse atualizada ou corrigida, o grafo de linhagem permitiria identificar automaticamente quais indicadores, dashboards, relatórios e decisões poderiam ser impactados.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">28. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição do Módulo 11 está em formalizar proveniência, linhagem e rastreabilidade como dimensões transversais da Engenharia Analítica de Dados.</p>
+<p>Em vez de tratar a rastreabilidade como subproduto de logs ou documentação dispersa, o UnespDataLens-RM propõe que cada fonte, processo, transformação, versão, artefato e produto de dados seja conectado em uma estrutura formal de linhagem.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>tornar explícita a origem dos dados;</li>
+<li>permitir reconstrução dos pipelines;</li>
+<li>apoiar auditoria técnica e institucional;</li>
+<li>fortalecer reprodutibilidade científica;</li>
+<li>explicar indicadores, dashboards e modelos;</li>
+<li>identificar impactos de mudanças;</li>
+<li>conectar dados a regras, processos e versões;</li>
+<li>reduzir dependência de conhecimento tácito;</li>
+<li>apoiar governança, qualidade e conformidade;</li>
+<li>fornecer base para agentes inteligentes explicarem a trajetória dos dados.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">29. Síntese do módulo</h2>
+<p>O Módulo Transversal 11 — Proveniência, Linhagem e Rastreabilidade registra e representa a trajetória dos dados ao longo de todo o UnespDataLens-RM. Ele conecta fontes, processos, transformações, validações, versões, armazenamentos, produtos e consumidores em uma estrutura auditável e consultável.</p>
+<p>Sua importância é transversal porque permite compreender não apenas quais dados foram produzidos, mas como, quando, por quem, com quais regras, a partir de quais fontes e para quais usos. Ao formalizar a linhagem dos dados, o módulo fortalece transparência, governança, auditoria, explicabilidade, reprodutibilidade e confiança nos ativos analíticos.</p>
+<p>Dessa forma, o Módulo 11 transforma o pipeline do UnespDataLens-RM em um processo rastreável, no qual cada produto analítico pode ser reconduzido às suas fontes, regras, versões, evidências e decisões de processamento.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

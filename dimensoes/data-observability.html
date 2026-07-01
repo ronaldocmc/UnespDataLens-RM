@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A dimensão Data Observability, ou observabilidade de dados, refere-se à capacidade de acompanhar, diagnosticar, explicar e compreender o estado, o comportamento, a qualidade, a disponibilidade, a atualização, a integridade e a evolução dos dados, pipelines e produtos analíticos ao longo do tempo.">
+  <title>Data Observability · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a href="../modulos/index.html">Módulos</a><a class="active" href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="dimensao-complementar-data-observability"></span><section class="hero">
+<span class="badge">Dimensão complementar</span>
+<h1>Data Observability</h1>
+<p>A dimensão Data Observability, ou observabilidade de dados, refere-se à capacidade de acompanhar, diagnosticar, explicar e compreender o estado, o comportamento, a qualidade, a disponibilidade, a atualização, a integridade e a evolução dos dados, pipelines e produtos analíticos ao longo do tempo.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 12 seções</summary><a href="#definicao-da-dimensao">Definição da dimensão</a><a href="#problema-tratado">Problema tratado</a><a href="#objetivo-da-dimensao">Objetivo da dimensão</a><a href="#relacao-com-o-unespdatalens-rm">Relação com o UnespDataLens-RM</a><a href="#estrategias-de-implementacao-e-mitigacao">Estratégias de implementação e mitigação</a><a href="#metricas-associadas">Métricas associadas</a><a href="#artefatos-relacionados">Artefatos relacionados</a><a href="#criterios-de-validacao">Critérios de validação</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-para-o-modelo-de-referencia">Contribuição para o modelo de referência</a><a href="#sintese-da-dimensao">Síntese da dimensão</a></details><div class="prose module-full"><h2 class="section-title" id="definicao-da-dimensao">1. Definição da dimensão</h2>
+<p>A dimensão <a class="term" href="../conceitos/data-observability.html">Data Observability</a>, ou observabilidade de dados, refere-se à capacidade de acompanhar, diagnosticar, explicar e compreender o estado, o comportamento, a qualidade, a disponibilidade, a atualização, a <a class="term" href="../metricas/integridade.html">integridade</a> e a evolução dos dados, pipelines e produtos analíticos ao longo do tempo.</p>
+<p>No contexto do UnespDataLens-RM, a observabilidade de dados representa a capacidade de saber, de forma sistemática, rastreável e acionável, se os dados estão sendo extraídos corretamente, se os pipelines foram executados como esperado, se os datasets estão completos, se houve <a class="term" href="../problemas/mudanca-de-schema.html">mudança de schema</a>, se a qualidade se degradou, se os produtos analíticos estão atualizados, se há falhas recorrentes, se ocorreu drift, se determinados ativos deixaram de ser consumidos ou se algum problema compromete a confiança nos resultados disponibilizados.</p>
+<p>A observabilidade de dados vai além do monitoramento tradicional. Enquanto o monitoramento identifica estados, métricas e alertas, a observabilidade busca oferecer condições para compreender as causas, os impactos e o contexto dos problemas observados. Assim, não basta saber que uma base apresentou queda de registros; é necessário compreender qual fonte falhou, qual pipeline foi afetado, quais produtos dependem dessa base, quais usuários podem ser impactados, qual versão está comprometida e qual ação corretiva deve ser tomada.</p>
+<p>No UnespDataLens-RM, essa dimensão é complementar e transversal porque depende da integração entre <a class="term" href="../conceitos/logs.html">logs</a>, métricas, <a class="term" href="../conceitos/metadados.html">metadados</a>, qualidade, linhagem, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, governança, armazenamento, disponibilização, consumo e monitoramento. A observabilidade transforma <a class="term" href="../conceitos/eventos.html">eventos</a> técnicos e operacionais em conhecimento acionável sobre a saúde do ecossistema analítico.</p>
+<h2 class="section-title" id="problema-tratado">2. Problema tratado</h2>
+<p>Em ecossistemas analíticos complexos, falhas nos dados podem ocorrer de forma silenciosa. Uma fonte pode deixar de ser atualizada, um campo pode mudar de tipo, uma categoria pode desaparecer, uma regra de transformação pode falhar, uma API pode retornar dados incompletos, uma tabela pode ser carregada parcialmente, uma feature pode sofrer drift, um <a class="term" href="../artefatos/dashboard.html">dashboard</a> pode continuar publicado com dados obsoletos ou um <a class="term" href="../conceitos/produto-de-dados.html">produto de dados</a> pode apresentar resultados inconsistentes sem que os usuários percebam imediatamente.</p>
+<p>Esses problemas são especialmente críticos porque decisões institucionais, científicas ou de gestão podem ser tomadas com base em dados aparentemente disponíveis, mas tecnicamente comprometidos.</p>
+<p>A ausência de observabilidade pode gerar problemas como:</p>
+<ul class="list">
+<li>falhas de ingestão não detectadas;</li>
+<li>atrasos de atualização sem alerta;</li>
+<li>degradação gradual da qualidade dos dados;</li>
+<li>mudanças de schema que quebram pipelines;</li>
+<li>dashboards publicados com dados desatualizados;</li>
+<li>indicadores calculados com dados incompletos;</li>
+<li>dificuldade de identificar a causa de <a class="term" href="../problemas/inconsistencias.html">inconsistências</a>;</li>
+<li>ausência de visibilidade sobre dependências entre ativos;</li>
+<li>aumento do tempo para diagnosticar problemas;</li>
+<li>falta de evidências para auditoria;</li>
+<li>baixa confiança dos usuários nos dados;</li>
+<li>dificuldade de priorizar ações corretivas;</li>
+<li>problemas recorrentes não registrados;</li>
+<li>ausência de histórico operacional do pipeline;</li>
+<li>baixa capacidade de explicar incidentes a usuários e gestores.</li>
+</ul>
+<p>No UnespDataLens-RM, a dimensão Data Observability busca tornar esses problemas visíveis, mensuráveis, explicáveis e acionáveis, reduzindo o risco de que falhas nos dados permaneçam ocultas ou sejam percebidas apenas após impactarem produtos analíticos e decisões.</p>
+<h2 class="section-title" id="objetivo-da-dimensao">3. Objetivo da dimensão</h2>
+<p>O objetivo da dimensão Data Observability é fornecer visibilidade contínua, explicável e acionável sobre o estado dos dados, pipelines e produtos analíticos, permitindo detectar, diagnosticar, priorizar e corrigir problemas de qualidade, atualização, disponibilidade, schema, volume, drift, desempenho, linhagem e consumo.</p>
+<p>Essa dimensão busca garantir que o UnespDataLens-RM não apenas produza dados e produtos analíticos, mas também acompanhe sua saúde operacional, técnica e analítica ao longo do tempo, permitindo atuação preventiva e corretiva sobre falhas, degradações e mudanças relevantes.</p>
+<h2 class="section-title" id="relacao-com-o-unespdatalens-rm">4. Relação com o UnespDataLens-RM</h2>
+<p>A dimensão Data Observability se articula com diversos módulos do UnespDataLens-RM.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, apoia a observação da disponibilidade das fontes, <a class="term" href="../conceitos/periodicidade.html">periodicidade</a> de atualização, responsáveis, acessibilidade, <a class="term" href="../conceitos/cobertura-temporal.html">cobertura temporal</a> e mudanças na estrutura ou no escopo dos dados fornecidos.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, acompanha logs de ingestão, falhas, volumes extraídos, checksums, atrasos, <a class="term" href="../problemas/dados-ausentes.html">dados ausentes</a>, integridade dos snapshots e sucesso ou falha das execuções.</p>
+<p>No Módulo 3 — Integração e Harmonização, permite observar taxas de pareamento, registros não integrados, conflitos entre fontes, falhas de chaves, divergências de <a class="term" href="../conceitos/granularidade.html">granularidade</a> e queda na capacidade de relacionamento entre bases.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, acompanha transformações executadas, registros afetados, atributos criados, perdas, erros, mudanças de distribuição e impactos das regras aplicadas.</p>
+<p>No Módulo 5 — Qualidade e Validação de Dados, fornece base para acompanhar <a class="term" href="../metricas/completude.html">completude</a>, <a class="term" href="../metricas/consistencia.html">consistência</a>, <a class="term" href="../metricas/validade.html">validade</a>, <a class="term" href="../metricas/unicidade.html">unicidade</a>, <a class="term" href="../metricas/atualidade.html">atualidade</a>, <a class="term" href="../metricas/conformidade.html">conformidade</a> e evolução da qualidade dos dados.</p>
+<p>No Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, observa mudanças na distribuição de grupos, perdas por etapa, drift por grupo e alterações em métricas de equidade.</p>
+<p>No Módulo 7 — Armazenamento Analítico, monitora disponibilidade, desempenho de consultas, atualização de data marts, integridade de tabelas, crescimento de volume, organização das zonas de dados e acessibilidade dos ativos persistidos.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, acompanha atualização, uso, disponibilidade, tempo de resposta, falhas e obsolescência de dashboards, APIs, relatórios e produtos de dados.</p>
+<p>No Módulo 9 — Metadados, Catálogo e Semântica dos Dados, utiliza metadados para contextualizar alertas, identificar responsáveis, localizar ativos afetados e compreender o significado dos dados monitorados.</p>
+<p>No Módulo 10 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e Conformidade, apoia a identificação de acessos indevidos, permissões vencidas, ativos sem responsável, políticas não cumpridas e riscos operacionais associados ao uso de dados sensíveis.</p>
+<p>No Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e <a class="term" href="../conceitos/rastreabilidade.html">Rastreabilidade</a>, utiliza lineage para identificar causas e impactos de falhas, respondendo quais produtos são afetados por determinado problema.</p>
+<p>No Módulo 12 — Versionamento e <a class="term" href="../conceitos/reprodutibilidade.html">Reprodutibilidade</a>, compara versões e execuções para verificar quando um problema foi introduzido e se uma execução pode ser reproduzida.</p>
+<p>No Módulo 13 — Representações Analíticas, observa a estabilidade de representações tabulares, temporais, relacionais, grafos e grafos temporais.</p>
+<p>No Módulo 14 — <a class="term" href="../conceitos/feature-engineering.html">Feature Engineering</a> e <a class="term" href="../conceitos/feature-store.html">Feature Store</a>, acompanha estabilidade, completude, drift, uso e qualidade das features.</p>
+<p>No Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, atua como dimensão complementar que amplia o monitoramento, incorporando diagnóstico, explicação, contexto e análise de causa.</p>
+<p>No Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline, fornece insumos para que agentes expliquem alertas, recomendem ações corretivas, indiquem produtos impactados e apoiem usuários na interpretação da saúde dos dados.</p>
+<h2 class="section-title" id="estrategias-de-implementacao-e-mitigacao">5. Estratégias de implementação e mitigação</h2>
+<p>A implementação da observabilidade de dados no UnespDataLens-RM pode envolver estratégias técnicas, metodológicas e organizacionais.</p>
+<div class="table-wrap"><table class="table"><tr><th>Estratégia</th><th>Descrição</th></tr><tr><td>Logs estruturados</td><td>Registrar eventos de execução, erros, entradas, saídas, parâmetros, status, duração e evidências dos pipelines.</td></tr><tr><td>Métricas operacionais</td><td>Acompanhar tempo de execução, volume processado, falhas, atrasos, disponibilidade e desempenho.</td></tr><tr><td>Métricas de qualidade</td><td>Monitorar completude, validade, consistência, <a class="term" href="../problemas/duplicidade.html">duplicidade</a>, atualidade, conformidade e integridade.</td></tr><tr><td>Monitoramento de schema</td><td>Detectar inclusão, remoção, renomeação ou alteração de tipos de atributos.</td></tr><tr><td>Monitoramento de volume</td><td>Identificar variações inesperadas no número de registros, arquivos, eventos ou entidades.</td></tr><tr><td>Monitoramento de distribuição</td><td>Detectar mudanças estatísticas em atributos, features, variáveis-alvo ou indicadores.</td></tr><tr><td>Alertas configuráveis</td><td>Gerar alertas com severidade, responsável, evidência, impacto e ação recomendada.</td></tr><tr><td>Análise de causa raiz</td><td>Relacionar falhas a fontes, processos, versões, regras, dependências e produtos impactados.</td></tr><tr><td>Lineage operacional</td><td>Identificar dependências entre fontes, pipelines, datasets, features, dashboards, APIs e produtos.</td></tr><tr><td>Painéis de saúde dos dados</td><td>Disponibilizar visão consolidada sobre o estado dos ativos analíticos.</td></tr><tr><td><a class="term" href="../artefatos/registro-de-incidentes.html">Registro de incidentes</a></td><td>Documentar problemas, causas, impactos, responsáveis, ações corretivas e recorrência.</td></tr><tr><td>Acompanhamento de SLAs de dados</td><td>Definir expectativas de atualização, disponibilidade, qualidade e tempo de resposta para ativos críticos.</td></tr><tr><td>Integração com agentes inteligentes</td><td>Permitir explicação automática de alertas, impactos, causas prováveis e recomendações de ação.</td></tr><tr><td>Revisão pós-incidente</td><td>Registrar lições aprendidas, causas recorrentes e ajustes necessários nos pipelines.</td></tr></table></div>
+<h2 class="section-title" id="metricas-associadas">6. Métricas associadas</h2>
+<p>A dimensão Data Observability pode ser avaliada por métricas relacionadas à visibilidade, diagnóstico, alertas, qualidade operacional, resolução de incidentes e cobertura de observabilidade.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de ativos observáveis</td><td>TAO</td><td>Proporção de ativos críticos com métricas e logs disponíveis.</td></tr><tr><td>Taxa de pipelines observáveis</td><td>TPO</td><td>Proporção de pipelines com registros de execução, entradas, saídas e status.</td></tr><tr><td>Taxa de logs estruturados</td><td>TLE</td><td>Proporção de execuções com logs padronizados e consultáveis.</td></tr><tr><td>Taxa de métricas coletadas</td><td>TMC</td><td>Proporção de métricas esperadas efetivamente coletadas.</td></tr><tr><td>Taxa de alertas com evidência</td><td>TAE</td><td>Proporção de alertas acompanhados de métricas, logs ou registros que justificam sua geração.</td></tr><tr><td>Taxa de incidentes diagnosticados</td><td>TID</td><td>Proporção de incidentes com causa provável identificada.</td></tr><tr><td><a class="term" href="../metricas/tempo-medio-de-deteccao.html">Tempo médio de detecção</a></td><td>TMD</td><td>Tempo entre a ocorrência do problema e sua detecção.</td></tr><tr><td>Tempo médio de diagnóstico</td><td>TMDi</td><td>Tempo entre a detecção do problema e a identificação da causa provável.</td></tr><tr><td><a class="term" href="../metricas/tempo-medio-de-resolucao.html">Tempo médio de resolução</a></td><td>TMR</td><td>Tempo entre a abertura e a resolução do incidente.</td></tr><tr><td>Taxa de recorrência de incidentes</td><td>TRI</td><td>Proporção de incidentes que se repetem em determinado período.</td></tr><tr><td>Taxa de ativos com SLA definido</td><td>TASLA</td><td>Proporção de ativos críticos com expectativas formais de atualização, qualidade ou disponibilidade.</td></tr><tr><td>Taxa de <a class="term" href="../problemas/falhas-silenciosas.html">falhas silenciosas</a></td><td>TFS</td><td>Proporção de problemas identificados tardiamente ou sem alerta automático.</td></tr><tr><td>Taxa de ativos com impacto rastreável</td><td>TAIR</td><td>Proporção de ativos cujos impactos podem ser identificados por lineage.</td></tr><tr><td>Índice de observabilidade de dados</td><td>IOD</td><td>Indicador composto de logs, métricas, alertas, diagnóstico e rastreabilidade.</td></tr></table></div>
+<p>Uma formulação possível para o Índice de Observabilidade de Dados é:</p>
+<div class="formula">IOD = w₁TAO + w₂TPO + w₃TLE + w₄TMC + w₅TAE + w₆TID + w₇TAIR − w₈TRI − w₉TFS</div>
+<p>em que:</p>
+<ul class="list">
+<li>TAO representa a taxa de ativos observáveis;</li>
+<li>TPO representa a taxa de pipelines observáveis;</li>
+<li>TLE representa a taxa de logs estruturados;</li>
+<li>TMC representa a taxa de métricas coletadas;</li>
+<li>TAE representa a taxa de alertas com evidência;</li>
+<li>TID representa a taxa de incidentes diagnosticados;</li>
+<li>TAIR representa a taxa de ativos com impacto rastreável;</li>
+<li>TRI representa a taxa de recorrência de incidentes;</li>
+<li>TFS representa a taxa de falhas silenciosas;</li>
+<li>wᵢ representa o peso atribuído a cada dimensão.</li>
+</ul>
+<p>Quanto maior o IOD, maior a capacidade do ecossistema de observar, diagnosticar e explicar o comportamento dos dados, pipelines e produtos analíticos.</p>
+<h2 class="section-title" id="artefatos-relacionados">7. Artefatos relacionados</h2>
+<p>A dimensão Data Observability pode ser operacionalizada por meio de artefatos complementares, integrados aos módulos de qualidade, monitoramento, lineage, versionamento, governança, armazenamento, consumo e agentes inteligentes.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Finalidade</th></tr><tr><td>DOB1</td><td>Plano de Observabilidade de Dados</td><td>Documento técnico</td><td>Definir ativos observáveis, métricas, logs, alertas, responsáveis, periodicidade e critérios de severidade.</td></tr><tr><td>DOB2</td><td>Registro de Métricas Operacionais</td><td>Tabela ou base de métricas</td><td>Acompanhar execução, volume, tempo, erros, disponibilidade, atualização e desempenho dos pipelines.</td></tr><tr><td>DOB3</td><td>Registro de Logs Estruturados</td><td>Log padronizado</td><td>Preservar eventos de pipeline, entradas, saídas, parâmetros, erros, status e evidências de execução.</td></tr><tr><td>DOB4</td><td>Painel de Saúde dos Dados</td><td>Dashboard operacional</td><td>Consolidar visão sobre qualidade, atualização, alertas, falhas, disponibilidade, drift e consumo dos ativos.</td></tr><tr><td>DOB5</td><td><a class="term" href="../artefatos/registro-de-alertas.html">Registro de Alertas</a> com Evidência</td><td>Tabela de alertas</td><td>Documentar alertas, métricas associadas, severidade, impacto, responsável e ação sugerida.</td></tr><tr><td>DOB6</td><td>Registro de Incidentes de Dados</td><td>Tabela ou relatório de incidentes</td><td>Documentar problemas, causas prováveis, impactos, responsáveis, ações corretivas e recorrência.</td></tr><tr><td>DOB7</td><td>Relatório de Análise de Causa Raiz</td><td>Relatório técnico</td><td>Explicar a origem provável de falhas, degradações, atrasos, alterações de schema ou inconsistências.</td></tr><tr><td>DOB8</td><td>Mapa de Impacto Operacional</td><td><a class="term" href="../conceitos/grafo.html">Grafo</a>, matriz ou tabela de dependências</td><td>Relacionar falhas a datasets, features, dashboards, APIs, relatórios e produtos afetados.</td></tr><tr><td>DOB9</td><td>Registro de SLAs de Dados</td><td>Documento ou tabela de compromissos</td><td>Definir expectativas de atualização, disponibilidade, qualidade, tempo de resposta e critérios de violação.</td></tr><tr><td>DOB10</td><td>Relatório de Observabilidade dos Ativos</td><td>Relatório gerencial e técnico</td><td>Avaliar cobertura, lacunas, recorrências, evolução e maturidade da observabilidade no ecossistema.</td></tr><tr><td>DOB11</td><td>Registro de Falhas Silenciosas</td><td>Tabela de ocorrências</td><td>Identificar problemas detectados tardiamente ou sem alerta automático, indicando lacunas de observabilidade.</td></tr><tr><td>DOB12</td><td>Registro de Ações Pós-Incidente</td><td>Tabela de acompanhamento</td><td>Documentar correções, reprocessamentos, ajustes de regra, atualização de baseline e prevenção de recorrência.</td></tr></table></div>
+<h2 class="section-title" id="criterios-de-validacao">8. Critérios de validação</h2>
+<p>A dimensão Data Observability pode ser considerada adequadamente tratada quando:</p>
+<ol class="steps">
+<li>os ativos críticos possuem métricas observáveis;</li>
+<li>pipelines críticos possuem logs estruturados;</li>
+<li>execuções registram entradas, saídas, parâmetros, tempo, status e erros;</li>
+<li>métricas de qualidade são coletadas de forma recorrente;</li>
+<li>mudanças de schema são detectadas e registradas;</li>
+<li>variações anômalas de volume são identificadas;</li>
+<li>alertas possuem evidência, severidade, responsável e ação recomendada;</li>
+<li>incidentes são registrados com causa provável, impacto e ação corretiva;</li>
+<li>lineage permite identificar produtos afetados por falhas;</li>
+<li>responsáveis por ativos e incidentes estão definidos;</li>
+<li>painéis de saúde dos dados estão disponíveis para acompanhamento;</li>
+<li>tempos de detecção, diagnóstico e resolução são monitorados;</li>
+<li>problemas recorrentes são identificados e tratados;</li>
+<li>falhas silenciosas são reduzidas ao longo do tempo;</li>
+<li>agentes inteligentes podem consultar registros de observabilidade para explicar alertas e recomendar ações.</li>
+</ol>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">9. Exemplo de aplicação no domínio educacional</h2>
+<p>Em um projeto educacional, a observabilidade de dados pode acompanhar a saúde de bases de matrícula, histórico acadêmico, notas, frequência, interações em ambiente virtual, evasão, desempenho e dashboards institucionais.</p>
+<p>Por exemplo, se a base de interações do ambiente virtual apresentar queda abrupta de registros em determinado período, o sistema de observabilidade pode gerar um alerta, comparar o volume atual com o histórico, verificar logs de ingestão, identificar se houve falha de extração, consultar a linhagem para descobrir quais features e dashboards dependem dessa fonte e recomendar reprocessamento ou revisão da conexão.</p>
+<p>Da mesma forma, se um dashboard de evasão estiver disponível, mas a base de matrícula utilizada possuir atraso de carga, o painel de saúde dos dados pode sinalizar que o produto está operacionalmente ativo, porém analiticamente desatualizado.</p>
+<p>Outro exemplo ocorre quando a coluna que representa situação acadêmica muda de domínio, passando a incluir uma nova categoria. A observabilidade pode detectar a alteração, registrar o drift de schema ou domínio, indicar quais regras de cálculo de evasão podem ser impactadas e sugerir revisão da harmonização semântica.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">10. Exemplo de aplicação em políticas públicas</h2>
+<p>Em políticas públicas, a observabilidade pode acompanhar bases de saúde, educação, assistência social, território, atendimento, benefícios, equipamentos públicos e indicadores de vulnerabilidade.</p>
+<p>Por exemplo, se uma secretaria deixar de enviar dados mensais de atendimento, a observabilidade pode detectar ausência de atualização, gerar alerta, identificar os indicadores afetados, apontar dashboards dependentes e registrar o incidente. Se a falha for recorrente, o relatório de observabilidade pode indicar necessidade de revisão do processo de integração ou de definição de SLA com a fonte fornecedora.</p>
+<p>Outro exemplo ocorre quando uma categoria de atendimento muda de nome em uma fonte. A observabilidade de schema e domínio pode detectar a alteração, alertar sobre risco de inconsistência histórica e recomendar atualização das regras de harmonização.</p>
+<p>Também pode ocorrer de um painel territorial continuar sendo acessado, mesmo com dados desatualizados. Nesse caso, a observabilidade permite sinalizar ao usuário que o produto está disponível, mas possui restrição de atualidade, evitando interpretações equivocadas.</p>
+<h2 class="section-title" id="contribuicao-para-o-modelo-de-referencia">11. Contribuição para o modelo de referência</h2>
+<p>A dimensão Data Observability contribui para o UnespDataLens-RM ao transformar a saúde dos dados e pipelines em uma capacidade explícita, mensurável e acionável.</p>
+<p>Essa dimensão fortalece o modelo de referência ao:</p>
+<ul class="list">
+<li>aumentar a visibilidade sobre o estado dos dados;</li>
+<li>reduzir falhas silenciosas;</li>
+<li>antecipar problemas antes que afetem decisões;</li>
+<li>acelerar o diagnóstico de incidentes;</li>
+<li>relacionar falhas a fontes, processos e produtos impactados;</li>
+<li>apoiar melhoria contínua dos pipelines;</li>
+<li>fortalecer a confiança nos produtos analíticos;</li>
+<li>reduzir <a class="term" href="../problemas/divida-de-dados.html">dívida de dados</a>;</li>
+<li>complementar monitoramento, lineage e versionamento;</li>
+<li>apoiar governança operacional;</li>
+<li>fornecer evidências para auditoria;</li>
+<li>melhorar comunicação entre equipes técnicas, gestores e usuários;</li>
+<li>permitir que agentes inteligentes expliquem alertas e recomendem ações.</li>
+</ul>
+<h2 class="section-title" id="sintese-da-dimensao">12. Síntese da dimensão</h2>
+<p>A dimensão Data Observability trata da capacidade de observar, diagnosticar e explicar o comportamento dos dados, pipelines e produtos analíticos ao longo do tempo. No UnespDataLens-RM, essa dimensão atua como capacidade complementar para garantir que problemas de qualidade, atualização, schema, volume, distribuição, disponibilidade, desempenho e consumo sejam detectados, contextualizados e tratados de forma sistemática.</p>
+<p>Ao incorporar logs estruturados, métricas, alertas, painéis de saúde, análise de causa raiz, SLAs, mapas de impacto, registros de incidentes e ações pós-incidente, o modelo de referência fortalece sua capacidade de manter ativos analíticos confiáveis, auditáveis, monitoráveis e adequados à tomada de decisão baseada em evidências.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

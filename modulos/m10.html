@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo Transversal 10 — Governança, Segurança, Privacidade e Conformidade tem como finalidade estabelecer princípios, políticas, regras, mecanismos, controles e artefatos para assegurar que os dados e ativos analíticos produzidos no modelo de referência UnespDataLens-RM sejam tratados de forma segura, responsável, controlada, auditável, ética e aderente…">
+  <title>Módulo 10 — Governança, Segurança, Privacidade e Conformidade · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-transversal-10-governanca-seguranca-privacidade-e-conformidade"></span><section class="hero">
+<span class="badge">Módulo 10</span>
+<h1>Módulo 10 — Governança, Segurança, Privacidade e Conformidade</h1>
+<p>O Módulo Transversal 10 — Governança, Segurança, Privacidade e Conformidade tem como finalidade estabelecer princípios, políticas, regras, mecanismos, controles e artefatos para assegurar que os dados e ativos analíticos produzidos no modelo de referência UnespDataLens-RM sejam tratados de forma segura, responsável, controlada, auditável, ética e aderente…</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 29 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#natureza-transversal-do-modulo">Natureza transversal do módulo</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-tecnologias-aplicaveis">Técnicas, métodos e tecnologias aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a10-1-politica-de-governanca-de-dados">Artefato A10.1 — Política de Governança de Dados</a><a href="#artefato-a10-2-matriz-de-papeis-e-responsabilidades">Artefato A10.2 — Matriz de Papéis e Responsabilidades</a><a href="#artefato-a10-3-classificacao-de-sensibilidade-e-restricao">Artefato A10.3 — Classificação de Sensibilidade e Restrição</a><a href="#artefato-a10-4-matriz-de-acesso-e-permissoes">Artefato A10.4 — Matriz de Acesso e Permissões</a><a href="#artefato-a10-5-registro-de-finalidade-e-base-legal">Artefato A10.5 — Registro de Finalidade e Base Legal</a><a href="#artefato-a10-6-plano-de-privacidade-e-protecao-de-dados">Artefato A10.6 — Plano de Privacidade e Proteção de Dados</a><a href="#artefato-a10-7-registro-de-riscos-de-dados">Artefato A10.7 — Registro de Riscos de Dados</a><a href="#artefato-a10-8-registro-de-auditoria-e-acessos">Artefato A10.8 — Registro de Auditoria e Acessos</a><a href="#artefato-a10-9-relatorio-de-conformidade">Artefato A10.9 — Relatório de Conformidade</a><a href="#artefato-a10-10-plano-de-retencao-e-descarte">Artefato A10.10 — Plano de Retenção e Descarte</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-o-pipeline-principal">Relação com o pipeline principal</a><a href="#relacao-com-os-demais-modulos-transversais">Relação com os demais módulos transversais</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo Transversal 10 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a> tem como finalidade estabelecer princípios, políticas, regras, mecanismos, controles e artefatos para assegurar que os dados e ativos analíticos produzidos no modelo de referência UnespDataLens-RM sejam tratados de forma segura, responsável, controlada, auditável, ética e aderente às normas legais, institucionais e técnicas aplicáveis.</p>
+<p>Diferentemente dos módulos 1 a 8, que compõem o pipeline técnico-operacional principal, este módulo atua de forma transversal sobre todo o ciclo de vida dos dados. Isso significa que governança, segurança, privacidade e conformidade não são tratadas apenas no final do processo, mas desde a identificação das fontes, passando pela ingestão, integração, transformação, validação, armazenamento, disponibilização, consumo, monitoramento e reutilização dos ativos analíticos.</p>
+<p>No contexto do UnespDataLens-RM, os dados podem ter diferentes níveis de sensibilidade, finalidade, restrição de acesso e risco. Podem envolver dados públicos, dados institucionais, dados educacionais, dados administrativos, dados pessoais, dados sensíveis, dados anonimizados, dados agregados, dados territoriais, dados socioeconômicos, registros de interação, indicadores, modelos, dashboards, APIs e produtos de dados. Cada um desses ativos exige tratamento compatível com sua natureza, finalidade e risco.</p>
+<p>Esse módulo é essencial porque pipelines analíticos não devem ser avaliados apenas pela capacidade técnica de integrar, transformar e disponibilizar dados. Eles também devem ser avaliados pela capacidade de garantir uso legítimo, responsável, seguro e controlado dos dados. Um pipeline tecnicamente eficiente pode ser inadequado se expuser dados sensíveis, permitir acessos indevidos, violar restrições institucionais, dificultar auditoria, não documentar finalidade de uso ou não respeitar princípios de minimização e necessidade.</p>
+<p>Assim, o Módulo 10 formaliza a governança, a segurança, a privacidade e a conformidade como componentes estruturais da Engenharia Analítica de Dados. Ele define responsabilidades, papéis, políticas, permissões, classificações, controles, registros, evidências e critérios de validação que devem acompanhar os ativos ao longo de todo o modelo de referência.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 10 é garantir que os dados e ativos analíticos do UnespDataLens-RM sejam gerenciados, protegidos, acessados, compartilhados, utilizados e descartados de forma governada, segura, responsável e conforme normas legais, institucionais e éticas, por meio de políticas, controles, registros, matrizes de responsabilidade, <a class="term" href="../artefatos/classificacao-de-sensibilidade.html">classificação de sensibilidade</a>, mecanismos de privacidade e critérios de conformidade.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 10:</p>
+<ol class="steps">
+<li>definir políticas de <a class="term" href="../conceitos/governanca-de-dados.html">governança de dados</a> aplicáveis ao ciclo completo do UnespDataLens-RM;</li>
+<li>estabelecer papéis, responsabilidades e responsáveis pelos dados, pipelines, produtos analíticos e decisões de acesso;</li>
+<li>classificar fontes, atributos, datasets, produtos de dados e ativos analíticos quanto à sensibilidade, restrição e risco;</li>
+<li>definir regras de acesso, uso, compartilhamento, publicação, retenção, anonimização e descarte de dados;</li>
+<li>assegurar que dados pessoais e sensíveis sejam tratados de acordo com princípios de finalidade, necessidade, adequação, segurança, transparência e minimização;</li>
+<li>estabelecer mecanismos de segurança, como <a class="term" href="../conceitos/controle-de-acesso.html">controle de acesso</a>, autenticação, autorização, criptografia, mascaramento, segregação de ambientes e auditoria;</li>
+<li>registrar evidências de autorização, consentimento, base legal, finalidade de uso ou justificativa institucional, quando aplicável;</li>
+<li>documentar riscos de privacidade, reidentificação, uso indevido, acesso indevido, exposição, vazamento ou compartilhamento inadequado;</li>
+<li>definir critérios para disponibilização segura de produtos de dados, dashboards, APIs, datasets e relatórios;</li>
+<li>fornecer insumos para os módulos transversais de <a class="term" href="../conceitos/metadados.html">metadados</a>, lineage, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, monitoramento e agentes inteligentes;</li>
+<li>produzir artefatos formais que permitam auditar a conformidade do modelo de referência com políticas internas, normas externas e boas práticas de governança de dados.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>Governança de dados pode ser compreendida como o conjunto de princípios, políticas, papéis, processos e mecanismos utilizados para orientar a gestão dos dados ao longo de seu ciclo de vida. Ela define quem pode acessar, alterar, compartilhar, publicar, reutilizar, aprovar ou excluir dados, bem como sob quais condições essas ações podem ocorrer.</p>
+<p>Segurança de dados refere-se aos mecanismos técnicos e organizacionais destinados a proteger dados contra acesso não autorizado, alteração indevida, perda, vazamento, exposição, indisponibilidade ou uso inadequado.</p>
+<p>Privacidade refere-se à proteção dos direitos dos titulares dos dados e ao tratamento responsável de informações pessoais ou sensíveis, considerando princípios como finalidade, necessidade, minimização, transparência, segurança e limitação de acesso.</p>
+<p>Conformidade refere-se à aderência a normas legais, políticas institucionais, contratos, regulamentos, diretrizes éticas, padrões técnicos e requisitos de auditoria aplicáveis ao uso dos dados.</p>
+<p>No UnespDataLens-RM, essas quatro dimensões são tratadas de forma integrada:</p>
+<div class="table-wrap"><table class="table"><tr><th>Dimensão</th><th>Questão central</th><th>Exemplos</th></tr><tr><td>Governança</td><td>Quem é responsável pelos dados e quais regras orientam seu uso?</td><td>papéis, responsabilidades, políticas, aprovação de acesso</td></tr><tr><td>Segurança</td><td>Como os dados são protegidos contra acesso ou alteração indevida?</td><td>autenticação, autorização, criptografia, <a class="term" href="../conceitos/logs.html">logs</a>, segregação</td></tr><tr><td>Privacidade</td><td>Como dados pessoais e sensíveis são protegidos?</td><td>anonimização, minimização, pseudonimização, mascaramento</td></tr><tr><td>Conformidade</td><td>O uso dos dados está aderente a normas e políticas?</td><td><a class="term" href="../conceitos/lgpd.html">LGPD</a>, regras institucionais, termos de uso, contratos, auditoria</td></tr></table></div>
+<p>Esse módulo parte do princípio de que governança e privacidade não são obstáculos ao uso de dados, mas condições para que o uso analítico seja confiável, legítimo e sustentável. A ausência de governança aumenta riscos de exposição, uso indevido, baixa qualidade, interpretações inadequadas, decisões não auditáveis e perda de confiança institucional.</p>
+<p>À luz da Design Science Research, os artefatos do Módulo 10 são concebidos como modelos, métodos e instanciações que formalizam regras de governança, segurança, privacidade e conformidade aplicáveis ao modelo de referência. Esses artefatos tornam o tratamento dos dados auditável, justificável e avaliável.</p>
+<h2 class="section-title" id="natureza-transversal-do-modulo">5. Natureza transversal do módulo</h2>
+<p>O Módulo 10 é transversal porque suas regras, políticas e controles acompanham todos os módulos do pipeline principal e interagem com os demais módulos transversais.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, atua na classificação inicial de sensibilidade, identificação de responsáveis, restrições de acesso e finalidade original das fontes.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, atua no controle de permissões de extração, segurança das credenciais, registro de autorização, armazenamento seguro e proteção dos dados brutos.</p>
+<p>No Módulo 3 — Integração e Harmonização, atua na avaliação de riscos gerados pela combinação de fontes, especialmente riscos de reidentificação, aumento de sensibilidade e uso indevido de dados integrados.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, atua na definição de regras para anonimização, pseudonimização, mascaramento, minimização, remoção de atributos sensíveis e controle de atributos derivados.</p>
+<p>No Módulo 5 — Qualidade e Validação de Dados, atua na validação de conformidade dos dados com regras de acesso, formatos esperados, contratos, restrições institucionais e critérios mínimos de confiabilidade.</p>
+<p>No Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, atua na avaliação ética e responsável do uso de atributos sensíveis, proxies, grupos protegidos e métricas de equidade.</p>
+<p>No Módulo 7 — Armazenamento Analítico, atua na definição de políticas de acesso, segregação de zonas, criptografia, retenção, controle de permissões e proteção de ativos sensíveis.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, atua na autorização de publicação, definição de <a class="term" href="../conceitos/granularidade.html">granularidade</a>, anonimização, agregação, restrição de acesso, termos de uso e auditoria de consumo.</p>
+<p>Com o Módulo 9 — Metadados, Catálogo e Semântica, compartilha informações sobre sensibilidade, restrições, responsáveis, finalidade, qualidade, base legal, limitações e condições de uso dos ativos.</p>
+<p>Dessa forma, o Módulo 10 opera como uma camada normativa e operacional que garante que o ciclo de dados do UnespDataLens-RM seja tecnicamente robusto e institucionalmente responsável.</p>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">6. Formalização sintética do módulo</h2>
+<p>O Módulo 10 pode ser compreendido como um processo transversal de associação de políticas, responsabilidades, permissões, classificações e controles aos ativos de dados do modelo de referência.</p>
+<p>Considerando o conjunto de ativos de dados do UnespDataLens-RM:</p>
+<div class="formula">A = {a₁, a₂, ..., aₙ}</div>
+<p>em que cada aᵢ representa uma fonte, atributo, dataset, modelo, <a class="term" href="../artefatos/dashboard.html">dashboard</a>, API, relatório ou <a class="term" href="../conceitos/produto-de-dados.html">produto de dados</a>, o módulo associa a cada ativo um conjunto de elementos de governança:</p>
+<div class="formula">G(aᵢ) = {papeis, responsáveis, permissões, sensibilidade, finalidade, restrições, riscos, controles, evidências}</div>
+<p>Cada ativo pode ser descrito, do ponto de vista da governança, por:</p>
+<div class="formula">aᵢ = {id, nome, tipo, responsável, custodiante, proprietário, sensibilidade, finalidade, base_legal, restrição_acesso, risco_privacidade, controle_segurança, política_retenção, status_conformidade}</div>
+<p>O módulo também define um conjunto de políticas:</p>
+<div class="formula">P = {p₁, p₂, ..., pₖ}</div>
+<p>em que cada política pⱼ pode ser descrita por:</p>
+<div class="formula">pⱼ = {id, nome, escopo, regra, ativos_afetados, responsável, critério_conformidade, evidência_requerida}</div>
+<p>Além disso, define um conjunto de permissões:</p>
+<div class="formula">R = {r₁, r₂, ..., rₘ}</div>
+<p>em que cada permissão rₗ representa uma relação entre consumidor, ativo e tipo de acesso:</p>
+<div class="formula">rₗ = {usuário_ou_sistema, ativo, tipo_acesso, finalidade, <a class="term" href="../metricas/validade.html">validade</a>, autorização, restrição}</div>
+<p>Dessa forma, o uso dos dados deixa de ser uma ação informal e passa a ser controlado por regras, papéis, permissões, evidências e critérios de conformidade.</p>
+<h2 class="section-title" id="entradas-do-modulo">7. Entradas do módulo</h2>
+<p>As entradas do Módulo 10 são produzidas ao longo do pipeline principal e pelos demais módulos transversais.</p>
+<p>As principais entradas são:</p>
+<ul class="list">
+<li><a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a>;</li>
+<li>classificação de sensibilidade;</li>
+<li>registro de responsáveis;</li>
+<li>restrições de acesso;</li>
+<li>finalidade original das fontes;</li>
+<li>registros de permissões de ingestão;</li>
+<li>logs de execução;</li>
+<li>datasets brutos;</li>
+<li>datasets integrados;</li>
+<li>datasets tratados;</li>
+<li>datasets validados;</li>
+<li>datasets balanceados ou sinalizados;</li>
+<li>data marts;</li>
+<li>dashboards;</li>
+<li>APIs;</li>
+<li>produtos de dados;</li>
+<li>relatórios de qualidade;</li>
+<li>relatórios de vieses e equidade;</li>
+<li>metadados dos ativos;</li>
+<li><a class="term" href="../conceitos/catalogo-de-dados.html">catálogo de dados</a>;</li>
+<li>dicionários de dados;</li>
+<li>registros de lineage;</li>
+<li>versões e snapshots;</li>
+<li>registros de consumo;</li>
+<li>requisitos institucionais;</li>
+<li>políticas internas;</li>
+<li>termos de uso;</li>
+<li>contratos;</li>
+<li>normativas legais;</li>
+<li>regras de privacidade;</li>
+<li>decisões de comitês ou responsáveis;</li>
+<li>evidências de autorização.</li>
+</ul>
+<h2 class="section-title" id="processamento">8. Processamento</h2>
+<p>O processamento do Módulo 10 envolve atividades contínuas de classificação, definição de políticas, controle de acesso, gestão de riscos, aplicação de mecanismos de segurança, documentação de conformidade e auditoria.</p>
+<h3 id="definicao-de-politicas-de-governanca">8.1 Definição de políticas de governança</h3>
+<p>A primeira atividade consiste em estabelecer políticas que orientem o tratamento dos dados no UnespDataLens-RM. Essas políticas devem definir regras para acesso, uso, compartilhamento, publicação, retenção, descarte, anonimização, versionamento, responsabilização e auditoria.</p>
+<p>As políticas devem ser explícitas, documentadas e associadas aos tipos de ativos, domínios de aplicação, níveis de sensibilidade e perfis de usuários.</p>
+<h3 id="definicao-de-papeis-e-responsabilidades">8.2 Definição de papéis e responsabilidades</h3>
+<p>A segunda atividade consiste em definir papéis institucionais e técnicos relacionados aos dados. Entre os papéis possíveis estão proprietário do dado, custodiante, gestor, responsável técnico, analista, consumidor, aprovador de acesso, encarregado de privacidade e auditor.</p>
+<p>A definição de papéis reduz ambiguidades sobre quem pode autorizar, alterar, publicar, corrigir ou restringir o uso de um ativo.</p>
+<h3 id="classificacao-de-sensibilidade-e-risco">8.3 Classificação de sensibilidade e risco</h3>
+<p>A terceira atividade consiste em classificar os ativos quanto à sensibilidade, restrição de acesso e risco. Essa classificação deve considerar presença de dados pessoais, dados sensíveis, dados anonimizados, dados agregados, risco de reidentificação, impacto potencial de exposição e finalidade de uso.</p>
+<p>Essa classificação deve ser atualizada quando os dados forem integrados, enriquecidos ou disponibilizados, pois a combinação de fontes pode aumentar o risco de identificação ou sensibilidade.</p>
+<h3 id="definicao-de-finalidade-e-adequacao-de-uso">8.4 Definição de finalidade e adequação de uso</h3>
+<p>A quarta atividade consiste em registrar a finalidade de uso dos dados e avaliar se o tratamento realizado é compatível com essa finalidade. Dados coletados para uma finalidade específica não devem ser reutilizados de forma incompatível sem justificativa, autorização ou avaliação institucional.</p>
+<h3 id="controle-de-acesso">8.5 Controle de acesso</h3>
+<p>A quinta atividade consiste em definir e aplicar regras de acesso aos ativos. O controle pode ocorrer por papéis, perfis, grupos, sistemas, tokens, credenciais, ambientes ou níveis de granularidade.</p>
+<p>O acesso pode ser classificado como público, interno, restrito, sensível, anonimizado, agregado, sob autorização ou bloqueado.</p>
+<h3 id="aplicacao-de-mecanismos-de-privacidade">8.6 Aplicação de mecanismos de privacidade</h3>
+<p>A sexta atividade consiste em aplicar medidas para reduzir riscos associados a dados pessoais ou sensíveis. Essas medidas podem incluir minimização, anonimização, pseudonimização, mascaramento, supressão, generalização, agregação, perturbação, criptografia ou limitação de granularidade.</p>
+<p>A escolha da técnica deve considerar finalidade, risco, utilidade analítica e possibilidade de reidentificação.</p>
+<h3 id="gestao-de-riscos-de-dados">8.7 Gestão de riscos de dados</h3>
+<p>A sétima atividade consiste em identificar, classificar e acompanhar riscos relacionados ao uso dos dados. Os riscos podem envolver vazamento, acesso indevido, uso incompatível, baixa qualidade, reidentificação, <a class="term" href="../conceitos/vies.html">viés</a>, decisão injusta, exposição de grupos, dependência excessiva de fonte externa ou uso de versão obsoleta.</p>
+<p>Cada risco deve possuir severidade, probabilidade, impacto, ação mitigadora, responsável e status.</p>
+<h3 id="registro-de-conformidade">8.8 Registro de conformidade</h3>
+<p>A oitava atividade consiste em registrar evidências de conformidade. Essas evidências podem incluir autorização de acesso, justificativa de finalidade, classificação de sensibilidade, aprovação de publicação, termos de uso, logs de acesso, relatórios de anonimização, registros de consentimento ou base legal, quando aplicável.</p>
+<h3 id="auditoria-e-rastreabilidade-de-acesso">8.9 Auditoria e <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a> de acesso</h3>
+<p>A nona atividade consiste em registrar e auditar acessos, alterações, publicações e compartilhamentos. Logs de acesso, trilhas de auditoria e registros de consumo permitem identificar quem acessou o quê, quando, para qual finalidade e sob qual autorização.</p>
+<h3 id="revisao-periodica-de-politicas-e-permissoes">8.10 Revisão periódica de políticas e permissões</h3>
+<p>A décima atividade consiste em revisar periodicamente políticas, permissões, classificações e riscos. A governança deve acompanhar mudanças nos dados, nos produtos, nas normas, nos usuários e nas finalidades de uso.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-tecnologias-aplicaveis">9. Técnicas, métodos e tecnologias aplicáveis</h2>
+<p>O Módulo 10 pode empregar diferentes técnicas, métodos e tecnologias para governança, segurança, privacidade e conformidade.</p>
+<p>Entre as técnicas de governança, destacam-se:</p>
+<ul class="list">
+<li>definição de políticas de dados;</li>
+<li>matriz RACI;</li>
+<li>data ownership;</li>
+<li>data stewardship;</li>
+<li>gestão de domínios;</li>
+<li>gestão de termos de uso;</li>
+<li>classificação de ativos;</li>
+<li>data contracts;</li>
+<li>workflow de aprovação;</li>
+<li>gestão de riscos;</li>
+<li>trilhas de auditoria;</li>
+<li>registro de finalidade;</li>
+<li>data lifecycle management.</li>
+</ul>
+<p>Entre as técnicas de segurança, podem ser utilizadas:</p>
+<ul class="list">
+<li>autenticação;</li>
+<li>autorização;</li>
+<li>controle de acesso baseado em papéis;</li>
+<li>controle de acesso baseado em atributos;</li>
+<li>criptografia em repouso;</li>
+<li>criptografia em trânsito;</li>
+<li>mascaramento de dados;</li>
+<li>segregação de ambientes;</li>
+<li>logs de acesso;</li>
+<li>auditoria de permissões;</li>
+<li>gestão de credenciais;</li>
+<li>rotação de chaves;</li>
+<li>controle de exportação;</li>
+<li>monitoramento de acessos.</li>
+</ul>
+<p>Entre as técnicas de privacidade, destacam-se:</p>
+<ul class="list">
+<li>minimização de dados;</li>
+<li>anonimização;</li>
+<li>pseudonimização;</li>
+<li>supressão;</li>
+<li>generalização;</li>
+<li>agregação;</li>
+<li>mascaramento;</li>
+<li>tokenização;</li>
+<li>hashing;</li>
+<li>k-anonymity;</li>
+<li>l-diversity;</li>
+<li>t-closeness;</li>
+<li>differential privacy, quando aplicável;</li>
+<li>avaliação de risco de reidentificação;</li>
+<li>controle de granularidade;</li>
+<li>separação de identificadores.</li>
+</ul>
+<p>Entre as técnicas de conformidade, podem ser aplicadas:</p>
+<ul class="list">
+<li>registro de base legal;</li>
+<li>registro de finalidade;</li>
+<li>registro de consentimento, quando aplicável;</li>
+<li>termos de uso;</li>
+<li>políticas de retenção;</li>
+<li>políticas de descarte;</li>
+<li>registros de autorização;</li>
+<li>relatórios de conformidade;</li>
+<li>auditoria interna;</li>
+<li>avaliação de impacto;</li>
+<li>revisão por comitê ou responsável institucional.</li>
+</ul>
+<p>Ferramentas possíveis incluem catálogos de dados, sistemas de IAM, bancos de dados com controle de acesso, ferramentas de criptografia, logs centralizados, ferramentas de auditoria, Apache Ranger, <a class="term" href="../tecnicas/apache-atlas.html">Apache Atlas</a>, <a class="term" href="../tecnicas/datahub.html">DataHub</a>, <a class="term" href="../tecnicas/openmetadata.html">OpenMetadata</a>, sistemas de gestão documental, repositórios Git, plataformas de data governance e ferramentas de observabilidade.</p>
+<h2 class="section-title" id="metricas-do-modulo">10. Métricas do módulo</h2>
+<p>As métricas do Módulo 10 têm como objetivo avaliar a maturidade, cobertura, efetividade e conformidade dos mecanismos de governança, segurança, privacidade e controle.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de ativos com responsável definido</td><td>TARD</td><td>Proporção de ativos com proprietário ou responsável</td></tr><tr><td>Taxa de ativos com sensibilidade classificada</td><td>TASC</td><td>Proporção de ativos com classificação de sensibilidade</td></tr><tr><td>Taxa de ativos com finalidade documentada</td><td>TAFD</td><td>Proporção de ativos com finalidade registrada</td></tr><tr><td>Taxa de ativos com <a class="term" href="../artefatos/politica-de-acesso.html">política de acesso</a></td><td>TAPA</td><td>Proporção de ativos com regra de acesso definida</td></tr><tr><td>Taxa de ativos sensíveis com controle explícito</td><td>TASCE</td><td>Proporção de ativos sensíveis com controle de acesso documentado</td></tr><tr><td>Taxa de acessos autorizados</td><td>TAA</td><td>Proporção de acessos compatíveis com regras definidas</td></tr><tr><td>Taxa de acessos não conformes</td><td>TANC</td><td>Proporção de acessos indevidos ou sem justificativa</td></tr><tr><td>Taxa de ativos com anonimização aplicada</td><td>TAAA</td><td>Proporção de ativos que exigem e receberam anonimização</td></tr><tr><td>Taxa de ativos com risco registrado</td><td>TARR</td><td>Proporção de ativos com avaliação de risco</td></tr><tr><td>Taxa de riscos mitigados</td><td>TRM</td><td>Proporção de riscos tratados ou reduzidos</td></tr><tr><td>Taxa de conformidade documental</td><td>TCD</td><td>Proporção de ativos com evidências mínimas de conformidade</td></tr><tr><td>Taxa de permissões vencidas</td><td>TPV</td><td>Proporção de permissões expiradas ainda ativas</td></tr><tr><td>Taxa de auditoria de acesso</td><td>TAuA</td><td>Proporção de acessos registrados em log</td></tr><tr><td>Índice de maturidade de governança</td><td>IMG</td><td>Grau de maturidade das práticas de governança</td></tr><tr><td>Taxa de produtos publicados com aprovação</td><td>TPPA</td><td>Proporção de produtos disponibilizados com aprovação formal</td></tr></table></div>
+<h3 id="taxa-de-ativos-com-sensibilidade-classificada-tasc">10.1 Taxa de Ativos com Sensibilidade Classificada — TASC</h3>
+<p>A Taxa de Ativos com Sensibilidade Classificada mede a proporção de ativos que possuem classificação formal de sensibilidade.</p>
+<div class="formula">TASC = número de ativos com sensibilidade classificada / número total de ativos avaliados</div>
+<p>Essa métrica indica se os ativos foram avaliados quanto ao risco de exposição e uso indevido.</p>
+<h3 id="taxa-de-ativos-com-politica-de-acesso-tapa">10.2 Taxa de Ativos com Política de Acesso — TAPA</h3>
+<p>A Taxa de Ativos com Política de Acesso mede a proporção de ativos que possuem regra explícita de acesso.</p>
+<div class="formula">TAPA = número de ativos com política de acesso definida / número total de ativos catalogados</div>
+<p>Essa métrica é essencial para segurança e governança.</p>
+<h3 id="taxa-de-conformidade-documental-tcd">10.3 Taxa de Conformidade Documental — TCD</h3>
+<p>A Taxa de Conformidade Documental mede a proporção de ativos que possuem evidências mínimas de conformidade, como responsável, finalidade, sensibilidade, política de acesso e justificativa de uso.</p>
+<div class="formula">TCD = número de ativos com documentação de conformidade / número total de ativos avaliados</div>
+<h3 id="taxa-de-riscos-mitigados-trm">10.4 Taxa de Riscos Mitigados — TRM</h3>
+<p>A Taxa de Riscos Mitigados mede a proporção de riscos registrados que receberam ação de mitigação.</p>
+<div class="formula">TRM = número de riscos mitigados / número total de riscos identificados</div>
+<h3 id="indice-de-maturidade-de-governanca-img">10.5 Índice de Maturidade de Governança — IMG</h3>
+<p>O Índice de Maturidade de Governança pode ser estruturado em níveis:</p>
+<div class="table-wrap"><table class="table"><tr><th>Nível</th><th>Classificação</th><th>Caracterização</th></tr><tr><td>1</td><td>Inicial</td><td>Práticas informais, baixa documentação e controles pontuais</td></tr><tr><td>2</td><td>Documentado</td><td>Políticas e responsabilidades básicas registradas</td></tr><tr><td>3</td><td>Padronizado</td><td>Regras de acesso, sensibilidade e uso aplicadas de forma sistemática</td></tr><tr><td>4</td><td>Gerenciado</td><td>Controles, auditoria, riscos e conformidade monitorados</td></tr><tr><td>5</td><td>Otimizado</td><td>Governança automatizada, integrada e continuamente aprimorada</td></tr></table></div>
+<p>Esse índice permite avaliar a evolução institucional da governança de dados no contexto do modelo de referência.</p>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">11. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 10 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, regras de construção, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A10.1</td><td>Política de Governança de Dados</td><td>Documento normativo</td><td>IMG</td><td>Define princípios, regras e responsabilidades</td></tr><tr><td>A10.2</td><td>Matriz de Papéis e Responsabilidades</td><td>Matriz RACI</td><td>TARD</td><td>Define responsáveis por dados e decisões</td></tr><tr><td>A10.3</td><td>Classificação de Sensibilidade e Restrição</td><td>Matriz/tabela</td><td>TASC</td><td>Classifica ativos quanto ao risco</td></tr><tr><td>A10.4</td><td>Matriz de Acesso e Permissões</td><td>Matriz de controle</td><td>TAPA, TAA</td><td>Controla acesso aos ativos</td></tr><tr><td>A10.5</td><td>Registro de Finalidade e Base Legal</td><td>Tabela/documento</td><td>TAFD, TCD</td><td>Documenta finalidade e justificativa de uso</td></tr><tr><td>A10.6</td><td>Plano de Privacidade e Proteção de Dados</td><td>Documento técnico</td><td>TAAA</td><td>Define técnicas de proteção</td></tr><tr><td>A10.7</td><td>Registro de Riscos de Dados</td><td>Matriz de risco</td><td>TARR, TRM</td><td>Identifica e acompanha riscos</td></tr><tr><td>A10.8</td><td>Registro de Auditoria e Acessos</td><td>Log estruturado</td><td>TAuA</td><td>Registra acessos e ações</td></tr><tr><td>A10.9</td><td>Relatório de Conformidade</td><td>Relatório técnico</td><td>TCD</td><td>Avalia aderência às regras</td></tr><tr><td>A10.10</td><td>Plano de Retenção e Descarte</td><td>Documento/tabela</td><td>Conformidade de retenção</td><td>Define ciclo de vida dos dados</td></tr></table></div>
+<h2 class="section-title" id="artefato-a10-1-politica-de-governanca-de-dados">12. Artefato A10.1 — Política de Governança de Dados</h2>
+<h3 id="finalidade">12.1 Finalidade</h3>
+<p>A Política de Governança de Dados define os princípios, regras e diretrizes gerais para gestão dos dados no UnespDataLens-RM.</p>
+<h3 id="tipo-de-artefato-na-dsr">12.2 Tipo de artefato na DSR</h3>
+<p>Na perspectiva da Design Science Research, esse artefato é um modelo normativo e um método, pois orienta ações, responsabilidades e decisões ao longo do modelo de referência.</p>
+<h3 id="estrutura-minima">12.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Escopo</td><td>Dados, ativos e processos cobertos pela política</td></tr><tr><td>Princípios</td><td>Segurança, finalidade, qualidade, transparência, minimização etc.</td></tr><tr><td>Papéis</td><td>Responsáveis e funções envolvidas</td></tr><tr><td>Regras de acesso</td><td>Condições para acesso aos ativos</td></tr><tr><td>Regras de uso</td><td>Finalidades permitidas e restrições</td></tr><tr><td>Regras de compartilhamento</td><td>Condições para disponibilização</td></tr><tr><td>Regras de retenção</td><td>Tempo de preservação</td></tr><tr><td>Regras de descarte</td><td>Condições para eliminação</td></tr><tr><td>Regras de auditoria</td><td>Evidências e logs exigidos</td></tr><tr><td>Critérios de conformidade</td><td>Condições de aderência</td></tr></table></div>
+<h3 id="metricas-associadas">12.4 Métricas associadas</h3>
+<ul class="list">
+<li>índice de maturidade de governança;</li>
+<li>taxa de ativos com política associada;</li>
+<li>taxa de conformidade documental;</li>
+<li>taxa de ativos com responsável definido.</li>
+</ul>
+<h3 id="criterios-de-validacao">12.5 Critérios de validação</h3>
+<p>A política é considerada válida quando define escopo, princípios, papéis, regras de acesso, regras de uso, compartilhamento, retenção, descarte e critérios de auditoria.</p>
+<h3 id="contribuicao">12.6 Contribuição</h3>
+<p>Esse artefato estabelece a base normativa do uso de dados no modelo de referência, reduzindo arbitrariedade e aumentando responsabilidade institucional.</p>
+<h2 class="section-title" id="artefato-a10-2-matriz-de-papeis-e-responsabilidades">13. Artefato A10.2 — Matriz de Papéis e Responsabilidades</h2>
+<h3 id="finalidade-2">13.1 Finalidade</h3>
+<p>A Matriz de Papéis e Responsabilidades define quem é responsável por cada ativo, decisão, aprovação, correção, publicação ou monitoramento.</p>
+<h3 id="estrutura-minima-2">13.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Papel</th><th>Responsabilidade</th></tr><tr><td>Proprietário do dado</td><td>Define finalidade, autoriza uso e responde pelo ativo</td></tr><tr><td>Custodiante</td><td>Garante armazenamento, segurança e disponibilidade</td></tr><tr><td>Responsável técnico</td><td>Implementa pipelines, controles e documentação</td></tr><tr><td>Gestor de dados</td><td>Coordena políticas e qualidade dos dados</td></tr><tr><td>Analista</td><td>Consome dados conforme regras definidas</td></tr><tr><td>Aprovador de acesso</td><td>Autoriza ou nega solicitações de uso</td></tr><tr><td>Auditor</td><td>Verifica conformidade e rastreabilidade</td></tr><tr><td>Encarregado de privacidade</td><td>Avalia riscos de privacidade e conformidade</td></tr></table></div>
+<h3 id="metricas-associadas-2">13.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos com responsável definido;</li>
+<li>percentual de papéis preenchidos;</li>
+<li>número de ativos sem proprietário;</li>
+<li>número de acessos sem aprovador definido.</li>
+</ul>
+<h3 id="contribuicao-2">13.4 Contribuição</h3>
+<p>Esse artefato evita indefinição de responsabilidade e apoia accountability no ciclo de dados.</p>
+<h2 class="section-title" id="artefato-a10-3-classificacao-de-sensibilidade-e-restricao">14. Artefato A10.3 — Classificação de Sensibilidade e Restrição</h2>
+<h3 id="finalidade-3">14.1 Finalidade</h3>
+<p>A Classificação de Sensibilidade e Restrição registra o nível de sensibilidade dos ativos e define condições de acesso, uso e compartilhamento.</p>
+<h3 id="estrutura-minima-3">14.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Fonte, atributo, dataset ou produto</td></tr><tr><td>Tipo de dado</td><td>Público, interno, restrito, pessoal, sensível, anonimizado, agregado</td></tr><tr><td>Nível de sensibilidade</td><td>Baixo, moderado, alto, crítico</td></tr><tr><td>Risco de reidentificação</td><td>Baixo, médio, alto</td></tr><tr><td>Restrição de acesso</td><td>Público, interno, restrito, bloqueado</td></tr><tr><td>Técnica necessária</td><td>Anonimização, agregação, mascaramento etc.</td></tr><tr><td>Justificativa</td><td>Motivo da classificação</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe responsável</td></tr></table></div>
+<h3 id="metricas-associadas-3">14.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos com sensibilidade classificada;</li>
+<li>percentual de ativos críticos;</li>
+<li>percentual de ativos pessoais ou sensíveis;</li>
+<li>taxa de ativos com restrição compatível.</li>
+</ul>
+<h3 id="contribuicao-3">14.4 Contribuição</h3>
+<p>Esse artefato orienta decisões de segurança, privacidade, armazenamento, disponibilização e consumo.</p>
+<h2 class="section-title" id="artefato-a10-4-matriz-de-acesso-e-permissoes">15. Artefato A10.4 — Matriz de Acesso e Permissões</h2>
+<h3 id="finalidade-4">15.1 Finalidade</h3>
+<p>A Matriz de Acesso e Permissões define quem pode acessar cada ativo, em qual nível e com qual finalidade.</p>
+<h3 id="estrutura-minima-4">15.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Dataset, tabela, dashboard, API etc.</td></tr><tr><td>Usuário, perfil ou sistema</td><td>Consumidor autorizado</td></tr><tr><td>Tipo de acesso</td><td>Leitura, escrita, administração, exportação</td></tr><tr><td>Granularidade</td><td>Individual, agregado, anonimizado</td></tr><tr><td>Finalidade</td><td>Motivo do acesso</td></tr><tr><td>Validade</td><td>Prazo da permissão</td></tr><tr><td>Aprovador</td><td>Responsável pela autorização</td></tr><tr><td>Status</td><td>Ativo, vencido, revogado, pendente</td></tr></table></div>
+<h3 id="metricas-associadas-4">15.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos com política de acesso;</li>
+<li>taxa de acessos autorizados;</li>
+<li>taxa de acessos não conformes;</li>
+<li>taxa de permissões vencidas;</li>
+<li>taxa de produtos sensíveis com controle explícito.</li>
+</ul>
+<h3 id="contribuicao-4">15.4 Contribuição</h3>
+<p>Esse artefato operacionaliza o controle de acesso e reduz riscos de uso indevido ou exposição não autorizada.</p>
+<h2 class="section-title" id="artefato-a10-5-registro-de-finalidade-e-base-legal">16. Artefato A10.5 — Registro de Finalidade e Base Legal</h2>
+<h3 id="finalidade-5">16.1 Finalidade</h3>
+<p>O Registro de Finalidade e Base Legal documenta por que um dado está sendo utilizado, para qual finalidade e com qual justificativa legal, institucional ou técnica.</p>
+<h3 id="estrutura-minima-5">16.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Dado ou produto analisado</td></tr><tr><td>Finalidade de uso</td><td>Objetivo do tratamento</td></tr><tr><td>Categoria de uso</td><td>Pesquisa, gestão, decisão, monitoramento, transparência etc.</td></tr><tr><td>Base legal ou justificativa</td><td>Fundamento legal, institucional ou autorização</td></tr><tr><td>Público-alvo</td><td>Quem utilizará o ativo</td></tr><tr><td>Compatibilidade</td><td>Compatível ou não com finalidade original</td></tr><tr><td>Restrições</td><td>Limitações de uso</td></tr><tr><td>Evidência</td><td>Documento, autorização ou registro</td></tr></table></div>
+<h3 id="metricas-associadas-5">16.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos com finalidade documentada;</li>
+<li>taxa de conformidade documental;</li>
+<li>percentual de usos sem justificativa;</li>
+<li>percentual de ativos com finalidade incompatível.</li>
+</ul>
+<h3 id="contribuicao-5">16.4 Contribuição</h3>
+<p>Esse artefato reduz risco de uso inadequado dos dados e fortalece conformidade e transparência.</p>
+<h2 class="section-title" id="artefato-a10-6-plano-de-privacidade-e-protecao-de-dados">17. Artefato A10.6 — Plano de Privacidade e Proteção de Dados</h2>
+<h3 id="finalidade-6">17.1 Finalidade</h3>
+<p>O Plano de Privacidade e Proteção de Dados define técnicas e procedimentos para proteger dados pessoais, sensíveis ou de acesso restrito.</p>
+<h3 id="estrutura-minima-6">17.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Dataset, fonte ou produto</td></tr><tr><td>Risco identificado</td><td>Privacidade, reidentificação, exposição etc.</td></tr><tr><td>Técnica aplicada</td><td>Anonimização, mascaramento, agregação etc.</td></tr><tr><td>Atributos afetados</td><td>Campos protegidos</td></tr><tr><td>Justificativa</td><td>Motivo da técnica</td></tr><tr><td>Impacto na utilidade</td><td>Efeito sobre análise</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe</td></tr><tr><td>Evidência</td><td>Relatório, log ou versão protegida</td></tr></table></div>
+<h3 id="metricas-associadas-6">17.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos com anonimização aplicada;</li>
+<li>percentual de atributos sensíveis protegidos;</li>
+<li>risco residual de reidentificação;</li>
+<li>taxa de ativos protegidos antes da disponibilização.</li>
+</ul>
+<h3 id="contribuicao-6">17.4 Contribuição</h3>
+<p>Esse artefato permite equilibrar proteção de dados e utilidade analítica, tornando explícitas as decisões de privacidade.</p>
+<h2 class="section-title" id="artefato-a10-7-registro-de-riscos-de-dados">18. Artefato A10.7 — Registro de Riscos de Dados</h2>
+<h3 id="finalidade-7">18.1 Finalidade</h3>
+<p>O Registro de Riscos de Dados documenta riscos associados ao uso, armazenamento, integração, publicação ou consumo dos ativos.</p>
+<h3 id="tipos-de-risco">18.2 Tipos de risco</h3>
+<ul class="list">
+<li>acesso indevido;</li>
+<li>vazamento;</li>
+<li>reidentificação;</li>
+<li>uso incompatível;</li>
+<li>uso de dado obsoleto;</li>
+<li>baixa qualidade;</li>
+<li>viés ou impacto desproporcional;</li>
+<li>exposição de grupo vulnerável;</li>
+<li>erro de interpretação;</li>
+<li>dependência externa;</li>
+<li>descumprimento de política institucional.</li>
+</ul>
+<h3 id="estrutura-minima-7">18.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Risco</td><td>Descrição do risco</td></tr><tr><td>Ativo afetado</td><td>Dado ou produto relacionado</td></tr><tr><td>Origem do risco</td><td>Fonte, integração, armazenamento, consumo etc.</td></tr><tr><td>Probabilidade</td><td>Baixa, média ou alta</td></tr><tr><td>Impacto</td><td>Baixo, médio, alto ou crítico</td></tr><tr><td>Severidade</td><td>Classificação combinada</td></tr><tr><td>Mitigação</td><td>Ação proposta</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe</td></tr><tr><td>Status</td><td>Aberto, mitigado, aceito, encerrado</td></tr></table></div>
+<h3 id="metricas-associadas-7">18.4 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos com risco registrado;</li>
+<li>número de riscos críticos;</li>
+<li>taxa de riscos mitigados;</li>
+<li>tempo médio de mitigação;</li>
+<li>risco residual.</li>
+</ul>
+<h3 id="contribuicao-7">18.5 Contribuição</h3>
+<p>Esse artefato transforma riscos difusos em elementos documentados, priorizáveis e monitoráveis.</p>
+<h2 class="section-title" id="artefato-a10-8-registro-de-auditoria-e-acessos">19. Artefato A10.8 — Registro de Auditoria e Acessos</h2>
+<h3 id="finalidade-8">19.1 Finalidade</h3>
+<p>O Registro de Auditoria e Acessos documenta acessos, alterações, publicações, exportações e ações relevantes sobre os ativos.</p>
+<h3 id="estrutura-minima-8">19.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Dado, dataset, dashboard, API ou produto</td></tr><tr><td>Usuário ou sistema</td><td>Quem realizou a ação</td></tr><tr><td>Ação</td><td>Leitura, alteração, exportação, publicação etc.</td></tr><tr><td>Data e hora</td><td>Momento da ação</td></tr><tr><td>Finalidade</td><td>Motivo informado</td></tr><tr><td>Resultado</td><td>Sucesso, falha, negado</td></tr><tr><td>Ambiente</td><td>Produção, desenvolvimento, teste etc.</td></tr><tr><td>Evidência</td><td>Log, protocolo, registro técnico</td></tr></table></div>
+<h3 id="metricas-associadas-8">19.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de auditoria de acesso;</li>
+<li>número de acessos por ativo;</li>
+<li>taxa de acessos negados;</li>
+<li>taxa de acessos sem finalidade;</li>
+<li>taxa de acessos não conformes.</li>
+</ul>
+<h3 id="contribuicao-8">19.4 Contribuição</h3>
+<p>Esse artefato permite auditoria, investigação de incidentes, rastreabilidade de uso e responsabilização.</p>
+<h2 class="section-title" id="artefato-a10-9-relatorio-de-conformidade">20. Artefato A10.9 — Relatório de Conformidade</h2>
+<h3 id="finalidade-9">20.1 Finalidade</h3>
+<p>O Relatório de Conformidade avalia se os ativos, processos e produtos do UnespDataLens-RM estão aderentes às políticas definidas.</p>
+<h3 id="estrutura-minima-9">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Escopo avaliado</td><td>Ativos, módulo, produto ou pipeline</td></tr><tr><td>Políticas avaliadas</td><td>Regras aplicáveis</td></tr><tr><td>Evidências analisadas</td><td>Logs, permissões, metadados, registros</td></tr><tr><td>Conformidades</td><td>Itens aderentes</td></tr><tr><td>Não conformidades</td><td>Itens irregulares</td></tr><tr><td>Severidade</td><td>Grau dos problemas</td></tr><tr><td>Recomendações</td><td>Ações corretivas</td></tr><tr><td>Status final</td><td>Conforme, conforme com ressalvas, não conforme</td></tr></table></div>
+<h3 id="metricas-associadas-9">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de conformidade documental;</li>
+<li>taxa de ativos conformes;</li>
+<li>número de não conformidades;</li>
+<li>severidade média;</li>
+<li>taxa de correção de não conformidades.</li>
+</ul>
+<h3 id="contribuicao-9">20.4 Contribuição</h3>
+<p>Esse artefato permite avaliar institucionalmente a aderência do modelo de referência às regras de governança, segurança, privacidade e conformidade.</p>
+<h2 class="section-title" id="artefato-a10-10-plano-de-retencao-e-descarte">21. Artefato A10.10 — Plano de Retenção e Descarte</h2>
+<h3 id="finalidade-10">21.1 Finalidade</h3>
+<p>O Plano de Retenção e Descarte define por quanto tempo os dados serão mantidos, em quais condições e quando deverão ser arquivados, anonimizados, descartados ou descontinuados.</p>
+<h3 id="estrutura-minima-10">21.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Dado, dataset, produto ou versão</td></tr><tr><td>Tipo de dado</td><td>Público, interno, pessoal, sensível etc.</td></tr><tr><td>Período de retenção</td><td>Tempo de manutenção</td></tr><tr><td>Justificativa</td><td>Motivo da retenção</td></tr><tr><td>Ação final</td><td>Arquivar, anonimizar, excluir, descontinuar</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe</td></tr><tr><td>Critério de descarte</td><td>Condição para eliminação</td></tr><tr><td>Evidência</td><td>Registro de execução</td></tr></table></div>
+<h3 id="metricas-associadas-10">21.3 Métricas associadas</h3>
+<ul class="list">
+<li>percentual de ativos com política de retenção;</li>
+<li>número de ativos vencidos;</li>
+<li>taxa de descartes executados;</li>
+<li>taxa de ativos arquivados;</li>
+<li>taxa de conformidade de retenção.</li>
+</ul>
+<h3 id="contribuicao-10">21.4 Contribuição</h3>
+<p>Esse artefato garante que os dados não sejam mantidos indefinidamente sem justificativa, reduzindo riscos de privacidade, custo e obsolescência.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">22. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Ativos de dados, classificações de sensibilidade, registros de acesso, metadados, produtos de dados, políticas institucionais, logs, permissões, riscos e requisitos legais.</td></tr><tr><td>Processamento</td><td>Definição de políticas, papéis, responsabilidades, sensibilidade, finalidade, permissões, privacidade, riscos, auditoria, conformidade, retenção e descarte.</td></tr><tr><td>Artefatos</td><td>Política de governança, matriz RACI, classificação de sensibilidade, matriz de acesso, registro de finalidade, plano de privacidade, registro de riscos, auditoria, relatório de conformidade e plano de retenção.</td></tr><tr><td>Métricas</td><td>TARD, TASC, TAFD, TAPA, TASCE, TAA, TANC, TAAA, TARR, TRM, TCD, TPV, TAuA, IMG e TPPA.</td></tr><tr><td>Saídas</td><td>Ativos governados, classificados, protegidos, controlados, auditáveis, conformes e adequados ao uso responsável no modelo de referência.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">23. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 10 pode ser considerado adequadamente implementado quando:</p>
+<ol class="steps">
+<li>os principais ativos possuem responsável definido;</li>
+<li>os ativos críticos possuem classificação de sensibilidade;</li>
+<li>datasets e produtos disponibilizados possuem finalidade documentada;</li>
+<li>dados pessoais e sensíveis possuem regras explícitas de acesso;</li>
+<li>permissões de acesso estão registradas e possuem validade;</li>
+<li>ativos sensíveis possuem controles de proteção compatíveis;</li>
+<li>riscos de dados foram identificados, classificados e acompanhados;</li>
+<li>publicações de produtos de dados possuem aprovação ou justificativa;</li>
+<li>acessos relevantes são registrados em logs de auditoria;</li>
+<li>existem evidências mínimas de conformidade documental;</li>
+<li>há política de retenção e descarte para ativos relevantes;</li>
+<li>não conformidades são registradas e encaminhadas para correção.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-o-pipeline-principal">24. Relação com o pipeline principal</h2>
+<p>O Módulo 10 se relaciona com todos os módulos do pipeline principal do UnespDataLens-RM.</p>
+<p>Com o Módulo 1 — Fontes e Inventário de Dados, orienta a classificação inicial de sensibilidade, finalidade, responsáveis e restrições.</p>
+<p>Com o Módulo 2 — Extração, Ingestão e Armazenamento Bruto, controla permissões de extração, segurança de credenciais, armazenamento bruto e acesso aos dados originais.</p>
+<p>Com o Módulo 3 — Integração e Harmonização, avalia riscos de reidentificação e aumento de sensibilidade decorrentes da combinação de bases.</p>
+<p>Com o Módulo 4 — Transformação, Limpeza e Enriquecimento, orienta minimização, anonimização, mascaramento, supressão e proteção de atributos sensíveis.</p>
+<p>Com o Módulo 5 — Qualidade e Validação de Dados, incorpora conformidade como dimensão de validação dos ativos.</p>
+<p>Com o Módulo 6 — Desbalanceamento, Vieses e Equidade, apoia uso responsável de atributos sensíveis, proxies e grupos protegidos.</p>
+<p>Com o Módulo 7 — Armazenamento Analítico, define controles de acesso, criptografia, segregação de zonas, retenção e proteção de dados armazenados.</p>
+<p>Com o Módulo 8 — Disponibilização e Consumo Analítico, controla publicação, acesso, granularidade, anonimização, termos de uso e auditoria do consumo.</p>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-transversais">25. Relação com os demais módulos transversais</h2>
+<p>O Módulo 10 depende fortemente do Módulo 9 — Metadados, Catálogo e Semântica dos Dados, pois utiliza metadados para identificar ativos, responsáveis, sensibilidade, qualidade, origem, finalidade, versões e restrições.</p>
+<p>Com o módulo de <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Lineage e Rastreabilidade, compartilha registros de auditoria, origem, dependências, acesso e transformação dos dados.</p>
+<p>Com o módulo de Versionamento e <a class="term" href="../conceitos/reprodutibilidade.html">Reprodutibilidade</a>, define quais versões podem ser utilizadas, preservadas, descartadas ou disponibilizadas.</p>
+<p>Com o módulo de Representação Tabular, Temporal, Grafos e Grafos Temporais, define restrições para exposição de relações sensíveis ou risco de reidentificação em grafos.</p>
+<p>Com o módulo de <a class="term" href="../conceitos/feature-engineering.html">Feature Engineering</a> e <a class="term" href="../conceitos/feature-store.html">Feature Store</a>, orienta uso de atributos sensíveis, proxies e features que podem exigir restrição, anonimização ou monitoramento.</p>
+<p>Com o módulo de Monitoramento, Drift e Evolução dos Ativos, acompanha acessos, riscos, permissões vencidas, mudanças de sensibilidade e conformidade ao longo do tempo.</p>
+<p>Com o módulo de Agentes Inteligentes de Apoio ao Pipeline, define limites para consulta, resposta, explicação e recomendação sobre ativos sensíveis ou restritos.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">26. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, o Módulo 10 poderia governar dados de estudantes, matrículas, histórico acadêmico, notas, frequência, dados socioeconômicos, interações em ambiente virtual, evasão e indicadores de permanência.</p>
+<p>Esses dados podem conter informações pessoais, dados educacionais restritos, informações socioeconômicas e atributos sensíveis ou potencialmente sensíveis. Assim, o módulo definiria políticas de acesso diferenciadas para pesquisadores, gestores, analistas, orientadores, sistemas e dashboards.</p>
+<p>Por exemplo, um dashboard público poderia apresentar apenas indicadores agregados por curso ou período, enquanto uma base individualizada de estudantes exigiria autorização específica, finalidade documentada, controle de acesso, anonimização ou pseudonimização, registro de uso e restrição de exportação.</p>
+<p>O módulo também avaliaria riscos de reidentificação em bases anonimizadas, especialmente quando combinadas com curso, idade, turno, município, escola de origem ou condição socioeconômica.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">27. Exemplo de aplicação em políticas públicas</h2>
+<p>Em uma aplicação em políticas públicas, o Módulo 10 poderia governar dados de saúde, educação, assistência social, território, habitação, trabalho, orçamento e atendimento ao cidadão.</p>
+<p>Essas bases podem conter dados pessoais, registros familiares, informações de vulnerabilidade, atendimentos sociais, dados territoriais e indicadores sensíveis. O módulo definiria níveis de acesso para gestores, técnicos, pesquisadores, sistemas internos e painéis públicos.</p>
+<p>Por exemplo, um painel público poderia apresentar indicadores agregados por município ou território, enquanto dados individualizados de famílias atendidas deveriam permanecer restritos, protegidos e acessíveis apenas mediante finalidade documentada e autorização.</p>
+<p>A integração entre bases de diferentes secretarias exigiria atenção especial, pois a combinação de dados pode aumentar o risco de reidentificação mesmo quando cada base isoladamente parece pouco sensível.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">28. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição do Módulo 10 está em formalizar governança, segurança, privacidade e conformidade como dimensões transversais e avaliáveis da Engenharia Analítica de Dados.</p>
+<p>Em vez de tratar essas dimensões como exigências externas ou controles administrativos isolados, o UnespDataLens-RM incorpora políticas, papéis, permissões, sensibilidade, finalidade, riscos, auditoria, retenção e conformidade como artefatos formais do modelo de referência.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>tornar explícitas responsabilidades sobre os dados;</li>
+<li>reduzir riscos de acesso indevido e uso incompatível;</li>
+<li>proteger dados pessoais e sensíveis;</li>
+<li>apoiar conformidade com normas legais e institucionais;</li>
+<li>controlar publicação e consumo de produtos analíticos;</li>
+<li>documentar finalidade, autorização e restrições de uso;</li>
+<li>permitir auditoria e responsabilização;</li>
+<li>apoiar uso ético e responsável de dados;</li>
+<li>fortalecer confiança institucional nos ativos produzidos;</li>
+<li>integrar governança ao ciclo completo de Engenharia Analítica de Dados.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">29. Síntese do módulo</h2>
+<p>O Módulo Transversal 10 — Governança, Segurança, Privacidade e Conformidade estabelece as condições para que o UnespDataLens-RM produza, armazene, disponibilize e utilize dados de forma segura, responsável, controlada e aderente a normas institucionais e legais.</p>
+<p>Sua atuação é transversal porque acompanha todos os módulos do pipeline principal, desde o inventário das fontes até o consumo dos produtos analíticos. Ao definir políticas, papéis, classificações, permissões, controles de privacidade, registros de risco, logs de auditoria, relatórios de conformidade e planos de retenção, o módulo transforma a governança em parte integrante da arquitetura analítica.</p>
+<p>Dessa forma, o Módulo 10 fortalece a confiabilidade, a legitimidade, a segurança e a sustentabilidade do UnespDataLens-RM, garantindo que a produção de valor analítico ocorra com responsabilidade, transparência, proteção e conformidade.</p>
+<p>Como o módulo de Governança, Segurança, Privacidade e Conformidade já foi estruturado anteriormente como transversal, este módulo de Proveniência, Linhagem e Rastreabilidade pode ser numerado como Módulo Transversal 11 para evitar <a class="term" href="../problemas/duplicidade.html">duplicidade</a>. Mantive abaixo a redação como módulo transversal completo; se você preferir, basta ajustar a numeração no documento.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

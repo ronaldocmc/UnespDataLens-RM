@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A dimensão Schema Drift, ou deriva de esquema, refere-se às mudanças estruturais que ocorrem nos dados ao longo do tempo, afetando atributos, tipos de dados, nomes de campos, formatos, domínios de valores, chaves, cardinalidades, granularidades ou estruturas de tabelas, arquivos, APIs, eventos, documentos ou produtos analíticos.">
+  <title>Schema Drift · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a href="../modulos/index.html">Módulos</a><a class="active" href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="dimensao-complementar-schema-drift"></span><section class="hero">
+<span class="badge">Dimensão complementar</span>
+<h1>Schema Drift</h1>
+<p>A dimensão Schema Drift, ou deriva de esquema, refere-se às mudanças estruturais que ocorrem nos dados ao longo do tempo, afetando atributos, tipos de dados, nomes de campos, formatos, domínios de valores, chaves, cardinalidades, granularidades ou estruturas de tabelas, arquivos, APIs, eventos, documentos ou produtos analíticos.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 13 seções</summary><a href="#definicao-da-dimensao">Definição da dimensão</a><a href="#problema-tratado">Problema tratado</a><a href="#objetivo-da-dimensao">Objetivo da dimensão</a><a href="#relacao-com-o-unespdatalens-rm">Relação com o UnespDataLens-RM</a><a href="#tipos-de-schema-drift">Tipos de Schema Drift</a><a href="#estrategias-de-mitigacao">Estratégias de mitigação</a><a href="#metricas-associadas">Métricas associadas</a><a href="#artefatos-relacionados">Artefatos relacionados</a><a href="#criterios-de-validacao">Critérios de validação</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-para-o-modelo-de-referencia">Contribuição para o modelo de referência</a><a href="#sintese-da-dimensao">Síntese da dimensão</a></details><div class="prose module-full"><h2 class="section-title" id="definicao-da-dimensao">1. Definição da dimensão</h2>
+<p>A dimensão <a class="term" href="../conceitos/schema-drift.html">Schema Drift</a>, ou deriva de esquema, refere-se às mudanças estruturais que ocorrem nos dados ao longo do tempo, afetando atributos, tipos de dados, nomes de campos, formatos, domínios de valores, chaves, cardinalidades, granularidades ou estruturas de tabelas, arquivos, APIs, <a class="term" href="../conceitos/eventos.html">eventos</a>, documentos ou produtos analíticos.</p>
+<p>No contexto do UnespDataLens-RM, o schema drift ocorre quando a estrutura esperada de uma fonte, dataset, tabela, arquivo, API, <a class="term" href="../conceitos/data-mart.html">data mart</a>, <a class="term" href="../conceitos/feature-set.html">feature set</a>, <a class="term" href="../conceitos/grafo.html">grafo</a> ou <a class="term" href="../conceitos/produto-de-dados.html">produto de dados</a> se altera em relação a uma versão anterior ou a um contrato esperado. Essas mudanças podem ser planejadas, como a inclusão de novos campos em uma base institucional, ou não planejadas, como a alteração silenciosa do tipo de um atributo, a remoção de uma coluna, a mudança de nome de uma categoria, a substituição de códigos ou a modificação de uma chave de integração.</p>
+<p>A deriva de esquema é uma dimensão crítica da Engenharia Analítica de Dados porque os pipelines dependem de estruturas previamente conhecidas. Quando um schema muda sem registro, validação ou adaptação, processos de ingestão, integração, transformação, validação, armazenamento, dashboards, APIs, modelos, features, grafos e indicadores podem falhar ou, ainda pior, continuar funcionando com resultados incorretos.</p>
+<p>No UnespDataLens-RM, a dimensão Schema Drift é tratada como uma capacidade complementar e transversal, pois mudanças estruturais podem ocorrer em qualquer etapa do ciclo de dados e podem impactar múltiplos módulos, produtos e consumidores. Seu tratamento exige monitoramento, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, validação de schema, lineage, <a class="term" href="../conceitos/metadados.html">metadados</a>, governança, alertas, contratos de dados e análise de impacto.</p>
+<h2 class="section-title" id="problema-tratado">2. Problema tratado</h2>
+<p>Em ecossistemas analíticos reais, as fontes de dados evoluem continuamente. Sistemas institucionais são atualizados, APIs mudam suas respostas, planilhas recebem novas colunas, categorias são renomeadas, campos deixam de ser preenchidos, identificadores são substituídos, tipos de dados são alterados e regras de negócio passam por revisões.</p>
+<p>Essas mudanças nem sempre são comunicadas às equipes responsáveis pelos pipelines analíticos. Como resultado, processos que dependem de uma estrutura esperada podem falhar ou produzir resultados inconsistentes.</p>
+<p>O schema drift pode gerar problemas como:</p>
+<ul class="list">
+<li>falhas de ingestão devido à remoção ou renomeação de campos;</li>
+<li>erros de transformação causados por mudança de tipo de dado;</li>
+<li>quebra de integrações por alteração de chaves;</li>
+<li>perda de compatibilidade entre versões de datasets;</li>
+<li>dashboards com indicadores incorretos devido à mudança de significado de atributos;</li>
+<li>features calculadas com base em campos alterados;</li>
+<li>modelos preditivos degradados por mudança de estrutura ou distribuição dos atributos;</li>
+<li>APIs incompatíveis com consumidores existentes;</li>
+<li>dificuldade de comparar séries históricas;</li>
+<li>perda de <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a> entre versões;</li>
+<li>aumento de retrabalho técnico;</li>
+<li>inconsistência entre produtos analíticos;</li>
+<li>risco de decisões baseadas em dados estruturalmente alterados sem validação.</li>
+</ul>
+<p>No UnespDataLens-RM, o tratamento do schema drift é essencial para garantir que mudanças estruturais sejam detectadas, registradas, avaliadas e tratadas antes que comprometam a confiabilidade dos ativos analíticos.</p>
+<h2 class="section-title" id="objetivo-da-dimensao">3. Objetivo da dimensão</h2>
+<p>O objetivo da dimensão Schema Drift é detectar, registrar, classificar, avaliar e tratar mudanças estruturais nos dados e ativos analíticos, garantindo que alterações em schemas, atributos, tipos, nomes, domínios, chaves, categorias e granularidades sejam controladas, documentadas, versionadas e avaliadas quanto ao seu impacto nos pipelines, produtos, features, modelos, dashboards, APIs e decisões.</p>
+<p>Essa dimensão busca assegurar que a evolução estrutural dos dados ocorra de forma controlada, transparente, rastreável e compatível com a manutenção da qualidade analítica.</p>
+<h2 class="section-title" id="relacao-com-o-unespdatalens-rm">4. Relação com o UnespDataLens-RM</h2>
+<p>A dimensão Schema Drift se articula com diversos módulos do UnespDataLens-RM.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, contribui para registrar a estrutura inicial das fontes, seus atributos, formatos, tipos, <a class="term" href="../conceitos/periodicidade.html">periodicidade</a>, <a class="term" href="../conceitos/granularidade.html">granularidade</a> e limitações conhecidas, criando uma referência para comparação futura.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, atua na detecção de alterações estruturais no momento da ingestão, verificando se os campos esperados estão presentes, se os tipos permanecem compatíveis e se o formato dos dados foi alterado.</p>
+<p>No Módulo 3 — Integração e Harmonização, é fundamental para identificar mudanças em chaves, identificadores, atributos equivalentes, granularidades e entidades compartilhadas entre fontes.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, permite verificar se regras de transformação continuam válidas após alterações no schema de entrada.</p>
+<p>No Módulo 5 — Qualidade e Validação de Dados, relaciona-se aos testes estruturais, validação de domínio, <a class="term" href="../metricas/conformidade.html">conformidade</a> de tipos, presença de atributos obrigatórios e detecção de mudanças em categorias.</p>
+<p>No Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, pode indicar mudanças estruturais que afetam atributos sensíveis, grupos de análise, variáveis-alvo ou dimensões de equidade.</p>
+<p>No Módulo 7 — Armazenamento Analítico, apoia a gestão de schemas analíticos, data marts, views, tabelas, partições e estruturas persistidas.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, ajuda a evitar que dashboards, APIs, relatórios e produtos de dados sejam impactados por mudanças estruturais não comunicadas.</p>
+<p>No Módulo 9 — Metadados, Catálogo e Semântica dos Dados, registra versões de schemas, descrições de atributos, domínios, categorias, conceitos e equivalências semânticas.</p>
+<p>No Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e Rastreabilidade, permite identificar quais produtos, features, dashboards e modelos dependem de um campo alterado.</p>
+<p>No Módulo 12 — Versionamento e <a class="term" href="../conceitos/reprodutibilidade.html">Reprodutibilidade</a>, registra versões de schemas e possibilita comparar alterações entre versões.</p>
+<p>No Módulo 14 — <a class="term" href="../conceitos/feature-engineering.html">Feature Engineering</a> e <a class="term" href="../conceitos/feature-store.html">Feature Store</a>, verifica se features dependem de atributos removidos, renomeados ou semanticamente alterados.</p>
+<p>No Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, atua como uma das formas específicas de drift a serem monitoradas.</p>
+<p>No Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline, agentes podem explicar mudanças de schema, identificar impactos e recomendar ações corretivas.</p>
+<h2 class="section-title" id="tipos-de-schema-drift">5. Tipos de Schema Drift</h2>
+<p>O schema drift pode assumir diferentes formas, cada uma com impacto específico no pipeline analítico.</p>
+<div class="table-wrap"><table class="table"><tr><th>Tipo de drift</th><th>Descrição</th><th>Exemplo</th></tr><tr><td>Adição de atributo</td><td>Novo campo passa a existir na fonte ou dataset.</td><td>Inclusão do campo modalidade_ingresso.</td></tr><tr><td>Remoção de atributo</td><td>Campo esperado deixa de existir.</td><td>Remoção da coluna frequencia.</td></tr><tr><td>Renomeação de atributo</td><td>Campo mantém significado semelhante, mas muda de nome.</td><td>cod_curso passa a ser codigo_curso.</td></tr><tr><td>Mudança de tipo</td><td>Tipo de dado é alterado.</td><td>Campo de data passa de date para string.</td></tr><tr><td>Mudança de domínio</td><td>Conjunto de valores permitidos muda.</td><td>Nova categoria em situação acadêmica.</td></tr><tr><td>Mudança de codificação</td><td>Códigos ou padrões de representação são alterados.</td><td>Sexo: M/F passa para 1/2.</td></tr><tr><td>Mudança de granularidade</td><td>Nível de detalhe dos dados muda.</td><td>Frequência diária passa a ser mensal.</td></tr><tr><td>Mudança de chave</td><td>Identificador usado para integração muda.</td><td>RA substituído por identificador institucional.</td></tr><tr><td>Mudança de cardinalidade</td><td>Relação entre entidades muda.</td><td>Um estudante passa a ter múltiplos vínculos ativos.</td></tr><tr><td>Mudança semântica</td><td>O nome permanece, mas o significado muda.</td><td>“Evasão” passa a incluir cancelamento e abandono.</td></tr><tr><td>Mudança de formato</td><td>Estrutura do arquivo ou resposta da API muda.</td><td>CSV passa a JSON; API altera estrutura aninhada.</td></tr><tr><td>Mudança de obrigatoriedade</td><td>Campo antes obrigatório passa a ser opcional, ou o inverso.</td><td>Campo de renda deixa de ser preenchido obrigatoriamente.</td></tr></table></div>
+<p>Nem todo schema drift é necessariamente negativo. Algumas mudanças representam evolução legítima das fontes. O problema ocorre quando a mudança não é detectada, documentada, avaliada ou incorporada corretamente ao pipeline.</p>
+<h2 class="section-title" id="estrategias-de-mitigacao">6. Estratégias de mitigação</h2>
+<p>A mitigação de schema drift no UnespDataLens-RM pode envolver mecanismos técnicos, metodológicos e de governança.</p>
+<div class="table-wrap"><table class="table"><tr><th>Estratégia</th><th>Descrição</th></tr><tr><td>Registro de schema de referência</td><td>Documentar a estrutura esperada dos dados, incluindo atributos, tipos, domínios e chaves.</td></tr><tr><td>Validação automática de schema</td><td>Comparar dados ingeridos com schema esperado a cada execução.</td></tr><tr><td>Versionamento de schemas</td><td>Registrar alterações estruturais ao longo do tempo.</td></tr><tr><td>Data contracts</td><td>Definir acordos formais sobre estrutura, periodicidade, qualidade e mudanças esperadas.</td></tr><tr><td>Alertas de mudança estrutural</td><td>Gerar alertas quando atributos forem adicionados, removidos, renomeados ou alterados.</td></tr><tr><td>Classificação de severidade</td><td>Avaliar se a mudança é baixa, média, alta ou crítica.</td></tr><tr><td>Análise de impacto via lineage</td><td>Identificar quais datasets, features, dashboards, APIs e modelos são afetados.</td></tr><tr><td>Compatibilidade retroativa</td><td>Manter suporte a versões anteriores quando necessário.</td></tr><tr><td>Mapeamento de renomeações</td><td>Registrar equivalências entre nomes antigos e novos de atributos.</td></tr><tr><td>Validação semântica</td><td>Verificar se mudanças estruturais também implicam mudança de significado.</td></tr><tr><td>Reprocessamento controlado</td><td>Reexecutar pipelines afetados após ajuste de schema.</td></tr><tr><td>Governança de mudanças</td><td>Exigir comunicação, aprovação ou registro para alterações estruturais em fontes críticas.</td></tr></table></div>
+<h2 class="section-title" id="metricas-associadas">7. Métricas associadas</h2>
+<p>A dimensão Schema Drift pode ser avaliada por métricas relacionadas à frequência, severidade, detecção, impacto e resolução de mudanças estruturais.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de ativos com schema documentado</td><td>TASD</td><td>Proporção de ativos que possuem schema registrado.</td></tr><tr><td>Taxa de ativos com schema versionado</td><td>TASV</td><td>Proporção de ativos que possuem histórico de versões de schema.</td></tr><tr><td><a class="term" href="../metricas/taxa-de-schema-drift.html">Taxa de schema drift</a> detectado</td><td>TSDD</td><td>Proporção de ativos com mudanças estruturais identificadas.</td></tr><tr><td>Taxa de mudanças críticas de schema</td><td>TMCS</td><td>Proporção de mudanças classificadas como críticas.</td></tr><tr><td>Taxa de mudanças não comunicadas</td><td>TMNC</td><td>Proporção de mudanças detectadas sem aviso ou registro prévio.</td></tr><tr><td><a class="term" href="../metricas/tempo-medio-de-deteccao.html">Tempo médio de detecção</a> de schema drift</td><td>TMDS</td><td>Tempo entre a mudança estrutural e sua detecção.</td></tr><tr><td><a class="term" href="../metricas/tempo-medio-de-resolucao.html">Tempo médio de resolução</a> de schema drift</td><td>TMRS</td><td>Tempo entre a detecção e a correção ou adaptação.</td></tr><tr><td>Taxa de pipelines impactados</td><td>TPI</td><td>Proporção de pipelines afetados por mudanças de schema.</td></tr><tr><td>Taxa de produtos impactados</td><td>TPrI</td><td>Proporção de dashboards, APIs, relatórios ou produtos afetados.</td></tr><tr><td>Taxa de atributos renomeados mapeados</td><td>TARM</td><td>Proporção de renomeações com equivalência registrada.</td></tr><tr><td>Taxa de compatibilidade preservada</td><td>TCP</td><td>Proporção de mudanças que preservam compatibilidade com versões anteriores.</td></tr><tr><td>Índice de estabilidade de schema</td><td>IES</td><td>Indicador composto da estabilidade estrutural dos ativos.</td></tr></table></div>
+<p>Uma formulação possível para o Índice de Estabilidade de Schema é:</p>
+<div class="formula">IES = w₁TASD + w₂TASV + w₃TCP + w₄TARM − w₅TSDD − w₆TMCS − w₇TMNC</div>
+<p>em que:</p>
+<ul class="list">
+<li>TASD representa a taxa de ativos com schema documentado;</li>
+<li>TASV representa a taxa de ativos com schema versionado;</li>
+<li>TCP representa a taxa de compatibilidade preservada;</li>
+<li>TARM representa a taxa de atributos renomeados mapeados;</li>
+<li>TSDD representa a taxa de schema drift detectado;</li>
+<li>TMCS representa a taxa de mudanças críticas de schema;</li>
+<li>TMNC representa a taxa de mudanças não comunicadas;</li>
+<li>wᵢ representa o peso atribuído a cada dimensão.</li>
+</ul>
+<p>Quanto maior o IES, maior a estabilidade estrutural e a capacidade de controle sobre mudanças de schema.</p>
+<h2 class="section-title" id="artefatos-relacionados">8. Artefatos relacionados</h2>
+<p>A dimensão Schema Drift pode ser operacionalizada por meio de artefatos complementares, integrados aos módulos de inventário, ingestão, qualidade, metadados, lineage, versionamento, monitoramento e governança.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Finalidade</th></tr><tr><td>SD1</td><td>Registro de Schema de Referência</td><td>Tabela técnica ou contrato de dados</td><td>Documentar atributos esperados, tipos, domínios, chaves, obrigatoriedade e granularidade.</td></tr><tr><td>SD2</td><td>Histórico de Versões de Schema</td><td>Changelog ou tabela versionada</td><td>Registrar alterações estruturais ao longo do tempo.</td></tr><tr><td>SD3</td><td>Relatório de Detecção de Schema Drift</td><td>Relatório técnico</td><td>Comparar schema observado com schema esperado e registrar divergências.</td></tr><tr><td>SD4</td><td>Registro de Mudanças Estruturais</td><td>Tabela de mudanças</td><td>Documentar adições, remoções, renomeações, mudanças de tipo, domínio ou chave.</td></tr><tr><td>SD5</td><td>Matriz de Impacto de Schema</td><td>Matriz ou grafo de dependências</td><td>Identificar pipelines, features, dashboards, APIs e produtos afetados por mudanças.</td></tr><tr><td>SD6</td><td>Mapa de Equivalência de Atributos</td><td>Tabela de correspondência</td><td>Registrar equivalências entre atributos antigos, novos, renomeados ou substituídos.</td></tr><tr><td>SD7</td><td>Plano de Adaptação de Schema</td><td>Documento técnico</td><td>Definir ações para ajustar pipelines, validações, produtos e consumidores afetados.</td></tr><tr><td>SD8</td><td>Registro de Compatibilidade Retroativa</td><td>Documento ou tabela técnica</td><td>Indicar se mudanças preservam compatibilidade com versões anteriores.</td></tr><tr><td>SD9</td><td>Alerta de Schema Drift</td><td>Registro de alerta</td><td>Notificar responsáveis sobre mudanças estruturais detectadas.</td></tr><tr><td>SD10</td><td>Relatório de Estabilidade de Schema</td><td>Relatório técnico-gerencial</td><td>Avaliar frequência, severidade, impacto e resolução das mudanças de schema.</td></tr></table></div>
+<h2 class="section-title" id="criterios-de-validacao">9. Critérios de validação</h2>
+<p>A dimensão Schema Drift pode ser considerada adequadamente tratada quando:</p>
+<ol class="steps">
+<li>os ativos críticos possuem schema de referência documentado;</li>
+<li>schemas de fontes, datasets, data marts, APIs, features e produtos são versionados;</li>
+<li>mudanças estruturais são detectadas automaticamente ou registradas formalmente;</li>
+<li>alterações de atributos, tipos, domínios, chaves e granularidades são documentadas;</li>
+<li>mudanças críticas geram alerta para responsáveis;</li>
+<li>impactos sobre pipelines, dashboards, APIs, features e modelos são identificados por lineage;</li>
+<li>renomeações e substituições de atributos possuem mapeamento de equivalência;</li>
+<li>mudanças planejadas são comunicadas antes de afetar consumidores;</li>
+<li>mudanças não planejadas são registradas como incidentes ou alertas;</li>
+<li>pipelines afetados são revisados, adaptados ou reprocessados;</li>
+<li>produtos publicados indicam quando houve alteração estrutural relevante;</li>
+<li>usuários são informados quando mudanças de schema afetam interpretação de indicadores ou resultados.</li>
+</ol>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">10. Exemplo de aplicação no domínio educacional</h2>
+<p>Em um projeto educacional, o schema drift pode ocorrer quando a base de matrícula passa a incluir uma nova categoria de situação acadêmica, quando o campo de frequência muda de percentual para quantidade de presenças, quando o identificador do estudante é alterado, ou quando a base de interações do ambiente virtual passa a registrar eventos em novo formato.</p>
+<p>Por exemplo, se a variável situacao_academica originalmente continha as categorias “ativo”, “trancado”, “cancelado” e “concluído”, mas passa a incluir “abandono”, “transferido” ou “mobilidade”, as regras de cálculo de evasão podem ser afetadas. Sem detecção e documentação, dashboards e modelos podem interpretar incorretamente os novos valores.</p>
+<p>A dimensão Schema Drift permite detectar a nova categoria, registrar a mudança, avaliar impacto nos indicadores de evasão, atualizar regras de harmonização, versionar o schema e informar os consumidores dos produtos educacionais.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">11. Exemplo de aplicação em políticas públicas</h2>
+<p>Em políticas públicas, o schema drift pode ocorrer quando uma secretaria altera o formato de envio de dados, muda códigos de atendimento, substitui identificadores territoriais, altera categorias de serviços ou modifica a periodicidade de registros.</p>
+<p>Por exemplo, uma base de atendimentos sociais pode mudar o campo tipo_atendimento para uma nova codificação, agrupando categorias antes separadas. Essa alteração pode impactar indicadores de demanda, dashboards territoriais e análises de vulnerabilidade.</p>
+<p>A dimensão Schema Drift permite identificar a mudança, comparar o schema atual com o anterior, mapear categorias antigas e novas, avaliar quais produtos foram impactados e orientar o reprocessamento dos indicadores.</p>
+<h2 class="section-title" id="contribuicao-para-o-modelo-de-referencia">12. Contribuição para o modelo de referência</h2>
+<p>A dimensão Schema Drift contribui para o UnespDataLens-RM ao reconhecer que a estrutura dos dados é dinâmica e que mudanças estruturais precisam ser controladas para preservar qualidade, integração, rastreabilidade, reprodutibilidade e confiança.</p>
+<p>Essa dimensão fortalece o modelo de referência ao:</p>
+<ul class="list">
+<li>detectar alterações estruturais em fontes e datasets;</li>
+<li>reduzir falhas inesperadas em pipelines;</li>
+<li>preservar compatibilidade entre versões;</li>
+<li>proteger dashboards, APIs, features e modelos contra mudanças silenciosas;</li>
+<li>apoiar análise de impacto por meio de lineage;</li>
+<li>fortalecer versionamento de schemas;</li>
+<li>melhorar comunicação entre produtores e consumidores de dados;</li>
+<li>reduzir <a class="term" href="../problemas/divida-de-dados.html">dívida de dados</a>;</li>
+<li>apoiar governança de mudanças;</li>
+<li>garantir que a evolução estrutural dos dados ocorra de forma controlada.</li>
+</ul>
+<h2 class="section-title" id="sintese-da-dimensao">13. Síntese da dimensão</h2>
+<p>A dimensão Schema Drift trata das mudanças estruturais que afetam schemas, atributos, tipos, domínios, chaves, categorias, formatos e granularidades dos dados ao longo do tempo. No UnespDataLens-RM, essa dimensão atua como capacidade complementar para detectar, registrar, avaliar e tratar alterações estruturais que possam impactar pipelines, produtos analíticos, dashboards, APIs, features, modelos e decisões.</p>
+<p>Ao incorporar validação de schema, versionamento, contratos de dados, alertas, análise de impacto, lineage, governança de mudanças e registros de compatibilidade, o modelo de referência fortalece sua capacidade de lidar com a evolução dos dados sem comprometer a confiabilidade e a continuidade dos processos analíticos.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

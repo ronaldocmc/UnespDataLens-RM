@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo Transversal 15 — Monitoramento, Drift e Evolução dos Ativos tem como finalidade acompanhar, avaliar e registrar continuamente o comportamento, a estabilidade, a qualidade, a atualização, a disponibilidade, o uso, a evolução e as mudanças dos ativos analíticos produzidos pelo modelo de referência UnespDataLens-RM.">
+  <title>Módulo 15 — Monitoramento, Drift e Evolução dos Ativos · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-transversal-15-monitoramento-drift-e-evolucao-dos-ativos"></span><section class="hero">
+<span class="badge">Módulo 15</span>
+<h1>Módulo 15 — Monitoramento, Drift e Evolução dos Ativos</h1>
+<p>O Módulo Transversal 15 — Monitoramento, Drift e Evolução dos Ativos tem como finalidade acompanhar, avaliar e registrar continuamente o comportamento, a estabilidade, a qualidade, a atualização, a disponibilidade, o uso, a evolução e as mudanças dos ativos analíticos produzidos pelo modelo de referência UnespDataLens-RM.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 30 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#escopo-do-monitoramento">Escopo do monitoramento</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-tecnologias-aplicaveis">Técnicas, métodos e tecnologias aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a15-1-plano-de-monitoramento-dos-ativos">Artefato A15.1 — Plano de Monitoramento dos Ativos</a><a href="#artefato-a15-2-registro-de-baselines">Artefato A15.2 — Registro de Baselines</a><a href="#artefato-a15-3-painel-de-monitoramento">Artefato A15.3 — Painel de Monitoramento</a><a href="#artefato-a15-4-registro-de-alertas">Artefato A15.4 — Registro de Alertas</a><a href="#artefato-a15-5-relatorio-de-data-drift">Artefato A15.5 — Relatório de Data Drift</a><a href="#artefato-a15-6-relatorio-de-schema-drift">Artefato A15.6 — Relatório de Schema Drift</a><a href="#artefato-a15-7-relatorio-de-feature-drift">Artefato A15.7 — Relatório de Feature Drift</a><a href="#artefato-a15-8-relatorio-de-label-e-concept-drift">Artefato A15.8 — Relatório de Label e Concept Drift</a><a href="#artefato-a15-9-registro-de-incidentes-e-acoes-corretivas">Artefato A15.9 — Registro de Incidentes e Ações Corretivas</a><a href="#artefato-a15-10-relatorio-de-evolucao-dos-ativos">Artefato A15.10 — Relatório de Evolução dos Ativos</a><a href="#artefato-a15-11-mapa-de-impacto-de-mudancas">Artefato A15.11 — Mapa de Impacto de Mudanças</a><a href="#artefato-a15-12-registro-de-obsolescencia-e-descontinuacao">Artefato A15.12 — Registro de Obsolescência e Descontinuação</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-os-demais-modulos-do-modelo-de-referencia">Relação com os demais módulos do modelo de referência</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo Transversal 15 — Monitoramento, Drift e Evolução dos Ativos tem como finalidade acompanhar, avaliar e registrar continuamente o comportamento, a estabilidade, a qualidade, a atualização, a disponibilidade, o uso, a evolução e as mudanças dos ativos analíticos produzidos pelo modelo de referência UnespDataLens-RM.</p>
+<p>No contexto do UnespDataLens-RM, os ativos analíticos não são elementos estáticos. Fontes de dados podem mudar, schemas podem ser alterados, atributos podem deixar de ser preenchidos, categorias podem ser renomeadas, indicadores podem mudar de comportamento, features podem perder estabilidade, rótulos podem sofrer alteração de distribuição, modelos podem degradar, dashboards podem ficar desatualizados, APIs podem falhar, produtos podem deixar de ser usados e relações em grafos podem evoluir ao longo do tempo.</p>
+<p>Por isso, o Módulo 15 atua como um componente transversal de acompanhamento contínuo da saúde do ecossistema analítico. Seu papel é identificar mudanças relevantes, detectar problemas emergentes, sinalizar riscos, apoiar ações corretivas, documentar a evolução dos ativos e fornecer evidências para governança, qualidade, <a class="term" href="../conceitos/reprodutibilidade.html">reprodutibilidade</a>, observabilidade, <a class="term" href="../conceitos/dataops.html">DataOps</a>, <a class="term" href="../conceitos/mlops.html">MLOps</a> e tomada de decisão baseada em dados.</p>
+<p>Esse módulo também explicita que o UnespDataLens-RM deve contemplar dados históricos, temporais, dinâmicos, eventuais, incrementais e, quando necessário, dados em tempo quase real ou <a class="term" href="../metodos/streaming.html">streaming</a>. O monitoramento deve considerar não apenas a existência dos dados, mas sua evolução ao longo do tempo, sua <a class="term" href="../conceitos/latencia.html">latência</a> de atualização, sua estabilidade estrutural, sua distribuição estatística, sua <a class="term" href="../metricas/validade.html">validade</a> semântica e seu impacto sobre produtos analíticos.</p>
+<p>Assim, o Módulo 15 transforma o acompanhamento dos dados em um processo sistemático, documentado, mensurável e acionável, evitando que falhas, degradações ou mudanças silenciosas comprometam a confiabilidade dos resultados produzidos pelo UnespDataLens-RM.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 15 é monitorar continuamente os ativos analíticos do UnespDataLens-RM quanto à qualidade, atualização, disponibilidade, estabilidade, distribuição, schema, features, rótulos, relações, uso, desempenho e evolução, detectando drift, falhas, obsolescência, degradações e mudanças relevantes que possam impactar análises, modelos, dashboards, APIs, relatórios, grafos, agentes inteligentes e decisões baseadas em evidências.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 15:</p>
+<ol class="steps">
+<li>definir quais ativos analíticos devem ser monitorados;</li>
+<li>estabelecer métricas, baselines, limiares e critérios de alerta para cada tipo de ativo;</li>
+<li>acompanhar a atualização, disponibilidade e latência dos dados;</li>
+<li>detectar falhas de ingestão, atrasos, <a class="term" href="../problemas/lacunas-temporais.html">lacunas temporais</a> e interrupções de fluxo;</li>
+<li>monitorar mudanças de volume, <a class="term" href="../metricas/completude.html">completude</a>, <a class="term" href="../metricas/consistencia.html">consistência</a>, validade e <a class="term" href="../metricas/atualidade.html">atualidade</a>;</li>
+<li>detectar alterações estruturais, como <a class="term" href="../conceitos/schema-drift.html">schema drift</a>, mudança de tipos, remoção ou inclusão de atributos;</li>
+<li>acompanhar mudanças nas distribuições estatísticas dos dados, caracterizando <a class="term" href="../conceitos/data-drift.html">data drift</a>;</li>
+<li>monitorar estabilidade, completude e comportamento de features, caracterizando <a class="term" href="../conceitos/feature-drift.html">feature drift</a>;</li>
+<li>acompanhar mudanças em rótulos, classes, desfechos e variáveis-alvo, caracterizando <a class="term" href="../conceitos/label-drift.html">label drift</a>;</li>
+<li>identificar mudanças na relação entre variáveis de entrada e desfechos, caracterizando <a class="term" href="../conceitos/concept-drift.html">concept drift</a>;</li>
+<li>monitorar grafos, relações, arestas, centralidades, comunidades e estruturas temporais;</li>
+<li>acompanhar uso, acesso, reutilização e obsolescência de datasets, dashboards, APIs, features e produtos;</li>
+<li>registrar incidentes, alertas, causas prováveis, impactos e ações corretivas;</li>
+<li>apoiar processos de DataOps e MLOps;</li>
+<li>fornecer evidências para agentes inteligentes explicarem alertas, riscos, falhas e recomendações;</li>
+<li>apoiar a evolução controlada dos ativos analíticos ao longo do tempo.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>O monitoramento de ativos analíticos parte do reconhecimento de que dados, pipelines, produtos, features, modelos e representações evoluem continuamente. Essa evolução pode ser esperada, como o crescimento natural do volume de registros, ou inesperada, como a alteração silenciosa de um schema. Pode ser benéfica, como a inclusão de novos atributos relevantes, ou problemática, como a perda de completude em um campo crítico.</p>
+<p>O conceito de drift refere-se a mudanças relevantes no comportamento dos dados ou dos modelos ao longo do tempo. No UnespDataLens-RM, o drift deve ser interpretado de forma ampla, abrangendo mudanças estruturais, estatísticas, temporais, semânticas, relacionais e preditivas.</p>
+<p>Os principais tipos de drift contemplados são:</p>
+<div class="table-wrap"><table class="table"><tr><th>Tipo de drift</th><th>Descrição</th><th>Exemplo</th></tr><tr><td>Data Drift</td><td>Mudança na distribuição dos dados de entrada.</td><td>A idade média dos estudantes ingressantes muda ao longo dos anos.</td></tr><tr><td>Schema Drift</td><td>Mudança na estrutura dos dados.</td><td>Uma coluna é removida, renomeada ou muda de tipo.</td></tr><tr><td>Feature Drift</td><td>Mudança no comportamento, completude ou distribuição de features.</td><td>Uma feature de engajamento deixa de ser preenchida adequadamente.</td></tr><tr><td><a class="term" href="../conceitos/label.html">Label</a> Drift</td><td>Mudança na distribuição ou definição da <a class="term" href="../conceitos/variavel-alvo.html">variável-alvo</a>.</td><td>A proporção de estudantes evadidos muda abruptamente após alteração de regra.</td></tr><tr><td>Concept Drift</td><td>Mudança na relação entre atributos de entrada e desfecho.</td><td>O padrão que explicava evasão deixa de ser válido após nova política institucional.</td></tr><tr><td>Semantic Drift</td><td>Mudança no significado de um atributo, categoria ou indicador.</td><td>“Trancamento” passa a ser tratado administrativamente de forma diferente.</td></tr><tr><td>Relational Drift</td><td>Mudança na estrutura de relações entre entidades.</td><td>A rede de interações entre estudantes e atividades muda ao longo do semestre.</td></tr><tr><td>Operational Drift</td><td>Mudança no comportamento operacional de pipelines e produtos.</td><td>Um pipeline passa a atrasar ou falhar com frequência.</td></tr></table></div>
+<p>O Módulo 15 também se relaciona com <a class="term" href="../conceitos/data-observability.html">Data Observability</a>, mas não se confunde totalmente com ela. O monitoramento acompanha métricas, estados, alertas e mudanças. A observabilidade amplia esse acompanhamento ao permitir compreender causas, impactos, dependências e contexto dos problemas observados.</p>
+<p>No UnespDataLens-RM, monitoramento e observabilidade devem atuar de forma integrada: o monitoramento detecta que algo mudou; a observabilidade ajuda a explicar por que mudou, o que foi afetado e quais ações devem ser tomadas.</p>
+<h2 class="section-title" id="escopo-do-monitoramento">5. Escopo do monitoramento</h2>
+<p>O Módulo 15 pode monitorar diferentes tipos de ativos do UnespDataLens-RM.</p>
+<div class="table-wrap"><table class="table"><tr><th>Tipo de ativo</th><th>Aspectos monitorados</th></tr><tr><td>Fontes de dados</td><td>Disponibilidade, atualização, <a class="term" href="../conceitos/periodicidade.html">periodicidade</a>, acesso, cobertura e mudanças de schema.</td></tr><tr><td>Processos de ingestão</td><td>Execuções, falhas, tempo, volume, latência, registros rejeitados e <a class="term" href="../conceitos/logs.html">logs</a>.</td></tr><tr><td>Datasets brutos</td><td><a class="term" href="../metricas/integridade.html">Integridade</a>, volume, schema, versão, atualização e retenção.</td></tr><tr><td>Datasets integrados</td><td>Conflitos, chaves, taxa de pareamento, completude e consistência.</td></tr><tr><td>Datasets tratados</td><td>Qualidade, perdas, transformações, ausências, outliers e estabilidade.</td></tr><tr><td>Datasets curados</td><td>Atualização, disponibilidade, qualidade, consumo e <a class="term" href="../metricas/adequacao-ao-uso.html">adequação ao uso</a>.</td></tr><tr><td>Features</td><td>Completude, distribuição, drift, estabilidade, vazamento e uso.</td></tr><tr><td>Rótulos</td><td>Completude, distribuição, mudança de regra, balanceamento e label drift.</td></tr><tr><td>Representações temporais</td><td><a class="term" href="../conceitos/cobertura-temporal.html">Cobertura temporal</a>, lacunas, regularidade, atrasos e evolução.</td></tr><tr><td>Grafos</td><td>Nós, arestas, densidade, <a class="term" href="../conceitos/centralidade.html">centralidade</a>, comunidades e relações incertas.</td></tr><tr><td>Grafos temporais</td><td>Persistência de arestas, surgimento de relações, desaparecimento e evolução estrutural.</td></tr><tr><td>Dashboards</td><td>Atualização, acesso, uso, obsolescência e <a class="term" href="../problemas/inconsistencias.html">inconsistências</a>.</td></tr><tr><td>APIs</td><td>Disponibilidade, latência, erros, versão e volume de consumo.</td></tr><tr><td>Modelos</td><td>Desempenho, drift, <a class="term" href="../conceitos/fairness.html">fairness</a>, explicabilidade, uso e necessidade de retreinamento.</td></tr><tr><td>Agentes inteligentes</td><td>Utilidade, erros, fontes consultadas, violações, recomendações e feedback.</td></tr></table></div>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">6. Formalização sintética do módulo</h2>
+<p>Considerando o conjunto de ativos analíticos monitoráveis:</p>
+<div class="formula">A = {a₁, a₂, ..., aₙ}</div>
+<p>e o conjunto de métricas associadas a cada ativo:</p>
+<div class="formula">M(aᵢ) = {m₁, m₂, ..., mₖ}</div>
+<p>cada métrica pode ser observada ao longo do tempo:</p>
+<p>mⱼ(aᵢ, t)</p>
+<p>em que:</p>
+<ul class="list">
+<li>aᵢ representa o ativo monitorado;</li>
+<li>mⱼ representa a métrica observada;</li>
+<li>t representa o instante, período ou janela temporal de monitoramento.</li>
+</ul>
+<p>Para cada ativo, pode-se definir um baseline:</p>
+<div class="formula">B(aᵢ) = {b₁, b₂, ..., bₖ}</div>
+<p>em que bⱼ representa o valor esperado, histórico ou de referência da métrica mⱼ.</p>
+<p>A variação observada pode ser representada por:</p>
+<div class="formula">Δ(aᵢ, mⱼ, t) = mⱼ(aᵢ, t) − bⱼ</div>
+<p>Quando a variação ultrapassa um limiar definido, é gerado um alerta:</p>
+<div class="formula">alerta = {ativo, métrica, valor_observado, baseline, limiar, severidade, data, causa_provável, impacto, ação_recomendada}</div>
+<p>Para detecção de drift, pode-se representar a comparação entre uma distribuição de referência e uma distribuição atual:</p>
+<div class="formula">Drift(Xᵣ, Xₜ) = distância(P(Xᵣ), P(Xₜ))</div>
+<p>em que:</p>
+<ul class="list">
+<li>Xᵣ representa os dados de referência;</li>
+<li>Xₜ representa os dados observados no tempo atual;</li>
+<li>P(X) representa a distribuição dos dados;</li>
+<li>a distância pode ser medida por métodos estatísticos, divergências, testes ou métricas específicas.</li>
+</ul>
+<p>Para grafos temporais, pode-se monitorar a evolução de uma métrica estrutural:</p>
+<div class="formula">g(Gₜ) = {g₁, g₂, ..., gₙ}</div>
+<p>em que Gₜ representa o <a class="term" href="../conceitos/grafo.html">grafo</a> em determinado tempo e g representa métricas como densidade, centralidade, <a class="term" href="../metricas/modularidade.html">modularidade</a>, componentes ou persistência de arestas.</p>
+<h2 class="section-title" id="entradas-do-modulo">7. Entradas do módulo</h2>
+<p>As entradas do Módulo 15 são compostas por ativos, <a class="term" href="../conceitos/metadados.html">metadados</a>, logs, métricas, versões, baselines, contratos, regras e registros produzidos pelos demais módulos do UnespDataLens-RM.</p>
+<p>As principais entradas são:</p>
+<ul class="list">
+<li><a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a>;</li>
+<li>periodicidade esperada das fontes;</li>
+<li>contratos de dados;</li>
+<li>logs de ingestão;</li>
+<li>logs de execução;</li>
+<li>manifestos de ingestão;</li>
+<li>datasets brutos;</li>
+<li>datasets integrados;</li>
+<li>datasets tratados;</li>
+<li>datasets curados;</li>
+<li>data marts;</li>
+<li>schemas esperados;</li>
+<li>schemas observados;</li>
+<li>métricas de qualidade;</li>
+<li>registros de validação;</li>
+<li>registros de falhas;</li>
+<li>registros de incidentes;</li>
+<li>metadados;</li>
+<li><a class="term" href="../conceitos/catalogo-de-dados.html">catálogo de dados</a>;</li>
+<li>glossários;</li>
+<li>regras de transformação;</li>
+<li>registros de lineage;</li>
+<li>versões de ativos;</li>
+<li>snapshots;</li>
+<li><a class="term" href="../conceitos/feature-store.html">feature store</a>;</li>
+<li><a class="term" href="../artefatos/catalogo-de-features.html">catálogo de features</a>;</li>
+<li>rótulos e variáveis-alvo;</li>
+<li>representações temporais;</li>
+<li>grafos;</li>
+<li>grafos temporais;</li>
+<li>dashboards;</li>
+<li>APIs;</li>
+<li>modelos;</li>
+<li>produtos analíticos;</li>
+<li>registros de uso;</li>
+<li>feedback de usuários;</li>
+<li>políticas de governança;</li>
+<li>permissões de acesso;</li>
+<li>baselines e limiares de alerta.</li>
+</ul>
+<h2 class="section-title" id="processamento">8. Processamento</h2>
+<p>O processamento do Módulo 15 envolve definição de ativos críticos, coleta de métricas, comparação com baselines, detecção de mudanças, geração de alertas, análise de impacto, <a class="term" href="../artefatos/registro-de-incidentes.html">registro de incidentes</a> e recomendação de ações.</p>
+<h3 id="definicao-dos-ativos-monitorados">8.1 Definição dos ativos monitorados</h3>
+<p>A primeira atividade consiste em identificar quais ativos devem ser monitorados. Nem todos os ativos exigem o mesmo nível de acompanhamento. Ativos críticos, sensíveis, amplamente consumidos, utilizados por modelos ou dependentes de atualização frequente devem receber prioridade.</p>
+<h3 id="definicao-de-metricas-baselines-e-limiares">8.2 Definição de métricas, baselines e limiares</h3>
+<p>A segunda atividade consiste em definir, para cada ativo, quais métricas serão monitoradas, quais valores de referência serão adotados e quais limiares indicam alerta, atenção ou falha crítica.</p>
+<p>Os baselines podem ser definidos com base em:</p>
+<ul class="list">
+<li>valores históricos;</li>
+<li>médias móveis;</li>
+<li>janelas temporais;</li>
+<li>contratos de dados;</li>
+<li>SLAs;</li>
+<li>regras de qualidade;</li>
+<li>versões de referência;</li>
+<li>comportamento esperado do domínio.</li>
+</ul>
+<h3 id="coleta-continua-ou-periodica-de-metricas">8.3 Coleta contínua ou periódica de métricas</h3>
+<p>A terceira atividade consiste em coletar métricas em intervalos definidos. Essa coleta pode ocorrer em batch, incremental, <a class="term" href="../conceitos/near-real-time.html">near real-time</a> ou streaming, dependendo da natureza do ativo.</p>
+<p>Exemplos:</p>
+<ul class="list">
+<li>volume de registros por ingestão;</li>
+<li>completude de atributos críticos;</li>
+<li>número de falhas por pipeline;</li>
+<li>latência de atualização;</li>
+<li>distribuição de uma feature;</li>
+<li>proporção de classes de um rótulo;</li>
+<li>número de nós e arestas de um grafo;</li>
+<li>tempo de resposta de uma API;</li>
+<li>frequência de acesso a um <a class="term" href="../artefatos/dashboard.html">dashboard</a>.</li>
+</ul>
+<h3 id="deteccao-de-mudancas-e-drift">8.4 Detecção de mudanças e drift</h3>
+<p>A quarta atividade consiste em comparar métricas atuais com baselines ou versões anteriores, detectando variações relevantes.</p>
+<p>Podem ser aplicados métodos como:</p>
+<ul class="list">
+<li>comparação de médias;</li>
+<li>comparação de proporções;</li>
+<li>testes estatísticos;</li>
+<li>divergência entre distribuições;</li>
+<li>PSI;</li>
+<li>KS Statistic;</li>
+<li>análise de tendência;</li>
+<li>detecção de anomalias;</li>
+<li>comparação de schemas;</li>
+<li>comparação de categorias;</li>
+<li>métricas de estabilidade;</li>
+<li>métricas de grafos temporais.</li>
+</ul>
+<h3 id="classificacao-da-severidade">8.5 Classificação da severidade</h3>
+<p>A quinta atividade consiste em classificar a severidade do problema identificado. Uma mudança pode ser classificada como:</p>
+<ul class="list">
+<li>informativa;</li>
+<li>baixa;</li>
+<li>média;</li>
+<li>alta;</li>
+<li>crítica.</li>
+</ul>
+<p>A classificação deve considerar impacto, ativo afetado, consumidores, sensibilidade, uso em modelos, uso em dashboards, abrangência temporal e risco decisório.</p>
+<h3 id="analise-de-impacto">8.6 Análise de impacto</h3>
+<p>A sexta atividade consiste em identificar quais ativos, produtos, features, modelos, dashboards, APIs ou usuários podem ser impactados por uma mudança.</p>
+<p>Essa análise depende diretamente do Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e <a class="term" href="../conceitos/rastreabilidade.html">Rastreabilidade</a>.</p>
+<h3 id="geracao-de-alertas">8.7 Geração de alertas</h3>
+<p>A sétima atividade consiste em gerar alertas estruturados, contendo ativo afetado, métrica, valor observado, baseline, severidade, data, evidência, causa provável, impacto e ação recomendada.</p>
+<h3 id="registro-de-incidentes">8.8 Registro de incidentes</h3>
+<p>A oitava atividade consiste em registrar incidentes quando uma alteração compromete qualidade, atualização, disponibilidade, estabilidade, governança ou confiabilidade de um ativo.</p>
+<h3 id="recomendacao-de-acoes-corretivas">8.9 Recomendação de ações corretivas</h3>
+<p>A nona atividade consiste em recomendar ações como:</p>
+<ul class="list">
+<li>reprocessar pipeline;</li>
+<li>revisar schema;</li>
+<li>atualizar contrato de dados;</li>
+<li>recalcular feature;</li>
+<li>revisar rótulo;</li>
+<li>bloquear publicação;</li>
+<li>atualizar dashboard;</li>
+<li>retreinar modelo;</li>
+<li>revisar regra de transformação;</li>
+<li>acionar responsável;</li>
+<li>classificar produto como depreciado;</li>
+<li>descontinuar ativo obsoleto.</li>
+</ul>
+<h3 id="acompanhamento-da-evolucao-dos-ativos">8.10 Acompanhamento da evolução dos ativos</h3>
+<p>A décima atividade consiste em acompanhar a evolução histórica dos ativos, registrando crescimento, mudança, obsolescência, substituição, melhoria, degradação e uso ao longo do tempo.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-tecnologias-aplicaveis">9. Técnicas, métodos e tecnologias aplicáveis</h2>
+<p>O Módulo 15 pode empregar diferentes técnicas e tecnologias para monitoramento, detecção de drift, observabilidade e evolução dos ativos.</p>
+<p>Entre as técnicas de monitoramento, destacam-se:</p>
+<ul class="list">
+<li>monitoramento de volume;</li>
+<li>monitoramento de schema;</li>
+<li>monitoramento de completude;</li>
+<li>monitoramento de atualidade;</li>
+<li>monitoramento de disponibilidade;</li>
+<li>monitoramento de latência;</li>
+<li>monitoramento de uso;</li>
+<li>monitoramento de qualidade;</li>
+<li>monitoramento de drift;</li>
+<li>monitoramento de modelos;</li>
+<li>monitoramento de grafos temporais.</li>
+</ul>
+<p>Entre os métodos de detecção de drift, podem ser utilizados:</p>
+<ul class="list">
+<li>Population Stability Index;</li>
+<li>Kolmogorov-Smirnov Test;</li>
+<li>Jensen-Shannon Divergence;</li>
+<li>Kullback-Leibler Divergence;</li>
+<li>Wasserstein Distance;</li>
+<li>Chi-square Test;</li>
+<li>comparação de proporções;</li>
+<li>análise de tendência;</li>
+<li>detecção de anomalias;</li>
+<li>controle estatístico de processo;</li>
+<li>comparação de embeddings;</li>
+<li>métricas de estabilidade temporal;</li>
+<li>comparação de grafos por snapshots.</li>
+</ul>
+<p>Entre as tecnologias aplicáveis, podem ser consideradas:</p>
+<ul class="list">
+<li><a class="term" href="../tecnicas/evidently-ai.html">Evidently AI</a>;</li>
+<li><a class="term" href="../tecnicas/whylabs.html">WhyLabs</a>;</li>
+<li><a class="term" href="../tecnicas/great-expectations.html">Great Expectations</a>;</li>
+<li><a class="term" href="../tecnicas/soda-core.html">Soda Core</a>;</li>
+<li><a class="term" href="../tecnicas/deequ.html">Deequ</a>;</li>
+<li><a class="term" href="../tecnicas/pandera.html">Pandera</a>;</li>
+<li><a class="term" href="../tecnicas/prometheus.html">Prometheus</a>;</li>
+<li><a class="term" href="../tecnicas/grafana.html">Grafana</a>;</li>
+<li><a class="term" href="../tecnicas/openlineage.html">OpenLineage</a>;</li>
+<li><a class="term" href="../tecnicas/marquez.html">Marquez</a>;</li>
+<li><a class="term" href="../tecnicas/mlflow.html">MLflow</a>;</li>
+<li><a class="term" href="../tecnicas/feast.html">Feast</a>;</li>
+<li>Airflow;</li>
+<li><a class="term" href="../tecnicas/prefect.html">Prefect</a>;</li>
+<li><a class="term" href="../tecnicas/dagster.html">Dagster</a>;</li>
+<li><a class="term" href="../tecnicas/dbt.html">dbt</a> tests;</li>
+<li><a class="term" href="../tecnicas/datahub.html">DataHub</a>;</li>
+<li><a class="term" href="../tecnicas/openmetadata.html">OpenMetadata</a>;</li>
+<li>logs estruturados;</li>
+<li>bancos de <a class="term" href="../conceitos/series-temporais.html">séries temporais</a>;</li>
+<li>bancos de grafos;</li>
+<li>ferramentas de observabilidade;</li>
+<li>painéis operacionais;</li>
+<li>sistemas de alerta.</li>
+</ul>
+<h2 class="section-title" id="metricas-do-modulo">10. Métricas do módulo</h2>
+<p>As métricas do Módulo 15 avaliam cobertura de monitoramento, qualidade, atualização, drift, estabilidade, uso, incidentes e evolução dos ativos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de ativos monitorados</td><td>TAM</td><td>Proporção de ativos críticos com monitoramento ativo.</td></tr><tr><td>Taxa de baselines definidos</td><td>TBD</td><td>Proporção de ativos monitorados com baseline documentado.</td></tr><tr><td>Taxa de métricas ativas</td><td>TMA</td><td>Proporção de métricas configuradas e coletadas periodicamente.</td></tr><tr><td>Taxa de atualização conforme periodicidade</td><td>TACP</td><td>Proporção de ativos atualizados no prazo esperado.</td></tr><tr><td>Latência média de atualização</td><td>LMA</td><td>Tempo médio entre atualização na fonte e disponibilidade no produto.</td></tr><tr><td>Taxa de falhas detectadas</td><td>TFD</td><td>Proporção de falhas identificadas por monitoramento.</td></tr><tr><td>Taxa de <a class="term" href="../problemas/falhas-silenciosas.html">falhas silenciosas</a></td><td>TFS</td><td>Proporção de problemas identificados tardiamente ou sem alerta automático.</td></tr><tr><td><a class="term" href="../metricas/taxa-de-data-drift.html">Taxa de data drift</a></td><td>TDD</td><td>Proporção de atributos ou ativos com mudança estatística relevante.</td></tr><tr><td><a class="term" href="../metricas/taxa-de-schema-drift.html">Taxa de schema drift</a></td><td>TSD</td><td>Proporção de ativos com alteração estrutural detectada.</td></tr><tr><td><a class="term" href="../metricas/taxa-de-feature-drift.html">Taxa de feature drift</a></td><td>TFDri</td><td>Proporção de features com mudança de distribuição ou estabilidade.</td></tr><tr><td><a class="term" href="../metricas/taxa-de-label-drift.html">Taxa de label drift</a></td><td>TLD</td><td>Proporção de rótulos com mudança relevante de distribuição.</td></tr><tr><td><a class="term" href="../metricas/taxa-de-concept-drift.html">Taxa de concept drift</a></td><td>TCD</td><td>Proporção de modelos ou problemas com mudança na relação entrada-saída.</td></tr><tr><td>Taxa de relational drift</td><td>TRD</td><td>Proporção de grafos ou relações com mudança estrutural relevante.</td></tr><tr><td>Taxa de produtos obsoletos</td><td>TPO</td><td>Proporção de produtos sem atualização, uso ou manutenção.</td></tr><tr><td>Taxa de incidentes resolvidos</td><td>TIR</td><td>Proporção de incidentes tratados em determinado período.</td></tr><tr><td><a class="term" href="../metricas/tempo-medio-de-deteccao.html">Tempo médio de detecção</a></td><td>TMD</td><td>Tempo entre ocorrência do problema e sua detecção.</td></tr><tr><td><a class="term" href="../metricas/tempo-medio-de-resolucao.html">Tempo médio de resolução</a></td><td>TMR</td><td>Tempo entre abertura e resolução do incidente.</td></tr><tr><td><a class="term" href="../metricas/indice-de-evolucao-controlada-dos-ativos.html">Índice de evolução controlada dos ativos</a></td><td>IECA</td><td>Indicador composto de estabilidade, atualização, monitoramento e resolução.</td></tr></table></div>
+<h3 id="taxa-de-ativos-monitorados-tam">10.1 Taxa de Ativos Monitorados — TAM</h3>
+<p>A Taxa de Ativos Monitorados mede a proporção de ativos críticos acompanhados por métricas, baselines e alertas.</p>
+<div class="formula">TAM = número de ativos críticos monitorados / número total de ativos críticos</div>
+<p>Essa métrica indica a cobertura do monitoramento no ecossistema.</p>
+<h3 id="taxa-de-atualizacao-conforme-periodicidade-tacp">10.2 Taxa de Atualização Conforme Periodicidade — TACP</h3>
+<p>A Taxa de Atualização Conforme Periodicidade mede a proporção de ativos atualizados dentro do prazo esperado.</p>
+<div class="formula">TACP = número de atualizações realizadas no prazo / número total de atualizações esperadas</div>
+<p>Essa métrica é especialmente importante para produtos que dependem de atualização recorrente.</p>
+<h3 id="taxa-de-schema-drift-tsd">10.3 Taxa de Schema Drift — TSD</h3>
+<p>A Taxa de Schema Drift mede a proporção de ativos que apresentaram alteração estrutural relevante.</p>
+<div class="formula">TSD = número de ativos com schema drift / número total de ativos monitorados quanto a schema</div>
+<p>Essa métrica permite acompanhar estabilidade estrutural dos dados.</p>
+<h3 id="taxa-de-feature-drift-tfdri">10.4 Taxa de Feature Drift — TFDri</h3>
+<p>A Taxa de Feature Drift mede a proporção de features que apresentaram mudança relevante de distribuição, completude ou estabilidade.</p>
+<div class="formula">TFDri = número de features com drift / número total de features monitoradas</div>
+<p>Essa métrica é relevante para modelos e feature stores.</p>
+<h3 id="taxa-de-label-drift-tld">10.5 Taxa de Label Drift — TLD</h3>
+<p>A Taxa de Label Drift mede a proporção de rótulos ou variáveis-alvo cuja distribuição mudou de forma relevante.</p>
+<div class="formula">TLD = número de rótulos com drift / número total de rótulos monitorados</div>
+<p>Essa métrica é essencial para avaliar estabilidade de modelos supervisionados e indicadores.</p>
+<h3 id="indice-de-evolucao-controlada-dos-ativos-ieca">10.6 Índice de Evolução Controlada dos Ativos — IECA</h3>
+<p>O Índice de Evolução Controlada dos Ativos sintetiza a capacidade do ecossistema de acompanhar e controlar mudanças.</p>
+<p>Uma formulação possível é:</p>
+<div class="formula">IECA = w₁TAM + w₂TBD + w₃TMA + w₄TACP + w₅TIR − w₆TFS − w₇TPO − w₈TSD</div>
+<p>em que:</p>
+<ul class="list">
+<li>TAM representa a taxa de ativos monitorados;</li>
+<li>TBD representa a taxa de baselines definidos;</li>
+<li>TMA representa a taxa de métricas ativas;</li>
+<li>TACP representa a atualização conforme periodicidade;</li>
+<li>TIR representa a taxa de incidentes resolvidos;</li>
+<li>TFS representa a taxa de falhas silenciosas;</li>
+<li>TPO representa a taxa de produtos obsoletos;</li>
+<li>TSD representa a taxa de schema drift;</li>
+<li>wᵢ representa o peso atribuído a cada dimensão.</li>
+</ul>
+<p>Quanto maior o IECA, maior a capacidade do UnespDataLens-RM de acompanhar a evolução dos seus ativos de forma controlada.</p>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">11. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 15 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A15.1</td><td><a class="term" href="../artefatos/plano-de-monitoramento.html">Plano de Monitoramento</a> dos Ativos</td><td>Documento técnico</td><td>TAM</td><td>Define ativos, métricas, baselines, limiares e responsáveis.</td></tr><tr><td>A15.2</td><td><a class="term" href="../artefatos/registro-de-baselines.html">Registro de Baselines</a></td><td>Tabela ou repositório de referência</td><td>TBD</td><td>Preserva valores esperados para comparação temporal.</td></tr><tr><td>A15.3</td><td><a class="term" href="../artefatos/painel-de-monitoramento.html">Painel de Monitoramento</a></td><td>Dashboard operacional</td><td>TMA</td><td>Acompanha saúde, atualização, drift, falhas e uso.</td></tr><tr><td>A15.4</td><td><a class="term" href="../artefatos/registro-de-alertas.html">Registro de Alertas</a></td><td>Tabela ou sistema de alertas</td><td>TFD</td><td>Documenta variações, severidade, evidências e responsáveis.</td></tr><tr><td>A15.5</td><td><a class="term" href="../artefatos/relatorio-de-data-drift.html">Relatório de Data Drift</a></td><td>Relatório técnico</td><td>TDD</td><td>Avalia mudanças estatísticas nos dados.</td></tr><tr><td>A15.6</td><td><a class="term" href="../artefatos/relatorio-de-schema-drift.html">Relatório de Schema Drift</a></td><td>Relatório técnico</td><td>TSD</td><td>Avalia mudanças estruturais nos ativos.</td></tr><tr><td>A15.7</td><td><a class="term" href="../artefatos/relatorio-de-feature-drift.html">Relatório de Feature Drift</a></td><td>Relatório técnico</td><td>TFDri</td><td>Avalia estabilidade e distribuição das features.</td></tr><tr><td>A15.8</td><td><a class="term" href="../artefatos/relatorio-de-label-e-concept-drift.html">Relatório de Label e Concept Drift</a></td><td>Relatório técnico</td><td>TLD, TCD</td><td>Avalia mudanças em rótulos e relação entrada-saída.</td></tr><tr><td>A15.9</td><td>Registro de Incidentes e Ações Corretivas</td><td>Tabela ou sistema operacional</td><td>TIR</td><td>Documenta falhas, causas, impactos e tratamento.</td></tr><tr><td>A15.10</td><td><a class="term" href="../artefatos/relatorio-de-evolucao-dos-ativos.html">Relatório de Evolução dos Ativos</a></td><td>Relatório técnico-gerencial</td><td>IECA</td><td>Avalia mudanças, obsolescência, uso e maturidade dos ativos.</td></tr><tr><td>A15.11</td><td>Mapa de Impacto de Mudanças</td><td>Grafo ou matriz de dependências</td><td>TAIR</td><td>Relaciona mudanças a produtos, modelos, features e usuários afetados.</td></tr><tr><td>A15.12</td><td>Registro de Obsolescência e Descontinuação</td><td>Tabela de curadoria</td><td>TPO</td><td>Documenta ativos depreciados, substituídos ou retirados de uso.</td></tr></table></div>
+<h2 class="section-title" id="artefato-a15-1-plano-de-monitoramento-dos-ativos">12. Artefato A15.1 — Plano de Monitoramento dos Ativos</h2>
+<h3 id="finalidade">12.1 Finalidade</h3>
+<p>O Plano de Monitoramento dos Ativos define quais ativos serão monitorados, quais métricas serão acompanhadas, quais baselines serão utilizados, quais limiares acionarão alertas, quem será responsável e quais ações devem ser tomadas em caso de desvio.</p>
+<h3 id="estrutura-minima">12.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo monitorado</td><td>Dataset, feature, dashboard, API, modelo, grafo ou fonte.</td></tr><tr><td>Tipo de ativo</td><td>Categoria do ativo.</td></tr><tr><td>Métricas monitoradas</td><td>Métricas associadas ao ativo.</td></tr><tr><td>Baseline</td><td>Valor de referência.</td></tr><tr><td>Limiar</td><td>Valor que aciona alerta.</td></tr><tr><td>Periodicidade</td><td>Frequência de monitoramento.</td></tr><tr><td>Responsável</td><td>Pessoa, equipe ou sistema.</td></tr><tr><td>Severidade</td><td>Critério para classificação de alerta.</td></tr><tr><td>Ação recomendada</td><td>Procedimento em caso de desvio.</td></tr><tr><td>Relação com produtos</td><td>Produtos dependentes do ativo.</td></tr></table></div>
+<h3 id="metricas-associadas">12.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos monitorados;</li>
+<li>taxa de baselines definidos;</li>
+<li>taxa de métricas ativas;</li>
+<li>taxa de falhas detectadas.</li>
+</ul>
+<h3 id="criterios-de-validacao">12.4 Critérios de validação</h3>
+<p>O plano é válido quando ativos críticos possuem métricas, baselines, limiares, responsáveis e ações associadas.</p>
+<h3 id="contribuicao">12.5 Contribuição</h3>
+<p>Esse artefato torna o monitoramento planejado, mensurável e acionável.</p>
+<h2 class="section-title" id="artefato-a15-2-registro-de-baselines">13. Artefato A15.2 — Registro de Baselines</h2>
+<h3 id="finalidade-2">13.1 Finalidade</h3>
+<p>O Registro de Baselines preserva valores de referência para comparação com observações futuras.</p>
+<h3 id="estrutura-minima-2">13.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Ativo associado.</td></tr><tr><td>Métrica</td><td>Métrica de referência.</td></tr><tr><td>Valor baseline</td><td>Valor esperado ou histórico.</td></tr><tr><td>Período de referência</td><td>Janela usada para calcular baseline.</td></tr><tr><td>Método de cálculo</td><td>Média, mediana, distribuição, regra, contrato etc.</td></tr><tr><td>Versão</td><td>Versão do baseline.</td></tr><tr><td>Data de criação</td><td>Momento de definição.</td></tr><tr><td>Responsável</td><td>Pessoa ou processo responsável.</td></tr><tr><td>Limite inferior</td><td>Quando aplicável.</td></tr><tr><td>Limite superior</td><td>Quando aplicável.</td></tr></table></div>
+<h3 id="metricas-associadas-2">13.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de baselines definidos;</li>
+<li>taxa de baselines atualizados;</li>
+<li>taxa de alertas com baseline associado.</li>
+</ul>
+<h3 id="criterios-de-validacao-2">13.4 Critérios de validação</h3>
+<p>O baseline é válido quando possui métrica, período de referência, método de cálculo, versão e responsável.</p>
+<h3 id="contribuicao-2">13.5 Contribuição</h3>
+<p>Esse artefato permite detectar mudanças e drift de forma objetiva.</p>
+<h2 class="section-title" id="artefato-a15-3-painel-de-monitoramento">14. Artefato A15.3 — Painel de Monitoramento</h2>
+<h3 id="finalidade-3">14.1 Finalidade</h3>
+<p>O Painel de Monitoramento consolida visualmente o estado dos ativos analíticos, exibindo métricas, alertas, falhas, atualizações, drift, incidentes e uso.</p>
+<h3 id="estrutura-minima-3">14.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Componente</th><th>Descrição</th></tr><tr><td>Visão geral</td><td>Estado dos ativos críticos.</td></tr><tr><td>Atualização</td><td>Atrasos, periodicidade e latência.</td></tr><tr><td>Qualidade</td><td>Completude, validade, consistência e atualidade.</td></tr><tr><td>Drift</td><td>Data drift, schema drift, feature drift e label drift.</td></tr><tr><td>Incidentes</td><td>Falhas abertas, críticas e resolvidas.</td></tr><tr><td>Uso</td><td>Acessos, reutilização e produtos sem uso.</td></tr><tr><td>Responsáveis</td><td>Equipes associadas a ativos e incidentes.</td></tr><tr><td>Severidade</td><td>Classificação dos alertas.</td></tr></table></div>
+<h3 id="metricas-associadas-3">14.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de métricas ativas;</li>
+<li>taxa de falhas detectadas;</li>
+<li>taxa de incidentes resolvidos;</li>
+<li>tempo médio de detecção.</li>
+</ul>
+<h3 id="criterios-de-validacao-3">14.4 Critérios de validação</h3>
+<p>O painel é válido quando permite acompanhar ativos críticos, identificar alertas e apoiar ações de resposta.</p>
+<h3 id="contribuicao-3">14.5 Contribuição</h3>
+<p>Esse artefato fortalece observabilidade, governança operacional e tomada de decisão técnica.</p>
+<h2 class="section-title" id="artefato-a15-4-registro-de-alertas">15. Artefato A15.4 — Registro de Alertas</h2>
+<h3 id="finalidade-4">15.1 Finalidade</h3>
+<p>O Registro de Alertas documenta <a class="term" href="../conceitos/eventos.html">eventos</a> de monitoramento que indicam desvio, falha, mudança, drift ou risco.</p>
+<h3 id="estrutura-minima-4">15.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>ID do alerta</td><td>Código único.</td></tr><tr><td>Ativo afetado</td><td>Ativo relacionado.</td></tr><tr><td>Métrica</td><td>Métrica que gerou o alerta.</td></tr><tr><td>Valor observado</td><td>Valor atual.</td></tr><tr><td>Baseline</td><td>Valor esperado.</td></tr><tr><td>Limiar</td><td>Regra de disparo.</td></tr><tr><td>Severidade</td><td>Baixa, média, alta, crítica.</td></tr><tr><td>Evidência</td><td>Log, métrica, gráfico ou relatório.</td></tr><tr><td>Causa provável</td><td>Hipótese inicial.</td></tr><tr><td>Impacto</td><td>Produtos ou usuários afetados.</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe.</td></tr><tr><td>Status</td><td>Aberto, em análise, resolvido, aceito.</td></tr></table></div>
+<h3 id="metricas-associadas-4">15.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de alertas com evidência;</li>
+<li>taxa de falhas detectadas;</li>
+<li>tempo médio de resposta;</li>
+<li>taxa de alertas resolvidos.</li>
+</ul>
+<h3 id="criterios-de-validacao-4">15.4 Critérios de validação</h3>
+<p>O alerta é válido quando possui métrica, evidência, severidade, ativo afetado, responsável e status.</p>
+<h3 id="contribuicao-4">15.5 Contribuição</h3>
+<p>Esse artefato transforma variações detectadas em itens rastreáveis de gestão operacional.</p>
+<h2 class="section-title" id="artefato-a15-5-relatorio-de-data-drift">16. Artefato A15.5 — Relatório de Data Drift</h2>
+<h3 id="finalidade-5">16.1 Finalidade</h3>
+<p>O Relatório de Data Drift avalia mudanças estatísticas nos dados de entrada em relação a uma referência.</p>
+<h3 id="estrutura-minima-5">16.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo avaliado</td><td>Dataset ou <a class="term" href="../conceitos/feature-set.html">feature set</a>.</td></tr><tr><td>Atributos avaliados</td><td>Variáveis monitoradas.</td></tr><tr><td>Distribuição de referência</td><td>Período ou versão base.</td></tr><tr><td>Distribuição atual</td><td>Período observado.</td></tr><tr><td>Métrica de drift</td><td>PSI, KS, divergência etc.</td></tr><tr><td>Atributos com drift</td><td>Lista de variáveis afetadas.</td></tr><tr><td>Severidade</td><td>Baixa, média, alta, crítica.</td></tr><tr><td>Interpretação</td><td>Explicação do resultado.</td></tr><tr><td>Recomendação</td><td>Ação sugerida.</td></tr></table></div>
+<h3 id="metricas-associadas-5">16.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de data drift;</li>
+<li>número de atributos com drift;</li>
+<li>índice de estabilidade dos atributos;</li>
+<li>taxa de ativos com drift crítico.</li>
+</ul>
+<h3 id="criterios-de-validacao-5">16.4 Critérios de validação</h3>
+<p>O relatório é válido quando compara distribuições de referência e atual, identifica variáveis afetadas e sugere ações.</p>
+<h3 id="contribuicao-5">16.5 Contribuição</h3>
+<p>Esse artefato apoia estabilidade analítica, modelos preditivos e interpretação temporal dos dados.</p>
+<h2 class="section-title" id="artefato-a15-6-relatorio-de-schema-drift">17. Artefato A15.6 — Relatório de Schema Drift</h2>
+<h3 id="finalidade-6">17.1 Finalidade</h3>
+<p>O Relatório de Schema Drift documenta mudanças estruturais em atributos, tipos, domínios, chaves, categorias ou formatos.</p>
+<h3 id="estrutura-minima-6">17.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo avaliado</td><td>Fonte, dataset, tabela, API ou produto.</td></tr><tr><td>Schema esperado</td><td>Estrutura de referência.</td></tr><tr><td>Schema observado</td><td>Estrutura atual.</td></tr><tr><td>Mudanças detectadas</td><td>Adição, remoção, renomeação, tipo, domínio etc.</td></tr><tr><td>Severidade</td><td>Grau de impacto.</td></tr><tr><td>Produtos afetados</td><td>Dashboards, modelos, APIs, features etc.</td></tr><tr><td>Ação recomendada</td><td>Ajuste, bloqueio, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, comunicação.</td></tr></table></div>
+<h3 id="metricas-associadas-6">17.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de schema drift;</li>
+<li>taxa de mudanças críticas;</li>
+<li>tempo médio de resolução;</li>
+<li>taxa de produtos impactados.</li>
+</ul>
+<h3 id="criterios-de-validacao-6">17.4 Critérios de validação</h3>
+<p>O relatório é válido quando identifica alterações estruturais e seus impactos.</p>
+<h3 id="contribuicao-6">17.5 Contribuição</h3>
+<p>Esse artefato reduz falhas silenciosas causadas por mudanças de estrutura.</p>
+<h2 class="section-title" id="artefato-a15-7-relatorio-de-feature-drift">18. Artefato A15.7 — Relatório de Feature Drift</h2>
+<h3 id="finalidade-7">18.1 Finalidade</h3>
+<p>O Relatório de Feature Drift avalia mudanças em features utilizadas por modelos, dashboards, indicadores ou análises.</p>
+<h3 id="estrutura-minima-7">18.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Feature avaliada</td><td>Nome e versão.</td></tr><tr><td>Feature set</td><td>Conjunto associado.</td></tr><tr><td>Distribuição de referência</td><td>Período ou versão base.</td></tr><tr><td>Distribuição atual</td><td>Período observado.</td></tr><tr><td>Completude</td><td>Valores ausentes ou inválidos.</td></tr><tr><td>Métrica de drift</td><td>Método utilizado.</td></tr><tr><td>Impacto potencial</td><td>Modelo ou produto afetado.</td></tr><tr><td>Recomendação</td><td>Revisar, recalcular, substituir ou monitorar.</td></tr></table></div>
+<h3 id="metricas-associadas-7">18.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de feature drift;</li>
+<li>taxa de features instáveis;</li>
+<li>taxa de features com completude degradada;</li>
+<li>taxa de modelos impactados.</li>
+</ul>
+<h3 id="criterios-de-validacao-7">18.4 Critérios de validação</h3>
+<p>O relatório é válido quando avalia estabilidade, completude, distribuição e impacto das features.</p>
+<h3 id="contribuicao-7">18.5 Contribuição</h3>
+<p>Esse artefato apoia feature store, MLOps, qualidade de modelos e reprodutibilidade.</p>
+<h2 class="section-title" id="artefato-a15-8-relatorio-de-label-e-concept-drift">19. Artefato A15.8 — Relatório de Label e Concept Drift</h2>
+<h3 id="finalidade-8">19.1 Finalidade</h3>
+<p>O Relatório de Label e Concept Drift avalia mudanças nos rótulos, classes, desfechos e na relação entre atributos de entrada e variável-alvo.</p>
+<h3 id="estrutura-minima-8">19.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Rótulo avaliado</td><td>Variável-alvo ou desfecho.</td></tr><tr><td>Distribuição de referência</td><td>Distribuição histórica.</td></tr><tr><td>Distribuição atual</td><td>Distribuição observada.</td></tr><tr><td>Mudança de regra</td><td>Se houve alteração semântica ou operacional.</td></tr><tr><td>Métrica de drift</td><td>Método utilizado.</td></tr><tr><td>Evidência de concept drift</td><td>Mudança na relação entrada-saída.</td></tr><tr><td>Modelos afetados</td><td>Modelos dependentes do rótulo.</td></tr><tr><td>Recomendação</td><td>Revisar rótulo, retreinar modelo, ajustar regra.</td></tr></table></div>
+<h3 id="metricas-associadas-8">19.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de label drift;</li>
+<li>taxa de concept drift;</li>
+<li>índice de qualidade de rótulos;</li>
+<li>taxa de modelos com degradação.</li>
+</ul>
+<h3 id="criterios-de-validacao-8">19.4 Critérios de validação</h3>
+<p>O relatório é válido quando identifica mudanças relevantes nos rótulos ou no conceito modelado.</p>
+<h3 id="contribuicao-8">19.5 Contribuição</h3>
+<p>Esse artefato fortalece Label Quality, MLOps e avaliação contínua de modelos.</p>
+<h2 class="section-title" id="artefato-a15-9-registro-de-incidentes-e-acoes-corretivas">20. Artefato A15.9 — Registro de Incidentes e Ações Corretivas</h2>
+<h3 id="finalidade-9">20.1 Finalidade</h3>
+<p>O Registro de Incidentes e Ações Corretivas documenta problemas detectados, impactos, causas prováveis, responsáveis, decisões e soluções aplicadas.</p>
+<h3 id="estrutura-minima-9">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>ID do incidente</td><td>Código único.</td></tr><tr><td>Alerta associado</td><td>Referência ao alerta.</td></tr><tr><td>Ativo afetado</td><td>Dataset, pipeline, feature, modelo, dashboard etc.</td></tr><tr><td>Tipo de incidente</td><td>Falha, drift, atraso, obsolescência, qualidade etc.</td></tr><tr><td>Causa provável</td><td>Hipótese ou diagnóstico.</td></tr><tr><td>Impacto</td><td>Produtos, usuários ou decisões afetadas.</td></tr><tr><td>Ação corretiva</td><td>Procedimento realizado.</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe.</td></tr><tr><td>Prazo</td><td>Data esperada de resolução.</td></tr><tr><td>Status</td><td>Aberto, resolvido, aceito, recorrente.</td></tr></table></div>
+<h3 id="metricas-associadas-9">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de incidentes resolvidos;</li>
+<li>tempo médio de resolução;</li>
+<li>taxa de recorrência de incidentes;</li>
+<li>taxa de ações corretivas concluídas.</li>
+</ul>
+<h3 id="criterios-de-validacao-9">20.4 Critérios de validação</h3>
+<p>O registro é válido quando permite acompanhar o ciclo completo do incidente, da detecção à resolução.</p>
+<h3 id="contribuicao-9">20.5 Contribuição</h3>
+<p>Esse artefato permite gestão operacional, melhoria contínua e redução de <a class="term" href="../problemas/divida-de-dados.html">dívida de dados</a>.</p>
+<h2 class="section-title" id="artefato-a15-10-relatorio-de-evolucao-dos-ativos">21. Artefato A15.10 — Relatório de Evolução dos Ativos</h2>
+<h3 id="finalidade-10">21.1 Finalidade</h3>
+<p>O Relatório de Evolução dos Ativos documenta como fontes, datasets, features, modelos, dashboards, APIs, grafos e produtos evoluíram ao longo do tempo.</p>
+<h3 id="estrutura-minima-10">21.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Identificador.</td></tr><tr><td>Período analisado</td><td>Janela temporal.</td></tr><tr><td>Mudanças observadas</td><td>Volume, schema, qualidade, uso, drift etc.</td></tr><tr><td>Tendências</td><td>Crescimento, queda, estabilidade ou obsolescência.</td></tr><tr><td>Incidentes relacionados</td><td>Falhas ou alertas associados.</td></tr><tr><td>Uso</td><td>Acessos, reutilização, abandono.</td></tr><tr><td>Recomendações</td><td>Manter, revisar, atualizar, depreciar ou descontinuar.</td></tr></table></div>
+<h3 id="metricas-associadas-10">21.3 Métricas associadas</h3>
+<ul class="list">
+<li>índice de evolução controlada dos ativos;</li>
+<li>taxa de produtos obsoletos;</li>
+<li>taxa de ativos atualizados;</li>
+<li>taxa de reutilização.</li>
+</ul>
+<h3 id="criterios-de-validacao-10">21.4 Critérios de validação</h3>
+<p>O relatório é válido quando apresenta histórico, interpretação e recomendações sobre a evolução dos ativos.</p>
+<h3 id="contribuicao-10">21.5 Contribuição</h3>
+<p>Esse artefato apoia governança, curadoria, planejamento e sustentabilidade do ecossistema.</p>
+<h2 class="section-title" id="artefato-a15-11-mapa-de-impacto-de-mudancas">22. Artefato A15.11 — Mapa de Impacto de Mudanças</h2>
+<h3 id="finalidade-11">22.1 Finalidade</h3>
+<p>O Mapa de Impacto de Mudanças identifica quais ativos, produtos, modelos, features, dashboards, APIs e usuários são afetados por determinada alteração.</p>
+<h3 id="estrutura-minima-11">22.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Mudança detectada</td><td>Drift, falha, schema, atraso etc.</td></tr><tr><td>Ativo de origem</td><td>Fonte ou ativo alterado.</td></tr><tr><td>Ativos dependentes</td><td>Datasets, features, modelos ou produtos.</td></tr><tr><td>Tipo de dependência</td><td>Direta ou indireta.</td></tr><tr><td>Severidade</td><td>Grau de impacto.</td></tr><tr><td>Usuários afetados</td><td>Consumidores ou áreas impactadas.</td></tr><tr><td>Ação recomendada</td><td>Revisão, bloqueio, comunicação, reprocessamento.</td></tr></table></div>
+<h3 id="metricas-associadas-11">22.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos com impacto rastreável;</li>
+<li>número de produtos impactados;</li>
+<li>tempo médio de análise de impacto;</li>
+<li>taxa de mudanças comunicadas.</li>
+</ul>
+<h3 id="criterios-de-validacao-11">22.4 Critérios de validação</h3>
+<p>O mapa é válido quando permite rastrear dependências e estimar impacto de mudanças.</p>
+<h3 id="contribuicao-11">22.5 Contribuição</h3>
+<p>Esse artefato conecta monitoramento com lineage e governança de mudanças.</p>
+<h2 class="section-title" id="artefato-a15-12-registro-de-obsolescencia-e-descontinuacao">23. Artefato A15.12 — Registro de Obsolescência e Descontinuação</h2>
+<h3 id="finalidade-12">23.1 Finalidade</h3>
+<p>O Registro de Obsolescência e Descontinuação documenta ativos que se tornaram desatualizados, redundantes, pouco utilizados, substituídos ou inadequados.</p>
+<h3 id="estrutura-minima-12">23.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Identificador.</td></tr><tr><td>Tipo</td><td>Dataset, dashboard, API, feature, modelo etc.</td></tr><tr><td>Motivo</td><td>Baixo uso, substituição, desatualização, risco, <a class="term" href="../problemas/duplicidade.html">duplicidade</a>.</td></tr><tr><td>Produto substituto</td><td>Quando aplicável.</td></tr><tr><td>Data de marcação</td><td>Data de obsolescência.</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe.</td></tr><tr><td>Status</td><td>Ativo, depreciado, obsoleto, descontinuado.</td></tr><tr><td>Comunicação</td><td>Usuários notificados.</td></tr><tr><td>Preservação histórica</td><td>Se deve ser mantido para auditoria.</td></tr></table></div>
+<h3 id="metricas-associadas-12">23.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de produtos obsoletos;</li>
+<li>taxa de ativos depreciados;</li>
+<li>taxa de ativos substituídos;</li>
+<li>taxa de ativos sem uso.</li>
+</ul>
+<h3 id="criterios-de-validacao-12">23.4 Critérios de validação</h3>
+<p>O registro é válido quando ativos obsoletos são identificados, justificados e tratados de forma controlada.</p>
+<h3 id="contribuicao-12">23.5 Contribuição</h3>
+<p>Esse artefato reduz data overload, data debt e risco de uso de produtos desatualizados.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">24. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Ativos analíticos, logs, metadados, baselines, contratos, versões, schemas, métricas de qualidade, features, rótulos, modelos, grafos, produtos, APIs, dashboards e registros de uso.</td></tr><tr><td>Processamento</td><td>Definição de ativos críticos, coleta de métricas, comparação com baselines, detecção de drift, geração de alertas, análise de impacto, registro de incidentes e recomendação de ações.</td></tr><tr><td>Artefatos</td><td>Plano de monitoramento, baselines, painel, alertas, relatórios de drift, incidentes, mapa de impacto, relatório de evolução e registro de obsolescência.</td></tr><tr><td>Métricas</td><td>TAM, TBD, TMA, TACP, LMA, TFD, TFS, TDD, TSD, TFDri, TLD, TCD, TRD, TPO, TIR, TMD, TMR e IECA.</td></tr><tr><td>Saídas</td><td>Alertas, relatórios de drift, incidentes, recomendações, ações corretivas, registros de evolução, produtos depreciados e evidências para governança, DataOps, MLOps e agentes inteligentes.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">25. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 15 pode ser considerado adequadamente implementado quando:</p>
+<ol class="steps">
+<li>ativos críticos estão identificados;</li>
+<li>ativos críticos possuem métricas de monitoramento definidas;</li>
+<li>baselines e limiares estão documentados;</li>
+<li>métricas são coletadas periodicamente ou continuamente;</li>
+<li>falhas de atualização são detectadas;</li>
+<li>atrasos e latências são monitorados;</li>
+<li>schema drift é identificado e registrado;</li>
+<li>data drift é avaliado para atributos relevantes;</li>
+<li>feature drift é monitorado para features críticas;</li>
+<li>label drift é monitorado para variáveis-alvo relevantes;</li>
+<li>concept drift é avaliado em modelos em uso;</li>
+<li>grafos e grafos temporais possuem métricas estruturais acompanhadas quando aplicável;</li>
+<li>alertas possuem evidências e severidade;</li>
+<li>incidentes são registrados e acompanhados;</li>
+<li>lineage permite identificar produtos impactados;</li>
+<li>ações corretivas são documentadas;</li>
+<li>ativos obsoletos ou sem uso são sinalizados;</li>
+<li>agentes inteligentes podem consultar registros para explicar alertas e recomendações;</li>
+<li>a evolução dos ativos pode ser analisada historicamente.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-do-modelo-de-referencia">26. Relação com os demais módulos do modelo de referência</h2>
+<p>O Módulo 15 se relaciona com todos os módulos do UnespDataLens-RM.</p>
+<p>Com o Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, acompanha disponibilidade, periodicidade, cobertura e mudanças das fontes.</p>
+<p>Com o Módulo 2 — Extração, Ingestão e Armazenamento Bruto, monitora falhas de ingestão, logs, volume, latência, janelas temporais, snapshots e eventos.</p>
+<p>Com o Módulo 3 — Integração e Harmonização, acompanha taxa de pareamento, conflitos, chaves, integração e estabilidade entre fontes.</p>
+<p>Com o Módulo 4 — Transformação, Limpeza e Enriquecimento, monitora perdas, transformações, atributos derivados, mudanças de distribuição e efeitos de regras.</p>
+<p>Com o Módulo 5 — Qualidade e Validação de Dados, utiliza métricas de completude, validade, consistência, <a class="term" href="../metricas/unicidade.html">unicidade</a>, integridade e atualidade.</p>
+<p>Com o Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, acompanha mudanças em grupos, representatividade, fairness e distribuição de classes.</p>
+<p>Com o Módulo 7 — Armazenamento Analítico, monitora disponibilidade, atualização, crescimento, particionamento, desempenho e integridade dos ativos persistidos.</p>
+<p>Com o Módulo 8 — Disponibilização e Consumo Analítico, acompanha uso, atualização, obsolescência e disponibilidade de dashboards, APIs e produtos.</p>
+<p>Com o Módulo 9 — Metadados, Catálogo e Semântica dos Dados, utiliza metadados para contextualizar alertas e atualizar status dos ativos.</p>
+<p>Com o Módulo 10 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, fornece evidências para auditoria, conformidade, acesso e riscos.</p>
+<p>Com o Módulo 11 — Proveniência, Linhagem e Rastreabilidade, utiliza lineage para análise de impacto.</p>
+<p>Com o Módulo 12 — Versionamento e Reprodutibilidade, compara versões, snapshots, schemas e execuções.</p>
+<p>Com o Módulo 13 — Representações Analíticas, monitora representações tabulares, temporais, eventos, grafos e grafos temporais.</p>
+<p>Com o Módulo 14 — <a class="term" href="../conceitos/feature-engineering.html">Feature Engineering</a> e Feature Store, acompanha estabilidade, drift e uso de features.</p>
+<p>Com o Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline, fornece alertas, incidentes, métricas e explicações que podem ser consultados por agentes.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">27. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, o Módulo 15 pode monitorar bases de matrícula, histórico acadêmico, notas, frequência, interações em ambiente virtual, rótulos de evasão, features educacionais, dashboards institucionais e modelos preditivos.</p>
+<p>Por exemplo, se a base de interações do ambiente virtual apresentar queda abrupta no volume de eventos em determinado período, o monitoramento pode gerar um alerta, comparar o volume atual com o baseline histórico, verificar a janela temporal da ingestão, consultar logs do Módulo 2, identificar produtos afetados por lineage e recomendar reprocessamento ou revisão da fonte.</p>
+<p>Outro exemplo ocorre quando a distribuição do rótulo “evasão” muda após alteração administrativa na regra de classificação. Nesse caso, o módulo pode detectar label drift, registrar a mudança, indicar impacto em modelos preditivos e recomendar revisão da regra de rotulagem ou retreinamento do modelo.</p>
+<p>Também é possível monitorar grafos temporais de interação entre estudantes e atividades, acompanhando mudanças de centralidade, isolamento, densidade e persistência de relações ao longo do semestre.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">28. Exemplo de aplicação em políticas públicas</h2>
+<p>Em políticas públicas, o Módulo 15 pode monitorar bases de atendimento, saúde, educação, assistência social, território, indicadores socioeconômicos, dashboards territoriais, APIs e modelos de priorização.</p>
+<p>Por exemplo, se uma secretaria deixar de enviar dados mensais de atendimento, o monitoramento pode identificar ausência de atualização, gerar alerta, registrar incidente, consultar contratos de dados, identificar indicadores e dashboards afetados e recomendar acionamento do responsável pela fonte.</p>
+<p>Outro exemplo ocorre quando uma categoria de atendimento muda de nome ou deixa de existir. O módulo pode detectar schema drift ou semantic drift, indicar produtos impactados, acionar curadoria semântica e recomendar atualização das regras de harmonização.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">29. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição técnico-científica do Módulo 15 está em formalizar o monitoramento contínuo dos ativos analíticos como parte essencial da Engenharia Analítica de Dados.</p>
+<p>Em vez de considerar que o pipeline termina na disponibilização dos produtos, o UnespDataLens-RM reconhece que dados, features, modelos, grafos, dashboards e APIs continuam evoluindo após sua publicação. Portanto, precisam ser acompanhados, avaliados, explicados, corrigidos, atualizados ou descontinuados ao longo do tempo.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>detectar falhas silenciosas;</li>
+<li>monitorar <a class="term" href="../conceitos/dados-temporais.html">dados temporais</a>, eventos e fluxos dinâmicos;</li>
+<li>acompanhar data drift, schema drift, feature drift, label drift e concept drift;</li>
+<li>avaliar evolução de grafos e grafos temporais;</li>
+<li>reduzir <a class="term" href="../problemas/obsolescencia-de-produtos.html">obsolescência de produtos</a>;</li>
+<li>apoiar DataOps e MLOps;</li>
+<li>fortalecer observabilidade e governança;</li>
+<li>aumentar confiança nos produtos analíticos;</li>
+<li>reduzir data debt e data overload;</li>
+<li>fornecer evidências para auditoria e tomada de decisão;</li>
+<li>permitir resposta rápida a incidentes;</li>
+<li>sustentar evolução controlada do ecossistema analítico.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">30. Síntese do módulo</h2>
+<p>O Módulo Transversal 15 — Monitoramento, Drift e Evolução dos Ativos acompanha a saúde, estabilidade, atualização, uso, qualidade e evolução dos ativos analíticos do UnespDataLens-RM.</p>
+<p>Sua importância está em reconhecer que dados, pipelines, features, rótulos, grafos, modelos, dashboards e produtos analíticos mudam ao longo do tempo. Essas mudanças podem comprometer análises, indicadores, modelos e decisões se não forem detectadas, documentadas e tratadas.</p>
+<p>Ao incorporar métricas, baselines, alertas, relatórios de drift, registros de incidentes, análise de impacto, monitoramento de uso, controle de obsolescência e integração com DataOps, MLOps e agentes inteligentes, o Módulo 15 fortalece a capacidade do UnespDataLens-RM de manter ativos analíticos confiáveis, governados, rastreáveis, evolutivos e adequados à tomada de decisão baseada em evidências.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

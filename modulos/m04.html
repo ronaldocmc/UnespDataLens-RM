@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo 4 — Transformação, Limpeza e Enriquecimento tem como finalidade preparar os dados integrados e harmonizados para uso analítico, por meio da aplicação controlada, documentada e rastreável de procedimentos de padronização, correção, tratamento de inconsistências, criação de atributos derivados, normalização, enriquecimento contextual e adequação…">
+  <title>Módulo 4 — Transformação, Limpeza e Enriquecimento · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-4-transformacao-limpeza-e-enriquecimento"></span><section class="hero">
+<span class="badge">Módulo 04</span>
+<h1>Módulo 4 — Transformação, Limpeza e Enriquecimento</h1>
+<p>O Módulo 4 — Transformação, Limpeza e Enriquecimento tem como finalidade preparar os dados integrados e harmonizados para uso analítico, por meio da aplicação controlada, documentada e rastreável de procedimentos de padronização, correção, tratamento de inconsistências, criação de atributos derivados, normalização, enriquecimento contextual e adequação…</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 27 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-algoritmos-aplicaveis">Técnicas, métodos e algoritmos aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a4-1-plano-de-transformacao-e-limpeza">Artefato A4.1 — Plano de Transformação e Limpeza</a><a href="#artefato-a4-2-perfil-inicial-de-qualidade">Artefato A4.2 — Perfil Inicial de Qualidade</a><a href="#artefato-a4-3-registro-de-regras-de-transformacao">Artefato A4.3 — Registro de Regras de Transformação</a><a href="#artefato-a4-4-registro-de-tratamento-de-ausentes">Artefato A4.4 — Registro de Tratamento de Ausentes</a><a href="#artefato-a4-5-registro-de-tratamento-de-duplicidades">Artefato A4.5 — Registro de Tratamento de Duplicidades</a><a href="#artefato-a4-6-registro-de-outliers-e-valores-fora-de-dominio">Artefato A4.6 — Registro de Outliers e Valores Fora de Domínio</a><a href="#artefato-a4-7-catalogo-de-atributos-derivados">Artefato A4.7 — Catálogo de Atributos Derivados</a><a href="#artefato-a4-8-dataset-tratado-e-enriquecido">Artefato A4.8 — Dataset Tratado e Enriquecido</a><a href="#artefato-a4-9-manifesto-de-transformacao">Artefato A4.9 — Manifesto de Transformação</a><a href="#artefato-a4-10-relatorio-de-impacto-das-transformacoes">Artefato A4.10 — Relatório de Impacto das Transformações</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-os-demais-modulos-do-modelo-de-referencia">Relação com os demais módulos do modelo de referência</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo 4 — Transformação, Limpeza e Enriquecimento tem como finalidade preparar os dados integrados e harmonizados para uso analítico, por meio da aplicação controlada, documentada e rastreável de procedimentos de padronização, correção, tratamento de <a class="term" href="../problemas/inconsistencias.html">inconsistências</a>, criação de atributos derivados, <a class="term" href="../metodos/normalizacao.html">normalização</a>, enriquecimento contextual e adequação estrutural dos dados.</p>
+<p>Esse módulo recebe como entrada os datasets brutos, integrados ou parcialmente harmonizados produzidos pelos módulos anteriores, especialmente o Módulo 2 — Extração, Ingestão e Armazenamento Bruto e o Módulo 3 — Integração e Harmonização. Sua função é transformar esses dados em estruturas mais adequadas para análise exploratória, construção de indicadores, modelagem estatística, aprendizagem de máquina, mineração de dados, representação em grafos, dashboards e suporte à decisão.</p>
+<p>No contexto do UnespDataLens-RM, a transformação e a limpeza de dados não são tratadas como tarefas meramente operacionais ou pontuais. Elas são concebidas como processos técnico-metodológicos formais, compostos por regras explícitas, parâmetros, registros de execução, justificativas, métricas de impacto, documentação das alterações e possibilidade de reprocessamento. Dessa forma, cada transformação aplicada aos dados deve ser compreensível, auditável, reproduzível e associada aos artefatos de origem.</p>
+<p>A limpeza dos dados envolve identificar e tratar problemas como valores ausentes, duplicidades, inconsistências de formato, outliers, categorias inválidas, valores fora de domínio, registros contraditórios, erros de digitação, problemas de codificação, violações de regras de negócio e incompatibilidades estruturais. O enriquecimento, por sua vez, envolve a criação de novos atributos, agregações, indicadores, variáveis temporais, atributos territoriais, atributos semânticos, variáveis relacionais e informações derivadas de outras fontes ou regras de negócio.</p>
+<p>Assim, o Módulo 4 é essencial para transformar dados apenas integrados em dados analiticamente utilizáveis, preservando a <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a> entre os dados originais, as regras aplicadas e os ativos resultantes.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 4 é transformar, limpar, padronizar e enriquecer dados brutos ou integrados, produzindo datasets tratados, documentados, rastreáveis e adequados ao uso analítico, por meio de regras, procedimentos, métricas e artefatos que permitam avaliar o impacto das transformações realizadas.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 4:</p>
+<ol class="steps">
+<li>identificar problemas estruturais, sintáticos, semânticos e operacionais nos dados integrados ou brutos;</li>
+<li>aplicar procedimentos de limpeza para tratamento de valores ausentes, duplicidades, inconsistências, formatos inválidos, outliers e valores fora de domínio;</li>
+<li>padronizar atributos, tipos de dados, formatos de datas, códigos, categorias, unidades de medida, escalas e textos;</li>
+<li>documentar todas as transformações aplicadas, incluindo regra, parâmetro, justificativa, fonte de origem, atributo afetado e impacto produzido;</li>
+<li>criar atributos derivados, agregações, indicadores, variáveis temporais, variáveis categóricas e atributos contextuais;</li>
+<li>enriquecer datasets com informações complementares, como dados territoriais, temporais, socioeconômicos, educacionais, institucionais ou semânticos;</li>
+<li>preservar a rastreabilidade entre os dados originais, os dados transformados e as regras aplicadas;</li>
+<li>avaliar o impacto das transformações por meio de métricas de <a class="term" href="../metricas/completude.html">completude</a>, <a class="term" href="../metricas/consistencia.html">consistência</a>, <a class="term" href="../problemas/duplicidade.html">duplicidade</a>, <a class="term" href="../metricas/validade.html">validade</a>, alteração de distribuição, perda de registros e ganho informacional;</li>
+<li>produzir datasets tratados e documentados para os módulos posteriores de qualidade, <a class="term" href="../conceitos/desbalanceamento.html">desbalanceamento</a>, <a class="term" href="../conceitos/metadados.html">metadados</a>, governança, lineage, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, representação analítica, <a class="term" href="../conceitos/feature-engineering.html">feature engineering</a> e disponibilização.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>O Módulo 4 está fundamentado na compreensão de que os dados raramente estão prontos para análise após a ingestão ou integração. Mesmo quando as fontes são corretamente identificadas e os datasets são tecnicamente integrados, podem persistir problemas que comprometem a validade dos resultados analíticos.</p>
+<p>Esses problemas incluem atributos incompletos, inconsistências entre campos, formatos heterogêneos, valores duplicados, categorias ambíguas, registros conflitantes, erros de preenchimento, variações textuais, unidades incompatíveis, outliers, registros inválidos e ausência de variáveis derivadas necessárias à análise.</p>
+<p>A transformação de dados corresponde ao conjunto de operações que modificam estrutura, formato, tipo, escala, <a class="term" href="../conceitos/granularidade.html">granularidade</a> ou representação dos dados para torná-los adequados a determinado uso analítico. A limpeza de dados corresponde ao conjunto de procedimentos destinados a corrigir, remover, sinalizar ou mitigar problemas de qualidade. O enriquecimento corresponde à incorporação ou derivação de novas informações que aumentam o valor analítico dos dados.</p>
+<p>No UnespDataLens-RM, essas três dimensões são tratadas de forma integrada:</p>
+<ul class="list">
+<li>transformação, para adequar estrutura e formato;</li>
+<li>limpeza, para reduzir erros e inconsistências;</li>
+<li>enriquecimento, para ampliar o valor analítico e contextual dos dados.</li>
+</ul>
+<p>À luz da Design Science Research, o Módulo 4 formaliza artefatos que permitem transformar atividades normalmente informais de preparação de dados em processos documentados, avaliáveis e reprodutíveis. Cada transformação deixa de ser uma decisão implícita em scripts ou notebooks e passa a ser registrada como uma regra formal, com justificativa, escopo, parâmetro, impacto e evidência de execução.</p>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">5. Formalização sintética do módulo</h2>
+<p>O Módulo 4 pode ser compreendido como um processo de transformação de datasets brutos ou integrados em datasets tratados e enriquecidos.</p>
+<p>Considerando o conjunto de datasets brutos ou integrados:</p>
+<div class="formula">D = {d₁, d₂, ..., dₙ}</div>
+<p>o módulo aplica um conjunto de transformações:</p>
+<div class="formula">T = {t₁, t₂, ..., tₖ}</div>
+<p>em que cada transformação tᵢ representa uma operação aplicada a um ou mais atributos, registros ou datasets.</p>
+<p>Cada transformação pode ser descrita por:</p>
+<div class="formula">tᵢ = {id, tipo, atributo_alvo, regra, parâmetro, justificativa, entrada, saída, impacto, responsável, versão}</div>
+<p>O resultado do módulo é um conjunto de datasets tratados:</p>
+<div class="formula">C = {c₁, c₂, ..., cₘ}</div>
+<p>em que cada cⱼ representa um dataset limpo, padronizado ou enriquecido.</p>
+<p>Cada <a class="term" href="../artefatos/dataset-tratado.html">dataset tratado</a> deve ser associado a metadados de transformação:</p>
+<div class="formula">cⱼ = {id, dataset_origem, transformações_aplicadas, atributos_afetados, atributos_criados, registros_afetados, métricas_antes, métricas_depois, versão, lineage}</div>
+<p>Dessa forma, a transformação deixa de ser uma operação invisível e passa a ser um processo rastreável, mensurável e reprodutível.</p>
+<h2 class="section-title" id="entradas-do-modulo">6. Entradas do módulo</h2>
+<p>As entradas do Módulo 4 incluem datasets brutos, datasets integrados, metadados, regras de negócio, resultados de profiling e artefatos produzidos pelos módulos anteriores.</p>
+<p>As principais entradas são:</p>
+<ul class="list">
+<li>datasets brutos do Módulo 2;</li>
+<li>datasets integrados e harmonizados do Módulo 3;</li>
+<li><a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a>;</li>
+<li><a class="term" href="../artefatos/dicionario-preliminar-de-dados.html">dicionário preliminar de dados</a>;</li>
+<li><a class="term" href="../artefatos/matriz-de-relacionamento-entre-fontes.html">matriz de relacionamento entre fontes</a>;</li>
+<li>tabelas de mapeamento de atributos;</li>
+<li>tabelas de equivalência semântica;</li>
+<li><a class="term" href="../artefatos/registro-de-granularidade.html">registro de granularidade</a>;</li>
+<li><a class="term" href="../artefatos/classificacao-de-sensibilidade.html">classificação de sensibilidade</a>;</li>
+<li>manifestos de ingestão;</li>
+<li>manifestos de integração;</li>
+<li><a class="term" href="../conceitos/logs.html">logs</a> de execução;</li>
+<li>registros de conflitos;</li>
+<li>regras de negócio;</li>
+<li>domínios de valores;</li>
+<li>vocabulários controlados;</li>
+<li>parâmetros de transformação;</li>
+<li>metadados de qualidade preliminar;</li>
+<li>documentação institucional;</li>
+<li>conhecimento de especialistas do domínio.</li>
+</ul>
+<h2 class="section-title" id="processamento">7. Processamento</h2>
+<p>O processamento do Módulo 4 envolve atividades de diagnóstico, definição de regras, execução das transformações, registro de alterações, cálculo de métricas antes/depois e geração de datasets tratados.</p>
+<h3 id="diagnostico-inicial-dos-dados">7.1 Diagnóstico inicial dos dados</h3>
+<p>A primeira atividade consiste em analisar os datasets recebidos para identificar problemas de qualidade, inconsistências, lacunas, formatos divergentes, tipos incompatíveis, duplicidades, outliers, categorias inválidas e atributos que exigem padronização.</p>
+<p>Esse diagnóstico pode ser realizado por <a class="term" href="../metodos/data-profiling.html">data profiling</a>, inspeção estatística, validação de schema, análise de domínios, análise de frequência, verificação de regras de negócio e comparação com dicionários ou glossários.</p>
+<h3 id="definicao-das-regras-de-transformacao">7.2 Definição das regras de transformação</h3>
+<p>A segunda atividade consiste em definir as regras que serão aplicadas aos dados. Cada regra deve indicar o atributo ou conjunto de atributos afetados, o tipo de transformação, a justificativa, os parâmetros, o escopo, a condição de aplicação e o resultado esperado.</p>
+<p>Exemplos de regras incluem padronizar datas para formato ISO, converter categorias textuais para códigos, transformar valores monetários, normalizar textos, remover espaços, corrigir encoding, agrupar categorias raras, imputar valores ausentes ou criar variáveis derivadas.</p>
+<h3 id="tratamento-de-valores-ausentes">7.3 Tratamento de valores ausentes</h3>
+<p>A terceira atividade consiste em identificar e tratar valores ausentes. O tratamento pode envolver manutenção do valor ausente, <a class="term" href="../metodos/imputacao.html">imputação</a>, exclusão controlada, criação de categoria específica, sinalização por variável indicadora ou complementação a partir de outra fonte.</p>
+<p>A escolha da estratégia deve considerar o tipo do atributo, o percentual de ausência, o mecanismo provável de ausência, a finalidade analítica, o risco de <a class="term" href="../conceitos/vies.html">viés</a> e a possibilidade de uso posterior em modelos.</p>
+<h3 id="tratamento-de-duplicidades">7.4 Tratamento de duplicidades</h3>
+<p>A quarta atividade consiste em identificar registros duplicados ou potencialmente duplicados. O tratamento pode envolver remoção, consolidação, seleção do registro mais recente, combinação de informações, priorização de fonte ou manutenção documentada quando a duplicidade for legítima.</p>
+<p>Essa etapa deve preservar evidências da decisão tomada, evitando perda de informação sem justificativa.</p>
+<h3 id="padronizacao-de-formatos-e-tipos">7.5 Padronização de formatos e tipos</h3>
+<p>A quinta atividade consiste em padronizar formatos de datas, números, textos, códigos, categorias, unidades de medida e tipos de dados. Essa padronização garante que os dados possam ser processados de maneira consistente em módulos posteriores.</p>
+<h3 id="tratamento-de-outliers-e-valores-fora-de-dominio">7.6 <a class="term" href="../metodos/tratamento-de-outliers.html">Tratamento de outliers</a> e valores fora de domínio</h3>
+<p>A sexta atividade consiste em identificar valores extremos, improváveis ou fora do domínio esperado. Nem todo outlier deve ser removido, pois valores extremos podem ser relevantes dependendo do domínio. O módulo deve classificar os outliers como erro, evento raro, valor legítimo ou caso a ser revisado.</p>
+<p>As ações possíveis incluem manutenção, correção, winsorização, truncamento, remoção controlada, transformação de escala ou sinalização por atributo auxiliar.</p>
+<h3 id="criacao-de-atributos-derivados">7.7 Criação de atributos derivados</h3>
+<p>A sétima atividade consiste em criar novos atributos a partir dos dados existentes. Esses atributos podem representar indicadores, contagens, proporções, médias, agregações temporais, variáveis categorizadas, variáveis binárias, faixas, indicadores territoriais, métricas relacionais ou atributos semânticos.</p>
+<p>A criação de atributos derivados deve ser registrada com fórmula, regra, fonte de origem, granularidade e justificativa.</p>
+<h3 id="enriquecimento-dos-dados">7.8 Enriquecimento dos dados</h3>
+<p>A oitava atividade consiste em incorporar informações adicionais ao dataset, aumentando seu valor analítico. O enriquecimento pode ocorrer por integração com bases externas, agregação de indicadores contextuais, incorporação de dados territoriais, construção de atributos temporais, associação a classificações institucionais ou vinculação a conceitos semânticos.</p>
+<h3 id="registro-das-transformacoes">7.9 Registro das transformações</h3>
+<p>Toda transformação deve ser registrada em artefatos específicos. O registro deve indicar o que foi alterado, por que foi alterado, qual regra foi aplicada, quais atributos foram afetados, quantos registros foram impactados, quais métricas foram modificadas e qual versão do dataset resultante foi gerada.</p>
+<h3 id="avaliacao-do-impacto-das-transformacoes">7.10 Avaliação do impacto das transformações</h3>
+<p>Após a execução, o módulo deve comparar métricas antes e depois da transformação. Essa comparação permite avaliar se houve melhoria na completude, redução de duplicidades, aumento de validade, redução de inconsistências, alteração de distribuição ou perda significativa de registros.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-algoritmos-aplicaveis">8. Técnicas, métodos e algoritmos aplicáveis</h2>
+<p>O Módulo 4 pode empregar diferentes técnicas, métodos e algoritmos para transformação, limpeza e enriquecimento.</p>
+<p>Entre as técnicas de limpeza, destacam-se:</p>
+<ul class="list">
+<li>tratamento de valores ausentes;</li>
+<li>remoção ou consolidação de duplicidades;</li>
+<li>padronização de categorias;</li>
+<li>correção de formatos;</li>
+<li>validação de domínios;</li>
+<li>normalização textual;</li>
+<li>correção de encoding;</li>
+<li>detecção de inconsistências;</li>
+<li>tratamento de outliers;</li>
+<li>validação de regras de negócio;</li>
+<li>sinalização de registros suspeitos.</li>
+</ul>
+<p>Entre as técnicas de transformação, podem ser utilizadas:</p>
+<ul class="list">
+<li>conversão de tipos;</li>
+<li>normalização e padronização;</li>
+<li>discretização;</li>
+<li>binarização;</li>
+<li>codificação de variáveis categóricas;</li>
+<li>agregação;</li>
+<li>desagregação controlada;</li>
+<li>transformação temporal;</li>
+<li>criação de janelas móveis;</li>
+<li>cálculo de indicadores;</li>
+<li>criação de variáveis derivadas;</li>
+<li>transformação logarítmica;</li>
+<li>escalonamento;</li>
+<li>redução de dimensionalidade, quando aplicável.</li>
+</ul>
+<p>Entre as técnicas de enriquecimento, destacam-se:</p>
+<ul class="list">
+<li>associação com dados territoriais;</li>
+<li>incorporação de indicadores socioeconômicos;</li>
+<li>enriquecimento temporal;</li>
+<li>vinculação a dados externos;</li>
+<li>criação de métricas relacionais;</li>
+<li>construção de atributos por grupo;</li>
+<li>enriquecimento semântico;</li>
+<li>associação a glossários, taxonomias ou categorias padronizadas;</li>
+<li>derivação de indicadores a partir de regras de negócio.</li>
+</ul>
+<p>Entre os algoritmos e métodos computacionais aplicáveis, destacam-se:</p>
+<ul class="list">
+<li>imputação por média, mediana, moda ou valor constante;</li>
+<li>imputação por KNN;</li>
+<li>imputação por modelos supervisionados;</li>
+<li>detecção de outliers por z-score;</li>
+<li>detecção de outliers por IQR;</li>
+<li>Isolation Forest;</li>
+<li>Local Outlier Factor;</li>
+<li>DBSCAN;</li>
+<li><a class="term" href="../metodos/deduplicacao.html">deduplicação</a> por regras;</li>
+<li>deduplicação por similaridade;</li>
+<li>distância de Levenshtein;</li>
+<li>similaridade Jaro-Winkler;</li>
+<li>expressões regulares;</li>
+<li>normalização Min-Max;</li>
+<li>padronização z-score;</li>
+<li>one-hot encoding;</li>
+<li>ordinal encoding;</li>
+<li>target encoding, quando apropriado;</li>
+<li>agregações temporais;</li>
+<li>rolling windows;</li>
+<li>cálculo de métricas estatísticas;</li>
+<li>classificação baseada em regras.</li>
+</ul>
+<p>Ferramentas possíveis incluem SQL, Python, pandas, <a class="term" href="../tecnicas/pyspark.html">PySpark</a>, <a class="term" href="../tecnicas/duckdb.html">DuckDB</a>, <a class="term" href="../tecnicas/dbt.html">dbt</a>, <a class="term" href="../tecnicas/great-expectations.html">Great Expectations</a>, <a class="term" href="../tecnicas/pandera.html">Pandera</a>, <a class="term" href="../tecnicas/deequ.html">Deequ</a>, <a class="term" href="../tecnicas/soda-core.html">Soda Core</a>, notebooks versionados, ferramentas <a class="term" href="../conceitos/etl.html">ETL</a>/<a class="term" href="../conceitos/elt.html">ELT</a> e ambientes de <a class="term" href="../conceitos/lakehouse.html">lakehouse</a>.</p>
+<h2 class="section-title" id="metricas-do-modulo">9. Métricas do módulo</h2>
+<p>As métricas do Módulo 4 têm como objetivo avaliar o impacto das transformações, limpezas e enriquecimentos realizados.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de valores ausentes antes/depois</td><td>TVA</td><td>Proporção de valores ausentes antes e depois do tratamento</td></tr><tr><td>Taxa de duplicidade antes/depois</td><td>TD</td><td>Proporção de registros duplicados antes e depois da limpeza</td></tr><tr><td>Taxa de registros alterados</td><td>TRA</td><td>Proporção de registros modificados por transformações</td></tr><tr><td>Taxa de atributos transformados</td><td>TAT</td><td>Proporção de atributos submetidos a transformação</td></tr><tr><td>Taxa de atributos enriquecidos</td><td>TAE</td><td>Proporção de atributos criados ou enriquecidos</td></tr><tr><td>Taxa de valores fora de domínio</td><td>TVFD</td><td>Proporção de valores que violam domínios definidos</td></tr><tr><td>Taxa de outliers identificados</td><td>TOI</td><td>Proporção de registros ou valores classificados como outliers</td></tr><tr><td>Taxa de outliers tratados</td><td>TOT</td><td>Proporção de outliers tratados ou sinalizados</td></tr><tr><td>Perda de registros</td><td>PR</td><td>Proporção de registros removidos no processo</td></tr><tr><td>Ganho de completude</td><td>GC</td><td>Diferença de completude antes e depois do tratamento</td></tr><tr><td>Índice de impacto da transformação</td><td>IIT</td><td>Grau de alteração causado pelas transformações</td></tr><tr><td>Taxa de regras documentadas</td><td>TRD</td><td>Proporção de regras de transformação documentadas</td></tr><tr><td>Taxa de transformações rastreáveis</td><td>TTR</td><td>Proporção de transformações com origem, regra e impacto registrados</td></tr><tr><td>Taxa de atributos derivados documentados</td><td>TADD</td><td>Proporção de atributos derivados com fórmula e justificativa documentadas</td></tr><tr><td>Variação de distribuição</td><td>VD</td><td>Mudança na distribuição de atributos após transformação</td></tr></table></div>
+<h3 id="ganho-de-completude-gc">9.1 Ganho de Completude — GC</h3>
+<p>O Ganho de Completude mede a melhoria na proporção de valores preenchidos após o tratamento de ausências.</p>
+<div class="formula">GC = completude depois − completude antes</div>
+<p>Essa métrica permite avaliar se as ações de tratamento aumentaram a disponibilidade de informação.</p>
+<h3 id="taxa-de-transformacoes-rastreaveis-ttr">9.2 Taxa de Transformações Rastreáveis — TTR</h3>
+<p>A Taxa de Transformações Rastreáveis mede a proporção de transformações que possuem registro completo de origem, regra, parâmetro, atributo afetado e impacto.</p>
+<div class="formula">TTR = número de transformações documentadas / número total de transformações aplicadas</div>
+<p>Essa métrica é essencial para lineage, governança e <a class="term" href="../conceitos/reprodutibilidade.html">reprodutibilidade</a>.</p>
+<h3 id="indice-de-impacto-da-transformacao-iit">9.3 Índice de Impacto da Transformação — IIT</h3>
+<p>O Índice de Impacto da Transformação avalia o grau de alteração produzido por um conjunto de transformações sobre o dataset.</p>
+<p>Uma formulação simples pode considerar:</p>
+<div class="formula">IIT = registros alterados / total de registros</div>
+<p>ou, de forma ampliada:</p>
+<div class="formula">IIT = (registros alterados + atributos alterados + valores imputados + registros removidos) / elementos avaliados</div>
+<p>Esse índice ajuda a identificar transformações com alto impacto, que exigem maior justificativa e validação.</p>
+<h3 id="taxa-de-atributos-derivados-documentados-tadd">9.4 Taxa de Atributos Derivados Documentados — TADD</h3>
+<p>A Taxa de Atributos Derivados Documentados mede a proporção de atributos criados no módulo que possuem regra, fórmula, fonte de origem, granularidade e justificativa documentadas.</p>
+<div class="formula">TADD = atributos derivados documentados / total de atributos derivados criados</div>
+<p>Essa métrica permite avaliar a reprodutibilidade dos atributos enriquecidos.</p>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">10. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 4 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, regras de construção, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A4.1</td><td><a class="term" href="../artefatos/plano-de-transformacao.html">Plano de Transformação</a> e Limpeza</td><td>Documento técnico</td><td>TRD</td><td>Define regras e escopo das transformações</td></tr><tr><td>A4.2</td><td>Perfil Inicial de Qualidade</td><td>Relatório técnico</td><td>TVA, TD, TVFD</td><td>Diagnostica problemas antes da limpeza</td></tr><tr><td>A4.3</td><td>Registro de Regras de Transformação</td><td>Tabela estruturada</td><td>TTR</td><td>Documenta regras aplicadas</td></tr><tr><td>A4.4</td><td>Registro de Tratamento de Ausentes</td><td>Tabela técnica</td><td>GC, TVA</td><td>Formaliza decisões sobre ausências</td></tr><tr><td>A4.5</td><td>Registro de Tratamento de Duplicidades</td><td>Tabela técnica</td><td>TD</td><td>Documenta remoção ou consolidação</td></tr><tr><td>A4.6</td><td>Registro de Outliers e Valores Fora de Domínio</td><td>Relatório/tabela</td><td>TOI, TOT</td><td>Documenta valores extremos e inválidos</td></tr><tr><td>A4.7</td><td>Catálogo de Atributos Derivados</td><td>Tabela ou catálogo</td><td>TADD</td><td>Documenta atributos criados</td></tr><tr><td>A4.8</td><td>Dataset Tratado e Enriquecido</td><td>Dataset versionado</td><td>IIT, TTR</td><td>Materializa os dados preparados</td></tr><tr><td>A4.9</td><td>Manifesto de Transformação</td><td>Documento estruturado</td><td>TTR</td><td>Registra parâmetros, versões e impactos</td></tr><tr><td>A4.10</td><td><a class="term" href="../artefatos/relatorio-de-impacto.html">Relatório de Impacto</a> das Transformações</td><td>Relatório técnico</td><td>IIT, VD</td><td>Avalia efeitos antes/depois</td></tr></table></div>
+<h2 class="section-title" id="artefato-a4-1-plano-de-transformacao-e-limpeza">11. Artefato A4.1 — Plano de Transformação e Limpeza</h2>
+<h3 id="finalidade">11.1 Finalidade</h3>
+<p>O Plano de Transformação e Limpeza define quais procedimentos serão aplicados aos datasets recebidos, indicando problemas identificados, regras previstas, atributos afetados, critérios de decisão, responsáveis e métricas de avaliação.</p>
+<h3 id="tipo-de-artefato-na-dsr">11.2 Tipo de artefato na DSR</h3>
+<p>Na perspectiva da Design Science Research, esse artefato é um método, pois orienta o processo de transformação, e uma instanciação, quando documentado em planilha, arquivo estruturado, notebook, workflow ou documento técnico.</p>
+<h3 id="estrutura-minima">11.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador do plano</td><td>Código único</td></tr><tr><td>Dataset de entrada</td><td><a class="term" href="../artefatos/dataset-bruto.html">Dataset bruto</a> ou integrado</td></tr><tr><td>Objetivo da transformação</td><td>Finalidade analítica</td></tr><tr><td>Problema identificado</td><td>Ausência, duplicidade, formato, outlier etc.</td></tr><tr><td>Atributo afetado</td><td>Campo ou variável submetida à regra</td></tr><tr><td>Regra prevista</td><td>Procedimento a aplicar</td></tr><tr><td>Parâmetros</td><td>Valores, limiares ou critérios</td></tr><tr><td>Justificativa</td><td>Motivo técnico ou de domínio</td></tr><tr><td>Responsável</td><td>Pessoa, equipe ou sistema</td></tr><tr><td>Métrica de avaliação</td><td>Indicador de impacto ou qualidade</td></tr><tr><td>Critério de sucesso</td><td>Condição para aceitar a transformação</td></tr></table></div>
+<h3 id="metricas-associadas">11.4 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de regras documentadas;</li>
+<li>percentual de atributos com regra definida;</li>
+<li>percentual de transformações com justificativa;</li>
+<li>percentual de planos com métrica de avaliação;</li>
+<li>percentual de planos com critério de sucesso.</li>
+</ul>
+<h3 id="criterios-de-validacao">11.5 Critérios de validação</h3>
+<p>O plano é considerado válido quando as principais transformações possuem atributo alvo, regra, parâmetro, justificativa, métrica e critério de aceitação documentados.</p>
+<h3 id="contribuicao">11.6 Contribuição</h3>
+<p>Esse artefato evita transformações improvisadas e torna explícitas as decisões metodológicas adotadas na preparação dos dados.</p>
+<h2 class="section-title" id="artefato-a4-2-perfil-inicial-de-qualidade">12. Artefato A4.2 — Perfil Inicial de Qualidade</h2>
+<h3 id="finalidade-2">12.1 Finalidade</h3>
+<p>O Perfil Inicial de Qualidade registra o diagnóstico dos dados antes da transformação, permitindo compreender o estado inicial do dataset.</p>
+<h3 id="estrutura-minima-2">12.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset</td><td>Dataset analisado</td></tr><tr><td>Atributo</td><td>Atributo avaliado</td></tr><tr><td>Tipo detectado</td><td>Tipo de dado identificado</td></tr><tr><td>Valores ausentes</td><td>Quantidade e percentual</td></tr><tr><td>Valores únicos</td><td>Cardinalidade</td></tr><tr><td>Duplicidades</td><td>Quantidade ou percentual</td></tr><tr><td>Valores fora de domínio</td><td>Ocorrências identificadas</td></tr><tr><td>Outliers</td><td>Ocorrências detectadas</td></tr><tr><td>Distribuição</td><td>Estatísticas descritivas</td></tr><tr><td>Problemas observados</td><td>Observações iniciais</td></tr></table></div>
+<h3 id="metricas-associadas-2">12.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de valores ausentes;</li>
+<li>taxa de duplicidade;</li>
+<li>taxa de valores fora de domínio;</li>
+<li>taxa de outliers;</li>
+<li>cardinalidade;</li>
+<li>distribuição de frequências;</li>
+<li>completude inicial.</li>
+</ul>
+<h3 id="contribuicao-2">12.4 Contribuição</h3>
+<p>Esse artefato fornece a linha de base para avaliar o impacto das transformações e das limpezas aplicadas.</p>
+<h2 class="section-title" id="artefato-a4-3-registro-de-regras-de-transformacao">13. Artefato A4.3 — Registro de Regras de Transformação</h2>
+<h3 id="finalidade-3">13.1 Finalidade</h3>
+<p>O Registro de Regras de Transformação documenta todas as regras aplicadas aos dados.</p>
+<h3 id="estrutura-formal">13.2 Estrutura formal</h3>
+<p>Cada regra de transformação pode ser representada por:</p>
+<div class="formula">rᵢ = {id, tipo, atributo_alvo, condição, ação, parâmetro, justificativa, entrada, saída, versão}</div>
+<h3 id="estrutura-minima-3">13.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador da regra</td><td>Código único</td></tr><tr><td>Tipo de transformação</td><td>Padronização, imputação, conversão, derivação etc.</td></tr><tr><td>Dataset</td><td>Dataset afetado</td></tr><tr><td>Atributo alvo</td><td>Campo afetado</td></tr><tr><td>Condição</td><td>Quando a regra é aplicada</td></tr><tr><td>Ação</td><td>Transformação executada</td></tr><tr><td>Parâmetro</td><td>Valor ou limiar utilizado</td></tr><tr><td>Justificativa</td><td>Motivo da regra</td></tr><tr><td>Registros afetados</td><td>Quantidade ou percentual</td></tr><tr><td>Versão</td><td>Versão da regra</td></tr><tr><td>Responsável</td><td>Pessoa, equipe ou sistema</td></tr></table></div>
+<h3 id="metricas-associadas-3">13.4 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de transformações rastreáveis;</li>
+<li>taxa de regras documentadas;</li>
+<li>número de registros afetados;</li>
+<li>índice de impacto da transformação;</li>
+<li>percentual de regras versionadas.</li>
+</ul>
+<h3 id="criterios-de-validacao-2">13.5 Critérios de validação</h3>
+<p>Uma regra é considerada válida quando possui atributo alvo, condição, ação, parâmetro, justificativa, versão e impacto documentados.</p>
+<h3 id="contribuicao-3">13.6 Contribuição</h3>
+<p>Esse artefato transforma regras implícitas em scripts em elementos explícitos, auditáveis e reutilizáveis.</p>
+<h2 class="section-title" id="artefato-a4-4-registro-de-tratamento-de-ausentes">14. Artefato A4.4 — Registro de Tratamento de Ausentes</h2>
+<h3 id="finalidade-4">14.1 Finalidade</h3>
+<p>O Registro de Tratamento de Ausentes documenta as estratégias utilizadas para lidar com valores ausentes.</p>
+<h3 id="estrutura-minima-4">14.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset</td><td>Dataset analisado</td></tr><tr><td>Atributo</td><td>Atributo com ausência</td></tr><tr><td>Percentual de ausência</td><td>Taxa antes do tratamento</td></tr><tr><td>Mecanismo provável</td><td>MCAR, MAR, MNAR ou desconhecido</td></tr><tr><td>Estratégia adotada</td><td>Manter, imputar, remover, sinalizar etc.</td></tr><tr><td>Método</td><td>Média, mediana, KNN, categoria, modelo etc.</td></tr><tr><td>Justificativa</td><td>Motivo da decisão</td></tr><tr><td>Registros afetados</td><td>Quantidade afetada</td></tr><tr><td>Risco de viés</td><td>Baixo, médio ou alto</td></tr><tr><td>Métrica após tratamento</td><td>Completude final</td></tr></table></div>
+<h3 id="metricas-associadas-4">14.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de valores ausentes antes/depois;</li>
+<li>ganho de completude;</li>
+<li>percentual de registros imputados;</li>
+<li>percentual de atributos com ausência tratada;</li>
+<li>risco de viés associado.</li>
+</ul>
+<h3 id="contribuicao-4">14.4 Contribuição</h3>
+<p>Esse artefato evita que valores ausentes sejam tratados sem justificativa, reduzindo riscos de distorção analítica e viés.</p>
+<h2 class="section-title" id="artefato-a4-5-registro-de-tratamento-de-duplicidades">15. Artefato A4.5 — Registro de Tratamento de Duplicidades</h2>
+<h3 id="finalidade-5">15.1 Finalidade</h3>
+<p>O Registro de Tratamento de Duplicidades documenta registros duplicados ou potencialmente duplicados e as decisões adotadas.</p>
+<h3 id="estrutura-minima-5">15.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset</td><td>Dataset analisado</td></tr><tr><td>Chave ou critério</td><td>Critério de detecção</td></tr><tr><td>Tipo de duplicidade</td><td>Exata, parcial, semântica, temporal</td></tr><tr><td>Registros duplicados</td><td>Quantidade identificada</td></tr><tr><td>Estratégia adotada</td><td>Remover, consolidar, manter, revisar</td></tr><tr><td>Regra de precedência</td><td>Critério de escolha</td></tr><tr><td>Registros removidos</td><td>Quantidade removida</td></tr><tr><td>Registros consolidados</td><td>Quantidade consolidada</td></tr><tr><td>Justificativa</td><td>Motivo da decisão</td></tr><tr><td>Impacto</td><td>Efeito no dataset</td></tr></table></div>
+<h3 id="metricas-associadas-5">15.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de duplicidade antes/depois;</li>
+<li>número de registros removidos;</li>
+<li>número de registros consolidados;</li>
+<li>índice de impacto da deduplicação.</li>
+</ul>
+<h3 id="contribuicao-5">15.4 Contribuição</h3>
+<p>Esse artefato torna transparente a remoção ou consolidação de registros, evitando perda não documentada de informação.</p>
+<h2 class="section-title" id="artefato-a4-6-registro-de-outliers-e-valores-fora-de-dominio">16. Artefato A4.6 — Registro de Outliers e Valores Fora de Domínio</h2>
+<h3 id="finalidade-6">16.1 Finalidade</h3>
+<p>O Registro de Outliers e Valores Fora de Domínio documenta valores extremos, improváveis ou inválidos identificados no dataset.</p>
+<h3 id="estrutura-minima-6">16.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset</td><td>Dataset analisado</td></tr><tr><td>Atributo</td><td>Atributo avaliado</td></tr><tr><td>Valor identificado</td><td>Valor extremo ou inválido</td></tr><tr><td>Tipo de ocorrência</td><td>Outlier, erro, valor fora de domínio, evento raro</td></tr><tr><td>Método de detecção</td><td>IQR, z-score, regra, modelo etc.</td></tr><tr><td>Estratégia adotada</td><td>Manter, remover, corrigir, sinalizar</td></tr><tr><td>Justificativa</td><td>Motivo da decisão</td></tr><tr><td>Registros afetados</td><td>Quantidade afetada</td></tr><tr><td>Status</td><td>Resolvido, mantido, pendente</td></tr></table></div>
+<h3 id="metricas-associadas-6">16.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de outliers identificados;</li>
+<li>taxa de outliers tratados;</li>
+<li>taxa de valores fora de domínio;</li>
+<li>número de registros sinalizados;</li>
+<li>impacto da remoção ou correção.</li>
+</ul>
+<h3 id="contribuicao-6">16.4 Contribuição</h3>
+<p>Esse artefato permite distinguir erro de dado, evento raro e valor analiticamente relevante, preservando transparência nas decisões.</p>
+<h2 class="section-title" id="artefato-a4-7-catalogo-de-atributos-derivados">17. Artefato A4.7 — Catálogo de Atributos Derivados</h2>
+<h3 id="finalidade-7">17.1 Finalidade</h3>
+<p>O Catálogo de Atributos Derivados documenta variáveis criadas a partir dos dados originais, como indicadores, agregações, faixas, contagens, proporções, métricas temporais ou atributos contextuais.</p>
+<h3 id="estrutura-formal-2">17.2 Estrutura formal</h3>
+<p>Cada atributo derivado pode ser representado por:</p>
+<div class="formula">vᵢ = {id, nome, descrição, fórmula, fontes_origem, atributos_origem, granularidade, <a class="term" href="../conceitos/periodicidade.html">periodicidade</a>, justificativa, versão}</div>
+<h3 id="estrutura-minima-7">17.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Nome do atributo</td><td>Nome da variável derivada</td></tr><tr><td>Descrição</td><td>Significado analítico</td></tr><tr><td>Fórmula ou regra</td><td>Como o atributo é calculado</td></tr><tr><td>Atributos de origem</td><td>Campos utilizados</td></tr><tr><td>Fontes de origem</td><td>Bases utilizadas</td></tr><tr><td>Granularidade</td><td>Unidade de análise</td></tr><tr><td>Periodicidade</td><td>Recorte temporal</td></tr><tr><td>Tipo de dado</td><td>Numérico, categórico, binário etc.</td></tr><tr><td>Justificativa</td><td>Motivo da criação</td></tr><tr><td>Limitações</td><td>Cuidados de uso</td></tr><tr><td>Versão</td><td>Versão da regra</td></tr></table></div>
+<h3 id="metricas-associadas-7">17.4 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de atributos derivados documentados;</li>
+<li>número de atributos derivados;</li>
+<li>percentual de atributos com fórmula;</li>
+<li>percentual de atributos com fonte de origem;</li>
+<li>percentual de atributos com granularidade documentada.</li>
+</ul>
+<h3 id="contribuicao-7">17.5 Contribuição</h3>
+<p>Esse artefato aumenta a reprodutibilidade das variáveis analíticas e prepara o caminho para feature engineering e <a class="term" href="../conceitos/feature-store.html">feature store</a>.</p>
+<h2 class="section-title" id="artefato-a4-8-dataset-tratado-e-enriquecido">18. Artefato A4.8 — Dataset Tratado e Enriquecido</h2>
+<h3 id="finalidade-8">18.1 Finalidade</h3>
+<p>O Dataset Tratado e Enriquecido é o ativo resultante da aplicação das regras de limpeza, padronização, transformação e enriquecimento.</p>
+<h3 id="estrutura-formal-3">18.2 Estrutura formal</h3>
+<p>O conjunto de datasets tratados pode ser representado como:</p>
+<div class="formula">C = {c₁, c₂, ..., cₘ}</div>
+<p>em que cada cⱼ representa um dataset tratado.</p>
+<p>Cada dataset tratado deve ser descrito por:</p>
+<div class="formula">cⱼ = {id, dataset_origem, regras_aplicadas, atributos_transformados, atributos_derivados, registros_afetados, métricas_antes, métricas_depois, versão, lineage}</div>
+<h3 id="metricas-associadas-8">18.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de transformações rastreáveis;</li>
+<li>índice de impacto da transformação;</li>
+<li>ganho de completude;</li>
+<li>redução de duplicidade;</li>
+<li>taxa de atributos enriquecidos;</li>
+<li>variação de distribuição.</li>
+</ul>
+<h3 id="criterios-de-validacao-3">18.4 Critérios de validação</h3>
+<p>Um dataset tratado é considerado válido quando possui origem documentada, regras aplicadas, métricas antes/depois, atributos derivados documentados e versão identificada.</p>
+<h3 id="contribuicao-8">18.5 Contribuição</h3>
+<p>Esse artefato materializa os dados preparados para análise, preservando rastreabilidade entre origem, transformação e resultado.</p>
+<h2 class="section-title" id="artefato-a4-9-manifesto-de-transformacao">19. Artefato A4.9 — Manifesto de Transformação</h2>
+<h3 id="finalidade-9">19.1 Finalidade</h3>
+<p>O Manifesto de Transformação resume os principais elementos de uma execução de transformação, registrando datasets, regras, parâmetros, versões, métricas e impactos.</p>
+<h3 id="estrutura-minima-8">19.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador da execução</td><td>Código único</td></tr><tr><td>Dataset de entrada</td><td>Dataset original ou integrado</td></tr><tr><td>Dataset de saída</td><td>Dataset tratado</td></tr><tr><td>Regras aplicadas</td><td>Lista de regras executadas</td></tr><tr><td>Parâmetros</td><td>Valores e limiares utilizados</td></tr><tr><td>Atributos afetados</td><td>Campos modificados</td></tr><tr><td>Atributos criados</td><td>Variáveis derivadas</td></tr><tr><td>Registros afetados</td><td>Quantidade ou percentual</td></tr><tr><td>Métricas antes</td><td>Indicadores prévios</td></tr><tr><td>Métricas depois</td><td>Indicadores posteriores</td></tr><tr><td>Responsável</td><td>Executor humano ou sistema</td></tr><tr><td>Data da execução</td><td>Momento da transformação</td></tr><tr><td>Versão</td><td>Versão do processo</td></tr></table></div>
+<h3 id="metricas-associadas-9">19.3 Métricas associadas</h3>
+<ul class="list">
+<li>completude do manifesto;</li>
+<li>taxa de transformações rastreáveis;</li>
+<li>percentual de execuções com métricas antes/depois;</li>
+<li>percentual de manifestos com versão;</li>
+<li>percentual de manifestos com lineage.</li>
+</ul>
+<h3 id="contribuicao-9">19.4 Contribuição</h3>
+<p>Esse artefato apoia auditoria, lineage, versionamento e reprodutibilidade das transformações aplicadas.</p>
+<h2 class="section-title" id="artefato-a4-10-relatorio-de-impacto-das-transformacoes">20. Artefato A4.10 — Relatório de Impacto das Transformações</h2>
+<h3 id="finalidade-10">20.1 Finalidade</h3>
+<p>O Relatório de Impacto das Transformações avalia os efeitos das transformações sobre os dados.</p>
+<h3 id="estrutura-minima-9">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset avaliado</td><td>Dataset tratado</td></tr><tr><td>Transformações aplicadas</td><td>Regras executadas</td></tr><tr><td>Métricas antes</td><td>Indicadores prévios</td></tr><tr><td>Métricas depois</td><td>Indicadores posteriores</td></tr><tr><td>Registros alterados</td><td>Quantidade ou percentual</td></tr><tr><td>Registros removidos</td><td>Quantidade ou percentual</td></tr><tr><td>Atributos alterados</td><td>Campos modificados</td></tr><tr><td>Atributos criados</td><td>Variáveis derivadas</td></tr><tr><td>Alteração de distribuição</td><td>Mudança estatística observada</td></tr><tr><td>Riscos identificados</td><td>Possíveis distorções</td></tr><tr><td>Recomendações</td><td>Ações futuras</td></tr></table></div>
+<h3 id="metricas-associadas-10">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>índice de impacto da transformação;</li>
+<li>variação de distribuição;</li>
+<li>perda de registros;</li>
+<li>ganho de completude;</li>
+<li>redução de duplicidade;</li>
+<li>taxa de atributos enriquecidos.</li>
+</ul>
+<h3 id="contribuicao-10">20.4 Contribuição</h3>
+<p>Esse artefato permite avaliar se as transformações melhoraram os dados sem introduzir distorções excessivas ou perdas relevantes.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">21. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Datasets brutos, datasets integrados, dicionários, regras de negócio, metadados, registros de conflitos, logs, manifestos e resultados de profiling.</td></tr><tr><td>Processamento</td><td>Diagnóstico inicial, definição de regras, tratamento de ausentes, duplicidades, outliers, padronização, criação de atributos derivados, enriquecimento e avaliação de impacto.</td></tr><tr><td>Artefatos</td><td>Plano de transformação, perfil inicial de qualidade, registro de regras, registros de ausentes, duplicidades, outliers, catálogo de atributos derivados, dataset tratado, manifesto e relatório de impacto.</td></tr><tr><td>Métricas</td><td>TVA, TD, TRA, TAT, TAE, TVFD, TOI, TOT, PR, GC, IIT, TRD, TTR, TADD e VD.</td></tr><tr><td>Saídas</td><td>Datasets tratados, limpos, padronizados e enriquecidos, com regras, métricas, versões, impactos e lineage documentados.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">22. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 4 pode ser considerado concluído quando:</p>
+<ol class="steps">
+<li>os datasets de entrada foram diagnosticados por perfil inicial de qualidade;</li>
+<li>as regras de transformação foram documentadas;</li>
+<li>os valores ausentes foram tratados ou justificados;</li>
+<li>duplicidades foram identificadas, tratadas ou justificadas;</li>
+<li>outliers e valores fora de domínio foram analisados;</li>
+<li>formatos, tipos, categorias e códigos foram padronizados;</li>
+<li>atributos derivados foram documentados com fórmula, origem e justificativa;</li>
+<li>datasets tratados e enriquecidos foram gerados;</li>
+<li>métricas antes e depois foram calculadas;</li>
+<li>o impacto das transformações foi avaliado;</li>
+<li>os manifestos de transformação foram produzidos;</li>
+<li>as transformações possuem rastreabilidade suficiente para auditoria e reprodutibilidade.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-do-modelo-de-referencia">23. Relação com os demais módulos do modelo de referência</h2>
+<p>O Módulo 4 depende do Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, pois utiliza o dicionário preliminar, a granularidade, a classificação de sensibilidade e as limitações conhecidas das fontes.</p>
+<p>Depende do Módulo 2 — Extração, Ingestão e Armazenamento Bruto, pois utiliza datasets brutos, logs, snapshots e manifestos como insumos para transformação controlada.</p>
+<p>Depende do Módulo 3 — Integração e Harmonização, pois recebe datasets integrados, regras de harmonização, conflitos e relações entre fontes.</p>
+<p>Para o Módulo 5 — Qualidade e Validação de Dados, fornece datasets tratados e métricas antes/depois que permitem avaliação mais rigorosa da qualidade.</p>
+<p>Para o Módulo 6 — Desbalanceamento, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, fornece dados preparados, mas também registra transformações que podem alterar distribuições, grupos e representatividade.</p>
+<p>Para o Módulo 7 — Metadados, Catálogo e Semântica dos Dados, fornece atributos derivados, regras de transformação, descrições, versões e limitações.</p>
+<p>Para o Módulo 8 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, fornece registros sobre atributos sensíveis transformados, anonimizados, removidos ou derivados.</p>
+<p>Para o Módulo 9 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Lineage e Rastreabilidade, fornece regras, manifestos e vínculos entre dados de entrada e saída.</p>
+<p>Para o Módulo 10 — Versionamento e Reprodutibilidade, fornece versões de regras, parâmetros e datasets tratados.</p>
+<p>Para o Módulo 11 — Representação Tabular, Temporal, Grafos e Grafos Temporais, fornece dados padronizados e enriquecidos para diferentes formas de representação.</p>
+<p>Para o Módulo 12 — Feature Engineering e Feature Store, fornece atributos derivados iniciais, variáveis tratadas e datasets preparados para construção de features.</p>
+<p>Para o Módulo 13 — Disponibilização Analítica, fornece datasets limpos e enriquecidos para consumo por dashboards, APIs, relatórios e modelos.</p>
+<p>Para o Módulo 14 — Monitoramento, Drift e Evolução dos Ativos, fornece métricas de distribuição e transformações que podem ser monitoradas ao longo do tempo.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">24. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, o Módulo 4 poderia receber um dataset integrado contendo dados de matrícula, notas, frequência, interações em ambiente virtual, dados socioeconômicos e situação acadêmica.</p>
+<p>As transformações poderiam incluir padronização de períodos letivos, normalização de códigos de curso, tratamento de notas ausentes, consolidação de registros duplicados de matrícula, padronização de categorias de situação acadêmica, criação de indicadores de desempenho, cálculo de frequência acumulada, criação de variáveis temporais e enriquecimento com dados socioeconômicos ou territoriais.</p>
+<p>O módulo poderia criar atributos derivados como média de desempenho por semestre, número de reprovações acumuladas, tempo desde o ingresso, quantidade de disciplinas cursadas, indicador de baixa frequência, trajetória de matrícula e participação em atividades no ambiente virtual.</p>
+<p>Cada transformação seria registrada com regra, justificativa, atributos afetados, impacto e versão, permitindo reproduzir a construção da base analítica educacional.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">25. Exemplo de aplicação em políticas públicas</h2>
+<p>Em uma aplicação em políticas públicas, o Módulo 4 poderia tratar dados integrados de saúde, educação, assistência social, território e trabalho.</p>
+<p>As transformações poderiam incluir padronização de endereços, compatibilização de códigos territoriais, tratamento de datas de atendimento, agregação por bairro ou município, criação de indicadores de vulnerabilidade, normalização de categorias de atendimento, tratamento de duplicidades de famílias e enriquecimento com indicadores socioeconômicos externos.</p>
+<p>O resultado seria uma base tratada e enriquecida para análise territorial, construção de painéis, identificação de demandas, priorização de políticas e modelagem de risco social.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">26. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição do Módulo 4 está em formalizar a transformação, a limpeza e o enriquecimento de dados como processos mensuráveis, auditáveis e reprodutíveis da Engenharia Analítica de Dados.</p>
+<p>Em vez de tratar a preparação de dados como uma sequência de scripts não documentados, o UnespDataLens-RM propõe que cada transformação produza artefatos formais, como plano de transformação, perfil inicial de qualidade, registro de regras, registros de tratamento de ausentes, duplicidades e outliers, catálogo de atributos derivados, manifesto de transformação e relatório de impacto.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>reduzir arbitrariedade na preparação dos dados;</li>
+<li>explicitar regras e justificativas de transformação;</li>
+<li>preservar rastreabilidade entre dados originais e tratados;</li>
+<li>avaliar impacto das transformações;</li>
+<li>reduzir riscos de distorção analítica;</li>
+<li>apoiar qualidade, governança e reprodutibilidade;</li>
+<li>documentar atributos derivados;</li>
+<li>preparar os dados para feature engineering, grafos, modelos e dashboards;</li>
+<li>permitir auditoria e reexecução dos processos.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">27. Síntese do módulo</h2>
+<p>O Módulo 4 — Transformação, Limpeza e Enriquecimento prepara os dados para uso analítico por meio de procedimentos formais de limpeza, padronização, transformação e enriquecimento. Ele atua sobre dados brutos ou integrados, produzindo datasets tratados, documentados, versionáveis e rastreáveis.</p>
+<p>Sua importância para o UnespDataLens-RM é central, pois dados integrados ainda podem conter problemas que comprometem a qualidade das análises. Ao formalizar regras, métricas, impactos e artefatos, o módulo transforma a preparação dos dados em uma etapa avaliável e reprodutível.</p>
+<p>Dessa forma, o Módulo 4 fortalece a confiabilidade dos ativos analíticos e prepara a base para qualidade, governança, desbalanceamento, <a class="term" href="../conceitos/fairness.html">fairness</a>, metadados, lineage, versionamento, feature engineering, representação em grafos e disponibilização analítica.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

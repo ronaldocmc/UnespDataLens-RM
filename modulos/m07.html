@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo 7 — Armazenamento Analítico tem como finalidade estruturar, organizar, persistir e disponibilizar os dados tratados, integrados, harmonizados, validados e enriquecidos em ambientes adequados ao uso analítico no modelo de referência UnespDataLens-RM.">
+  <title>Módulo 7 — Armazenamento Analítico · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-7-armazenamento-analitico"></span><section class="hero">
+<span class="badge">Módulo 07</span>
+<h1>Módulo 7 — Armazenamento Analítico</h1>
+<p>O Módulo 7 — Armazenamento Analítico tem como finalidade estruturar, organizar, persistir e disponibilizar os dados tratados, integrados, harmonizados, validados e enriquecidos em ambientes adequados ao uso analítico no modelo de referência UnespDataLens-RM.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 27 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-tecnologias-aplicaveis">Técnicas, métodos e tecnologias aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a7-1-arquitetura-de-armazenamento-analitico">Artefato A7.1 — Arquitetura de Armazenamento Analítico</a><a href="#artefato-a7-2-modelo-de-zonas-de-dados">Artefato A7.2 — Modelo de Zonas de Dados</a><a href="#artefato-a7-3-modelo-logico-analitico">Artefato A7.3 — Modelo Lógico Analítico</a><a href="#artefato-a7-4-mapa-de-armazenamento-analitico">Artefato A7.4 — Mapa de Armazenamento Analítico</a><a href="#artefato-a7-5-especificacao-de-schemas-analiticos">Artefato A7.5 — Especificação de Schemas Analíticos</a><a href="#artefato-a7-6-registro-de-particionamento-e-indexacao">Artefato A7.6 — Registro de Particionamento e Indexação</a><a href="#artefato-a7-7-registro-de-versionamento-e-snapshots-analiticos">Artefato A7.7 — Registro de Versionamento e Snapshots Analíticos</a><a href="#artefato-a7-8-data-mart-ou-dataset-curado">Artefato A7.8 — Data Mart ou Dataset Curado</a><a href="#artefato-a7-9-registro-de-controle-de-acesso-ao-armazenamento">Artefato A7.9 — Registro de Controle de Acesso ao Armazenamento</a><a href="#artefato-a7-10-relatorio-de-desempenho-e-adequacao-do-armazenamento">Artefato A7.10 — Relatório de Desempenho e Adequação do Armazenamento</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-os-demais-modulos-do-modelo-de-referencia">Relação com os demais módulos do modelo de referência</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo 7 — Armazenamento Analítico tem como finalidade estruturar, organizar, persistir e disponibilizar os dados tratados, integrados, harmonizados, validados e enriquecidos em ambientes adequados ao uso analítico no modelo de referência UnespDataLens-RM.</p>
+<p>Esse módulo recebe como entrada os ativos produzidos pelos módulos anteriores, especialmente os dados extraídos e armazenados em estado bruto, os datasets integrados e harmonizados, os dados transformados e enriquecidos, os resultados de qualidade e as evidências relacionadas a <a class="term" href="../conceitos/desbalanceamento.html">desbalanceamento</a>, vieses e <a class="term" href="../conceitos/equidade.html">equidade</a>. A partir desses insumos, o Módulo 7 define como os dados serão organizados em estruturas persistentes, consultáveis, escaláveis, governáveis, versionáveis e preparadas para consumo por análises, modelos, dashboards, APIs, feature stores, grafos, indicadores e agentes inteligentes.</p>
+<p>No contexto da Engenharia Analítica de Dados, o armazenamento analítico não se limita à escolha de um banco de dados, <a class="term" href="../conceitos/data-warehouse.html">data warehouse</a>, <a class="term" href="../conceitos/data-lake.html">data lake</a> ou <a class="term" href="../conceitos/lakehouse.html">lakehouse</a>. Ele envolve decisões sobre modelagem física e lógica, organização por zonas, particionamento, indexação, formatos de arquivo, <a class="term" href="../conceitos/granularidade.html">granularidade</a>, compressão, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, acesso, desempenho, retenção, atualização, <a class="term" href="../metricas/consistencia.html">consistência</a>, segurança e interoperabilidade entre diferentes consumidores de dados.</p>
+<p>No UnespDataLens-RM, o armazenamento analítico é concebido como uma etapa técnico-metodológica formal. Sua função é transformar datasets tratados em ativos analíticos persistidos, organizados segundo critérios de finalidade, qualidade, governança, <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a> e <a class="term" href="../conceitos/reprodutibilidade.html">reprodutibilidade</a>. Assim, os dados deixam de ser apenas resultados intermediários de scripts ou notebooks e passam a compor uma base analítica estruturada, documentada e reutilizável.</p>
+<p>Esse módulo é essencial porque dados bem integrados e tratados podem perder valor se forem armazenados de forma desorganizada, sem controle de versões, sem separação entre zonas, sem rastreabilidade, sem padronização de formatos ou sem mecanismos adequados de acesso. O armazenamento analítico, portanto, cria a infraestrutura lógica necessária para que os ativos de dados possam ser consumidos de maneira confiável, eficiente e auditável pelos módulos posteriores do modelo de referência.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 7 é organizar e persistir os dados analíticos produzidos pelo UnespDataLens-RM em estruturas de armazenamento adequadas ao consumo, à governança, à rastreabilidade, ao desempenho, ao versionamento e à reprodutibilidade, permitindo sua utilização por análises, modelos, dashboards, indicadores, APIs, grafos e produtos de dados.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 7:</p>
+<ol class="steps">
+<li>definir a arquitetura de armazenamento analítico adequada ao projeto, considerando data warehouse, data lake, lakehouse, data marts, bancos relacionais, bancos colunares, bancos de grafos ou estruturas híbridas;</li>
+<li>organizar os dados em zonas ou áreas lógicas de armazenamento, como zona bruta, zona tratada, zona integrada, zona curada e zona de consumo;</li>
+<li>persistir datasets tratados, integrados, harmonizados e validados em formatos adequados ao uso analítico;</li>
+<li>definir estratégias de particionamento, indexação, compressão, organização física e otimização de consultas;</li>
+<li>preservar versões, snapshots e estados dos datasets analíticos;</li>
+<li>estabelecer padrões de nomenclatura, estruturação de diretórios, tabelas, schemas, views e data marts;</li>
+<li>garantir que os dados armazenados mantenham vínculo com sua origem, regras de transformação, métricas de qualidade, restrições de acesso e versões;</li>
+<li>organizar diferentes formas de representação dos dados, incluindo estruturas tabulares, temporais, multidimensionais, relacionais e orientadas a grafos;</li>
+<li>preparar os dados para consumo por módulos posteriores de <a class="term" href="../conceitos/feature-engineering.html">feature engineering</a>, representação analítica, dashboards, modelos, APIs, agentes inteligentes e monitoramento;</li>
+<li>definir métricas para avaliar cobertura, desempenho, disponibilidade, organização, rastreabilidade, versionamento e adequação do armazenamento analítico.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>O armazenamento analítico corresponde ao conjunto de decisões, estruturas e mecanismos destinados a persistir dados de forma adequada ao uso analítico. Diferentemente do armazenamento operacional, cujo foco está em registrar transações e apoiar processos cotidianos, o armazenamento analítico organiza dados para consulta, agregação, exploração, modelagem, visualização, auditoria, monitoramento e tomada de decisão.</p>
+<p>No UnespDataLens-RM, o armazenamento analítico pode envolver diferentes paradigmas arquiteturais:</p>
+<div class="table-wrap"><table class="table"><tr><th>Paradigma</th><th>Característica</th><th>Uso no modelo de referência</th></tr><tr><td>Data Warehouse</td><td>Estrutura organizada, integrada e orientada a consultas analíticas.</td><td>Indicadores, relatórios, dashboards, data marts.</td></tr><tr><td>Data Lake</td><td>Armazenamento flexível de dados em diferentes formatos e níveis de estruturação.</td><td>Preservação de dados brutos, históricos e semiestruturados.</td></tr><tr><td>Lakehouse</td><td>Combina flexibilidade do data lake com governança, versionamento e desempenho analítico.</td><td>Dados curados, tabelas transacionais, reprocessamento e <a class="term" href="../conceitos/ciencia-de-dados.html">ciência de dados</a>.</td></tr><tr><td><a class="term" href="../conceitos/data-mart.html">Data Mart</a></td><td>Subconjunto temático orientado a uma área, domínio ou finalidade.</td><td>Painéis educacionais, indicadores territoriais, análises institucionais.</td></tr><tr><td>Banco relacional analítico</td><td>Estruturas tabulares normalizadas ou dimensionais.</td><td>Consultas SQL, integração, relatórios e análises.</td></tr><tr><td>Banco colunar</td><td>Armazenamento otimizado para leitura e agregações.</td><td>Consultas analíticas de grande volume.</td></tr><tr><td>Banco de grafos</td><td>Estrutura orientada a nós, arestas e propriedades.</td><td>Relações entre entidades, grafos temporais e análises relacionais.</td></tr><tr><td><a class="term" href="../conceitos/feature-store.html">Feature Store</a></td><td>Armazenamento especializado de atributos para modelos.</td><td>Reuso, versionamento e consistência de features.</td></tr></table></div>
+<p>A escolha da estrutura depende do tipo de dado, volume, frequência de atualização, necessidade de consulta, granularidade, restrições de acesso, requisitos de desempenho e finalidade analítica.</p>
+<p>O módulo também se fundamenta na ideia de zonas de dados. Uma arquitetura analítica robusta deve distinguir diferentes estados dos dados ao longo do pipeline. Por exemplo:</p>
+<ul class="list">
+<li>zona bruta, que preserva dados ingeridos em estado original;</li>
+<li>zona integrada, que armazena dados combinados entre fontes;</li>
+<li>zona tratada, que contém dados limpos e padronizados;</li>
+<li>zona curada, que contém dados validados, enriquecidos e prontos para uso;</li>
+<li>zona de consumo, que disponibiliza dados para dashboards, APIs, modelos ou usuários.</li>
+</ul>
+<p>Essa separação reduz confusão entre dados intermediários e dados prontos para uso, melhora a governança, facilita reprocessamento e permite rastrear a evolução dos ativos analíticos.</p>
+<p>À luz da Design Science Research, o Módulo 7 formaliza o armazenamento analítico como um conjunto de artefatos projetados para resolver problemas de dispersão, baixa organização, dificuldade de reuso, <a class="term" href="../problemas/baixa-rastreabilidade.html">baixa rastreabilidade</a>, falta de versionamento e baixa eficiência no acesso aos dados analíticos.</p>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">5. Formalização sintética do módulo</h2>
+<p>O Módulo 7 pode ser compreendido como um processo de persistência estruturada dos datasets analíticos produzidos pelos módulos anteriores.</p>
+<p>Considerando o conjunto de datasets tratados, integrados, validados ou sinalizados:</p>
+<div class="formula">D = {d₁, d₂, ..., dₙ}</div>
+<p>o módulo define um conjunto de estruturas de armazenamento analítico:</p>
+<div class="formula">S = {s₁, s₂, ..., sₖ}</div>
+<p>em que cada sᵢ representa uma tabela, arquivo, partição, view, data mart, schema, índice, <a class="term" href="../conceitos/grafo.html">grafo</a>, feature table ou produto persistido.</p>
+<p>Cada estrutura de armazenamento pode ser descrita por:</p>
+<div class="formula">sᵢ = {id, nome, tipo, dataset_origem, formato, local, zona, schema, granularidade, particionamento, versão, qualidade, sensibilidade, restrição_acesso, lineage}</div>
+<p>O módulo também define um conjunto de zonas:</p>
+<div class="formula">Z = {z_bruta, z_integrada, z_tratada, z_curada, z_consumo}</div>
+<p>Cada dataset dⱼ deve ser associado a uma ou mais zonas de armazenamento, de acordo com seu estado no pipeline e sua finalidade de uso.</p>
+<p>O resultado do módulo é um conjunto de ativos analíticos armazenados:</p>
+<div class="formula">A = {a₁, a₂, ..., aₘ}</div>
+<p>em que cada aₘ representa um ativo persistido, consultável, versionado, rastreável e preparado para consumo.</p>
+<p>Dessa forma, o armazenamento deixa de ser apenas um local físico ou lógico de gravação e passa a ser uma estrutura formal do modelo de referência, vinculada à qualidade, à governança, à linhagem, ao versionamento e ao consumo analítico.</p>
+<h2 class="section-title" id="entradas-do-modulo">6. Entradas do módulo</h2>
+<p>As entradas do Módulo 7 incluem datasets, <a class="term" href="../conceitos/metadados.html">metadados</a>, regras, métricas e registros produzidos nos módulos anteriores.</p>
+<p>As principais entradas são:</p>
+<ul class="list">
+<li>datasets brutos preservados;</li>
+<li>datasets integrados e harmonizados;</li>
+<li>datasets tratados e enriquecidos;</li>
+<li>datasets validados;</li>
+<li>datasets balanceados ou sinalizados;</li>
+<li>manifestos de ingestão;</li>
+<li>manifestos de integração;</li>
+<li>manifestos de transformação;</li>
+<li>relatórios de qualidade;</li>
+<li>registros de não <a class="term" href="../metricas/conformidade.html">conformidade</a>;</li>
+<li>relatórios de vieses e equidade;</li>
+<li><a class="term" href="../artefatos/classificacao-de-sensibilidade.html">classificação de sensibilidade</a>;</li>
+<li><a class="term" href="../artefatos/registro-de-granularidade.html">registro de granularidade</a>;</li>
+<li>dicionários de dados;</li>
+<li>regras de transformação;</li>
+<li>tabelas de mapeamento;</li>
+<li>registros de lineage preliminar;</li>
+<li>versões e snapshots;</li>
+<li>requisitos de consulta;</li>
+<li>requisitos de desempenho;</li>
+<li>requisitos de segurança;</li>
+<li>requisitos de consumo analítico;</li>
+<li>políticas de retenção;</li>
+<li>políticas de acesso;</li>
+<li>padrões de nomenclatura e organização.</li>
+</ul>
+<h2 class="section-title" id="processamento">7. Processamento</h2>
+<p>O processamento do Módulo 7 envolve decisões de arquitetura, modelagem, organização, persistência, otimização, versionamento e disponibilização interna dos dados analíticos.</p>
+<h3 id="definicao-da-arquitetura-de-armazenamento">7.1 Definição da arquitetura de armazenamento</h3>
+<p>A primeira atividade consiste em definir a arquitetura de armazenamento analítico mais adequada ao projeto. Essa decisão deve considerar volume de dados, variedade de formatos, frequência de atualização, tipos de consulta, necessidade de reprocessamento, requisitos de governança, custo, escalabilidade e integração com ferramentas analíticas.</p>
+<p>Dependendo do projeto, pode-se adotar um data warehouse, data lake, lakehouse, banco relacional, banco colunar, banco de grafos, data marts ou uma arquitetura híbrida.</p>
+<h3 id="definicao-das-zonas-de-dados">7.2 Definição das zonas de dados</h3>
+<p>A segunda atividade consiste em organizar os dados em zonas lógicas. Essa separação permite distinguir dados brutos, integrados, tratados, curados e prontos para consumo.</p>
+<p>Cada zona deve possuir finalidade, regras de acesso, critérios de entrada, critérios de saída, política de retenção, padrão de nomenclatura e relação com os módulos do modelo de referência.</p>
+<h3 id="modelagem-logica-dos-dados-analiticos">7.3 Modelagem lógica dos dados analíticos</h3>
+<p>A terceira atividade consiste em definir como os dados serão organizados logicamente. Essa modelagem pode envolver tabelas normalizadas, modelos dimensionais, tabelas fato e dimensão, views analíticas, data marts, tabelas agregadas, estruturas orientadas a <a class="term" href="../conceitos/eventos.html">eventos</a>, <a class="term" href="../conceitos/series-temporais.html">séries temporais</a> ou grafos.</p>
+<p>A modelagem deve considerar a finalidade do consumo: análise exploratória, dashboards, modelos preditivos, análise temporal, representação relacional, grafos ou indicadores gerenciais.</p>
+<h3 id="definicao-de-formatos-e-padroes-de-persistencia">7.4 Definição de formatos e padrões de persistência</h3>
+<p>A quarta atividade consiste em definir os formatos de armazenamento, como CSV, Parquet, Delta, Iceberg, Hudi, ORC, tabelas relacionais, documentos JSON, tabelas colunares ou estruturas de grafos.</p>
+<p>A escolha do formato deve considerar eficiência de leitura, compressão, interoperabilidade, versionamento, suporte a schema evolution, governança e ferramentas disponíveis.</p>
+<h3 id="particionamento-indexacao-e-otimizacao">7.5 Particionamento, indexação e otimização</h3>
+<p>A quinta atividade consiste em definir estratégias para melhorar desempenho e organização. Isso pode incluir particionamento por data, fonte, domínio, território, curso, município, período letivo ou versão; criação de índices; organização por colunas; materialização de views; agregações pré-computadas; ordenação física e compactação de arquivos.</p>
+<h3 id="persistencia-dos-dados-analiticos">7.6 Persistência dos dados analíticos</h3>
+<p>A sexta atividade consiste em gravar os datasets nas estruturas definidas, preservando metadados mínimos sobre origem, versão, schema, qualidade, sensibilidade, data de atualização e lineage.</p>
+<p>A persistência deve garantir que os dados possam ser localizados, consultados, auditados, versionados e utilizados por módulos posteriores.</p>
+<h3 id="versionamento-e-snapshots-analiticos">7.7 Versionamento e snapshots analíticos</h3>
+<p>A sétima atividade consiste em preservar versões dos datasets analíticos, permitindo reconstrução de estados anteriores, comparação entre execuções e reprocessamento de análises.</p>
+<p>O versionamento pode ocorrer por data, número de versão, hash, <a class="term" href="../conceitos/snapshot.html">snapshot</a>, tag semântica ou controle transacional em ambientes lakehouse.</p>
+<h3 id="organizacao-dos-ativos-para-consumo">7.8 Organização dos ativos para consumo</h3>
+<p>A oitava atividade consiste em preparar estruturas específicas para consumo analítico, como data marts, views, tabelas agregadas, datasets para treinamento, bases para dashboards, tabelas de features, estruturas para APIs ou grafos persistidos.</p>
+<p>Essa organização não substitui o módulo de disponibilização analítica, mas cria as bases persistidas que serão posteriormente expostas para consumo.</p>
+<h3 id="controle-de-acesso-e-sensibilidade-no-armazenamento">7.9 <a class="term" href="../conceitos/controle-de-acesso.html">Controle de acesso</a> e sensibilidade no armazenamento</h3>
+<p>A nona atividade consiste em garantir que os dados armazenados respeitem classificações de sensibilidade, restrições de acesso, políticas de segurança, anonimização, pseudonimização ou segregação de dados, quando necessário.</p>
+<p>Dados sensíveis devem possuir controles adequados de acesso, trilhas de auditoria e políticas de retenção.</p>
+<h3 id="registro-do-armazenamento-analitico">7.10 Registro do armazenamento analítico</h3>
+<p>A décima atividade consiste em documentar onde cada ativo foi armazenado, em qual formato, em qual zona, com qual schema, versão, particionamento, tamanho, frequência de atualização, qualidade e restrição de acesso.</p>
+<p>Esse registro será utilizado por módulos posteriores de catálogo, lineage, versionamento, monitoramento e agentes inteligentes.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-tecnologias-aplicaveis">8. Técnicas, métodos e tecnologias aplicáveis</h2>
+<p>O Módulo 7 pode empregar diferentes técnicas, métodos e tecnologias de armazenamento analítico.</p>
+<p>Entre as técnicas de modelagem, destacam-se:</p>
+<ul class="list">
+<li>modelagem relacional;</li>
+<li>modelagem dimensional;</li>
+<li>modelo estrela;</li>
+<li>modelo floco de neve;</li>
+<li>tabelas fato e dimensão;</li>
+<li>data marts temáticos;</li>
+<li>views materializadas;</li>
+<li>tabelas agregadas;</li>
+<li>modelagem orientada a eventos;</li>
+<li>modelagem temporal;</li>
+<li>modelagem orientada a grafos;</li>
+<li>modelagem híbrida;</li>
+<li>schema-on-read;</li>
+<li>schema-on-write;</li>
+<li>data vault, quando aplicável.</li>
+</ul>
+<p>Entre as técnicas de organização física, podem ser utilizadas:</p>
+<ul class="list">
+<li>particionamento;</li>
+<li>indexação;</li>
+<li>clustering físico;</li>
+<li>compressão;</li>
+<li>compactação de arquivos;</li>
+<li>ordenação por colunas;</li>
+<li>otimização de leitura;</li>
+<li>controle de schema;</li>
+<li>schema evolution;</li>
+<li>versionamento de tabelas;</li>
+<li>snapshots;</li>
+<li>materialização de consultas;</li>
+<li>separação por zonas;</li>
+<li>segregação por sensibilidade.</li>
+</ul>
+<p>Entre os formatos e tecnologias possíveis, destacam-se:</p>
+<ul class="list">
+<li>CSV;</li>
+<li>JSON;</li>
+<li>Parquet;</li>
+<li>ORC;</li>
+<li>Avro;</li>
+<li>Delta Lake;</li>
+<li>Apache Iceberg;</li>
+<li>Apache Hudi;</li>
+<li><a class="term" href="../tecnicas/postgresql.html">PostgreSQL</a>;</li>
+<li>SQL Server;</li>
+<li>MySQL;</li>
+<li><a class="term" href="../tecnicas/duckdb.html">DuckDB</a>;</li>
+<li>ClickHouse;</li>
+<li>BigQuery;</li>
+<li>Redshift;</li>
+<li>Snowflake;</li>
+<li>Databricks;</li>
+<li>Apache Hive;</li>
+<li><a class="term" href="../tecnicas/spark.html">Spark</a> SQL;</li>
+<li>Trino;</li>
+<li>Presto;</li>
+<li><a class="term" href="../tecnicas/neo4j.html">Neo4j</a>;</li>
+<li>ArangoDB;</li>
+<li>bancos orientados a grafos;</li>
+<li>object storage;</li>
+<li>data lakes;</li>
+<li>lakehouses.</li>
+</ul>
+<p>A escolha das tecnologias deve ser justificada conforme os objetivos do projeto, os requisitos de desempenho, volume, governança, custo, interoperabilidade e capacidade de reprocessamento.</p>
+<h2 class="section-title" id="metricas-do-modulo">9. Métricas do módulo</h2>
+<p>As métricas do Módulo 7 têm como objetivo avaliar organização, cobertura, eficiência, rastreabilidade, versionamento, disponibilidade e adequação do armazenamento analítico.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Cobertura de armazenamento analítico</td><td>CAA</td><td>Proporção de datasets tratados persistidos em estrutura analítica</td></tr><tr><td>Taxa de ativos armazenados com schema</td><td>TAAS</td><td>Proporção de ativos com schema documentado</td></tr><tr><td>Taxa de ativos versionados</td><td>TAV</td><td>Proporção de ativos com versão ou snapshot</td></tr><tr><td>Taxa de ativos com localização documentada</td><td>TALD</td><td>Proporção de ativos com local de armazenamento registrado</td></tr><tr><td>Taxa de ativos com zona definida</td><td>TAZD</td><td>Proporção de ativos classificados por zona</td></tr><tr><td>Taxa de ativos com particionamento adequado</td><td>TAPA</td><td>Proporção de ativos particionados segundo critério definido</td></tr><tr><td>Tempo médio de consulta</td><td>TMC</td><td>Tempo médio para execução de consultas analíticas</td></tr><tr><td>Taxa de consultas bem-sucedidas</td><td>TCBS</td><td>Proporção de consultas concluídas sem erro</td></tr><tr><td>Taxa de ativos com controle de acesso</td><td>TACA</td><td>Proporção de ativos com regra de acesso definida</td></tr><tr><td>Taxa de ativos com lineage associado</td><td>TALA</td><td>Proporção de ativos armazenados com origem e dependências registradas</td></tr><tr><td>Taxa de duplicação de armazenamento</td><td>TDA</td><td>Proporção de ativos redundantes ou duplicados</td></tr><tr><td>Taxa de atualização conforme <a class="term" href="../conceitos/periodicidade.html">periodicidade</a></td><td>TACP</td><td>Proporção de ativos atualizados conforme periodicidade definida</td></tr><tr><td>Taxa de reprocessabilidade</td><td>TRP</td><td>Proporção de ativos que podem ser reconstruídos a partir de versões e metadados</td></tr><tr><td>Eficiência de armazenamento</td><td>EA</td><td>Relação entre volume armazenado, compressão e formato adotado</td></tr><tr><td>Disponibilidade do ativo</td><td>DA</td><td>Grau de disponibilidade do ativo para consulta autorizada</td></tr></table></div>
+<h3 id="cobertura-de-armazenamento-analitico-caa">9.1 Cobertura de Armazenamento Analítico — CAA</h3>
+<p>A Cobertura de Armazenamento Analítico mede a proporção de datasets tratados, integrados ou validados que foram persistidos em estruturas analíticas.</p>
+<div class="formula">CAA = número de datasets armazenados analiticamente / número total de datasets elegíveis para armazenamento analítico</div>
+<p>Essa métrica indica se os ativos produzidos pelo pipeline estão sendo devidamente organizados para consumo posterior.</p>
+<h3 id="taxa-de-ativos-versionados-tav">9.2 Taxa de Ativos Versionados — TAV</h3>
+<p>A Taxa de Ativos Versionados mede a proporção de ativos armazenados que possuem versão, snapshot ou mecanismo equivalente de identificação temporal.</p>
+<div class="formula">TAV = número de ativos versionados / número total de ativos armazenados</div>
+<p>Essa métrica é fundamental para reprodutibilidade e auditoria.</p>
+<h3 id="taxa-de-ativos-com-localizacao-documentada-tald">9.3 Taxa de Ativos com Localização Documentada — TALD</h3>
+<p>A Taxa de Ativos com Localização Documentada mede a proporção de ativos cujo local físico ou lógico de armazenamento foi registrado.</p>
+<div class="formula">TALD = número de ativos com localização documentada / número total de ativos armazenados</div>
+<p>Essa métrica evita perda de rastreabilidade e facilita descoberta e governança.</p>
+<h3 id="tempo-medio-de-consulta-tmc">9.4 Tempo Médio de Consulta — TMC</h3>
+<p>O Tempo Médio de Consulta avalia o desempenho do armazenamento para consultas analíticas.</p>
+<div class="formula">TMC = soma dos tempos de consulta / número total de consultas avaliadas</div>
+<p>Essa métrica deve ser interpretada de acordo com volume, complexidade da consulta e requisitos de uso.</p>
+<h3 id="taxa-de-reprocessabilidade-trp">9.5 Taxa de Reprocessabilidade — TRP</h3>
+<p>A Taxa de Reprocessabilidade mede a proporção de ativos armazenados que podem ser reconstruídos a partir de suas fontes, versões, regras, parâmetros e metadados.</p>
+<div class="formula">TRP = número de ativos reprocessáveis / número total de ativos armazenados</div>
+<p>Essa métrica conecta o armazenamento analítico aos princípios de lineage, versionamento e reprodutibilidade.</p>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">10. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 7 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, regras de construção, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A7.1</td><td>Arquitetura de Armazenamento Analítico</td><td>Documento técnico/diagrama</td><td>CAA</td><td>Define a estrutura geral de armazenamento</td></tr><tr><td>A7.2</td><td>Modelo de Zonas de Dados</td><td>Especificação lógica</td><td>TAZD</td><td>Organiza estados dos dados no pipeline</td></tr><tr><td>A7.3</td><td>Modelo Lógico Analítico</td><td>Modelo relacional/dimensional/grafo</td><td>TAAS</td><td>Define organização lógica dos dados</td></tr><tr><td>A7.4</td><td>Mapa de Armazenamento Analítico</td><td>Tabela/catálogo técnico</td><td>TALD</td><td>Registra localização dos ativos</td></tr><tr><td>A7.5</td><td>Especificação de Schemas Analíticos</td><td>Dicionário/schema</td><td>TAAS</td><td>Formaliza estrutura dos ativos</td></tr><tr><td>A7.6</td><td>Registro de Particionamento e Indexação</td><td>Tabela técnica</td><td>TAPA, TMC</td><td>Otimiza consultas e organização</td></tr><tr><td>A7.7</td><td>Registro de Versionamento e Snapshots Analíticos</td><td>Tabela/manifesto</td><td>TAV, TRP</td><td>Preserva versões dos ativos</td></tr><tr><td>A7.8</td><td>Data Mart ou Dataset Curado</td><td>Tabela/view/dataset</td><td>CAA</td><td>Materializa dados prontos para consumo</td></tr><tr><td>A7.9</td><td>Registro de Controle de Acesso ao Armazenamento</td><td>Matriz de acesso</td><td>TACA</td><td>Garante segurança e conformidade</td></tr><tr><td>A7.10</td><td>Relatório de Desempenho e Adequação do Armazenamento</td><td>Relatório técnico</td><td>TMC, DA</td><td>Avalia eficiência e adequação</td></tr></table></div>
+<h2 class="section-title" id="artefato-a7-1-arquitetura-de-armazenamento-analitico">11. Artefato A7.1 — Arquitetura de Armazenamento Analítico</h2>
+<h3 id="finalidade">11.1 Finalidade</h3>
+<p>A Arquitetura de Armazenamento Analítico define a estrutura geral utilizada para persistir, organizar e disponibilizar os dados analíticos no UnespDataLens-RM.</p>
+<h3 id="tipo-de-artefato-na-dsr">11.2 Tipo de artefato na DSR</h3>
+<p>Na perspectiva da Design Science Research, esse artefato é um modelo, pois representa a estrutura arquitetural de armazenamento, e uma instanciação, quando implementado em ambiente computacional.</p>
+<h3 id="estrutura-minima">11.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Paradigma adotado</td><td>Data warehouse, data lake, lakehouse, banco relacional, grafo etc.</td></tr><tr><td>Zonas de dados</td><td>Bruta, integrada, tratada, curada, consumo</td></tr><tr><td>Tecnologias</td><td>Ferramentas, bancos, formatos e plataformas</td></tr><tr><td>Critérios de organização</td><td>Domínio, data, fonte, versão, sensibilidade</td></tr><tr><td>Estratégia de versionamento</td><td>Snapshot, tabela transacional, tag, hash</td></tr><tr><td>Estratégia de acesso</td><td>Papéis, permissões, autenticação</td></tr><tr><td>Estratégia de desempenho</td><td>Particionamento, indexação, compressão</td></tr><tr><td>Estratégia de governança</td><td>Metadados, qualidade, lineage, retenção</td></tr><tr><td>Consumidores previstos</td><td>Dashboards, modelos, APIs, grafos, agentes</td></tr></table></div>
+<h3 id="metricas-associadas">11.4 Métricas associadas</h3>
+<ul class="list">
+<li>cobertura de armazenamento analítico;</li>
+<li>taxa de ativos com zona definida;</li>
+<li>taxa de ativos com controle de acesso;</li>
+<li>taxa de ativos versionados;</li>
+<li>disponibilidade dos ativos.</li>
+</ul>
+<h3 id="criterios-de-validacao">11.5 Critérios de validação</h3>
+<p>A arquitetura é considerada válida quando permite armazenar os principais ativos analíticos do projeto de forma organizada, rastreável, segura, consultável e adequada aos usos previstos.</p>
+<h3 id="contribuicao">11.6 Contribuição</h3>
+<p>Esse artefato transforma decisões de armazenamento em uma estrutura arquitetural explícita, reduzindo improvisação e dispersão dos ativos.</p>
+<h2 class="section-title" id="artefato-a7-2-modelo-de-zonas-de-dados">12. Artefato A7.2 — Modelo de Zonas de Dados</h2>
+<h3 id="finalidade-2">12.1 Finalidade</h3>
+<p>O Modelo de Zonas de Dados define as áreas lógicas de armazenamento utilizadas para organizar os diferentes estados dos dados no pipeline.</p>
+<h3 id="estrutura-minima-2">12.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Zona</th><th>Finalidade</th><th>Tipo de dado</th><th>Critério de entrada</th><th>Critério de saída</th></tr><tr><td>Bruta</td><td>Preservar dados ingeridos</td><td>Dados originais</td><td>Ingestão concluída</td><td>Validação inicial</td></tr><tr><td>Integrada</td><td>Armazenar dados combinados</td><td>Dados relacionados entre fontes</td><td>Integração documentada</td><td>Harmonização validada</td></tr><tr><td>Tratada</td><td>Armazenar dados limpos</td><td>Dados padronizados</td><td>Transformação concluída</td><td>Validação de qualidade</td></tr><tr><td>Curada</td><td>Armazenar dados prontos para análise</td><td>Dados validados e enriquecidos</td><td>Qualidade aprovada</td><td>Consumo analítico</td></tr><tr><td>Consumo</td><td>Disponibilizar dados para uso</td><td>Data marts, views, APIs, dashboards</td><td>Ativo aprovado</td><td>Uso por consumidores</td></tr></table></div>
+<h3 id="metricas-associadas-2">12.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos com zona definida;</li>
+<li>número de ativos por zona;</li>
+<li>taxa de ativos indevidamente classificados;</li>
+<li>tempo médio de permanência por zona;</li>
+<li>proporção de ativos curados.</li>
+</ul>
+<h3 id="criterios-de-validacao-2">12.4 Critérios de validação</h3>
+<p>O modelo é considerado válido quando cada ativo armazenado possui zona definida e quando os critérios de entrada e saída de cada zona estão documentados.</p>
+<h3 id="contribuicao-2">12.5 Contribuição</h3>
+<p>Esse artefato organiza o ciclo de vida dos dados no armazenamento analítico, evitando mistura entre dados brutos, intermediários e prontos para consumo.</p>
+<h2 class="section-title" id="artefato-a7-3-modelo-logico-analitico">13. Artefato A7.3 — Modelo Lógico Analítico</h2>
+<h3 id="finalidade-3">13.1 Finalidade</h3>
+<p>O Modelo Lógico Analítico define como os dados serão representados para consulta e análise.</p>
+<h3 id="possiveis-representacoes">13.2 Possíveis representações</h3>
+<div class="table-wrap"><table class="table"><tr><th>Representação</th><th>Aplicação</th></tr><tr><td>Relacional</td><td>Consultas SQL, integração e consistência</td></tr><tr><td>Dimensional</td><td>Dashboards, indicadores e análise gerencial</td></tr><tr><td>Colunar</td><td>Consultas analíticas de grande volume</td></tr><tr><td>Temporal</td><td>Séries históricas e trajetórias</td></tr><tr><td>Evento</td><td><a class="term" href="../conceitos/logs.html">Logs</a>, interações e processos dinâmicos</td></tr><tr><td>Grafo</td><td>Relações entre entidades</td></tr><tr><td>Híbrida</td><td>Projetos com múltiplas necessidades analíticas</td></tr></table></div>
+<h3 id="estrutura-minima-3">13.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Nome do modelo</td><td>Identificação</td></tr><tr><td>Dataset de origem</td><td>Ativo usado como base</td></tr><tr><td>Tipo de modelo</td><td>Relacional, dimensional, grafo, temporal etc.</td></tr><tr><td>Entidades ou tabelas</td><td>Estruturas principais</td></tr><tr><td>Chaves</td><td>Identificadores e relações</td></tr><tr><td>Granularidade</td><td>Unidade de análise</td></tr><tr><td>Atributos principais</td><td>Campos relevantes</td></tr><tr><td>Finalidade</td><td>Uso analítico esperado</td></tr><tr><td>Restrições</td><td>Cuidados ou limitações</td></tr></table></div>
+<h3 id="metricas-associadas-3">13.4 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos com schema analítico;</li>
+<li>número de modelos definidos;</li>
+<li>taxa de modelos com granularidade explícita;</li>
+<li>taxa de modelos com chaves documentadas;</li>
+<li>adequação ao consumo previsto.</li>
+</ul>
+<h3 id="contribuicao-3">13.5 Contribuição</h3>
+<p>Esse artefato garante que o armazenamento analítico seja orientado por modelos de uso e não apenas por cópias físicas de arquivos.</p>
+<h2 class="section-title" id="artefato-a7-4-mapa-de-armazenamento-analitico">14. Artefato A7.4 — Mapa de Armazenamento Analítico</h2>
+<h3 id="finalidade-4">14.1 Finalidade</h3>
+<p>O Mapa de Armazenamento Analítico registra onde cada ativo de dados está armazenado, em qual formato, zona, versão, schema e condição de acesso.</p>
+<h3 id="estrutura-minima-4">14.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador do ativo</td><td>Código único</td></tr><tr><td>Nome do ativo</td><td>Nome do dataset, tabela ou view</td></tr><tr><td>Zona</td><td>Bruta, integrada, tratada, curada ou consumo</td></tr><tr><td>Localização</td><td>Caminho, banco, schema, bucket ou endpoint</td></tr><tr><td>Formato</td><td>CSV, Parquet, Delta, tabela SQL etc.</td></tr><tr><td>Versão</td><td>Versão ou snapshot</td></tr><tr><td>Tamanho</td><td>Volume armazenado</td></tr><tr><td>Particionamento</td><td>Critério usado</td></tr><tr><td>Sensibilidade</td><td>Classificação</td></tr><tr><td>Restrição de acesso</td><td><a class="term" href="../artefatos/politica-de-acesso.html">Política de acesso</a></td></tr><tr><td>Atualização</td><td>Periodicidade ou última carga</td></tr></table></div>
+<h3 id="metricas-associadas-4">14.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos com localização documentada;</li>
+<li>taxa de ativos com zona definida;</li>
+<li>taxa de ativos com versão;</li>
+<li>taxa de ativos com formato registrado;</li>
+<li>taxa de ativos com restrição de acesso definida.</li>
+</ul>
+<h3 id="contribuicao-4">14.4 Contribuição</h3>
+<p>Esse artefato permite localizar, auditar, consultar e governar os ativos armazenados.</p>
+<h2 class="section-title" id="artefato-a7-5-especificacao-de-schemas-analiticos">15. Artefato A7.5 — Especificação de Schemas Analíticos</h2>
+<h3 id="finalidade-5">15.1 Finalidade</h3>
+<p>A Especificação de Schemas Analíticos documenta a estrutura dos datasets armazenados, incluindo atributos, tipos, domínios, chaves, constraints, granularidade e regras de atualização.</p>
+<h3 id="estrutura-minima-5">15.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Dataset ou tabela</td></tr><tr><td>Atributo</td><td>Nome do campo</td></tr><tr><td>Tipo</td><td>Tipo de dado</td></tr><tr><td>Domínio</td><td>Valores permitidos</td></tr><tr><td>Obrigatoriedade</td><td>Obrigatório ou opcional</td></tr><tr><td>Chave</td><td>Primária, estrangeira, composta ou ausente</td></tr><tr><td>Descrição</td><td>Significado</td></tr><tr><td>Granularidade</td><td>Unidade de análise</td></tr><tr><td>Sensibilidade</td><td>Classificação</td></tr><tr><td>Regra de atualização</td><td>Como o campo é atualizado</td></tr></table></div>
+<h3 id="metricas-associadas-5">15.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos armazenados com schema;</li>
+<li>percentual de atributos documentados;</li>
+<li>percentual de chaves documentadas;</li>
+<li><a class="term" href="../metricas/taxa-de-conformidade-de-schema.html">taxa de conformidade de schema</a>;</li>
+<li>taxa de schema evolution documentada.</li>
+</ul>
+<h3 id="contribuicao-5">15.4 Contribuição</h3>
+<p>Esse artefato reduz ambiguidade estrutural e apoia consulta, validação, governança, lineage e reprodutibilidade.</p>
+<h2 class="section-title" id="artefato-a7-6-registro-de-particionamento-e-indexacao">16. Artefato A7.6 — Registro de Particionamento e Indexação</h2>
+<h3 id="finalidade-6">16.1 Finalidade</h3>
+<p>O Registro de Particionamento e Indexação documenta as estratégias utilizadas para organizar fisicamente os dados e otimizar consultas.</p>
+<h3 id="estrutura-minima-6">16.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Dataset, tabela ou view</td></tr><tr><td>Critério de particionamento</td><td>Data, fonte, domínio, território etc.</td></tr><tr><td>Índices criados</td><td>Campos indexados</td></tr><tr><td>Justificativa</td><td>Motivo técnico</td></tr><tr><td>Consultas-alvo</td><td>Consultas beneficiadas</td></tr><tr><td>Impacto esperado</td><td>Redução de tempo, organização, filtragem</td></tr><tr><td>Data de criação</td><td>Momento da configuração</td></tr><tr><td>Observações</td><td>Limitações ou custos</td></tr></table></div>
+<h3 id="metricas-associadas-6">16.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos com particionamento adequado;</li>
+<li>tempo médio de consulta;</li>
+<li>redução de tempo após indexação;</li>
+<li>taxa de consultas bem-sucedidas;</li>
+<li>custo de armazenamento adicional.</li>
+</ul>
+<h3 id="contribuicao-6">16.4 Contribuição</h3>
+<p>Esse artefato torna explícitas decisões de desempenho e organização física dos dados.</p>
+<h2 class="section-title" id="artefato-a7-7-registro-de-versionamento-e-snapshots-analiticos">17. Artefato A7.7 — Registro de Versionamento e Snapshots Analíticos</h2>
+<h3 id="finalidade-7">17.1 Finalidade</h3>
+<p>O Registro de Versionamento e Snapshots Analíticos documenta versões dos ativos armazenados, permitindo reconstrução de análises e comparação entre estados temporais.</p>
+<h3 id="estrutura-minima-7">17.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Dataset ou tabela versionada</td></tr><tr><td>Versão</td><td>Número, tag, hash ou data</td></tr><tr><td>Snapshot</td><td>Identificador do estado preservado</td></tr><tr><td>Data de criação</td><td>Momento da versão</td></tr><tr><td>Origem</td><td>Dataset ou processo que gerou a versão</td></tr><tr><td>Alteração</td><td>Descrição da mudança</td></tr><tr><td>Responsável</td><td>Executor humano ou sistema</td></tr><tr><td>Localização</td><td>Caminho da versão</td></tr><tr><td>Status</td><td>Ativa, substituída, arquivada</td></tr><tr><td>Observações</td><td>Restrições ou limitações</td></tr></table></div>
+<h3 id="metricas-associadas-7">17.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos versionados;</li>
+<li>número de versões por ativo;</li>
+<li>taxa de ativos reprocessáveis;</li>
+<li>percentual de snapshots íntegros;</li>
+<li>tempo de recuperação de versões anteriores.</li>
+</ul>
+<h3 id="contribuicao-7">17.4 Contribuição</h3>
+<p>Esse artefato fortalece reprodutibilidade, auditoria e rastreabilidade temporal dos dados analíticos.</p>
+<h2 class="section-title" id="artefato-a7-8-data-mart-ou-dataset-curado">18. Artefato A7.8 — Data Mart ou Dataset Curado</h2>
+<h3 id="finalidade-8">18.1 Finalidade</h3>
+<p>O Data Mart ou Dataset Curado representa um <a class="term" href="../conceitos/ativo-analitico.html">ativo analítico</a> persistido e preparado para uma finalidade específica de consumo.</p>
+<h3 id="estrutura-formal">18.2 Estrutura formal</h3>
+<p>Um data mart ou dataset curado pode ser descrito por:</p>
+<div class="formula">dmᵢ = {id, nome, domínio, finalidade, fontes_origem, tabelas, granularidade, período, métricas_qualidade, versão, restrição_acesso, consumidores}</div>
+<h3 id="estrutura-minima-8">18.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Nome do ativo</td><td>Nome do data mart ou dataset curado</td></tr><tr><td>Domínio</td><td>Área temática</td></tr><tr><td>Finalidade</td><td>Uso analítico previsto</td></tr><tr><td>Fontes de origem</td><td>Bases utilizadas</td></tr><tr><td>Estrutura</td><td>Tabelas, views, arquivos ou grafos</td></tr><tr><td>Granularidade</td><td>Unidade de análise</td></tr><tr><td><a class="term" href="../conceitos/cobertura-temporal.html">Cobertura temporal</a></td><td>Período abrangido</td></tr><tr><td>Métricas de qualidade</td><td>Indicadores associados</td></tr><tr><td>Versão</td><td>Versão atual</td></tr><tr><td>Consumidores</td><td>Dashboards, modelos, APIs, analistas</td></tr><tr><td>Restrições de uso</td><td>Condições de acesso</td></tr></table></div>
+<h3 id="metricas-associadas-8">18.4 Métricas associadas</h3>
+<ul class="list">
+<li>número de data marts criados;</li>
+<li>taxa de ativos curados;</li>
+<li>taxa de reutilização;</li>
+<li>tempo médio de consulta;</li>
+<li>status de qualidade dos ativos curados.</li>
+</ul>
+<h3 id="contribuicao-8">18.5 Contribuição</h3>
+<p>Esse artefato materializa dados prontos para uso analítico, reduzindo retrabalho e promovendo reutilização controlada.</p>
+<h2 class="section-title" id="artefato-a7-9-registro-de-controle-de-acesso-ao-armazenamento">19. Artefato A7.9 — Registro de Controle de Acesso ao Armazenamento</h2>
+<h3 id="finalidade-9">19.1 Finalidade</h3>
+<p>O Registro de Controle de Acesso ao Armazenamento documenta quem pode acessar cada ativo armazenado e sob quais condições.</p>
+<h3 id="estrutura-minima-9">19.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Dataset, tabela, view ou data mart</td></tr><tr><td>Sensibilidade</td><td>Classificação do dado</td></tr><tr><td>Perfil de acesso</td><td>Administrador, analista, pesquisador, gestor etc.</td></tr><tr><td>Permissão</td><td>Leitura, escrita, administração, consulta agregada</td></tr><tr><td>Restrição</td><td>Condição específica</td></tr><tr><td>Justificativa</td><td>Motivo da permissão</td></tr><tr><td>Responsável pela autorização</td><td>Pessoa ou setor</td></tr><tr><td>Data de autorização</td><td>Momento do registro</td></tr><tr><td><a class="term" href="../metricas/validade.html">Validade</a></td><td>Prazo da autorização</td></tr></table></div>
+<h3 id="metricas-associadas-9">19.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos com controle de acesso;</li>
+<li>número de acessos autorizados;</li>
+<li>número de acessos expirados;</li>
+<li>percentual de ativos sensíveis com controle explícito;</li>
+<li>taxa de conformidade de acesso.</li>
+</ul>
+<h3 id="contribuicao-9">19.4 Contribuição</h3>
+<p>Esse artefato conecta armazenamento analítico a governança, segurança, <a class="term" href="../conceitos/privacidade.html">privacidade</a> e conformidade.</p>
+<h2 class="section-title" id="artefato-a7-10-relatorio-de-desempenho-e-adequacao-do-armazenamento">20. Artefato A7.10 — Relatório de Desempenho e Adequação do Armazenamento</h2>
+<h3 id="finalidade-10">20.1 Finalidade</h3>
+<p>O Relatório de Desempenho e Adequação do Armazenamento avalia se as estruturas definidas atendem aos requisitos de consulta, volume, atualização, governança e consumo analítico.</p>
+<h3 id="estrutura-minima-10">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo avaliado</td><td>Dataset, tabela, data mart ou zona</td></tr><tr><td>Volume</td><td>Tamanho armazenado</td></tr><tr><td>Consultas avaliadas</td><td>Consultas ou usos testados</td></tr><tr><td>Tempo médio de consulta</td><td>Desempenho observado</td></tr><tr><td>Taxa de sucesso</td><td>Consultas concluídas</td></tr><tr><td>Gargalos</td><td>Problemas identificados</td></tr><tr><td><a class="term" href="../metricas/adequacao-ao-uso.html">Adequação ao uso</a></td><td>Aprovado, ressalvas, inadequado</td></tr><tr><td>Recomendações</td><td>Otimização, particionamento, refatoração</td></tr><tr><td>Observações</td><td>Limitações ou riscos</td></tr></table></div>
+<h3 id="metricas-associadas-10">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>tempo médio de consulta;</li>
+<li>taxa de consultas bem-sucedidas;</li>
+<li>disponibilidade do ativo;</li>
+<li>eficiência de armazenamento;</li>
+<li>taxa de ativos adequados ao uso.</li>
+</ul>
+<h3 id="contribuicao-10">20.4 Contribuição</h3>
+<p>Esse artefato permite avaliar se o armazenamento analítico está efetivamente servindo aos consumidores de dados.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">21. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Datasets brutos, integrados, tratados, validados e sinalizados; metadados; regras; qualidade; sensibilidade; versões; requisitos de consulta e consumo.</td></tr><tr><td>Processamento</td><td>Definição da arquitetura, zonas, modelo lógico, formatos, particionamento, indexação, persistência, versionamento, controle de acesso e avaliação de desempenho.</td></tr><tr><td>Artefatos</td><td>Arquitetura de armazenamento, modelo de zonas, modelo lógico analítico, mapa de armazenamento, schemas, particionamento, versionamento, data marts, controle de acesso e relatório de desempenho.</td></tr><tr><td>Métricas</td><td>CAA, TAAS, TAV, TALD, TAZD, TAPA, TMC, TCBS, TACA, TALA, TDA, TACP, TRP, EA e DA.</td></tr><tr><td>Saídas</td><td>Ativos analíticos persistidos, organizados, versionados, consultáveis, seguros, rastreáveis e preparados para consumo por análises, modelos, dashboards, APIs, grafos e agentes inteligentes.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">22. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 7 pode ser considerado concluído quando:</p>
+<ol class="steps">
+<li>a arquitetura de armazenamento analítico foi definida;</li>
+<li>as zonas de dados foram especificadas;</li>
+<li>os datasets elegíveis foram persistidos em estruturas analíticas adequadas;</li>
+<li>cada ativo armazenado possui localização documentada;</li>
+<li>os schemas dos principais ativos foram especificados;</li>
+<li>os ativos críticos possuem versão ou snapshot;</li>
+<li>os ativos sensíveis possuem controle de acesso definido;</li>
+<li>estratégias de particionamento ou indexação foram aplicadas quando necessário;</li>
+<li>data marts ou datasets curados foram produzidos para consumo;</li>
+<li>métricas de desempenho e adequação foram avaliadas;</li>
+<li>os ativos armazenados mantêm vínculo com origem, qualidade, sensibilidade, versão e lineage;</li>
+<li>os dados estão preparados para consumo pelos módulos posteriores.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-do-modelo-de-referencia">23. Relação com os demais módulos do modelo de referência</h2>
+<p>O Módulo 7 depende do Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, pois utiliza informações sobre origem, formato, domínio, sensibilidade, granularidade e periodicidade das fontes.</p>
+<p>Depende do Módulo 2 — Extração, Ingestão e Armazenamento Bruto, pois incorpora dados brutos, snapshots e registros de ingestão à organização geral de armazenamento.</p>
+<p>Depende do Módulo 3 — Integração e Harmonização, pois recebe datasets integrados, regras de integração e estruturas resultantes da combinação entre fontes.</p>
+<p>Depende do Módulo 4 — Transformação, Limpeza e Enriquecimento, pois recebe dados tratados, enriquecidos e atributos derivados que precisam ser persistidos.</p>
+<p>Depende do Módulo 5 — Qualidade e Validação de Dados, pois utiliza status de qualidade, métricas e relatórios para definir quais ativos podem ser curados ou disponibilizados.</p>
+<p>Depende do Módulo 6 — Desbalanceamento, Vieses e Equidade, pois utiliza sinalizações, restrições e versões balanceadas ou não balanceadas de datasets.</p>
+<p>Para o Módulo 8 — Metadados, Catálogo e Semântica dos Dados, fornece localização, estrutura, formato, schema, zona, versão e estado dos ativos armazenados.</p>
+<p>Para o Módulo 9 — Governança, Segurança, Privacidade e Conformidade, fornece informações sobre sensibilidade, controle de acesso, retenção e restrições no armazenamento.</p>
+<p>Para o Módulo 10 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Lineage e Rastreabilidade, fornece vínculos entre ativos armazenados, versões, zonas e datasets derivados.</p>
+<p>Para o Módulo 11 — Versionamento e Reprodutibilidade, fornece snapshots, versões e estruturas persistidas necessárias à reconstrução de análises.</p>
+<p>Para o Módulo 12 — Representação Tabular, Temporal, Grafos e Grafos Temporais, fornece estruturas armazenadas que podem ser convertidas em diferentes representações analíticas.</p>
+<p>Para o Módulo 13 — Feature Engineering e Feature Store, fornece datasets curados e estruturas persistidas para criação e armazenamento de features.</p>
+<p>Para o Módulo 14 — Disponibilização Analítica, fornece data marts, views, tabelas, datasets e estruturas prontas para consumo externo ou interno.</p>
+<p>Para o Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, fornece baseline de armazenamento, versões, volumes, schemas e histórico de atualização.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">24. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, o Módulo 7 poderia organizar dados tratados sobre matrículas, histórico acadêmico, notas, frequência, evasão, interações em ambiente virtual, dados socioeconômicos e indicadores de permanência.</p>
+<p>A arquitetura poderia prever uma zona bruta com dados originais, uma zona integrada com bases relacionadas por estudante, curso e período letivo, uma zona tratada com dados limpos e padronizados, uma zona curada com datasets validados para análise e uma zona de consumo com data marts para dashboards ou modelos preditivos.</p>
+<p>Exemplos de ativos armazenados poderiam incluir:</p>
+<ul class="list">
+<li>dataset curado de trajetória acadêmica;</li>
+<li>data mart de evasão por curso e período;</li>
+<li>tabela de indicadores de desempenho;</li>
+<li>view de estudantes ativos por semestre;</li>
+<li>dataset de interações no AVA por estudante e disciplina;</li>
+<li>tabela temporal de situação acadêmica;</li>
+<li>estrutura de grafo estudante-disciplina-curso.</li>
+</ul>
+<p>Cada ativo teria schema, versão, granularidade, localização, qualidade, sensibilidade e restrição de acesso documentados.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">25. Exemplo de aplicação em políticas públicas</h2>
+<p>Em uma aplicação em políticas públicas, o Módulo 7 poderia armazenar dados tratados e integrados de saúde, educação, assistência social, território, trabalho e habitação.</p>
+<p>A arquitetura poderia organizar dados por zonas e domínios, criando data marts para análise territorial, vulnerabilidade social, atendimento a famílias, cobertura de serviços e indicadores municipais.</p>
+<p>Exemplos de ativos armazenados poderiam incluir:</p>
+<ul class="list">
+<li>data mart territorial;</li>
+<li>base curada de famílias atendidas;</li>
+<li>tabela de equipamentos públicos por território;</li>
+<li>dataset de atendimentos por serviço;</li>
+<li>indicadores socioeconômicos por município;</li>
+<li>grafo território-equipamento-atendimento;</li>
+<li>views agregadas para dashboards de gestão.</li>
+</ul>
+<p>Cada ativo seria armazenado com controle de acesso, principalmente quando envolvesse dados pessoais ou sensíveis.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">26. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição do Módulo 7 está em formalizar o armazenamento analítico como uma etapa técnico-metodológica do modelo de referência, e não apenas como uma escolha de infraestrutura.</p>
+<p>O módulo propõe que os dados analíticos sejam armazenados segundo critérios explícitos de arquitetura, zonas, modelagem lógica, formato, particionamento, versionamento, controle de acesso, desempenho, rastreabilidade e adequação ao consumo.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>evitar dispersão de datasets analíticos;</li>
+<li>reduzir <a class="term" href="../problemas/duplicidade.html">duplicidade</a> e inconsistência entre versões;</li>
+<li>organizar dados por estado e finalidade;</li>
+<li>melhorar desempenho de consultas;</li>
+<li>preservar versões e snapshots;</li>
+<li>apoiar governança e controle de acesso;</li>
+<li>facilitar reuso de dados curados;</li>
+<li>preparar dados para dashboards, modelos, grafos, APIs e agentes inteligentes;</li>
+<li>fortalecer lineage, reprodutibilidade e auditoria;</li>
+<li>transformar datasets tratados em ativos analíticos persistidos e reutilizáveis.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">27. Síntese do módulo</h2>
+<p>O Módulo 7 — Armazenamento Analítico organiza e persiste os dados produzidos pelo UnespDataLens-RM em estruturas adequadas ao uso analítico. Ele define arquitetura, zonas, modelos lógicos, formatos, schemas, particionamento, versionamento, data marts, controle de acesso e critérios de desempenho.</p>
+<p>Sua importância é central porque dados tratados e validados só se tornam efetivamente reutilizáveis quando armazenados de forma organizada, documentada, consultável, segura, versionável e rastreável.</p>
+<p>Dessa forma, o Módulo 7 transforma os resultados intermediários do pipeline em ativos analíticos persistidos, preparados para consumo por análises, modelos, dashboards, APIs, grafos, feature stores, agentes inteligentes e processos de tomada de decisão baseada em evidências.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

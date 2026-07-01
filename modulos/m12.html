@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo Transversal 12 — Versionamento e Reprodutibilidade tem como finalidade controlar, registrar, preservar e permitir a reconstrução das versões dos dados, scripts, configurações, parâmetros, ambientes, regras, modelos, artefatos e produtos analíticos produzidos ao longo do modelo de referência UnespDataLens-RM.">
+  <title>Módulo 12 — Versionamento e Reprodutibilidade · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-transversal-12-versionamento-e-reprodutibilidade"></span><section class="hero">
+<span class="badge">Módulo 12</span>
+<h1>Módulo 12 — Versionamento e Reprodutibilidade</h1>
+<p>O Módulo Transversal 12 — Versionamento e Reprodutibilidade tem como finalidade controlar, registrar, preservar e permitir a reconstrução das versões dos dados, scripts, configurações, parâmetros, ambientes, regras, modelos, artefatos e produtos analíticos produzidos ao longo do modelo de referência UnespDataLens-RM.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 29 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#natureza-transversal-do-modulo">Natureza transversal do módulo</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-tecnologias-aplicaveis">Técnicas, métodos e tecnologias aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a12-1-politica-de-versionamento">Artefato A12.1 — Política de Versionamento</a><a href="#artefato-a12-2-registro-de-versoes-de-dados">Artefato A12.2 — Registro de Versões de Dados</a><a href="#artefato-a12-3-registro-de-versoes-de-codigo-e-regras">Artefato A12.3 — Registro de Versões de Código e Regras</a><a href="#artefato-a12-4-manifesto-de-execucao-reprodutivel">Artefato A12.4 — Manifesto de Execução Reprodutível</a><a href="#artefato-a12-5-registro-de-ambiente-computacional">Artefato A12.5 — Registro de Ambiente Computacional</a><a href="#artefato-a12-6-registro-de-parametros-de-execucao">Artefato A12.6 — Registro de Parâmetros de Execução</a><a href="#artefato-a12-7-changelog-de-ativos-analiticos">Artefato A12.7 — Changelog de Ativos Analíticos</a><a href="#artefato-a12-8-relatorio-de-comparacao-entre-versoes">Artefato A12.8 — Relatório de Comparação entre Versões</a><a href="#artefato-a12-9-pacote-de-reprodutibilidade">Artefato A12.9 — Pacote de Reprodutibilidade</a><a href="#artefato-a12-10-relatorio-de-reprodutibilidade">Artefato A12.10 — Relatório de Reprodutibilidade</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-o-pipeline-principal">Relação com o pipeline principal</a><a href="#relacao-com-os-demais-modulos-transversais">Relação com os demais módulos transversais</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo Transversal 12 — <a class="term" href="../conceitos/versionamento.html">Versionamento</a> e <a class="term" href="../conceitos/reprodutibilidade.html">Reprodutibilidade</a> tem como finalidade controlar, registrar, preservar e permitir a reconstrução das versões dos dados, scripts, configurações, parâmetros, ambientes, regras, modelos, artefatos e produtos analíticos produzidos ao longo do modelo de referência UnespDataLens-RM.</p>
+<p>Esse módulo atua de forma transversal sobre todo o ciclo de vida dos dados, desde o inventário das fontes até a disponibilização e consumo dos produtos analíticos. Sua função é garantir que os resultados produzidos pelo modelo de referência possam ser compreendidos, auditados, repetidos, comparados, reprocessados e validados ao longo do tempo.</p>
+<p>No contexto da Engenharia Analítica de Dados, versionamento e reprodutibilidade são dimensões essenciais para assegurar confiança, transparência e rigor científico-técnico. Um pipeline analítico pode produzir indicadores, dashboards, modelos, grafos, relatórios e produtos de dados; entretanto, se não for possível identificar quais versões dos dados, scripts, parâmetros, regras, bibliotecas, ambientes e artefatos foram utilizados, os resultados tornam-se frágeis, difíceis de auditar e impossíveis de reproduzir de forma confiável.</p>
+<p>No UnespDataLens-RM, o versionamento não se limita ao controle de código-fonte. Ele abrange dados brutos, datasets integrados, datasets tratados, datasets validados, versões balanceadas ou sinalizadas, data marts, APIs, dashboards, indicadores, features, modelos, relatórios, parâmetros de execução, configurações, schemas, regras de transformação, regras de qualidade, políticas de acesso, snapshots e produtos disponibilizados para consumo.</p>
+<p>A reprodutibilidade, por sua vez, refere-se à capacidade de reconstruir uma execução, um dataset, um indicador, um modelo, um painel ou um <a class="term" href="../conceitos/produto-de-dados.html">produto de dados</a> a partir das versões, parâmetros, regras, dependências e ambientes registrados. Isso permite responder a questões como: qual versão da base foi usada? Qual regra gerou determinado indicador? Qual script produziu determinado dataset? Qual <a class="term" href="../conceitos/snapshot.html">snapshot</a> alimentou o <a class="term" href="../artefatos/dashboard.html">dashboard</a>? O resultado pode ser reproduzido hoje? A nova execução gera o mesmo resultado? Quais diferenças surgiram entre versões?</p>
+<p>Assim, o Módulo 12 formaliza versionamento e reprodutibilidade como componentes transversais do modelo de referência, conectando dados, processos, linhagem, <a class="term" href="../conceitos/metadados.html">metadados</a>, governança, qualidade, armazenamento e consumo analítico.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 12 é garantir o controle de versões e a reprodutibilidade dos ativos analíticos produzidos pelo UnespDataLens-RM, por meio do registro sistemático de versões de dados, códigos, parâmetros, configurações, ambientes, regras, artefatos e produtos, permitindo reconstrução, comparação, auditoria e validação dos resultados gerados.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 12:</p>
+<ol class="steps">
+<li>controlar versões de fontes, datasets, snapshots, data marts, produtos de dados, dashboards, APIs, relatórios, features, modelos e demais ativos analíticos;</li>
+<li>registrar versões de scripts, notebooks, consultas SQL, workflows, regras de transformação, <a class="term" href="../artefatos/regras-de-validacao.html">regras de validação</a>, configurações e parâmetros;</li>
+<li>preservar ambientes computacionais, dependências, bibliotecas, containers, versões de ferramentas e configurações necessárias à execução dos pipelines;</li>
+<li>permitir reconstruir datasets, indicadores, modelos, dashboards ou produtos de dados a partir de versões e parâmetros documentados;</li>
+<li>comparar resultados produzidos por diferentes versões dos dados, regras, scripts ou ambientes;</li>
+<li>identificar mudanças entre versões, incluindo alterações de schema, conteúdo, regras, parâmetros, qualidade, distribuição, sensibilidade ou produtos derivados;</li>
+<li>apoiar auditoria, validação científica, governança, lineage, monitoramento e manutenção dos ativos analíticos;</li>
+<li>reduzir dependência de conhecimento tácito, scripts não documentados e execuções manuais não rastreáveis;</li>
+<li>definir critérios de aceitação para considerar um ativo, pipeline ou produto como reprodutível;</li>
+<li>produzir artefatos formais de versionamento e reprodutibilidade, avaliáveis por métricas específicas.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>O versionamento corresponde ao controle sistemático de diferentes estados de um ativo ao longo do tempo. Em Engenharia Analítica de Dados, os ativos versionáveis incluem não apenas código, mas também dados, configurações, parâmetros, schemas, ambientes, modelos, resultados, dashboards e produtos de dados.</p>
+<p>A reprodutibilidade corresponde à capacidade de executar novamente um processo analítico e obter o mesmo resultado, ou um resultado explicavelmente equivalente, a partir dos mesmos dados, versões, regras, parâmetros e ambiente. Em alguns contextos, é possível exigir reprodutibilidade exata; em outros, especialmente quando há aleatoriedade ou processamento distribuído, pode-se buscar reprodutibilidade controlada ou explicável.</p>
+<p>No UnespDataLens-RM, é importante distinguir:</p>
+<div class="table-wrap"><table class="table"><tr><th>Conceito</th><th>Definição</th><th>Exemplo</th></tr><tr><td>Versionamento de dados</td><td>Controle de versões de datasets, snapshots, tabelas e arquivos.</td><td>Base de matrículas versão 2026.1.</td></tr><tr><td>Versionamento de código</td><td>Controle de scripts, notebooks, queries, pipelines e workflows.</td><td>Script de integração v2.3.</td></tr><tr><td>Versionamento de regras</td><td>Controle de regras de transformação, qualidade, cálculo e classificação.</td><td>Regra de evasão v1.1.</td></tr><tr><td>Versionamento de ambiente</td><td>Registro de bibliotecas, containers, ferramentas e configurações.</td><td>Python 3.11, pandas 2.x, imagem Docker.</td></tr><tr><td>Versionamento de produtos</td><td>Controle de versões de dashboards, APIs, relatórios e data marts.</td><td>Dashboard de evasão v4.0.</td></tr><tr><td>Reprodutibilidade técnica</td><td>Capacidade de reexecutar o pipeline com os mesmos insumos e parâmetros.</td><td>Reprocessar <a class="term" href="../artefatos/dataset-tratado.html">dataset tratado</a>.</td></tr><tr><td>Reprodutibilidade analítica</td><td>Capacidade de reconstruir indicadores, métricas, modelos ou resultados.</td><td>Reproduzir taxa de evasão publicada.</td></tr><tr><td>Reprodutibilidade científica</td><td>Capacidade de permitir validação externa ou auditoria metodológica.</td><td>Reproduzir experimento de modelagem.</td></tr></table></div>
+<p>Esse módulo está diretamente associado à confiabilidade dos resultados. Sem versionamento, não é possível saber se uma diferença entre dois resultados ocorreu por mudança nos dados, alteração de regra, atualização de ambiente, correção de erro, mudança de filtro, nova versão de biblioteca ou modificação de parâmetro.</p>
+<p>À luz da Design Science Research, o Módulo 12 formaliza versionamento e reprodutibilidade como artefatos técnico-metodológicos projetados para resolver problemas de perda de controle, <a class="term" href="../problemas/baixa-rastreabilidade.html">baixa rastreabilidade</a>, impossibilidade de auditoria, resultados não reproduzíveis e fragilidade científica dos pipelines analíticos.</p>
+<h2 class="section-title" id="natureza-transversal-do-modulo">5. Natureza transversal do módulo</h2>
+<p>O Módulo 12 é transversal porque todas as etapas do pipeline principal produzem artefatos que precisam ser versionados e, quando necessário, reproduzidos.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, versiona o <a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a>, dicionários preliminares, mapas de bases, registros de <a class="term" href="../conceitos/granularidade.html">granularidade</a>, classificações de sensibilidade e limitações conhecidas.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, versiona snapshots, dados brutos, manifestos de ingestão, configurações de extração, <a class="term" href="../conceitos/logs.html">logs</a>, checksums e parâmetros de conexão.</p>
+<p>No Módulo 3 — Integração e Harmonização, versiona regras de integração, tabelas de mapeamento, chaves utilizadas, datasets integrados, manifestos de integração e registros de conflitos.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, versiona regras de transformação, scripts, atributos derivados, parâmetros de <a class="term" href="../metodos/imputacao.html">imputação</a>, datasets tratados e relatórios de impacto.</p>
+<p>No Módulo 5 — Qualidade e Validação de Dados, versiona regras de qualidade, planos de validação, limiares, relatórios de qualidade, não conformidades e status de aprovação.</p>
+<p>No Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, versiona métricas de distribuição, planos de mitigação, parâmetros de balanceamento, datasets balanceados ou sinalizados e relatórios de equidade.</p>
+<p>No Módulo 7 — Armazenamento Analítico, versiona estruturas persistidas, schemas, data marts, views, tabelas, arquivos, partições e snapshots analíticos.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, versiona produtos de dados, dashboards, APIs, relatórios, datasets curados para consumo, registros de publicação e interfaces.</p>
+<p>Com o Módulo 9 — Metadados, Catálogo e Semântica dos Dados, mantém versões de metadados, glossários, dicionários, fichas de ativos e modelos semânticos.</p>
+<p>Com o Módulo 10 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, versiona políticas, permissões, classificações, registros de finalidade, planos de privacidade e regras de retenção.</p>
+<p>Com o Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e <a class="term" href="../conceitos/rastreabilidade.html">Rastreabilidade</a>, utiliza a linhagem para reconstruir versões e fornece evidências para auditoria e reprocessamento.</p>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">6. Formalização sintética do módulo</h2>
+<p>O Módulo 12 pode ser formalizado como um sistema de controle de versões e reconstrução de execuções analíticas.</p>
+<p>Considerando o conjunto de ativos do UnespDataLens-RM:</p>
+<div class="formula">A = {a₁, a₂, ..., aₙ}</div>
+<p>em que cada aᵢ representa uma fonte, dataset, atributo, regra, script, configuração, ambiente, produto ou relatório, cada ativo pode possuir um conjunto de versões:</p>
+<div class="formula">V(aᵢ) = {v₁, v₂, ..., vₖ}</div>
+<p>Cada versão vⱼ pode ser descrita por:</p>
+<div class="formula">vⱼ = {id_versão, ativo, data, autor, descrição_mudança, hash, estado, dependências, status, evidência}</div>
+<p>Uma execução reprodutível pode ser representada por:</p>
+<div class="formula">E = {id, entradas, versões_entradas, processos, versões_processos, parâmetros, ambiente, saídas, versões_saídas, logs, evidências}</div>
+<p>em que:</p>
+<ul class="list">
+<li>entradas representam dados, fontes e artefatos consumidos;</li>
+<li>processos representam scripts, workflows, notebooks, consultas ou regras;</li>
+<li>parâmetros representam configurações usadas na execução;</li>
+<li>ambiente representa dependências computacionais;</li>
+<li>saídas representam datasets, indicadores, modelos, dashboards ou relatórios gerados;</li>
+<li>evidências representam logs, checksums, manifestos, hashes e registros de execução.</li>
+</ul>
+<p>A condição mínima de reprodutibilidade pode ser expressa como:</p>
+<div class="formula">R(E) = {dados_versionados, código_versionado, parâmetros_registrados, ambiente_documentado, saídas_identificadas, logs_preservados}</div>
+<p>Uma execução é considerada reprodutível quando todos esses elementos estão disponíveis em grau suficiente para sua reconstrução.</p>
+<h2 class="section-title" id="entradas-do-modulo">7. Entradas do módulo</h2>
+<p>As entradas do Módulo 12 são produzidas por todos os módulos do modelo de referência.</p>
+<p>As principais entradas são:</p>
+<ul class="list">
+<li>inventários de fontes;</li>
+<li>dicionários de dados;</li>
+<li>mapas de bases;</li>
+<li>classificações de sensibilidade;</li>
+<li>snapshots de dados brutos;</li>
+<li>datasets brutos;</li>
+<li>configurações de ingestão;</li>
+<li>manifestos de ingestão;</li>
+<li>logs de execução;</li>
+<li>tabelas de integração;</li>
+<li>regras de harmonização;</li>
+<li>datasets integrados;</li>
+<li>registros de conflitos;</li>
+<li>regras de transformação;</li>
+<li>scripts;</li>
+<li>notebooks;</li>
+<li>consultas SQL;</li>
+<li>workflows;</li>
+<li>parâmetros de execução;</li>
+<li>datasets tratados;</li>
+<li>atributos derivados;</li>
+<li>regras de qualidade;</li>
+<li>relatórios de validação;</li>
+<li>datasets balanceados ou sinalizados;</li>
+<li>data marts;</li>
+<li>views;</li>
+<li>schemas;</li>
+<li>dashboards;</li>
+<li>APIs;</li>
+<li>relatórios;</li>
+<li>produtos de dados;</li>
+<li>metadados;</li>
+<li>políticas de governança;</li>
+<li>registros de lineage;</li>
+<li>ambientes computacionais;</li>
+<li>bibliotecas;</li>
+<li>containers;</li>
+<li>seeds de aleatoriedade;</li>
+<li>arquivos de configuração;</li>
+<li>hashes e checksums.</li>
+</ul>
+<h2 class="section-title" id="processamento">8. Processamento</h2>
+<p>O processamento do Módulo 12 envolve atividades contínuas de identificação, registro, preservação, comparação, reconstrução e validação de versões e execuções.</p>
+<h3 id="identificacao-dos-ativos-versionaveis">8.1 Identificação dos ativos versionáveis</h3>
+<p>A primeira atividade consiste em identificar quais ativos precisam ser versionados. Nem todos os artefatos possuem o mesmo nível de criticidade, mas todo ativo que impacta resultados analíticos, decisões, indicadores, modelos ou produtos deve possuir algum mecanismo de controle de versão.</p>
+<p>Ativos críticos incluem fontes, datasets, regras, scripts, parâmetros, schemas, data marts, dashboards, APIs e modelos.</p>
+<h3 id="definicao-da-estrategia-de-versionamento">8.2 Definição da estratégia de versionamento</h3>
+<p>A segunda atividade consiste em definir como cada tipo de ativo será versionado. Dados podem ser versionados por snapshot, data, hash, tag ou mecanismo transacional. Código pode ser versionado em repositórios Git. Ambientes podem ser versionados por containers ou arquivos de dependências. Produtos podem ser versionados por publicação, data ou release.</p>
+<h3 id="registro-de-versoes-dos-dados">8.3 <a class="term" href="../artefatos/registro-de-versoes.html">Registro de versões</a> dos dados</h3>
+<p>A terceira atividade consiste em registrar versões de datasets, tabelas, arquivos, snapshots e data marts. Cada versão deve indicar origem, data, schema, volume, checksum, responsável, status, relação com versões anteriores e motivo da criação.</p>
+<h3 id="registro-de-versoes-de-codigo-regras-e-parametros">8.4 Registro de versões de código, regras e parâmetros</h3>
+<p>A quarta atividade consiste em registrar scripts, notebooks, queries, workflows, regras de transformação, regras de qualidade, regras de cálculo e parâmetros utilizados nas execuções.</p>
+<p>Essa etapa evita que resultados dependam de código local, scripts alterados sem histórico ou notebooks executados manualmente sem registro.</p>
+<h3 id="registro-do-ambiente-computacional">8.5 Registro do ambiente computacional</h3>
+<p>A quinta atividade consiste em documentar o ambiente utilizado na execução. Isso inclui versões de linguagem, bibliotecas, ferramentas, sistemas operacionais, containers, variáveis de ambiente, dependências e configurações relevantes.</p>
+<p>Quando possível, o ambiente deve ser encapsulado em container, arquivo de dependências ou configuração declarativa.</p>
+<h3 id="registro-de-execucoes-reprodutiveis">8.6 Registro de execuções reprodutíveis</h3>
+<p>A sexta atividade consiste em gerar manifestos de execução que associem entradas, versões, processos, parâmetros, ambiente e saídas. Esse manifesto é o núcleo da reprodutibilidade.</p>
+<p>Ele deve permitir identificar exatamente quais elementos foram utilizados para produzir determinado resultado.</p>
+<h3 id="comparacao-entre-versoes">8.7 Comparação entre versões</h3>
+<p>A sétima atividade consiste em comparar versões de dados, regras, scripts ou produtos para identificar mudanças. Essa comparação pode envolver diferenças de schema, volume, distribuição, qualidade, atributos, registros, métricas, desempenho ou resultados.</p>
+<h3 id="reexecucao-controlada">8.8 Reexecução controlada</h3>
+<p>A oitava atividade consiste em reexecutar pipelines, processos ou análises a partir de versões específicas. Essa reexecução pode ser usada para auditoria, validação, correção, atualização ou comparação científica.</p>
+<h3 id="validacao-da-reprodutibilidade">8.9 Validação da reprodutibilidade</h3>
+<p>A nona atividade consiste em avaliar se a reexecução produziu resultados iguais, equivalentes ou justificadamente diferentes. Diferenças devem ser explicadas por mudanças em dados, ambiente, parâmetros, aleatoriedade, atualização de bibliotecas ou alterações de regras.</p>
+<h3 id="preservacao-e-arquivamento">8.10 Preservação e arquivamento</h3>
+<p>A décima atividade consiste em definir quais versões devem ser preservadas, arquivadas ou descartadas. Versões associadas a publicações, decisões, relatórios oficiais, modelos implantados ou produtos disponibilizados devem ser preservadas de forma controlada.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-tecnologias-aplicaveis">9. Técnicas, métodos e tecnologias aplicáveis</h2>
+<p>O Módulo 12 pode empregar diferentes técnicas, métodos e tecnologias para versionamento e reprodutibilidade.</p>
+<p>Entre as técnicas de versionamento, destacam-se:</p>
+<ul class="list">
+<li>versionamento semântico;</li>
+<li>versionamento por data;</li>
+<li>versionamento por snapshot;</li>
+<li>versionamento por hash;</li>
+<li>versionamento por release;</li>
+<li>tags de versão;</li>
+<li>branches;</li>
+<li>controle de alterações;</li>
+<li>comparação entre versões;</li>
+<li>registro de changelog;</li>
+<li>versionamento de schema;</li>
+<li>versionamento de datasets;</li>
+<li>versionamento de modelos;</li>
+<li>versionamento de dashboards;</li>
+<li>versionamento de APIs.</li>
+</ul>
+<p>Entre as técnicas de reprodutibilidade, podem ser utilizadas:</p>
+<ul class="list">
+<li>manifestos de execução;</li>
+<li>arquivos de configuração;</li>
+<li>pipelines declarativos;</li>
+<li>parametrização;</li>
+<li>controle de seeds;</li>
+<li>notebooks versionados;</li>
+<li>containers;</li>
+<li>ambientes virtuais;</li>
+<li>gestão de dependências;</li>
+<li>workflows automatizados;</li>
+<li>logs estruturados;</li>
+<li>checksums;</li>
+<li>hashes;</li>
+<li>reconstrução de ambiente;</li>
+<li><a class="term" href="../conceitos/data-lineage.html">data lineage</a>;</li>
+<li>data contracts;</li>
+<li>testes de reexecução;</li>
+<li>comparação de resultados.</li>
+</ul>
+<p>Entre as tecnologias possíveis, destacam-se:</p>
+<ul class="list">
+<li>Git;</li>
+<li>GitLab;</li>
+<li>GitHub;</li>
+<li>DVC;</li>
+<li>LakeFS;</li>
+<li>Delta Lake;</li>
+<li>Apache Iceberg;</li>
+<li>Apache Hudi;</li>
+<li><a class="term" href="../tecnicas/mlflow.html">MLflow</a>;</li>
+<li>Airflow;</li>
+<li><a class="term" href="../tecnicas/prefect.html">Prefect</a>;</li>
+<li><a class="term" href="../tecnicas/dagster.html">Dagster</a>;</li>
+<li>Docker;</li>
+<li>Conda;</li>
+<li>Poetry;</li>
+<li>pip-tools;</li>
+<li>Makefiles;</li>
+<li><a class="term" href="../tecnicas/dbt.html">dbt</a>;</li>
+<li>notebooks versionados;</li>
+<li>repositórios de artefatos;</li>
+<li>object storage;</li>
+<li>bancos com snapshots;</li>
+<li>sistemas de logs;</li>
+<li>catálogos de dados;</li>
+<li>ferramentas de lineage.</li>
+</ul>
+<h2 class="section-title" id="metricas-do-modulo">10. Métricas do módulo</h2>
+<p>As métricas do Módulo 12 avaliam cobertura, <a class="term" href="../metricas/completude.html">completude</a>, estabilidade, reconstrução, comparação e confiabilidade do versionamento e da reprodutibilidade.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de ativos versionados</td><td>TAV</td><td>Proporção de ativos críticos com versão registrada</td></tr><tr><td>Taxa de datasets versionados</td><td>TDV</td><td>Proporção de datasets com snapshot, hash ou versão</td></tr><tr><td>Taxa de código versionado</td><td>TCV</td><td>Proporção de scripts, notebooks e workflows sob controle de versão</td></tr><tr><td>Taxa de regras versionadas</td><td>TRV</td><td>Proporção de regras de transformação, qualidade ou cálculo versionadas</td></tr><tr><td>Taxa de parâmetros registrados</td><td>TPR</td><td>Proporção de execuções com parâmetros documentados</td></tr><tr><td>Taxa de ambientes documentados</td><td>TAD</td><td>Proporção de execuções com ambiente registrado</td></tr><tr><td>Taxa de execuções com manifesto</td><td>TEM</td><td>Proporção de execuções com manifesto completo</td></tr><tr><td>Taxa de execuções reprodutíveis</td><td>TER</td><td>Proporção de execuções que podem ser reconstruídas</td></tr><tr><td>Taxa de reexecuções bem-sucedidas</td><td>TRBS</td><td>Proporção de reexecuções concluídas sem erro</td></tr><tr><td>Divergência entre execuções</td><td>DEE</td><td>Diferença entre resultados original e reproduzido</td></tr><tr><td>Tempo médio de reprodução</td><td>TMR</td><td>Tempo necessário para reconstruir execução ou ativo</td></tr><tr><td>Taxa de versões com changelog</td><td>TVC</td><td>Proporção de versões com descrição de mudanças</td></tr><tr><td>Taxa de schemas versionados</td><td>TSV</td><td>Proporção de schemas com histórico de alterações</td></tr><tr><td>Taxa de produtos versionados</td><td>TPV</td><td>Proporção de dashboards, APIs, relatórios e produtos com versão</td></tr><tr><td>Índice de Reprodutibilidade do Ativo</td><td>IRA</td><td>Grau em que um ativo pode ser reconstruído</td></tr></table></div>
+<h3 id="taxa-de-ativos-versionados-tav">10.1 Taxa de Ativos Versionados — TAV</h3>
+<p>A Taxa de Ativos Versionados mede a proporção de ativos críticos que possuem versão registrada.</p>
+<div class="formula">TAV = número de ativos críticos versionados / número total de ativos críticos</div>
+<p>Essa métrica avalia a cobertura geral do versionamento.</p>
+<h3 id="taxa-de-execucoes-com-manifesto-tem">10.2 Taxa de Execuções com Manifesto — TEM</h3>
+<p>A Taxa de Execuções com Manifesto mede a proporção de execuções que possuem manifesto contendo entradas, versões, processos, parâmetros, ambiente e saídas.</p>
+<div class="formula">TEM = número de execuções com manifesto / número total de execuções avaliadas</div>
+<p>Essa métrica é essencial para reprodutibilidade.</p>
+<h3 id="taxa-de-execucoes-reprodutiveis-ter">10.3 Taxa de Execuções Reprodutíveis — TER</h3>
+<p>A Taxa de Execuções Reprodutíveis mede a proporção de execuções que podem ser reconstruídas com base nas informações preservadas.</p>
+<div class="formula">TER = número de execuções reprodutíveis / número total de execuções avaliadas</div>
+<p>Uma execução é considerada reprodutível quando possui dados versionados, código versionado, parâmetros registrados, ambiente documentado, saídas identificadas e logs preservados.</p>
+<h3 id="divergencia-entre-execucoes-dee">10.4 Divergência entre Execuções — DEE</h3>
+<p>A Divergência entre Execuções mede a diferença entre o resultado original e o resultado reproduzido.</p>
+<div class="formula">DEE = distância(resultado original, resultado reproduzido)</div>
+<p>Essa distância pode ser calculada por diferença absoluta, diferença percentual, comparação de checksums, divergência de distribuições, diferença de métricas ou validação semântica do resultado.</p>
+<h3 id="indice-de-reprodutibilidade-do-ativo-ira">10.5 Índice de Reprodutibilidade do Ativo — IRA</h3>
+<p>O Índice de Reprodutibilidade do Ativo pode ser definido como a proporção de elementos obrigatórios de reprodutibilidade disponíveis para um ativo.</p>
+<div class="formula">IRA(aᵢ) = EDP(aᵢ) / EDO</div>
+<p>em que:</p>
+<ul class="list">
+<li>EDP(aᵢ) representa o número de elementos de dependência preenchidos para o ativo aᵢ;</li>
+<li>EDO representa o total de elementos obrigatórios.</li>
+</ul>
+<p>Elementos obrigatórios podem incluir dados de entrada, versão dos dados, código, regra, parâmetros, ambiente, logs, manifesto, saídas e evidências.</p>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">11. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 12 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, regras de construção, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A12.1</td><td>Política de Versionamento</td><td>Documento normativo</td><td>TAV</td><td>Define critérios de versionamento</td></tr><tr><td>A12.2</td><td>Registro de Versões de Dados</td><td>Tabela/manifesto</td><td>TDV</td><td>Controla versões de datasets</td></tr><tr><td>A12.3</td><td>Registro de Versões de Código e Regras</td><td>Repositório/tabela</td><td>TCV, TRV</td><td>Controla scripts, regras e workflows</td></tr><tr><td>A12.4</td><td><a class="term" href="../conceitos/manifesto-de-execucao.html">Manifesto de Execução</a> Reprodutível</td><td>Documento estruturado</td><td>TEM, TER</td><td>Associa entradas, processos, parâmetros e saídas</td></tr><tr><td>A12.5</td><td>Registro de Ambiente Computacional</td><td>Arquivo/configuração</td><td>TAD</td><td>Documenta dependências e ambiente</td></tr><tr><td>A12.6</td><td>Registro de Parâmetros de Execução</td><td>Tabela/configuração</td><td>TPR</td><td>Preserva parâmetros usados</td></tr><tr><td>A12.7</td><td>Changelog de Ativos Analíticos</td><td>Documento/tabela</td><td>TVC</td><td>Registra alterações entre versões</td></tr><tr><td>A12.8</td><td>Relatório de Comparação entre Versões</td><td>Relatório técnico</td><td>DEE</td><td>Avalia diferenças entre versões</td></tr><tr><td>A12.9</td><td><a class="term" href="../artefatos/pacote-de-reprodutibilidade.html">Pacote de Reprodutibilidade</a></td><td>Repositório/pacote</td><td>IRA</td><td>Consolida dados, código, parâmetros e ambiente</td></tr><tr><td>A12.10</td><td>Relatório de Reprodutibilidade</td><td>Relatório técnico</td><td>TER, TRBS</td><td>Avalia capacidade de reprodução</td></tr></table></div>
+<h2 class="section-title" id="artefato-a12-1-politica-de-versionamento">12. Artefato A12.1 — Política de Versionamento</h2>
+<h3 id="finalidade">12.1 Finalidade</h3>
+<p>A Política de Versionamento define quais ativos devem ser versionados, como as versões serão identificadas, quando uma nova versão deve ser criada e quais informações mínimas devem ser preservadas.</p>
+<h3 id="tipo-de-artefato-na-dsr">12.2 Tipo de artefato na DSR</h3>
+<p>Esse artefato é um modelo normativo e um método, pois orienta práticas de versionamento ao longo do modelo de referência.</p>
+<h3 id="estrutura-minima">12.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Escopo</td><td>Tipos de ativos cobertos</td></tr><tr><td>Critérios de versionamento</td><td>Condições para criar nova versão</td></tr><tr><td>Padrão de identificação</td><td>Semântico, data, hash, snapshot etc.</td></tr><tr><td>Responsável</td><td>Quem cria e aprova versões</td></tr><tr><td>Regras de preservação</td><td>Quais versões devem ser mantidas</td></tr><tr><td>Regras de descarte</td><td>Quando versões podem ser removidas</td></tr><tr><td>Evidências necessárias</td><td>Logs, manifestos, checksums, changelog</td></tr><tr><td>Integração com lineage</td><td>Relação com rastreabilidade</td></tr><tr><td>Critérios de conformidade</td><td>Condições mínimas de aderência</td></tr></table></div>
+<h3 id="metricas-associadas">12.4 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos versionados;</li>
+<li>taxa de versões com changelog;</li>
+<li>taxa de produtos versionados;</li>
+<li>taxa de conformidade com política.</li>
+</ul>
+<h3 id="criterios-de-validacao">12.5 Critérios de validação</h3>
+<p>A política é considerada válida quando define escopo, padrão de versão, critérios de criação, preservação, descarte, responsáveis e evidências mínimas.</p>
+<h3 id="contribuicao">12.6 Contribuição</h3>
+<p>Esse artefato padroniza o versionamento e reduz <a class="term" href="../problemas/inconsistencias.html">inconsistências</a> na gestão de versões dos ativos analíticos.</p>
+<h2 class="section-title" id="artefato-a12-2-registro-de-versoes-de-dados">13. Artefato A12.2 — Registro de Versões de Dados</h2>
+<h3 id="finalidade-2">13.1 Finalidade</h3>
+<p>O Registro de Versões de Dados documenta versões de datasets, tabelas, arquivos, snapshots, data marts e produtos derivados.</p>
+<h3 id="estrutura-minima-2">13.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo de dados</td><td>Dataset, tabela, arquivo ou <a class="term" href="../conceitos/data-mart.html">data mart</a></td></tr><tr><td>Versão</td><td>Identificador da versão</td></tr><tr><td>Data de criação</td><td>Momento da versão</td></tr><tr><td>Fonte de origem</td><td>Fonte ou dataset anterior</td></tr><tr><td>Snapshot</td><td>Referência ao estado preservado</td></tr><tr><td>Schema</td><td>Estrutura associada</td></tr><tr><td>Volume</td><td>Número de registros ou tamanho</td></tr><tr><td>Checksum/hash</td><td>Evidência de <a class="term" href="../metricas/integridade.html">integridade</a></td></tr><tr><td>Responsável</td><td>Pessoa ou sistema</td></tr><tr><td>Status</td><td>Ativa, substituída, arquivada, descartada</td></tr><tr><td>Observações</td><td>Mudanças ou limitações</td></tr></table></div>
+<h3 id="metricas-associadas-2">13.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de datasets versionados;</li>
+<li>percentual de versões com checksum;</li>
+<li>percentual de versões com schema;</li>
+<li>número médio de versões por ativo;</li>
+<li>taxa de versões arquivadas.</li>
+</ul>
+<h3 id="contribuicao-2">13.4 Contribuição</h3>
+<p>Esse artefato garante controle sobre os estados dos dados utilizados ou produzidos pelo pipeline.</p>
+<h2 class="section-title" id="artefato-a12-3-registro-de-versoes-de-codigo-e-regras">14. Artefato A12.3 — Registro de Versões de Código e Regras</h2>
+<h3 id="finalidade-3">14.1 Finalidade</h3>
+<p>O Registro de Versões de Código e Regras documenta scripts, notebooks, consultas SQL, workflows, regras de transformação, regras de qualidade, regras de cálculo e configurações associadas aos processos analíticos.</p>
+<h3 id="estrutura-minima-3">14.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Artefato</td><td>Script, notebook, query, regra ou workflow</td></tr><tr><td>Versão</td><td>Identificador da versão</td></tr><tr><td>Repositório</td><td>Local onde está armazenado</td></tr><tr><td>Commit/hash</td><td>Identificador de controle</td></tr><tr><td>Data</td><td>Data da versão</td></tr><tr><td>Autor</td><td>Responsável pela alteração</td></tr><tr><td>Descrição da mudança</td><td>O que foi alterado</td></tr><tr><td>Ativos afetados</td><td>Datasets ou produtos impactados</td></tr><tr><td>Status</td><td>Ativo, depreciado, substituído</td></tr><tr><td>Observações</td><td>Dependências ou cuidados</td></tr></table></div>
+<h3 id="metricas-associadas-3">14.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de código versionado;</li>
+<li>taxa de regras versionadas;</li>
+<li>taxa de commits associados a execução;</li>
+<li>taxa de artefatos sem versão;</li>
+<li>taxa de regras depreciadas.</li>
+</ul>
+<h3 id="contribuicao-3">14.4 Contribuição</h3>
+<p>Esse artefato evita que resultados dependam de scripts não controlados ou regras alteradas sem histórico.</p>
+<h2 class="section-title" id="artefato-a12-4-manifesto-de-execucao-reprodutivel">15. Artefato A12.4 — Manifesto de Execução Reprodutível</h2>
+<h3 id="finalidade-4">15.1 Finalidade</h3>
+<p>O Manifesto de Execução Reprodutível registra todos os elementos necessários para reconstruir uma execução do pipeline.</p>
+<h3 id="estrutura-formal">15.2 Estrutura formal</h3>
+<p>Uma execução pode ser descrita por:</p>
+<div class="formula">E = {id, entradas, versões_entradas, processos, parâmetros, ambiente, saídas, logs, evidências}</div>
+<h3 id="estrutura-minima-4">15.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador da execução</td><td>Código único</td></tr><tr><td>Objetivo da execução</td><td>Finalidade</td></tr><tr><td>Dados de entrada</td><td>Datasets ou fontes utilizadas</td></tr><tr><td>Versões de entrada</td><td>Versões dos dados</td></tr><tr><td>Código ou workflow</td><td>Script, notebook ou pipeline</td></tr><tr><td>Versão do código</td><td>Commit, tag ou hash</td></tr><tr><td>Regras aplicadas</td><td>Transformações, validações ou cálculos</td></tr><tr><td>Parâmetros</td><td>Configurações utilizadas</td></tr><tr><td>Ambiente</td><td>Dependências e plataforma</td></tr><tr><td>Dados de saída</td><td>Ativos produzidos</td></tr><tr><td>Logs</td><td>Registros da execução</td></tr><tr><td>Evidências</td><td>Checksums, relatórios, manifestos</td></tr><tr><td>Responsável</td><td>Executor humano ou sistema</td></tr><tr><td>Data</td><td>Momento da execução</td></tr></table></div>
+<h3 id="metricas-associadas-4">15.4 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de execuções com manifesto;</li>
+<li>taxa de execuções reprodutíveis;</li>
+<li>índice de reprodutibilidade do ativo;</li>
+<li>taxa de parâmetros registrados.</li>
+</ul>
+<h3 id="contribuicao-4">15.5 Contribuição</h3>
+<p>Esse artefato é o núcleo da reprodutibilidade, pois associa dados, código, ambiente, parâmetros e saídas.</p>
+<h2 class="section-title" id="artefato-a12-5-registro-de-ambiente-computacional">16. Artefato A12.5 — Registro de Ambiente Computacional</h2>
+<h3 id="finalidade-5">16.1 Finalidade</h3>
+<p>O Registro de Ambiente Computacional documenta as condições técnicas necessárias para executar ou reproduzir pipelines e análises.</p>
+<h3 id="estrutura-minima-5">16.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Execução ou ativo</td><td>Processo associado</td></tr><tr><td>Linguagem</td><td>Python, R, SQL, Java etc.</td></tr><tr><td>Versão da linguagem</td><td>Versão utilizada</td></tr><tr><td>Bibliotecas</td><td>Dependências</td></tr><tr><td>Versões das bibliotecas</td><td>Versões específicas</td></tr><tr><td>Sistema operacional</td><td>Ambiente base</td></tr><tr><td>Container</td><td>Imagem Docker ou similar</td></tr><tr><td>Variáveis de ambiente</td><td>Configurações relevantes</td></tr><tr><td>Hardware ou cluster</td><td>Quando aplicável</td></tr><tr><td>Observações</td><td>Restrições ou dependências externas</td></tr></table></div>
+<h3 id="metricas-associadas-5">16.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ambientes documentados;</li>
+<li>percentual de execuções com container;</li>
+<li>percentual de execuções com dependências versionadas;</li>
+<li>taxa de falhas por ambiente divergente.</li>
+</ul>
+<h3 id="contribuicao-5">16.4 Contribuição</h3>
+<p>Esse artefato reduz problemas de reexecução causados por diferenças de ambiente computacional.</p>
+<h2 class="section-title" id="artefato-a12-6-registro-de-parametros-de-execucao">17. Artefato A12.6 — Registro de Parâmetros de Execução</h2>
+<h3 id="finalidade-6">17.1 Finalidade</h3>
+<p>O Registro de Parâmetros de Execução preserva os parâmetros utilizados em processos de extração, integração, transformação, validação, balanceamento, modelagem, publicação ou monitoramento.</p>
+<h3 id="estrutura-minima-6">17.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Processo</td><td>Pipeline, script ou regra</td></tr><tr><td>Execução</td><td>Identificador da execução</td></tr><tr><td>Parâmetro</td><td>Nome do parâmetro</td></tr><tr><td>Valor</td><td>Valor utilizado</td></tr><tr><td>Tipo</td><td>Texto, número, booleano, data etc.</td></tr><tr><td>Finalidade</td><td>Função do parâmetro</td></tr><tr><td>Valor padrão</td><td>Quando aplicável</td></tr><tr><td>Alterado por</td><td>Responsável</td></tr><tr><td>Data</td><td>Momento da execução</td></tr></table></div>
+<h3 id="metricas-associadas-6">17.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de parâmetros registrados;</li>
+<li>percentual de execuções parametrizadas;</li>
+<li>percentual de parâmetros com valor padrão;</li>
+<li>taxa de divergência por mudança de parâmetro.</li>
+</ul>
+<h3 id="contribuicao-6">17.4 Contribuição</h3>
+<p>Esse artefato evita que resultados dependam de configurações implícitas ou não documentadas.</p>
+<h2 class="section-title" id="artefato-a12-7-changelog-de-ativos-analiticos">18. Artefato A12.7 — Changelog de Ativos Analíticos</h2>
+<h3 id="finalidade-7">18.1 Finalidade</h3>
+<p>O Changelog de Ativos Analíticos registra alterações realizadas entre versões de dados, scripts, regras, schemas, dashboards, APIs, modelos ou produtos.</p>
+<h3 id="estrutura-minima-7">18.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo</td><td>Ativo alterado</td></tr><tr><td>Versão anterior</td><td>Identificador da versão anterior</td></tr><tr><td>Nova versão</td><td>Identificador da nova versão</td></tr><tr><td>Tipo de mudança</td><td>Schema, regra, conteúdo, parâmetro, ambiente, produto</td></tr><tr><td>Descrição da mudança</td><td>Explicação da alteração</td></tr><tr><td>Motivo</td><td>Correção, atualização, melhoria, ajuste metodológico</td></tr><tr><td>Impacto esperado</td><td>Ativos ou resultados afetados</td></tr><tr><td>Responsável</td><td>Autor da mudança</td></tr><tr><td>Data</td><td>Momento da alteração</td></tr></table></div>
+<h3 id="metricas-associadas-7">18.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de versões com changelog;</li>
+<li>número de mudanças por ativo;</li>
+<li>percentual de mudanças críticas documentadas;</li>
+<li>taxa de mudanças sem justificativa.</li>
+</ul>
+<h3 id="contribuicao-7">18.4 Contribuição</h3>
+<p>Esse artefato permite compreender por que versões diferem entre si e apoia auditoria de mudanças.</p>
+<h2 class="section-title" id="artefato-a12-8-relatorio-de-comparacao-entre-versoes">19. Artefato A12.8 — Relatório de Comparação entre Versões</h2>
+<h3 id="finalidade-8">19.1 Finalidade</h3>
+<p>O Relatório de Comparação entre Versões avalia diferenças entre duas ou mais versões de dados, regras, produtos ou resultados.</p>
+<h3 id="estrutura-minima-8">19.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo comparado</td><td>Dataset, regra, dashboard, API etc.</td></tr><tr><td>Versão A</td><td>Primeira versão</td></tr><tr><td>Versão B</td><td>Segunda versão</td></tr><tr><td>Diferença de schema</td><td>Alterações estruturais</td></tr><tr><td>Diferença de volume</td><td>Registros ou tamanho</td></tr><tr><td>Diferença de distribuição</td><td>Mudanças estatísticas</td></tr><tr><td>Diferença de qualidade</td><td>Alteração de métricas</td></tr><tr><td>Diferença de resultado</td><td>Indicadores ou saídas afetadas</td></tr><tr><td>Severidade</td><td>Baixa, média, alta ou crítica</td></tr><tr><td>Recomendações</td><td>Ações necessárias</td></tr></table></div>
+<h3 id="metricas-associadas-8">19.3 Métricas associadas</h3>
+<ul class="list">
+<li>divergência entre execuções;</li>
+<li>variação de volume;</li>
+<li>variação de schema;</li>
+<li>variação de qualidade;</li>
+<li>variação de métricas analíticas.</li>
+</ul>
+<h3 id="contribuicao-8">19.4 Contribuição</h3>
+<p>Esse artefato permite avaliar o impacto de mudanças e justificar diferenças entre resultados.</p>
+<h2 class="section-title" id="artefato-a12-9-pacote-de-reprodutibilidade">20. Artefato A12.9 — Pacote de Reprodutibilidade</h2>
+<h3 id="finalidade-9">20.1 Finalidade</h3>
+<p>O Pacote de Reprodutibilidade consolida os elementos necessários para reproduzir um ativo, experimento, relatório, indicador, dashboard ou produto de dados.</p>
+<h3 id="estrutura-minima-9">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Dados de entrada</td><td>Datasets ou referências versionadas</td></tr><tr><td>Código</td><td>Scripts, notebooks, queries ou workflows</td></tr><tr><td>Parâmetros</td><td>Configurações utilizadas</td></tr><tr><td>Ambiente</td><td>Dependências, container ou arquivo de ambiente</td></tr><tr><td>Manifesto</td><td>Registro da execução</td></tr><tr><td>Saídas esperadas</td><td>Datasets, métricas, relatórios ou produtos</td></tr><tr><td>Instruções</td><td>Como reproduzir</td></tr><tr><td>Evidências</td><td>Logs, checksums, hashes ou relatórios</td></tr></table></div>
+<h3 id="metricas-associadas-9">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>índice de reprodutibilidade do ativo;</li>
+<li>taxa de execuções reprodutíveis;</li>
+<li>taxa de pacotes completos;</li>
+<li>tempo médio de reprodução.</li>
+</ul>
+<h3 id="contribuicao-9">20.4 Contribuição</h3>
+<p>Esse artefato viabiliza auditoria, validação científica, transferência tecnológica e reuso metodológico.</p>
+<h2 class="section-title" id="artefato-a12-10-relatorio-de-reprodutibilidade">21. Artefato A12.10 — Relatório de Reprodutibilidade</h2>
+<h3 id="finalidade-10">21.1 Finalidade</h3>
+<p>O Relatório de Reprodutibilidade avalia se um ativo, execução ou produto pode ser reproduzido de forma confiável.</p>
+<h3 id="estrutura-minima-10">21.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Ativo avaliado</td><td>Dataset, indicador, dashboard, modelo ou produto</td></tr><tr><td>Execução original</td><td>Referência da execução</td></tr><tr><td>Reexecução</td><td>Referência da reprodução</td></tr><tr><td>Dados utilizados</td><td>Versões de entrada</td></tr><tr><td>Código utilizado</td><td>Versão do código</td></tr><tr><td>Ambiente</td><td>Ambiente usado</td></tr><tr><td>Parâmetros</td><td>Configurações</td></tr><tr><td>Resultado original</td><td>Saída esperada</td></tr><tr><td>Resultado reproduzido</td><td>Saída obtida</td></tr><tr><td>Divergência</td><td>Diferença observada</td></tr><tr><td>Status</td><td>Reproduzido, reproduzido com divergência, não reproduzido</td></tr><tr><td>Justificativa</td><td>Explicação das diferenças</td></tr></table></div>
+<h3 id="metricas-associadas-10">21.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de reexecuções bem-sucedidas;</li>
+<li>divergência entre execuções;</li>
+<li>tempo médio de reprodução;</li>
+<li>taxa de execuções reprodutíveis;</li>
+<li>índice de reprodutibilidade.</li>
+</ul>
+<h3 id="contribuicao-10">21.4 Contribuição</h3>
+<p>Esse artefato permite avaliar empiricamente a capacidade de reprodução dos resultados produzidos pelo modelo de referência.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">22. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Dados, scripts, notebooks, regras, parâmetros, ambientes, schemas, dashboards, APIs, produtos, logs, manifestos, versões, snapshots e registros de lineage.</td></tr><tr><td>Processamento</td><td>Identificação dos ativos versionáveis, definição da estratégia de versionamento, registro de versões, preservação de ambientes, criação de manifestos, comparação entre versões, reexecução e validação da reprodutibilidade.</td></tr><tr><td>Artefatos</td><td>Política de versionamento, registros de versões de dados, código e regras, manifesto de execução, ambiente computacional, parâmetros, changelog, relatório de comparação, pacote e relatório de reprodutibilidade.</td></tr><tr><td>Métricas</td><td>TAV, TDV, TCV, TRV, TPR, TAD, TEM, TER, TRBS, DEE, TMR, TVC, TSV, TPV e IRA.</td></tr><tr><td>Saídas</td><td>Ativos versionados, execuções documentadas, ambientes preservados, resultados reprodutíveis, pacotes de reprodutibilidade e evidências para auditoria.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">23. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 12 pode ser considerado adequadamente implementado quando:</p>
+<ol class="steps">
+<li>os ativos críticos possuem versão registrada;</li>
+<li>os datasets utilizados em produtos ou análises possuem snapshot ou referência versionada;</li>
+<li>scripts, notebooks, workflows e queries críticos estão sob controle de versão;</li>
+<li>regras de transformação, qualidade, cálculo e mitigação possuem versão;</li>
+<li>parâmetros de execução estão registrados;</li>
+<li>ambientes computacionais estão documentados ou encapsulados;</li>
+<li>execuções críticas possuem manifesto reprodutível;</li>
+<li>produtos publicados possuem versão e changelog;</li>
+<li>reexecuções podem ser realizadas a partir dos registros preservados;</li>
+<li>divergências entre execução original e reexecução podem ser identificadas e explicadas;</li>
+<li>versões associadas a decisões, relatórios, dashboards ou modelos publicados são preservadas;</li>
+<li>o índice de reprodutibilidade dos ativos críticos atinge patamar satisfatório.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-o-pipeline-principal">24. Relação com o pipeline principal</h2>
+<p>O Módulo 12 se relaciona com todos os módulos do pipeline principal do UnespDataLens-RM.</p>
+<p>Com o Módulo 1 — Fontes e Inventário de Dados, versiona o inventário, dicionários preliminares e classificações iniciais.</p>
+<p>Com o Módulo 2 — Extração, Ingestão e Armazenamento Bruto, versiona snapshots, dados brutos, configurações de extração, logs e manifestos.</p>
+<p>Com o Módulo 3 — Integração e Harmonização, versiona regras de integração, chaves, tabelas de mapeamento e datasets integrados.</p>
+<p>Com o Módulo 4 — Transformação, Limpeza e Enriquecimento, versiona scripts, regras, parâmetros, atributos derivados e datasets tratados.</p>
+<p>Com o Módulo 5 — Qualidade e Validação de Dados, versiona regras de qualidade, limiares, relatórios e status de validação.</p>
+<p>Com o Módulo 6 — Desbalanceamento, Vieses e Equidade, versiona planos de mitigação, técnicas aplicadas, parâmetros, métricas e datasets balanceados ou sinalizados.</p>
+<p>Com o Módulo 7 — Armazenamento Analítico, versiona data marts, schemas, views, tabelas, arquivos e estruturas persistidas.</p>
+<p>Com o Módulo 8 — Disponibilização e Consumo Analítico, versiona dashboards, APIs, relatórios, produtos de dados e registros de publicação.</p>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-transversais">25. Relação com os demais módulos transversais</h2>
+<p>O Módulo 12 depende do Módulo 9 — Metadados, Catálogo e Semântica dos Dados, pois o catálogo registra identificadores, descrições, versões, status e relações entre ativos.</p>
+<p>Relaciona-se com o Módulo 10 — Governança, Segurança, Privacidade e Conformidade, pois define quais versões devem ser preservadas, protegidas, descartadas, arquivadas ou restringidas conforme políticas institucionais.</p>
+<p>Relaciona-se com o Módulo 11 — Proveniência, Linhagem e Rastreabilidade, pois a reprodutibilidade depende da capacidade de reconstruir a trajetória dos ativos, identificar dependências e localizar versões corretas.</p>
+<p>Relaciona-se com o módulo de Monitoramento, Drift e Evolução dos Ativos, pois versões sucessivas permitem comparar mudanças de schema, qualidade, distribuição, desempenho e consumo.</p>
+<p>Relaciona-se com o módulo de Agentes Inteligentes de Apoio ao Pipeline, pois agentes podem consultar versões, explicar diferenças entre resultados, sugerir reprocessamentos e apoiar reconstrução de execuções.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">26. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, o Módulo 12 poderia controlar versões de uma base analítica de evasão.</p>
+<p>A base original de matrícula poderia possuir snapshots por semestre. As regras de definição de evasão poderiam ter versões distintas, por exemplo, uma regra baseada em ausência de matrícula no semestre seguinte e outra baseada em cancelamento formal. Os scripts de integração entre matrícula, histórico, notas, frequência e AVA seriam versionados em repositório. O ambiente computacional seria registrado com versões de bibliotecas, e os parâmetros de filtros por período, curso e situação acadêmica seriam preservados.</p>
+<p>Se um dashboard de evasão publicado em determinado mês apresentasse uma taxa específica, o módulo permitiria reconstruir quais dados, regras, scripts, versões e parâmetros produziram aquele resultado.</p>
+<p>Caso a regra de evasão fosse alterada posteriormente, o changelog explicaria a mudança, e o relatório de comparação entre versões indicaria como os percentuais foram afetados.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">27. Exemplo de aplicação em políticas públicas</h2>
+<p>Em uma aplicação em políticas públicas, o Módulo 12 poderia versionar indicadores territoriais de vulnerabilidade.</p>
+<p>Cada versão das bases de saúde, educação, assistência social e território seria preservada por data de extração. As regras de cálculo do indicador seriam versionadas, assim como os pesos, agregações, filtros e recortes territoriais. Os dashboards publicados teriam versões associadas aos datasets e parâmetros utilizados.</p>
+<p>Se uma secretaria corrigisse dados de atendimento de meses anteriores, o módulo permitiria identificar quais indicadores precisam ser recalculados, comparar versões anteriores e novas, justificar diferenças e preservar o histórico de publicações.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">28. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição do Módulo 12 está em formalizar versionamento e reprodutibilidade como dimensões transversais da Engenharia Analítica de Dados.</p>
+<p>Em vez de tratar reprodutibilidade como preocupação posterior ou restrita ao código-fonte, o UnespDataLens-RM propõe que dados, regras, parâmetros, ambientes, scripts, produtos e resultados sejam controlados de forma integrada.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>preservar histórico dos ativos analíticos;</li>
+<li>permitir reconstrução de resultados;</li>
+<li>reduzir dependência de conhecimento tácito;</li>
+<li>aumentar confiança em indicadores, dashboards e modelos;</li>
+<li>apoiar auditoria e validação científica;</li>
+<li>explicar diferenças entre versões;</li>
+<li>controlar mudanças em regras e datasets;</li>
+<li>fortalecer lineage e governança;</li>
+<li>facilitar transferência tecnológica;</li>
+<li>sustentar evolução controlada do ecossistema analítico.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">29. Síntese do módulo</h2>
+<p>O Módulo Transversal 12 — Versionamento e Reprodutibilidade garante que os ativos e resultados produzidos pelo UnespDataLens-RM possam ser preservados, comparados, auditados e reconstruídos. Ele controla versões de dados, códigos, regras, parâmetros, ambientes, produtos e resultados, criando condições para reexecutar pipelines e validar resultados ao longo do tempo.</p>
+<p>Sua atuação é transversal porque qualquer etapa do modelo de referência pode gerar artefatos versionáveis e resultados que precisam ser reproduzidos. Ao formalizar políticas, registros, manifestos, ambientes, changelogs, pacotes e relatórios de reprodutibilidade, o módulo fortalece a confiabilidade, a transparência, a auditoria e o rigor científico dos processos analíticos.</p>
+<p>Dessa forma, o Módulo 12 transforma o UnespDataLens-RM em um modelo de referência não apenas reescrever o modulo transversal 12 - versionamento e reprodutibilidade capaz de produzir dados e produtos analíticos, mas também capaz de preservar as condições necessárias para explicar, repetir e validar aquilo que foi produzido.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

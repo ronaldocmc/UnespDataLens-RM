@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A dimensão Data Overload, ou sobrecarga de dados, refere-se à condição em que a quantidade, diversidade, dispersão, redundância, velocidade de produção ou complexidade dos dados disponíveis ultrapassa a capacidade dos usuários, sistemas, equipes técnicas e processos analíticos de localizar, compreender, selecionar, interpretar e utilizar esses dados de…">
+  <title>Data Overload · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a href="../modulos/index.html">Módulos</a><a class="active" href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="dimensao-complementar-data-overload"></span><section class="hero">
+<span class="badge">Dimensão complementar</span>
+<h1>Data Overload</h1>
+<p>A dimensão Data Overload, ou sobrecarga de dados, refere-se à condição em que a quantidade, diversidade, dispersão, redundância, velocidade de produção ou complexidade dos dados disponíveis ultrapassa a capacidade dos usuários, sistemas, equipes técnicas e processos analíticos de localizar, compreender, selecionar, interpretar e utilizar esses dados de…</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 12 seções</summary><a href="#definicao-da-dimensao">Definição da dimensão</a><a href="#problema-tratado">Problema tratado</a><a href="#objetivo-da-dimensao">Objetivo da dimensão</a><a href="#relacao-com-o-unespdatalens-rm">Relação com o UnespDataLens-RM</a><a href="#estrategias-de-mitigacao">Estratégias de mitigação</a><a href="#metricas-associadas">Métricas associadas</a><a href="#artefatos-relacionados">Artefatos relacionados</a><a href="#criterios-de-validacao">Critérios de validação</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-para-o-modelo-de-referencia">Contribuição para o modelo de referência</a><a href="#sintese-da-dimensao">Síntese da dimensão</a></details><div class="prose module-full"><h2 class="section-title" id="definicao-da-dimensao">1. Definição da dimensão</h2>
+<p>A dimensão Data Overload, ou sobrecarga de dados, refere-se à condição em que a quantidade, diversidade, dispersão, redundância, velocidade de produção ou complexidade dos dados disponíveis ultrapassa a capacidade dos usuários, sistemas, equipes técnicas e processos analíticos de localizar, compreender, selecionar, interpretar e utilizar esses dados de maneira eficiente, confiável e orientada à decisão.</p>
+<p>No contexto do UnespDataLens-RM, a sobrecarga de dados não deve ser compreendida apenas como excesso de volume. Embora o crescimento do volume de registros seja um fator relevante, a sobrecarga também pode decorrer da multiplicidade de fontes, da existência de muitos atributos, da produção de versões sucessivas de datasets, da criação redundante de dashboards, da proliferação de indicadores semelhantes, da geração excessiva de features, da baixa documentação dos ativos, da duplicação de relatórios e da dificuldade de distinguir quais produtos analíticos são oficiais, atualizados, confiáveis ou adequados a determinado uso.</p>
+<p>Assim, a sobrecarga de dados ocorre quando há abundância de dados, mas baixa capacidade de transformá-los em conhecimento útil. Nessa situação, o problema não é a inexistência de informação, mas o excesso de ativos pouco organizados, pouco priorizados, pouco documentados ou pouco governados. Esse cenário dificulta a descoberta de dados relevantes, aumenta o esforço de análise, reduz a confiança nos produtos analíticos e pode comprometer a tomada de decisão baseada em evidências.</p>
+<p>No UnespDataLens-RM, a dimensão Data Overload é tratada como uma capacidade complementar e transversal, pois se manifesta em diferentes partes do modelo de referência: no <a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a>, na integração de bases, na criação de atributos derivados, no armazenamento analítico, na disponibilização de produtos, na <a class="term" href="../conceitos/feature-store.html">feature store</a>, no <a class="term" href="../conceitos/catalogo-de-dados.html">catálogo de dados</a>, no monitoramento de uso e na atuação dos agentes inteligentes.</p>
+<h2 class="section-title" id="problema-tratado">2. Problema tratado</h2>
+<p>Em ecossistemas analíticos complexos, diferentes sistemas, equipes, projetos e áreas institucionais tendem a produzir continuamente novas bases, relatórios, planilhas, dashboards, APIs, indicadores, features, versões e produtos de dados. Quando esses ativos crescem sem critérios claros de curadoria, catalogação, priorização, governança e descontinuação, o ambiente analítico passa a apresentar excesso de informação disponível e baixa capacidade de uso efetivo.</p>
+<p>Essa situação pode gerar diversos problemas. Usuários podem não saber qual base utilizar, quais dados estão atualizados, qual indicador é oficial, qual <a class="term" href="../artefatos/dashboard.html">dashboard</a> substitui versões anteriores, quais atributos são confiáveis, quais produtos possuem qualidade suficiente, quais dados possuem restrição de acesso e quais ativos já estão obsoletos. Como consequência, diferentes usuários podem tomar decisões com base em versões distintas ou interpretações divergentes dos mesmos fenômenos.</p>
+<p>A sobrecarga de dados pode produzir efeitos como:</p>
+<ul class="list">
+<li>dificuldade de localizar ativos analíticos relevantes;</li>
+<li>aumento do tempo necessário para encontrar dados úteis;</li>
+<li>duplicação de datasets, dashboards, relatórios e indicadores;</li>
+<li>criação de múltiplas versões de uma mesma informação;</li>
+<li>uso de ativos obsoletos, incompletos ou não oficiais;</li>
+<li>baixa reutilização de produtos de dados existentes;</li>
+<li>proliferação de features redundantes ou pouco relevantes;</li>
+<li>aumento da dependência de conhecimento tácito;</li>
+<li>dificuldade de distinguir dados confiáveis de dados experimentais;</li>
+<li>maior risco de interpretações conflitantes;</li>
+<li>aumento do custo de manutenção do ecossistema analítico;</li>
+<li>acúmulo de produtos sem responsável, sem uso ou sem atualização;</li>
+<li>redução da confiança institucional nos dados;</li>
+<li>dificuldade de priorizar ações analíticas e decisórias.</li>
+</ul>
+<p>No UnespDataLens-RM, essa dimensão reconhece que a maturidade de um modelo de referência para Engenharia Analítica de Dados não depende apenas da capacidade de produzir, integrar e disponibilizar dados, mas também da capacidade de organizar, priorizar, recomendar, reutilizar, consolidar e descontinuar ativos de dados.</p>
+<h2 class="section-title" id="objetivo-da-dimensao">3. Objetivo da dimensão</h2>
+<p>O objetivo da dimensão Data Overload é reduzir a <a class="term" href="../problemas/sobrecarga-informacional.html">sobrecarga informacional</a> gerada pelo excesso de fontes, atributos, datasets, versões, dashboards, APIs, indicadores, features e produtos analíticos, por meio de mecanismos de catalogação, curadoria, classificação, priorização, recomendação, monitoramento de uso, redução de redundância e descontinuação controlada de ativos obsoletos ou pouco relevantes.</p>
+<p>Essa dimensão busca assegurar que o ecossistema analítico do UnespDataLens-RM permaneça utilizável, navegável, compreensível e orientado à decisão, mesmo diante do crescimento contínuo do número de dados e produtos.</p>
+<h2 class="section-title" id="relacao-com-o-unespdatalens-rm">4. Relação com o UnespDataLens-RM</h2>
+<p>A dimensão Data Overload se articula com diversos módulos do UnespDataLens-RM.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, contribui para evitar a inclusão indiscriminada de fontes sem finalidade clara, priorizando fontes relevantes, documentadas, com responsável definido e alinhadas aos objetivos analíticos.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, orienta a criação de critérios para ingestão controlada, evitando a acumulação desnecessária de cópias, arquivos, versões e snapshots sem valor analítico ou sem política de retenção.</p>
+<p>No Módulo 3 — Integração e Harmonização, contribui para identificar redundâncias entre bases, atributos equivalentes, entidades duplicadas e informações semanticamente sobrepostas.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, orienta a seleção criteriosa de atributos e evita a produção excessiva de variáveis derivadas sem justificativa analítica, sem uso previsto ou sem documentação.</p>
+<p>No Módulo 7 — Armazenamento Analítico, apoia a organização de zonas, data marts, views e datasets curados, evitando o acúmulo descontrolado de estruturas analíticas semelhantes ou obsoletas.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, contribui para priorizar produtos úteis, reduzir dashboards redundantes, sinalizar produtos depreciados e orientar usuários para os ativos mais adequados.</p>
+<p>No Módulo 9 — <a class="term" href="../conceitos/metadados.html">Metadados</a>, Catálogo e Semântica dos Dados, encontra seu principal mecanismo de mitigação, pois o catálogo, os metadados e o glossário tornam os ativos localizáveis, compreensíveis e comparáveis.</p>
+<p>No Módulo 14 — <a class="term" href="../conceitos/feature-engineering.html">Feature Engineering</a> e Feature Store, ajuda a evitar a proliferação de features duplicadas, redundantes, instáveis, pouco utilizadas ou semanticamente equivalentes.</p>
+<p>No Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, permite identificar ativos pouco acessados, desatualizados, redundantes, sem responsável ou com baixo valor de uso.</p>
+<p>No Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline, pode ser tratada por mecanismos de recomendação, busca em linguagem natural, sumarização, orientação ao usuário e priorização de ativos relevantes.</p>
+<h2 class="section-title" id="estrategias-de-mitigacao">5. Estratégias de mitigação</h2>
+<p>A mitigação da sobrecarga de dados no UnespDataLens-RM pode envolver estratégias técnicas, metodológicas e de governança.</p>
+<div class="table-wrap"><table class="table"><tr><th>Estratégia</th><th>Descrição</th></tr><tr><td>Catalogação estruturada</td><td>Registrar fontes, datasets, dashboards, APIs, features e produtos com descrição, finalidade, versão, qualidade, responsável e restrições.</td></tr><tr><td>Curadoria contínua</td><td>Revisar periodicamente ativos existentes para manter, consolidar, atualizar, arquivar ou descontinuar produtos.</td></tr><tr><td>Classificação por relevância</td><td>Priorizar ativos conforme utilidade, qualidade, criticidade, frequência de uso, domínio e finalidade.</td></tr><tr><td>Sinalização de status</td><td>Marcar ativos como oficial, experimental, em validação, ativo, depreciado, obsoleto, restrito ou recomendado.</td></tr><tr><td>Redução de redundância</td><td>Identificar datasets, dashboards, indicadores e features equivalentes ou sobrepostos.</td></tr><tr><td>Governança de publicação</td><td>Definir critérios mínimos para que um novo produto seja disponibilizado aos usuários.</td></tr><tr><td>Monitoramento de uso</td><td>Acompanhar acessos, reutilização, frequência de consumo e produtos sem uso.</td></tr><tr><td>Recomendação de ativos</td><td>Utilizar agentes inteligentes ou mecanismos de busca para sugerir dados adequados à finalidade do usuário.</td></tr><tr><td>Documentação mínima obrigatória</td><td>Exigir metadados essenciais antes da publicação ou reutilização de um ativo.</td></tr><tr><td>Descontinuação controlada</td><td>Arquivar, substituir ou retirar ativos obsoletos mantendo histórico e <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a>.</td></tr><tr><td>Consolidação de produtos semelhantes</td><td>Unificar dashboards, indicadores ou datasets redundantes em produtos oficiais.</td></tr><tr><td>Gestão de versões</td><td>Diferenciar versões vigentes, históricas, experimentais e depreciadas.</td></tr></table></div>
+<h2 class="section-title" id="metricas-associadas">6. Métricas associadas</h2>
+<p>A dimensão Data Overload pode ser avaliada por métricas relacionadas à quantidade, redundância, uso, descoberta, obsolescência e reutilização dos ativos analíticos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Número total de ativos catalogados</td><td>NTAC</td><td>Quantidade de fontes, datasets, produtos, dashboards, APIs e features registrados.</td></tr><tr><td>Taxa de ativos sem uso</td><td>TASU</td><td>Proporção de ativos sem acesso ou consumo em determinado período.</td></tr><tr><td>Taxa de ativos redundantes</td><td>TAR</td><td>Proporção de ativos com conteúdo, finalidade ou indicadores equivalentes.</td></tr><tr><td>Taxa de ativos obsoletos</td><td>TAO</td><td>Proporção de ativos desatualizados, depreciados ou sem manutenção.</td></tr><tr><td>Tempo médio de descoberta</td><td>TMD</td><td>Tempo necessário para localizar um ativo adequado.</td></tr><tr><td>Taxa de reutilização de ativos</td><td>TRA</td><td>Proporção de ativos reutilizados em mais de um produto, análise ou pipeline.</td></tr><tr><td>Taxa de ativos com finalidade documentada</td><td>TAFD</td><td>Proporção de ativos que possuem finalidade explícita.</td></tr><tr><td>Taxa de ativos com responsável definido</td><td>TARD</td><td>Proporção de ativos com responsável técnico ou institucional.</td></tr><tr><td>Taxa de ativos recomendados</td><td>TAREC</td><td>Proporção de ativos sinalizados como prioritários, oficiais ou recomendados.</td></tr><tr><td>Taxa de produtos depreciados</td><td>TPD</td><td>Proporção de produtos marcados como substituídos ou em descontinuação.</td></tr><tr><td>Índice de sobrecarga de dados</td><td>ISD</td><td>Indicador composto de redundância, obsolescência, baixo uso e dificuldade de descoberta.</td></tr></table></div>
+<p>Uma formulação possível para o Índice de Sobrecarga de Dados é:</p>
+<div class="formula">ISD = w₁TASU + w₂TAR + w₃TAO + w₄(1 − TRA) + w₅TMDₙ</div>
+<p>em que:</p>
+<ul class="list">
+<li>TASU representa a taxa de ativos sem uso;</li>
+<li>TAR representa a taxa de ativos redundantes;</li>
+<li>TAO representa a taxa de ativos obsoletos;</li>
+<li>TRA representa a taxa de reutilização de ativos;</li>
+<li>TMDₙ representa o tempo médio de descoberta normalizado;</li>
+<li>wᵢ representa o peso atribuído a cada dimensão.</li>
+</ul>
+<p>Quanto maior o valor do ISD, maior a evidência de sobrecarga de dados no ecossistema analítico.</p>
+<h2 class="section-title" id="artefatos-relacionados">7. Artefatos relacionados</h2>
+<p>A dimensão Data Overload pode ser operacionalizada por meio de artefatos complementares, integrados aos módulos de catálogo, disponibilização, monitoramento, feature store e agentes inteligentes.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Finalidade</th></tr><tr><td>DO1</td><td>Mapa de Ativos Analíticos</td><td>Identificar fontes, datasets, dashboards, APIs, features, indicadores e produtos existentes.</td></tr><tr><td>DO2</td><td>Relatório de Redundância de Ativos</td><td>Detectar ativos semelhantes, duplicados, sobrepostos ou semanticamente equivalentes.</td></tr><tr><td>DO3</td><td>Relatório de Uso dos Ativos</td><td>Avaliar acesso, consumo, reutilização, frequência de uso e abandono.</td></tr><tr><td>DO4</td><td>Registro de Ativos Obsoletos</td><td>Identificar ativos desatualizados, sem responsável, sem uso ou substituídos.</td></tr><tr><td>DO5</td><td>Matriz de Relevância dos Ativos</td><td>Classificar ativos por utilidade, qualidade, criticidade, uso e adequação ao domínio.</td></tr><tr><td>DO6</td><td>Plano de Curadoria e Descontinuação</td><td>Definir ações para manter, revisar, consolidar, arquivar ou excluir ativos.</td></tr><tr><td>DO7</td><td>Índice de Descoberta de Dados</td><td>Avaliar facilidade de localização de ativos relevantes.</td></tr><tr><td>DO8</td><td>Registro de Recomendações de Uso</td><td>Sugerir ativos oficiais, prioritários ou mais adequados a determinada finalidade.</td></tr><tr><td>DO9</td><td>Lista de Produtos Oficiais</td><td>Consolidar dashboards, indicadores, APIs e datasets considerados referência.</td></tr><tr><td>DO10</td><td>Registro de Substituição de Ativos</td><td>Documentar quando um ativo foi substituído por outro mais atualizado ou confiável.</td></tr></table></div>
+<h2 class="section-title" id="criterios-de-validacao">8. Critérios de validação</h2>
+<p>A dimensão Data Overload pode ser considerada adequadamente tratada quando:</p>
+<ol class="steps">
+<li>os principais ativos analíticos estão catalogados;</li>
+<li>cada ativo possui finalidade, responsável, versão, qualidade e status documentados;</li>
+<li>ativos redundantes ou semanticamente equivalentes são identificados;</li>
+<li>ativos obsoletos, depreciados ou sem uso são sinalizados;</li>
+<li>existe processo de curadoria periódica;</li>
+<li>produtos oficiais ou recomendados são distinguíveis de produtos experimentais;</li>
+<li>usuários conseguem localizar ativos relevantes com menor esforço;</li>
+<li>dashboards, APIs, datasets e features possuem critérios de publicação;</li>
+<li>produtos pouco utilizados são revisados, consolidados ou descontinuados;</li>
+<li>versões antigas são preservadas apenas quando possuem justificativa histórica, científica, legal ou operacional;</li>
+<li>mecanismos de recomendação, busca ou agentes inteligentes apoiam a descoberta de ativos;</li>
+<li>a taxa de reutilização de ativos aumenta ao longo do tempo;</li>
+<li>o tempo médio de descoberta de dados diminui;</li>
+<li>a criação de novos produtos passa por critérios mínimos de governança e documentação.</li>
+</ol>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">9. Exemplo de aplicação no domínio educacional</h2>
+<p>Em um projeto educacional, a sobrecarga de dados pode ocorrer quando existem múltiplas bases sobre estudantes, matrículas, notas, frequência, evasão, interações no ambiente virtual, desempenho, questionários e indicadores institucionais, mas sem clareza sobre qual base é oficial, qual está atualizada e qual deve ser usada para cada finalidade.</p>
+<p>Por exemplo, podem existir vários dashboards de evasão produzidos em momentos diferentes, cada um com definição distinta de evasão, período de referência diferente, regra de cálculo específica e bases de origem distintas. Sem curadoria, usuários podem utilizar painéis divergentes e tomar decisões com base em informações inconsistentes.</p>
+<p>A dimensão Data Overload permite organizar esses ativos, identificar redundâncias, definir produtos oficiais, documentar diferenças entre versões, sinalizar dashboards depreciados e recomendar o produto mais adequado para cada finalidade. Também permite identificar features educacionais duplicadas, bases pouco utilizadas e indicadores que precisam ser consolidados.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">10. Exemplo de aplicação em políticas públicas</h2>
+<p>Em políticas públicas, a sobrecarga pode ocorrer quando diferentes secretarias produzem múltiplos relatórios, planilhas, indicadores e painéis sobre territórios, famílias, atendimentos, vulnerabilidade, escolas, unidades de saúde e equipamentos públicos.</p>
+<p>Sem organização, gestores podem ter dificuldade para localizar o indicador correto, compreender sua origem, saber se está atualizado ou identificar se há outro produto mais confiável.</p>
+<p>A dimensão Data Overload permite catalogar os produtos, classificar ativos por relevância, identificar indicadores duplicados, monitorar uso, arquivar produtos obsoletos e orientar gestores para os dados mais adequados à decisão. Também pode apoiar a construção de uma lista de produtos oficiais, reduzindo <a class="term" href="../problemas/inconsistencias.html">inconsistências</a> entre áreas e melhorando a confiança no uso de dados integrados.</p>
+<h2 class="section-title" id="contribuicao-para-o-modelo-de-referencia">11. Contribuição para o modelo de referência</h2>
+<p>A dimensão Data Overload contribui para o UnespDataLens-RM ao reconhecer que a produção contínua de dados e produtos analíticos, quando não acompanhada de curadoria e governança, pode gerar complexidade excessiva, redundância e perda de efetividade.</p>
+<p>Essa dimensão fortalece o modelo de referência ao:</p>
+<ul class="list">
+<li>reduzir excesso de ativos sem uso;</li>
+<li>melhorar a descoberta de dados;</li>
+<li>aumentar a reutilização de ativos;</li>
+<li>evitar <a class="term" href="../problemas/duplicidade.html">duplicidade</a> de produtos analíticos;</li>
+<li>reduzir confusão entre versões;</li>
+<li>apoiar curadoria contínua;</li>
+<li>orientar a publicação responsável de novos produtos;</li>
+<li>melhorar governança dos ativos analíticos;</li>
+<li>reduzir <a class="term" href="../problemas/divida-de-dados.html">dívida de dados</a>;</li>
+<li>tornar a tomada de decisão mais objetiva;</li>
+<li>apoiar agentes inteligentes na recomendação de dados relevantes;</li>
+<li>favorecer a consolidação de produtos oficiais e confiáveis.</li>
+</ul>
+<h2 class="section-title" id="sintese-da-dimensao">12. Síntese da dimensão</h2>
+<p>A dimensão Data Overload trata da sobrecarga gerada pelo excesso de dados, fontes, atributos, versões, dashboards, APIs, indicadores, features e produtos analíticos em ecossistemas complexos. No UnespDataLens-RM, essa dimensão atua como uma capacidade complementar para garantir que os dados produzidos sejam não apenas abundantes, mas organizados, relevantes, localizáveis, reutilizáveis, governados e adequados ao uso.</p>
+<p>Ao incorporar estratégias de catalogação, curadoria, priorização, monitoramento de uso, redução de redundância, recomendação e descontinuação controlada, o modelo de referência reduz a complexidade informacional e aumenta a efetividade dos dados na produção de conhecimento e na tomada de decisão baseada em evidências.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

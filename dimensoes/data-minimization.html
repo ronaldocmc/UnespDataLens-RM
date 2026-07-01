@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A dimensão Data Minimization, ou minimização de dados, refere-se ao princípio técnico, metodológico e de governança segundo o qual apenas os dados estritamente necessários, adequados, proporcionais e justificados para uma determinada finalidade analítica devem ser coletados, ingeridos, integrados, transformados, armazenados, disponibilizados ou utilizados.">
+  <title>Data Minimization · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a href="../modulos/index.html">Módulos</a><a class="active" href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="dimensao-complementar-data-minimization"></span><section class="hero">
+<span class="badge">Dimensão complementar</span>
+<h1>Data Minimization</h1>
+<p>A dimensão Data Minimization, ou minimização de dados, refere-se ao princípio técnico, metodológico e de governança segundo o qual apenas os dados estritamente necessários, adequados, proporcionais e justificados para uma determinada finalidade analítica devem ser coletados, ingeridos, integrados, transformados, armazenados, disponibilizados ou utilizados.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 13 seções</summary><a href="#definicao-da-dimensao">Definição da dimensão</a><a href="#problema-tratado">Problema tratado</a><a href="#objetivo-da-dimensao">Objetivo da dimensão</a><a href="#relacao-com-o-unespdatalens-rm">Relação com o UnespDataLens-RM</a><a href="#principios-da-minimizacao-de-dados">Princípios da minimização de dados</a><a href="#estrategias-de-implementacao">Estratégias de implementação</a><a href="#metricas-associadas">Métricas associadas</a><a href="#artefatos-relacionados">Artefatos relacionados</a><a href="#criterios-de-validacao">Critérios de validação</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-para-o-modelo-de-referencia">Contribuição para o modelo de referência</a><a href="#sintese-da-dimensao">Síntese da dimensão</a></details><div class="prose module-full"><h2 class="section-title" id="definicao-da-dimensao">1. Definição da dimensão</h2>
+<p>A dimensão <a class="term" href="../conceitos/data-minimization.html">Data Minimization</a>, ou minimização de dados, refere-se ao princípio técnico, metodológico e de governança segundo o qual apenas os dados estritamente necessários, adequados, proporcionais e justificados para uma determinada finalidade analítica devem ser coletados, ingeridos, integrados, transformados, armazenados, disponibilizados ou utilizados.</p>
+<p>No contexto do UnespDataLens-RM, a minimização de dados não significa reduzir indiscriminadamente a quantidade de dados disponíveis, nem eliminar atributos relevantes para análise, modelagem ou tomada de decisão. Trata-se de estabelecer critérios formais para avaliar quais dados são necessários, por que são necessários, para qual finalidade serão utilizados, por quanto tempo devem ser mantidos, quem poderá acessá-los e quais riscos estão associados ao seu uso.</p>
+<p>A minimização de dados é especialmente relevante em ecossistemas analíticos que lidam com dados pessoais, sensíveis, institucionais, educacionais, territoriais, administrativos ou sociais. A coleta excessiva de atributos, o armazenamento indefinido de dados brutos, a integração de bases sem finalidade clara, a criação de features com variáveis desnecessárias e a disponibilização ampla de dados detalhados aumentam riscos de exposição, uso indevido, <a class="term" href="../conceitos/vies.html">viés</a>, reidentificação, complexidade operacional e <a class="term" href="../problemas/divida-de-dados.html">dívida de dados</a>.</p>
+<p>No UnespDataLens-RM, essa dimensão é complementar e transversal porque se relaciona com todas as etapas do ciclo de vida dos dados: <a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a>, ingestão, integração, transformação, qualidade, governança, armazenamento, disponibilização, <a class="term" href="../conceitos/feature-engineering.html">feature engineering</a>, monitoramento e agentes inteligentes. Ela contribui para assegurar que o modelo de referência produza ativos analíticos úteis e robustos, mas sem ampliar desnecessariamente riscos técnicos, éticos, legais e institucionais.</p>
+<h2 class="section-title" id="problema-tratado">2. Problema tratado</h2>
+<p>Em projetos de Engenharia Analítica de Dados, é comum a tendência de coletar e armazenar o maior número possível de atributos, sob a justificativa de que “podem ser úteis no futuro”. Embora essa estratégia pareça vantajosa em curto prazo, ela pode gerar riscos e custos significativos.</p>
+<p>A ausência de minimização de dados pode produzir problemas como:</p>
+<ul class="list">
+<li>coleta de atributos sem finalidade analítica definida;</li>
+<li>ingestão de dados pessoais ou sensíveis sem necessidade clara;</li>
+<li>armazenamento excessivo de dados brutos;</li>
+<li>aumento do risco de exposição ou uso indevido;</li>
+<li>maior possibilidade de reidentificação de indivíduos;</li>
+<li>aumento da complexidade de governança;</li>
+<li>dificuldade de controlar permissões de acesso;</li>
+<li>maior volume de dados a monitorar, proteger e auditar;</li>
+<li>criação de features irrelevantes ou redundantes;</li>
+<li>aumento do risco de viés e discriminação algorítmica;</li>
+<li>maior custo de armazenamento e processamento;</li>
+<li>ampliação da dívida de dados;</li>
+<li>dificuldade de justificar o uso de determinados atributos;</li>
+<li>redução da confiança dos usuários e gestores no ecossistema analítico.</li>
+</ul>
+<p>No UnespDataLens-RM, a dimensão Data Minimization busca responder a uma questão central: quais dados são realmente necessários para atender à finalidade analítica, científica, institucional ou decisória proposta?</p>
+<p>Essa questão deve ser tratada antes da ingestão, durante a integração, na criação de atributos derivados, na publicação de produtos e no consumo por usuários e sistemas.</p>
+<h2 class="section-title" id="objetivo-da-dimensao">3. Objetivo da dimensão</h2>
+<p>O objetivo da dimensão Data Minimization é estabelecer critérios para limitar a coleta, ingestão, armazenamento, transformação, disponibilização e uso de dados ao mínimo necessário para uma finalidade analítica explícita, legítima, documentada e proporcional, reduzindo riscos técnicos, éticos, legais, institucionais e operacionais.</p>
+<p>Essa dimensão busca garantir que os ativos analíticos do UnespDataLens-RM sejam suficientes para produzir conhecimento e apoiar decisões, mas sem incorporar dados excessivos, irrelevantes, sensíveis ou desnecessários.</p>
+<h2 class="section-title" id="relacao-com-o-unespdatalens-rm">4. Relação com o UnespDataLens-RM</h2>
+<p>A dimensão Data Minimization se articula com diversos módulos do UnespDataLens-RM.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, orienta a avaliação da necessidade de cada fonte, atributo, período, <a class="term" href="../conceitos/granularidade.html">granularidade</a> e nível de detalhamento antes de sua incorporação ao modelo de referência.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, contribui para definir quais dados devem ser extraídos, quais devem permanecer fora do ambiente analítico, quais devem ser anonimizados, pseudonimizados ou agregados e quais devem ter retenção limitada.</p>
+<p>No Módulo 3 — Integração e Harmonização, orienta a integração apenas de entidades, chaves, atributos e relações necessários à finalidade analítica, evitando cruzamentos excessivos ou desproporcionais.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, contribui para remover, mascarar, generalizar ou agregar atributos desnecessários, sensíveis ou de alto risco.</p>
+<p>No Módulo 5 — Qualidade e Validação de Dados, apoia a validação da adequação dos dados ao uso, considerando não apenas qualidade técnica, mas também pertinência, necessidade e proporcionalidade.</p>
+<p>No Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, permite avaliar se determinados atributos aumentam risco de discriminação, inferência indevida ou uso injustificado de características sensíveis.</p>
+<p>No Módulo 7 — Armazenamento Analítico, orienta políticas de retenção, segregação, agregação, anonimização, granularidade e exclusão de dados não necessários.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, define que produtos, dashboards, APIs, relatórios e datasets devem expor apenas o nível de detalhe necessário ao público e à finalidade.</p>
+<p>No Módulo 9 — <a class="term" href="../conceitos/metadados.html">Metadados</a>, Catálogo e Semântica dos Dados, exige que finalidade, sensibilidade, restrição de uso, justificativa de coleta e necessidade analítica sejam documentadas como metadados.</p>
+<p>No Módulo 10 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, a minimização atua como princípio central para reduzir riscos de privacidade, exposição, uso indevido e descumprimento normativo.</p>
+<p>No Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e <a class="term" href="../conceitos/rastreabilidade.html">Rastreabilidade</a>, permite rastrear por que determinados dados foram coletados, transformados, agregados, removidos ou disponibilizados.</p>
+<p>No Módulo 12 — <a class="term" href="../conceitos/versionamento.html">Versionamento</a> e <a class="term" href="../conceitos/reprodutibilidade.html">Reprodutibilidade</a>, registra versões de datasets minimizados, regras de exclusão, agregação, anonimização e justificativas de uso.</p>
+<p>No Módulo 14 — Feature Engineering e <a class="term" href="../conceitos/feature-store.html">Feature Store</a>, orienta a criação de features necessárias, justificadas, não redundantes e compatíveis com a finalidade do modelo ou análise.</p>
+<p>No Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, permite identificar ativos com excesso de atributos, dados sem uso, campos sensíveis não utilizados e produtos que precisam ser revisados.</p>
+<p>No Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline, agentes podem alertar sobre dados excessivos, atributos sensíveis, ausência de justificativa de uso ou necessidade de agregação.</p>
+<h2 class="section-title" id="principios-da-minimizacao-de-dados">5. Princípios da minimização de dados</h2>
+<p>A minimização de dados pode ser estruturada por princípios que orientam sua aplicação no modelo de referência.</p>
+<div class="table-wrap"><table class="table"><tr><th>Princípio</th><th>Descrição</th><th>Exemplo</th></tr><tr><td>Necessidade</td><td>Coletar e utilizar apenas dados necessários para a finalidade definida.</td><td>Usar faixa etária em vez de data de nascimento quando a idade exata não for necessária.</td></tr><tr><td>Adequação</td><td>Garantir que os dados sejam compatíveis com o objetivo analítico.</td><td>Usar dados acadêmicos para análise de evasão, evitando atributos sem relação clara.</td></tr><tr><td>Proporcionalidade</td><td>Evitar uso de dados excessivos em relação ao benefício analítico esperado.</td><td>Não integrar dados sensíveis se indicadores agregados forem suficientes.</td></tr><tr><td>Finalidade explícita</td><td>Documentar por que o dado será usado.</td><td>Registrar que determinado atributo será usado para avaliar desigualdade de acesso.</td></tr><tr><td>Granularidade mínima</td><td>Utilizar o menor nível de detalhe necessário.</td><td>Trabalhar com município em vez de endereço completo.</td></tr><tr><td>Retenção limitada</td><td>Manter dados apenas pelo período necessário.</td><td>Arquivar ou eliminar dados brutos após produção de dataset curado.</td></tr><tr><td>Acesso mínimo</td><td>Restringir acesso aos dados conforme função e finalidade.</td><td>Usuário de <a class="term" href="../artefatos/dashboard.html">dashboard</a> acessa agregados, não registros individuais.</td></tr><tr><td>Redução de sensibilidade</td><td>Aplicar anonimização, pseudonimização, agregação ou mascaramento quando possível.</td><td>Substituir identificadores diretos por códigos internos.</td></tr><tr><td>Revisão contínua</td><td>Reavaliar periodicamente a necessidade dos dados armazenados.</td><td>Remover atributos que deixaram de ser usados em produtos analíticos.</td></tr></table></div>
+<h2 class="section-title" id="estrategias-de-implementacao">6. Estratégias de implementação</h2>
+<p>A implementação da Data Minimization no UnespDataLens-RM pode envolver estratégias técnicas, metodológicas e de governança.</p>
+<div class="table-wrap"><table class="table"><tr><th>Estratégia</th><th>Descrição</th></tr><tr><td>Justificativa de coleta por atributo</td><td>Registrar a finalidade de cada atributo incorporado ao pipeline.</td></tr><tr><td>Classificação de necessidade</td><td>Classificar atributos como essencial, útil, opcional, redundante ou desnecessário.</td></tr><tr><td>Avaliação de sensibilidade</td><td>Identificar dados pessoais, sensíveis, identificadores diretos e atributos com risco de inferência.</td></tr><tr><td>Redução de granularidade</td><td>Substituir dados detalhados por agregações quando suficiente para a finalidade.</td></tr><tr><td>Pseudonimização</td><td>Substituir identificadores diretos por identificadores técnicos controlados.</td></tr><tr><td>Anonimização ou agregação</td><td>Reduzir possibilidade de identificação individual em produtos de consumo.</td></tr><tr><td>Política de retenção</td><td>Definir prazos de manutenção, arquivamento e descarte de dados.</td></tr><tr><td><a class="term" href="../conceitos/controle-de-acesso.html">Controle de acesso</a> por finalidade</td><td>Associar permissões ao objetivo de uso, e não apenas ao perfil do usuário.</td></tr><tr><td>Revisão de atributos não utilizados</td><td>Identificar campos que não são usados em análises, dashboards, features ou modelos.</td></tr><tr><td>Minimização em produtos de consumo</td><td>Expor apenas atributos e níveis de detalhe necessários ao público-alvo.</td></tr><tr><td>Minimização em feature engineering</td><td>Evitar features redundantes, irrelevantes, sensíveis ou com risco de vazamento.</td></tr><tr><td>Registro de decisão de minimização</td><td>Documentar atributos removidos, agregados, mascarados ou mantidos com justificativa.</td></tr><tr><td>Monitoramento de excesso de dados</td><td>Detectar ativos com muitos atributos não utilizados ou sem finalidade documentada.</td></tr><tr><td>Validação humana de dados sensíveis</td><td>Exigir revisão antes de integrar ou disponibilizar dados sensíveis.</td></tr></table></div>
+<h2 class="section-title" id="metricas-associadas">7. Métricas associadas</h2>
+<p>A dimensão Data Minimization pode ser avaliada por métricas relacionadas à necessidade, sensibilidade, retenção, granularidade, uso efetivo e redução de exposição.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de atributos com finalidade documentada</td><td>TAFD</td><td>Proporção de atributos com justificativa de uso registrada.</td></tr><tr><td>Taxa de atributos essenciais</td><td>TAE</td><td>Proporção de atributos classificados como essenciais para a finalidade.</td></tr><tr><td>Taxa de atributos sem uso</td><td>TASU</td><td>Proporção de atributos não utilizados em análises, produtos, features ou modelos.</td></tr><tr><td>Taxa de atributos sensíveis</td><td>TAS</td><td>Proporção de atributos classificados como sensíveis ou de alto risco.</td></tr><tr><td>Taxa de atributos sensíveis justificados</td><td>TASJ</td><td>Proporção de atributos sensíveis com justificativa formal de uso.</td></tr><tr><td>Taxa de atributos minimizados</td><td>TAM</td><td>Proporção de atributos removidos, agregados, mascarados ou pseudonimizados.</td></tr><tr><td>Taxa de produtos com granularidade adequada</td><td>TPGA</td><td>Proporção de produtos que expõem apenas o nível de detalhe necessário.</td></tr><tr><td>Taxa de ativos com política de retenção</td><td>TAPR</td><td>Proporção de ativos com prazo de retenção definido.</td></tr><tr><td>Taxa de ativos com excesso de atributos</td><td>TAEA</td><td>Proporção de ativos com atributos sem finalidade, sem uso ou redundantes.</td></tr><tr><td>Taxa de acesso por finalidade</td><td>TAF</td><td>Proporção de acessos associados a uma finalidade explícita.</td></tr><tr><td>Índice de minimização de dados</td><td>IMD</td><td>Indicador composto de finalidade, necessidade, redução de exposição e retenção.</td></tr></table></div>
+<p>Uma formulação possível para o Índice de Minimização de Dados é:</p>
+<div class="formula">IMD = w₁TAFD + w₂TAE + w₃TASJ + w₄TAM + w₅TPGA + w₆TAPR + w₇TAF − w₈TASU − w₉TAEA</div>
+<p>em que:</p>
+<ul class="list">
+<li>TAFD representa a taxa de atributos com finalidade documentada;</li>
+<li>TAE representa a taxa de atributos essenciais;</li>
+<li>TASJ representa a taxa de atributos sensíveis justificados;</li>
+<li>TAM representa a taxa de atributos minimizados;</li>
+<li>TPGA representa a taxa de produtos com granularidade adequada;</li>
+<li>TAPR representa a taxa de ativos com política de retenção;</li>
+<li>TAF representa a taxa de acesso por finalidade;</li>
+<li>TASU representa a taxa de atributos sem uso;</li>
+<li>TAEA representa a taxa de ativos com excesso de atributos;</li>
+<li>wᵢ representa o peso atribuído a cada dimensão.</li>
+</ul>
+<p>Quanto maior o IMD, maior a aderência do ecossistema analítico ao princípio de minimização de dados.</p>
+<h2 class="section-title" id="artefatos-relacionados">8. Artefatos relacionados</h2>
+<p>A dimensão Data Minimization pode ser operacionalizada por meio de artefatos complementares, integrados aos módulos de inventário, governança, qualidade, armazenamento, feature engineering, disponibilização, monitoramento e agentes inteligentes.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Finalidade</th></tr><tr><td>DM1</td><td>Matriz de Necessidade dos Dados</td><td>Tabela atributo × finalidade</td><td>Justificar a necessidade de cada atributo em relação à finalidade analítica.</td></tr><tr><td>DM2</td><td>Registro de <a class="term" href="../artefatos/classificacao-de-sensibilidade.html">Classificação de Sensibilidade</a></td><td>Tabela de classificação</td><td>Identificar atributos pessoais, sensíveis, identificadores diretos e atributos de risco.</td></tr><tr><td>DM3</td><td>Relatório de Atributos sem Uso</td><td>Relatório técnico</td><td>Listar atributos não utilizados em análises, produtos, features ou modelos.</td></tr><tr><td>DM4</td><td>Plano de Minimização de Dados</td><td>Documento operacional</td><td>Definir ações de remoção, agregação, mascaramento, pseudonimização ou retenção limitada.</td></tr><tr><td>DM5</td><td>Registro de Decisões de Minimização</td><td>Tabela de decisões</td><td>Documentar atributos mantidos, removidos, agregados ou mascarados e suas justificativas.</td></tr><tr><td>DM6</td><td>Mapa de Granularidade dos Dados</td><td>Tabela ou matriz</td><td>Avaliar se o nível de detalhe é adequado à finalidade de uso.</td></tr><tr><td>DM7</td><td>Política de Retenção e Descarte</td><td>Documento normativo</td><td>Definir prazos de manutenção, arquivamento, descarte e exceções.</td></tr><tr><td>DM8</td><td>Relatório de Exposição de Dados</td><td>Relatório de risco</td><td>Avaliar quantidade de dados sensíveis, identificadores e atributos de alto risco expostos.</td></tr><tr><td>DM9</td><td>Registro de Pseudonimização e Anonimização</td><td>Tabela técnica</td><td>Documentar técnicas aplicadas para reduzir identificação direta ou indireta.</td></tr><tr><td>DM10</td><td>Painel de Minimização de Dados</td><td>Dashboard</td><td>Monitorar atributos sem uso, sensíveis, minimizados, justificados e ativos com retenção definida.</td></tr><tr><td>DM11</td><td>Registro de Acessos por Finalidade</td><td>Log governado</td><td>Relacionar consumo de dados à finalidade declarada e autorizada.</td></tr><tr><td>DM12</td><td>Relatório de Aderência à Minimização</td><td>Relatório técnico-gerencial</td><td>Avaliar conformidade do ecossistema com critérios de minimização.</td></tr></table></div>
+<h2 class="section-title" id="criterios-de-validacao">9. Critérios de validação</h2>
+<p>A dimensão Data Minimization pode ser considerada adequadamente tratada quando:</p>
+<ol class="steps">
+<li>atributos críticos possuem finalidade de uso documentada;</li>
+<li>dados pessoais e sensíveis são identificados e classificados;</li>
+<li>atributos sensíveis possuem justificativa explícita de uso;</li>
+<li>atributos sem uso são identificados e revisados;</li>
+<li>produtos analíticos expõem apenas o nível de granularidade necessário;</li>
+<li>datasets de consumo evitam identificadores diretos quando não essenciais;</li>
+<li>políticas de retenção e descarte estão definidas;</li>
+<li>decisões de remoção, agregação, mascaramento ou pseudonimização são documentadas;</li>
+<li>acessos a dados são vinculados a finalidades autorizadas;</li>
+<li>features sensíveis, redundantes ou sem justificativa são revisadas;</li>
+<li>produtos de dados de uso amplo priorizam agregação e restrição de granularidade;</li>
+<li>ativos com excesso de atributos são monitorados;</li>
+<li>agentes inteligentes ou rotinas de monitoramento identificam dados excessivos ou não justificados;</li>
+<li>o índice de minimização de dados melhora ao longo do tempo.</li>
+</ol>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">10. Exemplo de aplicação no domínio educacional</h2>
+<p>Em um projeto educacional, a minimização de dados é essencial para evitar o uso excessivo de informações pessoais dos estudantes. Para uma análise de evasão, por exemplo, pode ser necessário utilizar dados de trajetória acadêmica, matrícula, desempenho, frequência e algumas variáveis socioeconômicas. Entretanto, nem sempre é necessário manter identificadores diretos, endereço completo, documentos pessoais ou atributos sensíveis em datasets de consumo analítico.</p>
+<p>Nesse contexto, o UnespDataLens-RM pode substituir identificadores diretos por códigos pseudonimizados, utilizar faixa etária em vez de data de nascimento, trabalhar com município ou região em vez de endereço completo, disponibilizar dados agregados em dashboards e documentar a finalidade de cada atributo sensível utilizado.</p>
+<p>Dessa forma, a análise educacional preserva sua capacidade explicativa e preditiva, mas reduz riscos de exposição, reidentificação e uso indevido.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">11. Exemplo de aplicação em políticas públicas</h2>
+<p>Em políticas públicas, a minimização de dados é relevante quando diferentes bases de atendimento, saúde, assistência social, educação e território são integradas. Embora a integração possa apoiar decisões intersetoriais, ela também pode aumentar riscos de exposição de indivíduos, famílias ou grupos vulneráveis.</p>
+<p>Por exemplo, para construir um indicador territorial de vulnerabilidade, pode não ser necessário disponibilizar registros individuais de cidadãos. Em muitos casos, indicadores agregados por território, faixa etária, tipo de atendimento ou período são suficientes para apoiar a decisão.</p>
+<p>A dimensão Data Minimization permite avaliar quais atributos devem ser mantidos, agregados, mascarados ou removidos, documentando a finalidade de uso e reduzindo riscos associados à exposição de dados sensíveis.</p>
+<h2 class="section-title" id="contribuicao-para-o-modelo-de-referencia">12. Contribuição para o modelo de referência</h2>
+<p>A dimensão Data Minimization contribui para o UnespDataLens-RM ao incorporar o princípio de que dados devem ser coletados, tratados e disponibilizados na medida necessária para uma finalidade legítima, explícita e proporcional.</p>
+<p>Essa dimensão fortalece o modelo de referência ao:</p>
+<ul class="list">
+<li>reduzir exposição desnecessária de dados;</li>
+<li>diminuir riscos de privacidade e reidentificação;</li>
+<li>apoiar conformidade e governança;</li>
+<li>reduzir complexidade de armazenamento e controle de acesso;</li>
+<li>evitar criação excessiva de atributos e features;</li>
+<li>reduzir data overload e data debt;</li>
+<li>melhorar clareza sobre finalidade de uso;</li>
+<li>apoiar uso responsável de dados sensíveis;</li>
+<li>fortalecer confiança institucional no ecossistema analítico;</li>
+<li>melhorar segurança dos produtos de consumo;</li>
+<li>orientar decisões de retenção, descarte, agregação e anonimização;</li>
+<li>tornar o pipeline mais proporcional, ético e sustentável.</li>
+</ul>
+<h2 class="section-title" id="sintese-da-dimensao">13. Síntese da dimensão</h2>
+<p>A dimensão Data Minimization trata da necessidade de limitar a coleta, integração, transformação, armazenamento, disponibilização e uso de dados ao mínimo necessário para uma finalidade explícita, legítima e documentada. No UnespDataLens-RM, essa dimensão atua como capacidade complementar para reduzir riscos, controlar exposição, evitar excesso de atributos, orientar governança e fortalecer o uso responsável dos dados.</p>
+<p>Ao incorporar justificativa de uso por atributo, classificação de sensibilidade, redução de granularidade, anonimização, pseudonimização, retenção limitada, controle de acesso por finalidade e monitoramento de atributos sem uso, o modelo de referência amplia sua capacidade de produzir ativos analíticos úteis, confiáveis, proporcionais e compatíveis com princípios de governança, segurança e responsabilidade.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

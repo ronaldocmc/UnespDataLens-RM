@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A dimensão MLOps refere-se ao conjunto de princípios, práticas, processos e mecanismos técnicos voltados à gestão do ciclo de vida de modelos de aprendizagem de máquina, desde a preparação dos dados e construção de features até o treinamento, avaliação, versionamento, implantação, monitoramento, explicação, governança, atualização e descontinuação de…">
+  <title>MLOps · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a href="../modulos/index.html">Módulos</a><a class="active" href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="dimensao-complementar-mlops"></span><section class="hero">
+<span class="badge">Dimensão complementar</span>
+<h1>MLOps</h1>
+<p>A dimensão MLOps refere-se ao conjunto de princípios, práticas, processos e mecanismos técnicos voltados à gestão do ciclo de vida de modelos de aprendizagem de máquina, desde a preparação dos dados e construção de features até o treinamento, avaliação, versionamento, implantação, monitoramento, explicação, governança, atualização e descontinuação de…</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 13 seções</summary><a href="#definicao-da-dimensao">Definição da dimensão</a><a href="#problema-tratado">Problema tratado</a><a href="#objetivo-da-dimensao">Objetivo da dimensão</a><a href="#relacao-com-o-unespdatalens-rm">Relação com o UnespDataLens-RM</a><a href="#componentes-de-mlops">Componentes de MLOps</a><a href="#estrategias-de-implementacao">Estratégias de implementação</a><a href="#metricas-associadas">Métricas associadas</a><a href="#artefatos-relacionados">Artefatos relacionados</a><a href="#criterios-de-validacao">Critérios de validação</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-para-o-modelo-de-referencia">Contribuição para o modelo de referência</a><a href="#sintese-da-dimensao">Síntese da dimensão</a></details><div class="prose module-full"><h2 class="section-title" id="definicao-da-dimensao">1. Definição da dimensão</h2>
+<p>A dimensão <a class="term" href="../conceitos/mlops.html">MLOps</a> refere-se ao conjunto de princípios, práticas, processos e mecanismos técnicos voltados à gestão do ciclo de vida de modelos de aprendizagem de máquina, desde a preparação dos dados e construção de features até o treinamento, avaliação, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, implantação, monitoramento, explicação, governança, atualização e descontinuação de modelos.</p>
+<p>No contexto do UnespDataLens-RM, MLOps representa a capacidade de operacionalizar modelos analíticos, preditivos, classificatórios, explicativos ou prescritivos de forma controlada, reprodutível, rastreável, monitorável e governada. Essa dimensão não se restringe ao treinamento de algoritmos. Ela envolve todo o ecossistema que permite transformar modelos em artefatos confiáveis, avaliáveis e integrados aos pipelines de Engenharia Analítica de Dados.</p>
+<p>MLOps inclui práticas como versionamento de datasets de treinamento, controle de features, registro de experimentos, comparação de modelos, validação de desempenho, análise de <a class="term" href="../conceitos/fairness.html">fairness</a>, explicabilidade, empacotamento de modelos, implantação controlada, monitoramento de drift, avaliação contínua, auditoria de decisões, atualização periódica e descontinuação de modelos obsoletos.</p>
+<p>No UnespDataLens-RM, essa dimensão é complementar e transversal porque modelos dependem dos dados, <a class="term" href="../conceitos/metadados.html">metadados</a>, qualidade, rótulos, features, linhagem, versionamento, governança, monitoramento e agentes inteligentes produzidos pelos demais módulos do modelo de referência. Um modelo não deve ser visto como um componente isolado, mas como um <a class="term" href="../conceitos/ativo-analitico.html">ativo analítico</a> derivado de dados, regras, escolhas metodológicas, parâmetros, versões e contextos de uso.</p>
+<h2 class="section-title" id="problema-tratado">2. Problema tratado</h2>
+<p>Em muitos projetos de <a class="term" href="../conceitos/ciencia-de-dados.html">Ciência de Dados</a> e <a class="term" href="../conceitos/inteligencia-artificial.html">Inteligência Artificial</a>, modelos são desenvolvidos em notebooks, scripts ou experimentos pontuais, mas sem controle adequado sobre os dados utilizados, as versões das features, os parâmetros, o ambiente de execução, as métricas, os critérios de validação, os riscos de <a class="term" href="../conceitos/vies.html">viés</a>, as limitações ou as condições de implantação.</p>
+<p>Essa situação pode gerar modelos difíceis de reproduzir, comparar, auditar, atualizar ou explicar. Um modelo pode apresentar bom desempenho experimental, mas não estar preparado para uso contínuo, pois depende de dados instáveis, features sem versionamento, rótulos frágeis, métricas incompletas, ausência de monitoramento ou falta de governança.</p>
+<p>A ausência de MLOps pode gerar problemas como:</p>
+<ul class="list">
+<li>experimentos não reprodutíveis;</li>
+<li>modelos treinados com datasets sem versão;</li>
+<li>uso de features não documentadas;</li>
+<li>parâmetros e hiperparâmetros não registrados;</li>
+<li>ausência de <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a> entre modelo, dados e código;</li>
+<li>comparação inadequada entre modelos;</li>
+<li>implantação de modelos sem validação suficiente;</li>
+<li>degradação de desempenho não detectada;</li>
+<li><a class="term" href="../conceitos/data-drift.html">data drift</a>, <a class="term" href="../conceitos/feature-drift.html">feature drift</a>, <a class="term" href="../conceitos/label-drift.html">label drift</a> ou <a class="term" href="../conceitos/concept-drift.html">concept drift</a> sem monitoramento;</li>
+<li>ausência de explicabilidade ou interpretabilidade;</li>
+<li>baixa avaliação de fairness e vieses;</li>
+<li>dificuldade de auditar decisões apoiadas por modelos;</li>
+<li>modelos obsoletos mantidos em uso;</li>
+<li>falta de critérios para retreinamento;</li>
+<li>risco de uso indevido de predições em processos decisórios.</li>
+</ul>
+<p>No UnespDataLens-RM, a dimensão MLOps busca evitar que modelos sejam tratados apenas como resultados de experimentos, formalizando-os como ativos analíticos versionados, monitorados, avaliados, governados e integrados ao ciclo de vida dos dados.</p>
+<h2 class="section-title" id="objetivo-da-dimensao">3. Objetivo da dimensão</h2>
+<p>O objetivo da dimensão MLOps é estruturar práticas para construção, avaliação, versionamento, implantação, monitoramento, governança e manutenção de modelos de aprendizagem de máquina no ecossistema UnespDataLens-RM, garantindo que esses modelos sejam reprodutíveis, rastreáveis, explicáveis, avaliáveis, atualizáveis e adequados ao uso analítico ou decisório.</p>
+<p>Essa dimensão busca assegurar que modelos derivados dos dados do UnespDataLens-RM sejam tecnicamente robustos, metodologicamente documentados, operacionalmente monitorados e institucionalmente responsáveis.</p>
+<h2 class="section-title" id="relacao-com-o-unespdatalens-rm">4. Relação com o UnespDataLens-RM</h2>
+<p>A dimensão MLOps se articula com diversos módulos do UnespDataLens-RM.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, MLOps depende da identificação das fontes que alimentam os modelos, seus responsáveis, limitações, <a class="term" href="../conceitos/periodicidade.html">periodicidade</a>, <a class="term" href="../conceitos/granularidade.html">granularidade</a> e restrições de uso.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, garante que os dados utilizados no treinamento e avaliação dos modelos possam ser rastreados até sua origem e versão inicial.</p>
+<p>No Módulo 3 — Integração e Harmonização, apoia a construção de bases integradas para modelagem, preservando regras de relacionamento, chaves, conflitos e limitações.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, registra transformações aplicadas aos dados antes da modelagem, incluindo tratamento de ausentes, normalizações, recodificações e enriquecimentos.</p>
+<p>No Módulo 5 — Qualidade e Validação de Dados, utiliza métricas de qualidade para avaliar se os dados são adequados ao treinamento, validação e teste dos modelos.</p>
+<p>No Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, incorpora avaliação de distribuição de classes, representatividade, métricas de fairness, mitigação de viés e análise de impacto entre grupos.</p>
+<p>No Módulo 7 — Armazenamento Analítico, utiliza datasets curados, data marts e bases analíticas como insumos controlados para treinamento e avaliação.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, modelos podem gerar scores, classificações, recomendações, indicadores ou serviços analíticos consumidos por dashboards, APIs ou relatórios.</p>
+<p>No Módulo 9 — Metadados, Catálogo e Semântica dos Dados, modelos devem ser descritos por metadados, incluindo finalidade, dados de entrada, <a class="term" href="../conceitos/variavel-alvo.html">variável-alvo</a>, features, métricas, limitações e responsáveis.</p>
+<p>No Módulo 10 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, MLOps deve respeitar políticas de acesso, finalidade de uso, dados sensíveis, privacidade, auditoria e responsabilidade institucional.</p>
+<p>No Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e Rastreabilidade, registra a relação entre modelo, datasets, features, rótulos, código, parâmetros, versões e produtos derivados.</p>
+<p>No Módulo 12 — Versionamento e <a class="term" href="../conceitos/reprodutibilidade.html">Reprodutibilidade</a>, controla versões de dados, features, código, experimentos, modelos, ambientes, parâmetros e resultados.</p>
+<p>No Módulo 13 — Representações Analíticas, modelos podem utilizar representações tabulares, temporais, relacionais, grafos ou grafos temporais como entrada.</p>
+<p>No Módulo 14 — <a class="term" href="../conceitos/feature-engineering.html">Feature Engineering</a> e <a class="term" href="../conceitos/feature-store.html">Feature Store</a>, MLOps depende do controle de features, regras de cálculo, versionamento, qualidade, drift e risco de vazamento.</p>
+<p>No Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, acompanha degradação de desempenho, drift dos dados, drift das features, drift dos rótulos, mudanças no comportamento do modelo e necessidade de retreinamento.</p>
+<p>No Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline, agentes podem apoiar explicação de modelos, consulta a experimentos, interpretação de métricas, identificação de drift e recomendação de retreinamento.</p>
+<h2 class="section-title" id="componentes-de-mlops">5. Componentes de MLOps</h2>
+<p>A dimensão MLOps pode ser estruturada em componentes que cobrem o ciclo completo de modelos no UnespDataLens-RM.</p>
+<div class="table-wrap"><table class="table"><tr><th>Componente</th><th>Descrição</th><th>Exemplo</th></tr><tr><td>Dataset de treinamento</td><td>Base utilizada para treinar o modelo, com versão e qualidade registradas.</td><td>Dataset curado de evasão v2.1.</td></tr><tr><td>Dataset de validação e teste</td><td>Bases separadas para avaliação do desempenho e generalização.</td><td>Conjunto de validação temporal.</td></tr><tr><td><a class="term" href="../conceitos/feature-set.html">Feature set</a></td><td>Conjunto de atributos utilizados pelo modelo.</td><td>Features acadêmicas, temporais e socioeconômicas.</td></tr><tr><td>Variável-alvo ou rótulo</td><td>Desfecho que o modelo busca prever, classificar ou estimar.</td><td>Evasão no próximo período.</td></tr><tr><td>Experimento</td><td>Execução controlada de treinamento e avaliação.</td><td>XGBoost com parâmetros específicos.</td></tr><tr><td>Modelo treinado</td><td>Artefato resultante do processo de aprendizagem.</td><td>Modelo preditivo salvo e versionado.</td></tr><tr><td>Métricas de avaliação</td><td>Indicadores de desempenho e qualidade do modelo.</td><td>Acurácia, F1, AUC, recall, <a class="term" href="../metricas/precisao.html">precisão</a>.</td></tr><tr><td>Métricas de fairness</td><td>Indicadores de equidade entre grupos.</td><td>SPD, DI, EOD, AOD, FPR e FNR por grupo.</td></tr><tr><td>Explicabilidade</td><td>Métodos para interpretação do comportamento do modelo.</td><td><a class="term" href="../metodos/shap.html">SHAP</a>, <a class="term" href="../metodos/lime.html">LIME</a>, importância de variáveis.</td></tr><tr><td>Registro de modelo</td><td>Catálogo ou repositório de modelos e versões.</td><td>Model registry.</td></tr><tr><td>Implantação</td><td>Disponibilização do modelo para uso analítico ou operacional.</td><td>API de score de risco.</td></tr><tr><td>Monitoramento</td><td>Acompanhamento de desempenho, drift, uso e estabilidade.</td><td>Alerta de queda de recall.</td></tr><tr><td>Retreinamento</td><td>Atualização do modelo com novos dados ou novas condições.</td><td>Retreinamento semestral.</td></tr><tr><td>Descontinuação</td><td>Retirada controlada de modelos obsoletos ou inadequados.</td><td>Modelo substituído por nova versão.</td></tr></table></div>
+<h2 class="section-title" id="estrategias-de-implementacao">6. Estratégias de implementação</h2>
+<p>A implementação de MLOps no UnespDataLens-RM pode envolver estratégias técnicas, metodológicas e de governança.</p>
+<div class="table-wrap"><table class="table"><tr><th>Estratégia</th><th>Descrição</th></tr><tr><td>Registro de experimentos</td><td>Documentar dados, features, rótulos, algoritmos, parâmetros, métricas e resultados.</td></tr><tr><td>Versionamento de modelos</td><td>Controlar versões de modelos treinados, seus artefatos e configurações.</td></tr><tr><td>Versionamento de datasets</td><td>Registrar versões dos dados usados em treinamento, validação, teste e produção.</td></tr><tr><td>Versionamento de features</td><td>Controlar regras, janelas temporais, parâmetros e versões das features.</td></tr><tr><td>Separação treino-validação-teste</td><td>Definir protocolos de avaliação adequados ao problema e ao tempo.</td></tr><tr><td>Validação temporal</td><td>Evitar vazamento temporal e avaliar generalização em períodos futuros.</td></tr><tr><td>Avaliação de desempenho</td><td>Medir métricas adequadas ao problema, como acurácia, F1, AUC, RMSE ou MAE.</td></tr><tr><td>Avaliação de fairness</td><td>Avaliar desempenho e erros por grupos relevantes ou sensíveis.</td></tr><tr><td>Explicabilidade do modelo</td><td>Utilizar métodos para explicar variáveis, decisões, predições e limitações.</td></tr><tr><td>Registro de limitações</td><td>Documentar escopo, contexto, restrições e riscos do modelo.</td></tr><tr><td>Governança de implantação</td><td>Estabelecer critérios para publicação, uso, revisão e aprovação de modelos.</td></tr><tr><td>Monitoramento em produção</td><td>Acompanhar drift, desempenho, estabilidade, uso, <a class="term" href="../conceitos/latencia.html">latência</a> e falhas.</td></tr><tr><td>Critérios de retreinamento</td><td>Definir quando o modelo deve ser atualizado ou substituído.</td></tr><tr><td>Auditoria de decisões</td><td>Registrar predições, versões, entradas, saídas e explicações quando aplicável.</td></tr><tr><td>Descontinuação controlada</td><td>Retirar modelos obsoletos preservando histórico, justificativa e versões anteriores.</td></tr></table></div>
+<h2 class="section-title" id="metricas-associadas">7. Métricas associadas</h2>
+<p>A dimensão MLOps pode ser avaliada por métricas relacionadas à reprodutibilidade, desempenho, fairness, estabilidade, implantação, monitoramento e governança dos modelos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de modelos registrados</td><td>TMR</td><td>Proporção de modelos com registro formal no catálogo ou model registry.</td></tr><tr><td>Taxa de modelos versionados</td><td>TMV</td><td>Proporção de modelos com controle de versão.</td></tr><tr><td>Taxa de experimentos reprodutíveis</td><td>TER</td><td>Proporção de experimentos com dados, código, parâmetros e ambiente registrados.</td></tr><tr><td>Taxa de modelos com dataset versionado</td><td>TMDV</td><td>Proporção de modelos associados a versões dos datasets utilizados.</td></tr><tr><td>Taxa de modelos com feature set documentado</td><td>TMFD</td><td>Proporção de modelos com features, regras e versões documentadas.</td></tr><tr><td>Taxa de modelos com rótulo documentado</td><td>TMRD</td><td>Proporção de modelos com variável-alvo formalmente definida.</td></tr><tr><td>Taxa de modelos com avaliação de desempenho</td><td>TMAD</td><td>Proporção de modelos com métricas de desempenho registradas.</td></tr><tr><td>Taxa de modelos com avaliação de fairness</td><td>TMAF</td><td>Proporção de modelos avaliados quanto a equidade entre grupos.</td></tr><tr><td>Taxa de modelos explicáveis</td><td>TME</td><td>Proporção de modelos com relatório de explicabilidade ou interpretabilidade.</td></tr><tr><td>Taxa de modelos monitorados</td><td>TMM</td><td>Proporção de modelos em uso com monitoramento ativo.</td></tr><tr><td>Taxa de modelos com drift detectado</td><td>TMDD</td><td>Proporção de modelos com evidência de drift nos dados, features, rótulos ou desempenho.</td></tr><tr><td>Taxa de modelos retreinados conforme critério</td><td>TMRC</td><td>Proporção de modelos atualizados conforme regra de retreinamento.</td></tr><tr><td>Taxa de modelos obsoletos</td><td>TMO</td><td>Proporção de modelos sem uso, sem monitoramento ou superados por nova versão.</td></tr><tr><td>Índice de maturidade MLOps</td><td>IMLOps</td><td>Indicador composto da maturidade operacional e governança dos modelos.</td></tr></table></div>
+<p>Uma formulação possível para o Índice de Maturidade MLOps é:</p>
+<div class="formula">IMLOps = w₁TMR + w₂TMV + w₃TER + w₄TMDV + w₅TMFD + w₆TMRD + w₇TMAD + w₈TMAF + w₉TME + w₁₀TMM + w₁₁TMRC − w₁₂TMO</div>
+<p>em que:</p>
+<ul class="list">
+<li>TMR representa a taxa de modelos registrados;</li>
+<li>TMV representa a taxa de modelos versionados;</li>
+<li>TER representa a taxa de experimentos reprodutíveis;</li>
+<li>TMDV representa a taxa de modelos com dataset versionado;</li>
+<li>TMFD representa a taxa de modelos com feature set documentado;</li>
+<li>TMRD representa a taxa de modelos com rótulo documentado;</li>
+<li>TMAD representa a taxa de modelos com avaliação de desempenho;</li>
+<li>TMAF representa a taxa de modelos com avaliação de fairness;</li>
+<li>TME representa a taxa de modelos explicáveis;</li>
+<li>TMM representa a taxa de modelos monitorados;</li>
+<li>TMRC representa a taxa de modelos retreinados conforme critério;</li>
+<li>TMO representa a taxa de modelos obsoletos;</li>
+<li>wᵢ representa o peso atribuído a cada dimensão.</li>
+</ul>
+<p>Quanto maior o IMLOps, maior a maturidade do ecossistema na gestão do ciclo de vida de modelos.</p>
+<h2 class="section-title" id="artefatos-relacionados">8. Artefatos relacionados</h2>
+<p>A dimensão MLOps pode ser operacionalizada por meio de artefatos complementares, integrados aos módulos de qualidade, feature store, versionamento, linhagem, governança, monitoramento, explicabilidade e agentes inteligentes.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Finalidade</th></tr><tr><td>MLO1</td><td>Arquitetura MLOps</td><td>Documento técnico ou diagrama</td><td>Definir componentes, fluxos, ambientes, registros, integrações e responsabilidades do ciclo de modelos.</td></tr><tr><td>MLO2</td><td>Catálogo de Modelos</td><td>Model registry ou tabela de modelos</td><td>Registrar modelos, versões, finalidade, responsável, status, métricas e restrições.</td></tr><tr><td>MLO3</td><td>Registro de Experimentos</td><td>Tabela ou ferramenta de tracking</td><td>Documentar datasets, features, rótulos, algoritmos, parâmetros, métricas e resultados.</td></tr><tr><td>MLO4</td><td>Manifesto de Treinamento</td><td>Documento reprodutível</td><td>Registrar dados, versões, código, ambiente, parâmetros, bibliotecas, seeds e artefatos gerados.</td></tr><tr><td>MLO5</td><td>Relatório de Avaliação de Desempenho</td><td>Relatório técnico</td><td>Avaliar métricas de desempenho, erro, estabilidade, validação temporal e comparação entre modelos.</td></tr><tr><td>MLO6</td><td><a class="term" href="../artefatos/relatorio-de-fairness.html">Relatório de Fairness</a> do Modelo</td><td>Relatório técnico</td><td>Avaliar desempenho, erros e impactos diferenciais entre grupos.</td></tr><tr><td>MLO7</td><td>Relatório de Explicabilidade</td><td>Relatório técnico</td><td>Explicar variáveis relevantes, predições, comportamento global e limitações do modelo.</td></tr><tr><td>MLO8</td><td>Registro de Implantação do Modelo</td><td>Documento ou tabela operacional</td><td>Documentar versão implantada, ambiente, API, data, responsável, status e critérios de uso.</td></tr><tr><td>MLO9</td><td><a class="term" href="../artefatos/painel-de-monitoramento.html">Painel de Monitoramento</a> de Modelos</td><td><a class="term" href="../artefatos/dashboard.html">Dashboard</a></td><td>Monitorar drift, desempenho, latência, uso, falhas e estabilidade do modelo.</td></tr><tr><td>MLO10</td><td>Registro de Retreinamento</td><td>Changelog ou tabela de atualização</td><td>Documentar critérios, datas, versões, motivos e resultados de retreinamento.</td></tr><tr><td>MLO11</td><td>Registro de Predições e Auditoria</td><td>Log governado</td><td>Registrar entradas, saídas, versão do modelo, explicações e contexto quando aplicável.</td></tr><tr><td>MLO12</td><td>Plano de Descontinuação de Modelo</td><td>Documento operacional</td><td>Definir critérios, justificativa, impacto e substituição de modelos obsoletos.</td></tr><tr><td>MLO13</td><td>Model Card</td><td>Documento padronizado</td><td>Sintetizar finalidade, dados, desempenho, limitações, riscos, fairness, uso recomendado e uso não recomendado.</td></tr><tr><td>MLO14</td><td>Plano de Governança de Modelos</td><td>Documento normativo</td><td>Definir papéis, aprovações, responsabilidades, restrições, auditoria e revisão dos modelos.</td></tr></table></div>
+<h2 class="section-title" id="criterios-de-validacao">9. Critérios de validação</h2>
+<p>A dimensão MLOps pode ser considerada adequadamente tratada quando:</p>
+<ol class="steps">
+<li>modelos críticos estão catalogados;</li>
+<li>modelos possuem finalidade, responsável, versão e status definidos;</li>
+<li>datasets de treinamento, validação e teste estão versionados;</li>
+<li>features utilizadas pelos modelos estão documentadas e rastreáveis;</li>
+<li>variáveis-alvo ou rótulos possuem definição e regra de construção;</li>
+<li>experimentos registram algoritmos, parâmetros, ambiente e resultados;</li>
+<li>métricas de desempenho são calculadas e comparadas;</li>
+<li>modelos de alto impacto possuem avaliação de fairness;</li>
+<li>modelos utilizados em decisões possuem explicabilidade ou justificativa de interpretabilidade;</li>
+<li>modelos implantados possuem registro de versão e ambiente;</li>
+<li>modelos em uso são monitorados quanto a drift, desempenho e estabilidade;</li>
+<li>critérios de retreinamento estão definidos;</li>
+<li>predições relevantes podem ser auditadas;</li>
+<li>modelos obsoletos são descontinuados de forma controlada;</li>
+<li>limitações, riscos e usos não recomendados são documentados.</li>
+</ol>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">10. Exemplo de aplicação no domínio educacional</h2>
+<p>Em um projeto educacional, MLOps pode ser aplicado ao desenvolvimento e manutenção de modelos preditivos de evasão, desempenho, risco acadêmico, engajamento ou recomendação de apoio pedagógico.</p>
+<p>Por exemplo, um modelo de evasão pode ser treinado a partir de dados de matrícula, histórico acadêmico, desempenho, frequência, interações no ambiente virtual e perfil socioeconômico. A dimensão MLOps exige que o dataset utilizado seja versionado, que o rótulo de evasão seja formalmente definido, que as features sejam documentadas, que o experimento registre parâmetros e métricas, que o modelo seja avaliado por período e por grupos, que suas principais variáveis sejam explicadas e que sua implantação seja monitorada.</p>
+<p>Se a distribuição dos estudantes mudar, se novas regras acadêmicas forem adotadas ou se o desempenho do modelo cair em determinado grupo, o monitoramento MLOps deve gerar alertas e orientar revisão ou retreinamento.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">11. Exemplo de aplicação em políticas públicas</h2>
+<p>Em políticas públicas, MLOps pode apoiar modelos de priorização de atendimento, previsão de demanda, classificação de vulnerabilidade, detecção de risco, alocação de recursos ou avaliação de programas.</p>
+<p>Por exemplo, um modelo de priorização territorial pode usar dados de saúde, educação, assistência social, renda e infraestrutura. Nesse caso, MLOps exige rastreabilidade entre dados, features, rótulo e predição, além de avaliação de desempenho, fairness entre territórios ou grupos populacionais, explicabilidade dos fatores associados ao score e monitoramento de drift.</p>
+<p>Como esses modelos podem influenciar decisões públicas, a governança deve definir limites de uso, revisão humana, auditoria das predições e documentação clara sobre riscos e limitações.</p>
+<h2 class="section-title" id="contribuicao-para-o-modelo-de-referencia">12. Contribuição para o modelo de referência</h2>
+<p>A dimensão MLOps contribui para o UnespDataLens-RM ao formalizar modelos de aprendizagem de máquina como ativos analíticos que precisam ser versionados, documentados, monitorados, auditados e governados.</p>
+<p>Essa dimensão fortalece o modelo de referência ao:</p>
+<ul class="list">
+<li>aumentar reprodutibilidade de experimentos;</li>
+<li>melhorar controle sobre datasets, features e rótulos;</li>
+<li>apoiar comparação sistemática de modelos;</li>
+<li>incorporar fairness e explicabilidade ao ciclo de modelagem;</li>
+<li>reduzir risco de modelos obsoletos ou degradados;</li>
+<li>permitir monitoramento de drift e desempenho;</li>
+<li>apoiar decisões sobre retreinamento;</li>
+<li>integrar modelos a pipelines de dados governados;</li>
+<li>fortalecer auditoria de predições;</li>
+<li>reduzir dívida de modelos e dados;</li>
+<li>aumentar confiança no uso de inteligência artificial;</li>
+<li>sustentar implantação responsável de modelos analíticos.</li>
+</ul>
+<h2 class="section-title" id="sintese-da-dimensao">13. Síntese da dimensão</h2>
+<p>A dimensão MLOps trata da gestão operacional, metodológica e governada do ciclo de vida de modelos de aprendizagem de máquina. No UnespDataLens-RM, essa dimensão atua como capacidade complementar para garantir que modelos sejam construídos, avaliados, versionados, implantados, monitorados, explicados, atualizados e descontinuados de forma controlada.</p>
+<p>Ao incorporar registro de experimentos, versionamento de dados, features e modelos, avaliação de desempenho, fairness, explicabilidade, model registry, monitoramento de drift, auditoria de predições, critérios de retreinamento e governança de modelos, o modelo de referência fortalece sua capacidade de transformar modelos computacionais em ativos analíticos confiáveis, rastreáveis e adequados à tomada de decisão baseada em evidências.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

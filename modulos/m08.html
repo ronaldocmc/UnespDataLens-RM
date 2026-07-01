@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo 8 — Disponibilização e Consumo Analítico tem como finalidade organizar, publicar, expor e tornar utilizáveis os ativos analíticos produzidos ao longo do pipeline principal do modelo de referência UnespDataLens-RM.">
+  <title>Módulo 8 — Disponibilização e Consumo Analítico · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-8-disponibilizacao-e-consumo-analitico"></span><section class="hero">
+<span class="badge">Módulo 08</span>
+<h1>Módulo 8 — Disponibilização e Consumo Analítico</h1>
+<p>O Módulo 8 — Disponibilização e Consumo Analítico tem como finalidade organizar, publicar, expor e tornar utilizáveis os ativos analíticos produzidos ao longo do pipeline principal do modelo de referência UnespDataLens-RM.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 28 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-tecnologias-aplicaveis">Técnicas, métodos e tecnologias aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a8-1-plano-de-disponibilizacao-analitica">Artefato A8.1 — Plano de Disponibilização Analítica</a><a href="#artefato-a8-2-catalogo-de-produtos-de-dados">Artefato A8.2 — Catálogo de Produtos de Dados</a><a href="#artefato-a8-3-matriz-de-consumidores-e-acessos">Artefato A8.3 — Matriz de Consumidores e Acessos</a><a href="#artefato-a8-4-especificacao-de-produto-de-dados">Artefato A8.4 — Especificação de Produto de Dados</a><a href="#artefato-a8-5-api-view-ou-interface-de-consumo">Artefato A8.5 — API, View ou Interface de Consumo</a><a href="#artefato-a8-6-dashboard-ou-painel-analitico">Artefato A8.6 — Dashboard ou Painel Analítico</a><a href="#artefato-a8-7-dataset-curado-para-consumo">Artefato A8.7 — Dataset Curado para Consumo</a><a href="#artefato-a8-8-registro-de-publicacao-e-versao">Artefato A8.8 — Registro de Publicação e Versão</a><a href="#artefato-a8-9-registro-de-uso-e-feedback">Artefato A8.9 — Registro de Uso e Feedback</a><a href="#artefato-a8-10-relatorio-de-adequacao-ao-consumo">Artefato A8.10 — Relatório de Adequação ao Consumo</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-os-demais-modulos-do-pipeline-principal">Relação com os demais módulos do pipeline principal</a><a href="#relacao-com-os-modulos-transversais">Relação com os módulos transversais</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo 8 — Disponibilização e Consumo Analítico tem como finalidade organizar, publicar, expor e tornar utilizáveis os ativos analíticos produzidos ao longo do pipeline principal do modelo de referência UnespDataLens-RM. Esse módulo representa a etapa final do fluxo técnico-operacional do pipeline, pois transforma dados armazenados, tratados, integrados, validados e organizados em produtos analíticos acessíveis a usuários, sistemas, dashboards, modelos, APIs, relatórios, aplicações, agentes inteligentes e processos de tomada de decisão.</p>
+<p>Enquanto os módulos anteriores concentram-se na identificação, ingestão, integração, transformação, validação, análise de <a class="term" href="../conceitos/equidade.html">equidade</a> e armazenamento analítico dos dados, o Módulo 8 concentra-se no momento em que os dados passam a ser efetivamente consumidos. Seu papel é garantir que os ativos analíticos sejam disponibilizados de forma controlada, documentada, segura, compreensível, rastreável e adequada às diferentes finalidades de uso.</p>
+<p>No contexto da Engenharia Analítica de Dados, a disponibilização não deve ser confundida com simples exportação de tabelas ou geração de relatórios. Ela envolve decisões sobre forma de acesso, público-alvo, <a class="term" href="../conceitos/granularidade.html">granularidade</a> da informação, nível de agregação, autorização, formato de entrega, <a class="term" href="../conceitos/periodicidade.html">periodicidade</a> de atualização, documentação, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a>, indicadores de qualidade, restrições de uso e mecanismos de feedback.</p>
+<p>No UnespDataLens-RM, o Módulo 8 encerra o pipeline principal ao transformar ativos armazenados em produtos de dados consumíveis, tais como datasets curados, data marts, dashboards, painéis de indicadores, APIs, relatórios analíticos, views, arquivos de exportação, bases para modelagem, bases para grafos, produtos de dados institucionais e insumos para agentes inteligentes.</p>
+<p>Esse módulo é essencial porque um <a class="term" href="../conceitos/pipeline-de-dados.html">pipeline de dados</a> só gera valor quando seus resultados podem ser utilizados de forma confiável por pessoas, sistemas ou processos decisórios. Dados bem preparados, mas não disponibilizados de maneira adequada, tornam-se ativos subutilizados. Por outro lado, dados disponibilizados sem documentação, <a class="term" href="../conceitos/controle-de-acesso.html">controle de acesso</a>, qualidade conhecida ou restrição de uso podem gerar interpretações equivocadas, riscos institucionais, problemas de <a class="term" href="../conceitos/privacidade.html">privacidade</a> e decisões inadequadas.</p>
+<p>Assim, o Módulo 8 formaliza a etapa de disponibilização e consumo como um processo técnico-metodológico avaliável, composto por artefatos, métricas, critérios de validação e mecanismos de governança operacional.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 8 é disponibilizar ativos analíticos produzidos pelo UnespDataLens-RM em formatos, interfaces e produtos adequados ao consumo, assegurando controle de acesso, documentação mínima, qualidade conhecida, rastreabilidade, <a class="term" href="../metricas/adequacao-ao-uso.html">adequação ao uso</a>, segurança, atualização e capacidade de reutilização por diferentes públicos e aplicações.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 8:</p>
+<ol class="steps">
+<li>definir os públicos, sistemas, aplicações e processos que irão consumir os ativos analíticos;</li>
+<li>organizar os ativos armazenados em formatos adequados ao consumo analítico, operacional, científico ou decisório;</li>
+<li>disponibilizar datasets curados, views, data marts, APIs, dashboards, relatórios, indicadores, bases para modelagem, bases para grafos e produtos de dados;</li>
+<li>estabelecer regras de acesso, restrição, agregação, anonimização ou filtragem conforme sensibilidade e finalidade de uso;</li>
+<li>documentar a finalidade, origem, qualidade, versão, periodicidade, limitações e condições de uso de cada ativo disponibilizado;</li>
+<li>definir mecanismos de atualização, publicação, republicação, descontinuação e substituição de ativos;</li>
+<li>controlar versões dos ativos disponibilizados, evitando uso indevido de versões obsoletas;</li>
+<li>registrar consumidores, formas de acesso, frequência de uso, dependências e feedback dos usuários;</li>
+<li>avaliar a utilidade, desempenho, disponibilidade e aderência dos produtos analíticos às necessidades dos usuários;</li>
+<li>encerrar o pipeline principal entregando ativos analíticos preparados para uso, ao mesmo tempo em que fornece insumos para os módulos transversais de <a class="term" href="../conceitos/metadados.html">metadados</a>, governança, lineage, versionamento, monitoramento e agentes inteligentes.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>A disponibilização de dados corresponde ao processo de tornar ativos de dados acessíveis para consumo por pessoas, sistemas ou processos computacionais. No contexto analítico, essa disponibilização deve ocorrer de forma planejada, pois diferentes consumidores possuem necessidades distintas.</p>
+<p>Um gestor pode necessitar de um painel com indicadores agregados. Um pesquisador pode precisar de um dataset anonimizado para análise estatística. Um cientista de dados pode precisar de uma base versionada para treinamento de modelos. Um sistema externo pode precisar acessar dados por API. Um <a class="term" href="../conceitos/agente-inteligente.html">agente inteligente</a> pode consultar metadados e produtos de dados para responder perguntas ou recomendar ações. Um <a class="term" href="../artefatos/dashboard.html">dashboard</a> pode consumir views ou data marts atualizados periodicamente.</p>
+<p>Assim, a disponibilização analítica deve considerar:</p>
+<ul class="list">
+<li>quem irá consumir o ativo;</li>
+<li>para qual finalidade;</li>
+<li>em qual formato;</li>
+<li>com qual nível de granularidade;</li>
+<li>com quais restrições;</li>
+<li>com qual frequência de atualização;</li>
+<li>com qual documentação;</li>
+<li>com qual status de qualidade;</li>
+<li>com qual versão;</li>
+<li>com qual mecanismo de acesso;</li>
+<li>com quais limitações de interpretação.</li>
+</ul>
+<p>No UnespDataLens-RM, essa etapa também é associada ao conceito de <a class="term" href="../conceitos/produto-de-dados.html">produto de dados</a>. Um produto de dados é um ativo organizado, documentado, confiável, governado e preparado para consumo por determinado público ou finalidade. Ele pode assumir diferentes formas, como uma tabela curada, um <a class="term" href="../conceitos/data-mart.html">data mart</a>, um dashboard, uma API, um relatório, um indicador ou uma base analítica.</p>
+<p>O Módulo 8 também marca a fronteira entre o pipeline principal e os módulos transversais. O pipeline principal produz os ativos; os módulos transversais garantem que esses ativos sejam permanentemente documentados, governados, rastreados, versionados, monitorados e apoiados por mecanismos inteligentes.</p>
+<p>Dessa forma, a disponibilização e o consumo analítico constituem a etapa em que o valor produzido pelo pipeline se materializa em uso efetivo.</p>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">5. Formalização sintética do módulo</h2>
+<p>O Módulo 8 pode ser compreendido como um processo de transformação de ativos analíticos armazenados em produtos de dados consumíveis.</p>
+<p>Considerando o conjunto de ativos analíticos armazenados no Módulo 7:</p>
+<div class="formula">A = {a₁, a₂, ..., aₙ}</div>
+<p>o Módulo 8 define um conjunto de produtos ou interfaces de consumo:</p>
+<div class="formula">P = {p₁, p₂, ..., pₖ}</div>
+<p>em que cada pᵢ representa um produto de dados, dashboard, API, view, relatório, indicador, dataset curado, base de modelagem ou outro mecanismo de consumo.</p>
+<p>Cada produto de dados pode ser descrito por:</p>
+<div class="formula">pᵢ = {id, nome, tipo, finalidade, público_alvo, ativo_origem, formato, granularidade, periodicidade, versão, qualidade, restrição_acesso, mecanismo_consumo, limitações}</div>
+<p>Além disso, o módulo registra o conjunto de consumidores:</p>
+<div class="formula">C = {c₁, c₂, ..., cₘ}</div>
+<p>em que cada consumidor cⱼ pode representar uma pessoa, equipe, sistema, dashboard, API, modelo, agente inteligente ou processo decisório.</p>
+<p>Cada relação de consumo pode ser representada por:</p>
+<div class="formula">rᵢⱼ = {produto, consumidor, finalidade, frequência, nível_acesso, data_acesso, restrições, feedback}</div>
+<p>O resultado do módulo é um conjunto de ativos disponibilizados, documentados, acessíveis, controlados e adequados ao uso.</p>
+<h2 class="section-title" id="entradas-do-modulo">6. Entradas do módulo</h2>
+<p>As entradas do Módulo 8 incluem os ativos analíticos persistidos e organizados no Módulo 7, bem como metadados, regras, restrições, métricas e requisitos de consumo.</p>
+<p>As principais entradas são:</p>
+<ul class="list">
+<li>datasets curados;</li>
+<li>data marts;</li>
+<li>views analíticas;</li>
+<li>tabelas agregadas;</li>
+<li>bases de modelagem;</li>
+<li>estruturas para grafos;</li>
+<li>indicadores calculados;</li>
+<li>datasets validados;</li>
+<li>datasets balanceados ou sinalizados;</li>
+<li>registros de qualidade;</li>
+<li>registros de sensibilidade;</li>
+<li>restrições de acesso;</li>
+<li>versões dos ativos;</li>
+<li>schemas analíticos;</li>
+<li>requisitos de usuários;</li>
+<li>requisitos de dashboards;</li>
+<li>requisitos de APIs;</li>
+<li>requisitos de relatórios;</li>
+<li>requisitos de modelos;</li>
+<li>requisitos de atualização;</li>
+<li>políticas de acesso;</li>
+<li>políticas de anonimização;</li>
+<li>políticas de retenção;</li>
+<li>documentação dos ativos;</li>
+<li>informações de lineage;</li>
+<li>critérios de aprovação para disponibilização.</li>
+</ul>
+<h2 class="section-title" id="processamento">7. Processamento</h2>
+<p>O processamento do Módulo 8 envolve atividades de seleção, preparação, publicação, controle, documentação, disponibilização e avaliação do consumo dos ativos analíticos.</p>
+<h3 id="identificacao-dos-consumidores-e-finalidades-de-uso">7.1 Identificação dos consumidores e finalidades de uso</h3>
+<p>A primeira atividade consiste em identificar quem irá consumir os ativos produzidos pelo pipeline e para qual finalidade. Os consumidores podem ser gestores, pesquisadores, analistas, cientistas de dados, sistemas institucionais, dashboards, APIs, modelos computacionais, agentes inteligentes ou aplicações externas.</p>
+<p>Cada consumidor pode exigir granularidade, formato, atualização, qualidade e restrição de acesso diferentes.</p>
+<h3 id="selecao-dos-ativos-aptos-para-disponibilizacao">7.2 Seleção dos ativos aptos para disponibilização</h3>
+<p>A segunda atividade consiste em selecionar os ativos que podem ser disponibilizados. Essa seleção deve considerar status de qualidade, sensibilidade, restrição de acesso, <a class="term" href="../metricas/completude.html">completude</a> documental, versão, finalidade de uso e eventuais riscos de <a class="term" href="../conceitos/vies.html">viés</a> ou equidade.</p>
+<p>Ativos rejeitados, pendentes ou com risco crítico não devem ser disponibilizados sem revisão, sinalização ou restrição.</p>
+<h3 id="definicao-do-formato-de-disponibilizacao">7.3 Definição do formato de disponibilização</h3>
+<p>A terceira atividade consiste em definir o formato mais adequado para cada ativo. O produto pode ser disponibilizado como dataset, tabela, view, arquivo, API, dashboard, relatório, indicador, <a class="term" href="../conceitos/grafo.html">grafo</a>, <a class="term" href="../artefatos/modelo-semantico.html">modelo semântico</a>, base de treinamento, feature table ou produto de dados institucional.</p>
+<p>A escolha depende da finalidade de consumo, volume, frequência, público-alvo, sensibilidade e requisitos de desempenho.</p>
+<h3 id="preparacao-para-consumo">7.4 Preparação para consumo</h3>
+<p>A quarta atividade consiste em preparar o ativo para consumo. Isso pode envolver agregação, filtragem, anonimização, pseudonimização, mascaramento, criação de views, materialização de consultas, geração de arquivos de exportação, criação de endpoints, configuração de dashboards ou publicação de relatórios.</p>
+<p>Essa etapa deve preservar vínculo com o ativo de origem e registrar eventuais alterações realizadas especificamente para disponibilização.</p>
+<h3 id="definicao-de-regras-de-acesso">7.5 Definição de regras de acesso</h3>
+<p>A quinta atividade consiste em definir quem pode acessar cada produto de dados, em qual nível de detalhe e sob quais condições. A regra de acesso deve considerar <a class="term" href="../artefatos/classificacao-de-sensibilidade.html">classificação de sensibilidade</a>, finalidade de uso, perfil do consumidor, necessidade de anonimização e restrições legais ou institucionais.</p>
+<p>Podem existir diferentes níveis de acesso, como público, interno, restrito, agregado, anonimizado, individualizado sob autorização ou bloqueado.</p>
+<h3 id="publicacao-dos-produtos-de-dados">7.6 Publicação dos produtos de dados</h3>
+<p>A sexta atividade consiste em publicar o ativo no ambiente adequado. A publicação pode ocorrer em catálogo, portal interno, dashboard, API, repositório controlado, banco de dados analítico, ambiente de BI, ambiente de <a class="term" href="../conceitos/ciencia-de-dados.html">ciência de dados</a> ou sistema institucional.</p>
+<p>Cada publicação deve gerar registro de versão, data, responsável, status, consumidores autorizados e mecanismo de acesso.</p>
+<h3 id="documentacao-minima-para-consumo">7.7 Documentação mínima para consumo</h3>
+<p>A sétima atividade consiste em garantir que todo ativo disponibilizado possua documentação mínima. Essa documentação deve indicar finalidade, origem, versão, <a class="term" href="../conceitos/cobertura-temporal.html">cobertura temporal</a>, granularidade, atualização, qualidade, limitações, restrições de uso e responsável.</p>
+<p>Essa documentação é fundamental para evitar interpretações equivocadas e uso indevido dos dados.</p>
+<h3 id="registro-de-consumo">7.8 Registro de consumo</h3>
+<p>A oitava atividade consiste em registrar o uso dos produtos de dados. Isso pode incluir consumidores autorizados, frequência de acesso, aplicações dependentes, dashboards conectados, modelos consumidores, relatórios gerados e feedback recebido.</p>
+<p>Esse registro permite avaliar utilidade, dependência, reuso e impacto dos ativos disponibilizados.</p>
+<h3 id="avaliacao-da-utilidade-e-adequacao-ao-uso">7.9 Avaliação da utilidade e adequação ao uso</h3>
+<p>A nona atividade consiste em avaliar se os produtos disponibilizados atendem às necessidades dos consumidores. Essa avaliação pode considerar desempenho, clareza, atualização, disponibilidade, facilidade de uso, aderência à finalidade e percepção de utilidade.</p>
+<h3 id="encerramento-do-pipeline-principal">7.10 Encerramento do pipeline principal</h3>
+<p>A décima atividade consiste em registrar que o ativo percorreu o pipeline principal e foi entregue para consumo. A partir desse ponto, os módulos transversais passam a atuar sobre o ativo de forma contínua, mantendo governança, metadados, lineage, versionamento, monitoramento e apoio inteligente.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-tecnologias-aplicaveis">8. Técnicas, métodos e tecnologias aplicáveis</h2>
+<p>O Módulo 8 pode empregar diferentes técnicas e tecnologias para disponibilização e consumo.</p>
+<p>Entre as técnicas de disponibilização, destacam-se:</p>
+<ul class="list">
+<li>publicação de datasets curados;</li>
+<li>criação de data marts;</li>
+<li>criação de views analíticas;</li>
+<li>criação de views materializadas;</li>
+<li>publicação de APIs;</li>
+<li>geração de arquivos de exportação;</li>
+<li>construção de dashboards;</li>
+<li>publicação de relatórios analíticos;</li>
+<li>construção de indicadores;</li>
+<li>disponibilização de bases para modelagem;</li>
+<li>disponibilização de tabelas de features;</li>
+<li>disponibilização de estruturas de grafos;</li>
+<li>disponibilização de dados agregados ou anonimizados;</li>
+<li>criação de produtos de dados.</li>
+</ul>
+<p>Entre as técnicas de controle e adequação ao consumo, podem ser utilizadas:</p>
+<ul class="list">
+<li>controle de acesso baseado em papéis;</li>
+<li>anonimização;</li>
+<li>pseudonimização;</li>
+<li>mascaramento;</li>
+<li>agregação;</li>
+<li>filtragem por perfil de usuário;</li>
+<li>controle de granularidade;</li>
+<li>limitação de exportação;</li>
+<li>auditoria de acesso;</li>
+<li>versionamento de produtos;</li>
+<li>documentação de uso;</li>
+<li>termos de uso;</li>
+<li>sinalização de qualidade;</li>
+<li>alertas de limitação;</li>
+<li>registro de consumidores.</li>
+</ul>
+<p>Entre as tecnologias possíveis, destacam-se:</p>
+<ul class="list">
+<li>Power BI;</li>
+<li>Metabase;</li>
+<li>Apache Superset;</li>
+<li>Tableau;</li>
+<li>Looker;</li>
+<li>APIs REST;</li>
+<li>GraphQL;</li>
+<li>bancos relacionais;</li>
+<li>bancos colunares;</li>
+<li>data warehouses;</li>
+<li>lakehouses;</li>
+<li>catálogos de dados;</li>
+<li>portais de dados;</li>
+<li>repositórios Git;</li>
+<li>object storage;</li>
+<li>notebooks;</li>
+<li>ferramentas de BI;</li>
+<li>ferramentas de visualização;</li>
+<li>gateways de API;</li>
+<li>ambientes de ciência de dados;</li>
+<li>plataformas de <a class="term" href="../conceitos/mlops.html">MLOps</a>;</li>
+<li>bancos de grafos.</li>
+</ul>
+<h2 class="section-title" id="metricas-do-modulo">9. Métricas do módulo</h2>
+<p>As métricas do Módulo 8 avaliam cobertura, acesso, uso, desempenho, atualização, qualidade percebida, aderência e reuso dos produtos disponibilizados.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de ativos disponibilizados</td><td>TAD</td><td>Proporção de ativos aptos que foram disponibilizados</td></tr><tr><td>Taxa de produtos documentados</td><td>TPD</td><td>Proporção de produtos com documentação mínima</td></tr><tr><td>Taxa de produtos com qualidade informada</td><td>TPQI</td><td>Proporção de produtos com status/métricas de qualidade</td></tr><tr><td>Taxa de produtos com versão definida</td><td>TPVD</td><td>Proporção de produtos com versão registrada</td></tr><tr><td>Taxa de produtos com controle de acesso</td><td>TPCA</td><td>Proporção de produtos com regras de acesso</td></tr><tr><td>Tempo médio de disponibilização</td><td>TMD</td><td>Tempo entre ativo curado e produto publicado</td></tr><tr><td>Taxa de consumo efetivo</td><td>TCE</td><td>Proporção de produtos acessados por consumidores</td></tr><tr><td>Taxa de reutilização de produtos</td><td>TRP</td><td>Proporção de produtos usados em mais de uma finalidade</td></tr><tr><td>Frequência de acesso</td><td>FA</td><td>Quantidade de acessos por produto em determinado período</td></tr><tr><td>Tempo médio de resposta</td><td>TMR</td><td>Tempo de resposta de dashboards, APIs ou consultas</td></tr><tr><td>Taxa de atualização conforme periodicidade</td><td>TACP</td><td>Proporção de produtos atualizados conforme previsto</td></tr><tr><td>Taxa de produtos obsoletos</td><td>TPO</td><td>Proporção de produtos desatualizados ou substituídos</td></tr><tr><td>Satisfação do usuário</td><td>SU</td><td>Avaliação qualitativa ou quantitativa dos consumidores</td></tr><tr><td>Taxa de incidentes de acesso</td><td>TIA</td><td>Proporção de falhas, erros ou acessos negados indevidos</td></tr><tr><td>Taxa de adequação ao uso</td><td>TAU</td><td>Proporção de produtos avaliados como adequados à finalidade</td></tr></table></div>
+<h3 id="taxa-de-ativos-disponibilizados-tad">9.1 Taxa de Ativos Disponibilizados — TAD</h3>
+<p>A Taxa de Ativos Disponibilizados mede a proporção de ativos considerados aptos para consumo que foram efetivamente disponibilizados.</p>
+<div class="formula">TAD = número de ativos disponibilizados / número total de ativos aptos para disponibilização</div>
+<p>Essa métrica indica a capacidade do pipeline de transformar ativos curados em produtos consumíveis.</p>
+<h3 id="taxa-de-produtos-documentados-tpd">9.2 Taxa de Produtos Documentados — TPD</h3>
+<p>A Taxa de Produtos Documentados mede a proporção de produtos de dados que possuem documentação mínima para uso.</p>
+<div class="formula">TPD = número de produtos com documentação mínima / número total de produtos disponibilizados</div>
+<p>Um produto pode ser considerado minimamente documentado quando possui finalidade, origem, versão, granularidade, qualidade, atualização, restrição de acesso e limitações.</p>
+<h3 id="taxa-de-consumo-efetivo-tce">9.3 Taxa de Consumo Efetivo — TCE</h3>
+<p>A Taxa de Consumo Efetivo mede a proporção de produtos disponibilizados que foram acessados ou utilizados por consumidores previstos.</p>
+<div class="formula">TCE = número de produtos consumidos / número total de produtos disponibilizados</div>
+<p>Essa métrica permite avaliar se a disponibilização gerou uso real.</p>
+<h3 id="taxa-de-reutilizacao-de-produtos-trp">9.4 Taxa de Reutilização de Produtos — TRP</h3>
+<p>A Taxa de Reutilização de Produtos mede a proporção de produtos utilizados em mais de uma análise, dashboard, modelo, relatório ou aplicação.</p>
+<div class="formula">TRP = número de produtos reutilizados / número total de produtos disponibilizados</div>
+<p>Essa métrica avalia o grau de reaproveitamento dos ativos produzidos.</p>
+<h3 id="taxa-de-adequacao-ao-uso-tau">9.5 Taxa de Adequação ao Uso — TAU</h3>
+<p>A Taxa de Adequação ao Uso mede a proporção de produtos avaliados como adequados à finalidade para a qual foram disponibilizados.</p>
+<div class="formula">TAU = número de produtos adequados ao uso / número total de produtos avaliados</div>
+<p>Essa métrica pode combinar avaliação técnica, feedback de usuários, desempenho, clareza, qualidade e <a class="term" href="../metricas/atualidade.html">atualidade</a>.</p>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">10. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 8 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, regras de construção, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A8.1</td><td>Plano de Disponibilização Analítica</td><td>Documento técnico</td><td>TAD</td><td>Define produtos, públicos e formas de acesso</td></tr><tr><td>A8.2</td><td>Catálogo de Produtos de Dados</td><td>Catálogo estruturado</td><td>TPD</td><td>Organiza produtos consumíveis</td></tr><tr><td>A8.3</td><td>Matriz de Consumidores e Acessos</td><td>Matriz de acesso</td><td>TPCA</td><td>Controla quem pode consumir cada ativo</td></tr><tr><td>A8.4</td><td>Especificação de Produto de Dados</td><td>Ficha técnica</td><td>TPD, TPQI</td><td>Documenta finalidade, origem e limitações</td></tr><tr><td>A8.5</td><td>API, View ou Interface de Consumo</td><td>Endpoint, view ou interface</td><td>TMR, TCE</td><td>Materializa o acesso ao ativo</td></tr><tr><td>A8.6</td><td>Dashboard ou Painel Analítico</td><td>Interface visual</td><td>SU, TCE</td><td>Disponibiliza indicadores e visualizações</td></tr><tr><td>A8.7</td><td>Dataset Curado para Consumo</td><td>Tabela, arquivo ou data mart</td><td>TAD, TRP</td><td>Entrega dados preparados ao usuário</td></tr><tr><td>A8.8</td><td>Registro de Publicação e Versão</td><td>Manifesto/tabela</td><td>TPVD</td><td>Controla versões publicadas</td></tr><tr><td>A8.9</td><td>Registro de Uso e Feedback</td><td>Log ou relatório</td><td>TCE, SU</td><td>Avalia consumo e utilidade</td></tr><tr><td>A8.10</td><td>Relatório de Adequação ao Consumo</td><td>Relatório técnico</td><td>TAU</td><td>Avalia se o produto atende à finalidade</td></tr></table></div>
+<h2 class="section-title" id="artefato-a8-1-plano-de-disponibilizacao-analitica">11. Artefato A8.1 — Plano de Disponibilização Analítica</h2>
+<h3 id="finalidade">11.1 Finalidade</h3>
+<p>O Plano de Disponibilização Analítica define quais ativos serão disponibilizados, para quais consumidores, em quais formatos, com quais restrições, em qual periodicidade e com quais critérios de qualidade.</p>
+<h3 id="tipo-de-artefato-na-dsr">11.2 Tipo de artefato na DSR</h3>
+<p>Na perspectiva da Design Science Research, esse artefato é um método, pois orienta o processo de disponibilização, e uma instanciação, quando documentado em planilha, relatório, arquivo estruturado ou ferramenta de gestão.</p>
+<h3 id="estrutura-minima">11.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Produto previsto</td><td>Nome do produto de dados</td></tr><tr><td>Ativo de origem</td><td>Dataset, view, data mart ou indicador</td></tr><tr><td>Público-alvo</td><td>Gestor, pesquisador, sistema, dashboard, modelo etc.</td></tr><tr><td>Finalidade</td><td>Uso previsto</td></tr><tr><td>Formato</td><td>API, dashboard, dataset, relatório, view etc.</td></tr><tr><td>Granularidade</td><td>Nível de detalhe disponibilizado</td></tr><tr><td>Periodicidade</td><td>Frequência de atualização</td></tr><tr><td>Qualidade mínima</td><td>Status ou métricas exigidas</td></tr><tr><td>Restrição de acesso</td><td>Público, interno, restrito, anonimizado etc.</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe responsável</td></tr><tr><td>Critério de publicação</td><td>Condição para disponibilizar</td></tr></table></div>
+<h3 id="metricas-associadas">11.4 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos disponibilizados;</li>
+<li>percentual de produtos com público definido;</li>
+<li>percentual de produtos com periodicidade definida;</li>
+<li>percentual de produtos com critério de publicação;</li>
+<li>percentual de produtos com restrição de acesso definida.</li>
+</ul>
+<h3 id="criterios-de-validacao">11.5 Critérios de validação</h3>
+<p>O plano é considerado válido quando cada produto possui finalidade, público-alvo, formato, ativo de origem, qualidade mínima, restrição de acesso e responsável definidos.</p>
+<h3 id="contribuicao">11.6 Contribuição</h3>
+<p>Esse artefato evita que os dados sejam disponibilizados de forma improvisada, sem clareza sobre finalidade, público, formato e responsabilidade.</p>
+<h2 class="section-title" id="artefato-a8-2-catalogo-de-produtos-de-dados">12. Artefato A8.2 — Catálogo de Produtos de Dados</h2>
+<h3 id="finalidade-2">12.1 Finalidade</h3>
+<p>O Catálogo de Produtos de Dados organiza os ativos disponibilizados para consumo, permitindo sua localização, compreensão e reutilização.</p>
+<h3 id="estrutura-minima-2">12.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador do produto</td><td>Código único</td></tr><tr><td>Nome do produto</td><td>Nome do dataset, dashboard, API, indicador etc.</td></tr><tr><td>Tipo</td><td>Dataset, API, dashboard, view, relatório, modelo etc.</td></tr><tr><td>Descrição</td><td>Explicação do produto</td></tr><tr><td>Finalidade</td><td>Uso previsto</td></tr><tr><td>Público-alvo</td><td>Consumidores esperados</td></tr><tr><td>Ativo de origem</td><td>Dados utilizados</td></tr><tr><td>Versão</td><td>Versão publicada</td></tr><tr><td>Qualidade</td><td>Status ou métricas associadas</td></tr><tr><td>Atualização</td><td>Periodicidade</td></tr><tr><td>Restrição de acesso</td><td>Regra de acesso</td></tr><tr><td>Responsável</td><td>Responsável pelo produto</td></tr><tr><td>Limitações</td><td>Cuidados de uso</td></tr></table></div>
+<h3 id="metricas-associadas-2">12.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de produtos documentados;</li>
+<li>taxa de produtos com qualidade informada;</li>
+<li>taxa de produtos com versão definida;</li>
+<li>taxa de produtos com responsável definido;</li>
+<li>taxa de reutilização de produtos.</li>
+</ul>
+<h3 id="contribuicao-2">12.4 Contribuição</h3>
+<p>Esse artefato organiza a camada de consumo do modelo de referência, permitindo que os produtos sejam encontrados, compreendidos, avaliados e reutilizados.</p>
+<h2 class="section-title" id="artefato-a8-3-matriz-de-consumidores-e-acessos">13. Artefato A8.3 — Matriz de Consumidores e Acessos</h2>
+<h3 id="finalidade-3">13.1 Finalidade</h3>
+<p>A Matriz de Consumidores e Acessos define quem pode consumir cada produto de dados e sob quais condições.</p>
+<h3 id="estrutura-minima-3">13.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Produto</td><td>Produto de dados</td></tr><tr><td>Consumidor</td><td>Pessoa, equipe, sistema ou aplicação</td></tr><tr><td>Perfil</td><td>Gestor, analista, pesquisador, sistema etc.</td></tr><tr><td>Tipo de acesso</td><td>Leitura, exportação, API, dashboard, consulta</td></tr><tr><td>Granularidade permitida</td><td>Individual, agregado, anonimizado etc.</td></tr><tr><td>Restrição</td><td>Condição específica de uso</td></tr><tr><td><a class="term" href="../metricas/validade.html">Validade</a></td><td>Período de autorização</td></tr><tr><td>Responsável pela autorização</td><td>Pessoa ou setor</td></tr><tr><td>Observações</td><td>Cuidados adicionais</td></tr></table></div>
+<h3 id="metricas-associadas-3">13.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de produtos com controle de acesso;</li>
+<li>número de consumidores autorizados;</li>
+<li>número de acessos expirados;</li>
+<li>taxa de produtos sensíveis com acesso restrito;</li>
+<li>taxa de incidentes de acesso.</li>
+</ul>
+<h3 id="contribuicao-3">13.4 Contribuição</h3>
+<p>Esse artefato garante que a disponibilização respeite segurança, privacidade, governança e finalidade de uso.</p>
+<h2 class="section-title" id="artefato-a8-4-especificacao-de-produto-de-dados">14. Artefato A8.4 — Especificação de Produto de Dados</h2>
+<h3 id="finalidade-4">14.1 Finalidade</h3>
+<p>A Especificação de Produto de Dados descreve um produto disponibilizado de forma padronizada, permitindo seu uso adequado.</p>
+<h3 id="estrutura-formal">14.2 Estrutura formal</h3>
+<p>Cada produto de dados pode ser descrito por:</p>
+<div class="formula">pᵢ = {id, nome, tipo, finalidade, público, origem, formato, granularidade, qualidade, versão, acesso, limitações}</div>
+<h3 id="estrutura-minima-4">14.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Nome do produto</td><td>Nome oficial</td></tr><tr><td>Tipo de produto</td><td>Dataset, API, dashboard, view, relatório etc.</td></tr><tr><td>Finalidade</td><td>Problema ou uso que atende</td></tr><tr><td>Público-alvo</td><td>Consumidores esperados</td></tr><tr><td>Fontes de origem</td><td>Bases utilizadas</td></tr><tr><td>Pipeline de origem</td><td>Processo que gerou o produto</td></tr><tr><td>Granularidade</td><td>Nível de detalhe</td></tr><tr><td>Cobertura temporal</td><td>Período contemplado</td></tr><tr><td>Indicadores ou atributos</td><td>Elementos principais</td></tr><tr><td>Métricas de qualidade</td><td>Status de qualidade</td></tr><tr><td>Atualização</td><td>Periodicidade</td></tr><tr><td>Versão</td><td>Versão publicada</td></tr><tr><td>Restrição de acesso</td><td>Condições de uso</td></tr><tr><td>Limitações</td><td>Cuidados de interpretação</td></tr><tr><td>Responsável</td><td>Responsável técnico ou institucional</td></tr></table></div>
+<h3 id="metricas-associadas-4">14.4 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de produtos documentados;</li>
+<li>completude da especificação;</li>
+<li>taxa de produtos com qualidade informada;</li>
+<li>taxa de produtos com limitações explícitas;</li>
+<li>taxa de produtos com versão definida.</li>
+</ul>
+<h3 id="criterios-de-validacao-2">14.5 Critérios de validação</h3>
+<p>A especificação é considerada adequada quando permite compreender finalidade, origem, qualidade, versão, restrições, limitações e forma de uso do produto.</p>
+<h3 id="contribuicao-4">14.6 Contribuição</h3>
+<p>Esse artefato transforma a disponibilização em um produto documentado, evitando uso inadequado ou interpretações equivocadas.</p>
+<h2 class="section-title" id="artefato-a8-5-api-view-ou-interface-de-consumo">15. Artefato A8.5 — API, View ou Interface de Consumo</h2>
+<h3 id="finalidade-5">15.1 Finalidade</h3>
+<p>A API, View ou Interface de Consumo materializa o acesso controlado ao <a class="term" href="../conceitos/ativo-analitico.html">ativo analítico</a>.</p>
+<h3 id="possiveis-formas">15.2 Possíveis formas</h3>
+<div class="table-wrap"><table class="table"><tr><th>Forma</th><th>Descrição</th></tr><tr><td>API REST</td><td>Acesso programático por endpoints</td></tr><tr><td>GraphQL</td><td>Consulta flexível por aplicações</td></tr><tr><td>View SQL</td><td>Consulta controlada em banco analítico</td></tr><tr><td>View materializada</td><td>Consulta otimizada e pré-computada</td></tr><tr><td>Arquivo exportável</td><td>CSV, Parquet, JSON ou outro formato</td></tr><tr><td>Interface web</td><td>Acesso via portal ou aplicação</td></tr><tr><td>Endpoint para agente</td><td>Consulta por agentes inteligentes</td></tr></table></div>
+<h3 id="estrutura-minima-5">15.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Produto associado</td><td>Produto exposto</td></tr><tr><td>Tipo de interface</td><td>API, view, arquivo, endpoint etc.</td></tr><tr><td>Local de acesso</td><td>URL, schema, tabela, caminho etc.</td></tr><tr><td>Parâmetros</td><td>Filtros ou argumentos disponíveis</td></tr><tr><td>Formato de saída</td><td>JSON, CSV, tabela, gráfico etc.</td></tr><tr><td>Autenticação</td><td>Necessária ou não</td></tr><tr><td>Restrição</td><td>Condições de acesso</td></tr><tr><td>Tempo de resposta esperado</td><td>Requisito de desempenho</td></tr><tr><td>Versão</td><td>Versão da interface</td></tr></table></div>
+<h3 id="metricas-associadas-5">15.4 Métricas associadas</h3>
+<ul class="list">
+<li>tempo médio de resposta;</li>
+<li>taxa de consumo efetivo;</li>
+<li>taxa de consultas bem-sucedidas;</li>
+<li>taxa de incidentes de acesso;</li>
+<li>disponibilidade da interface.</li>
+</ul>
+<h3 id="contribuicao-5">15.5 Contribuição</h3>
+<p>Esse artefato operacionaliza o consumo dos dados, permitindo acesso controlado, programático ou interativo aos produtos analíticos.</p>
+<h2 class="section-title" id="artefato-a8-6-dashboard-ou-painel-analitico">16. Artefato A8.6 — Dashboard ou Painel Analítico</h2>
+<h3 id="finalidade-6">16.1 Finalidade</h3>
+<p>O Dashboard ou Painel Analítico disponibiliza indicadores, visualizações, filtros e informações analíticas para usuários finais.</p>
+<h3 id="estrutura-minima-6">16.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Nome do painel</td><td>Identificação do dashboard</td></tr><tr><td>Objetivo</td><td>Finalidade decisória ou analítica</td></tr><tr><td>Público-alvo</td><td>Usuários previstos</td></tr><tr><td>Indicadores</td><td>Métricas apresentadas</td></tr><tr><td>Fontes de dados</td><td>Ativos utilizados</td></tr><tr><td>Granularidade</td><td>Nível de agregação</td></tr><tr><td>Filtros</td><td>Recortes disponíveis</td></tr><tr><td>Atualização</td><td>Periodicidade</td></tr><tr><td>Responsável</td><td>Equipe responsável</td></tr><tr><td>Restrições</td><td>Limitações de acesso ou interpretação</td></tr><tr><td>Versão</td><td>Versão publicada</td></tr></table></div>
+<h3 id="metricas-associadas-6">16.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de consumo efetivo;</li>
+<li>frequência de acesso;</li>
+<li>satisfação do usuário;</li>
+<li>tempo de carregamento;</li>
+<li>taxa de atualização conforme periodicidade.</li>
+</ul>
+<h3 id="contribuicao-6">16.4 Contribuição</h3>
+<p>Esse artefato transforma dados em visualizações e indicadores acessíveis, apoiando análise exploratória, acompanhamento e tomada de decisão.</p>
+<h2 class="section-title" id="artefato-a8-7-dataset-curado-para-consumo">17. Artefato A8.7 — Dataset Curado para Consumo</h2>
+<h3 id="finalidade-7">17.1 Finalidade</h3>
+<p>O Dataset Curado para Consumo é um ativo de dados preparado para uso direto por analistas, pesquisadores, modelos, dashboards ou sistemas.</p>
+<h3 id="estrutura-minima-7">17.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Nome do dataset</td><td>Identificação</td></tr><tr><td>Finalidade</td><td>Uso previsto</td></tr><tr><td>Fontes de origem</td><td>Bases utilizadas</td></tr><tr><td>Estrutura</td><td>Atributos e tipos</td></tr><tr><td>Granularidade</td><td>Unidade de análise</td></tr><tr><td>Cobertura temporal</td><td>Período abrangido</td></tr><tr><td>Qualidade</td><td>Status e métricas</td></tr><tr><td>Versão</td><td>Versão publicada</td></tr><tr><td>Formato</td><td>CSV, Parquet, SQL, API etc.</td></tr><tr><td>Restrição de uso</td><td>Condições de acesso</td></tr><tr><td>Limitações</td><td>Cuidados de interpretação</td></tr></table></div>
+<h3 id="metricas-associadas-7">17.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de ativos disponibilizados;</li>
+<li>taxa de reutilização;</li>
+<li>taxa de produtos documentados;</li>
+<li>taxa de produtos com versão;</li>
+<li>taxa de adequação ao uso.</li>
+</ul>
+<h3 id="contribuicao-7">17.4 Contribuição</h3>
+<p>Esse artefato entrega dados prontos para uso, reduzindo retrabalho e promovendo reutilização de ativos confiáveis.</p>
+<h2 class="section-title" id="artefato-a8-8-registro-de-publicacao-e-versao">18. Artefato A8.8 — Registro de Publicação e Versão</h2>
+<h3 id="finalidade-8">18.1 Finalidade</h3>
+<p>O Registro de Publicação e Versão documenta quando, como e em qual versão um produto de dados foi disponibilizado.</p>
+<h3 id="estrutura-minima-8">18.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Produto</td><td>Produto publicado</td></tr><tr><td>Versão</td><td>Identificador da versão</td></tr><tr><td>Data de publicação</td><td>Momento da publicação</td></tr><tr><td>Ativo de origem</td><td>Dataset ou data mart utilizado</td></tr><tr><td>Alterações</td><td>Mudanças em relação à versão anterior</td></tr><tr><td>Responsável</td><td>Pessoa ou sistema responsável</td></tr><tr><td>Status</td><td>Ativa, substituída, obsoleta, descontinuada</td></tr><tr><td>Consumidores impactados</td><td>Usuários ou sistemas afetados</td></tr><tr><td>Observações</td><td>Restrições ou alertas</td></tr></table></div>
+<h3 id="metricas-associadas-8">18.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de produtos com versão definida;</li>
+<li>número de versões por produto;</li>
+<li>taxa de produtos obsoletos;</li>
+<li>tempo médio entre versões;</li>
+<li>taxa de produtos descontinuados.</li>
+</ul>
+<h3 id="contribuicao-8">18.4 Contribuição</h3>
+<p>Esse artefato evita uso de produtos obsoletos e apoia rastreabilidade, auditoria e <a class="term" href="../conceitos/reprodutibilidade.html">reprodutibilidade</a>.</p>
+<h2 class="section-title" id="artefato-a8-9-registro-de-uso-e-feedback">19. Artefato A8.9 — Registro de Uso e Feedback</h2>
+<h3 id="finalidade-9">19.1 Finalidade</h3>
+<p>O Registro de Uso e Feedback documenta o consumo dos produtos disponibilizados e a percepção dos usuários.</p>
+<h3 id="estrutura-minima-9">19.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Produto</td><td>Produto consumido</td></tr><tr><td>Consumidor</td><td>Usuário, equipe, sistema ou aplicação</td></tr><tr><td>Tipo de uso</td><td>Consulta, dashboard, modelo, relatório, API etc.</td></tr><tr><td>Frequência</td><td>Periodicidade de uso</td></tr><tr><td>Data de acesso</td><td>Momento do acesso</td></tr><tr><td>Problemas relatados</td><td>Erros, dúvidas ou limitações</td></tr><tr><td>Feedback</td><td>Avaliação do consumidor</td></tr><tr><td>Solicitações</td><td>Melhorias ou novas demandas</td></tr><tr><td>Status</td><td>Aberto, analisado, resolvido</td></tr></table></div>
+<h3 id="metricas-associadas-9">19.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de consumo efetivo;</li>
+<li>frequência de acesso;</li>
+<li>satisfação do usuário;</li>
+<li>número de solicitações de melhoria;</li>
+<li>taxa de problemas resolvidos.</li>
+</ul>
+<h3 id="contribuicao-9">19.4 Contribuição</h3>
+<p>Esse artefato permite avaliar o valor real dos produtos disponibilizados e orientar melhoria contínua.</p>
+<h2 class="section-title" id="artefato-a8-10-relatorio-de-adequacao-ao-consumo">20. Artefato A8.10 — Relatório de Adequação ao Consumo</h2>
+<h3 id="finalidade-10">20.1 Finalidade</h3>
+<p>O Relatório de Adequação ao Consumo avalia se os produtos disponibilizados atendem às necessidades, restrições e finalidades dos consumidores.</p>
+<h3 id="estrutura-minima-10">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Produto avaliado</td><td>Produto de dados</td></tr><tr><td>Consumidores</td><td>Usuários ou sistemas avaliados</td></tr><tr><td>Finalidade</td><td>Uso previsto</td></tr><tr><td>Desempenho</td><td>Tempo de resposta, disponibilidade</td></tr><tr><td>Documentação</td><td>Completude da documentação</td></tr><tr><td>Qualidade percebida</td><td>Avaliação do consumidor</td></tr><tr><td>Atualização</td><td>Aderência à periodicidade</td></tr><tr><td>Restrições</td><td>Problemas de acesso ou uso</td></tr><tr><td>Adequação</td><td>Adequado, adequado com ressalvas, inadequado</td></tr><tr><td>Recomendações</td><td>Melhorias sugeridas</td></tr></table></div>
+<h3 id="metricas-associadas-10">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de adequação ao uso;</li>
+<li>satisfação do usuário;</li>
+<li>tempo médio de resposta;</li>
+<li>taxa de produtos documentados;</li>
+<li>taxa de atualização conforme periodicidade.</li>
+</ul>
+<h3 id="contribuicao-10">20.4 Contribuição</h3>
+<p>Esse artefato fecha o ciclo do pipeline principal, verificando se o produto de dados realmente atende à finalidade para a qual foi construído.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">21. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Datasets curados, data marts, views, indicadores, métricas de qualidade, versões, restrições de acesso, requisitos de consumo e documentação dos ativos.</td></tr><tr><td>Processamento</td><td>Identificação dos consumidores, seleção dos ativos, definição do formato de disponibilização, preparação para consumo, controle de acesso, publicação, documentação e avaliação do uso.</td></tr><tr><td>Artefatos</td><td>Plano de disponibilização, catálogo de produtos, matriz de consumidores, especificação de produto, APIs/views/interfaces, dashboards, datasets curados, registro de publicação, uso e relatório de adequação.</td></tr><tr><td>Métricas</td><td>TAD, TPD, TPQI, TPVD, TPCA, TMD, TCE, TRP, FA, TMR, TACP, TPO, SU, TIA e TAU.</td></tr><tr><td>Saídas</td><td>Produtos de dados disponibilizados, documentados, versionados, controlados, consumidos e avaliados quanto à adequação ao uso.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">22. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 8 pode ser considerado concluído quando:</p>
+<ol class="steps">
+<li>os consumidores e finalidades de uso foram identificados;</li>
+<li>os ativos aptos para consumo foram selecionados;</li>
+<li>os produtos de dados foram definidos;</li>
+<li>cada produto possui formato de disponibilização adequado;</li>
+<li>os produtos possuem documentação mínima;</li>
+<li>os produtos possuem versão registrada;</li>
+<li>as regras de acesso foram definidas;</li>
+<li>os produtos sensíveis foram agregados, anonimizados, filtrados ou restritos quando necessário;</li>
+<li>os produtos foram publicados em ambiente adequado;</li>
+<li>o uso ou consumo dos produtos foi registrado;</li>
+<li>a adequação ao uso foi avaliada;</li>
+<li>os produtos disponibilizados estão conectados aos módulos transversais de metadados, governança, lineage, versionamento e monitoramento.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-do-pipeline-principal">23. Relação com os demais módulos do pipeline principal</h2>
+<p>O Módulo 8 é a etapa final do pipeline principal do UnespDataLens-RM.</p>
+<p>Ele depende do Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, pois utiliza informações sobre origem, finalidade, sensibilidade e restrições das fontes.</p>
+<p>Depende do Módulo 2 — Extração, Ingestão e Armazenamento Bruto, pois os produtos disponibilizados precisam manter vínculo com os dados originalmente ingeridos.</p>
+<p>Depende do Módulo 3 — Integração e Harmonização, pois muitos produtos de dados são derivados de bases integradas e harmonizadas.</p>
+<p>Depende do Módulo 4 — Transformação, Limpeza e Enriquecimento, pois consome datasets tratados, padronizados e enriquecidos.</p>
+<p>Depende do Módulo 5 — Qualidade e Validação de Dados, pois somente ativos com qualidade conhecida devem ser disponibilizados para consumo.</p>
+<p>Depende do Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e Equidade, pois produtos com riscos de viés, desbalanceamento ou limitações devem ser sinalizados, restringidos ou documentados.</p>
+<p>Depende do Módulo 7 — Armazenamento Analítico, pois utiliza os ativos persistidos, data marts, views, tabelas e estruturas organizadas para consumo.</p>
+<p>Com o Módulo 8, o pipeline principal se completa: as fontes foram identificadas, os dados foram extraídos, integrados, transformados, validados, avaliados quanto a vieses, armazenados analiticamente e finalmente disponibilizados para uso.</p>
+<h2 class="section-title" id="relacao-com-os-modulos-transversais">24. Relação com os módulos transversais</h2>
+<p>Embora encerre o pipeline principal, o Módulo 8 não encerra o ciclo de vida dos dados. A partir dele, tornam-se fundamentais os módulos transversais do UnespDataLens-RM.</p>
+<p>O módulo de Metadados, Catálogo e Semântica dos Dados deve registrar e manter a documentação dos produtos disponibilizados, incluindo descrições, versões, qualidade, finalidade, responsáveis e limitações.</p>
+<p>O módulo de Governança, Segurança, Privacidade e <a class="term" href="../metricas/conformidade.html">Conformidade</a> deve controlar políticas de acesso, finalidade de uso, autorização, sensibilidade, anonimização, <a class="term" href="../conceitos/lgpd.html">LGPD</a> e responsabilidades.</p>
+<p>O módulo de <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Lineage e Rastreabilidade deve permitir reconstruir a trajetória dos produtos desde as fontes originais até o consumo final.</p>
+<p>O módulo de Versionamento e Reprodutibilidade deve preservar versões de produtos, datasets, dashboards, APIs, relatórios e configurações.</p>
+<p>O módulo de Representação Tabular, Temporal, Grafos e Grafos Temporais pode consumir produtos disponibilizados para gerar novas estruturas analíticas especializadas.</p>
+<p>O módulo de <a class="term" href="../conceitos/feature-engineering.html">Feature Engineering</a> e <a class="term" href="../conceitos/feature-store.html">Feature Store</a> pode consumir datasets curados para gerar, armazenar e reutilizar features.</p>
+<p>O módulo de Monitoramento, Drift e Evolução dos Ativos deve acompanhar atualização, uso, qualidade, obsolescência, alterações de schema, degradação de produtos e mudanças de distribuição.</p>
+<p>O módulo de Agentes Inteligentes de Apoio ao Pipeline pode usar os produtos disponibilizados, seus metadados e registros de consumo para apoiar consultas, recomendações, explicações, descoberta de dados e apoio à tomada de decisão.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">25. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, o Módulo 8 poderia disponibilizar produtos de dados derivados de matrículas, histórico acadêmico, notas, frequência, evasão, interações em ambientes virtuais, dados socioeconômicos e indicadores de permanência.</p>
+<p>Exemplos de produtos disponibilizados incluem:</p>
+<ul class="list">
+<li>dashboard de evasão por curso, turma e período;</li>
+<li>dataset curado de trajetória acadêmica;</li>
+<li>API de indicadores educacionais;</li>
+<li>data mart de permanência estudantil;</li>
+<li>relatório de desempenho por disciplina;</li>
+<li>painel de acompanhamento de estudantes em risco;</li>
+<li>base anonimizada para pesquisa;</li>
+<li>view agregada de indicadores por curso;</li>
+<li>estrutura de grafo para análise de relações estudante-disciplina-curso.</li>
+</ul>
+<p>Cada produto deve possuir documentação mínima, versão, responsável, cobertura temporal, qualidade, restrição de acesso e limitações de interpretação.</p>
+<p>Por exemplo, um painel de evasão não deve apenas apresentar percentuais. Ele deve indicar origem dos dados, período de atualização, definição de evasão adotada, nível de agregação, limitações conhecidas, qualidade da base e restrições de uso.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">26. Exemplo de aplicação em políticas públicas</h2>
+<p>Em uma aplicação em políticas públicas, o Módulo 8 poderia disponibilizar produtos de dados voltados à análise territorial, acompanhamento de programas, monitoramento de serviços públicos e apoio à decisão governamental.</p>
+<p>Exemplos de produtos disponibilizados incluem:</p>
+<ul class="list">
+<li>painel de vulnerabilidade territorial;</li>
+<li>API de indicadores municipais;</li>
+<li>data mart de famílias atendidas;</li>
+<li>dashboard de cobertura de serviços;</li>
+<li>relatório de demandas por território;</li>
+<li>dataset agregado por bairro;</li>
+<li>mapa de equipamentos públicos;</li>
+<li>base anonimizada para estudos técnicos;</li>
+<li>view de indicadores de saúde, educação e assistência social.</li>
+</ul>
+<p>Cada produto deve respeitar níveis de sensibilidade e privacidade. Dados individuais devem ser disponibilizados apenas mediante autorização e com controles adequados, enquanto dados públicos podem ser agregados e publicados em painéis ou relatórios.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">27. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição do Módulo 8 está em formalizar a disponibilização e o consumo analítico como a etapa final do pipeline principal de Engenharia Analítica de Dados.</p>
+<p>Em vez de tratar o consumo como consequência natural do armazenamento, o UnespDataLens-RM propõe que a disponibilização seja planejada, documentada, controlada, avaliada e vinculada à finalidade de uso.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>transformar ativos analíticos em produtos de dados consumíveis;</li>
+<li>evitar disponibilização sem qualidade conhecida;</li>
+<li>reduzir riscos de uso indevido;</li>
+<li>controlar acesso conforme sensibilidade;</li>
+<li>documentar finalidade, versão, origem e limitações dos produtos;</li>
+<li>aumentar reuso e valor dos ativos produzidos;</li>
+<li>registrar consumidores e formas de uso;</li>
+<li>avaliar utilidade e adequação dos produtos;</li>
+<li>conectar o pipeline principal aos módulos transversais;</li>
+<li>apoiar decisões baseadas em evidências de forma mais confiável.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">28. Síntese do módulo</h2>
+<p>O Módulo 8 — Disponibilização e Consumo Analítico encerra o pipeline principal do UnespDataLens-RM. Ele transforma ativos analíticos armazenados em produtos de dados acessíveis, documentados, versionados, controlados e adequados ao uso.</p>
+<p>Sua importância está em materializar o valor produzido pelos módulos anteriores. O pipeline só gera impacto quando seus resultados são consumidos por pessoas, sistemas, modelos, dashboards, APIs, relatórios, grafos, indicadores ou processos decisórios.</p>
+<p>Ao formalizar a disponibilização como uma etapa com artefatos, métricas, regras de acesso, documentação e avaliação de uso, o Módulo 8 fortalece a confiabilidade, a governança, a transparência e a utilidade dos ativos produzidos pelo modelo de referência.</p>
+<p>A partir desse ponto, os módulos seguintes deixam de compor o fluxo linear principal e passam a atuar como módulos transversais, responsáveis por garantir metadados, governança, privacidade, lineage, versionamento, reprodutibilidade, monitoramento, representação especializada, feature store e apoio inteligente ao longo de todo o ciclo de vida dos dados.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

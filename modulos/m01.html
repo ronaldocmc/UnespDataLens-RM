@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo 1 — Fontes e Inventário de Dados tem como finalidade identificar, mapear, caracterizar, classificar e documentar as fontes de dados que poderão compor o ecossistema analítico do UnespDataLens-RM. Esse módulo constitui a etapa inicial do modelo de referência, pois estabelece a base de conhecimento sobre quais dados existem, onde estão localizados…">
+  <title>Módulo 1 — Fontes e Inventário de Dados · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-1-fontes-e-inventario-de-dados"></span><section class="hero">
+<span class="badge">Módulo 01</span>
+<h1>Módulo 1 — Fontes e Inventário de Dados</h1>
+<p>O Módulo 1 — Fontes e Inventário de Dados tem como finalidade identificar, mapear, caracterizar, classificar e documentar as fontes de dados que poderão compor o ecossistema analítico do UnespDataLens-RM. Esse módulo constitui a etapa inicial do modelo de referência, pois estabelece a base de conhecimento sobre quais dados existem, onde estão localizados…</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 30 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#tipos-de-fontes-consideradas">Tipos de fontes consideradas</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-instrumentos-aplicaveis">Técnicas, métodos e instrumentos aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a1-1-inventario-de-fontes">Artefato A1.1 — Inventário de Fontes</a><a href="#artefato-a1-2-mapa-de-bases-e-sistemas">Artefato A1.2 — Mapa de Bases e Sistemas</a><a href="#artefato-a1-3-dicionario-preliminar-de-dados">Artefato A1.3 — Dicionário Preliminar de Dados</a><a href="#artefato-a1-4-matriz-de-relacionamento-entre-fontes">Artefato A1.4 — Matriz de Relacionamento entre Fontes</a><a href="#artefato-a1-5-registro-de-granularidade">Artefato A1.5 — Registro de Granularidade</a><a href="#artefato-a1-6-classificacao-de-sensibilidade">Artefato A1.6 — Classificação de Sensibilidade</a><a href="#artefato-a1-7-catalogo-preliminar-de-fontes">Artefato A1.7 — Catálogo Preliminar de Fontes</a><a href="#artefato-a1-8-relatorio-de-riscos-e-limitacoes">Artefato A1.8 — Relatório de Riscos e Limitações</a><a href="#artefato-a1-9-mapa-preliminar-de-entidades">Artefato A1.9 — Mapa Preliminar de Entidades</a><a href="#artefato-a1-10-registro-de-limitacoes-conhecidas">Artefato A1.10 — Registro de Limitações Conhecidas</a><a href="#artefato-a1-11-mapa-temporal-das-fontes">Artefato A1.11 — Mapa Temporal das Fontes</a><a href="#artefato-a1-12-registro-de-potencial-analitico">Artefato A1.12 — Registro de Potencial Analítico</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-os-demais-modulos-do-modelo-de-referencia">Relação com os demais módulos do modelo de referência</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a> tem como finalidade identificar, mapear, caracterizar, classificar e documentar as fontes de dados que poderão compor o ecossistema analítico do UnespDataLens-RM. Esse módulo constitui a etapa inicial do modelo de referência, pois estabelece a base de conhecimento sobre quais dados existem, onde estão localizados, quem os produz, quem os mantém, qual sua finalidade original, quais restrições possuem, qual sua estrutura, qual sua <a class="term" href="../conceitos/periodicidade.html">periodicidade</a>, qual sua <a class="term" href="../conceitos/cobertura-temporal.html">cobertura temporal</a>, qual sua <a class="term" href="../conceitos/granularidade.html">granularidade</a>, quais entidades representam e qual seu potencial de uso analítico.</p>
+<p>No contexto do UnespDataLens-RM, uma <a class="term" href="../conceitos/fonte-de-dados.html">fonte de dados</a> não deve ser compreendida apenas como uma tabela, arquivo ou sistema isolado. Uma fonte pode ser um banco de dados institucional, uma API, uma planilha, um arquivo CSV, JSON ou Parquet, um sistema acadêmico, um ambiente virtual de aprendizagem, um sistema administrativo, uma base pública, um log de <a class="term" href="../conceitos/eventos.html">eventos</a>, um fluxo de dados, um repositório documental, um painel já existente, um serviço web, um sensor, uma base governamental ou qualquer outro recurso capaz de fornecer dados para análise.</p>
+<p>O Módulo 1 busca transformar fontes dispersas, heterogêneas, pouco documentadas e muitas vezes conhecidas apenas informalmente em um inventário estruturado, rastreável, governável e analiticamente útil. Esse inventário permite que os módulos posteriores atuem sobre dados previamente conhecidos, evitando extrações improvisadas, integrações frágeis, uso de fontes sem responsável, ausência de documentação, <a class="term" href="../problemas/duplicidade.html">duplicidade</a> de bases, desconhecimento de restrições de acesso e perda de <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a>.</p>
+<p>A importância deste módulo está no fato de que a qualidade de todo o pipeline analítico depende da compreensão inicial das fontes. Não é possível integrar, transformar, validar, governar, versionar, monitorar ou disponibilizar adequadamente dados cuja origem, estrutura, periodicidade, sensibilidade, granularidade, limitações e responsáveis não foram previamente identificados.</p>
+<p>Assim, o Módulo 1 funciona como a porta de entrada metodológica do UnespDataLens-RM. Ele não executa ainda a ingestão dos dados, mas prepara as condições técnicas, semânticas, operacionais e de governança para que a extração e a ingestão ocorram de forma controlada no Módulo 2.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 1 é construir um inventário estruturado das fontes de dados relevantes ao ecossistema UnespDataLens-RM, documentando suas características técnicas, semânticas, temporais, operacionais, institucionais, analíticas, legais e de governança, de modo a orientar as etapas posteriores de extração, ingestão, integração, transformação, qualidade, armazenamento, disponibilização, lineage, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, monitoramento e uso analítico.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 1:</p>
+<ol class="steps">
+<li>identificar as fontes de dados disponíveis ou potencialmente relevantes para o projeto analítico;</li>
+<li>classificar as fontes conforme domínio, tipo, formato, origem, responsável, periodicidade, granularidade, cobertura temporal e restrição de acesso;</li>
+<li>registrar os responsáveis técnicos, institucionais ou operacionais por cada fonte;</li>
+<li>documentar finalidade original, finalidade analítica potencial e limitações conhecidas de cada fonte;</li>
+<li>mapear entidades, atributos, chaves, categorias, códigos e conceitos presentes nas fontes;</li>
+<li>identificar a existência de dados históricos, <a class="term" href="../conceitos/dados-temporais.html">dados temporais</a>, <a class="term" href="../conceitos/logs.html">logs</a>, eventos, registros longitudinais, <a class="term" href="../conceitos/series-temporais.html">séries temporais</a> ou fluxos de dados;</li>
+<li>registrar periodicidade de atualização, <a class="term" href="../conceitos/latencia.html">latência</a> esperada e possibilidade de ingestão batch, incremental, <a class="term" href="../conceitos/near-real-time.html">near real-time</a> ou <a class="term" href="../metodos/streaming.html">streaming</a>;</li>
+<li>avaliar sensibilidade, restrições de acesso, <a class="term" href="../conceitos/privacidade.html">privacidade</a>, finalidade de uso e riscos associados às fontes;</li>
+<li>identificar fontes redundantes, complementares, isoladas ou pertencentes a <a class="term" href="../problemas/silos-de-dados.html">silos de dados</a>;</li>
+<li>mapear relações potenciais entre fontes, entidades e domínios;</li>
+<li>registrar documentação existente, dicionários prévios, contratos de dados, APIs, schemas ou glossários associados;</li>
+<li>avaliar preliminarmente a qualidade, <a class="term" href="../metricas/completude.html">completude</a>, <a class="term" href="../metricas/atualidade.html">atualidade</a> e confiabilidade das fontes;</li>
+<li>indicar o potencial de cada fonte para construção de indicadores, dashboards, modelos, features, grafos, grafos temporais ou agentes inteligentes;</li>
+<li>produzir artefatos formais que orientem os módulos posteriores do modelo de referência;</li>
+<li>reduzir dependência de conhecimento tácito sobre os dados institucionais.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>A etapa de identificação e <a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a> é uma prática essencial em Engenharia Analítica de Dados, pois permite compreender o ecossistema informacional antes de qualquer processo de extração, integração ou modelagem. Em ambientes institucionais complexos, os dados normalmente estão distribuídos em múltiplos sistemas, planilhas, arquivos, plataformas, bases históricas, registros operacionais e produtos já existentes.</p>
+<p>Essas fontes podem apresentar diferenças significativas de formato, periodicidade, nomenclatura, granularidade, qualidade, cobertura temporal, semântica e restrição de uso. Uma base pode registrar estudantes, outra matrículas, outra interações, outra avaliações, outra indicadores agregados e outra eventos em tempo real. Em políticas públicas, uma fonte pode registrar atendimentos, outra territórios, outra famílias, outra equipamentos, outra serviços e outra indicadores socioeconômicos.</p>
+<p>Sem inventário, essas fontes permanecem invisíveis ou parcialmente conhecidas. Isso gera problemas como silos de dados, duplicidade de esforços, uso de dados desatualizados, dificuldade de integração, ausência de governança, <a class="term" href="../problemas/baixa-rastreabilidade.html">baixa rastreabilidade</a>, incerteza sobre a origem dos dados e aumento da <a class="term" href="../problemas/divida-de-dados.html">dívida de dados</a>.</p>
+<p>No UnespDataLens-RM, o inventário de fontes é tratado como um artefato técnico-metodológico. Ele não é apenas uma lista de bases, mas um modelo estruturado de conhecimento sobre o ecossistema de dados. Cada fonte deve ser descrita por atributos técnicos, temporais, semânticos, operacionais, institucionais e analíticos.</p>
+<p>Esse módulo também deve contemplar explicitamente a dimensão temporal das fontes. Uma fonte pode conter dados históricos, dados atualizados periodicamente, eventos com timestamp, logs de interação, séries temporais, registros longitudinais ou fluxos dinâmicos. Essa caracterização é fundamental para orientar o Módulo 2, que definirá o tipo de ingestão mais adequado, e o Módulo 13, que definirá representações tabulares, temporais, de eventos, grafos ou grafos temporais.</p>
+<p>À luz da Design Science Research, o Módulo 1 produz artefatos que representam constructos, modelos, métodos e instanciações. O inventário de fontes funciona como um modelo estruturado do ecossistema de dados; o mapa de entidades funciona como um modelo conceitual preliminar; a <a class="term" href="../artefatos/matriz-de-relacionamento-entre-fontes.html">matriz de relacionamento entre fontes</a> funciona como um modelo de dependências potenciais; e os registros de sensibilidade, granularidade e limitações funcionam como artefatos de governança e avaliação.</p>
+<h2 class="section-title" id="tipos-de-fontes-consideradas">5. Tipos de fontes consideradas</h2>
+<p>O UnespDataLens-RM deve contemplar diferentes tipos de fontes de dados, considerando que ecossistemas analíticos reais são heterogêneos e dinâmicos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Tipo de fonte</th><th>Descrição</th><th>Exemplo</th></tr><tr><td>Banco de dados relacional</td><td>Fonte estruturada baseada em tabelas, chaves e relações.</td><td>Sistema acadêmico, sistema administrativo, <a class="term" href="../tecnicas/postgresql.html">PostgreSQL</a>, SQL Server.</td></tr><tr><td>Arquivo estruturado</td><td>Dados organizados em formato tabular ou hierárquico.</td><td>CSV, XLSX, JSON, XML, Parquet.</td></tr><tr><td>API ou serviço web</td><td>Dados acessados por endpoints ou serviços externos.</td><td>API governamental, API institucional, web service.</td></tr><tr><td>Planilha institucional</td><td>Arquivo mantido manualmente por equipes ou setores.</td><td>Planilha de acompanhamento de estudantes.</td></tr><tr><td>Sistema transacional</td><td>Sistema que registra operações ou eventos administrativos.</td><td>Matrícula, atendimento, protocolo, financeiro.</td></tr><tr><td>Ambiente virtual ou plataforma digital</td><td>Sistema com interações, logs e atividades de usuários.</td><td>AVA, LMS, Moodle, Google Classroom.</td></tr><tr><td>Log de eventos</td><td>Registro de ações com timestamp e contexto.</td><td>Acesso, clique, envio de atividade, consulta.</td></tr><tr><td>Fluxo contínuo de dados</td><td>Dados gerados continuamente ou com baixa latência.</td><td>Sensores, filas, tópicos, streaming.</td></tr><tr><td>Base pública</td><td>Dados disponibilizados por órgãos públicos ou instituições externas.</td><td>IBGE, INEP, DATASUS, bases municipais.</td></tr><tr><td><a class="term" href="../artefatos/dashboard.html">Dashboard</a> ou relatório existente</td><td>Produto analítico que pode indicar fontes ou regras já utilizadas.</td><td>Painel institucional de evasão.</td></tr><tr><td>Repositório documental</td><td>Documentos que contêm dados ou informações semiestruturadas.</td><td>Relatórios, PDFs, formulários, atas.</td></tr><tr><td>Banco de grafos ou rede</td><td>Fonte estruturada em nós, arestas e propriedades.</td><td><a class="term" href="../tecnicas/neo4j.html">Neo4j</a>, ArangoDB, rede de relações.</td></tr><tr><td>Base textual</td><td>Registros textuais que podem ser analisados semanticamente.</td><td>Fóruns, respostas abertas, mensagens, chamados.</td></tr><tr><td>Fonte geoespacial</td><td>Dados associados a localização, território ou coordenadas.</td><td>Shapefiles, GeoJSON, bases territoriais.</td></tr></table></div>
+<p>Essa tipologia permite que o modelo de referência não fique restrito a <a class="term" href="../conceitos/dados-tabulares.html">dados tabulares</a> tradicionais, ampliando sua capacidade para dados temporais, relacionais, textuais, geoespaciais, multimodais e dinâmicos.</p>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">6. Formalização sintética do módulo</h2>
+<p>Considerando o conjunto de fontes identificadas:</p>
+<div class="formula">F = {f₁, f₂, ..., fₙ}</div>
+<p>cada fonte fᵢ pode ser descrita por um conjunto de atributos técnicos, semânticos, operacionais, temporais e de governança:</p>
+<p>fᵢ = {id, nome, descrição, origem, responsável, domínio, tipo, formato, localização, periodicidade, cobertura_temporal, granularidade, volume, schema, entidades, atributos, chaves, sensibilidade, restrição_acesso, finalidade_original, finalidade_analítica, documentação_existente, limitações, qualidade_preliminar, potencial_analítico}</p>
+<p>O conjunto de dimensões de caracterização das fontes pode ser representado por:</p>
+<div class="formula">D = {d₁, d₂, ..., dₖ}</div>
+<p>em que cada dimensão corresponde a um aspecto de avaliação, como:</p>
+<ul class="list">
+<li>identificação;</li>
+<li>origem;</li>
+<li>domínio;</li>
+<li>estrutura;</li>
+<li>formato;</li>
+<li>temporalidade;</li>
+<li>granularidade;</li>
+<li>volume;</li>
+<li>qualidade;</li>
+<li>sensibilidade;</li>
+<li>acesso;</li>
+<li>documentação;</li>
+<li>semântica;</li>
+<li>interoperabilidade;</li>
+<li>potencial analítico;</li>
+<li>risco;</li>
+<li>governança.</li>
+</ul>
+<p>Também é possível representar relações potenciais entre fontes por uma matriz:</p>
+<div class="formula">R(F) = [rᵢⱼ]</div>
+<p>em que rᵢⱼ indica a possibilidade de relacionamento entre as fontes fᵢ e fⱼ, considerando entidades comuns, chaves, atributos equivalentes, granularidade, domínio, período ou finalidade analítica.</p>
+<p>Essa formalização permite que o Módulo 1 produza um mapa estruturado do ecossistema de dados antes da ingestão e integração.</p>
+<h2 class="section-title" id="entradas-do-modulo">7. Entradas do módulo</h2>
+<p>As entradas do Módulo 1 são informações iniciais sobre o ecossistema de dados, provenientes de levantamentos, entrevistas, documentação institucional, sistemas existentes, repositórios, arquivos, painéis, APIs, bases públicas e conhecimento dos responsáveis.</p>
+<p>As principais entradas incluem:</p>
+<ul class="list">
+<li>lista preliminar de sistemas;</li>
+<li>bases de dados existentes;</li>
+<li>arquivos e planilhas disponíveis;</li>
+<li>APIs e serviços externos;</li>
+<li>documentação técnica;</li>
+<li>dicionários de dados existentes;</li>
+<li>relatórios institucionais;</li>
+<li>dashboards existentes;</li>
+<li>sistemas de origem;</li>
+<li>repositórios de dados;</li>
+<li>logs de sistemas;</li>
+<li>fluxos de eventos;</li>
+<li>bases históricas;</li>
+<li>dados públicos;</li>
+<li>bases geográficas;</li>
+<li>registros administrativos;</li>
+<li>registros acadêmicos;</li>
+<li>dados operacionais;</li>
+<li>informações de responsáveis;</li>
+<li>políticas de acesso;</li>
+<li>regras institucionais;</li>
+<li>glossários existentes;</li>
+<li>contratos de dados, quando houver;</li>
+<li>restrições legais ou institucionais;</li>
+<li>demandas analíticas dos usuários;</li>
+<li>problemas decisórios a serem investigados.</li>
+</ul>
+<p>Além disso, podem ser utilizadas entrevistas, formulários, reuniões técnicas e análise documental para obter informações que não estão explicitamente registradas.</p>
+<h2 class="section-title" id="processamento">8. Processamento</h2>
+<p>O processamento do Módulo 1 envolve o levantamento, organização, classificação, validação preliminar e documentação das fontes.</p>
+<h3 id="identificacao-das-fontes">8.1 Identificação das fontes</h3>
+<p>A primeira atividade consiste em identificar todas as fontes potencialmente relevantes ao projeto. Essa identificação pode ocorrer por levantamento documental, consulta a equipes técnicas, entrevistas com gestores, análise de sistemas, inspeção de repositórios, avaliação de dashboards existentes e busca por bases públicas ou externas.</p>
+<p>O objetivo é evitar que fontes importantes permaneçam invisíveis ou sejam descobertas apenas em etapas posteriores.</p>
+<h3 id="caracterizacao-tecnica">8.2 Caracterização técnica</h3>
+<p>A segunda atividade consiste em registrar características técnicas da fonte, como tipo, formato, localização, mecanismo de acesso, tecnologia, volume, schema, periodicidade e forma de atualização.</p>
+<p>Essa caracterização orienta o Módulo 2 na definição do método de extração e ingestão.</p>
+<h3 id="caracterizacao-temporal">8.3 Caracterização temporal</h3>
+<p>A terceira atividade consiste em documentar a dimensão temporal da fonte. Devem ser registrados:</p>
+<ul class="list">
+<li>período inicial e final dos dados;</li>
+<li>cobertura histórica;</li>
+<li>periodicidade de atualização;</li>
+<li>frequência de geração;</li>
+<li>latência esperada;</li>
+<li>existência de timestamps;</li>
+<li>existência de logs;</li>
+<li>existência de eventos;</li>
+<li>possibilidade de <a class="term" href="../metodos/ingestao-incremental.html">ingestão incremental</a>;</li>
+<li>possibilidade de ingestão near real-time;</li>
+<li>existência de séries temporais;</li>
+<li>existência de <a class="term" href="../conceitos/dados-longitudinais.html">dados longitudinais</a>;</li>
+<li>existência de snapshots históricos.</li>
+</ul>
+<p>Essa caracterização é essencial para análises temporais, monitoramento, detecção de drift, grafos temporais e modelos preditivos baseados em janelas de observação.</p>
+<h3 id="caracterizacao-semantica">8.4 Caracterização semântica</h3>
+<p>A quarta atividade consiste em compreender o significado dos dados da fonte. Devem ser identificados conceitos, entidades, atributos, categorias, códigos, domínios, regras de negócio, termos ambíguos, sinônimos e possíveis conflitos semânticos.</p>
+<p>Essa caracterização apoia os módulos de integração, harmonização, <a class="term" href="../conceitos/metadados.html">metadados</a>, catálogo e <a class="term" href="../conceitos/interoperabilidade-semantica.html">interoperabilidade semântica</a>.</p>
+<h3 id="caracterizacao-de-granularidade">8.5 Caracterização de granularidade</h3>
+<p>A quinta atividade consiste em identificar o nível de detalhe da fonte. Uma base pode estar no nível de estudante, matrícula, disciplina, turma, curso, atendimento, cidadão, família, município, território, evento ou período.</p>
+<p>A granularidade deve ser documentada porque diferentes fontes só podem ser integradas adequadamente quando seus níveis de agregação são compreendidos.</p>
+<h3 id="caracterizacao-de-qualidade-preliminar">8.6 Caracterização de qualidade preliminar</h3>
+<p>A sexta atividade consiste em avaliar, ainda de forma preliminar, possíveis problemas de qualidade da fonte, como <a class="term" href="../problemas/dados-ausentes.html">dados ausentes</a>, duplicidades, <a class="term" href="../problemas/inconsistencias.html">inconsistências</a>, atualização irregular, baixa cobertura, campos sem documentação, categorias desconhecidas ou registros aparentemente obsoletos.</p>
+<p>Essa avaliação não substitui o Módulo 5, mas fornece indícios iniciais para priorização e planejamento.</p>
+<h3 id="classificacao-de-sensibilidade-e-restricao-de-acesso">8.7 <a class="term" href="../artefatos/classificacao-de-sensibilidade.html">Classificação de sensibilidade</a> e restrição de acesso</h3>
+<p>A sétima atividade consiste em identificar se a fonte contém dados pessoais, sensíveis, sigilosos, administrativos, restritos, públicos, anonimizados ou agregados.</p>
+<p>Essa classificação orienta os módulos de governança, segurança, privacidade, minimização de dados e <a class="term" href="../conceitos/controle-de-acesso.html">controle de acesso</a>.</p>
+<h3 id="identificacao-de-relacoes-potenciais-entre-fontes">8.8 Identificação de relações potenciais entre fontes</h3>
+<p>A oitava atividade consiste em mapear possíveis conexões entre fontes. Devem ser identificadas entidades comuns, chaves de integração, atributos equivalentes, períodos compatíveis, categorias semelhantes e relações analíticas potenciais.</p>
+<p>Essa atividade prepara o Módulo 3 — Integração e Harmonização.</p>
+<h3 id="avaliacao-do-potencial-analitico">8.9 Avaliação do potencial analítico</h3>
+<p>A nona atividade consiste em avaliar para quais finalidades a fonte pode ser útil. Uma fonte pode apoiar indicadores, dashboards, modelos preditivos, análises temporais, grafos, features, avaliação de políticas, monitoramento ou agentes inteligentes.</p>
+<p>Essa avaliação contribui para priorização de fontes e planejamento do pipeline.</p>
+<h3 id="registro-no-inventario">8.10 Registro no inventário</h3>
+<p>A décima atividade consiste em consolidar todas as informações em um inventário estruturado, com campos padronizados, responsáveis, versões, status e observações.</p>
+<p>Esse inventário deve ser versionável e atualizável, pois novas fontes podem surgir e fontes existentes podem mudar ao longo do tempo.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-instrumentos-aplicaveis">9. Técnicas, métodos e instrumentos aplicáveis</h2>
+<p>O Módulo 1 pode utilizar diferentes técnicas e instrumentos para levantamento e documentação das fontes.</p>
+<p>Entre as técnicas de levantamento, destacam-se:</p>
+<ul class="list">
+<li>entrevistas com responsáveis pelos dados;</li>
+<li>questionários estruturados;</li>
+<li>análise documental;</li>
+<li>inspeção de sistemas;</li>
+<li>análise de repositórios;</li>
+<li>levantamento de dashboards existentes;</li>
+<li>análise de APIs;</li>
+<li>levantamento de bases públicas;</li>
+<li>reuniões técnicas;</li>
+<li>oficinas de mapeamento de dados;</li>
+<li>análise de fluxos institucionais.</li>
+</ul>
+<p>Entre os métodos de documentação, podem ser utilizados:</p>
+<ul class="list">
+<li>inventário de fontes;</li>
+<li>matriz de fontes por domínio;</li>
+<li>dicionário preliminar;</li>
+<li>catálogo preliminar;</li>
+<li>mapa de entidades;</li>
+<li>matriz de relacionamento entre fontes;</li>
+<li>ficha de fonte;</li>
+<li>registro de limitações;</li>
+<li>registro de sensibilidade;</li>
+<li>mapa de granularidade;</li>
+<li>mapa temporal da fonte;</li>
+<li>registro de responsáveis.</li>
+</ul>
+<p>Entre as técnicas de análise preliminar, podem ser aplicadas:</p>
+<ul class="list">
+<li><a class="term" href="../metodos/data-profiling.html">data profiling</a> inicial;</li>
+<li>contagem de registros;</li>
+<li>inspeção de schema;</li>
+<li>identificação de chaves;</li>
+<li>análise de valores ausentes;</li>
+<li>identificação de duplicidades;</li>
+<li>análise de domínios;</li>
+<li>análise de periodicidade;</li>
+<li>análise de cobertura temporal;</li>
+<li>identificação de atributos sensíveis;</li>
+<li>análise de documentação existente.</li>
+</ul>
+<p>Entre as ferramentas possíveis, podem ser consideradas:</p>
+<ul class="list">
+<li>planilhas estruturadas;</li>
+<li>formulários eletrônicos;</li>
+<li>catálogos de dados;</li>
+<li><a class="term" href="../tecnicas/datahub.html">DataHub</a>;</li>
+<li><a class="term" href="../tecnicas/openmetadata.html">OpenMetadata</a>;</li>
+<li><a class="term" href="../tecnicas/apache-atlas.html">Apache Atlas</a>;</li>
+<li>CKAN;</li>
+<li>ferramentas de data profiling;</li>
+<li>SQL;</li>
+<li>Python;</li>
+<li>pandas;</li>
+<li>notebooks;</li>
+<li>ferramentas de documentação;</li>
+<li>sistemas de gestão de metadados;</li>
+<li>repositórios Git.</li>
+</ul>
+<h2 class="section-title" id="metricas-do-modulo">10. Métricas do módulo</h2>
+<p>As métricas do Módulo 1 avaliam a cobertura, completude, qualidade, documentação, governança e utilidade do inventário de fontes.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Número de fontes identificadas</td><td>NFI</td><td>Quantidade total de fontes mapeadas.</td></tr><tr><td><a class="term" href="../metricas/taxa-de-fontes-documentadas.html">Taxa de fontes documentadas</a></td><td>TFD</td><td>Proporção de fontes com ficha descritiva completa.</td></tr><tr><td>Taxa de fontes com responsável definido</td><td>TFRD</td><td>Proporção de fontes com responsável técnico ou institucional registrado.</td></tr><tr><td>Taxa de fontes com periodicidade documentada</td><td>TFPD</td><td>Proporção de fontes com frequência de atualização registrada.</td></tr><tr><td><a class="term" href="../metricas/taxa-de-fontes-com-cobertura-temporal-documentada.html">Taxa de fontes com cobertura temporal documentada</a></td><td>TFCT</td><td>Proporção de fontes com período histórico conhecido.</td></tr><tr><td>Taxa de fontes com granularidade documentada</td><td>TFGD</td><td>Proporção de fontes com nível de detalhe identificado.</td></tr><tr><td>Taxa de fontes com schema conhecido</td><td>TFSC</td><td>Proporção de fontes com estrutura de atributos registrada.</td></tr><tr><td>Taxa de fontes com classificação de sensibilidade</td><td>TFCS</td><td>Proporção de fontes classificadas quanto à sensibilidade.</td></tr><tr><td>Taxa de fontes com restrição de acesso documentada</td><td>TFRA</td><td>Proporção de fontes com regras de acesso registradas.</td></tr><tr><td>Taxa de fontes com documentação existente</td><td>TFDE</td><td>Proporção de fontes que possuem documentação técnica ou semântica prévia.</td></tr><tr><td>Taxa de fontes com limitações documentadas</td><td>TFLD</td><td>Proporção de fontes com limitações conhecidas registradas.</td></tr><tr><td>Taxa de fontes com potencial analítico definido</td><td>TFPAD</td><td>Proporção de fontes com usos analíticos potenciais identificados.</td></tr><tr><td>Taxa de fontes temporais identificadas</td><td>TFTI</td><td>Proporção de fontes com dados históricos, temporais, eventos ou logs.</td></tr><tr><td>Taxa de fontes com atualização dinâmica</td><td>TFAD</td><td>Proporção de fontes com atualização incremental, near real-time ou streaming.</td></tr><tr><td><a class="term" href="../metricas/grau-de-completude-do-inventario.html">Grau de completude do inventário</a></td><td>GCI</td><td><a class="term" href="../metricas/grau-medio.html">Grau médio</a> de preenchimento dos campos obrigatórios do inventário.</td></tr><tr><td><a class="term" href="../metricas/indice-de-maturidade-do-inventario.html">Índice de maturidade do inventário</a></td><td>IMI</td><td>Indicador composto da qualidade e completude do inventário.</td></tr></table></div>
+<h3 id="taxa-de-fontes-documentadas-tfd">10.1 Taxa de Fontes Documentadas — TFD</h3>
+<p>A Taxa de Fontes Documentadas mede a proporção de fontes identificadas que possuem informações mínimas registradas.</p>
+<div class="formula">TFD = número de fontes documentadas / número total de fontes identificadas</div>
+<p>Essa métrica indica o grau de formalização inicial do ecossistema de dados.</p>
+<h3 id="taxa-de-fontes-com-responsavel-definido-tfrd">10.2 Taxa de Fontes com Responsável Definido — TFRD</h3>
+<p>A Taxa de Fontes com Responsável Definido mede a proporção de fontes que possuem responsável técnico, institucional ou operacional.</p>
+<div class="formula">TFRD = número de fontes com responsável definido / número total de fontes identificadas</div>
+<p>Essa métrica é relevante para governança, manutenção, validação e autorização de uso.</p>
+<h3 id="taxa-de-fontes-com-cobertura-temporal-documentada-tfct">10.3 Taxa de Fontes com Cobertura Temporal Documentada — TFCT</h3>
+<p>A Taxa de Fontes com Cobertura Temporal Documentada mede a proporção de fontes cujo período histórico ou temporal foi identificado.</p>
+<div class="formula">TFCT = número de fontes com cobertura temporal documentada / número total de fontes identificadas</div>
+<p>Essa métrica é importante para análises longitudinais, séries históricas, janelas temporais, monitoramento e grafos temporais.</p>
+<h3 id="grau-de-completude-do-inventario-gci">10.4 Grau de Completude do Inventário — GCI</h3>
+<p>O Grau de Completude do Inventário mede o preenchimento médio dos campos obrigatórios do inventário.</p>
+<div class="formula">GCI = número de campos obrigatórios preenchidos / número total de campos obrigatórios esperados</div>
+<p>Esse indicador pode ser calculado por fonte, domínio, área ou conjunto completo do inventário.</p>
+<h3 id="indice-de-maturidade-do-inventario-imi">10.5 Índice de Maturidade do Inventário — IMI</h3>
+<p>O Índice de Maturidade do Inventário sintetiza diferentes aspectos do inventário.</p>
+<p>Uma formulação possível é:</p>
+<div class="formula">IMI = w₁TFD + w₂TFRD + w₃TFPD + w₄TFCT + w₅TFGD + w₆TFSC + w₇TFCS + w₈TFPAD</div>
+<p>em que:</p>
+<ul class="list">
+<li>TFD representa a taxa de fontes documentadas;</li>
+<li>TFRD representa a taxa de fontes com responsável definido;</li>
+<li>TFPD representa a taxa de fontes com periodicidade documentada;</li>
+<li>TFCT representa a taxa de fontes com cobertura temporal documentada;</li>
+<li>TFGD representa a taxa de fontes com granularidade documentada;</li>
+<li>TFSC representa a taxa de fontes com schema conhecido;</li>
+<li>TFCS representa a taxa de fontes com classificação de sensibilidade;</li>
+<li>TFPAD representa a taxa de fontes com potencial analítico definido;</li>
+<li>wᵢ representa o peso atribuído a cada dimensão.</li>
+</ul>
+<p>Quanto maior o IMI, maior a maturidade do inventário de fontes do UnespDataLens-RM.</p>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">11. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 1 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A1.1</td><td>Inventário de Fontes</td><td>Tabela ou catálogo</td><td>TFD, GCI</td><td>Registra fontes disponíveis e suas características principais.</td></tr><tr><td>A1.2</td><td><a class="term" href="../artefatos/mapa-de-bases-e-sistemas.html">Mapa de Bases e Sistemas</a></td><td>Diagrama ou matriz</td><td>NFI</td><td>Visualiza sistemas, bases, áreas e domínios.</td></tr><tr><td>A1.3</td><td><a class="term" href="../artefatos/dicionario-preliminar-de-dados.html">Dicionário Preliminar de Dados</a></td><td>Tabela semântica</td><td>TFSC</td><td>Documenta atributos, tipos, domínios e significados iniciais.</td></tr><tr><td>A1.4</td><td>Matriz de Relacionamento entre Fontes</td><td>Matriz fonte × fonte</td><td>TFPAD</td><td>Identifica relações potenciais entre fontes.</td></tr><tr><td>A1.5</td><td><a class="term" href="../artefatos/registro-de-granularidade.html">Registro de Granularidade</a></td><td>Tabela técnica</td><td>TFGD</td><td>Documenta nível de detalhe de cada fonte.</td></tr><tr><td>A1.6</td><td>Classificação de Sensibilidade</td><td>Tabela de governança</td><td>TFCS</td><td>Classifica dados quanto à privacidade, restrição e risco.</td></tr><tr><td>A1.7</td><td><a class="term" href="../artefatos/catalogo-preliminar-de-fontes.html">Catálogo Preliminar de Fontes</a></td><td>Catálogo navegável</td><td>TFD</td><td>Organiza fontes para descoberta e consulta.</td></tr><tr><td>A1.8</td><td><a class="term" href="../artefatos/relatorio-de-riscos-e-limitacoes.html">Relatório de Riscos e Limitações</a></td><td>Relatório técnico</td><td>TFLD</td><td>Documenta limitações, lacunas, riscos e restrições.</td></tr><tr><td>A1.9</td><td><a class="term" href="../artefatos/mapa-preliminar-de-entidades.html">Mapa Preliminar de Entidades</a></td><td>Diagrama conceitual</td><td>TFPAD</td><td>Identifica entidades representadas nas fontes.</td></tr><tr><td>A1.10</td><td><a class="term" href="../artefatos/registro-de-limitacoes-conhecidas.html">Registro de Limitações Conhecidas</a></td><td>Tabela de limitações</td><td>TFLD</td><td>Consolida problemas, lacunas e incertezas das fontes.</td></tr><tr><td>A1.11</td><td><a class="term" href="../artefatos/mapa-temporal-das-fontes.html">Mapa Temporal das Fontes</a></td><td>Tabela ou linha do tempo</td><td>TFCT, TFTI</td><td>Documenta cobertura histórica, periodicidade, eventos e atualização.</td></tr><tr><td>A1.12</td><td><a class="term" href="../artefatos/registro-de-potencial-analitico.html">Registro de Potencial Analítico</a></td><td>Matriz fonte × uso</td><td>TFPAD</td><td>Indica usos potenciais em indicadores, modelos, grafos e produtos.</td></tr></table></div>
+<h2 class="section-title" id="artefato-a1-1-inventario-de-fontes">12. Artefato A1.1 — Inventário de Fontes</h2>
+<h3 id="finalidade">12.1 Finalidade</h3>
+<p>O Inventário de Fontes é o principal artefato do Módulo 1. Ele registra de forma estruturada as fontes identificadas, reunindo informações técnicas, semânticas, temporais, operacionais, institucionais, analíticas e de governança.</p>
+<h3 id="estrutura-minima">12.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>ID da fonte</td><td>Identificador único da fonte.</td></tr><tr><td>Nome da fonte</td><td>Nome institucional ou técnico.</td></tr><tr><td>Descrição</td><td>Explicação resumida da fonte.</td></tr><tr><td>Origem</td><td>Sistema, área, órgão ou repositório de origem.</td></tr><tr><td>Responsável</td><td>Pessoa, equipe ou setor responsável.</td></tr><tr><td>Domínio</td><td>Área temática da fonte.</td></tr><tr><td>Tipo de fonte</td><td>Banco, API, arquivo, planilha, log, evento etc.</td></tr><tr><td>Formato</td><td>CSV, JSON, SQL, Parquet, API, XLSX etc.</td></tr><tr><td>Localização</td><td>Caminho, sistema, URL, banco ou repositório.</td></tr><tr><td>Periodicidade</td><td>Frequência de atualização.</td></tr><tr><td>Cobertura temporal</td><td>Período histórico disponível.</td></tr><tr><td>Granularidade</td><td>Nível de detalhe dos registros.</td></tr><tr><td>Volume estimado</td><td>Quantidade aproximada de registros ou tamanho.</td></tr><tr><td>Schema conhecido</td><td>Existência de atributos e tipos documentados.</td></tr><tr><td>Entidades representadas</td><td>Estudante, curso, território, atendimento etc.</td></tr><tr><td>Sensibilidade</td><td>Pública, restrita, pessoal, sensível etc.</td></tr><tr><td>Restrição de acesso</td><td>Condições de uso e acesso.</td></tr><tr><td>Finalidade original</td><td>Motivo pelo qual a fonte foi criada.</td></tr><tr><td>Finalidade analítica potencial</td><td>Possíveis usos no UnespDataLens-RM.</td></tr><tr><td>Documentação existente</td><td>Dicionários, manuais, contratos ou glossários.</td></tr><tr><td>Limitações conhecidas</td><td>Lacunas, problemas ou incertezas.</td></tr><tr><td>Status</td><td>Ativa, inativa, em avaliação, indisponível.</td></tr></table></div>
+<h3 id="metricas-associadas">12.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de fontes documentadas;</li>
+<li>grau de completude do inventário;</li>
+<li>taxa de fontes com responsável definido;</li>
+<li>taxa de fontes com cobertura temporal documentada;</li>
+<li>taxa de fontes com classificação de sensibilidade.</li>
+</ul>
+<h3 id="criterios-de-validacao">12.4 Critérios de validação</h3>
+<p>O inventário é considerado válido quando as fontes críticas possuem identificação, origem, responsável, formato, periodicidade, cobertura temporal, granularidade, sensibilidade, restrição de acesso, limitações e potencial analítico documentados.</p>
+<h3 id="contribuicao">12.5 Contribuição</h3>
+<p>Esse artefato cria a base estruturada para todo o pipeline analítico, reduzindo invisibilidade, improvisação, silos e dependência de conhecimento tácito.</p>
+<h2 class="section-title" id="artefato-a1-2-mapa-de-bases-e-sistemas">13. Artefato A1.2 — Mapa de Bases e Sistemas</h2>
+<h3 id="finalidade-2">13.1 Finalidade</h3>
+<p>O Mapa de Bases e Sistemas representa visualmente ou matricialmente as fontes existentes, seus sistemas de origem, áreas responsáveis e domínios de dados.</p>
+<h3 id="estrutura-minima-2">13.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Sistema ou base</td><td>Nome do sistema ou base.</td></tr><tr><td>Área responsável</td><td>Unidade ou setor responsável.</td></tr><tr><td>Domínio</td><td>Tema principal da fonte.</td></tr><tr><td>Tipo de dado</td><td>Acadêmico, administrativo, territorial, social etc.</td></tr><tr><td>Integrações conhecidas</td><td>Relações já existentes com outros sistemas.</td></tr><tr><td>Formato de acesso</td><td>API, banco, arquivo, planilha etc.</td></tr><tr><td>Status</td><td>Ativo, legado, descontinuado, em avaliação.</td></tr></table></div>
+<h3 id="metricas-associadas-2">13.3 Métricas associadas</h3>
+<ul class="list">
+<li>número de fontes identificadas;</li>
+<li>taxa de sistemas mapeados;</li>
+<li>taxa de fontes por domínio;</li>
+<li>taxa de silos identificados.</li>
+</ul>
+<h3 id="criterios-de-validacao-2">13.4 Critérios de validação</h3>
+<p>O mapa é válido quando permite visualizar onde os dados estão, quem os mantém e como se organizam por domínio.</p>
+<h3 id="contribuicao-2">13.5 Contribuição</h3>
+<p>Esse artefato apoia a superação de silos e a priorização de fontes.</p>
+<h2 class="section-title" id="artefato-a1-3-dicionario-preliminar-de-dados">14. Artefato A1.3 — Dicionário Preliminar de Dados</h2>
+<h3 id="finalidade-3">14.1 Finalidade</h3>
+<p>O Dicionário Preliminar de Dados registra atributos, tipos, domínios, descrições e significados iniciais das fontes identificadas.</p>
+<h3 id="estrutura-minima-3">14.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Fonte</td><td>Fonte associada.</td></tr><tr><td>Atributo</td><td>Nome do campo.</td></tr><tr><td>Tipo de dado</td><td>Texto, número, data, categoria etc.</td></tr><tr><td>Descrição</td><td>Significado preliminar.</td></tr><tr><td>Domínio de valores</td><td>Valores possíveis ou esperados.</td></tr><tr><td>Obrigatoriedade</td><td>Campo obrigatório ou opcional.</td></tr><tr><td>Exemplo</td><td>Valor ilustrativo.</td></tr><tr><td>Sensibilidade</td><td>Indicação de dado sensível ou pessoal.</td></tr><tr><td>Observações</td><td>Ambiguidades ou limitações.</td></tr></table></div>
+<h3 id="metricas-associadas-3">14.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de fontes com schema conhecido;</li>
+<li>taxa de atributos documentados;</li>
+<li>taxa de atributos com domínio definido;</li>
+<li>taxa de atributos sensíveis identificados.</li>
+</ul>
+<h3 id="criterios-de-validacao-3">14.4 Critérios de validação</h3>
+<p>O dicionário é válido quando atributos críticos possuem tipo, descrição, domínio e sensibilidade documentados.</p>
+<h3 id="contribuicao-3">14.5 Contribuição</h3>
+<p>Esse artefato apoia integração, qualidade, semântica, governança e <a class="term" href="../conceitos/feature-engineering.html">feature engineering</a>.</p>
+<h2 class="section-title" id="artefato-a1-4-matriz-de-relacionamento-entre-fontes">15. Artefato A1.4 — Matriz de Relacionamento entre Fontes</h2>
+<h3 id="finalidade-4">15.1 Finalidade</h3>
+<p>A Matriz de Relacionamento entre Fontes identifica relações potenciais entre fontes, considerando entidades comuns, chaves, períodos, domínios, atributos equivalentes e finalidades analíticas.</p>
+<h3 id="estrutura-minima-4">15.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Fonte A</td><td>Primeira fonte.</td></tr><tr><td>Fonte B</td><td>Segunda fonte.</td></tr><tr><td>Entidade comum</td><td>Entidade compartilhada.</td></tr><tr><td>Chave potencial</td><td>Atributo ou regra de ligação.</td></tr><tr><td>Tipo de relação</td><td>Complementar, redundante, hierárquica, temporal etc.</td></tr><tr><td>Compatibilidade temporal</td><td>Períodos comparáveis ou não.</td></tr><tr><td>Compatibilidade de granularidade</td><td>Níveis compatíveis ou não.</td></tr><tr><td>Potencial de integração</td><td>Baixo, médio ou alto.</td></tr><tr><td>Riscos</td><td>Conflitos, duplicidades ou restrições.</td></tr></table></div>
+<h3 id="metricas-associadas-4">15.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de fontes com relação potencial identificada;</li>
+<li>número de relações mapeadas;</li>
+<li>taxa de fontes integráveis;</li>
+<li>taxa de conflitos potenciais.</li>
+</ul>
+<h3 id="criterios-de-validacao-4">15.4 Critérios de validação</h3>
+<p>A matriz é válida quando permite identificar quais fontes podem ser combinadas e quais cuidados são necessários.</p>
+<h3 id="contribuicao-4">15.5 Contribuição</h3>
+<p>Esse artefato prepara o Módulo 3 — Integração e Harmonização.</p>
+<h2 class="section-title" id="artefato-a1-5-registro-de-granularidade">16. Artefato A1.5 — Registro de Granularidade</h2>
+<h3 id="finalidade-5">16.1 Finalidade</h3>
+<p>O Registro de Granularidade documenta o nível de detalhe de cada fonte, atributo ou registro.</p>
+<h3 id="estrutura-minima-5">16.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Fonte</td><td>Fonte associada.</td></tr><tr><td>Unidade de registro</td><td>Entidade representada por linha ou evento.</td></tr><tr><td>Nível de agregação</td><td>Individual, turma, curso, território, período etc.</td></tr><tr><td>Periodicidade</td><td>Frequência dos registros.</td></tr><tr><td>Dimensão temporal</td><td>Data, mês, semestre, ano, timestamp etc.</td></tr><tr><td>Possibilidade de agregação</td><td>Como pode ser consolidada.</td></tr><tr><td>Possibilidade de desagregação</td><td>Se permite detalhamento maior.</td></tr><tr><td>Limitações</td><td>Restrições de interpretação.</td></tr></table></div>
+<h3 id="metricas-associadas-5">16.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de fontes com granularidade documentada;</li>
+<li>taxa de fontes com dimensão temporal definida;</li>
+<li>taxa de fontes compatíveis por granularidade.</li>
+</ul>
+<h3 id="criterios-de-validacao-5">16.4 Critérios de validação</h3>
+<p>O registro é válido quando permite compreender o nível de detalhe e o uso adequado da fonte.</p>
+<h3 id="contribuicao-5">16.5 Contribuição</h3>
+<p>Esse artefato evita integrações e análises em níveis incompatíveis.</p>
+<h2 class="section-title" id="artefato-a1-6-classificacao-de-sensibilidade">17. Artefato A1.6 — Classificação de Sensibilidade</h2>
+<h3 id="finalidade-6">17.1 Finalidade</h3>
+<p>A Classificação de Sensibilidade identifica o grau de restrição, risco, privacidade e sensibilidade das fontes e atributos.</p>
+<h3 id="estrutura-minima-6">17.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Fonte</td><td>Fonte associada.</td></tr><tr><td>Atributo ou conjunto de dados</td><td>Elemento classificado.</td></tr><tr><td>Tipo de sensibilidade</td><td>Público, restrito, pessoal, sensível etc.</td></tr><tr><td>Justificativa</td><td>Motivo da classificação.</td></tr><tr><td>Restrição de acesso</td><td>Condição de uso.</td></tr><tr><td>Finalidade permitida</td><td>Uso autorizado.</td></tr><tr><td>Necessidade de anonimização</td><td>Sim ou não.</td></tr><tr><td>Responsável pela classificação</td><td>Pessoa ou equipe.</td></tr></table></div>
+<h3 id="metricas-associadas-6">17.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de fontes com classificação de sensibilidade;</li>
+<li>taxa de atributos sensíveis identificados;</li>
+<li>taxa de fontes com restrição de acesso documentada.</li>
+</ul>
+<h3 id="criterios-de-validacao-6">17.4 Critérios de validação</h3>
+<p>A classificação é válida quando fontes e atributos críticos possuem sensibilidade e restrição de acesso documentadas.</p>
+<h3 id="contribuicao-6">17.5 Contribuição</h3>
+<p>Esse artefato sustenta governança, segurança, privacidade, <a class="term" href="../metricas/conformidade.html">conformidade</a> e minimização de dados.</p>
+<h2 class="section-title" id="artefato-a1-7-catalogo-preliminar-de-fontes">18. Artefato A1.7 — Catálogo Preliminar de Fontes</h2>
+<h3 id="finalidade-7">18.1 Finalidade</h3>
+<p>O Catálogo Preliminar de Fontes organiza as fontes identificadas em uma estrutura navegável, permitindo descoberta, consulta e priorização.</p>
+<h3 id="estrutura-minima-7">18.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Nome da fonte</td><td>Nome de exibição.</td></tr><tr><td>Descrição</td><td>Resumo compreensível.</td></tr><tr><td>Domínio</td><td>Área temática.</td></tr><tr><td>Responsável</td><td>Pessoa ou setor.</td></tr><tr><td>Status</td><td>Ativa, inativa, em avaliação.</td></tr><tr><td>Tags</td><td>Termos de busca.</td></tr><tr><td>Sensibilidade</td><td>Classificação de acesso.</td></tr><tr><td>Potencial analítico</td><td>Indicadores, modelos, grafos, dashboards etc.</td></tr><tr><td>Link para ficha</td><td>Referência ao inventário completo.</td></tr></table></div>
+<h3 id="metricas-associadas-7">18.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de fontes catalogadas;</li>
+<li>taxa de fontes pesquisáveis;</li>
+<li>taxa de fontes com tags;</li>
+<li>taxa de fontes com responsável.</li>
+</ul>
+<h3 id="criterios-de-validacao-7">18.4 Critérios de validação</h3>
+<p>O catálogo é válido quando permite localizar e compreender rapidamente as fontes disponíveis.</p>
+<h3 id="contribuicao-7">18.5 Contribuição</h3>
+<p>Esse artefato apoia <a class="term" href="../conceitos/data-discoverability.html">Data Discoverability</a> e reduz Data Overload.</p>
+<h2 class="section-title" id="artefato-a1-8-relatorio-de-riscos-e-limitacoes">19. Artefato A1.8 — Relatório de Riscos e Limitações</h2>
+<h3 id="finalidade-8">19.1 Finalidade</h3>
+<p>O Relatório de Riscos e Limitações documenta problemas conhecidos que podem afetar o uso das fontes.</p>
+<h3 id="estrutura-minima-8">19.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Fonte</td><td>Fonte avaliada.</td></tr><tr><td>Tipo de risco</td><td>Qualidade, acesso, privacidade, atualização, semântica etc.</td></tr><tr><td>Limitação</td><td>Descrição do problema.</td></tr><tr><td>Severidade</td><td>Baixa, média, alta ou crítica.</td></tr><tr><td>Impacto potencial</td><td>Módulos ou produtos afetados.</td></tr><tr><td>Ação recomendada</td><td>Mitigação ou cuidado necessário.</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe.</td></tr></table></div>
+<h3 id="metricas-associadas-8">19.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de fontes com limitações documentadas;</li>
+<li>número de riscos críticos;</li>
+<li>taxa de fontes com risco de qualidade;</li>
+<li>taxa de fontes com risco de acesso.</li>
+</ul>
+<h3 id="criterios-de-validacao-8">19.4 Critérios de validação</h3>
+<p>O relatório é válido quando explicita riscos relevantes e orienta decisões de uso.</p>
+<h3 id="contribuicao-8">19.5 Contribuição</h3>
+<p>Esse artefato apoia governança, incerteza, qualidade e priorização de fontes.</p>
+<h2 class="section-title" id="artefato-a1-9-mapa-preliminar-de-entidades">20. Artefato A1.9 — Mapa Preliminar de Entidades</h2>
+<h3 id="finalidade-9">20.1 Finalidade</h3>
+<p>O Mapa Preliminar de Entidades identifica as entidades representadas pelas fontes e suas possíveis relações.</p>
+<h3 id="estrutura-minima-9">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Entidade</td><td>Estudante, curso, atendimento, território etc.</td></tr><tr><td>Fontes associadas</td><td>Bases que registram a entidade.</td></tr><tr><td>Identificadores</td><td>Chaves ou atributos de identificação.</td></tr><tr><td>Atributos principais</td><td>Informações descritivas.</td></tr><tr><td>Relações potenciais</td><td>Relações com outras entidades.</td></tr><tr><td>Granularidade</td><td>Nível de detalhe.</td></tr><tr><td>Observações semânticas</td><td>Ambiguidades ou diferenças de significado.</td></tr></table></div>
+<h3 id="metricas-associadas-9">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>número de entidades identificadas;</li>
+<li>taxa de entidades com fonte associada;</li>
+<li>taxa de entidades com identificador conhecido;</li>
+<li>taxa de entidades com relação mapeada.</li>
+</ul>
+<h3 id="criterios-de-validacao-9">20.4 Critérios de validação</h3>
+<p>O mapa é válido quando permite compreender quais entidades existem e em quais fontes aparecem.</p>
+<h3 id="contribuicao-9">20.5 Contribuição</h3>
+<p>Esse artefato apoia integração, representação analítica e construção de grafos.</p>
+<h2 class="section-title" id="artefato-a1-10-registro-de-limitacoes-conhecidas">21. Artefato A1.10 — Registro de Limitações Conhecidas</h2>
+<h3 id="finalidade-10">21.1 Finalidade</h3>
+<p>O Registro de Limitações Conhecidas consolida restrições, lacunas, incertezas e problemas já identificados nas fontes.</p>
+<h3 id="estrutura-minima-10">21.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Fonte</td><td>Fonte associada.</td></tr><tr><td>Limitação</td><td>Descrição da restrição.</td></tr><tr><td>Tipo</td><td>Temporal, semântica, qualidade, acesso, cobertura etc.</td></tr><tr><td>Evidência</td><td>Documento, relato, métrica ou observação.</td></tr><tr><td>Impacto</td><td>Como afeta o uso analítico.</td></tr><tr><td>Recomendação</td><td>Cuidado ou ação necessária.</td></tr><tr><td>Status</td><td>Aberta, mitigada, aceita, em análise.</td></tr></table></div>
+<h3 id="metricas-associadas-10">21.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de fontes com limitações documentadas;</li>
+<li>número de limitações críticas;</li>
+<li>taxa de limitações mitigadas.</li>
+</ul>
+<h3 id="criterios-de-validacao-10">21.4 Critérios de validação</h3>
+<p>O registro é válido quando permite que limitações sejam consideradas antes do uso analítico.</p>
+<h3 id="contribuicao-10">21.5 Contribuição</h3>
+<p>Esse artefato reduz incerteza e previne interpretações inadequadas.</p>
+<h2 class="section-title" id="artefato-a1-11-mapa-temporal-das-fontes">22. Artefato A1.11 — Mapa Temporal das Fontes</h2>
+<h3 id="finalidade-11">22.1 Finalidade</h3>
+<p>O Mapa Temporal das Fontes documenta a dimensão temporal das fontes, incluindo cobertura histórica, periodicidade, atualização, latência, eventos e possibilidade de ingestão dinâmica.</p>
+<h3 id="estrutura-minima-11">22.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Fonte</td><td>Fonte avaliada.</td></tr><tr><td>Data inicial disponível</td><td>Início da cobertura histórica.</td></tr><tr><td>Data final disponível</td><td>Fim da cobertura ou atualização atual.</td></tr><tr><td>Periodicidade</td><td>Diária, semanal, mensal, semestral etc.</td></tr><tr><td>Atributo temporal principal</td><td>Campo de data ou timestamp.</td></tr><tr><td>Tipo temporal</td><td>Histórico, longitudinal, série, evento, log, streaming.</td></tr><tr><td>Latência esperada</td><td>Tempo entre geração e disponibilidade.</td></tr><tr><td>Possibilidade incremental</td><td>Sim ou não.</td></tr><tr><td>Possibilidade near real-time</td><td>Sim ou não.</td></tr><tr><td><a class="term" href="../problemas/lacunas-temporais.html">Lacunas temporais</a> conhecidas</td><td>Períodos ausentes ou incompletos.</td></tr></table></div>
+<h3 id="metricas-associadas-11">22.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de fontes com cobertura temporal documentada;</li>
+<li>taxa de fontes temporais identificadas;</li>
+<li>taxa de fontes com atualização dinâmica;</li>
+<li>taxa de fontes com lacunas temporais conhecidas.</li>
+</ul>
+<h3 id="criterios-de-validacao-11">22.4 Critérios de validação</h3>
+<p>O mapa é válido quando permite compreender se a fonte suporta análises históricas, temporais, longitudinais, eventos ou fluxos dinâmicos.</p>
+<h3 id="contribuicao-11">22.5 Contribuição</h3>
+<p>Esse artefato fortalece a capacidade do UnespDataLens-RM de tratar dados temporais, eventos, logs, séries históricas e grafos temporais.</p>
+<h2 class="section-title" id="artefato-a1-12-registro-de-potencial-analitico">23. Artefato A1.12 — Registro de Potencial Analítico</h2>
+<h3 id="finalidade-12">23.1 Finalidade</h3>
+<p>O Registro de Potencial Analítico relaciona cada fonte às possíveis finalidades analíticas que ela pode apoiar.</p>
+<h3 id="estrutura-minima-12">23.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Fonte</td><td>Fonte avaliada.</td></tr><tr><td>Indicadores possíveis</td><td>Indicadores que podem ser produzidos.</td></tr><tr><td>Dashboards possíveis</td><td>Painéis que podem ser alimentados.</td></tr><tr><td>Modelos possíveis</td><td>Modelos preditivos, classificatórios ou explicativos.</td></tr><tr><td>Features possíveis</td><td>Atributos derivados potenciais.</td></tr><tr><td>Grafos possíveis</td><td>Entidades e relações que podem ser modeladas.</td></tr><tr><td>Análises temporais</td><td>Séries, trajetórias, evolução ou eventos.</td></tr><tr><td>Agentes inteligentes</td><td>Usos em consulta, explicação ou recomendação.</td></tr><tr><td>Prioridade</td><td>Alta, média ou baixa.</td></tr><tr><td>Limitações</td><td>Restrições de uso.</td></tr></table></div>
+<h3 id="metricas-associadas-12">23.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de fontes com potencial analítico definido;</li>
+<li>número de usos analíticos por fonte;</li>
+<li>taxa de fontes prioritárias;</li>
+<li>taxa de fontes reutilizáveis.</li>
+</ul>
+<h3 id="criterios-de-validacao-12">23.4 Critérios de validação</h3>
+<p>O registro é válido quando permite priorizar fontes com base em sua utilidade para o modelo de referência.</p>
+<h3 id="contribuicao-12">23.5 Contribuição</h3>
+<p>Esse artefato conecta o inventário às finalidades analíticas do UnespDataLens-RM.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">24. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Sistemas, bases, arquivos, APIs, planilhas, logs, eventos, fluxos, bases públicas, documentação, entrevistas, dashboards existentes, responsáveis e demandas analíticas.</td></tr><tr><td>Processamento</td><td>Identificação, caracterização técnica, temporal, semântica, de granularidade, qualidade preliminar, sensibilidade, relações potenciais e potencial analítico das fontes.</td></tr><tr><td>Artefatos</td><td>Inventário de fontes, mapa de bases, dicionário preliminar, matriz de relacionamento, registro de granularidade, classificação de sensibilidade, catálogo preliminar, relatório de riscos, mapa de entidades, mapa temporal e registro de potencial analítico.</td></tr><tr><td>Métricas</td><td>NFI, TFD, TFRD, TFPD, TFCT, TFGD, TFSC, TFCS, TFRA, TFDE, TFLD, TFPAD, TFTI, TFAD, GCI e IMI.</td></tr><tr><td>Saídas</td><td>Fontes documentadas, classificadas, avaliadas e priorizadas para extração, ingestão, integração, transformação, qualidade, governança, lineage, representação e consumo analítico.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">25. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 1 pode ser considerado adequadamente implementado quando:</p>
+<ol class="steps">
+<li>as fontes relevantes foram identificadas;</li>
+<li>fontes críticas possuem responsáveis definidos;</li>
+<li>cada fonte possui descrição, origem, domínio e tipo documentados;</li>
+<li>formatos, localização e mecanismos de acesso estão registrados;</li>
+<li>periodicidade e cobertura temporal estão documentadas;</li>
+<li>granularidade e unidade de registro foram identificadas;</li>
+<li>schemas ou atributos principais foram mapeados;</li>
+<li>entidades representadas foram documentadas;</li>
+<li>restrições de acesso e sensibilidade foram classificadas;</li>
+<li>limitações conhecidas foram registradas;</li>
+<li>documentação existente foi associada à fonte;</li>
+<li>relações potenciais entre fontes foram mapeadas;</li>
+<li>fontes com dados temporais, eventos, logs ou fluxos dinâmicos foram identificadas;</li>
+<li>potencial analítico das fontes foi avaliado;</li>
+<li>o inventário está estruturado, versionado e disponível para os módulos posteriores.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-do-modelo-de-referencia">26. Relação com os demais módulos do modelo de referência</h2>
+<p>O Módulo 1 fornece a base para todos os módulos posteriores do UnespDataLens-RM.</p>
+<p>Com o Módulo 2 — Extração, Ingestão e Armazenamento Bruto, fornece informações sobre formato, localização, periodicidade, cobertura temporal, restrição de acesso, tipo de fonte, possibilidade de ingestão incremental e mecanismos de extração.</p>
+<p>Com o Módulo 3 — Integração e Harmonização, fornece entidades, chaves, atributos equivalentes, granularidade e relações potenciais entre fontes.</p>
+<p>Com o Módulo 4 — Transformação, Limpeza e Enriquecimento, fornece informações preliminares sobre atributos, domínios, formatos e limitações.</p>
+<p>Com o Módulo 5 — Qualidade e Validação de Dados, fornece indícios iniciais de problemas de qualidade, documentação de limitações e características esperadas das fontes.</p>
+<p>Com o Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, identifica fontes com atributos sensíveis, grupos relevantes e riscos de representatividade.</p>
+<p>Com o Módulo 7 — Armazenamento Analítico, orienta organização por domínio, fonte, granularidade e periodicidade.</p>
+<p>Com o Módulo 8 — Disponibilização e Consumo Analítico, indica quais fontes podem originar produtos de dados, dashboards, APIs e relatórios.</p>
+<p>Com o Módulo 9 — Metadados, Catálogo e Semântica dos Dados, fornece os metadados iniciais para catálogo, dicionário, glossário e <a class="term" href="../artefatos/modelo-semantico.html">modelo semântico</a>.</p>
+<p>Com o Módulo 10 — Governança, Segurança, Privacidade e Conformidade, fornece classificação de sensibilidade, restrições de acesso, finalidade e responsáveis.</p>
+<p>Com o Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e Rastreabilidade, fornece o ponto inicial da linhagem dos dados.</p>
+<p>Com o Módulo 12 — Versionamento e <a class="term" href="../conceitos/reprodutibilidade.html">Reprodutibilidade</a>, orienta versionamento de fontes, schemas, snapshots e documentação.</p>
+<p>Com o Módulo 13 — Representações Analíticas, fornece informações sobre entidades, atributos, temporalidade e relações que podem ser transformadas em tabelas, séries, eventos, grafos e grafos temporais.</p>
+<p>Com o Módulo 14 — Feature Engineering e <a class="term" href="../conceitos/feature-store.html">Feature Store</a>, indica fontes e atributos com potencial para criação de features.</p>
+<p>Com o Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, fornece periodicidade, baselines iniciais, cobertura temporal, schemas esperados e responsáveis.</p>
+<p>Com o Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline, fornece metadados, descrições e relações que podem ser consultadas por agentes para busca, explicação e recomendação.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">27. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, o Módulo 1 pode identificar fontes como sistema acadêmico, base de matrícula, histórico escolar, ambiente virtual de aprendizagem, registros de frequência, notas, questionários socioeconômicos, dados de bolsas, registros de evasão, relatórios institucionais e dashboards existentes.</p>
+<p>Cada fonte deve ser documentada quanto à origem, responsável, período disponível, periodicidade, granularidade, atributos, entidades, sensibilidade e potencial analítico.</p>
+<p>Por exemplo, a base de matrícula pode possuir granularidade por estudante e período letivo, atualização semestral, cobertura histórica de vários anos e atributos como curso, forma de ingresso, situação acadêmica e período. Já o ambiente virtual pode conter logs de eventos com timestamp, permitindo análises de engajamento, trajetórias e grafos temporais de interação.</p>
+<p>Com esse inventário, o UnespDataLens-RM pode selecionar fontes adequadas para diferentes análises institucionais, científicas e organizacionais, evitando o uso de dados sem documentação ou fora de contexto.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">28. Exemplo de aplicação em políticas públicas</h2>
+<p>Em políticas públicas, o Módulo 1 pode identificar fontes de diferentes secretarias e órgãos, como saúde, educação, assistência social, habitação, trabalho, orçamento, território, atendimento, infraestrutura e indicadores socioeconômicos.</p>
+<p>Cada fonte pode possuir formatos, periodicidades e granularidades distintas. Uma base de atendimento pode estar no nível de cidadão ou família; uma base territorial pode estar agregada por bairro; uma base de saúde pode ter registros mensais; uma base de educação pode estar organizada por escola ou estudante.</p>
+<p>O inventário permite compreender quais fontes podem ser integradas, quais exigem harmonização semântica, quais possuem restrições de acesso, quais têm cobertura temporal suficiente e quais podem apoiar indicadores, dashboards, modelos ou análises intersetoriais.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">29. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição técnico-científica do Módulo 1 está em formalizar o conhecimento inicial sobre as fontes de dados como uma etapa explícita, mensurável, documentada e avaliável da Engenharia Analítica de Dados.</p>
+<p>Em vez de iniciar o pipeline diretamente pela extração, o UnespDataLens-RM propõe que as fontes sejam previamente identificadas, caracterizadas, classificadas, avaliadas e documentadas. Essa decisão metodológica reduz improvisação, aumenta governança, melhora rastreabilidade e permite maior qualidade nos módulos posteriores.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>reduzir invisibilidade das fontes;</li>
+<li>mapear silos de dados;</li>
+<li>documentar responsáveis;</li>
+<li>identificar fontes temporais, históricas, eventuais e dinâmicas;</li>
+<li>registrar granularidade e cobertura temporal;</li>
+<li>apoiar integração e interoperabilidade semântica;</li>
+<li>orientar extração e ingestão;</li>
+<li>reduzir riscos de privacidade e uso indevido;</li>
+<li>apoiar governança e conformidade;</li>
+<li>melhorar qualidade dos metadados;</li>
+<li>reduzir data debt;</li>
+<li>ampliar data discoverability;</li>
+<li>orientar representações analíticas, grafos e features;</li>
+<li>fortalecer a base metodológica do modelo de referência.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">30. Síntese do módulo</h2>
+<p>O Módulo 1 — Fontes e Inventário de Dados constitui a etapa inicial do UnespDataLens-RM e tem como função transformar fontes dispersas, heterogêneas e pouco documentadas em um inventário estruturado, governável, rastreável e analiticamente útil.</p>
+<p>Sua importância está em reconhecer que a qualidade do pipeline analítico começa antes da extração dos dados. É necessário compreender quais fontes existem, quem as mantém, o que representam, como são atualizadas, qual sua cobertura temporal, qual sua granularidade, quais restrições possuem, quais limitações apresentam e qual potencial analítico oferecem.</p>
+<p>Ao produzir artefatos como inventário de fontes, mapa de bases, dicionário preliminar, matriz de relacionamento, registro de granularidade, classificação de sensibilidade, catálogo preliminar, relatório de riscos, mapa de entidades, mapa temporal e registro de potencial analítico, o Módulo 1 estabelece as condições necessárias para que os demais módulos do UnespDataLens-RM operem com maior rigor, rastreabilidade, governança e confiabilidade.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A dimensão Label Quality, ou qualidade dos rótulos, refere-se ao grau em que as variáveis-alvo, classes, categorias, desfechos, eventos ou indicadores utilizados em análises computacionais, modelos preditivos, classificações, agrupamentos supervisionados, painéis e processos decisórios representam corretamente o fenômeno que se pretende analisar.">
+  <title>Label Quality · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a href="../modulos/index.html">Módulos</a><a class="active" href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="dimensao-complementar-label-quality"></span><section class="hero">
+<span class="badge">Dimensão complementar</span>
+<h1>Label Quality</h1>
+<p>A dimensão Label Quality, ou qualidade dos rótulos, refere-se ao grau em que as variáveis-alvo, classes, categorias, desfechos, eventos ou indicadores utilizados em análises computacionais, modelos preditivos, classificações, agrupamentos supervisionados, painéis e processos decisórios representam corretamente o fenômeno que se pretende analisar.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 13 seções</summary><a href="#definicao-da-dimensao">Definição da dimensão</a><a href="#problema-tratado">Problema tratado</a><a href="#objetivo-da-dimensao">Objetivo da dimensão</a><a href="#relacao-com-o-unespdatalens-rm">Relação com o UnespDataLens-RM</a><a href="#dimensoes-da-qualidade-dos-rotulos">Dimensões da qualidade dos rótulos</a><a href="#estrategias-de-melhoria-da-qualidade-dos-rotulos">Estratégias de melhoria da qualidade dos rótulos</a><a href="#metricas-associadas">Métricas associadas</a><a href="#artefatos-relacionados">Artefatos relacionados</a><a href="#criterios-de-validacao">Critérios de validação</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-para-o-modelo-de-referencia">Contribuição para o modelo de referência</a><a href="#sintese-da-dimensao">Síntese da dimensão</a></details><div class="prose module-full"><h2 class="section-title" id="definicao-da-dimensao">1. Definição da dimensão</h2>
+<p>A dimensão <a class="term" href="../conceitos/label.html">Label</a> Quality, ou qualidade dos rótulos, refere-se ao grau em que as variáveis-alvo, classes, categorias, desfechos, <a class="term" href="../conceitos/eventos.html">eventos</a> ou indicadores utilizados em análises computacionais, modelos preditivos, classificações, agrupamentos supervisionados, painéis e processos decisórios representam corretamente o fenômeno que se pretende analisar.</p>
+<p>No contexto do UnespDataLens-RM, o termo “rótulo” não se limita a classes formais de modelos de aprendizagem de máquina. Ele pode representar qualquer variável que assuma papel de referência analítica, como evasão, permanência, aprovação, reprovação, risco, vulnerabilidade, desempenho, abandono, inadimplência, ocorrência, atendimento, prioridade, sucesso, falha, categoria de evento ou situação institucional.</p>
+<p>A qualidade dos rótulos é uma dimensão crítica porque modelos, indicadores e decisões dependem diretamente da forma como esses rótulos são definidos, construídos, registrados, validados e interpretados. Um modelo preditivo pode apresentar boa métrica estatística, mas produzir resultados pouco confiáveis se a <a class="term" href="../conceitos/variavel-alvo.html">variável-alvo</a> estiver mal definida, desatualizada, inconsistente, enviesada, ruidosa ou construída com regras frágeis.</p>
+<p>No UnespDataLens-RM, essa dimensão é complementar e transversal porque a qualidade dos rótulos depende de múltiplos módulos do modelo de referência: <a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a>, integração, transformação, qualidade dos dados, <a class="term" href="../conceitos/equidade.html">equidade</a>, <a class="term" href="../conceitos/metadados.html">metadados</a>, governança, linhagem, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, <a class="term" href="../conceitos/feature-engineering.html">feature engineering</a>, monitoramento e agentes inteligentes. A Label Quality garante que os desfechos analisados sejam semanticamente claros, tecnicamente consistentes, metodologicamente defensáveis e adequados ao uso.</p>
+<h2 class="section-title" id="problema-tratado">2. Problema tratado</h2>
+<p>Em muitos projetos analíticos, grande parte da atenção é dedicada aos atributos preditores, às features, aos modelos e às métricas de desempenho. Entretanto, a variável-alvo ou o rótulo utilizado para treinar, avaliar ou interpretar modelos pode conter problemas relevantes.</p>
+<p>Esses problemas podem ocorrer quando a definição do rótulo é ambígua, quando diferentes bases utilizam categorias distintas, quando eventos são registrados tardiamente, quando há erro de classificação, quando regras de negócio mudam ao longo do tempo, quando há inconsistência entre sistemas, quando os rótulos são derivados de registros administrativos incompletos ou quando o desfecho observado não representa adequadamente o fenômeno real.</p>
+<p>A baixa qualidade dos rótulos pode gerar problemas como:</p>
+<ul class="list">
+<li>definição ambígua da variável-alvo;</li>
+<li>inconsistência entre categorias ou classes;</li>
+<li>rótulos ausentes, incorretos ou desatualizados;</li>
+<li>rótulos construídos por regras não documentadas;</li>
+<li>divergência entre diferentes fontes sobre o mesmo desfecho;</li>
+<li>mudanças históricas na regra de classificação;</li>
+<li>atraso entre ocorrência do evento e registro no sistema;</li>
+<li>ruído na classe utilizada para treinamento de modelos;</li>
+<li><a class="term" href="../conceitos/vies.html">viés</a> nos rótulos devido a processos institucionais desiguais;</li>
+<li>baixa comparabilidade entre períodos;</li>
+<li>dificuldade de reproduzir resultados;</li>
+<li>modelos preditivos treinados sobre desfechos mal definidos;</li>
+<li>indicadores baseados em categorias inconsistentes;</li>
+<li>decisões apoiadas em classificações pouco confiáveis.</li>
+</ul>
+<p>No UnespDataLens-RM, a dimensão Label Quality busca tornar explícito que a qualidade do rótulo é tão importante quanto a qualidade dos atributos explicativos. Se o rótulo estiver incorreto ou mal especificado, todo o processo analítico subsequente pode ser comprometido.</p>
+<h2 class="section-title" id="objetivo-da-dimensao">3. Objetivo da dimensão</h2>
+<p>O objetivo da dimensão Label Quality é avaliar, documentar, validar, monitorar e aprimorar a qualidade dos rótulos, variáveis-alvo, classes, categorias e desfechos utilizados em análises, modelos, indicadores e produtos analíticos.</p>
+<p>Essa dimensão busca garantir que os rótulos sejam semanticamente bem definidos, metodologicamente justificados, tecnicamente consistentes, temporalmente válidos, rastreáveis, versionados e adequados à finalidade analítica.</p>
+<h2 class="section-title" id="relacao-com-o-unespdatalens-rm">4. Relação com o UnespDataLens-RM</h2>
+<p>A dimensão Label Quality se articula com diversos módulos do UnespDataLens-RM.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, contribui para identificar quais fontes registram ou permitem derivar rótulos, quais categorias são usadas, quais responsáveis mantêm esses registros e quais limitações existem.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, permite preservar o estado original dos rótulos, suas categorias, códigos, datas de registro e possíveis <a class="term" href="../problemas/inconsistencias.html">inconsistências</a>.</p>
+<p>No Módulo 3 — Integração e Harmonização, é essencial para resolver divergências entre fontes que classificam o mesmo fenômeno de formas distintas.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, orienta a construção de rótulos derivados, recodificação de categorias, tratamento de classes ausentes e padronização de desfechos.</p>
+<p>No Módulo 5 — Qualidade e Validação de Dados, estabelece regras específicas para avaliar <a class="term" href="../metricas/completude.html">completude</a>, <a class="term" href="../metricas/validade.html">validade</a>, <a class="term" href="../metricas/consistencia.html">consistência</a>, <a class="term" href="../metricas/atualidade.html">atualidade</a> e <a class="term" href="../metricas/unicidade.html">unicidade</a> dos rótulos.</p>
+<p>No Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e Equidade, permite avaliar se os rótulos possuem distribuição desigual, ruído diferencial entre grupos ou viés institucional.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, garante que indicadores, dashboards e produtos que utilizam rótulos explicitem definição, regra de cálculo, período de referência e limitações.</p>
+<p>No Módulo 9 — Metadados, Catálogo e Semântica dos Dados, documenta o significado dos rótulos, suas categorias, regras de derivação, termos equivalentes, mudanças históricas e relação com conceitos do domínio.</p>
+<p>No Módulo 10 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, avalia implicações éticas, institucionais e de sensibilidade no uso de rótulos que classificam indivíduos, grupos ou territórios.</p>
+<p>No Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e <a class="term" href="../conceitos/rastreabilidade.html">Rastreabilidade</a>, registra como o rótulo foi construído, quais fontes foram usadas, quais transformações foram aplicadas e quais produtos dependem dele.</p>
+<p>No Módulo 12 — Versionamento e <a class="term" href="../conceitos/reprodutibilidade.html">Reprodutibilidade</a>, preserva versões de regras de rotulagem, categorias, janelas temporais e critérios de classificação.</p>
+<p>No Módulo 14 — Feature Engineering e <a class="term" href="../conceitos/feature-store.html">Feature Store</a>, evita vazamento de informação entre features e rótulos, além de documentar a relação entre atributos preditores e variável-alvo.</p>
+<p>No Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, acompanha mudanças na distribuição dos rótulos, surgimento de novas categorias, alterações de regras e degradação da estabilidade temporal.</p>
+<p>No Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline, agentes podem explicar definições de rótulos, identificar inconsistências, alertar sobre mudanças e apoiar documentação das variáveis-alvo.</p>
+<h2 class="section-title" id="dimensoes-da-qualidade-dos-rotulos">5. Dimensões da qualidade dos rótulos</h2>
+<p>A qualidade dos rótulos pode ser avaliada por diferentes dimensões complementares.</p>
+<div class="table-wrap"><table class="table"><tr><th>Dimensão</th><th>Descrição</th><th>Exemplo</th></tr><tr><td>Definição semântica</td><td>Clareza conceitual sobre o que o rótulo representa.</td><td>Definir formalmente o que é evasão.</td></tr><tr><td>Completude</td><td>Grau em que os registros possuem rótulo preenchido.</td><td>Todos os estudantes possuem situação final registrada.</td></tr><tr><td>Correção</td><td>Grau em que o rótulo corresponde ao estado real do fenômeno.</td><td>Estudante marcado como evadido de fato não realizou rematrícula.</td></tr><tr><td>Consistência</td><td>Ausência de contradições entre fontes ou registros.</td><td>A mesma matrícula não aparece como ativa e cancelada no mesmo período.</td></tr><tr><td>Atualidade</td><td>Grau em que o rótulo reflete a situação mais recente ou o período correto.</td><td>Situação acadêmica atualizada após encerramento do semestre.</td></tr><tr><td>Estabilidade temporal</td><td>Capacidade de manter significado comparável ao longo do tempo.</td><td>Regra de evasão preservada entre anos ou versionada.</td></tr><tr><td><a class="term" href="../conceitos/granularidade.html">Granularidade</a> adequada</td><td>Nível de detalhe compatível com a análise.</td><td>Diferenciar abandono, cancelamento e trancamento quando necessário.</td></tr><tr><td>Rastreabilidade</td><td>Capacidade de reconstruir como o rótulo foi definido ou derivado.</td><td>Rótulo calculado a partir de matrícula, rematrícula e status final.</td></tr><tr><td>Balanceamento</td><td>Distribuição adequada entre classes ou categorias.</td><td>Classes evadido e não evadido avaliadas quanto à proporção.</td></tr><tr><td>Equidade</td><td>Ausência de ruído ou erro sistemático em grupos específicos.</td><td>Rótulo de risco não super-representa determinado grupo por falha de registro.</td></tr><tr><td>Reprodutibilidade</td><td>Capacidade de reconstruir o rótulo usando as mesmas regras e versões.</td><td>Rótulo de evasão reproduzido a partir do <a class="term" href="../conceitos/manifesto-de-execucao.html">manifesto de execução</a>.</td></tr></table></div>
+<p>Essas dimensões permitem avaliar se um rótulo é adequado para sustentar análises, indicadores, modelos ou decisões.</p>
+<h2 class="section-title" id="estrategias-de-melhoria-da-qualidade-dos-rotulos">6. Estratégias de melhoria da qualidade dos rótulos</h2>
+<p>A melhoria da Label Quality no UnespDataLens-RM pode envolver estratégias técnicas, metodológicas, semânticas e de governança.</p>
+<div class="table-wrap"><table class="table"><tr><th>Estratégia</th><th>Descrição</th></tr><tr><td>Definição formal do rótulo</td><td>Documentar o conceito, escopo, regra e finalidade da variável-alvo.</td></tr><tr><td>Dicionário de categorias</td><td>Registrar classes, códigos, significados, equivalências e limitações.</td></tr><tr><td>Validação cruzada entre fontes</td><td>Comparar rótulos registrados em diferentes bases ou sistemas.</td></tr><tr><td>Regras de derivação documentadas</td><td>Explicitar como rótulos são calculados a partir de outros atributos.</td></tr><tr><td>Versionamento das regras de rotulagem</td><td>Registrar mudanças em critérios, categorias e janelas temporais.</td></tr><tr><td>Análise de ruído de rótulo</td><td>Identificar inconsistências, classes improváveis ou registros suspeitos.</td></tr><tr><td>Validação temporal</td><td>Verificar se o rótulo respeita o período de observação e evita uso de informação futura.</td></tr><tr><td>Avaliação de balanceamento</td><td>Medir proporção entre classes e identificar classes raras ou sub-representadas.</td></tr><tr><td>Avaliação de equidade dos rótulos</td><td>Verificar se erros ou ausências de rótulos afetam grupos de forma desigual.</td></tr><tr><td>Separação entre rótulo e features</td><td>Evitar vazamento de informação entre variável-alvo e atributos preditores.</td></tr><tr><td>Curadoria humana</td><td>Revisar rótulos críticos ou ambíguos com apoio de especialistas do domínio.</td></tr><tr><td>Monitoramento de <a class="term" href="../conceitos/label-drift.html">label drift</a></td><td>Acompanhar mudanças na distribuição dos rótulos ao longo do tempo.</td></tr><tr><td>Documentação de limitações</td><td>Explicitar incertezas, atrasos, classes agregadas e restrições de interpretação.</td></tr><tr><td>Auditoria de rótulos críticos</td><td>Avaliar rótulos utilizados em modelos ou decisões de alto impacto.</td></tr></table></div>
+<h2 class="section-title" id="metricas-associadas">7. Métricas associadas</h2>
+<p>A dimensão Label Quality pode ser avaliada por métricas relacionadas à completude, consistência, ruído, estabilidade, balanceamento, rastreabilidade e equidade dos rótulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de rótulos documentados</td><td>TRD</td><td>Proporção de rótulos com definição, categorias e regra de construção documentadas.</td></tr><tr><td>Taxa de completude de rótulos</td><td>TCR</td><td>Proporção de registros com rótulo preenchido.</td></tr><tr><td>Taxa de rótulos inconsistentes</td><td>TRI</td><td>Proporção de registros com rótulos contraditórios ou incompatíveis.</td></tr><tr><td>Taxa de rótulos ausentes</td><td>TRA</td><td>Proporção de registros sem rótulo quando ele deveria existir.</td></tr><tr><td>Taxa de rótulos corrigidos</td><td>TRC</td><td>Proporção de rótulos revisados ou corrigidos após validação.</td></tr><tr><td>Taxa de regras de rotulagem versionadas</td><td>TRRV</td><td>Proporção de regras de construção de rótulos com controle de versão.</td></tr><tr><td>Taxa de rótulos rastreáveis</td><td>TRR</td><td>Proporção de rótulos cuja origem e regra de derivação podem ser reconstruídas.</td></tr><tr><td>Índice de ruído de rótulos</td><td>IRR</td><td>Estimativa de registros com rótulo potencialmente incorreto.</td></tr><tr><td>Índice de balanceamento de classes</td><td>IBC</td><td>Grau de equilíbrio entre categorias do rótulo.</td></tr><tr><td><a class="term" href="../metricas/taxa-de-label-drift.html">Taxa de label drift</a></td><td>TLD</td><td>Proporção de variação relevante na distribuição dos rótulos ao longo do tempo.</td></tr><tr><td>Taxa de rótulos com avaliação de equidade</td><td>TRAE</td><td>Proporção de rótulos avaliados quanto a efeitos diferenciais entre grupos.</td></tr><tr><td>Índice de qualidade de rótulos</td><td>IQR</td><td>Indicador composto da qualidade global dos rótulos.</td></tr></table></div>
+<p>Uma formulação possível para o Índice de Qualidade de Rótulos é:</p>
+<div class="formula">IQR = w₁TRD + w₂TCR + w₃TRRV + w₄TRR + w₅IBС + w₆TRAE − w₇TRI − w₈TRA − w₉IRR − w₁₀TLD</div>
+<p>em que:</p>
+<ul class="list">
+<li>TRD representa a taxa de rótulos documentados;</li>
+<li>TCR representa a taxa de completude de rótulos;</li>
+<li>TRRV representa a taxa de regras de rotulagem versionadas;</li>
+<li>TRR representa a taxa de rótulos rastreáveis;</li>
+<li>IBC representa o índice de balanceamento de classes;</li>
+<li>TRAE representa a taxa de rótulos com avaliação de equidade;</li>
+<li>TRI representa a taxa de rótulos inconsistentes;</li>
+<li>TRA representa a taxa de rótulos ausentes;</li>
+<li>IRR representa o índice de ruído de rótulos;</li>
+<li>TLD representa a taxa de label drift;</li>
+<li>wᵢ representa o peso atribuído a cada dimensão.</li>
+</ul>
+<p>Quanto maior o IQR, maior a qualidade dos rótulos utilizados no ecossistema analítico.</p>
+<h2 class="section-title" id="artefatos-relacionados">8. Artefatos relacionados</h2>
+<p>A dimensão Label Quality pode ser operacionalizada por meio de artefatos complementares, integrados aos módulos de qualidade, metadados, governança, lineage, versionamento, feature engineering, monitoramento e agentes inteligentes.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Finalidade</th></tr><tr><td>LQ1</td><td>Catálogo de Rótulos</td><td>Catálogo ou tabela de variáveis-alvo</td><td>Registrar rótulos, desfechos, classes, categorias, responsáveis e finalidades.</td></tr><tr><td>LQ2</td><td>Dicionário de Categorias do Rótulo</td><td>Tabela semântica</td><td>Definir categorias, códigos, significados, equivalências e limitações.</td></tr><tr><td>LQ3</td><td>Especificação da Regra de Rotulagem</td><td>Documento técnico ou regra computacional</td><td>Formalizar como o rótulo é atribuído, calculado ou derivado.</td></tr><tr><td>LQ4</td><td>Registro de Versionamento de Rótulos</td><td>Changelog ou tabela versionada</td><td>Registrar mudanças em regras, categorias, janelas temporais e critérios de classificação.</td></tr><tr><td>LQ5</td><td>Relatório de Completude de Rótulos</td><td>Relatório técnico</td><td>Avaliar registros com rótulos preenchidos, ausentes ou indefinidos.</td></tr><tr><td>LQ6</td><td>Relatório de Consistência de Rótulos</td><td>Relatório técnico</td><td>Identificar contradições entre fontes, períodos, categorias ou regras.</td></tr><tr><td>LQ7</td><td>Relatório de Ruído de Rótulos</td><td><a class="term" href="../artefatos/relatorio-analitico.html">Relatório analítico</a></td><td>Identificar registros potencialmente mal rotulados, ambíguos ou suspeitos.</td></tr><tr><td>LQ8</td><td>Relatório de Balanceamento de Classes</td><td>Relatório estatístico</td><td>Avaliar distribuição das categorias do rótulo e classes raras.</td></tr><tr><td>LQ9</td><td>Registro de Label Drift</td><td>Série temporal ou relatório</td><td>Monitorar mudanças na distribuição dos rótulos ao longo do tempo.</td></tr><tr><td>LQ10</td><td>Relatório de Equidade dos Rótulos</td><td>Relatório técnico</td><td>Avaliar se ausências, erros ou distribuições de rótulos afetam grupos de forma desigual.</td></tr><tr><td>LQ11</td><td>Manifesto de Construção do Rótulo</td><td>Documento reprodutível</td><td>Registrar fontes, regras, versões, parâmetros e evidências usados na construção do rótulo.</td></tr><tr><td>LQ12</td><td>Plano de Curadoria de Rótulos</td><td>Documento operacional</td><td>Definir ações de revisão, correção, validação e manutenção dos rótulos.</td></tr></table></div>
+<h2 class="section-title" id="criterios-de-validacao">9. Critérios de validação</h2>
+<p>A dimensão Label Quality pode ser considerada adequadamente tratada quando:</p>
+<ol class="steps">
+<li>os rótulos críticos possuem definição formal;</li>
+<li>categorias e códigos dos rótulos estão documentados;</li>
+<li>regras de construção, derivação ou classificação são explícitas;</li>
+<li>rótulos possuem responsável técnico ou institucional;</li>
+<li>rótulos possuem completude mínima aceitável;</li>
+<li>inconsistências entre fontes ou períodos são identificadas;</li>
+<li>regras de rotulagem são versionadas;</li>
+<li>a origem dos rótulos pode ser rastreada;</li>
+<li>mudanças na definição dos rótulos são registradas e comunicadas;</li>
+<li>rótulos utilizados em modelos são avaliados quanto a ruído, balanceamento e estabilidade;</li>
+<li>rótulos sensíveis ou de alto impacto passam por avaliação de equidade;</li>
+<li>janelas temporais de observação e predição são documentadas;</li>
+<li>riscos de vazamento de informação entre rótulo e features são avaliados;</li>
+<li>agentes ou rotinas de monitoramento conseguem identificar label drift ou inconsistências.</li>
+</ol>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">10. Exemplo de aplicação no domínio educacional</h2>
+<p>Em um projeto educacional, um rótulo frequentemente utilizado é “evasão”. Entretanto, evasão pode ser definida de diferentes formas: cancelamento formal, ausência de rematrícula, abandono, trancamento prolongado, desligamento, transferência ou não conclusão em determinado prazo.</p>
+<p>Se a definição de evasão não for formalizada, dois dashboards ou modelos podem apresentar resultados diferentes mesmo utilizando bases semelhantes. Além disso, mudanças administrativas na classificação da situação acadêmica podem alterar o significado do rótulo ao longo do tempo.</p>
+<p>A dimensão Label Quality permite documentar a definição adotada, registrar categorias incluídas ou excluídas, definir a janela temporal de observação, versionar a regra de rotulagem, avaliar completude e consistência, monitorar mudanças na distribuição do rótulo e indicar limitações interpretativas.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">11. Exemplo de aplicação em políticas públicas</h2>
+<p>Em políticas públicas, um rótulo pode representar vulnerabilidade, risco social, atendimento concluído, reincidência, prioridade, situação de família, ocorrência, adesão a programa ou sucesso de uma intervenção.</p>
+<p>Por exemplo, uma classificação de “família em situação de vulnerabilidade” pode ser construída a partir de critérios socioeconômicos, territoriais, composição familiar, acesso a serviços e registros administrativos. Se esses critérios não forem claros ou se variarem entre secretarias, o rótulo pode apresentar inconsistência e produzir decisões injustas ou pouco confiáveis.</p>
+<p>A dimensão Label Quality permite formalizar a regra de classificação, documentar fontes, avaliar completude dos registros, verificar estabilidade temporal, analisar possíveis vieses e garantir que a classificação seja interpretada corretamente nos produtos analíticos.</p>
+<h2 class="section-title" id="contribuicao-para-o-modelo-de-referencia">12. Contribuição para o modelo de referência</h2>
+<p>A dimensão Label Quality contribui para o UnespDataLens-RM ao reconhecer que a qualidade de análises, modelos e decisões depende diretamente da qualidade dos rótulos utilizados como referência.</p>
+<p>Essa dimensão fortalece o modelo de referência ao:</p>
+<ul class="list">
+<li>melhorar definição e documentação de variáveis-alvo;</li>
+<li>reduzir inconsistências entre fontes e produtos;</li>
+<li>apoiar construção confiável de modelos preditivos;</li>
+<li>reduzir ruído e ambiguidade nos desfechos;</li>
+<li>evitar vazamento de informação entre features e rótulos;</li>
+<li>permitir avaliação de balanceamento e label drift;</li>
+<li>fortalecer reprodutibilidade de indicadores e modelos;</li>
+<li>apoiar análise de equidade e justiça algorítmica;</li>
+<li>reduzir dependência de regras tácitas;</li>
+<li>melhorar interpretação de dashboards e produtos analíticos;</li>
+<li>aumentar confiança na tomada de decisão baseada em evidências.</li>
+</ul>
+<h2 class="section-title" id="sintese-da-dimensao">13. Síntese da dimensão</h2>
+<p>A dimensão Label Quality trata da qualidade dos rótulos, variáveis-alvo, classes, categorias e desfechos utilizados em análises, modelos, indicadores e produtos analíticos. No UnespDataLens-RM, essa dimensão atua como capacidade complementar para garantir que os rótulos sejam semanticamente definidos, tecnicamente consistentes, metodologicamente justificados, rastreáveis, versionados, monitoráveis e adequados ao uso.</p>
+<p>Ao incorporar catálogos de rótulos, dicionários de categorias, regras de rotulagem, versionamento, análise de completude, consistência, ruído, balanceamento, label drift e equidade, o modelo de referência fortalece a confiabilidade dos processos analíticos e reduz o risco de decisões baseadas em desfechos mal definidos ou inconsistentes.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

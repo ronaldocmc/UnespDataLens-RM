@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A dimensão Data Uncertainty, ou incerteza nos dados, refere-se ao grau de dúvida, imprecisão, incompletude, ambiguidade, variabilidade, instabilidade ou limitação associado aos dados, atributos, rótulos, indicadores, features, modelos, representações e produtos analíticos.">
+  <title>Data Uncertainty · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a href="../modulos/index.html">Módulos</a><a class="active" href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="dimensao-complementar-data-uncertainty"></span><section class="hero">
+<span class="badge">Dimensão complementar</span>
+<h1>Data Uncertainty</h1>
+<p>A dimensão Data Uncertainty, ou incerteza nos dados, refere-se ao grau de dúvida, imprecisão, incompletude, ambiguidade, variabilidade, instabilidade ou limitação associado aos dados, atributos, rótulos, indicadores, features, modelos, representações e produtos analíticos.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 13 seções</summary><a href="#definicao-da-dimensao">Definição da dimensão</a><a href="#problema-tratado">Problema tratado</a><a href="#objetivo-da-dimensao">Objetivo da dimensão</a><a href="#relacao-com-o-unespdatalens-rm">Relação com o UnespDataLens-RM</a><a href="#tipos-de-incerteza-nos-dados">Tipos de incerteza nos dados</a><a href="#estrategias-de-tratamento-da-incerteza">Estratégias de tratamento da incerteza</a><a href="#metricas-associadas">Métricas associadas</a><a href="#artefatos-relacionados">Artefatos relacionados</a><a href="#criterios-de-validacao">Critérios de validação</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-para-o-modelo-de-referencia">Contribuição para o modelo de referência</a><a href="#sintese-da-dimensao">Síntese da dimensão</a></details><div class="prose module-full"><h2 class="section-title" id="definicao-da-dimensao">1. Definição da dimensão</h2>
+<p>A dimensão <a class="term" href="../conceitos/data-uncertainty.html">Data Uncertainty</a>, ou incerteza nos dados, refere-se ao grau de dúvida, imprecisão, incompletude, ambiguidade, variabilidade, instabilidade ou limitação associado aos dados, atributos, rótulos, indicadores, features, modelos, representações e produtos analíticos. Essa incerteza pode estar relacionada à origem dos dados, à forma de coleta, ao processo de integração, à qualidade dos registros, à temporalidade, à definição semântica dos conceitos, às regras de transformação, à construção de variáveis, à representatividade da amostra ou à interpretação dos resultados.</p>
+<p>No contexto do UnespDataLens-RM, a incerteza não deve ser tratada apenas como erro. Ela representa uma característica inerente a muitos ecossistemas de dados, especialmente quando os dados são heterogêneos, administrativos, históricos, integrados de múltiplas fontes, produzidos por processos humanos, sujeitos a mudanças de schema, coletados em diferentes granularidades ou utilizados para apoiar decisões complexas.</p>
+<p>A incerteza pode estar presente quando um dado está ausente, quando um registro é inconsistente, quando uma categoria é ambígua, quando a origem de um atributo não é clara, quando uma regra de transformação possui exceções, quando uma <a class="term" href="../conceitos/variavel-alvo.html">variável-alvo</a> é construída por aproximação, quando uma fonte não cobre todo o fenômeno estudado, quando um indicador é calculado com dados defasados, ou quando um modelo produz predições com diferentes níveis de confiança.</p>
+<p>No UnespDataLens-RM, essa dimensão é complementar e transversal porque a incerteza pode surgir em todos os módulos do modelo de referência: no <a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a>, na ingestão, na integração, na transformação, na validação, na <a class="term" href="../conceitos/equidade.html">equidade</a>, no armazenamento, no consumo, nos <a class="term" href="../conceitos/metadados.html">metadados</a>, na governança, na linhagem, no <a class="term" href="../conceitos/versionamento.html">versionamento</a>, nas representações analíticas, na <a class="term" href="../conceitos/feature-store.html">feature store</a>, no monitoramento e nos agentes inteligentes.</p>
+<h2 class="section-title" id="problema-tratado">2. Problema tratado</h2>
+<p>Em muitos projetos analíticos, os dados são tratados como se fossem exatos, completos, estáveis e semanticamente inequívocos. Entretanto, na prática, dados institucionais, educacionais, administrativos e de políticas públicas frequentemente carregam diferentes formas de incerteza.</p>
+<p>Essa incerteza pode surgir por múltiplas razões: campos não preenchidos, registros duplicados, diferenças entre sistemas, atrasos de atualização, erros de digitação, mudanças de categorias, integração parcial entre bases, <a class="term" href="../problemas/ausencia-de-metadados.html">ausência de metadados</a>, baixa qualidade dos rótulos, <a class="term" href="../problemas/vies-de-cobertura.html">viés de cobertura</a>, dados agregados, amostras incompletas, regras de negócio implícitas, transformações manuais ou limitações de acesso.</p>
+<p>A ausência de tratamento explícito da incerteza pode gerar problemas como:</p>
+<ul class="list">
+<li>interpretação excessivamente confiante de dados incompletos;</li>
+<li>uso de indicadores sem explicitação de limitações;</li>
+<li>modelos preditivos apresentados sem estimativa de confiança;</li>
+<li>decisões baseadas em dados desatualizados ou parcialmente observados;</li>
+<li>integração de fontes com correspondências incertas;</li>
+<li>rótulos construídos por aproximação sem sinalização;</li>
+<li>dashboards que ocultam margens de erro, defasagens ou lacunas;</li>
+<li>dificuldade de comparar resultados entre períodos ou fontes;</li>
+<li>ausência de registro sobre qualidade e confiabilidade dos atributos;</li>
+<li>subestimação de riscos analíticos;</li>
+<li>conclusões indevidas a partir de dados frágeis;</li>
+<li>baixa transparência sobre limitações metodológicas;</li>
+<li>perda de confiança quando <a class="term" href="../problemas/inconsistencias.html">inconsistências</a> são identificadas posteriormente.</li>
+</ul>
+<p>No UnespDataLens-RM, a dimensão Data Uncertainty busca tornar a incerteza visível, documentada, mensurável e comunicável, permitindo que usuários, gestores, pesquisadores e sistemas compreendam não apenas “o que os dados dizem”, mas também com que grau de confiança, limitação e contexto essa informação pode ser utilizada.</p>
+<h2 class="section-title" id="objetivo-da-dimensao">3. Objetivo da dimensão</h2>
+<p>O objetivo da dimensão Data Uncertainty é identificar, classificar, mensurar, documentar, comunicar e monitorar incertezas associadas aos dados, atributos, rótulos, features, indicadores, modelos e produtos analíticos, garantindo que limitações, ambiguidades, lacunas, estimativas e níveis de confiança sejam explicitados no ciclo de vida dos dados.</p>
+<p>Essa dimensão busca fortalecer a interpretação responsável dos resultados produzidos pelo UnespDataLens-RM, evitando que produtos analíticos sejam apresentados como verdades absolutas quando dependem de dados incompletos, incertos, aproximados ou sujeitos a restrições metodológicas.</p>
+<h2 class="section-title" id="relacao-com-o-unespdatalens-rm">4. Relação com o UnespDataLens-RM</h2>
+<p>A dimensão Data Uncertainty se articula com diversos módulos do UnespDataLens-RM.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, contribui para registrar limitações conhecidas das fontes, <a class="term" href="../conceitos/cobertura-temporal.html">cobertura temporal</a>, cobertura populacional, <a class="term" href="../conceitos/granularidade.html">granularidade</a>, <a class="term" href="../conceitos/periodicidade.html">periodicidade</a>, confiabilidade, responsável e riscos de incompletude.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, permite registrar falhas de extração, perdas de registros, atrasos, dados parciais, inconsistências no arquivo original e incertezas associadas à origem dos dados.</p>
+<p>No Módulo 3 — Integração e Harmonização, atua na identificação de incertezas em chaves de integração, correspondências entre entidades, conflitos entre fontes, diferenças de granularidade e equivalências semânticas.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, permite documentar incertezas geradas por <a class="term" href="../metodos/imputacao.html">imputação</a>, recodificação, agregação, <a class="term" href="../metodos/normalizacao.html">normalização</a>, remoção de outliers, criação de variáveis derivadas e tratamento de valores ausentes.</p>
+<p>No Módulo 5 — Qualidade e Validação de Dados, complementa as métricas de qualidade ao registrar não apenas se há erro ou ausência, mas o grau de confiabilidade, severidade e impacto das não conformidades.</p>
+<p>No Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e Equidade, apoia a identificação de incertezas relacionadas à representatividade dos grupos, <a class="term" href="../problemas/dados-ausentes.html">dados ausentes</a> diferenciais, rótulos enviesados e estimativas instáveis em grupos minoritários.</p>
+<p>No Módulo 7 — Armazenamento Analítico, orienta a preservação de metadados de incerteza associados aos datasets, versões, zonas, data marts e produtos derivados.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, garante que dashboards, APIs, relatórios e produtos de dados comuniquem limitações, defasagens, níveis de confiança, qualidade e restrições interpretativas.</p>
+<p>No Módulo 9 — Metadados, Catálogo e Semântica dos Dados, a incerteza deve ser documentada como metadado, incluindo limitações de fonte, confiabilidade, nível de evidência, <a class="term" href="../metricas/completude.html">completude</a>, ambiguidade semântica e <a class="term" href="../metricas/adequacao-ao-uso.html">adequação ao uso</a>.</p>
+<p>No Módulo 10 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, a incerteza apoia decisões sobre uso adequado, restrições, riscos, finalidade e responsabilidade na interpretação dos dados.</p>
+<p>No Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e <a class="term" href="../conceitos/rastreabilidade.html">Rastreabilidade</a>, permite identificar onde a incerteza foi introduzida, propagada ou reduzida ao longo do pipeline.</p>
+<p>No Módulo 12 — Versionamento e <a class="term" href="../conceitos/reprodutibilidade.html">Reprodutibilidade</a>, registra versões de dados, regras, parâmetros e decisões que influenciam níveis de incerteza e possibilidade de reconstrução dos resultados.</p>
+<p>No Módulo 13 — Representações Analíticas, a incerteza pode ser associada a tabelas, <a class="term" href="../conceitos/series-temporais.html">séries temporais</a>, grafos, grafos temporais, relações inferidas, <a class="term" href="../conceitos/eventos.html">eventos</a> e janelas de observação.</p>
+<p>No Módulo 14 — <a class="term" href="../conceitos/feature-engineering.html">Feature Engineering</a> e Feature Store, permite qualificar features por estabilidade, confiabilidade, ausência, imputação, variabilidade e risco de erro.</p>
+<p>No Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, acompanha mudanças na incerteza ao longo do tempo, como aumento de valores ausentes, queda de confiabilidade ou instabilidade de indicadores.</p>
+<p>No Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline, agentes podem explicar níveis de confiança, sinalizar limitações, identificar lacunas e evitar respostas assertivas quando há incerteza relevante.</p>
+<h2 class="section-title" id="tipos-de-incerteza-nos-dados">5. Tipos de incerteza nos dados</h2>
+<p>A incerteza nos dados pode assumir diferentes formas, que devem ser identificadas e documentadas no UnespDataLens-RM.</p>
+<div class="table-wrap"><table class="table"><tr><th>Tipo de incerteza</th><th>Descrição</th><th>Exemplo</th></tr><tr><td>Incerteza de origem</td><td>Dúvida sobre procedência, responsável, processo de coleta ou confiabilidade da fonte.</td><td>Base recebida sem documentação da origem.</td></tr><tr><td>Incerteza de completude</td><td>Ausência parcial de registros, atributos ou períodos.</td><td>Dados de frequência incompletos em determinado semestre.</td></tr><tr><td>Incerteza de medição</td><td>Imprecisão no valor registrado ou na forma de mensuração.</td><td>Tempo de acesso registrado com baixa <a class="term" href="../metricas/precisao.html">precisão</a>.</td></tr><tr><td>Incerteza semântica</td><td>Ambiguidade no significado de termos, categorias ou atributos.</td><td>O termo “abandono” possui significados diferentes entre sistemas.</td></tr><tr><td>Incerteza temporal</td><td>Dúvida sobre data de ocorrência, atualização ou <a class="term" href="../metricas/validade.html">validade</a> do dado.</td><td>Situação acadêmica atualizada com atraso.</td></tr><tr><td>Incerteza de integração</td><td>Dúvida sobre correspondência entre registros de diferentes fontes.</td><td>Estudantes pareados por nome e data de nascimento.</td></tr><tr><td>Incerteza de transformação</td><td>Incerteza introduzida por limpeza, imputação, agregação ou recodificação.</td><td>Valor ausente substituído por média do grupo.</td></tr><tr><td>Incerteza de rótulo</td><td>Dúvida sobre a correção ou definição da variável-alvo.</td><td>Rótulo de evasão derivado por ausência de rematrícula.</td></tr><tr><td>Incerteza amostral</td><td>Limitação decorrente de amostra parcial ou não representativa.</td><td>Dados disponíveis apenas de cursos que usam determinado sistema.</td></tr><tr><td>Incerteza preditiva</td><td>Grau de confiança associado a modelos, scores ou classificações.</td><td>Predição de risco com baixa probabilidade de confiança.</td></tr><tr><td>Incerteza relacional</td><td>Dúvida sobre a existência, força ou direção de relações em grafos.</td><td>Relação entre estudante e atividade inferida por <a class="term" href="../conceitos/logs.html">logs</a> incompletos.</td></tr><tr><td>Incerteza de uso</td><td>Dúvida sobre adequação do dado a determinada finalidade.</td><td>Dataset criado para gestão usado em modelagem preditiva sem validação.</td></tr></table></div>
+<p>Nem toda incerteza invalida o uso dos dados. O aspecto central é que a incerteza seja identificada, documentada, mensurada quando possível e comunicada adequadamente aos consumidores.</p>
+<h2 class="section-title" id="estrategias-de-tratamento-da-incerteza">6. Estratégias de tratamento da incerteza</h2>
+<p>O tratamento da Data Uncertainty no UnespDataLens-RM pode envolver estratégias técnicas, metodológicas, estatísticas, semânticas e de governança.</p>
+<div class="table-wrap"><table class="table"><tr><th>Estratégia</th><th>Descrição</th></tr><tr><td>Registro explícito de limitações</td><td>Documentar lacunas, restrições, cobertura e condições de uso dos dados.</td></tr><tr><td>Metadados de confiabilidade</td><td>Associar ativos a níveis de confiança, qualidade, cobertura e completude.</td></tr><tr><td>Sinalização de dados estimados</td><td>Marcar valores imputados, inferidos, agregados ou aproximados.</td></tr><tr><td>Validação cruzada entre fontes</td><td>Comparar registros ou indicadores provenientes de fontes diferentes.</td></tr><tr><td>Controle de janelas temporais</td><td>Documentar períodos de observação, atualização e validade dos dados.</td></tr><tr><td>Análise de sensibilidade</td><td>Avaliar como mudanças nos dados, parâmetros ou regras afetam resultados.</td></tr><tr><td>Intervalos de confiança</td><td>Comunicar incerteza estatística em estimativas, indicadores e modelos.</td></tr><tr><td>Classificação de severidade da incerteza</td><td>Avaliar se a incerteza é baixa, média, alta ou crítica para o uso.</td></tr><tr><td>Propagação de incerteza</td><td>Registrar como incertezas de entrada afetam datasets, features e produtos derivados.</td></tr><tr><td>Curadoria humana</td><td>Revisar casos ambíguos, rótulos críticos e registros de alto impacto.</td></tr><tr><td>Monitoramento de incerteza</td><td>Acompanhar evolução de ausências, instabilidade, ruído e confiabilidade.</td></tr><tr><td>Comunicação visual da incerteza</td><td>Exibir alertas, faixas, notas, selos de qualidade ou indicadores de confiança em dashboards.</td></tr><tr><td>Uso de agentes inteligentes com cautela</td><td>Orientar agentes a sinalizar ausência de evidência, baixa confiança ou limitações.</td></tr></table></div>
+<h2 class="section-title" id="metricas-associadas">7. Métricas associadas</h2>
+<p>A dimensão Data Uncertainty pode ser avaliada por métricas relacionadas à completude, confiabilidade, ambiguidade, estabilidade, estimativa, propagação e comunicação da incerteza.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de ativos com incerteza documentada</td><td>TAID</td><td>Proporção de ativos que registram limitações, incertezas ou restrições interpretativas.</td></tr><tr><td>Taxa de atributos com nível de confiança</td><td>TANC</td><td>Proporção de atributos com avaliação de confiabilidade ou qualidade associada.</td></tr><tr><td>Taxa de valores ausentes</td><td>TVA</td><td>Proporção de valores não preenchidos em atributos críticos.</td></tr><tr><td>Taxa de valores imputados</td><td>TVI</td><td>Proporção de valores estimados ou imputados.</td></tr><tr><td>Taxa de registros com origem incerta</td><td>TROI</td><td>Proporção de registros sem origem suficientemente documentada.</td></tr><tr><td>Taxa de correspondências incertas</td><td>TCI</td><td>Proporção de integrações realizadas com baixa confiança de pareamento.</td></tr><tr><td>Taxa de rótulos incertos</td><td>TRI</td><td>Proporção de rótulos derivados, ambíguos ou com baixa confiabilidade.</td></tr><tr><td>Taxa de indicadores com intervalo de confiança</td><td>TIIC</td><td>Proporção de indicadores acompanhados de medida de incerteza.</td></tr><tr><td>Taxa de produtos com limitação explícita</td><td>TPLE</td><td>Proporção de dashboards, APIs, relatórios ou datasets com limitações visíveis.</td></tr><tr><td>Índice de estabilidade dos atributos</td><td>IEA</td><td>Grau de estabilidade dos atributos ao longo do tempo.</td></tr><tr><td>Índice de incerteza dos dados</td><td>IID</td><td>Indicador composto do nível de incerteza associado aos ativos analíticos.</td></tr></table></div>
+<p>Uma formulação possível para o Índice de Incerteza dos Dados é:</p>
+<div class="formula">IID = w₁TVA + w₂TVI + w₃TROI + w₄TCI + w₅TRI + w₆(1 − IEA) − w₇TAID − w₈TPLE</div>
+<p>em que:</p>
+<ul class="list">
+<li>TVA representa a taxa de valores ausentes;</li>
+<li>TVI representa a taxa de valores imputados;</li>
+<li>TROI representa a taxa de registros com origem incerta;</li>
+<li>TCI representa a taxa de correspondências incertas;</li>
+<li>TRI representa a taxa de rótulos incertos;</li>
+<li>IEA representa o índice de estabilidade dos atributos;</li>
+<li>TAID representa a taxa de ativos com incerteza documentada;</li>
+<li>TPLE representa a taxa de produtos com limitação explícita;</li>
+<li>wᵢ representa o peso atribuído a cada dimensão.</li>
+</ul>
+<p>Quanto maior o IID, maior o nível de incerteza associado ao ecossistema analítico. Entretanto, a interpretação do índice deve considerar o domínio, a finalidade e a criticidade do uso.</p>
+<h2 class="section-title" id="artefatos-relacionados">8. Artefatos relacionados</h2>
+<p>A dimensão Data Uncertainty pode ser operacionalizada por meio de artefatos complementares, integrados aos módulos de qualidade, metadados, lineage, versionamento, feature engineering, monitoramento, governança e agentes inteligentes.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Finalidade</th></tr><tr><td>DU1</td><td>Registro de Incertezas dos Dados</td><td>Tabela de incertezas</td><td>Documentar fontes, atributos, registros, rótulos ou produtos com incertezas relevantes.</td></tr><tr><td>DU2</td><td>Matriz de Tipos de Incerteza</td><td>Matriz classificatória</td><td>Classificar incertezas por origem, completude, semântica, temporalidade, integração, rótulo ou predição.</td></tr><tr><td>DU3</td><td>Relatório de Completude e Lacunas</td><td>Relatório técnico</td><td>Identificar ausências, períodos não cobertos, atributos incompletos e registros parciais.</td></tr><tr><td>DU4</td><td>Registro de Valores Imputados ou Estimados</td><td>Tabela técnica</td><td>Marcar valores inferidos, imputados, aproximados ou agregados.</td></tr><tr><td>DU5</td><td>Relatório de Confiabilidade de Fontes</td><td>Relatório técnico-gerencial</td><td>Avaliar fontes quanto a origem, atualização, estabilidade, documentação e qualidade.</td></tr><tr><td>DU6</td><td>Registro de Correspondências Incertas</td><td>Tabela de pareamento</td><td>Documentar integrações entre entidades com grau de confiança reduzido.</td></tr><tr><td>DU7</td><td>Relatório de Propagação de Incerteza</td><td><a class="term" href="../artefatos/relatorio-analitico.html">Relatório analítico</a></td><td>Avaliar como incertezas de entrada afetam datasets, features, indicadores e produtos derivados.</td></tr><tr><td>DU8</td><td>Registro de Limitações Interpretativas</td><td>Documento ou ficha de ativo</td><td>Explicitar restrições de uso, escopo, validade e cuidados na interpretação.</td></tr><tr><td>DU9</td><td>Painel de Incerteza dos Dados</td><td><a class="term" href="../artefatos/dashboard.html">Dashboard</a></td><td>Monitorar ausências, imputações, origem incerta, rótulos incertos e estabilidade dos ativos.</td></tr><tr><td>DU10</td><td>Manifesto de Incerteza do Produto Analítico</td><td>Documento associado ao produto</td><td>Registrar incertezas, limitações, níveis de confiança e restrições de uso de dashboards, APIs ou relatórios.</td></tr><tr><td>DU11</td><td>Relatório de Sensibilidade Analítica</td><td>Relatório estatístico</td><td>Avaliar como variações em dados, regras ou parâmetros alteram resultados.</td></tr><tr><td>DU12</td><td>Plano de Mitigação da Incerteza</td><td>Documento operacional</td><td>Definir ações para reduzir, comunicar ou controlar incertezas críticas.</td></tr></table></div>
+<h2 class="section-title" id="criterios-de-validacao">9. Critérios de validação</h2>
+<p>A dimensão Data Uncertainty pode ser considerada adequadamente tratada quando:</p>
+<ol class="steps">
+<li>ativos críticos possuem limitações e incertezas documentadas;</li>
+<li>fontes possuem avaliação de confiabilidade, cobertura e atualização;</li>
+<li>atributos críticos possuem avaliação de completude e estabilidade;</li>
+<li>valores imputados, estimados ou inferidos são sinalizados;</li>
+<li>integrações incertas possuem grau de confiança registrado;</li>
+<li>rótulos ambíguos ou derivados possuem regra e limitação documentadas;</li>
+<li>indicadores relevantes apresentam informação sobre qualidade, cobertura ou confiança;</li>
+<li>produtos analíticos explicitam limitações interpretativas;</li>
+<li>incertezas introduzidas em etapas do pipeline podem ser rastreadas por lineage;</li>
+<li>incertezas críticas geram alertas, revisão humana ou restrição de uso;</li>
+<li>agentes inteligentes sinalizam baixa confiança ou ausência de evidência;</li>
+<li>análises sensíveis consideram variação de parâmetros, regras ou dados;</li>
+<li>incertezas são monitoradas ao longo do tempo;</li>
+<li>usuários conseguem distinguir dados observados, imputados, inferidos e estimados.</li>
+</ol>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">10. Exemplo de aplicação no domínio educacional</h2>
+<p>Em um projeto educacional, a incerteza pode ocorrer quando dados de frequência são incompletos, quando registros de interação no ambiente virtual dependem da configuração da plataforma, quando a situação acadêmica é atualizada com atraso, quando o rótulo de evasão é derivado da ausência de rematrícula ou quando diferentes sistemas registram o mesmo evento de forma distinta.</p>
+<p>Por exemplo, se um estudante não aparece rematriculado no período seguinte, ele pode ser classificado como evadido. No entanto, essa classificação pode ser incerta se houver <a class="term" href="../problemas/atraso-de-atualizacao.html">atraso de atualização</a>, transferência não registrada, trancamento ainda não processado ou mudança administrativa. A dimensão Data Uncertainty permite registrar essa incerteza, diferenciar rótulos confirmados de rótulos prováveis e comunicar a limitação nos dashboards e modelos.</p>
+<p>Outro exemplo ocorre quando interações em ambiente virtual são usadas para medir engajamento. Se parte das disciplinas não utiliza o ambiente virtual de forma consistente, a ausência de interação não significa necessariamente ausência de engajamento. Essa limitação deve ser documentada e considerada na interpretação dos resultados.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">11. Exemplo de aplicação em políticas públicas</h2>
+<p>Em políticas públicas, a incerteza pode ocorrer quando bases de diferentes secretarias possuem cobertura desigual, quando registros são atualizados em prazos distintos, quando indicadores são calculados com dados parciais, quando territórios possuem subnotificação ou quando categorias de atendimento não são padronizadas.</p>
+<p>Por exemplo, um indicador de vulnerabilidade territorial pode ser calculado a partir de dados de atendimento social, saúde, educação e renda. Se uma das fontes apresenta defasagem ou subregistro, o indicador final deve refletir essa limitação, evitando que o território seja interpretado como menos vulnerável apenas por ausência de dados.</p>
+<p>A dimensão Data Uncertainty permite registrar fontes com menor confiabilidade, sinalizar indicadores com dados parciais, comunicar limitações e apoiar decisões com maior transparência sobre o grau de confiança das evidências.</p>
+<h2 class="section-title" id="contribuicao-para-o-modelo-de-referencia">12. Contribuição para o modelo de referência</h2>
+<p>A dimensão Data Uncertainty contribui para o UnespDataLens-RM ao reconhecer que dados e produtos analíticos não são igualmente confiáveis em todas as situações e que incertezas precisam ser explicitadas para apoiar decisões responsáveis.</p>
+<p>Essa dimensão fortalece o modelo de referência ao:</p>
+<ul class="list">
+<li>tornar limitações dos dados visíveis e documentadas;</li>
+<li>evitar interpretações excessivamente assertivas;</li>
+<li>apoiar comunicação responsável de indicadores;</li>
+<li>melhorar avaliação de qualidade e confiabilidade;</li>
+<li>fortalecer rastreabilidade de decisões analíticas;</li>
+<li>reduzir riscos de conclusões indevidas;</li>
+<li>apoiar análise de sensibilidade;</li>
+<li>qualificar rótulos, features e modelos;</li>
+<li>melhorar governança do uso de dados incertos;</li>
+<li>orientar agentes inteligentes a responder com cautela;</li>
+<li>aumentar transparência sobre lacunas e restrições;</li>
+<li>fortalecer confiança na tomada de decisão baseada em evidências.</li>
+</ul>
+<h2 class="section-title" id="sintese-da-dimensao">13. Síntese da dimensão</h2>
+<p>A dimensão Data Uncertainty trata da identificação, documentação, mensuração, comunicação e monitoramento das incertezas associadas aos dados, atributos, rótulos, features, indicadores, modelos e produtos analíticos. No UnespDataLens-RM, essa dimensão atua como capacidade complementar para garantir que limitações, lacunas, ambiguidades, estimativas, imputações, instabilidades e níveis de confiança sejam considerados ao longo do ciclo de vida dos dados.</p>
+<p>Ao incorporar registros de incerteza, metadados de confiabilidade, sinalização de valores imputados, análise de completude, propagação de incerteza, limitações interpretativas, análise de sensibilidade e comunicação explícita nos produtos analíticos, o modelo de referência fortalece sua capacidade de produzir evidências úteis, transparentes e metodologicamente responsáveis.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

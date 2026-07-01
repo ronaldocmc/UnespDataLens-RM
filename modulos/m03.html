@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo 3 — Integração e Harmonização tem como finalidade combinar, relacionar, compatibilizar e organizar dados provenientes de múltiplas fontes, previamente identificadas no Módulo 1 — Fontes e Inventário de Dados e ingeridas no Módulo 2 — Extração, Ingestão e Armazenamento Bruto.">
+  <title>Módulo 3 — Integração e Harmonização · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-3-integracao-e-harmonizacao"></span><section class="hero">
+<span class="badge">Módulo 03</span>
+<h1>Módulo 3 — Integração e Harmonização</h1>
+<p>O Módulo 3 — Integração e Harmonização tem como finalidade combinar, relacionar, compatibilizar e organizar dados provenientes de múltiplas fontes, previamente identificadas no Módulo 1 — Fontes e Inventário de Dados e ingeridas no Módulo 2 — Extração, Ingestão e Armazenamento Bruto.</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 27 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-algoritmos-aplicaveis">Técnicas, métodos e algoritmos aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a3-1-plano-de-integracao">Artefato A3.1 — Plano de Integração</a><a href="#artefato-a3-2-matriz-de-correspondencia-entre-fontes">Artefato A3.2 — Matriz de Correspondência entre Fontes</a><a href="#artefato-a3-3-tabela-de-mapeamento-de-atributos">Artefato A3.3 — Tabela de Mapeamento de Atributos</a><a href="#artefato-a3-4-tabela-de-equivalencia-semantica">Artefato A3.4 — Tabela de Equivalência Semântica</a><a href="#artefato-a3-5-registro-de-chaves-e-entidades">Artefato A3.5 — Registro de Chaves e Entidades</a><a href="#artefato-a3-6-registro-de-compatibilidade-de-granularidade">Artefato A3.6 — Registro de Compatibilidade de Granularidade</a><a href="#artefato-a3-7-registro-de-conflitos-de-integracao">Artefato A3.7 — Registro de Conflitos de Integração</a><a href="#artefato-a3-8-dataset-integrado-e-harmonizado">Artefato A3.8 — Dataset Integrado e Harmonizado</a><a href="#artefato-a3-9-manifesto-de-integracao">Artefato A3.9 — Manifesto de Integração</a><a href="#artefato-a3-10-relatorio-de-qualidade-da-integracao">Artefato A3.10 — Relatório de Qualidade da Integração</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-os-demais-modulos-do-modelo-de-referencia">Relação com os demais módulos do modelo de referência</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo 3 — Integração e Harmonização tem como finalidade combinar, relacionar, compatibilizar e organizar dados provenientes de múltiplas fontes, previamente identificadas no Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a> e ingeridas no Módulo 2 — Extração, Ingestão e Armazenamento Bruto.</p>
+<p>Esse módulo é responsável por transformar conjuntos de dados brutos, dispersos e heterogêneos em estruturas integradas e semanticamente coerentes, capazes de sustentar análises, indicadores, modelos preditivos, representações em grafos, dashboards, estudos longitudinais e processos de tomada de decisão baseada em evidências.</p>
+<p>Em projetos de Engenharia Analítica de Dados, a integração de dados é uma das etapas mais críticas, pois as fontes frequentemente possuem diferenças de formato, nomenclatura, <a class="term" href="../conceitos/granularidade.html">granularidade</a>, <a class="term" href="../conceitos/periodicidade.html">periodicidade</a>, chaves, categorias, codificações, escalas, domínios de valores e regras de negócio. Além disso, a mesma entidade pode aparecer em fontes distintas com identificadores diferentes, registros duplicados, atributos incompletos, variações de nomes, <a class="term" href="../problemas/inconsistencias.html">inconsistências</a> temporais ou ausência de chaves explícitas.</p>
+<p>No contexto do UnespDataLens-RM, o Módulo 3 tem papel estratégico porque formaliza a integração e a harmonização como processos documentados, avaliáveis e rastreáveis. Não se trata apenas de “juntar bases”, mas de definir critérios, regras, chaves, correspondências, compatibilizações semânticas, níveis de confiança, tratamentos de conflitos e evidências de integração.</p>
+<p>Assim, esse módulo contribui para reduzir ambiguidades, evitar junções incorretas, explicitar decisões de harmonização, preservar a <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a> das relações entre fontes e preparar os dados para os módulos posteriores de transformação, qualidade, governança, lineage, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, representação analítica e disponibilização.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 3 é integrar e harmonizar dados provenientes de múltiplas fontes, produzindo estruturas analíticas consistentes, documentadas e rastreáveis, por meio da identificação de chaves, entidades compartilhadas, correspondências semânticas, regras de compatibilização, tratamento de conflitos e avaliação da qualidade das relações estabelecidas entre bases.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 3:</p>
+<ol class="steps">
+<li>identificar fontes que podem ser integradas a partir de entidades, chaves, períodos, atributos ou conceitos compartilhados;</li>
+<li>definir estratégias de integração adequadas ao tipo de dado, granularidade, periodicidade, estrutura e finalidade analítica;</li>
+<li>estabelecer regras de correspondência entre registros, atributos, entidades e categorias de diferentes fontes;</li>
+<li>harmonizar nomes de atributos, formatos, domínios de valores, códigos, categorias, unidades de medida e recortes temporais;</li>
+<li>resolver ou registrar conflitos entre fontes, como divergência de valores, <a class="term" href="../problemas/duplicidade.html">duplicidade</a>, inconsistência de chaves ou diferença de granularidade;</li>
+<li>aplicar técnicas de <a class="term" href="../metodos/record-linkage.html">record linkage</a>, <a class="term" href="../metodos/entity-resolution.html">entity resolution</a>, <a class="term" href="../metodos/deduplicacao.html">deduplicação</a>, <a class="term" href="../metodos/normalizacao.html">normalização</a> semântica e compatibilização temporal;</li>
+<li>produzir datasets integrados, matrizes de correspondência, tabelas de mapeamento, regras de harmonização e registros de conflitos;</li>
+<li>avaliar a qualidade da integração por meio de métricas de pareamento, cobertura, conflito, confiança, <a class="term" href="../metricas/completude.html">completude</a> e <a class="term" href="../metricas/consistencia.html">consistência</a>;</li>
+<li>fornecer insumos para os módulos posteriores de transformação, qualidade, <a class="term" href="../conceitos/metadados.html">metadados</a>, governança, lineage, versionamento, grafos e disponibilização analítica.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>O Módulo 3 é fundamentado na compreensão de que dados analíticos raramente estão prontos em uma única fonte. Em geral, respostas analíticas relevantes exigem combinar diferentes bases, oriundas de sistemas, setores, períodos e finalidades distintas. Essa combinação, entretanto, exige mais do que operações técnicas de junção. Ela demanda compreensão estrutural, semântica, temporal e institucional das fontes.</p>
+<p>A integração de dados pode ser entendida como o processo de combinar registros, atributos ou entidades de diferentes fontes para produzir uma visão analítica mais completa. A harmonização, por sua vez, corresponde ao processo de compatibilizar formatos, conceitos, códigos, categorias, granularidades, escalas e significados, permitindo que os dados integrados sejam interpretados de forma coerente.</p>
+<p>No UnespDataLens-RM, integração e harmonização são tratadas como atividades complementares. A integração estabelece vínculos entre fontes; a harmonização torna esses vínculos semanticamente e estruturalmente utilizáveis. Por exemplo, duas bases podem conter informações sobre estudantes, mas uma registra “situação acadêmica” como texto e outra como código numérico. A integração pode relacionar os registros por identificador; a harmonização precisa compatibilizar os significados dos valores.</p>
+<p>Esse módulo enfrenta problemas frequentes, como:</p>
+<ul class="list">
+<li>ausência de chaves únicas entre fontes;</li>
+<li>chaves inconsistentes ou incompletas;</li>
+<li>registros duplicados;</li>
+<li>nomes de atributos divergentes;</li>
+<li>categorias com significados diferentes;</li>
+<li>formatos temporais incompatíveis;</li>
+<li>granularidades distintas;</li>
+<li>sobreposição parcial de períodos;</li>
+<li>conflitos entre valores provenientes de diferentes sistemas;</li>
+<li>ausência de documentação sobre regras de integração;</li>
+<li>dificuldade de rastrear como um dataset integrado foi construído.</li>
+</ul>
+<p>À luz da Design Science Research, os artefatos do Módulo 3 são tratados como modelos, métodos e instanciações voltados a formalizar a integração de dados como um processo técnico-metodológico avaliável. Cada artefato deve possuir finalidade, estrutura, regras de construção, métricas, critérios de validação e relação com os demais módulos do modelo de referência.</p>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">5. Formalização sintética do módulo</h2>
+<p>O Módulo 3 pode ser compreendido como um processo de transformação de datasets brutos em estruturas integradas e harmonizadas.</p>
+<p>Considerando o conjunto de datasets brutos produzido no Módulo 2:</p>
+<div class="formula">B = {b₁, b₂, ..., bₙ}</div>
+<p>o Módulo 3 identifica relações de integração entre esses datasets, produzindo um conjunto de vínculos:</p>
+<div class="formula">L = {l₁, l₂, ..., lₖ}</div>
+<p>em que cada vínculo lᵢ representa uma correspondência entre fontes, registros, atributos, entidades ou categorias.</p>
+<p>Cada vínculo pode ser descrito por:</p>
+<div class="formula">lᵢ = {fonte_A, fonte_B, entidade, chave, tipo_relação, regra_correspondência, granularidade, período, grau_confiança, status}</div>
+<p>O resultado do módulo é um conjunto de datasets integrados e harmonizados:</p>
+<div class="formula">H = {h₁, h₂, ..., hₘ}</div>
+<p>em que cada hⱼ representa um <a class="term" href="../conceitos/ativo-analitico.html">ativo analítico</a> resultante da combinação controlada de duas ou mais fontes.</p>
+<p>Cada dataset harmonizado hⱼ deve ser associado a metadados de integração:</p>
+<div class="formula">hⱼ = {id, fontes_origem, regras_integração, regras_harmonização, chaves_utilizadas, conflitos_resolvidos, conflitos_pendentes, versão, métricas_integração, lineage}</div>
+<p>Dessa forma, o processo de integração deixa de ser uma operação implícita de junção e passa a ser tratado como uma construção documentada, mensurável, auditável e reprodutível.</p>
+<h2 class="section-title" id="entradas-do-modulo">6. Entradas do módulo</h2>
+<p>As entradas do Módulo 3 incluem dados brutos, metadados, artefatos de inventário e informações de relacionamento produzidas nos módulos anteriores.</p>
+<p>As principais entradas são:</p>
+<ul class="list">
+<li>datasets brutos gerados no Módulo 2;</li>
+<li><a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a> de dados;</li>
+<li>mapa de bases;</li>
+<li><a class="term" href="../artefatos/dicionario-preliminar-de-dados.html">dicionário preliminar de dados</a>;</li>
+<li><a class="term" href="../artefatos/matriz-de-relacionamento-entre-fontes.html">matriz de relacionamento entre fontes</a>;</li>
+<li><a class="term" href="../artefatos/registro-de-granularidade.html">registro de granularidade</a>;</li>
+<li><a class="term" href="../artefatos/classificacao-de-sensibilidade.html">classificação de sensibilidade</a>;</li>
+<li><a class="term" href="../artefatos/catalogo-preliminar-de-fontes.html">catálogo preliminar de fontes</a>;</li>
+<li><a class="term" href="../conceitos/logs.html">logs</a> de ingestão;</li>
+<li>manifestos de ingestão;</li>
+<li>registros de snapshots;</li>
+<li>documentação de chaves primárias e estrangeiras;</li>
+<li>domínios de valores;</li>
+<li>códigos institucionais;</li>
+<li>regras de negócio;</li>
+<li>tabelas auxiliares de mapeamento;</li>
+<li>vocabulários controlados;</li>
+<li>glossários preliminares;</li>
+<li>informações sobre <a class="term" href="../conceitos/cobertura-temporal.html">cobertura temporal</a>;</li>
+<li>políticas de acesso e restrições de uso.</li>
+</ul>
+<p>As fontes podem apresentar diferentes formatos, como tabelas relacionais, arquivos CSV, JSON, planilhas, logs, APIs, <a class="term" href="../conceitos/dados-temporais.html">dados temporais</a>, bases territoriais, registros administrativos, bases educacionais, bases socioeconômicas e dados de políticas públicas.</p>
+<h2 class="section-title" id="processamento">7. Processamento</h2>
+<p>O processamento do Módulo 3 envolve atividades de preparação, identificação de correspondências, definição de regras de integração, harmonização semântica, compatibilização temporal, resolução de conflitos, geração de datasets integrados e documentação das decisões tomadas.</p>
+<h3 id="selecao-das-fontes-a-integrar">7.1 Seleção das fontes a integrar</h3>
+<p>A primeira atividade consiste em selecionar as fontes que serão integradas, com base no objetivo analítico, na matriz de relacionamento entre fontes, na disponibilidade de chaves, na compatibilidade de granularidade, na cobertura temporal e na relevância dos atributos.</p>
+<p>Nem todas as fontes inventariadas ou ingeridas precisam ser integradas em uma mesma etapa. A seleção deve considerar finalidade, viabilidade técnica, qualidade preliminar e riscos de uso.</p>
+<h3 id="identificacao-de-entidades-compartilhadas">7.2 Identificação de entidades compartilhadas</h3>
+<p>A segunda atividade consiste em identificar entidades comuns entre fontes. Essas entidades podem ser pessoas, estudantes, cursos, disciplinas, municípios, territórios, famílias, empresas, trabalhadores, <a class="term" href="../conceitos/eventos.html">eventos</a>, atendimentos, unidades administrativas ou qualquer outra unidade relevante.</p>
+<p>A identificação de entidades compartilhadas permite estabelecer vínculos entre registros e orientar a definição das chaves de integração.</p>
+<h3 id="identificacao-e-validacao-de-chaves">7.3 Identificação e validação de chaves</h3>
+<p>A terceira atividade consiste em identificar chaves primárias, chaves estrangeiras, identificadores diretos, identificadores compostos ou critérios indiretos de associação.</p>
+<p>Quando não houver chaves explícitas, podem ser utilizadas estratégias de record linkage ou entity resolution, considerando combinações de atributos, similaridade textual, datas, localização, categorias ou outros critérios disponíveis.</p>
+<p>As chaves identificadas devem ser documentadas e classificadas quanto ao grau de confiança.</p>
+<h3 id="compatibilizacao-de-granularidade">7.4 Compatibilização de granularidade</h3>
+<p>A quarta atividade consiste em avaliar se as fontes possuem o mesmo nível de detalhe. Quando as granularidades forem distintas, o módulo deve definir estratégias de agregação, desagregação, replicação controlada ou restrição de integração.</p>
+<p>Por exemplo, uma base no nível de estudante não deve ser integrada diretamente a uma base no nível de curso sem regras explícitas de agregação ou associação. Da mesma forma, dados por município não devem ser combinados com dados por indivíduo sem controle do nível analítico.</p>
+<h3 id="harmonizacao-de-atributos-e-formatos">7.5 Harmonização de atributos e formatos</h3>
+<p>A quinta atividade consiste em padronizar nomes de atributos, tipos de dados, formatos de datas, codificações, unidades de medida, escalas e domínios de valores.</p>
+<p>Essa atividade pode incluir conversão de tipos, normalização de textos, padronização de categorias, compatibilização de códigos, tratamento de encoding, padronização de datas e alinhamento de unidades.</p>
+<h3 id="harmonizacao-semantica">7.6 Harmonização semântica</h3>
+<p>A sexta atividade consiste em verificar se atributos, categorias e conceitos possuem o mesmo significado entre fontes distintas. Essa etapa é essencial para evitar integrações tecnicamente corretas, mas semanticamente equivocadas.</p>
+<p>A harmonização semântica pode envolver consulta a especialistas, análise de regras de negócio, glossários, vocabulários controlados, modelos semânticos e tabelas de equivalência.</p>
+<h3 id="compatibilizacao-temporal">7.7 Compatibilização temporal</h3>
+<p>A sétima atividade consiste em alinhar períodos, datas, janelas temporais, versões e frequências de atualização entre fontes. Essa etapa é necessária quando as bases possuem recortes temporais diferentes ou quando a análise depende de trajetórias e eventos ao longo do tempo.</p>
+<p>A compatibilização temporal pode envolver agregação por mês, semestre ou ano, criação de janelas móveis, definição de períodos comuns, alinhamento por data de referência ou criação de snapshots integrados.</p>
+<h3 id="resolucao-e-registro-de-conflitos">7.8 Resolução e registro de conflitos</h3>
+<p>A oitava atividade consiste em identificar e tratar conflitos entre fontes. Conflitos podem ocorrer quando duas bases apresentam valores diferentes para o mesmo atributo, registros duplicados, categorias divergentes, datas inconsistentes ou chaves contraditórias.</p>
+<p>Os conflitos podem ser resolvidos por regras de precedência, validação com especialista, escolha da fonte mais confiável, agregação, votação, marcação de incerteza ou manutenção do conflito para análise posterior.</p>
+<p>Independentemente da solução adotada, os conflitos devem ser registrados.</p>
+<h3 id="geracao-de-datasets-integrados-e-harmonizados">7.9 Geração de datasets integrados e harmonizados</h3>
+<p>Após a definição das regras de integração e harmonização, o módulo gera datasets integrados, preservando informações sobre fontes de origem, chaves utilizadas, regras aplicadas, conflitos identificados, conflitos resolvidos, versões e métricas de integração.</p>
+<p>Esses datasets servirão como insumos para os módulos posteriores de transformação, qualidade, <a class="term" href="../conceitos/feature-engineering.html">feature engineering</a>, representação em grafos e disponibilização analítica.</p>
+<h3 id="documentacao-da-integracao">7.10 Documentação da integração</h3>
+<p>Toda integração deve gerar artefatos documentais e técnicos que permitam reproduzir, auditar e compreender o processo. Devem ser registrados regras, chaves, parâmetros, versões, decisões, exceções, conflitos, métricas e responsáveis.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-algoritmos-aplicaveis">8. Técnicas, métodos e algoritmos aplicáveis</h2>
+<p>O Módulo 3 pode empregar diferentes técnicas, métodos e algoritmos para integração e harmonização.</p>
+<p>Entre as técnicas de integração, destacam-se:</p>
+<ul class="list">
+<li>junção por chave primária;</li>
+<li>junção por chave estrangeira;</li>
+<li>integração por chave composta;</li>
+<li>integração por período;</li>
+<li>integração por território;</li>
+<li>integração por entidade;</li>
+<li>integração por evento;</li>
+<li>integração baseada em regras;</li>
+<li>integração incremental;</li>
+<li>integração por snapshots;</li>
+<li>integração federada;</li>
+<li>record linkage;</li>
+<li>entity resolution;</li>
+<li>deduplicação.</li>
+</ul>
+<p>Entre as técnicas de harmonização, podem ser utilizadas:</p>
+<ul class="list">
+<li>padronização de nomes de atributos;</li>
+<li>normalização de textos;</li>
+<li>compatibilização de domínios;</li>
+<li>conversão de tipos;</li>
+<li>padronização de datas;</li>
+<li>compatibilização de unidades de medida;</li>
+<li>mapeamento de categorias;</li>
+<li>recodificação de valores;</li>
+<li>alinhamento de granularidade;</li>
+<li>alinhamento temporal;</li>
+<li>construção de tabelas de equivalência;</li>
+<li>construção de vocabulários controlados.</li>
+</ul>
+<p>Entre os algoritmos e métodos computacionais aplicáveis, destacam-se:</p>
+<ul class="list">
+<li>comparação exata de chaves;</li>
+<li>distância de Levenshtein;</li>
+<li>similaridade Jaro-Winkler;</li>
+<li>similaridade por cosseno;</li>
+<li>TF-IDF para comparação textual;</li>
+<li>embeddings para similaridade semântica;</li>
+<li>blocking para redução do espaço de comparação;</li>
+<li>regras heurísticas;</li>
+<li>linkage determinístico;</li>
+<li>linkage probabilístico;</li>
+<li>Fellegi-Sunter;</li>
+<li>clustering de registros semelhantes;</li>
+<li>detecção de duplicidade;</li>
+<li>resolução de conflitos por regras de precedência;</li>
+<li>análise de consistência referencial;</li>
+<li>análise de sobreposição temporal;</li>
+<li>validação de cardinalidade.</li>
+</ul>
+<p>Ferramentas possíveis incluem SQL, Python, pandas, <a class="term" href="../tecnicas/pyspark.html">PySpark</a>, <a class="term" href="../tecnicas/duckdb.html">DuckDB</a>, <a class="term" href="../tecnicas/dbt.html">dbt</a>, Apache <a class="term" href="../tecnicas/spark.html">Spark</a>, ferramentas de <a class="term" href="../conceitos/etl.html">ETL</a>/<a class="term" href="../conceitos/elt.html">ELT</a>, bibliotecas de record linkage, bancos relacionais, data lakes, lakehouses e catálogos de dados.</p>
+<h2 class="section-title" id="metricas-do-modulo">9. Métricas do módulo</h2>
+<p>As métricas do Módulo 3 têm como objetivo avaliar a cobertura, a qualidade, a confiabilidade e a rastreabilidade da integração e da harmonização.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Número de fontes integradas</td><td>NFI</td><td>Quantidade de fontes combinadas em um processo de integração</td></tr><tr><td>Taxa de pareamento</td><td>TP</td><td>Proporção de registros pareados entre fontes</td></tr><tr><td>Taxa de não pareamento</td><td>TNP</td><td>Proporção de registros sem correspondência</td></tr><tr><td>Taxa de chaves válidas</td><td>TCV</td><td>Proporção de registros com chaves válidas para integração</td></tr><tr><td>Taxa de duplicidade entre fontes</td><td>TDEF</td><td>Proporção de registros duplicados ou potencialmente duplicados</td></tr><tr><td>Taxa de conflito entre fontes</td><td>TCF</td><td>Proporção de registros com valores conflitantes</td></tr><tr><td>Taxa de conflitos resolvidos</td><td>TCR</td><td>Proporção de conflitos tratados por regras definidas</td></tr><tr><td>Cobertura temporal integrada</td><td>CTI</td><td>Período comum efetivamente coberto pelas fontes integradas</td></tr><tr><td>Compatibilidade de granularidade</td><td>CG</td><td>Grau de compatibilidade entre níveis de análise das fontes</td></tr><tr><td>Taxa de harmonização de atributos</td><td>THA</td><td>Proporção de atributos harmonizados em relação ao total necessário</td></tr><tr><td>Taxa de harmonização semântica</td><td>THS</td><td>Proporção de conceitos ou categorias semanticamente compatibilizados</td></tr><tr><td>Grau de confiança da integração</td><td>GCI</td><td>Avaliação do nível de confiabilidade das relações estabelecidas</td></tr><tr><td>Taxa de rastreabilidade da integração</td><td>TRI</td><td>Proporção de relações integradas com regras e origem documentadas</td></tr><tr><td>Taxa de relações auditáveis</td><td>TRA</td><td>Proporção de integrações que podem ser reconstituídas e verificadas</td></tr></table></div>
+<h3 id="taxa-de-pareamento-tp">9.1 Taxa de Pareamento — TP</h3>
+<p>A Taxa de Pareamento mede a proporção de registros de uma fonte que encontraram correspondência em outra fonte.</p>
+<div class="formula">TP = número de registros pareados / número total de registros candidatos ao pareamento</div>
+<p>Essa métrica permite avaliar a efetividade do processo de relacionamento entre fontes.</p>
+<h3 id="taxa-de-nao-pareamento-tnp">9.2 Taxa de Não Pareamento — TNP</h3>
+<p>A Taxa de Não Pareamento mede a proporção de registros que não encontraram correspondência em outra fonte.</p>
+<div class="formula">TNP = número de registros não pareados / número total de registros candidatos ao pareamento</div>
+<p>Valores elevados podem indicar ausência de chaves, baixa <a class="term" href="../conceitos/qualidade-de-dados.html">qualidade de dados</a>, diferenças de cobertura, incompatibilidade temporal ou granularidade inadequada.</p>
+<h3 id="taxa-de-conflito-entre-fontes-tcf">9.3 Taxa de Conflito entre Fontes — TCF</h3>
+<p>A Taxa de Conflito entre Fontes mede a proporção de registros integrados que apresentam divergência de valores em atributos equivalentes.</p>
+<div class="formula">TCF = número de registros com conflito / número total de registros integrados avaliados</div>
+<p>Essa métrica permite identificar inconsistências entre sistemas e orientar regras de resolução.</p>
+<h3 id="taxa-de-conflitos-resolvidos-tcr">9.4 Taxa de Conflitos Resolvidos — TCR</h3>
+<p>A Taxa de Conflitos Resolvidos mede a proporção de conflitos tratados por regras explícitas de harmonização.</p>
+<div class="formula">TCR = número de conflitos resolvidos / número total de conflitos identificados</div>
+<p>Essa métrica indica a capacidade do módulo de transformar conflitos em decisões documentadas.</p>
+<h3 id="taxa-de-rastreabilidade-da-integracao-tri">9.5 Taxa de Rastreabilidade da Integração — TRI</h3>
+<p>A Taxa de Rastreabilidade da Integração avalia a proporção de relações integradas que possuem origem, regra, chave e justificativa documentadas.</p>
+<div class="formula">TRI = número de relações integradas documentadas / número total de relações integradas</div>
+<p>Essa métrica é essencial para governança, lineage e <a class="term" href="../conceitos/reprodutibilidade.html">reprodutibilidade</a>.</p>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">10. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 3 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, regras de construção, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A3.1</td><td><a class="term" href="../artefatos/plano-de-integracao.html">Plano de Integração</a></td><td>Documento técnico</td><td>TRI</td><td>Define estratégia, fontes, chaves e regras</td></tr><tr><td>A3.2</td><td>Matriz de Correspondência entre Fontes</td><td>Matriz fonte × fonte</td><td>TP, TNP</td><td>Registra relações entre fontes</td></tr><tr><td>A3.3</td><td>Tabela de Mapeamento de Atributos</td><td>Tabela estruturada</td><td>THA</td><td>Harmoniza atributos equivalentes</td></tr><tr><td>A3.4</td><td>Tabela de Equivalência Semântica</td><td>Tabela ou vocabulário</td><td>THS</td><td>Harmoniza conceitos, categorias e códigos</td></tr><tr><td>A3.5</td><td>Registro de Chaves e Entidades</td><td>Tabela técnica</td><td>TCV</td><td>Documenta chaves e entidades compartilhadas</td></tr><tr><td>A3.6</td><td>Registro de Compatibilidade de Granularidade</td><td>Tabela analítica</td><td>CG</td><td>Evita integrações inadequadas</td></tr><tr><td>A3.7</td><td>Registro de Conflitos de Integração</td><td>Relatório técnico</td><td>TCF, TCR</td><td>Documenta e trata conflitos</td></tr><tr><td>A3.8</td><td>Dataset Integrado e Harmonizado</td><td>Tabela, arquivo ou dataset</td><td>TP, TRI</td><td>Materializa a integração</td></tr><tr><td>A3.9</td><td>Manifesto de Integração</td><td>Documento estruturado</td><td>TRI</td><td>Registra regras, parâmetros e versões</td></tr><tr><td>A3.10</td><td><a class="term" href="../artefatos/relatorio-de-qualidade.html">Relatório de Qualidade</a> da Integração</td><td>Relatório técnico</td><td>TP, TNP, TCF</td><td>Avalia o resultado da integração</td></tr></table></div>
+<h2 class="section-title" id="artefato-a3-1-plano-de-integracao">11. Artefato A3.1 — Plano de Integração</h2>
+<h3 id="finalidade">11.1 Finalidade</h3>
+<p>O Plano de Integração define a estratégia de integração e harmonização a ser adotada para um conjunto de fontes. Ele documenta quais fontes serão integradas, com qual finalidade, por quais chaves, em qual granularidade, com quais regras e sob quais critérios de validação.</p>
+<h3 id="tipo-de-artefato-na-dsr">11.2 Tipo de artefato na DSR</h3>
+<p>Na perspectiva da Design Science Research, o Plano de Integração é um método, pois orienta o procedimento de integração, e uma instanciação, quando documentado em planilha, documento técnico, arquivo YAML, JSON ou workflow computacional.</p>
+<h3 id="estrutura-minima">11.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador do plano</td><td>Código único do plano</td></tr><tr><td>Objetivo da integração</td><td>Finalidade analítica</td></tr><tr><td>Fontes envolvidas</td><td>Bases ou datasets a integrar</td></tr><tr><td>Entidades compartilhadas</td><td>Entidades que justificam a integração</td></tr><tr><td>Chaves previstas</td><td>Chaves diretas, compostas ou critérios indiretos</td></tr><tr><td>Tipo de integração</td><td>Determinística, probabilística, temporal, territorial etc.</td></tr><tr><td>Granularidade esperada</td><td>Unidade de análise após integração</td></tr><tr><td>Período de integração</td><td>Recorte temporal considerado</td></tr><tr><td>Regras de harmonização</td><td>Padronizações e compatibilizações previstas</td></tr><tr><td>Critérios de sucesso</td><td>Condições para validar a integração</td></tr><tr><td>Riscos</td><td>Riscos técnicos, semânticos ou de governança</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe responsável</td></tr></table></div>
+<h3 id="metricas-associadas">11.4 Métricas associadas</h3>
+<ul class="list">
+<li>percentual de integrações com plano documentado;</li>
+<li>taxa de rastreabilidade da integração;</li>
+<li>percentual de fontes com chaves definidas;</li>
+<li>percentual de planos com critérios de sucesso;</li>
+<li>percentual de planos com riscos registrados.</li>
+</ul>
+<h3 id="criterios-de-validacao">11.5 Critérios de validação</h3>
+<p>O plano é considerado válido quando as fontes, chaves, entidades, regras, granularidade, finalidade e critérios de sucesso estão documentados antes da execução da integração.</p>
+<h3 id="contribuicao">11.6 Contribuição</h3>
+<p>Esse artefato evita integrações improvisadas, explicita decisões metodológicas e cria base para auditoria, lineage e reprodutibilidade.</p>
+<h2 class="section-title" id="artefato-a3-2-matriz-de-correspondencia-entre-fontes">12. Artefato A3.2 — Matriz de Correspondência entre Fontes</h2>
+<h3 id="finalidade-2">12.1 Finalidade</h3>
+<p>A Matriz de Correspondência entre Fontes registra relações possíveis ou efetivas entre fontes integradas, indicando entidades compartilhadas, chaves, períodos comuns, grau de confiança e tipo de vínculo.</p>
+<h3 id="estrutura-formal">12.2 Estrutura formal</h3>
+<p>Considerando o conjunto de fontes:</p>
+<div class="formula">F = {f₁, f₂, ..., fₙ}</div>
+<p>a matriz de correspondência pode ser representada como:</p>
+<div class="formula">M = [mᵢⱼ]</div>
+<p>em que cada elemento mᵢⱼ representa a correspondência entre as fontes fᵢ e fⱼ.</p>
+<p>Cada correspondência pode ser descrita por:</p>
+<div class="formula">mᵢⱼ = {entidade, chave, tipo_relação, período_comum, granularidade, confiança, status}</div>
+<h3 id="metricas-associadas-2">12.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de pareamento;</li>
+<li>taxa de não pareamento;</li>
+<li>número de relações identificadas;</li>
+<li><a class="term" href="../metricas/grau-medio.html">grau médio</a> de confiança;</li>
+<li>proporção de relações validadas;</li>
+<li>proporção de relações com chave definida.</li>
+</ul>
+<h3 id="criterios-de-validacao-2">12.4 Critérios de validação</h3>
+<p>Uma correspondência é considerada válida quando possui entidade compartilhada, critério de associação e justificativa documentada.</p>
+<h3 id="contribuicao-2">12.5 Contribuição</h3>
+<p>Esse artefato explicita as relações entre fontes e apoia integração, grafos, lineage e governança.</p>
+<h2 class="section-title" id="artefato-a3-3-tabela-de-mapeamento-de-atributos">13. Artefato A3.3 — Tabela de Mapeamento de Atributos</h2>
+<h3 id="finalidade-3">13.1 Finalidade</h3>
+<p>A Tabela de Mapeamento de Atributos documenta correspondências entre atributos de diferentes fontes, indicando atributos equivalentes, semelhantes, derivados ou incompatíveis.</p>
+<h3 id="estrutura-minima-2">13.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Fonte A</td><td>Primeira fonte</td></tr><tr><td>Atributo A</td><td>Atributo da primeira fonte</td></tr><tr><td>Fonte B</td><td>Segunda fonte</td></tr><tr><td>Atributo B</td><td>Atributo da segunda fonte</td></tr><tr><td>Tipo de correspondência</td><td>Equivalente, parcial, derivado, incompatível</td></tr><tr><td>Transformação necessária</td><td>Regra de conversão ou padronização</td></tr><tr><td>Grau de confiança</td><td>Alto, médio ou baixo</td></tr><tr><td>Justificativa</td><td>Motivo da correspondência</td></tr><tr><td>Status</td><td>Validado, pendente, rejeitado</td></tr></table></div>
+<h3 id="metricas-associadas-3">13.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de harmonização de atributos;</li>
+<li>percentual de atributos equivalentes;</li>
+<li>percentual de atributos incompatíveis;</li>
+<li>percentual de correspondências validadas;</li>
+<li>grau médio de confiança das correspondências.</li>
+</ul>
+<h3 id="contribuicao-3">13.4 Contribuição</h3>
+<p>Esse artefato reduz ambiguidade entre atributos e permite harmonização controlada de variáveis provenientes de diferentes fontes.</p>
+<h2 class="section-title" id="artefato-a3-4-tabela-de-equivalencia-semantica">14. Artefato A3.4 — Tabela de Equivalência Semântica</h2>
+<h3 id="finalidade-4">14.1 Finalidade</h3>
+<p>A Tabela de Equivalência Semântica documenta a compatibilização de categorias, códigos, conceitos e valores utilizados em diferentes fontes.</p>
+<h3 id="estrutura-minima-3">14.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Fonte</td><td>Base de origem</td></tr><tr><td>Atributo</td><td>Atributo ou campo analisado</td></tr><tr><td>Valor original</td><td>Código ou categoria original</td></tr><tr><td>Valor harmonizado</td><td>Valor padronizado adotado</td></tr><tr><td>Conceito associado</td><td>Significado do valor</td></tr><tr><td>Tipo de equivalência</td><td>Exata, aproximada, agregada, desagregada</td></tr><tr><td>Regra de harmonização</td><td>Critério aplicado</td></tr><tr><td>Validação</td><td>Técnica, documental ou por especialista</td></tr><tr><td>Observações</td><td>Cuidados interpretativos</td></tr></table></div>
+<h3 id="metricas-associadas-4">14.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de harmonização semântica;</li>
+<li>percentual de categorias harmonizadas;</li>
+<li>número de categorias ambíguas;</li>
+<li>percentual de equivalências validadas;</li>
+<li>número de conflitos semânticos.</li>
+</ul>
+<h3 id="contribuicao-4">14.4 Contribuição</h3>
+<p>Esse artefato evita que categorias de fontes diferentes sejam combinadas de forma equivocada, fortalecendo <a class="term" href="../conceitos/interoperabilidade-semantica.html">interoperabilidade semântica</a> e qualidade analítica.</p>
+<h2 class="section-title" id="artefato-a3-5-registro-de-chaves-e-entidades">15. Artefato A3.5 — Registro de Chaves e Entidades</h2>
+<h3 id="finalidade-5">15.1 Finalidade</h3>
+<p>O Registro de Chaves e Entidades documenta as entidades compartilhadas entre fontes e os identificadores utilizados para relacioná-las.</p>
+<h3 id="estrutura-minima-4">15.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Entidade</td><td>Estudante, município, trabalhador, evento etc.</td></tr><tr><td>Fonte</td><td>Fonte em que a entidade aparece</td></tr><tr><td>Chave direta</td><td>Identificador explícito</td></tr><tr><td>Chave composta</td><td>Combinação de atributos</td></tr><tr><td>Critério indireto</td><td>Regra alternativa de associação</td></tr><tr><td>Cardinalidade</td><td>Um-para-um, um-para-muitos, muitos-para-muitos</td></tr><tr><td>Cobertura</td><td>Proporção de registros com chave</td></tr><tr><td>Confiança</td><td>Grau de confiabilidade</td></tr><tr><td>Observações</td><td>Limitações ou riscos</td></tr></table></div>
+<h3 id="metricas-associadas-5">15.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de chaves válidas;</li>
+<li>percentual de entidades com chave definida;</li>
+<li>percentual de registros sem identificador;</li>
+<li>grau de cobertura da chave;</li>
+<li>taxa de cardinalidade inesperada.</li>
+</ul>
+<h3 id="contribuicao-5">15.4 Contribuição</h3>
+<p>Esse artefato formaliza as bases da integração entre entidades, reduzindo riscos de pareamento incorreto e apoiando construção de grafos e lineage.</p>
+<h2 class="section-title" id="artefato-a3-6-registro-de-compatibilidade-de-granularidade">16. Artefato A3.6 — Registro de Compatibilidade de Granularidade</h2>
+<h3 id="finalidade-6">16.1 Finalidade</h3>
+<p>O Registro de Compatibilidade de Granularidade avalia se as fontes possuem níveis de análise compatíveis para integração.</p>
+<h3 id="estrutura-minima-5">16.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Fonte A</td><td>Primeira fonte</td></tr><tr><td>Granularidade A</td><td>Unidade de análise da primeira fonte</td></tr><tr><td>Fonte B</td><td>Segunda fonte</td></tr><tr><td>Granularidade B</td><td>Unidade de análise da segunda fonte</td></tr><tr><td>Compatibilidade</td><td>Compatível, parcialmente compatível, incompatível</td></tr><tr><td>Ajuste necessário</td><td>Agregação, desagregação, filtragem ou restrição</td></tr><tr><td>Risco</td><td>Risco de duplicação, perda ou interpretação indevida</td></tr><tr><td>Regra adotada</td><td>Procedimento de compatibilização</td></tr></table></div>
+<h3 id="metricas-associadas-6">16.3 Métricas associadas</h3>
+<ul class="list">
+<li>percentual de fontes com granularidade compatível;</li>
+<li>número de integrações que exigem agregação;</li>
+<li>número de integrações com risco de duplicidade;</li>
+<li>percentual de incompatibilidades documentadas.</li>
+</ul>
+<h3 id="contribuicao-6">16.4 Contribuição</h3>
+<p>Esse artefato previne integrações metodologicamente inadequadas e explicita os ajustes necessários entre diferentes níveis de detalhe.</p>
+<h2 class="section-title" id="artefato-a3-7-registro-de-conflitos-de-integracao">17. Artefato A3.7 — Registro de Conflitos de Integração</h2>
+<h3 id="finalidade-7">17.1 Finalidade</h3>
+<p>O Registro de Conflitos de Integração documenta divergências identificadas durante o processo de integração.</p>
+<h3 id="tipos-de-conflito">17.2 Tipos de conflito</h3>
+<ul class="list">
+<li>conflito de valor;</li>
+<li>conflito de chave;</li>
+<li>conflito de categoria;</li>
+<li>conflito temporal;</li>
+<li>conflito de granularidade;</li>
+<li>conflito de duplicidade;</li>
+<li>conflito de fonte prioritária;</li>
+<li>conflito semântico;</li>
+<li>conflito de formato.</li>
+</ul>
+<h3 id="estrutura-minima-6">17.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador do conflito</td><td>Código único</td></tr><tr><td>Fontes envolvidas</td><td>Bases em conflito</td></tr><tr><td>Registro ou entidade</td><td>Registro afetado</td></tr><tr><td>Atributo</td><td>Campo conflitante</td></tr><tr><td>Valor A</td><td>Valor na primeira fonte</td></tr><tr><td>Valor B</td><td>Valor na segunda fonte</td></tr><tr><td>Tipo de conflito</td><td>Valor, chave, categoria, tempo etc.</td></tr><tr><td>Regra de resolução</td><td>Critério adotado</td></tr><tr><td>Status</td><td>Resolvido, pendente, ignorado, mantido</td></tr><tr><td>Justificativa</td><td>Motivo da decisão</td></tr></table></div>
+<h3 id="metricas-associadas-7">17.4 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de conflito entre fontes;</li>
+<li>taxa de conflitos resolvidos;</li>
+<li>número de conflitos por atributo;</li>
+<li>número de conflitos por fonte;</li>
+<li>percentual de conflitos pendentes.</li>
+</ul>
+<h3 id="contribuicao-7">17.5 Contribuição</h3>
+<p>Esse artefato torna explícitas decisões de resolução de inconsistências, evitando perda de transparência no processo de integração.</p>
+<h2 class="section-title" id="artefato-a3-8-dataset-integrado-e-harmonizado">18. Artefato A3.8 — Dataset Integrado e Harmonizado</h2>
+<h3 id="finalidade-8">18.1 Finalidade</h3>
+<p>O Dataset Integrado e Harmonizado é o ativo resultante da integração de múltiplas fontes, após aplicação de regras de correspondência, compatibilização e harmonização.</p>
+<h3 id="estrutura-formal-2">18.2 Estrutura formal</h3>
+<p>O conjunto de datasets integrados pode ser representado como:</p>
+<div class="formula">H = {h₁, h₂, ..., hₘ}</div>
+<p>em que cada hⱼ representa um dataset integrado.</p>
+<p>Cada dataset integrado deve ser descrito por:</p>
+<div class="formula">hⱼ = {id, fontes_origem, chaves, regras, atributos_harmonizados, granularidade, período, conflitos, versão, métricas, lineage}</div>
+<h3 id="metricas-associadas-8">18.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de pareamento;</li>
+<li>taxa de não pareamento;</li>
+<li>taxa de conflito;</li>
+<li>taxa de harmonização;</li>
+<li>taxa de rastreabilidade;</li>
+<li>cobertura temporal integrada;</li>
+<li>número de fontes integradas.</li>
+</ul>
+<h3 id="criterios-de-validacao-3">18.4 Critérios de validação</h3>
+<p>Um dataset integrado é considerado válido quando possui fontes de origem documentadas, regras de integração, chaves utilizadas, granularidade definida, métricas calculadas e conflitos registrados.</p>
+<h3 id="contribuicao-8">18.5 Contribuição</h3>
+<p>Esse artefato materializa a integração e fornece base consistente para transformação, qualidade, modelagem, grafos, indicadores e dashboards.</p>
+<h2 class="section-title" id="artefato-a3-9-manifesto-de-integracao">19. Artefato A3.9 — Manifesto de Integração</h2>
+<h3 id="finalidade-9">19.1 Finalidade</h3>
+<p>O Manifesto de Integração registra os parâmetros, regras, fontes, versões e decisões aplicadas em uma execução de integração.</p>
+<h3 id="estrutura-minima-7">19.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador da integração</td><td>Código único</td></tr><tr><td>Fontes utilizadas</td><td>Datasets de origem</td></tr><tr><td>Versões das fontes</td><td>Snapshots ou versões usadas</td></tr><tr><td>Chaves aplicadas</td><td>Chaves ou critérios de pareamento</td></tr><tr><td>Regras de harmonização</td><td>Regras aplicadas</td></tr><tr><td>Parâmetros</td><td>Parâmetros da execução</td></tr><tr><td>Dataset resultante</td><td>Ativo gerado</td></tr><tr><td>Métricas</td><td>Métricas de integração</td></tr><tr><td>Conflitos</td><td>Resumo dos conflitos</td></tr><tr><td>Responsável</td><td>Executor ou equipe</td></tr><tr><td>Data da execução</td><td>Momento da integração</td></tr><tr><td>Lineage</td><td>Relações de origem e dependência</td></tr></table></div>
+<h3 id="metricas-associadas-9">19.3 Métricas associadas</h3>
+<ul class="list">
+<li>percentual de integrações com manifesto;</li>
+<li>completude dos manifestos;</li>
+<li>taxa de rastreabilidade da integração;</li>
+<li>percentual de manifestos com métricas;</li>
+<li>percentual de manifestos com versões documentadas.</li>
+</ul>
+<h3 id="contribuicao-9">19.4 Contribuição</h3>
+<p>Esse artefato fortalece auditoria, lineage, versionamento e reprodutibilidade da integração.</p>
+<h2 class="section-title" id="artefato-a3-10-relatorio-de-qualidade-da-integracao">20. Artefato A3.10 — Relatório de Qualidade da Integração</h2>
+<h3 id="finalidade-10">20.1 Finalidade</h3>
+<p>O Relatório de Qualidade da Integração avalia o resultado do processo de integração e harmonização, apresentando métricas, alertas, conflitos, limitações e recomendações.</p>
+<h3 id="estrutura-minima-8">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Processo avaliado</td><td>Identificador da integração</td></tr><tr><td>Fontes integradas</td><td>Bases utilizadas</td></tr><tr><td>Taxa de pareamento</td><td>Resultado obtido</td></tr><tr><td>Taxa de não pareamento</td><td>Resultado obtido</td></tr><tr><td>Taxa de conflito</td><td>Resultado obtido</td></tr><tr><td>Conflitos resolvidos</td><td>Quantidade ou proporção</td></tr><tr><td>Conflitos pendentes</td><td>Quantidade ou proporção</td></tr><tr><td>Cobertura temporal</td><td>Período integrado</td></tr><tr><td>Compatibilidade de granularidade</td><td>Avaliação obtida</td></tr><tr><td>Limitações</td><td>Restrições ou cuidados</td></tr><tr><td>Recomendações</td><td>Ações sugeridas</td></tr></table></div>
+<h3 id="metricas-associadas-10">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>TP;</li>
+<li>TNP;</li>
+<li>TCF;</li>
+<li>TCR;</li>
+<li>TRI;</li>
+<li>THA;</li>
+<li>THS;</li>
+<li>cobertura temporal integrada;</li>
+<li>grau de confiança da integração.</li>
+</ul>
+<h3 id="contribuicao-10">20.4 Contribuição</h3>
+<p>Esse artefato permite avaliar objetivamente se a integração produziu um ativo confiável e adequado aos objetivos analíticos.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">21. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Datasets brutos, inventário de fontes, matriz de relacionamento, dicionários preliminares, chaves, entidades, granularidade, logs e metadados de ingestão.</td></tr><tr><td>Processamento</td><td>Seleção de fontes, identificação de entidades, definição de chaves, compatibilização de granularidade, harmonização de atributos, harmonização semântica, resolução de conflitos e geração de datasets integrados.</td></tr><tr><td>Artefatos</td><td>Plano de integração, matriz de correspondência, tabelas de mapeamento, registro de chaves, registro de granularidade, conflitos, dataset integrado, manifesto e relatório de qualidade.</td></tr><tr><td>Métricas</td><td>TP, TNP, TCV, TCF, TCR, THA, THS, TRI, GCI e cobertura temporal integrada.</td></tr><tr><td>Saídas</td><td>Datasets integrados e harmonizados, com regras, chaves, conflitos, métricas e lineage documentados.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">22. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 3 pode ser considerado concluído quando:</p>
+<ol class="steps">
+<li>as fontes a integrar foram selecionadas com base em finalidade analítica explícita;</li>
+<li>as entidades compartilhadas foram identificadas;</li>
+<li>as chaves diretas, compostas ou critérios de pareamento foram documentados;</li>
+<li>a granularidade das fontes foi avaliada;</li>
+<li>atributos equivalentes foram mapeados;</li>
+<li>categorias e códigos foram harmonizados;</li>
+<li>conflitos foram identificados e registrados;</li>
+<li>regras de resolução foram documentadas;</li>
+<li>datasets integrados foram gerados;</li>
+<li>métricas de integração foram calculadas;</li>
+<li>manifestos de integração foram produzidos;</li>
+<li>os datasets integrados possuem rastreabilidade suficiente para serem auditados e reproduzidos.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-do-modelo-de-referencia">23. Relação com os demais módulos do modelo de referência</h2>
+<p>O Módulo 3 depende diretamente do Módulo 1 — Fontes e Inventário de Dados, pois utiliza o inventário, o mapa de bases, a matriz de relacionamento, o registro de granularidade e o dicionário preliminar para planejar a integração.</p>
+<p>Também depende do Módulo 2 — Extração, Ingestão e Armazenamento Bruto, pois utiliza os datasets brutos, logs, snapshots e manifestos de ingestão como insumos materiais.</p>
+<p>Para o Módulo 4 — Transformação, Limpeza e Enriquecimento, fornece datasets integrados que serão tratados, limpos, padronizados e enriquecidos.</p>
+<p>Para o Módulo 5 — Qualidade e Validação de Dados, fornece métricas de pareamento, conflito, completude, consistência e compatibilidade de granularidade.</p>
+<p>Para o Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, fornece informações sobre perdas de registros, grupos sub-representados, atributos sensíveis e possíveis vieses introduzidos pela integração.</p>
+<p>Para o Módulo 7 — Metadados, Catálogo e Semântica dos Dados, fornece tabelas de mapeamento, equivalências semânticas, datasets integrados e regras de harmonização.</p>
+<p>Para o Módulo 8 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, fornece registros sobre restrições, sensibilidade e riscos de integração entre fontes.</p>
+<p>Para o Módulo 9 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Lineage e Rastreabilidade, fornece vínculos entre fontes, regras de integração, versões e manifestos necessários para reconstruir a trajetória dos dados.</p>
+<p>Para o Módulo 10 — Versionamento e Reprodutibilidade, fornece versões de datasets integrados, parâmetros e manifestos de execução.</p>
+<p>Para o Módulo 11 — Representação Tabular, Temporal, Grafos e Grafos Temporais, fornece entidades, relações e vínculos que podem ser representados como nós, arestas, atributos e janelas temporais.</p>
+<p>Para o Módulo 12 — Feature Engineering e <a class="term" href="../conceitos/feature-store.html">Feature Store</a>, fornece bases integradas a partir das quais atributos derivados e features podem ser construídos.</p>
+<p>Para o Módulo 13 — Disponibilização Analítica, fornece datasets integrados e harmonizados para consumo por dashboards, APIs, relatórios e modelos.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">24. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, o Módulo 3 poderia integrar dados de matrícula, histórico acadêmico, notas, frequência, ambiente virtual de aprendizagem, questionário socioeconômico e registros de evasão.</p>
+<p>As entidades compartilhadas poderiam incluir estudante, curso, disciplina, turma e período letivo. As chaves poderiam envolver RA, código do curso, código da disciplina, ano, semestre e identificadores de turma. A harmonização poderia compatibilizar categorias como “ativo”, “trancado”, “cancelado”, “evadido”, “concluído” ou “matriculado”.</p>
+<p>O módulo deveria registrar conflitos, como estudantes presentes em uma base de matrícula, mas ausentes no ambiente virtual; divergência entre situação acadêmica em fontes distintas; disciplinas com códigos alterados ao longo do tempo; ou diferenças de granularidade entre notas por avaliação e situação final por disciplina.</p>
+<p>O resultado seria um dataset integrado de trajetória acadêmica, contendo informações harmonizadas sobre matrícula, desempenho, frequência, interações e situação acadêmica, com regras de integração, métricas de pareamento e conflitos documentados.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">25. Exemplo de aplicação em políticas públicas</h2>
+<p>Em uma aplicação em políticas públicas, o Módulo 3 poderia integrar dados de saúde, educação, assistência social, território, trabalho e cadastro populacional.</p>
+<p>As entidades compartilhadas poderiam incluir cidadão, família, território, município, equipamento público, atendimento e benefício. A integração poderia exigir compatibilização de códigos territoriais, datas de atendimento, unidades administrativas, categorias de vulnerabilidade e registros de serviços prestados.</p>
+<p>Conflitos poderiam surgir quando diferentes secretarias registram a mesma família com identificadores distintos, quando endereços são preenchidos de forma inconsistente ou quando territórios possuem recortes administrativos diferentes.</p>
+<p>O resultado seria uma base integrada para análise territorial, permitindo construir indicadores de vulnerabilidade, mapas de atendimento, redes de serviços e modelos de priorização de políticas públicas.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">26. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição do Módulo 3 está em formalizar a integração e a harmonização de dados como uma etapa mensurável, auditável e reprodutível da Engenharia Analítica de Dados.</p>
+<p>Em vez de tratar a integração como uma simples junção de tabelas, o UnespDataLens-RM propõe que cada processo de integração seja acompanhado de artefatos formais, tais como plano de integração, matriz de correspondência, tabela de mapeamento de atributos, equivalência semântica, registro de chaves, registro de conflitos, dataset integrado, manifesto de integração e relatório de qualidade.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>reduzir integrações incorretas;</li>
+<li>explicitar regras de harmonização;</li>
+<li>documentar decisões técnicas e semânticas;</li>
+<li>avaliar a qualidade dos pareamentos;</li>
+<li>identificar perdas e conflitos entre fontes;</li>
+<li>preservar rastreabilidade entre fontes e datasets integrados;</li>
+<li>apoiar lineage e versionamento;</li>
+<li>preparar dados para transformação, qualidade, grafos e modelagem;</li>
+<li>permitir reprodutibilidade e auditoria dos datasets integrados.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">27. Síntese do módulo</h2>
+<p>O Módulo 3 — Integração e Harmonização transforma datasets brutos dispersos em ativos integrados, coerentes e documentados. Sua função é estabelecer relações entre fontes, identificar entidades compartilhadas, definir chaves, compatibilizar granularidades, harmonizar atributos e categorias, resolver conflitos e gerar datasets integrados com métricas e rastreabilidade.</p>
+<p>Sua importância para o UnespDataLens-RM é central, pois os dados analíticos raramente emergem de uma única fonte. A robustez dos modelos, indicadores, dashboards, grafos e análises depende diretamente da qualidade da integração realizada.</p>
+<p>Ao formalizar a integração como um processo composto por artefatos, métricas e critérios de validação, o Módulo 3 fortalece a confiabilidade, a transparência, a governança, a proveniência e a reprodutibilidade dos ativos analíticos produzidos pelo modelo de referência.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

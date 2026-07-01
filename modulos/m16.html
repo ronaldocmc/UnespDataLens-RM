@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo Transversal 16 — Agentes Inteligentes de Apoio ao Pipeline tem como finalidade especificar, integrar, controlar, avaliar e monitorar agentes inteligentes capazes de apoiar usuários, analistas, pesquisadores, gestores e equipes técnicas na navegação, compreensão, documentação, validação, explicação, recomendação e manutenção dos processos do modelo…">
+  <title>Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-transversal-16-agentes-inteligentes-de-apoio-ao-pipeline"></span><section class="hero">
+<span class="badge">Módulo 16</span>
+<h1>Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline</h1>
+<p>O Módulo Transversal 16 — Agentes Inteligentes de Apoio ao Pipeline tem como finalidade especificar, integrar, controlar, avaliar e monitorar agentes inteligentes capazes de apoiar usuários, analistas, pesquisadores, gestores e equipes técnicas na navegação, compreensão, documentação, validação, explicação, recomendação e manutenção dos processos do modelo…</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 29 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#natureza-transversal-do-modulo">Natureza transversal do módulo</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-tecnologias-aplicaveis">Técnicas, métodos e tecnologias aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a16-1-arquitetura-de-agentes-inteligentes">Artefato A16.1 — Arquitetura de Agentes Inteligentes</a><a href="#artefato-a16-2-catalogo-de-agentes">Artefato A16.2 — Catálogo de Agentes</a><a href="#artefato-a16-3-base-de-conhecimento-dos-agentes">Artefato A16.3 — Base de Conhecimento dos Agentes</a><a href="#artefato-a16-4-politica-de-uso-dos-agentes">Artefato A16.4 — Política de Uso dos Agentes</a><a href="#artefato-a16-5-registro-de-interacoes-dos-agentes">Artefato A16.5 — Registro de Interações dos Agentes</a><a href="#artefato-a16-6-registro-de-recomendacoes">Artefato A16.6 — Registro de Recomendações</a><a href="#artefato-a16-7-relatorio-de-avaliacao-dos-agentes">Artefato A16.7 — Relatório de Avaliação dos Agentes</a><a href="#artefato-a16-8-registro-de-validacao-humana">Artefato A16.8 — Registro de Validação Humana</a><a href="#artefato-a16-9-registro-de-erros-e-limitacoes">Artefato A16.9 — Registro de Erros e Limitações</a><a href="#artefato-a16-10-manifesto-de-resposta-do-agente">Artefato A16.10 — Manifesto de Resposta do Agente</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-o-pipeline-principal">Relação com o pipeline principal</a><a href="#relacao-com-os-demais-modulos-transversais">Relação com os demais módulos transversais</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo Transversal 16 — Agentes Inteligentes de Apoio ao Pipeline tem como finalidade especificar, integrar, controlar, avaliar e monitorar agentes inteligentes capazes de apoiar usuários, analistas, pesquisadores, gestores e equipes técnicas na navegação, compreensão, documentação, validação, explicação, recomendação e manutenção dos processos do modelo de referência UnespDataLens-RM.</p>
+<p>Esse módulo atua de forma transversal porque os agentes inteligentes podem interagir com diferentes etapas do pipeline principal e com diferentes artefatos produzidos pelos módulos transversais. Eles podem apoiar o <a class="term" href="../artefatos/inventario-de-fontes.html">inventário de fontes</a>, a consulta ao catálogo, a geração de documentação, a explicação da linhagem dos dados, a interpretação de métricas de qualidade, a identificação de problemas de governança, a recomendação de transformações, a análise de drift, a busca de produtos de dados, a explicação de features, a interpretação de dashboards, a identificação de riscos e a orientação sobre restrições de acesso.</p>
+<p>No contexto do UnespDataLens-RM, os agentes inteligentes não devem ser compreendidos como substitutos dos módulos técnicos, nem como mecanismos autônomos de decisão sem controle humano. Eles são concebidos como componentes de apoio, operando sobre <a class="term" href="../conceitos/metadados.html">metadados</a>, catálogos, glossários, <a class="term" href="../conceitos/logs.html">logs</a>, registros de qualidade, regras, versões, grafos de linhagem, features, relatórios, produtos de dados, políticas de governança e registros de monitoramento. Seu papel é ampliar a capacidade de consulta, explicação, recomendação e documentação do ecossistema analítico, mantendo <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a>, validação, segurança e <a class="term" href="../metricas/conformidade.html">conformidade</a>.</p>
+<p>Os agentes podem assumir diferentes funções. Um agente pode auxiliar na descoberta de fontes de dados. Outro pode explicar a origem de um indicador. Outro pode identificar datasets com queda de qualidade. Outro pode sugerir revisão de features com drift. Outro pode explicar quais dashboards dependem de uma fonte alterada. Outro pode apoiar a geração de fichas de documentação. Outro pode orientar usuários sobre restrições de acesso, finalidade de uso e limitações de um <a class="term" href="../conceitos/produto-de-dados.html">produto de dados</a>.</p>
+<p>Entretanto, o uso de agentes inteligentes em pipelines de dados exige cuidados metodológicos, técnicos e éticos. As respostas geradas devem ser fundamentadas em evidências registradas nos módulos do modelo de referência, como metadados, lineage, versões, logs, catálogos, relatórios de qualidade, políticas de governança e registros de monitoramento. O agente deve indicar, sempre que possível, a origem da informação utilizada, sinalizar incertezas, respeitar permissões de acesso e evitar inferências não fundamentadas sobre dados sensíveis, incompletos ou não autorizados.</p>
+<p>Assim, o Módulo 16 formaliza os agentes inteligentes como componentes transversais de apoio ao pipeline, orientados por evidências, governança, rastreabilidade, controle humano, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, segurança e critérios de confiabilidade.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 16 é integrar agentes inteligentes ao UnespDataLens-RM como mecanismos de apoio à consulta, explicação, documentação, recomendação, validação e manutenção dos ativos analíticos, garantindo que suas respostas, sugestões e ações sejam baseadas em metadados, evidências, regras, lineage, versões, políticas de governança, registros de monitoramento e validação humana quando necessário.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 16:</p>
+<ol class="steps">
+<li>definir os tipos de agentes inteligentes que poderão atuar no apoio ao pipeline analítico;</li>
+<li>especificar funções, escopos, permissões, limites e responsabilidades de cada agente;</li>
+<li>integrar agentes aos catálogos de dados, metadados, glossários, dicionários, modelos semânticos, registros de qualidade, lineage, versionamento, <a class="term" href="../conceitos/feature-store.html">feature store</a> e monitoramento;</li>
+<li>permitir consultas em linguagem natural sobre fontes, datasets, atributos, produtos de dados, dashboards, APIs, features, grafos, indicadores, regras e versões;</li>
+<li>apoiar a explicação de indicadores, features, datasets e produtos analíticos a partir de sua origem, regras, versões, métricas de qualidade e limitações;</li>
+<li>recomendar ações de melhoria, revisão, reprocessamento, documentação, validação, monitoramento ou governança com base em evidências registradas;</li>
+<li>auxiliar na geração, revisão e atualização de documentação técnica, dicionários, fichas de ativos, relatórios, descrições de produtos e registros de qualidade;</li>
+<li>apoiar usuários na descoberta de dados e produtos disponíveis, respeitando permissões, restrições de acesso e classificações de sensibilidade;</li>
+<li>interpretar alertas de drift, evolução dos ativos, obsolescência, falhas de qualidade e incidentes de monitoramento;</li>
+<li>registrar interações, recomendações, respostas, fontes utilizadas, limitações, validações humanas e feedback dos usuários;</li>
+<li>avaliar qualidade, utilidade, confiabilidade, rastreabilidade, segurança e efetividade das respostas e recomendações dos agentes;</li>
+<li>assegurar que agentes inteligentes operem sob controle humano e em conformidade com regras de segurança, <a class="term" href="../conceitos/privacidade.html">privacidade</a>, governança e uso responsável.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>Agentes inteligentes podem ser compreendidos como componentes computacionais capazes de interpretar solicitações, acessar informações, executar tarefas, gerar respostas, propor recomendações ou apoiar decisões com algum grau de autonomia operacional. No UnespDataLens-RM, sua atuação deve ser orientada por dados, metadados, regras, documentos, catálogos, registros e evidências produzidas pelo próprio modelo de referência.</p>
+<p>Esses agentes podem empregar diferentes abordagens técnicas, como modelos de linguagem, recuperação de informação, busca semântica, embeddings, regras, workflows, APIs, grafos de conhecimento, sistemas de recomendação, análise de logs, bases vetoriais e mecanismos de validação. Contudo, sua atuação deve ser limitada pelo escopo do pipeline, pelas permissões do usuário e pelas políticas de governança.</p>
+<p>Os agentes inteligentes do UnespDataLens-RM podem ser classificados conforme sua função principal:</p>
+<div class="table-wrap"><table class="table"><tr><th>Tipo de agente</th><th>Função principal</th><th>Exemplo de atuação</th></tr><tr><td>Agente de descoberta de dados</td><td>Auxilia usuários a encontrar fontes, datasets, features e produtos.</td><td>“Quais bases possuem dados de evasão?”</td></tr><tr><td>Agente de documentação</td><td>Gera, revisa ou complementa descrições, dicionários e fichas.</td><td>Sugerir descrição para atributos sem documentação.</td></tr><tr><td>Agente de qualidade</td><td>Consulta métricas e identifica problemas de qualidade.</td><td>Apontar datasets com queda de <a class="term" href="../metricas/completude.html">completude</a>.</td></tr><tr><td>Agente de lineage</td><td>Explica origem, dependências e trajetória dos dados.</td><td>“De onde vem este indicador?”</td></tr><tr><td>Agente de governança</td><td>Orienta sobre acesso, sensibilidade, finalidade e restrições.</td><td>Informar se um dataset pode ser compartilhado.</td></tr><tr><td>Agente de versionamento</td><td>Localiza versões, changelogs e execuções reprodutíveis.</td><td>Explicar diferenças entre duas versões de um <a class="term" href="../artefatos/dashboard.html">dashboard</a>.</td></tr><tr><td>Agente de representações analíticas</td><td>Apoia escolha e interpretação de tabelas, séries e grafos.</td><td>Sugerir representação temporal ou <a class="term" href="../conceitos/grafo.html">grafo</a> para um problema.</td></tr><tr><td>Agente de <a class="term" href="../conceitos/feature-engineering.html">feature engineering</a></td><td>Sugere, explica, reutiliza ou avalia features.</td><td>Sugerir features temporais para evasão.</td></tr><tr><td>Agente de monitoramento</td><td>Interpreta alertas, drift e evolução dos ativos.</td><td>Explicar alerta de mudança de distribuição.</td></tr><tr><td>Agente de consumo analítico</td><td>Auxilia usuários na interpretação de produtos disponibilizados.</td><td>Explicar indicador em painel institucional.</td></tr><tr><td>Agente de manutenção do pipeline</td><td>Recomenda ações corretivas ou reprocessamentos.</td><td>Sugerir reexecução após drift de schema.</td></tr></table></div>
+<p>A atuação desses agentes deve obedecer aos seguintes princípios:</p>
+<ol class="steps">
+<li>evidência antes de inferência: respostas devem se apoiar em registros, metadados, logs, documentos, métricas ou relatórios disponíveis;</li>
+<li>rastreabilidade da resposta: sempre que possível, o agente deve registrar quais fontes, artefatos ou evidências sustentam sua resposta;</li>
+<li><a class="term" href="../conceitos/controle-de-acesso.html">controle de acesso</a>: o agente só deve consultar ou expor informações compatíveis com as permissões do usuário;</li>
+<li>validação humana: recomendações críticas devem depender de revisão ou aprovação humana;</li>
+<li>transparência: limitações, incertezas e ausência de dados devem ser explicitadas;</li>
+<li>não substituição da governança: agentes apoiam o processo, mas não substituem políticas, responsáveis e decisões institucionais;</li>
+<li>não autonomização indevida: agentes não devem executar alterações críticas sem autorização;</li>
+<li>responsabilidade e auditabilidade: interações, recomendações e respostas devem ser registradas para auditoria e melhoria contínua.</li>
+</ol>
+<p>À luz da Design Science Research, o Módulo 16 formaliza agentes inteligentes como artefatos computacionais e metodológicos voltados a resolver problemas de <a class="term" href="../problemas/sobrecarga-informacional.html">sobrecarga informacional</a>, baixa descoberta de dados, dificuldade de interpretação, documentação insuficiente, complexidade de lineage, monitoramento contínuo e apoio à tomada de decisão baseada em evidências.</p>
+<h2 class="section-title" id="natureza-transversal-do-modulo">5. Natureza transversal do módulo</h2>
+<p>O Módulo 16 é transversal porque os agentes inteligentes podem atuar sobre todos os módulos do pipeline principal e sobre todos os módulos transversais.</p>
+<p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, os agentes podem auxiliar na consulta ao inventário, identificação de fontes relevantes, sugestão de campos de documentação e comparação entre fontes.</p>
+<p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, podem explicar falhas de ingestão, consultar logs, identificar fontes atrasadas e sugerir verificações iniciais.</p>
+<p>No Módulo 3 — Integração e Harmonização, podem apoiar a identificação de chaves, entidades compartilhadas, conflitos, equivalências semânticas e riscos de integração.</p>
+<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, podem sugerir regras de limpeza, explicar atributos derivados, identificar transformações aplicadas e apontar impactos.</p>
+<p>No Módulo 5 — Qualidade e Validação de Dados, podem interpretar relatórios de qualidade, indicar não conformidades, explicar métricas e sugerir ações corretivas.</p>
+<p>No Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, podem consultar métricas de distribuição, <a class="term" href="../conceitos/fairness.html">fairness</a>, grupos afetados, riscos residuais e limitações de uso.</p>
+<p>No Módulo 7 — Armazenamento Analítico, podem localizar ativos armazenados, explicar zonas, schemas, versões, formatos e estruturas persistidas.</p>
+<p>No Módulo 8 — Disponibilização e Consumo Analítico, podem orientar usuários sobre produtos disponíveis, dashboards, APIs, datasets, relatórios, versões e restrições de acesso.</p>
+<p>No Módulo 9 — Metadados, Catálogo e Semântica dos Dados, utilizam catálogo, glossário, dicionários e modelos semânticos como base principal de conhecimento.</p>
+<p>No Módulo 10 — Governança, Segurança, Privacidade e Conformidade, devem respeitar políticas de acesso, sensibilidade, finalidade, retenção, privacidade e conformidade.</p>
+<p>No Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e Rastreabilidade, podem explicar origem, percurso e dependências dos dados.</p>
+<p>No Módulo 12 — Versionamento e <a class="term" href="../conceitos/reprodutibilidade.html">Reprodutibilidade</a>, podem identificar versões, explicar diferenças entre execuções e auxiliar na reconstrução de resultados.</p>
+<p>No Módulo 13 — Representações Analíticas, podem explicar representações tabulares, temporais e em grafos, além de sugerir métricas e visualizações.</p>
+<p>No Módulo 14 — Feature Engineering e Feature Store, podem consultar features, explicar regras de cálculo, identificar riscos de vazamento, sugerir reuso e interpretar drift de features.</p>
+<p>No Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, podem interpretar alertas, explicar mudanças, identificar impactos e recomendar ações de manutenção.</p>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">6. Formalização sintética do módulo</h2>
+<p>O Módulo 16 pode ser formalizado como um conjunto de agentes inteligentes que operam sobre ativos, metadados, evidências e regras do UnespDataLens-RM.</p>
+<p>Considerando o conjunto de agentes:</p>
+<div class="formula">AG = {ag₁, ag₂, ..., agₙ}</div>
+<p>cada agente agᵢ pode ser descrito por:</p>
+<div class="formula">agᵢ = {id, nome, função, escopo, fontes_conhecimento, permissões, ferramentas, entradas, saídas, limites, métricas, validação_humana}</div>
+<p>Considerando o conjunto de ativos do modelo de referência:</p>
+<div class="formula">A = {a₁, a₂, ..., aₘ}</div>
+<p>e o conjunto de bases de conhecimento e evidências:</p>
+<div class="formula">K = {metadados, catálogo, glossário, lineage, versões, logs, relatórios, políticas, métricas, regras, alertas}</div>
+<p>um agente pode ser representado por uma função:</p>
+<p>agᵢ(q, K, C) → r</p>
+<p>em que:</p>
+<ul class="list">
+<li>q representa uma consulta, tarefa ou solicitação;</li>
+<li>K representa o conjunto de conhecimentos e evidências disponíveis;</li>
+<li>C representa o contexto do usuário, suas permissões, finalidade e restrições;</li>
+<li>r representa uma resposta, explicação, recomendação, relatório, alerta interpretado ou ação proposta.</li>
+</ul>
+<p>Cada resposta gerada por um agente deve ser acompanhada, sempre que possível, por um registro:</p>
+<div class="formula">resposta = {consulta, resposta, fontes_utilizadas, nível_confiança, limitações, usuário, data, validação}</div>
+<p>Dessa forma, a atuação do agente não é uma caixa-preta isolada, mas um processo documentado, controlado, rastreável e avaliável.</p>
+<h2 class="section-title" id="entradas-do-modulo">7. Entradas do módulo</h2>
+<p>As entradas do Módulo 16 são compostas por ativos, documentos, registros, métricas, políticas e artefatos produzidos por todo o UnespDataLens-RM.</p>
+<p>As principais entradas são:</p>
+<ul class="list">
+<li>inventário de fontes;</li>
+<li>dicionários de dados;</li>
+<li>glossários;</li>
+<li>modelos semânticos;</li>
+<li>catálogos de dados;</li>
+<li>catálogos de produtos;</li>
+<li>registros de qualidade;</li>
+<li>relatórios de não conformidade;</li>
+<li>registros de <a class="term" href="../conceitos/vies.html">viés</a> e equidade;</li>
+<li>registros de sensibilidade;</li>
+<li>políticas de governança;</li>
+<li>matriz de acesso;</li>
+<li>registros de lineage;</li>
+<li>grafos de linhagem;</li>
+<li>registros de versionamento;</li>
+<li>changelogs;</li>
+<li>manifestos de execução;</li>
+<li>registros de monitoramento;</li>
+<li>alertas de drift;</li>
+<li>logs de ingestão;</li>
+<li>logs de acesso;</li>
+<li>dashboards;</li>
+<li>APIs;</li>
+<li>data marts;</li>
+<li>feature store;</li>
+<li><a class="term" href="../artefatos/catalogo-de-features.html">catálogo de features</a>;</li>
+<li>representações tabulares;</li>
+<li><a class="term" href="../conceitos/series-temporais.html">séries temporais</a>;</li>
+<li>grafos;</li>
+<li>produtos de dados;</li>
+<li>documentação institucional;</li>
+<li>regras de negócio;</li>
+<li>perguntas dos usuários;</li>
+<li>permissões e perfis de acesso;</li>
+<li>feedback dos usuários.</li>
+</ul>
+<h2 class="section-title" id="processamento">8. Processamento</h2>
+<p>O processamento do Módulo 16 envolve recepção da solicitação, interpretação, verificação de permissões, recuperação de evidências, geração de resposta ou recomendação, validação e registro da interação.</p>
+<h3 id="recepcao-e-interpretacao-da-solicitacao">8.1 Recepção e interpretação da solicitação</h3>
+<p>A primeira atividade consiste em receber uma pergunta, comando, tarefa ou solicitação do usuário ou de outro sistema. O agente deve interpretar a intenção da solicitação, identificar o escopo, reconhecer entidades mencionadas, verificar o tipo de resposta esperada e determinar quais bases de conhecimento precisam ser consultadas.</p>
+<h3 id="verificacao-de-contexto-perfil-e-permissao">8.2 Verificação de contexto, perfil e permissão</h3>
+<p>A segunda atividade consiste em verificar quem está solicitando, qual é a finalidade, qual é o perfil de acesso e quais restrições se aplicam. O agente não deve acessar ou expor informações além do permitido ao usuário ou sistema solicitante.</p>
+<h3 id="recuperacao-de-informacoes-e-evidencias">8.3 Recuperação de informações e evidências</h3>
+<p>A terceira atividade consiste em consultar os artefatos relevantes do UnespDataLens-RM, como catálogo, metadados, lineage, registros de qualidade, logs, versões, relatórios, políticas, feature store, dashboards, produtos de dados ou registros de monitoramento.</p>
+<p>A recuperação pode ser baseada em busca textual, busca semântica, consultas estruturadas, grafos, APIs, regras ou combinação dessas abordagens.</p>
+<h3 id="raciocinio-assistido-por-regras-e-contexto">8.4 Raciocínio assistido por regras e contexto</h3>
+<p>A quarta atividade consiste em interpretar as evidências recuperadas e gerar uma resposta coerente com as regras do modelo de referência. O agente pode resumir, comparar, explicar, sugerir, classificar, priorizar ou alertar, mas deve manter vínculo com as evidências disponíveis.</p>
+<h3 id="geracao-de-respostas-explicacoes-ou-recomendacoes">8.5 Geração de respostas, explicações ou recomendações</h3>
+<p>A quinta atividade consiste em produzir uma resposta compreensível ao usuário. Essa resposta pode assumir a forma de explicação, lista de ativos, recomendação de ação, resumo de qualidade, interpretação de indicador, sugestão de feature, alerta de governança, análise de impacto ou documentação preliminar.</p>
+<h3 id="registro-das-fontes-utilizadas">8.6 Registro das fontes utilizadas</h3>
+<p>A sexta atividade consiste em registrar quais artefatos, documentos, metadados, logs ou métricas foram utilizados para gerar a resposta. Esse registro aumenta a transparência e permite auditoria.</p>
+<h3 id="sinalizacao-de-incertezas-e-limitacoes">8.7 Sinalização de incertezas e limitações</h3>
+<p>A sétima atividade consiste em indicar quando a resposta possui incerteza, quando dados estão incompletos, quando o agente não possui permissão, quando não há evidência suficiente ou quando a solicitação exige validação humana.</p>
+<h3 id="validacao-humana-quando-necessario">8.8 Validação humana quando necessário</h3>
+<p>A oitava atividade consiste em encaminhar recomendações críticas para validação humana. Isso é especialmente importante para ações que envolvem exclusão de dados, alteração de regras, publicação de produtos, acesso a dados sensíveis, mitigação de viés, reprocessamento crítico ou mudanças em pipelines.</p>
+<h3 id="registro-da-interacao-e-feedback">8.9 Registro da interação e feedback</h3>
+<p>A nona atividade consiste em registrar a interação, incluindo pergunta, resposta, usuário, data, fontes utilizadas, nível de confiança, limitações e feedback do usuário.</p>
+<h3 id="aprimoramento-continuo-do-agente">8.10 Aprimoramento contínuo do agente</h3>
+<p>A décima atividade consiste em utilizar feedback, avaliações, erros, lacunas documentais e interações anteriores para melhorar prompts, regras, bases de conhecimento, fluxos de recuperação, documentação e critérios de resposta.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-tecnologias-aplicaveis">9. Técnicas, métodos e tecnologias aplicáveis</h2>
+<p>O Módulo 16 pode empregar diferentes técnicas e tecnologias de <a class="term" href="../conceitos/inteligencia-artificial.html">inteligência artificial</a>, recuperação de informação, automação e interação.</p>
+<p>Entre as técnicas de recuperação e consulta, destacam-se:</p>
+<ul class="list">
+<li>busca textual;</li>
+<li>busca semântica;</li>
+<li>embeddings;</li>
+<li>bases vetoriais;</li>
+<li>recuperação aumentada por contexto;</li>
+<li>consulta a catálogos;</li>
+<li>consulta a grafos de linhagem;</li>
+<li>consulta a APIs;</li>
+<li>consulta a logs;</li>
+<li>consulta SQL;</li>
+<li>consulta em bancos de grafos;</li>
+<li>indexação de documentos;</li>
+<li>rankeamento de resultados;</li>
+<li>filtragem por permissão.</li>
+</ul>
+<p>Entre as técnicas de agentes inteligentes, podem ser utilizadas:</p>
+<ul class="list">
+<li>modelos de linguagem;</li>
+<li>agentes baseados em ferramentas;</li>
+<li>workflows orientados por tarefas;</li>
+<li>sistemas de recomendação;</li>
+<li>regras especialistas;</li>
+<li>classificadores;</li>
+<li>sumarização automática;</li>
+<li>geração assistida de documentação;</li>
+<li>análise de intenção;</li>
+<li>extração de entidades;</li>
+<li>planejamento de tarefas;</li>
+<li>validação por regras;</li>
+<li>human-in-the-loop;</li>
+<li>recuperação aumentada por geração sobre catálogo e documentação;</li>
+<li>geração controlada por evidências.</li>
+</ul>
+<p>Entre as técnicas de governança dos agentes, destacam-se:</p>
+<ul class="list">
+<li>controle de acesso;</li>
+<li>filtros por sensibilidade;</li>
+<li>logs de interação;</li>
+<li>validação humana;</li>
+<li>auditoria de respostas;</li>
+<li>avaliação de alucinação;</li>
+<li>avaliação de utilidade;</li>
+<li>versionamento de prompts;</li>
+<li>testes de regressão de respostas;</li>
+<li>políticas de uso;</li>
+<li>limites de ação;</li>
+<li>rastreamento de fontes;</li>
+<li>monitoramento de segurança.</li>
+</ul>
+<p>Entre as tecnologias possíveis, destacam-se:</p>
+<ul class="list">
+<li>modelos de linguagem;</li>
+<li>bancos vetoriais;</li>
+<li>catálogos de dados;</li>
+<li>APIs internas;</li>
+<li>orquestradores de agentes;</li>
+<li>ferramentas de busca;</li>
+<li>bancos de grafos;</li>
+<li>dashboards;</li>
+<li>sistemas de logs;</li>
+<li>repositórios de documentação;</li>
+<li>ferramentas de observabilidade;</li>
+<li>mecanismos de autenticação;</li>
+<li>notebooks;</li>
+<li>serviços de geração de texto;</li>
+<li>ferramentas de workflow;</li>
+<li>interfaces conversacionais.</li>
+</ul>
+<h2 class="section-title" id="metricas-do-modulo">10. Métricas do módulo</h2>
+<p>As métricas do Módulo 16 avaliam cobertura, utilidade, confiabilidade, rastreabilidade, segurança, qualidade e eficiência dos agentes inteligentes.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Taxa de respostas baseadas em evidências</td><td>TRBE</td><td>Proporção de respostas com fontes ou artefatos associados</td></tr><tr><td>Taxa de respostas úteis</td><td>TRU</td><td>Proporção de respostas avaliadas como úteis pelos usuários</td></tr><tr><td>Taxa de respostas corretas</td><td>TRC</td><td>Proporção de respostas validadas como corretas</td></tr><tr><td>Taxa de respostas com limitação explícita</td><td>TRLE</td><td>Proporção de respostas que sinalizam incerteza quando necessário</td></tr><tr><td>Taxa de recomendações aceitas</td><td>TRA</td><td>Proporção de recomendações aceitas por usuários ou responsáveis</td></tr><tr><td>Taxa de recomendações rejeitadas</td><td>TRR</td><td>Proporção de recomendações recusadas</td></tr><tr><td>Taxa de interações auditáveis</td><td>TIA</td><td>Proporção de interações com registro completo</td></tr><tr><td>Taxa de violações de acesso</td><td>TVA</td><td>Proporção de tentativas ou respostas que violam restrições</td></tr><tr><td>Taxa de consultas resolvidas</td><td>TCR</td><td>Proporção de consultas respondidas sem encaminhamento</td></tr><tr><td>Tempo médio de resposta</td><td>TMR</td><td>Tempo médio para gerar resposta</td></tr><tr><td>Taxa de encaminhamento humano</td><td>TEH</td><td>Proporção de solicitações encaminhadas para validação humana</td></tr><tr><td>Taxa de erro do agente</td><td>TEA</td><td>Proporção de respostas incorretas, incompletas ou inadequadas</td></tr><tr><td>Cobertura da base de conhecimento</td><td>CBK</td><td>Proporção de artefatos indexados ou acessíveis ao agente</td></tr><tr><td>Índice de confiabilidade da resposta</td><td>ICR</td><td>Grau de confiança atribuído à resposta</td></tr><tr><td>Índice de utilidade do agente</td><td>IUA</td><td>Grau agregado de utilidade percebida e efetividade</td></tr></table></div>
+<h3 id="taxa-de-respostas-baseadas-em-evidencias-trbe">10.1 Taxa de Respostas Baseadas em Evidências — TRBE</h3>
+<p>A Taxa de Respostas Baseadas em Evidências mede a proporção de respostas que indicam ou registram os artefatos utilizados como base.</p>
+<div class="formula">TRBE = número de respostas com evidências associadas / número total de respostas geradas</div>
+<p>Essa métrica é essencial para evitar respostas sem fundamento documental.</p>
+<h3 id="taxa-de-respostas-uteis-tru">10.2 Taxa de Respostas Úteis — TRU</h3>
+<p>A Taxa de Respostas Úteis mede a proporção de respostas consideradas úteis pelos usuários.</p>
+<div class="formula">TRU = número de respostas avaliadas como úteis / número total de respostas avaliadas</div>
+<p>Essa métrica avalia a contribuição prática dos agentes.</p>
+<h3 id="taxa-de-violacoes-de-acesso-tva">10.3 Taxa de Violações de Acesso — TVA</h3>
+<p>A Taxa de Violações de Acesso mede a proporção de interações em que o agente tentou acessar, expor ou recomendar uso de informação fora das permissões definidas.</p>
+<div class="formula">TVA = número de violações de acesso / número total de interações avaliadas</div>
+<p>Essa métrica deve tender a zero.</p>
+<h3 id="taxa-de-encaminhamento-humano-teh">10.4 Taxa de Encaminhamento Humano — TEH</h3>
+<p>A Taxa de Encaminhamento Humano mede a proporção de solicitações que exigiram validação humana.</p>
+<div class="formula">TEH = número de solicitações encaminhadas para validação humana / número total de solicitações</div>
+<p>Essa métrica ajuda a avaliar o grau de autonomia controlada dos agentes.</p>
+<h3 id="indice-de-confiabilidade-da-resposta-icr">10.5 Índice de Confiabilidade da Resposta — ICR</h3>
+<p>O Índice de Confiabilidade da Resposta pode ser definido como uma composição de evidência, <a class="term" href="../metricas/consistencia.html">consistência</a>, validação e conformidade.</p>
+<p>Uma formulação possível é:</p>
+<div class="formula">ICR(rᵢ) = w₁E + w₂C + w₃V + w₄S</div>
+<p>em que:</p>
+<ul class="list">
+<li>E representa presença de evidências;</li>
+<li>C representa consistência com os artefatos consultados;</li>
+<li>V representa validação humana ou automática;</li>
+<li>S representa conformidade com segurança e acesso;</li>
+<li>wᵢ representa o peso de cada dimensão.</li>
+</ul>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">11. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 16 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A16.1</td><td>Arquitetura de Agentes Inteligentes</td><td>Documento técnico/diagrama</td><td>CBK</td><td>Define agentes, fontes e integrações</td></tr><tr><td>A16.2</td><td>Catálogo de Agentes</td><td>Tabela/catálogo</td><td>TRU</td><td>Documenta função, escopo e limites</td></tr><tr><td>A16.3</td><td>Base de Conhecimento dos Agentes</td><td>Índice textual/vetorial/grafo</td><td>CBK</td><td>Organiza evidências consultáveis</td></tr><tr><td>A16.4</td><td>Política de Uso dos Agentes</td><td>Documento normativo</td><td>TVA</td><td>Define limites, permissões e restrições</td></tr><tr><td>A16.5</td><td>Registro de Interações dos Agentes</td><td>Log estruturado</td><td>TIA</td><td>Documenta perguntas, respostas e evidências</td></tr><tr><td>A16.6</td><td>Registro de Recomendações</td><td>Tabela de recomendações</td><td>TRA</td><td>Acompanha sugestões e decisões</td></tr><tr><td>A16.7</td><td>Relatório de Avaliação dos Agentes</td><td>Relatório técnico</td><td>TRC, TRU</td><td>Avalia qualidade e utilidade</td></tr><tr><td>A16.8</td><td>Registro de Validação Humana</td><td>Tabela/workflow</td><td>TEH</td><td>Controla revisão de ações críticas</td></tr><tr><td>A16.9</td><td>Registro de Erros e Limitações</td><td>Tabela/relatório</td><td>TEA</td><td>Documenta falhas, incertezas e lacunas</td></tr><tr><td>A16.10</td><td>Manifesto de Resposta do Agente</td><td>Documento estruturado</td><td>TRBE, ICR</td><td>Registra evidências da resposta</td></tr></table></div>
+<h2 class="section-title" id="artefato-a16-1-arquitetura-de-agentes-inteligentes">12. Artefato A16.1 — Arquitetura de Agentes Inteligentes</h2>
+<h3 id="finalidade">12.1 Finalidade</h3>
+<p>A Arquitetura de Agentes Inteligentes define como os agentes serão organizados, quais bases de conhecimento poderão acessar, quais ferramentas poderão utilizar, quais permissões terão e como se integrarão aos módulos do UnespDataLens-RM.</p>
+<h3 id="tipo-de-artefato-na-dsr">12.2 Tipo de artefato na DSR</h3>
+<p>Esse artefato é um modelo e uma instanciação, pois representa a estrutura conceitual e computacional dos agentes no modelo de referência.</p>
+<h3 id="estrutura-minima">12.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Tipos de agentes</td><td>Descoberta, documentação, qualidade, lineage, governança, monitoramento etc.</td></tr><tr><td>Fontes de conhecimento</td><td>Catálogo, metadados, logs, lineage, versões, relatórios</td></tr><tr><td>Ferramentas disponíveis</td><td>APIs, busca, bancos, grafos, dashboards</td></tr><tr><td>Controle de acesso</td><td>Permissões e restrições por usuário</td></tr><tr><td>Mecanismo de recuperação</td><td>Busca textual, semântica, grafo, SQL</td></tr><tr><td>Mecanismo de resposta</td><td>Modelo de linguagem, regras, templates</td></tr><tr><td>Validação humana</td><td>Quando necessária</td></tr><tr><td>Registro de interação</td><td>Logs, evidências e feedback</td></tr><tr><td>Monitoramento</td><td>Métricas de qualidade e segurança</td></tr></table></div>
+<h3 id="metricas-associadas">12.4 Métricas associadas</h3>
+<ul class="list">
+<li>cobertura da base de conhecimento;</li>
+<li>taxa de interações auditáveis;</li>
+<li>taxa de respostas baseadas em evidências;</li>
+<li>taxa de violações de acesso;</li>
+<li>taxa de respostas úteis.</li>
+</ul>
+<h3 id="criterios-de-validacao">12.5 Critérios de validação</h3>
+<p>A arquitetura é considerada válida quando define agentes, escopos, bases consultáveis, permissões, ferramentas, mecanismos de validação e registros de auditoria.</p>
+<h3 id="contribuicao">12.6 Contribuição</h3>
+<p>Esse artefato organiza os agentes como componentes controlados do modelo de referência, evitando uso improvisado, inseguro ou desconectado da governança.</p>
+<h2 class="section-title" id="artefato-a16-2-catalogo-de-agentes">13. Artefato A16.2 — Catálogo de Agentes</h2>
+<h3 id="finalidade-2">13.1 Finalidade</h3>
+<p>O Catálogo de Agentes documenta os agentes disponíveis, suas funções, escopo, limites, permissões, fontes de conhecimento e responsáveis.</p>
+<h3 id="estrutura-minima-2">13.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador do agente</td><td>Código único</td></tr><tr><td>Nome</td><td>Nome do agente</td></tr><tr><td>Função</td><td>Descoberta, documentação, qualidade, lineage etc.</td></tr><tr><td>Escopo</td><td>Módulos ou ativos que pode consultar</td></tr><tr><td>Fontes de conhecimento</td><td>Artefatos acessíveis</td></tr><tr><td>Ferramentas</td><td>APIs, busca, catálogo, grafo etc.</td></tr><tr><td>Permissões</td><td>Níveis de acesso</td></tr><tr><td>Limites</td><td>Ações que não pode executar</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe</td></tr><tr><td>Status</td><td>Experimental, ativo, restrito, depreciado</td></tr></table></div>
+<h3 id="metricas-associadas-2">13.3 Métricas associadas</h3>
+<ul class="list">
+<li>número de agentes catalogados;</li>
+<li>taxa de agentes com escopo definido;</li>
+<li>taxa de agentes com limites documentados;</li>
+<li>taxa de agentes com responsável;</li>
+<li>taxa de agentes avaliados.</li>
+</ul>
+<h3 id="contribuicao-2">13.4 Contribuição</h3>
+<p>Esse artefato torna explícito o papel de cada agente e evita sobreposição, ambiguidade ou uso indevido.</p>
+<h2 class="section-title" id="artefato-a16-3-base-de-conhecimento-dos-agentes">14. Artefato A16.3 — Base de Conhecimento dos Agentes</h2>
+<h3 id="finalidade-3">14.1 Finalidade</h3>
+<p>A Base de Conhecimento dos Agentes organiza os documentos, metadados, catálogos, registros, grafos, relatórios e artefatos que podem ser consultados pelos agentes.</p>
+<h3 id="estrutura-minima-3">14.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Componente</th><th>Descrição</th></tr><tr><td><a class="term" href="../conceitos/catalogo-de-dados.html">Catálogo de dados</a></td><td>Ativos, descrições, responsáveis e restrições</td></tr><tr><td><a class="term" href="../conceitos/dicionario-de-dados.html">Dicionário de dados</a></td><td>Atributos, tipos, domínios e significados</td></tr><tr><td>Glossário</td><td>Termos e conceitos do domínio</td></tr><tr><td>Lineage</td><td>Origem, dependências e transformações</td></tr><tr><td>Qualidade</td><td>Métricas, relatórios e não conformidades</td></tr><tr><td>Versionamento</td><td>Versões, changelogs e manifestos</td></tr><tr><td>Governança</td><td>Políticas, acessos e restrições</td></tr><tr><td>Monitoramento</td><td>Alertas, drift e evolução</td></tr><tr><td>Feature store</td><td>Features, regras e versões</td></tr><tr><td>Produtos</td><td>Dashboards, APIs, relatórios e datasets</td></tr></table></div>
+<h3 id="metricas-associadas-3">14.3 Métricas associadas</h3>
+<ul class="list">
+<li>cobertura da base de conhecimento;</li>
+<li>taxa de artefatos indexados;</li>
+<li>taxa de artefatos atualizados;</li>
+<li>taxa de consultas com retorno;</li>
+<li>tempo médio de recuperação.</li>
+</ul>
+<h3 id="contribuicao-3">14.4 Contribuição</h3>
+<p>Esse artefato garante que as respostas dos agentes sejam fundamentadas em conhecimento estruturado do modelo de referência.</p>
+<h2 class="section-title" id="artefato-a16-4-politica-de-uso-dos-agentes">15. Artefato A16.4 — Política de Uso dos Agentes</h2>
+<h3 id="finalidade-4">15.1 Finalidade</h3>
+<p>A Política de Uso dos Agentes define limites, responsabilidades, permissões, restrições, validações e regras para uso seguro dos agentes inteligentes.</p>
+<h3 id="estrutura-minima-4">15.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Escopo</td><td>Agentes e usos cobertos</td></tr><tr><td>Usuários autorizados</td><td>Perfis permitidos</td></tr><tr><td>Dados acessíveis</td><td>Tipos de ativos permitidos</td></tr><tr><td>Dados proibidos</td><td>Informações restritas ou sensíveis</td></tr><tr><td>Ações permitidas</td><td>Consultar, explicar, recomendar, documentar</td></tr><tr><td>Ações restritas</td><td>Alterar, excluir, publicar, liberar acesso</td></tr><tr><td>Validação humana</td><td>Casos obrigatórios</td></tr><tr><td>Registro obrigatório</td><td>Logs e evidências</td></tr><tr><td>Critérios de segurança</td><td>Controle de acesso e privacidade</td></tr><tr><td>Tratamento de erro</td><td>Como reportar falhas</td></tr></table></div>
+<h3 id="metricas-associadas-4">15.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de violações de acesso;</li>
+<li>taxa de interações auditáveis;</li>
+<li>taxa de encaminhamento humano;</li>
+<li>taxa de erros críticos;</li>
+<li>taxa de conformidade das interações.</li>
+</ul>
+<h3 id="contribuicao-4">15.4 Contribuição</h3>
+<p>Esse artefato garante que agentes operem como apoio governado e não como mecanismos autônomos sem controle.</p>
+<h2 class="section-title" id="artefato-a16-5-registro-de-interacoes-dos-agentes">16. Artefato A16.5 — Registro de Interações dos Agentes</h2>
+<h3 id="finalidade-5">16.1 Finalidade</h3>
+<p>O Registro de Interações dos Agentes documenta perguntas, respostas, usuários, evidências, fontes utilizadas, limitações e feedback.</p>
+<h3 id="estrutura-minima-5">16.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Identificador da interação</td><td>Código único</td></tr><tr><td>Usuário ou sistema</td><td>Quem interagiu</td></tr><tr><td>Agente</td><td>Agente utilizado</td></tr><tr><td>Consulta</td><td>Pergunta ou tarefa</td></tr><tr><td>Resposta</td><td>Resposta gerada</td></tr><tr><td>Fontes utilizadas</td><td>Artefatos consultados</td></tr><tr><td>Nível de confiança</td><td>Estimativa de confiabilidade</td></tr><tr><td>Limitações</td><td>Incertezas ou restrições</td></tr><tr><td>Data e hora</td><td>Momento da interação</td></tr><tr><td>Feedback</td><td>Avaliação do usuário</td></tr></table></div>
+<h3 id="metricas-associadas-5">16.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de interações auditáveis;</li>
+<li>taxa de respostas baseadas em evidências;</li>
+<li>taxa de respostas úteis;</li>
+<li>taxa de respostas com limitação explícita;</li>
+<li>tempo médio de resposta.</li>
+</ul>
+<h3 id="contribuicao-5">16.4 Contribuição</h3>
+<p>Esse artefato permite auditar e melhorar continuamente a atuação dos agentes.</p>
+<h2 class="section-title" id="artefato-a16-6-registro-de-recomendacoes">17. Artefato A16.6 — Registro de Recomendações</h2>
+<h3 id="finalidade-6">17.1 Finalidade</h3>
+<p>O Registro de Recomendações documenta sugestões geradas por agentes, como reprocessamento, revisão de qualidade, atualização de metadados, criação de features, bloqueio de produto ou investigação de drift.</p>
+<h3 id="estrutura-minima-6">17.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Recomendação</td><td>Ação sugerida</td></tr><tr><td>Agente</td><td>Agente que recomendou</td></tr><tr><td>Evidência</td><td>Métrica, alerta, relatório ou fonte usada</td></tr><tr><td>Ativo afetado</td><td>Dataset, produto, feature, dashboard etc.</td></tr><tr><td>Severidade</td><td>Baixa, média, alta ou crítica</td></tr><tr><td>Responsável sugerido</td><td>Pessoa ou equipe</td></tr><tr><td>Status</td><td>Aceita, rejeitada, em análise, executada</td></tr><tr><td>Justificativa humana</td><td>Motivo da decisão</td></tr><tr><td>Data</td><td>Momento da recomendação</td></tr></table></div>
+<h3 id="metricas-associadas-6">17.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de recomendações aceitas;</li>
+<li>taxa de recomendações rejeitadas;</li>
+<li>taxa de recomendações executadas;</li>
+<li>tempo médio de resposta à recomendação;</li>
+<li>taxa de recomendações com evidência.</li>
+</ul>
+<h3 id="contribuicao-6">17.4 Contribuição</h3>
+<p>Esse artefato transforma sugestões de agentes em itens rastreáveis e avaliáveis.</p>
+<h2 class="section-title" id="artefato-a16-7-relatorio-de-avaliacao-dos-agentes">18. Artefato A16.7 — Relatório de Avaliação dos Agentes</h2>
+<h3 id="finalidade-7">18.1 Finalidade</h3>
+<p>O Relatório de Avaliação dos Agentes avalia qualidade, utilidade, segurança, rastreabilidade e confiabilidade das respostas e recomendações produzidas.</p>
+<h3 id="estrutura-minima-7">18.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Agente avaliado</td><td>Nome ou código</td></tr><tr><td>Período</td><td>Intervalo analisado</td></tr><tr><td>Número de interações</td><td>Quantidade</td></tr><tr><td>Respostas úteis</td><td>Avaliação de utilidade</td></tr><tr><td>Respostas corretas</td><td>Validação técnica</td></tr><tr><td>Erros identificados</td><td>Falhas ou <a class="term" href="../problemas/inconsistencias.html">inconsistências</a></td></tr><tr><td>Violações de acesso</td><td>Problemas de segurança</td></tr><tr><td>Recomendações aceitas</td><td>Aderência prática</td></tr><tr><td>Limitações</td><td>Lacunas observadas</td></tr><tr><td>Melhorias propostas</td><td>Ajustes necessários</td></tr></table></div>
+<h3 id="metricas-associadas-7">18.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de respostas corretas;</li>
+<li>taxa de respostas úteis;</li>
+<li>taxa de erro do agente;</li>
+<li>taxa de violações de acesso;</li>
+<li>índice de utilidade do agente.</li>
+</ul>
+<h3 id="contribuicao-7">18.4 Contribuição</h3>
+<p>Esse artefato permite avaliar empiricamente se os agentes agregam valor ao modelo de referência.</p>
+<h2 class="section-title" id="artefato-a16-8-registro-de-validacao-humana">19. Artefato A16.8 — Registro de Validação Humana</h2>
+<h3 id="finalidade-8">19.1 Finalidade</h3>
+<p>O Registro de Validação Humana documenta revisões feitas por especialistas, gestores ou responsáveis sobre respostas, recomendações ou ações sugeridas pelos agentes.</p>
+<h3 id="estrutura-minima-8">19.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Item validado</td><td>Resposta, recomendação ou ação</td></tr><tr><td>Agente</td><td>Agente responsável</td></tr><tr><td>Validador</td><td>Pessoa que revisou</td></tr><tr><td>Decisão</td><td>Aprovado, corrigido, rejeitado</td></tr><tr><td>Justificativa</td><td>Motivo</td></tr><tr><td>Alteração solicitada</td><td>Quando aplicável</td></tr><tr><td>Data</td><td>Momento da validação</td></tr><tr><td>Status</td><td>Concluído ou pendente</td></tr></table></div>
+<h3 id="metricas-associadas-8">19.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de encaminhamento humano;</li>
+<li>taxa de recomendações aprovadas;</li>
+<li>taxa de correções humanas;</li>
+<li>taxa de rejeições;</li>
+<li>tempo médio de validação.</li>
+</ul>
+<h3 id="contribuicao-8">19.4 Contribuição</h3>
+<p>Esse artefato garante supervisão humana em decisões críticas e reduz riscos de automação indevida.</p>
+<h2 class="section-title" id="artefato-a16-9-registro-de-erros-e-limitacoes">20. Artefato A16.9 — Registro de Erros e Limitações</h2>
+<h3 id="finalidade-9">20.1 Finalidade</h3>
+<p>O Registro de Erros e Limitações documenta falhas, respostas incorretas, lacunas de conhecimento, incertezas, limitações de acesso, inconsistências e problemas dos agentes.</p>
+<h3 id="estrutura-minima-9">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Agente</td><td>Agente envolvido</td></tr><tr><td>Interação</td><td>Consulta associada</td></tr><tr><td>Tipo de erro</td><td>Informação incorreta, incompleta, acesso, interpretação</td></tr><tr><td>Causa provável</td><td>Falta de metadado, ambiguidade, erro de recuperação etc.</td></tr><tr><td>Severidade</td><td>Baixa, média, alta ou crítica</td></tr><tr><td>Correção proposta</td><td>Ação de melhoria</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe</td></tr><tr><td>Status</td><td>Aberto, corrigido, aceito</td></tr><tr><td>Evidência</td><td>Registro da interação</td></tr></table></div>
+<h3 id="metricas-associadas-9">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de erro do agente;</li>
+<li>número de erros críticos;</li>
+<li>taxa de erros corrigidos;</li>
+<li>taxa de lacunas de conhecimento;</li>
+<li>taxa de recorrência de erro.</li>
+</ul>
+<h3 id="contribuicao-9">20.4 Contribuição</h3>
+<p>Esse artefato permite melhoria contínua dos agentes e da própria base documental do modelo de referência.</p>
+<h2 class="section-title" id="artefato-a16-10-manifesto-de-resposta-do-agente">21. Artefato A16.10 — Manifesto de Resposta do Agente</h2>
+<h3 id="finalidade-10">21.1 Finalidade</h3>
+<p>O Manifesto de Resposta do Agente registra de forma estruturada como uma resposta foi produzida.</p>
+<h3 id="estrutura-minima-10">21.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Consulta</td><td>Pergunta ou tarefa original</td></tr><tr><td>Resposta gerada</td><td>Conteúdo produzido</td></tr><tr><td>Agente</td><td>Agente responsável</td></tr><tr><td>Fontes utilizadas</td><td>Artefatos consultados</td></tr><tr><td>Evidências principais</td><td>Trechos, métricas ou registros usados</td></tr><tr><td>Regras aplicadas</td><td>Filtros, permissões, políticas</td></tr><tr><td>Limitações</td><td>Incertezas ou lacunas</td></tr><tr><td>Nível de confiança</td><td>Baixo, médio ou alto</td></tr><tr><td>Necessita validação humana</td><td>Sim/não</td></tr><tr><td>Data</td><td>Momento da resposta</td></tr></table></div>
+<h3 id="metricas-associadas-10">21.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de respostas baseadas em evidências;</li>
+<li>índice de confiabilidade da resposta;</li>
+<li>taxa de respostas com limitação explícita;</li>
+<li>taxa de interações auditáveis.</li>
+</ul>
+<h3 id="contribuicao-10">21.4 Contribuição</h3>
+<p>Esse artefato fortalece transparência, rastreabilidade e confiabilidade das respostas dos agentes.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">22. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Catálogos, metadados, glossários, lineage, versões, logs, relatórios de qualidade, políticas, registros de monitoramento, feature store, produtos de dados, dashboards, APIs e consultas dos usuários.</td></tr><tr><td>Processamento</td><td>Interpretação da solicitação, verificação de permissões, recuperação de evidências, geração de resposta, recomendação, explicação, validação humana quando necessária e registro da interação.</td></tr><tr><td>Artefatos</td><td>Arquitetura de agentes, catálogo de agentes, base de conhecimento, política de uso, registros de interação, recomendações, avaliação, validação humana, erros e manifesto de resposta.</td></tr><tr><td>Métricas</td><td>TRBE, TRU, TRC, TRLE, TRA, TRR, TIA, TVA, TCR, TMR, TEH, TEA, CBK, ICR e IUA.</td></tr><tr><td>Saídas</td><td>Respostas, explicações, recomendações, documentação assistida, alertas interpretados, consultas ao catálogo, apoio à governança e registros auditáveis das interações.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">23. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 16 pode ser considerado adequadamente implementado quando:</p>
+<ol class="steps">
+<li>os agentes possuem funções e escopos definidos;</li>
+<li>as bases de conhecimento utilizadas pelos agentes estão identificadas;</li>
+<li>os agentes respeitam permissões e restrições de acesso;</li>
+<li>as respostas são baseadas em evidências sempre que possível;</li>
+<li>interações são registradas de forma auditável;</li>
+<li>recomendações críticas passam por validação humana;</li>
+<li>erros e limitações são documentados;</li>
+<li>a utilidade das respostas é avaliada pelos usuários;</li>
+<li>violações de acesso são monitoradas e tratadas;</li>
+<li>os agentes indicam incertezas ou ausência de evidência quando necessário;</li>
+<li>as recomendações dos agentes podem ser aceitas, rejeitadas ou revisadas por responsáveis;</li>
+<li>os agentes contribuem efetivamente para descoberta, explicação, documentação, qualidade, governança, lineage, monitoramento ou reuso dos ativos.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-o-pipeline-principal">24. Relação com o pipeline principal</h2>
+<p>O Módulo 16 apoia todos os módulos do pipeline principal.</p>
+<p>Com o Módulo 1 — Fontes e Inventário de Dados, auxilia na descoberta, documentação e consulta das fontes.</p>
+<p>Com o Módulo 2 — Extração, Ingestão e Armazenamento Bruto, apoia interpretação de logs, falhas, manifestos e registros de ingestão.</p>
+<p>Com o Módulo 3 — Integração e Harmonização, auxilia na compreensão de chaves, conflitos, relações e equivalências.</p>
+<p>Com o Módulo 4 — Transformação, Limpeza e Enriquecimento, explica transformações, regras, atributos derivados e impactos.</p>
+<p>Com o Módulo 5 — Qualidade e Validação de Dados, interpreta métricas, não conformidades, relatórios e recomendações de correção.</p>
+<p>Com o Módulo 6 — Desbalanceamento, Vieses e Equidade, consulta métricas de fairness, grupos afetados, riscos e limitações.</p>
+<p>Com o Módulo 7 — Armazenamento Analítico, localiza ativos, zonas, schemas, versões e estruturas persistidas.</p>
+<p>Com o Módulo 8 — Disponibilização e Consumo Analítico, orienta usuários sobre produtos, dashboards, APIs, relatórios, versões, acesso e limitações.</p>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-transversais">25. Relação com os demais módulos transversais</h2>
+<p>O Módulo 16 depende do Módulo 9 — Metadados, Catálogo e Semântica dos Dados, pois os agentes precisam de metadados, glossários, dicionários, modelos semânticos e catálogos para responder de forma contextualizada.</p>
+<p>Relaciona-se com o Módulo 10 — Governança, Segurança, Privacidade e Conformidade, pois os agentes devem respeitar políticas, permissões, finalidades, sensibilidade e restrições de acesso.</p>
+<p>Relaciona-se com o Módulo 11 — Proveniência, Linhagem e Rastreabilidade, pois agentes podem explicar a trajetória dos dados, dependências e impacto de mudanças.</p>
+<p>Relaciona-se com o Módulo 12 — Versionamento e Reprodutibilidade, pois agentes podem localizar versões, explicar diferenças e auxiliar na reconstrução de execuções.</p>
+<p>Relaciona-se com o Módulo 13 — Representações Analíticas, pois agentes podem explicar tabelas, séries temporais, grafos e grafos temporais.</p>
+<p>Relaciona-se com o Módulo 14 — Feature Engineering e Feature Store, pois agentes podem consultar features, explicar regras de cálculo, sugerir reuso e identificar riscos.</p>
+<p>Relaciona-se com o Módulo 15 — Monitoramento, Drift e Evolução dos Ativos, pois agentes podem interpretar alertas, explicar drift, sugerir ações corretivas e apoiar manutenção contínua.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">26. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, agentes inteligentes poderiam apoiar usuários e equipes técnicas na consulta e interpretação de dados sobre matrícula, evasão, desempenho, frequência, permanência, interações no ambiente virtual e indicadores institucionais.</p>
+<p>Um gestor poderia perguntar: “quais cursos apresentam maior evasão no último período?”. O agente poderia consultar o catálogo de produtos, identificar o dashboard ou dataset correspondente, verificar a definição de evasão, indicar a versão utilizada, apresentar limitações e apontar a origem dos dados.</p>
+<p>Um pesquisador poderia perguntar: “quais features estão disponíveis para modelar evasão?”. O agente poderia consultar a feature store, listar features relacionadas à trajetória acadêmica, desempenho, frequência, interação no AVA e perfil socioeconômico, indicando qualidade, versão, sensibilidade e risco de vazamento.</p>
+<p>Um analista poderia perguntar: “por que o indicador de evasão mudou nesta versão?”. O agente poderia consultar o changelog, o lineage e o relatório de comparação entre versões para explicar se a mudança decorreu de nova regra, atualização de fonte, correção de dados ou alteração de período.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">27. Exemplo de aplicação em políticas públicas</h2>
+<p>Em uma aplicação em políticas públicas, agentes inteligentes poderiam apoiar gestores, técnicos e pesquisadores na consulta a indicadores territoriais, bases de atendimento, dados de saúde, educação, assistência social e produtos analíticos integrados.</p>
+<p>Um gestor poderia perguntar: “quais territórios apresentam aumento recente de demanda por atendimento?”. O agente poderia consultar produtos de dados, dashboards e relatórios de monitoramento, indicar os territórios com variação relevante e apontar a origem dos dados.</p>
+<p>Um técnico poderia perguntar: “quais bases alimentam o indicador de vulnerabilidade?”. O agente poderia consultar o <a class="term" href="../artefatos/grafo-de-linhagem.html">grafo de linhagem</a> e explicar quais fontes, regras, versões e atributos foram usados.</p>
+<p>Um responsável pela governança poderia perguntar: “este dataset pode ser compartilhado externamente?”. O agente poderia consultar <a class="term" href="../artefatos/classificacao-de-sensibilidade.html">classificação de sensibilidade</a>, <a class="term" href="../artefatos/politica-de-acesso.html">política de acesso</a>, finalidade, base legal e nível de agregação, recomendando validação humana antes de qualquer compartilhamento.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">28. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição do Módulo 16 está em formalizar agentes inteligentes como componentes transversais de apoio à Engenharia Analítica de Dados, integrados aos artefatos, métricas, metadados, governança, lineage, versionamento, monitoramento, feature store, representações analíticas e produtos do UnespDataLens-RM.</p>
+<p>Em vez de utilizar agentes apenas como interfaces genéricas de pergunta e resposta, o UnespDataLens-RM propõe agentes orientados por evidências, com escopo definido, controle de acesso, registro de interações, validação humana, avaliação de utilidade e rastreabilidade das respostas.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>melhorar descoberta e reutilização de dados;</li>
+<li>reduzir sobrecarga informacional;</li>
+<li>apoiar documentação técnica;</li>
+<li>explicar indicadores, datasets, features e produtos;</li>
+<li>facilitar consulta ao catálogo e ao lineage;</li>
+<li>apoiar detecção e interpretação de problemas de qualidade;</li>
+<li>orientar usuários sobre governança e restrições;</li>
+<li>recomendar ações corretivas com base em evidências;</li>
+<li>aumentar transparência e auditabilidade das interações;</li>
+<li>integrar IA generativa e agentes ao <a class="term" href="../conceitos/pipeline-de-dados.html">pipeline de dados</a> com controle, segurança e responsabilidade.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">29. Síntese do módulo</h2>
+<p>O Módulo Transversal 16 — Agentes Inteligentes de Apoio ao Pipeline introduz mecanismos inteligentes para apoiar a navegação, interpretação, documentação, explicação, recomendação e manutenção do ecossistema UnespDataLens-RM.</p>
+<p>Sua importância é transversal porque os agentes podem atuar sobre todos os módulos do modelo de referência, desde a identificação das fontes até o consumo dos produtos analíticos, conectando informações dispersas em catálogos, metadados, lineage, logs, versões, relatórios, dashboards, features, produtos de dados, registros de monitoramento e políticas de governança.</p>
+<p>Ao formalizar agentes inteligentes por meio de arquitetura, catálogo, base de conhecimento, política de uso, registros de interação, validação humana, avaliação de qualidade e manifestos de resposta, o módulo fortalece a confiabilidade, a transparência, a governança, a rastreabilidade e a utilidade do UnespDataLens-RM como modelo de referência para Engenharia Analítica de Dados.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="O Módulo 6 — Desbalanceamento, Vieses e Equidade tem como finalidade identificar, mensurar, documentar, mitigar e monitorar problemas relacionados à distribuição desigual dos dados, à representatividade insuficiente de grupos, à presença de vieses técnicos ou estatísticos e a possíveis impactos desproporcionais em análises, indicadores, modelos preditivos e…">
+  <title>Módulo 6 — Desbalanceamento, Vieses e Equidade · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="../busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../modelo.html">Modelo de Referência</a><a href="../mapa.html">Mapa Geral</a><a class="active" href="../modulos/index.html">Módulos</a><a href="../dimensoes/index.html">Dimensões</a><a href="../conceitos/index.html">Conceitos</a><a href="../tecnicas/index.html">Técnicas e Tecnologias</a><a href="../metodos/index.html">Métodos e Algoritmos</a><a href="../artefatos/index.html">Artefatos</a><a href="../metricas/index.html">Métricas</a><a href="../problemas/index.html">Problemas Tratados</a><a href="../aplicacoes/index.html">Aplicações</a><a href="../trilhas/index.html">Trilhas de Estudo</a><a href="../busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="modulo-6-desbalanceamento-vieses-e-equidade"></span><section class="hero">
+<span class="badge">Módulo 06</span>
+<h1>Módulo 6 — Desbalanceamento, Vieses e Equidade</h1>
+<p>O Módulo 6 — Desbalanceamento, Vieses e Equidade tem como finalidade identificar, mensurar, documentar, mitigar e monitorar problemas relacionados à distribuição desigual dos dados, à representatividade insuficiente de grupos, à presença de vieses técnicos ou estatísticos e a possíveis impactos desproporcionais em análises, indicadores, modelos preditivos e…</p>
+
+</section><details class="mini-toc"><summary>Sumário desta página · 27 seções</summary><a href="#finalidade-do-modulo">Finalidade do módulo</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#fundamentacao-conceitual-do-modulo">Fundamentação conceitual do módulo</a><a href="#formalizacao-sintetica-do-modulo">Formalização sintética do módulo</a><a href="#entradas-do-modulo">Entradas do módulo</a><a href="#processamento">Processamento</a><a href="#tecnicas-metodos-e-algoritmos-aplicaveis">Técnicas, métodos e algoritmos aplicáveis</a><a href="#metricas-do-modulo">Métricas do módulo</a><a href="#artefatos-formalizados-do-modulo">Artefatos formalizados do módulo</a><a href="#artefato-a6-1-plano-de-avaliacao-de-desbalanceamento-e-equidade">Artefato A6.1 — Plano de Avaliação de Desbalanceamento e Equidade</a><a href="#artefato-a6-2-registro-de-grupos-e-atributos-sensiveis">Artefato A6.2 — Registro de Grupos e Atributos Sensíveis</a><a href="#artefato-a6-3-perfil-de-distribuicao-e-representatividade">Artefato A6.3 — Perfil de Distribuição e Representatividade</a><a href="#artefato-a6-4-registro-de-perdas-por-etapa-do-pipeline">Artefato A6.4 — Registro de Perdas por Etapa do Pipeline</a><a href="#artefato-a6-5-relatorio-de-vieses-identificados">Artefato A6.5 — Relatório de Vieses Identificados</a><a href="#artefato-a6-6-plano-de-mitigacao-de-desbalanceamento">Artefato A6.6 — Plano de Mitigação de Desbalanceamento</a><a href="#artefato-a6-7-registro-de-tecnicas-de-mitigacao-aplicadas">Artefato A6.7 — Registro de Técnicas de Mitigação Aplicadas</a><a href="#artefato-a6-8-dataset-balanceado-ou-sinalizado">Artefato A6.8 — Dataset Balanceado ou Sinalizado</a><a href="#artefato-a6-9-relatorio-de-equidade-e-fairness">Artefato A6.9 — Relatório de Equidade e Fairness</a><a href="#artefato-a6-10-registro-de-risco-residual-e-limitacoes">Artefato A6.10 — Registro de Risco Residual e Limitações</a><a href="#estrutura-operacional-do-modulo">Estrutura operacional do módulo</a><a href="#criterios-gerais-de-validacao-do-modulo">Critérios gerais de validação do módulo</a><a href="#relacao-com-os-demais-modulos-do-modelo-de-referencia">Relação com os demais módulos do modelo de referência</a><a href="#exemplo-de-aplicacao-no-dominio-educacional">Exemplo de aplicação no domínio educacional</a><a href="#exemplo-de-aplicacao-em-politicas-publicas">Exemplo de aplicação em políticas públicas</a><a href="#contribuicao-tecnico-cientifica-do-modulo">Contribuição técnico-científica do módulo</a><a href="#sintese-do-modulo">Síntese do módulo</a></details><div class="prose module-full"><h2 class="section-title" id="finalidade-do-modulo">1. Finalidade do módulo</h2>
+<p>O Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a> tem como finalidade identificar, mensurar, documentar, mitigar e monitorar problemas relacionados à distribuição desigual dos dados, à representatividade insuficiente de grupos, à presença de vieses técnicos ou estatísticos e a possíveis impactos desproporcionais em análises, indicadores, modelos preditivos e processos de decisão baseados em dados.</p>
+<p>Esse módulo atua sobre os dados produzidos nos módulos anteriores do UnespDataLens-RM, especialmente os dados inventariados, ingeridos, integrados, harmonizados, transformados, enriquecidos e avaliados quanto à qualidade. Sua função é verificar se os dados e os ativos analíticos produzidos representam adequadamente os grupos, classes, categorias, territórios, períodos, <a class="term" href="../conceitos/eventos.html">eventos</a> ou entidades relevantes para o problema analisado.</p>
+<p>Em projetos de Engenharia Analítica de Dados, problemas de desbalanceamento e <a class="term" href="../conceitos/vies.html">viés</a> podem surgir em diferentes etapas do pipeline. Eles podem estar presentes na própria <a class="term" href="../conceitos/fonte-de-dados.html">fonte de dados</a>, ser ampliados durante a ingestão, surgir na integração entre bases, ser introduzidos por exclusão de registros, <a class="term" href="../metodos/imputacao.html">imputação</a>, transformação, criação de variáveis, seleção de atributos, definição da <a class="term" href="../conceitos/variavel-alvo.html">variável-alvo</a> ou escolha de amostras para treinamento e avaliação de modelos.</p>
+<p>No contexto do UnespDataLens-RM, o Módulo 6 tem papel estratégico porque impede que dados tecnicamente bem organizados, limpos e validados sejam utilizados sem análise crítica de representatividade, equidade e impacto. Um dataset pode apresentar boa <a class="term" href="../metricas/completude.html">completude</a>, <a class="term" href="../metricas/consistencia.html">consistência</a> e <a class="term" href="../metricas/validade.html">validade</a>, mas ainda assim carregar distorções que afetam grupos específicos, classes minoritárias, territórios menos representados, períodos subobservados ou categorias relevantes para decisões públicas, educacionais ou institucionais.</p>
+<p>Assim, o Módulo 6 formaliza desbalanceamento, vieses e equidade como dimensões técnico-metodológicas avaliáveis da Engenharia Analítica de Dados. Ele produz artefatos, métricas, relatórios e critérios de validação capazes de tornar explícitos os riscos de uso dos dados em contextos analíticos e decisórios.</p>
+<h2 class="section-title" id="objetivo-geral">2. Objetivo geral</h2>
+<p>O objetivo geral do Módulo 6 é avaliar e tratar desbalanceamentos, vieses e problemas de equidade em dados analíticos, por meio de métricas, regras, artefatos, métodos de mitigação e critérios de validação que permitam mensurar representatividade, distribuição de classes, impacto sobre grupos, efeitos de transformação e adequação dos dados para análises, modelos e decisões.</p>
+<h2 class="section-title" id="objetivos-especificos">3. Objetivos específicos</h2>
+<p>São objetivos específicos do Módulo 6:</p>
+<ol class="steps">
+<li>identificar desbalanceamentos em classes, grupos, categorias, períodos, territórios, entidades e variáveis-alvo;</li>
+<li>avaliar a representatividade dos dados em relação ao fenômeno, população, domínio ou problema analítico;</li>
+<li>identificar grupos sub-representados, classes minoritárias, categorias raras e padrões de exclusão ou ausência;</li>
+<li>mensurar vieses técnicos ou estatísticos decorrentes de coleta, integração, transformação, imputação, amostragem, rotulagem, seleção de atributos ou definição da variável-alvo;</li>
+<li>avaliar possíveis impactos desproporcionais sobre grupos sensíveis ou grupos analiticamente relevantes;</li>
+<li>aplicar estratégias de mitigação de desbalanceamento, quando apropriado, preservando <a class="term" href="../conceitos/rastreabilidade.html">rastreabilidade</a> e justificativa metodológica;</li>
+<li>registrar efeitos das ações de balanceamento ou mitigação sobre distribuições, métricas de desempenho, variáveis e grupos;</li>
+<li>produzir relatórios de equidade e representatividade para orientar decisões sobre uso, restrição, reprocessamento ou disponibilização dos dados;</li>
+<li>fornecer insumos para módulos de <a class="term" href="../conceitos/metadados.html">metadados</a>, governança, lineage, <a class="term" href="../conceitos/versionamento.html">versionamento</a>, <a class="term" href="../conceitos/feature-engineering.html">feature engineering</a>, modelagem, monitoramento e disponibilização analítica;</li>
+<li>formalizar artefatos avaliáveis que permitam documentar e auditar decisões relacionadas a desbalanceamento, vieses e equidade.</li>
+</ol>
+<h2 class="section-title" id="fundamentacao-conceitual-do-modulo">4. Fundamentação conceitual do módulo</h2>
+<p>O Módulo 6 parte da compreensão de que dados não são neutros. Eles são produzidos por processos institucionais, sociais, técnicos e operacionais que podem refletir desigualdades, lacunas, restrições de coleta, regras administrativas, erros de registro, mudanças históricas, diferentes níveis de acesso a serviços ou assimetrias na representação de grupos.</p>
+<p>O desbalanceamento ocorre quando determinadas classes, categorias ou grupos aparecem em proporções muito diferentes no conjunto de dados. Em problemas preditivos, isso pode fazer com que modelos aprendam melhor padrões associados às classes majoritárias e tenham baixo desempenho para classes minoritárias. Em análises descritivas ou painéis, o desbalanceamento pode levar a interpretações distorcidas se a distribuição observada não representar adequadamente o fenômeno.</p>
+<p>O viés pode ser entendido como uma distorção sistemática nos dados, nos processos de preparação ou nos modelos que afeta a representação, a mensuração ou o tratamento de grupos, entidades ou fenômenos. No UnespDataLens-RM, o foco recai principalmente sobre vieses técnicos, estatísticos e algorítmicos associados ao ciclo de Engenharia Analítica de Dados, sem desconsiderar que esses vieses podem refletir processos sociais e institucionais mais amplos.</p>
+<p>A equidade refere-se à preocupação com impactos diferenciados sobre grupos e à necessidade de avaliar se dados, indicadores ou modelos produzem resultados injustamente assimétricos, especialmente quando utilizados para apoiar decisões públicas, educacionais, administrativas ou institucionais. No contexto do modelo de referência, equidade não significa forçar igualdade artificial entre todos os grupos, mas tornar explícitas as diferenças de representação, desempenho, erro, cobertura e impacto, permitindo decisões analíticas mais responsáveis.</p>
+<p>O Módulo 6 considera diferentes fontes de viés no pipeline:</p>
+<div class="table-wrap"><table class="table"><tr><th>Fonte de viés</th><th>Descrição</th><th>Exemplo</th></tr><tr><td>Viés de coleta</td><td>A fonte não representa adequadamente a população ou fenômeno.</td><td>Dados de estudantes com maior acesso ao AVA são mais completos.</td></tr><tr><td><a class="term" href="../problemas/vies-de-cobertura.html">Viés de cobertura</a></td><td>Certos grupos, territórios ou períodos aparecem pouco ou não aparecem.</td><td>Municípios menores têm menos registros administrativos.</td></tr><tr><td>Viés de integração</td><td>A junção entre bases perde registros de determinados grupos.</td><td>Estudantes sem chave válida não são pareados.</td></tr><tr><td>Viés de transformação</td><td>Limpezas, imputações ou filtros afetam grupos de forma desigual.</td><td>Remoção de registros incompletos exclui mais alunos vulneráveis.</td></tr><tr><td>Viés de rotulagem</td><td>A variável-alvo é construída com critérios incompletos ou inconsistentes.</td><td>Definir evasão apenas por ausência de matrícula no semestre seguinte.</td></tr><tr><td>Viés de seleção de atributos</td><td>Atributos usados reforçam desigualdades ou proxies sensíveis.</td><td>CEP como proxy de condição socioeconômica.</td></tr><tr><td>Viés de avaliação</td><td>Métricas globais escondem desempenho desigual entre grupos.</td><td>Acurácia alta com baixo recall para classe minoritária.</td></tr><tr><td>Viés de uso</td><td>Dados ou modelos são aplicados fora do contexto adequado.</td><td>Modelo treinado em um campus usado em outro sem validação.</td></tr></table></div>
+<p>À luz da Design Science Research, este módulo formaliza artefatos que permitem transformar a análise de desbalanceamento, vieses e equidade em um processo técnico-metodológico explícito, mensurável, auditável e reprodutível.</p>
+<h2 class="section-title" id="formalizacao-sintetica-do-modulo">5. Formalização sintética do módulo</h2>
+<p>O Módulo 6 pode ser compreendido como um processo de avaliação de distribuições, grupos e impactos sobre ativos de dados produzidos pelos módulos anteriores.</p>
+<p>Considerando um conjunto de datasets ou ativos analíticos:</p>
+<div class="formula">D = {d₁, d₂, ..., dₙ}</div>
+<p>e um conjunto de grupos, classes ou categorias relevantes:</p>
+<div class="formula">G = {g₁, g₂, ..., gₖ}</div>
+<p>o módulo avalia a distribuição dos registros, atributos, rótulos, erros, métricas ou decisões em relação a esses grupos.</p>
+<p>Cada grupo gᵢ pode ser descrito por:</p>
+<div class="formula">gᵢ = {id, nome, atributo_associado, tipo, frequência, proporção, sensibilidade, relevância_analítica}</div>
+<p>Cada avaliação de desbalanceamento ou equidade pode ser representada por:</p>
+<div class="formula">eᵢ = {dataset, grupo, variável_alvo, métrica, valor_obtido, limiar, severidade, recomendação}</div>
+<p>Quando houver aplicação de uma técnica de mitigação, ela pode ser representada por:</p>
+<div class="formula">mᵢ = {id, dataset, problema_identificado, técnica, parâmetros, grupos_afetados, distribuição_antes, distribuição_depois, impacto, justificativa, versão}</div>
+<p>O resultado do módulo é um conjunto de evidências, relatórios, métricas e datasets ajustados ou sinalizados para uso com ressalvas.</p>
+<p>Dessa forma, desbalanceamento, viés e equidade deixam de ser tratados como preocupações genéricas e passam a ser descritos por artefatos formais, métricas e critérios de decisão.</p>
+<h2 class="section-title" id="entradas-do-modulo">6. Entradas do módulo</h2>
+<p>As entradas do Módulo 6 incluem datasets, metadados, variáveis, atributos sensíveis, registros de transformação e resultados de qualidade produzidos nos módulos anteriores.</p>
+<p>As principais entradas são:</p>
+<ul class="list">
+<li>datasets brutos;</li>
+<li>datasets integrados e harmonizados;</li>
+<li>datasets tratados e enriquecidos;</li>
+<li>relatórios de qualidade;</li>
+<li>registros de valores ausentes;</li>
+<li>registros de <a class="term" href="../problemas/duplicidade.html">duplicidade</a>;</li>
+<li>registros de outliers;</li>
+<li>registros de transformação;</li>
+<li>atributos derivados;</li>
+<li>dicionários de dados;</li>
+<li><a class="term" href="../artefatos/classificacao-de-sensibilidade.html">classificação de sensibilidade</a>;</li>
+<li>variáveis-alvo candidatas;</li>
+<li>atributos sensíveis ou protegidos;</li>
+<li>atributos socioeconômicos;</li>
+<li>atributos territoriais;</li>
+<li>atributos demográficos;</li>
+<li>atributos temporais;</li>
+<li>grupos analiticamente relevantes;</li>
+<li>regras de negócio;</li>
+<li>documentação sobre origem dos dados;</li>
+<li>registros de integração e pareamento;</li>
+<li>métricas de qualidade por grupo;</li>
+<li>dados de referência populacional, quando disponíveis.</li>
+</ul>
+<h2 class="section-title" id="processamento">7. Processamento</h2>
+<p>O processamento do Módulo 6 envolve atividades de identificação de grupos, análise de distribuição, mensuração de desbalanceamento, avaliação de vieses, aplicação de técnicas de mitigação, análise de impacto e documentação das decisões.</p>
+<h3 id="identificacao-de-variaveis-sensiveis-e-grupos-relevantes">7.1 Identificação de variáveis sensíveis e grupos relevantes</h3>
+<p>A primeira atividade consiste em identificar os atributos que podem definir grupos sensíveis, protegidos ou analiticamente relevantes. Esses atributos podem incluir sexo, raça/cor, idade, deficiência, território, renda, escola de origem, curso, turno, modalidade, município, grupo socioeconômico ou outras categorias relevantes ao domínio.</p>
+<p>A identificação deve considerar tanto atributos explicitamente sensíveis quanto atributos que possam funcionar como proxies de condições sociais, territoriais ou institucionais.</p>
+<h3 id="analise-de-distribuicao-dos-dados">7.2 Análise de distribuição dos dados</h3>
+<p>A segunda atividade consiste em avaliar a distribuição dos registros entre classes, categorias, grupos, períodos e territórios. Essa análise permite identificar concentração excessiva, sub-representação, lacunas, categorias raras, classes minoritárias e desequilíbrios que possam comprometer análises ou modelos.</p>
+<h3 id="avaliacao-de-desbalanceamento-da-variavel-alvo">7.3 Avaliação de desbalanceamento da variável-alvo</h3>
+<p>Quando houver variável-alvo, como evasão, aprovação, risco, ocorrência, atendimento ou outra classe de interesse, o módulo deve avaliar sua distribuição. Essa avaliação é especialmente importante em problemas preditivos, nos quais classes minoritárias podem ser menos aprendidas pelos modelos.</p>
+<h3 id="avaliacao-de-representatividade">7.4 Avaliação de representatividade</h3>
+<p>A quarta atividade consiste em comparar a distribuição observada nos dados com distribuições esperadas, quando houver referência disponível. Essa referência pode vir de censos, dados institucionais oficiais, estatísticas públicas, registros administrativos consolidados ou conhecimento de especialistas.</p>
+<p>Quando não houver referência externa, a análise deve registrar essa limitação e avaliar representatividade de forma interna, considerando cobertura, períodos, grupos e fontes.</p>
+<h3 id="avaliacao-de-vieses-introduzidos-pelo-pipeline">7.5 Avaliação de vieses introduzidos pelo pipeline</h3>
+<p>O módulo deve avaliar se etapas anteriores introduziram ou ampliaram vieses. Isso inclui verificar se a ingestão excluiu determinados registros, se a integração perdeu grupos por ausência de chaves, se a limpeza removeu registros de forma desigual, se a imputação afetou grupos específicos ou se a criação de variáveis derivadas gerou distorções.</p>
+<h3 id="mensuracao-de-metricas-de-equidade">7.6 Mensuração de métricas de equidade</h3>
+<p>Quando houver modelos, classificações, rankings, indicadores ou decisões baseadas em dados, o módulo deve calcular métricas de equidade entre grupos. Essas métricas podem avaliar diferenças de seleção, desempenho, erro, falsos positivos, falsos negativos, oportunidades ou impacto.</p>
+<h3 id="aplicacao-de-tecnicas-de-mitigacao">7.7 Aplicação de técnicas de mitigação</h3>
+<p>Quando identificado desbalanceamento ou viés relevante, podem ser aplicadas técnicas de mitigação. Essas técnicas podem atuar antes da modelagem, durante a modelagem ou após a modelagem. No escopo da Engenharia Analítica de Dados, o foco principal recai sobre ações pré-processamento e documentação dos efeitos.</p>
+<p>As ações podem incluir reamostragem, ponderação, ajuste de limiares, estratificação, reavaliação de variáveis, revisão de rótulos, inclusão de fontes complementares, análise por subgrupos ou recomendação de restrição de uso.</p>
+<h3 id="avaliacao-do-impacto-da-mitigacao">7.8 Avaliação do impacto da mitigação</h3>
+<p>Toda ação de mitigação deve ser avaliada quanto ao impacto produzido. Isso inclui comparar distribuições antes e depois, verificar efeitos sobre métricas de desempenho, analisar perdas de informação, avaliar alterações em grupos e documentar riscos residuais.</p>
+<h3 id="registro-de-decisoes-e-limitacoes">7.9 Registro de decisões e limitações</h3>
+<p>O módulo deve registrar decisões tomadas, técnicas aplicadas, parâmetros, justificativas e limitações. Caso um problema de viés ou desbalanceamento não possa ser resolvido no pipeline, ele deve ser explicitamente documentado como limitação de uso.</p>
+<h2 class="section-title" id="tecnicas-metodos-e-algoritmos-aplicaveis">8. Técnicas, métodos e algoritmos aplicáveis</h2>
+<p>O Módulo 6 pode empregar diferentes técnicas, métodos e algoritmos para análise e mitigação de desbalanceamento, vieses e equidade.</p>
+<p>Entre as técnicas de diagnóstico, destacam-se:</p>
+<ul class="list">
+<li>análise de distribuição de classes;</li>
+<li>análise de distribuição por grupo;</li>
+<li>análise de representatividade;</li>
+<li>análise de subgrupos;</li>
+<li>análise de cobertura;</li>
+<li>análise temporal de distribuição;</li>
+<li>análise territorial de distribuição;</li>
+<li>análise de perdas por etapa do pipeline;</li>
+<li>comparação antes/depois de transformações;</li>
+<li>análise da variável-alvo;</li>
+<li>análise de proxies;</li>
+<li>avaliação de métricas por grupo.</li>
+</ul>
+<p>Entre as técnicas de tratamento de desbalanceamento, podem ser utilizadas:</p>
+<ul class="list">
+<li>subamostragem da classe majoritária;</li>
+<li>sobreamostragem da classe minoritária;</li>
+<li>Random Under Sampling;</li>
+<li>Random Over Sampling;</li>
+<li>SMOTE;</li>
+<li>Borderline-SMOTE;</li>
+<li>ADASYN;</li>
+<li>Tomek Links;</li>
+<li>Edited Nearest Neighbors;</li>
+<li>SMOTEENN;</li>
+<li>SMOTETomek;</li>
+<li>class weights;</li>
+<li>cost-sensitive learning;</li>
+<li>estratificação;</li>
+<li>ajuste de limiar;</li>
+<li>amostragem temporal ou por grupo.</li>
+</ul>
+<p>Entre as técnicas de mitigação de viés e <a class="term" href="../conceitos/fairness.html">fairness</a>, destacam-se:</p>
+<ul class="list">
+<li>reweighing;</li>
+<li><a class="term" href="../metricas/disparate-impact.html">disparate impact</a> remover;</li>
+<li>learning fair representations;</li>
+<li>adversarial debiasing, quando aplicável;</li>
+<li>equalized odds post-processing;</li>
+<li>calibrated equalized odds;</li>
+<li>reject option classification;</li>
+<li>análise contrafactual, quando viável;</li>
+<li>avaliação por subgrupos;</li>
+<li>restrição de atributos sensíveis;</li>
+<li>documentação de uso responsável;</li>
+<li>revisão de rótulos;</li>
+<li>validação com especialistas.</li>
+</ul>
+<p>Entre os algoritmos e recursos computacionais aplicáveis, destacam-se:</p>
+<ul class="list">
+<li>métricas de distribuição;</li>
+<li>análise de frequências;</li>
+<li>testes de diferença entre grupos;</li>
+<li>qui-quadrado;</li>
+<li>Kolmogorov-Smirnov;</li>
+<li>Population Stability Index;</li>
+<li>divergência de Kullback-Leibler;</li>
+<li>Jensen-Shannon divergence;</li>
+<li>árvores de decisão para identificação de subgrupos;</li>
+<li>modelos de classificação avaliados por grupo;</li>
+<li>matrizes de confusão estratificadas;</li>
+<li>curvas ROC e PR por grupo;</li>
+<li>análise de erro por grupo.</li>
+</ul>
+<p>Ferramentas possíveis incluem Python, pandas, scikit-learn, imbalanced-learn, <a class="term" href="../tecnicas/aif360.html">AIF360</a>, <a class="term" href="../tecnicas/fairlearn.html">Fairlearn</a>, Evidently, notebooks versionados, ferramentas de profiling e bibliotecas estatísticas.</p>
+<h2 class="section-title" id="metricas-do-modulo">9. Métricas do módulo</h2>
+<p>As métricas do Módulo 6 têm como objetivo avaliar desbalanceamento, representatividade, viés, equidade, impacto de mitigação e risco residual.</p>
+<div class="table-wrap"><table class="table"><tr><th>Métrica</th><th>Sigla</th><th>Descrição</th></tr><tr><td>Razão de desbalanceamento</td><td>IR</td><td>Relação entre classe majoritária e classe minoritária</td></tr><tr><td>Proporção da classe minoritária</td><td>PCM</td><td>Percentual de registros da classe minoritária</td></tr><tr><td>Distribuição por grupo</td><td>DG</td><td>Proporção de registros por grupo relevante</td></tr><tr><td>Taxa de sub-representação</td><td>TSR</td><td>Grau em que um grupo aparece abaixo do esperado</td></tr><tr><td>Taxa de perda por grupo</td><td>TPG</td><td>Proporção de registros perdidos por grupo ao longo do pipeline</td></tr><tr><td>Diferença de completude por grupo</td><td>DCG</td><td>Diferença de completude entre grupos</td></tr><tr><td>Diferença de qualidade por grupo</td><td>DQG</td><td>Diferença de métricas de qualidade entre grupos</td></tr><tr><td><a class="term" href="../metricas/statistical-parity-difference.html">Statistical Parity Difference</a></td><td>SPD</td><td>Diferença na taxa de resultado positivo entre grupos</td></tr><tr><td>Disparate Impact</td><td>DI</td><td>Razão entre taxas de resultado positivo entre grupos</td></tr><tr><td><a class="term" href="../metricas/equal-opportunity-difference.html">Equal Opportunity Difference</a></td><td>EOD</td><td>Diferença de true positive rate entre grupos</td></tr><tr><td><a class="term" href="../metricas/average-odds-difference.html">Average Odds Difference</a></td><td>AOD</td><td>Diferença média entre FPR e TPR entre grupos</td></tr><tr><td>Diferença de FPR</td><td>ΔFPR</td><td>Diferença de falsos positivos entre grupos</td></tr><tr><td>Diferença de FNR</td><td>ΔFNR</td><td>Diferença de falsos negativos entre grupos</td></tr><tr><td>Balanced Accuracy</td><td>BA</td><td>Média do desempenho entre classes</td></tr><tr><td>Macro-F1</td><td>MF1</td><td>Média do F1-score entre classes</td></tr><tr><td>PR-AUC</td><td>PRAUC</td><td>Área sob curva precisão-revocação</td></tr><tr><td>Índice de impacto da mitigação</td><td>IIM</td><td>Grau de alteração produzido pela mitigação</td></tr><tr><td>Risco residual de viés</td><td>RRV</td><td>Nível de risco após ações de mitigação</td></tr></table></div>
+<h3 id="razao-de-desbalanceamento-ir">9.1 Razão de Desbalanceamento — IR</h3>
+<p>A Razão de Desbalanceamento mede a proporção entre a classe majoritária e a classe minoritária.</p>
+<div class="formula">IR = número de registros da classe majoritária / número de registros da classe minoritária</div>
+<p>Valores elevados indicam forte desbalanceamento e possível necessidade de tratamento, especialmente em problemas preditivos.</p>
+<h3 id="taxa-de-perda-por-grupo-tpg">9.2 Taxa de Perda por Grupo — TPG</h3>
+<p>A Taxa de Perda por Grupo mede a proporção de registros de determinado grupo removidos ou perdidos ao longo de etapas como integração, limpeza ou transformação.</p>
+<div class="formula">TPG(gᵢ) = registros removidos do grupo gᵢ / registros iniciais do grupo gᵢ</div>
+<p>Essa métrica permite identificar se o pipeline afeta grupos de forma desigual.</p>
+<h3 id="statistical-parity-difference-spd">9.3 Statistical Parity Difference — SPD</h3>
+<p>O Statistical Parity Difference mede a diferença entre a taxa de resultado positivo de um grupo protegido e a taxa de resultado positivo de um grupo de referência.</p>
+<div class="formula">SPD = P(ŷ = 1 | grupo protegido) − P(ŷ = 1 | grupo referência)</div>
+<p>Valores próximos de zero indicam maior paridade estatística, embora a interpretação dependa do domínio e do problema.</p>
+<h3 id="disparate-impact-di">9.4 Disparate Impact — DI</h3>
+<p>O Disparate Impact mede a razão entre a taxa de resultado positivo de um grupo protegido e a taxa de resultado positivo de um grupo de referência.</p>
+<div class="formula">DI = P(ŷ = 1 | grupo protegido) / P(ŷ = 1 | grupo referência)</div>
+<p>Valores muito abaixo de 1 podem indicar impacto desproporcional.</p>
+<h3 id="equal-opportunity-difference-eod">9.5 Equal Opportunity Difference — EOD</h3>
+<p>O Equal Opportunity Difference mede a diferença de taxa de verdadeiros positivos entre grupos.</p>
+<div class="formula">EOD = TPR(grupo protegido) − TPR(grupo referência)</div>
+<p>Essa métrica é relevante quando se deseja avaliar se os grupos recebem oportunidades semelhantes de classificação positiva correta.</p>
+<h3 id="average-odds-difference-aod">9.6 Average Odds Difference — AOD</h3>
+<p>O Average Odds Difference mede a média das diferenças entre taxa de falsos positivos e taxa de verdadeiros positivos entre grupos.</p>
+<div class="formula">AOD = 1/2 [(FPR_protegido − FPR_referência) + (TPR_protegido − TPR_referência)]</div>
+<p>Essa métrica avalia diferenças nos padrões de erro entre grupos.</p>
+<h3 id="indice-de-impacto-da-mitigacao-iim">9.7 Índice de Impacto da Mitigação — IIM</h3>
+<p>O Índice de Impacto da Mitigação avalia o quanto uma intervenção alterou a distribuição dos dados ou o comportamento de um modelo.</p>
+<p>Uma formulação simples pode considerar:</p>
+<div class="formula">IIM = distância(distribuição antes, distribuição depois)</div>
+<p>A distância pode ser estimada por diferença absoluta de proporções, PSI, divergência de Jensen-Shannon ou outra medida adequada ao tipo de dado.</p>
+<h2 class="section-title" id="artefatos-formalizados-do-modulo">10. Artefatos formalizados do módulo</h2>
+<p>Os artefatos do Módulo 6 são especificados como unidades técnico-metodológicas formais. Cada artefato possui finalidade, estrutura mínima, representação, regras de construção, métricas associadas, critérios de validação e relação com os demais módulos.</p>
+<div class="table-wrap"><table class="table"><tr><th>Código</th><th>Artefato</th><th>Representação</th><th>Métrica principal</th><th>Contribuição</th></tr><tr><td>A6.1</td><td>Plano de Avaliação de Desbalanceamento e Equidade</td><td>Documento técnico</td><td>Cobertura de grupos</td><td>Define grupos, variáveis e critérios</td></tr><tr><td>A6.2</td><td>Registro de Grupos e Atributos Sensíveis</td><td>Tabela estruturada</td><td>DG, TSR</td><td>Formaliza grupos avaliados</td></tr><tr><td>A6.3</td><td>Perfil de Distribuição e Representatividade</td><td>Relatório técnico</td><td>IR, PCM, DG</td><td>Diagnostica desbalanceamentos</td></tr><tr><td>A6.4</td><td>Registro de Perdas por Etapa do Pipeline</td><td>Tabela analítica</td><td>TPG</td><td>Mede impacto do pipeline por grupo</td></tr><tr><td>A6.5</td><td><a class="term" href="../artefatos/relatorio-de-vieses.html">Relatório de Vieses</a> Identificados</td><td>Relatório técnico</td><td>DCG, DQG, SPD, DI</td><td>Documenta riscos de viés</td></tr><tr><td>A6.6</td><td>Plano de Mitigação de Desbalanceamento</td><td>Documento técnico</td><td>IR, BA, MF1</td><td>Define ações de balanceamento</td></tr><tr><td>A6.7</td><td>Registro de Técnicas de Mitigação Aplicadas</td><td>Tabela técnica</td><td>IIM</td><td>Documenta técnicas, parâmetros e impacto</td></tr><tr><td>A6.8</td><td>Dataset Balanceado ou Sinalizado</td><td>Dataset versionado</td><td>IR, PCM</td><td>Materializa tratamento ou ressalva</td></tr><tr><td>A6.9</td><td>Relatório de Equidade e Fairness</td><td>Relatório técnico</td><td>SPD, DI, EOD, AOD</td><td>Avalia impacto entre grupos</td></tr><tr><td>A6.10</td><td>Registro de Risco Residual e Limitações</td><td>Relatório/tabela</td><td>RRV</td><td>Documenta riscos remanescentes</td></tr></table></div>
+<h2 class="section-title" id="artefato-a6-1-plano-de-avaliacao-de-desbalanceamento-e-equidade">11. Artefato A6.1 — Plano de Avaliação de Desbalanceamento e Equidade</h2>
+<h3 id="finalidade">11.1 Finalidade</h3>
+<p>O Plano de Avaliação de Desbalanceamento e Equidade define como o dataset será avaliado quanto à distribuição, representatividade, desbalanceamento, grupos relevantes, atributos sensíveis, variável-alvo e métricas de equidade.</p>
+<h3 id="tipo-de-artefato-na-dsr">11.2 Tipo de artefato na DSR</h3>
+<p>Na perspectiva da Design Science Research, esse artefato é um método, pois orienta o procedimento de avaliação, e uma instanciação, quando documentado em relatório, planilha, notebook, arquivo YAML, JSON ou ferramenta computacional.</p>
+<h3 id="estrutura-minima">11.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset avaliado</td><td>Ativo submetido à análise</td></tr><tr><td>Finalidade analítica</td><td>Uso previsto do dataset</td></tr><tr><td>Variável-alvo</td><td>Classe, evento ou resultado de interesse</td></tr><tr><td>Grupos avaliados</td><td>Grupos sensíveis ou analiticamente relevantes</td></tr><tr><td>Atributos sensíveis</td><td>Atributos relacionados aos grupos</td></tr><tr><td>Métricas previstas</td><td>IR, DG, SPD, DI, EOD, AOD etc.</td></tr><tr><td>Limiar de atenção</td><td>Valor que aciona alerta</td></tr><tr><td>Método de mitigação previsto</td><td>Quando aplicável</td></tr><tr><td>Responsável</td><td>Pessoa ou equipe</td></tr><tr><td>Critério de validação</td><td>Condição para aceitar ou restringir uso</td></tr></table></div>
+<h3 id="metricas-associadas">11.4 Métricas associadas</h3>
+<ul class="list">
+<li>percentual de datasets com plano de avaliação;</li>
+<li>percentual de grupos definidos;</li>
+<li>percentual de variáveis sensíveis documentadas;</li>
+<li>percentual de métricas com limiar definido;</li>
+<li>cobertura de grupos avaliados.</li>
+</ul>
+<h3 id="criterios-de-validacao">11.5 Critérios de validação</h3>
+<p>O plano é considerado válido quando define dataset, finalidade, variável-alvo, grupos avaliados, atributos sensíveis, métricas, limiares e critérios de decisão.</p>
+<h3 id="contribuicao">11.6 Contribuição</h3>
+<p>Esse artefato impede que a avaliação de viés seja improvisada ou aplicada apenas depois da modelagem, inserindo a análise de equidade como parte formal do pipeline.</p>
+<h2 class="section-title" id="artefato-a6-2-registro-de-grupos-e-atributos-sensiveis">12. Artefato A6.2 — Registro de Grupos e Atributos Sensíveis</h2>
+<h3 id="finalidade-2">12.1 Finalidade</h3>
+<p>O Registro de Grupos e Atributos Sensíveis documenta quais grupos, atributos sensíveis, proxies e categorias serão considerados na avaliação de desbalanceamento, vieses e equidade.</p>
+<h3 id="estrutura-minima-2">12.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Atributo</td><td>Campo que define grupo ou categoria</td></tr><tr><td>Tipo de atributo</td><td>Sensível, proxy, contextual, territorial, temporal</td></tr><tr><td>Grupos derivados</td><td>Categorias ou grupos analisados</td></tr><tr><td>Justificativa</td><td>Motivo da inclusão</td></tr><tr><td>Sensibilidade</td><td>Baixa, média, alta ou crítica</td></tr><tr><td>Uso permitido</td><td>Avaliação, mitigação, modelagem ou restrição</td></tr><tr><td>Restrição de acesso</td><td>Condição de uso</td></tr><tr><td>Observações</td><td>Cuidados éticos ou analíticos</td></tr></table></div>
+<h3 id="metricas-associadas-2">12.3 Métricas associadas</h3>
+<ul class="list">
+<li>número de grupos definidos;</li>
+<li>percentual de grupos com justificativa;</li>
+<li>percentual de atributos sensíveis classificados;</li>
+<li>número de proxies identificados;</li>
+<li>cobertura de grupos relevantes.</li>
+</ul>
+<h3 id="contribuicao-2">12.4 Contribuição</h3>
+<p>Esse artefato torna explícito quais grupos serão avaliados, evitando invisibilidade de populações ou categorias relevantes.</p>
+<h2 class="section-title" id="artefato-a6-3-perfil-de-distribuicao-e-representatividade">13. Artefato A6.3 — Perfil de Distribuição e Representatividade</h2>
+<h3 id="finalidade-3">13.1 Finalidade</h3>
+<p>O Perfil de Distribuição e Representatividade apresenta a distribuição dos registros, classes, grupos e categorias presentes no dataset.</p>
+<h3 id="estrutura-minima-3">13.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset</td><td>Dataset avaliado</td></tr><tr><td>Variável analisada</td><td>Classe, grupo, categoria ou atributo</td></tr><tr><td>Grupo ou classe</td><td>Categoria específica</td></tr><tr><td>Frequência absoluta</td><td>Número de registros</td></tr><tr><td>Frequência relativa</td><td>Percentual no dataset</td></tr><tr><td>Referência esperada</td><td>Quando disponível</td></tr><tr><td>Diferença observada</td><td>Diferença em relação à referência</td></tr><tr><td>Classificação</td><td>Adequado, atenção, crítico</td></tr><tr><td>Observações</td><td>Limitações ou riscos</td></tr></table></div>
+<h3 id="metricas-associadas-3">13.3 Métricas associadas</h3>
+<ul class="list">
+<li>razão de desbalanceamento;</li>
+<li>proporção da classe minoritária;</li>
+<li>distribuição por grupo;</li>
+<li>taxa de sub-representação;</li>
+<li>divergência em relação à distribuição esperada.</li>
+</ul>
+<h3 id="contribuicao-3">13.4 Contribuição</h3>
+<p>Esse artefato transforma a análise de distribuição em evidência documentada, apoiando decisões sobre balanceamento, amostragem, restrição de uso ou complementação de dados.</p>
+<h2 class="section-title" id="artefato-a6-4-registro-de-perdas-por-etapa-do-pipeline">14. Artefato A6.4 — Registro de Perdas por Etapa do Pipeline</h2>
+<h3 id="finalidade-4">14.1 Finalidade</h3>
+<p>O Registro de Perdas por Etapa do Pipeline documenta quantos registros foram removidos, perdidos ou não pareados em cada etapa do pipeline, estratificando esses efeitos por grupo.</p>
+<h3 id="estrutura-minima-4">14.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset</td><td>Dataset analisado</td></tr><tr><td>Grupo</td><td>Grupo avaliado</td></tr><tr><td>Etapa do pipeline</td><td>Ingestão, integração, limpeza, transformação etc.</td></tr><tr><td>Registros antes</td><td>Quantidade antes da etapa</td></tr><tr><td>Registros depois</td><td>Quantidade após a etapa</td></tr><tr><td>Registros perdidos</td><td>Diferença entre antes e depois</td></tr><tr><td>Taxa de perda</td><td>Percentual de perda</td></tr><tr><td>Motivo</td><td>Causa da perda</td></tr><tr><td>Severidade</td><td>Baixa, média, alta ou crítica</td></tr></table></div>
+<h3 id="metricas-associadas-4">14.3 Métricas associadas</h3>
+<ul class="list">
+<li>taxa de perda por grupo;</li>
+<li>diferença de perda entre grupos;</li>
+<li>percentual de grupos afetados;</li>
+<li>taxa de registros não pareados por grupo;</li>
+<li>severidade das perdas.</li>
+</ul>
+<h3 id="contribuicao-4">14.4 Contribuição</h3>
+<p>Esse artefato identifica se o próprio pipeline está produzindo exclusões desiguais, permitindo corrigir ou documentar esses efeitos.</p>
+<h2 class="section-title" id="artefato-a6-5-relatorio-de-vieses-identificados">15. Artefato A6.5 — Relatório de Vieses Identificados</h2>
+<h3 id="finalidade-5">15.1 Finalidade</h3>
+<p>O Relatório de Vieses Identificados documenta evidências de vieses técnicos, estatísticos ou algorítmicos observados nos dados, nas transformações ou nos resultados analíticos.</p>
+<h3 id="tipos-de-vies-registrados">15.2 Tipos de viés registrados</h3>
+<ul class="list">
+<li>viés de coleta;</li>
+<li>viés de cobertura;</li>
+<li>viés de integração;</li>
+<li>viés de transformação;</li>
+<li>viés de imputação;</li>
+<li>viés de rotulagem;</li>
+<li>viés de seleção de atributos;</li>
+<li>viés de avaliação;</li>
+<li>viés de uso.</li>
+</ul>
+<h3 id="estrutura-minima-5">15.3 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset</td><td>Ativo analisado</td></tr><tr><td>Tipo de viés</td><td>Coleta, cobertura, integração etc.</td></tr><tr><td>Grupo afetado</td><td>Grupo ou categoria impactada</td></tr><tr><td>Evidência</td><td>Métrica ou observação que indica viés</td></tr><tr><td>Severidade</td><td>Baixa, média, alta ou crítica</td></tr><tr><td>Origem provável</td><td>Fonte ou etapa do pipeline</td></tr><tr><td>Impacto potencial</td><td>Consequência analítica ou decisória</td></tr><tr><td>Ação recomendada</td><td>Mitigar, monitorar, restringir, revisar</td></tr><tr><td>Status</td><td>Aberto, tratado, aceito, mitigado</td></tr></table></div>
+<h3 id="metricas-associadas-5">15.4 Métricas associadas</h3>
+<ul class="list">
+<li>número de vieses identificados;</li>
+<li>severidade média;</li>
+<li>número de grupos afetados;</li>
+<li>diferença de qualidade por grupo;</li>
+<li>diferença de completude por grupo;</li>
+<li>métricas de fairness, quando aplicável.</li>
+</ul>
+<h3 id="contribuicao-5">15.5 Contribuição</h3>
+<p>Esse artefato torna visíveis distorções que poderiam permanecer ocultas em métricas globais de qualidade ou desempenho.</p>
+<h2 class="section-title" id="artefato-a6-6-plano-de-mitigacao-de-desbalanceamento">16. Artefato A6.6 — Plano de Mitigação de Desbalanceamento</h2>
+<h3 id="finalidade-6">16.1 Finalidade</h3>
+<p>O Plano de Mitigação de Desbalanceamento define as ações a serem adotadas para reduzir efeitos de desbalanceamento ou sub-representação.</p>
+<h3 id="estrutura-minima-6">16.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Problema identificado</td><td>Desbalanceamento, sub-representação, classe rara etc.</td></tr><tr><td>Dataset</td><td>Dataset afetado</td></tr><tr><td>Grupo ou classe</td><td>Grupo ou classe envolvida</td></tr><tr><td>Técnica proposta</td><td>SMOTE, undersampling, ponderação etc.</td></tr><tr><td>Parâmetros</td><td>Configurações da técnica</td></tr><tr><td>Justificativa</td><td>Motivo da escolha</td></tr><tr><td>Risco</td><td>Possível distorção ou perda</td></tr><tr><td>Métricas antes</td><td>Distribuição original</td></tr><tr><td>Métricas esperadas</td><td>Resultado esperado</td></tr><tr><td>Critério de aceitação</td><td>Condição para validar a mitigação</td></tr></table></div>
+<h3 id="metricas-associadas-6">16.3 Métricas associadas</h3>
+<ul class="list">
+<li>razão de desbalanceamento antes/depois;</li>
+<li>proporção da classe minoritária;</li>
+<li>macro-F1;</li>
+<li>balanced accuracy;</li>
+<li>PR-AUC;</li>
+<li>índice de impacto da mitigação.</li>
+</ul>
+<h3 id="contribuicao-6">16.4 Contribuição</h3>
+<p>Esse artefato evita que técnicas de balanceamento sejam aplicadas de forma automática e sem justificativa, documentando seus efeitos e riscos.</p>
+<h2 class="section-title" id="artefato-a6-7-registro-de-tecnicas-de-mitigacao-aplicadas">17. Artefato A6.7 — Registro de Técnicas de Mitigação Aplicadas</h2>
+<h3 id="finalidade-7">17.1 Finalidade</h3>
+<p>O Registro de Técnicas de Mitigação Aplicadas documenta as técnicas efetivamente utilizadas para tratar desbalanceamento ou viés.</p>
+<h3 id="estrutura-minima-7">17.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset</td><td><a class="term" href="../artefatos/dataset-tratado.html">Dataset tratado</a></td></tr><tr><td>Técnica aplicada</td><td>Oversampling, undersampling, SMOTE, reweighing etc.</td></tr><tr><td>Parâmetros</td><td>Configurações utilizadas</td></tr><tr><td>Variável-alvo</td><td>Classe ou resultado de interesse</td></tr><tr><td>Grupos afetados</td><td>Grupos impactados</td></tr><tr><td>Distribuição antes</td><td>Frequência original</td></tr><tr><td>Distribuição depois</td><td>Frequência após mitigação</td></tr><tr><td>Impacto observado</td><td>Métricas antes/depois</td></tr><tr><td>Justificativa</td><td>Motivo da aplicação</td></tr><tr><td>Versão</td><td>Versão do dataset resultante</td></tr></table></div>
+<h3 id="metricas-associadas-7">17.3 Métricas associadas</h3>
+<ul class="list">
+<li>índice de impacto da mitigação;</li>
+<li>alteração da razão de desbalanceamento;</li>
+<li>variação nas métricas de desempenho;</li>
+<li>variação nas métricas de fairness;</li>
+<li>taxa de registros sintéticos, quando aplicável.</li>
+</ul>
+<h3 id="contribuicao-7">17.4 Contribuição</h3>
+<p>Esse artefato preserva a rastreabilidade das intervenções aplicadas aos dados, permitindo auditoria e comparação entre cenários.</p>
+<h2 class="section-title" id="artefato-a6-8-dataset-balanceado-ou-sinalizado">18. Artefato A6.8 — Dataset Balanceado ou Sinalizado</h2>
+<h3 id="finalidade-8">18.1 Finalidade</h3>
+<p>O Dataset Balanceado ou Sinalizado é o ativo resultante da aplicação de técnicas de mitigação ou da decisão de manter o dataset original com alertas e restrições de uso.</p>
+<h3 id="estrutura-formal">18.2 Estrutura formal</h3>
+<p>O dataset resultante pode ser representado por:</p>
+<div class="formula">d&#x27; = {dataset_origem, técnica, parâmetros, distribuição_antes, distribuição_depois, grupos_afetados, métricas, versão, limitações}</div>
+<h3 id="possiveis-estados">18.3 Possíveis estados</h3>
+<div class="table-wrap"><table class="table"><tr><th>Estado</th><th>Interpretação</th></tr><tr><td>Balanceado</td><td>Técnicas de reamostragem ou ponderação foram aplicadas</td></tr><tr><td>Sinalizado</td><td>O dataset foi mantido, mas possui alerta de desbalanceamento</td></tr><tr><td>Restrito</td><td>Uso permitido apenas para determinadas análises</td></tr><tr><td>Rejeitado</td><td>Uso não recomendado para finalidade prevista</td></tr></table></div>
+<h3 id="metricas-associadas-8">18.4 Métricas associadas</h3>
+<ul class="list">
+<li>razão de desbalanceamento;</li>
+<li>proporção de classes;</li>
+<li>taxa de registros sintéticos;</li>
+<li>variação de distribuição;</li>
+<li>risco residual de viés.</li>
+</ul>
+<h3 id="contribuicao-8">18.5 Contribuição</h3>
+<p>Esse artefato materializa a decisão metodológica sobre o uso do dataset, evitando que dados desbalanceados sejam utilizados sem alerta.</p>
+<h2 class="section-title" id="artefato-a6-9-relatorio-de-equidade-e-fairness">19. Artefato A6.9 — Relatório de Equidade e Fairness</h2>
+<h3 id="finalidade-9">19.1 Finalidade</h3>
+<p>O Relatório de Equidade e Fairness consolida métricas de equidade entre grupos, especialmente quando o dataset é utilizado em modelos, classificações, rankings ou decisões.</p>
+<h3 id="estrutura-minima-8">19.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset ou modelo</td><td>Ativo avaliado</td></tr><tr><td>Grupos avaliados</td><td>Grupos comparados</td></tr><tr><td>Variável-alvo</td><td>Resultado analisado</td></tr><tr><td>Métricas calculadas</td><td>SPD, DI, EOD, AOD, FPR, FNR etc.</td></tr><tr><td>Resultados por grupo</td><td>Valores obtidos</td></tr><tr><td>Diferenças observadas</td><td>Distâncias entre grupos</td></tr><tr><td>Severidade</td><td>Baixa, média, alta ou crítica</td></tr><tr><td>Recomendações</td><td>Mitigar, revisar, restringir uso</td></tr><tr><td>Limitações</td><td>Restrições interpretativas</td></tr></table></div>
+<h3 id="metricas-associadas-9">19.3 Métricas associadas</h3>
+<ul class="list">
+<li>SPD;</li>
+<li>DI;</li>
+<li>EOD;</li>
+<li>AOD;</li>
+<li>diferença de FPR;</li>
+<li>diferença de FNR;</li>
+<li>métricas de desempenho por grupo;</li>
+<li>risco residual de viés.</li>
+</ul>
+<h3 id="contribuicao-9">19.4 Contribuição</h3>
+<p>Esse artefato permite avaliar se dados, modelos ou indicadores produzem impactos desproporcionais entre grupos, apoiando decisões mais responsáveis.</p>
+<h2 class="section-title" id="artefato-a6-10-registro-de-risco-residual-e-limitacoes">20. Artefato A6.10 — Registro de Risco Residual e Limitações</h2>
+<h3 id="finalidade-10">20.1 Finalidade</h3>
+<p>O Registro de Risco Residual e Limitações documenta os riscos de viés, desbalanceamento ou inequidade que permanecem após análises e eventuais mitigações.</p>
+<h3 id="estrutura-minima-9">20.2 Estrutura mínima</h3>
+<div class="table-wrap"><table class="table"><tr><th>Campo</th><th>Descrição</th></tr><tr><td>Dataset</td><td>Ativo avaliado</td></tr><tr><td>Risco residual</td><td>Risco remanescente</td></tr><tr><td>Grupo afetado</td><td>Grupo ou classe impactada</td></tr><tr><td>Evidência</td><td>Métrica ou observação</td></tr><tr><td>Severidade</td><td>Baixa, média, alta ou crítica</td></tr><tr><td>Mitigação aplicada</td><td>Técnica ou ação realizada</td></tr><tr><td>Limitação</td><td>O que não foi resolvido</td></tr><tr><td>Restrição de uso</td><td>Condição para uso responsável</td></tr><tr><td>Recomendação</td><td>Ação futura</td></tr></table></div>
+<h3 id="metricas-associadas-10">20.3 Métricas associadas</h3>
+<ul class="list">
+<li>número de riscos residuais;</li>
+<li>severidade média;</li>
+<li>percentual de riscos mitigados;</li>
+<li>percentual de riscos aceitos;</li>
+<li>percentual de ativos com restrição de uso.</li>
+</ul>
+<h3 id="contribuicao-10">20.4 Contribuição</h3>
+<p>Esse artefato impede que limitações relevantes sejam omitidas, promovendo transparência, governança e uso responsável dos ativos analíticos.</p>
+<h2 class="section-title" id="estrutura-operacional-do-modulo">21. Estrutura operacional do módulo</h2>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Datasets brutos, integrados e tratados; atributos sensíveis; variáveis-alvo; grupos relevantes; relatórios de qualidade; registros de transformação e metadados.</td></tr><tr><td>Processamento</td><td>Identificação de grupos, análise de distribuição, avaliação de desbalanceamento, mensuração de vieses, cálculo de fairness, mitigação, análise de impacto e registro de limitações.</td></tr><tr><td>Artefatos</td><td>Plano de avaliação, registro de grupos, perfil de distribuição, perdas por etapa, relatório de vieses, plano de mitigação, registro de técnicas, dataset balanceado ou sinalizado, relatório de equidade e risco residual.</td></tr><tr><td>Métricas</td><td>IR, PCM, DG, TSR, TPG, DCG, DQG, SPD, DI, EOD, AOD, ΔFPR, ΔFNR, BA, Macro-F1, PR-AUC, IIM e RRV.</td></tr><tr><td>Saídas</td><td>Evidências de desbalanceamento, relatórios de viés e equidade, datasets balanceados ou sinalizados, recomendações de uso e registros de risco residual.</td></tr></table></div>
+<h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">22. Critérios gerais de validação do módulo</h2>
+<p>O Módulo 6 pode ser considerado concluído quando:</p>
+<ol class="steps">
+<li>os grupos relevantes foram identificados e documentados;</li>
+<li>os atributos sensíveis ou proxies foram registrados;</li>
+<li>a distribuição dos dados por classe, grupo, período ou território foi avaliada;</li>
+<li>a variável-alvo foi analisada quanto ao desbalanceamento, quando aplicável;</li>
+<li>perdas por etapa do pipeline foram calculadas, quando possível;</li>
+<li>vieses potenciais foram identificados e classificados;</li>
+<li>métricas de equidade foram calculadas, quando houver uso em modelos, rankings ou decisões;</li>
+<li>técnicas de mitigação foram justificadas e documentadas, quando aplicadas;</li>
+<li>impactos das mitigações foram avaliados;</li>
+<li>riscos residuais e limitações foram registrados;</li>
+<li>o dataset foi classificado como balanceado, sinalizado, restrito ou rejeitado conforme sua condição de uso.</li>
+</ol>
+<h2 class="section-title" id="relacao-com-os-demais-modulos-do-modelo-de-referencia">23. Relação com os demais módulos do modelo de referência</h2>
+<p>O Módulo 6 depende do Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, pois utiliza informações sobre origem, sensibilidade, grupos, restrições e limitações das fontes.</p>
+<p>Depende do Módulo 2 — Extração, Ingestão e Armazenamento Bruto, pois problemas de cobertura e representatividade podem surgir já na ingestão dos dados.</p>
+<p>Depende do Módulo 3 — Integração e Harmonização, pois perdas de pareamento, conflitos e ausência de chaves podem afetar grupos de forma desigual.</p>
+<p>Depende do Módulo 4 — Transformação, Limpeza e Enriquecimento, pois imputações, remoções, filtros e atributos derivados podem introduzir ou ampliar vieses.</p>
+<p>Depende do Módulo 5 — Qualidade e Validação de Dados, pois utiliza métricas de completude, validade, consistência e qualidade por grupo.</p>
+<p>Para o Módulo 7 — Metadados, Catálogo e Semântica dos Dados, fornece informações sobre grupos, atributos sensíveis, riscos de viés, métricas de fairness e limitações de uso.</p>
+<p>Para o Módulo 8 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, fornece evidências de sensibilidade, risco de impacto desproporcional e recomendações de uso responsável.</p>
+<p>Para o Módulo 9 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Lineage e Rastreabilidade, fornece registros sobre onde vieses podem ter sido introduzidos ou mitigados no pipeline.</p>
+<p>Para o Módulo 10 — Versionamento e <a class="term" href="../conceitos/reprodutibilidade.html">Reprodutibilidade</a>, fornece versões de datasets balanceados, técnicas aplicadas, parâmetros e métricas antes/depois.</p>
+<p>Para o Módulo 12 — Feature Engineering e <a class="term" href="../conceitos/feature-store.html">Feature Store</a>, fornece alertas sobre atributos sensíveis, proxies, variáveis potencialmente enviesadas e qualidade por grupo.</p>
+<p>Para o Módulo 13 — Disponibilização Analítica, fornece recomendações sobre uso, restrição, sinalização ou bloqueio de ativos.</p>
+<p>Para o Módulo 14 — Monitoramento, Drift e Evolução dos Ativos, fornece métricas de distribuição e fairness que podem ser acompanhadas ao longo do tempo.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-no-dominio-educacional">24. Exemplo de aplicação no domínio educacional</h2>
+<p>Em uma aplicação educacional, o Módulo 6 poderia avaliar uma base analítica voltada à predição de evasão ou acompanhamento de permanência estudantil.</p>
+<p>A variável-alvo poderia ser evasão, permanência, aprovação ou reprovação. Os grupos analisados poderiam incluir sexo, idade, renda, escola de origem, modalidade de ingresso, curso, turno, campus, território, deficiência, situação socioeconômica ou participação em ações de permanência.</p>
+<p>O módulo poderia identificar, por exemplo, que estudantes de baixa renda possuem maior proporção de valores ausentes em atributos socioeconômicos, que determinados cursos possuem baixa representação, que estudantes com menor acesso ao ambiente virtual são sub-representados em variáveis de interação ou que a integração entre bases removeu mais registros de determinado grupo.</p>
+<p>Também poderia avaliar se um modelo de evasão apresenta desempenho desigual, por exemplo, alto desempenho global, mas baixo recall para estudantes vulneráveis. Nesse caso, métricas como FNR por grupo, Equal Opportunity Difference, Disparate Impact e Macro-F1 seriam relevantes.</p>
+<p>As saídas poderiam incluir um relatório de equidade, um dataset sinalizado para uso com ressalvas, recomendações de mitigação e registro de limitações.</p>
+<h2 class="section-title" id="exemplo-de-aplicacao-em-politicas-publicas">25. Exemplo de aplicação em políticas públicas</h2>
+<p>Em uma aplicação em políticas públicas, o Módulo 6 poderia avaliar dados integrados de saúde, educação, assistência social, território e trabalho.</p>
+<p>Os grupos analisados poderiam incluir território, faixa etária, renda, condição de vulnerabilidade, tipo de atendimento, população rural ou urbana, região administrativa, escolaridade ou acesso a serviços públicos.</p>
+<p>O módulo poderia identificar que determinados territórios possuem menor cobertura de registros, que bases de atendimento representam melhor famílias já cadastradas do que populações não atendidas, ou que decisões baseadas apenas em registros administrativos podem subestimar demandas invisíveis ao sistema.</p>
+<p>A análise de equidade poderia orientar o uso responsável dos dados, evitando que ausência de registro seja interpretada como ausência de necessidade.</p>
+<h2 class="section-title" id="contribuicao-tecnico-cientifica-do-modulo">26. Contribuição técnico-científica do módulo</h2>
+<p>A contribuição do Módulo 6 está em formalizar desbalanceamento, vieses e equidade como componentes avaliáveis da Engenharia Analítica de Dados.</p>
+<p>Em vez de tratar fairness e viés apenas como problemas da etapa de modelagem, o UnespDataLens-RM propõe sua análise ao longo do <a class="term" href="../conceitos/pipeline-de-dados.html">pipeline de dados</a>, desde a origem, ingestão, integração, limpeza e transformação até a disponibilização dos ativos.</p>
+<p>Essa formalização contribui para:</p>
+<ul class="list">
+<li>identificar desbalanceamentos antes da modelagem;</li>
+<li>avaliar representatividade dos dados;</li>
+<li>detectar perdas desiguais produzidas pelo pipeline;</li>
+<li>documentar atributos sensíveis e proxies;</li>
+<li>mensurar diferenças de qualidade entre grupos;</li>
+<li>avaliar fairness em modelos, rankings ou indicadores;</li>
+<li>justificar técnicas de mitigação;</li>
+<li>registrar riscos residuais;</li>
+<li>apoiar governança e uso responsável;</li>
+<li>reduzir decisões baseadas em dados enviesados ou sub-representativos.</li>
+</ul>
+<h2 class="section-title" id="sintese-do-modulo">27. Síntese do módulo</h2>
+<p>O Módulo 6 — Desbalanceamento, Vieses e Equidade avalia se os dados e ativos analíticos produzidos pelo UnespDataLens-RM representam adequadamente classes, grupos, categorias, períodos, territórios e entidades relevantes ao problema analisado.</p>
+<p>Sua importância é central porque dados podem ser tecnicamente válidos e ainda assim produzir impactos distorcidos, injustos ou desproporcionais. Ao formalizar métricas, artefatos, relatórios e critérios de validação, o módulo torna visíveis riscos que poderiam permanecer ocultos em métricas globais de qualidade ou desempenho.</p>
+<p>Dessa forma, o Módulo 6 fortalece a responsabilidade, a transparência, a governança e a confiabilidade dos ativos analíticos, contribuindo para que o UnespDataLens-RM produza dados e modelos mais robustos, auditáveis, equitativos e adequados ao uso em contextos institucionais, educacionais e de políticas públicas.</p></div><div class="page-end"><a href="#conteudo">Voltar ao início da página ↑</a></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

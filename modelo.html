@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A crescente disponibilidade de dados em instituições públicas, educacionais, científicas e administrativas tem ampliado as possibilidades de análise, monitoramento, avaliação, planejamento e tomada de decisão baseada em evidências. Entretanto, a simples existência de grandes volumes de dados não garante, por si só, a produção de conhecimento confiável.">
+  <title>Modelo de Referência · UnespDataLens-RM</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="app">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="index.html"><span>UNESP</span>DataLens-RM<small>Modelo de Referência para Engenharia Analítica de Dados</small></a>
+      <form class="search" action="busca.html">
+        <label class="sr-only" for="top-search">Pesquisar no conteúdo</label>
+        <input id="top-search" name="q" placeholder="Pesquisar conceitos, métodos, métricas..." autocomplete="off">
+      </form>
+    </div>
+    <nav class="top-nav" aria-label="Navegação principal"><a href="index.html">Início</a><a class="active" href="modelo.html">Modelo de Referência</a><a href="mapa.html">Mapa Geral</a><a href="modulos/index.html">Módulos</a><a href="dimensoes/index.html">Dimensões</a><a href="conceitos/index.html">Conceitos</a><a href="tecnicas/index.html">Técnicas e Tecnologias</a><a href="metodos/index.html">Métodos e Algoritmos</a><a href="artefatos/index.html">Artefatos</a><a href="metricas/index.html">Métricas</a><a href="problemas/index.html">Problemas Tratados</a><a href="aplicacoes/index.html">Aplicações</a><a href="trilhas/index.html">Trilhas de Estudo</a><a href="busca.html">Busca</a></nav>
+  </header>
+  <main class="main">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="content" id="conteudo"><span class="anchor-target" id="unespdatalens-rm-modelo-de-referencia-para-engenharia-analitica-de-dados-com-governanca-qualidade-proveniencia-e-reprodutibilidade"></span><section class="hero">
+<span class="badge">Documento-base</span>
+<h1>Modelo de Referência UnespDataLens-RM</h1>
+<p>A crescente disponibilidade de dados em instituições públicas, educacionais, científicas e administrativas tem ampliado as possibilidades de análise, monitoramento, avaliação, planejamento e tomada de decisão baseada em evidências. Entretanto, a simples existência de grandes volumes de dados não garante, por si só, a produção de conhecimento confiável.</p>
+<div class="hero-actions"><a class="btn light" href="downloads/UnespDataLens-RM_Modelo_Referencia_Completo.docx">Baixar documento completo</a></div>
+</section><details class="mini-toc" open><summary>Nesta página</summary><a href="#titulo-da-proposta">Título da proposta</a><a href="#introducao">Introdução</a><a href="#problema-de-pesquisa">Problema de pesquisa</a><a href="#hipotese-ou-pressuposto-da-pesquisa">Hipótese ou pressuposto da pesquisa</a><a href="#objetivo-geral">Objetivo geral</a><a href="#objetivos-especificos">Objetivos específicos</a><a href="#justificativa">Justificativa</a><a href="#fundamentacao-conceitual">Fundamentação conceitual</a><a href="#estrutura-geral-do-unespdatalens-rm">Estrutura geral do UnespDataLens-RM</a><a href="#descricao-sintetica-dos-modulos">Descrição sintética dos módulos</a><a href="#dimensoes-complementares-do-modelo-de-referencia">Dimensões complementares do modelo de referência</a><a href="#integracao-de-rag-como-apoio-aos-agentes-inteligentes">Integração de RAG como apoio aos agentes inteligentes</a><a href="#metodologia-da-pesquisa">Metodologia da pesquisa</a><a href="#artefatos-esperados">Artefatos esperados</a><a href="#avaliacao-do-modelo-de-referencia">Avaliação do modelo de referência</a><a href="#resultados-esperados">Resultados esperados</a><a href="#contribuicoes-esperadas">Contribuições esperadas</a><a href="#delimitacao-da-proposta">Delimitação da proposta</a><a href="#sintese-da-proposta">Síntese da proposta</a></details><div class="prose module-full"><h2 class="section-title" id="titulo-da-proposta">1. Título da proposta</h2>
+<p>UnespDataLens-RM: Modelo de Referência para Engenharia Analítica de Dados com Governança, Qualidade, <a class="term" href="conceitos/proveniencia.html">Proveniência</a> e <a class="term" href="conceitos/reprodutibilidade.html">Reprodutibilidade</a></p>
+<h2 class="section-title" id="introducao">2. Introdução</h2>
+<p>A crescente disponibilidade de dados em instituições públicas, educacionais, científicas e administrativas tem ampliado as possibilidades de análise, monitoramento, avaliação, planejamento e tomada de decisão baseada em evidências. Entretanto, a simples existência de grandes volumes de dados não garante, por si só, a produção de conhecimento confiável. Em muitos contextos institucionais, os dados encontram-se distribuídos em múltiplas fontes, produzidos por diferentes sistemas, armazenados em formatos heterogêneos, com distintos níveis de <a class="term" href="conceitos/granularidade.html">granularidade</a>, <a class="term" href="conceitos/periodicidade.html">periodicidade</a>, qualidade, documentação, <a class="term" href="conceitos/rastreabilidade.html">rastreabilidade</a> e governança.</p>
+<p>Esse cenário impõe desafios significativos à construção de ativos analíticos confiáveis. Bases de dados institucionais frequentemente apresentam <a class="term" href="problemas/inconsistencias.html">inconsistências</a>, duplicidades, <a class="term" href="problemas/ausencia-de-metadados.html">ausência de metadados</a>, mudanças de schema, diferentes regras de negócio, <a class="term" href="problemas/baixa-interoperabilidade-semantica.html">baixa interoperabilidade semântica</a>, <a class="term" href="problemas/dados-sensiveis-sem-classificacao.html">dados sensíveis sem classificação</a> adequada, ausência de lineage, <a class="term" href="problemas/baixa-reprodutibilidade.html">baixa reprodutibilidade</a> e dificuldade de monitoramento ao longo do tempo. Como consequência, indicadores, dashboards, modelos preditivos, relatórios, APIs, grafos e demais produtos analíticos podem ser construídos sobre dados frágeis, pouco documentados ou de difícil auditoria.</p>
+<p>No contexto da <a class="term" href="conceitos/ciencia-de-dados.html">Ciência de Dados</a> e da <a class="term" href="conceitos/inteligencia-artificial.html">Inteligência Artificial</a> aplicada, há uma tendência recorrente de enfatizar algoritmos, modelos e visualizações, enquanto as etapas de Engenharia de Dados que sustentam esses produtos permanecem pouco formalizadas. Entretanto, a qualidade das análises depende diretamente da qualidade dos dados, dos <a class="term" href="conceitos/metadados.html">metadados</a>, dos processos de transformação, da governança, do <a class="term" href="conceitos/versionamento.html">versionamento</a>, da rastreabilidade e da reprodutibilidade dos pipelines. Sem uma estrutura técnico-metodológica que organize esse ciclo, os produtos analíticos tendem a ser pontuais, difíceis de manter, pouco reutilizáveis e frágeis diante de mudanças nas fontes ou nos requisitos institucionais.</p>
+<p>Diante desse problema, esta proposta apresenta o UnespDataLens-RM, um modelo de referência para Engenharia Analítica de Dados voltado à especificação, implementação e avaliação de pipelines capazes de transformar dados heterogêneos, tabulares, temporais e relacionais em ativos analíticos confiáveis, qualificados, documentados, governados, versionados, rastreáveis e reprodutíveis. O modelo de referência é concebido como uma estrutura modular, composta por módulos técnico-operacionais e módulos transversais, permitindo organizar o ciclo completo dos dados desde o inventário das fontes até a disponibilização e o consumo de produtos analíticos.</p>
+<p>O UnespDataLens-RM também prevê mecanismos de apoio inteligente ao pipeline, por meio de agentes capazes de auxiliar usuários, analistas, pesquisadores, gestores e equipes técnicas na descoberta de dados, consulta a metadados, explicação de indicadores, interpretação de dashboards, identificação de dependências, análise de qualidade, apoio à documentação e manutenção dos ativos analíticos. Nesse contexto, mecanismos de Recuperação Aumentada por Geração, ou <a class="term" href="conceitos/rag.html">RAG</a>, poderão ser incorporados como estratégia de apoio aos agentes inteligentes, permitindo que suas respostas sejam fundamentadas em evidências recuperadas dos artefatos produzidos pelo próprio modelo de referência, tais como catálogos, glossários, contratos de dados, registros de qualidade, lineage, versões, manifestos de execução, relatórios de monitoramento e documentação de produtos. O RAG, entretanto, não constitui o foco central da proposta, mas uma capacidade complementar associada aos agentes inteligentes do pipeline.</p>
+<p>Assim, o UnespDataLens-RM busca contribuir para a formalização de um modelo técnico-metodológico de Engenharia Analítica de Dados que integre qualidade, governança, proveniência, rastreabilidade, reprodutibilidade, representações analíticas e apoio inteligente ao uso dos dados, fortalecendo a produção de evidências confiáveis para pesquisa, gestão e tomada de decisão.</p>
+<h2 class="section-title" id="problema-de-pesquisa">3. Problema de pesquisa</h2>
+<p>Apesar dos avanços em Ciência de Dados, Engenharia de Dados, Inteligência Artificial, Business Intelligence, Learning Analytics, Mineração de Dados Educacionais e análise de políticas públicas, ainda há lacunas relevantes na forma como os dados são preparados, integrados, governados, documentados, versionados, monitorados e disponibilizados para uso analítico.</p>
+<p>Em muitos projetos, os pipelines são construídos de maneira fragmentada, com foco na obtenção de resultados pontuais, mas sem uma estrutura formal que assegure qualidade, lineage, reprodutibilidade, governança e sustentabilidade. As transformações aplicadas aos dados nem sempre são registradas; os datasets nem sempre são versionados; as regras de integração podem permanecer implícitas; as variáveis derivadas podem não possuir documentação suficiente; os dashboards podem ser disponibilizados sem indicação clara de origem, versão ou qualidade; e os modelos podem ser treinados sem rastreabilidade completa dos dados, features e rótulos utilizados.</p>
+<p>Além disso, a crescente quantidade de fontes, atributos, produtos analíticos, versões, features, dashboards e relatórios pode gerar <a class="term" href="problemas/sobrecarga-informacional.html">sobrecarga informacional</a>, dificultando a descoberta e o uso adequado dos dados. Usuários frequentemente não sabem quais bases existem, qual versão deve ser utilizada, qual indicador é oficial, quais restrições se aplicam, qual regra de cálculo foi adotada ou quais produtos dependem de determinada fonte.</p>
+<p>Nesse cenário, o problema central não é apenas técnico, mas também metodológico, semântico, organizacional e de governança. É necessário estruturar um modelo de referência que permita não apenas processar dados, mas qualificá-los, documentá-los, rastreá-los, governá-los, versioná-los, monitorá-los e disponibilizá-los como ativos analíticos confiáveis.</p>
+<p>A questão central de pesquisa pode ser formulada da seguinte forma:</p>
+<p>Como especificar, implementar e avaliar um modelo de referência para Engenharia Analítica de Dados capaz de transformar dados heterogêneos, tabulares, temporais e relacionais em ativos analíticos confiáveis, qualificados, documentados, governados, versionados, rastreáveis, equitativos e reprodutíveis, capazes de sustentar análises computacionais, modelos preditivos, indicadores, grafos, visualizações, APIs e processos de tomada de decisão baseada em evidências?</p>
+<h2 class="section-title" id="hipotese-ou-pressuposto-da-pesquisa">4. Hipótese ou pressuposto da pesquisa</h2>
+<p>Parte-se do pressuposto de que a formalização de um modelo de referência modular para Engenharia Analítica de Dados, estruturado por módulos técnico-operacionais e transversais, pode aumentar a qualidade, rastreabilidade, governança, reprodutibilidade, reutilização e confiabilidade dos ativos analíticos produzidos a partir de dados heterogêneos.</p>
+<p>Assume-se também que a integração entre metadados, catálogo, semântica, lineage, versionamento, qualidade, <a class="term" href="conceitos/feature-engineering.html">feature engineering</a>, monitoramento e agentes inteligentes pode reduzir a fragmentação dos processos analíticos, melhorar a descoberta de dados, apoiar a interpretação dos produtos e fortalecer a tomada de decisão baseada em evidências.</p>
+<h2 class="section-title" id="objetivo-geral">5. Objetivo geral</h2>
+<p>O objetivo geral desta pesquisa é propor, especificar, implementar e avaliar o UnespDataLens-RM, um modelo de referência modular para Engenharia Analítica de Dados com governança, qualidade, proveniência, linhagem, versionamento, reprodutibilidade, representações analíticas, feature engineering, monitoramento e apoio inteligente ao pipeline, capaz de transformar dados heterogêneos em ativos analíticos confiáveis e utilizáveis em análises computacionais, modelos preditivos, dashboards, indicadores, grafos, APIs, relatórios e processos de tomada de decisão baseada em evidências.</p>
+<h2 class="section-title" id="objetivos-especificos">6. Objetivos específicos</h2>
+<p>São objetivos específicos da proposta:</p>
+<ol class="steps">
+<li>especificar uma arquitetura modular para o UnespDataLens-RM, contemplando módulos técnico-operacionais e módulos transversais para Engenharia Analítica de Dados;</li>
+<li>definir processos para <a class="term" href="artefatos/inventario-de-fontes.html">inventário de fontes</a>, extração, ingestão, armazenamento bruto, integração, harmonização, transformação, limpeza, enriquecimento, validação, armazenamento analítico e disponibilização de dados;</li>
+<li>estabelecer mecanismos de avaliação da qualidade dos dados, incluindo <a class="term" href="metricas/completude.html">completude</a>, <a class="term" href="metricas/consistencia.html">consistência</a>, <a class="term" href="metricas/validade.html">validade</a>, <a class="term" href="metricas/unicidade.html">unicidade</a>, <a class="term" href="metricas/integridade.html">integridade</a>, <a class="term" href="metricas/atualidade.html">atualidade</a>, <a class="term" href="metricas/conformidade.html">conformidade</a> e <a class="term" href="metricas/adequacao-ao-uso.html">adequação ao uso</a>;</li>
+<li>incorporar mecanismos para identificação de <a class="term" href="conceitos/desbalanceamento.html">desbalanceamento</a>, vieses e riscos de <a class="term" href="conceitos/equidade.html">equidade</a> nos dados e nos produtos analíticos;</li>
+<li>formalizar processos de metadados, catálogo, semântica, glossário, <a class="term" href="conceitos/dicionario-de-dados.html">dicionário de dados</a> e documentação dos ativos;</li>
+<li>definir mecanismos de governança, segurança, <a class="term" href="conceitos/privacidade.html">privacidade</a>, conformidade, <a class="term" href="artefatos/classificacao-de-sensibilidade.html">classificação de sensibilidade</a> e <a class="term" href="conceitos/controle-de-acesso.html">controle de acesso</a>;</li>
+<li>especificar processos de proveniência, linhagem e rastreabilidade dos dados ao longo do pipeline;</li>
+<li>estruturar mecanismos de versionamento e reprodutibilidade para dados, scripts, regras, ambientes, parâmetros, features, modelos e produtos;</li>
+<li>especificar representações analíticas tabulares, temporais e baseadas em grafos, permitindo diferentes formas de modelagem computacional dos dados;</li>
+<li>estruturar processos de feature engineering e <a class="term" href="conceitos/feature-store.html">feature store</a>, permitindo criação, documentação, validação, versionamento e reutilização de atributos analíticos;</li>
+<li>definir mecanismos de monitoramento, drift, observabilidade e evolução dos ativos analíticos ao longo do tempo;</li>
+<li>incorporar agentes inteligentes de apoio ao pipeline, capazes de auxiliar na consulta, explicação, documentação, recomendação, validação e manutenção dos ativos;</li>
+<li>utilizar mecanismos de RAG como apoio aos agentes inteligentes, permitindo recuperação de evidências a partir dos artefatos internos do modelo de referência, sem deslocar o foco central da proposta;</li>
+<li>avaliar o modelo de referência quanto à qualidade dos dados, rastreabilidade, reprodutibilidade, governança, utilidade, descoberta de dados, interpretabilidade, confiabilidade e adequação dos produtos analíticos gerados.</li>
+</ol>
+<h2 class="section-title" id="justificativa">7. Justificativa</h2>
+<p>A justificativa da proposta está associada à necessidade de superar a visão fragmentada dos projetos de dados, nos quais cada etapa do pipeline é desenvolvida de maneira isolada, pouco documentada e dificilmente reprodutível. Em contextos institucionais, educacionais e de políticas públicas, decisões importantes podem ser apoiadas em indicadores, dashboards ou modelos produzidos a partir de dados cuja origem, qualidade, versão e transformação nem sempre são suficientemente conhecidas.</p>
+<p>O UnespDataLens-RM justifica-se por propor uma estrutura técnico-metodológica capaz de organizar o ciclo completo dos dados, tratando-os como ativos analíticos que exigem governança, documentação, qualidade, rastreabilidade e monitoramento. A proposta não se limita à implementação de um pipeline específico, mas busca formalizar um modelo de referência reutilizável, extensível e avaliável, capaz de orientar a construção de pipelines analíticos em diferentes domínios.</p>
+<p>Do ponto de vista científico, a proposta contribui para a área de Engenharia Analítica de Dados ao integrar dimensões frequentemente tratadas separadamente, como <a class="term" href="conceitos/qualidade-de-dados.html">qualidade de dados</a>, metadados, governança, lineage, versionamento, reprodutibilidade, feature store, drift, observabilidade, <a class="term" href="conceitos/dataops.html">DataOps</a>, <a class="term" href="conceitos/mlops.html">MLOps</a> e agentes inteligentes. Essa integração permite estruturar uma visão mais abrangente do ciclo de vida dos dados, conectando a preparação dos dados aos produtos analíticos e à tomada de decisão baseada em evidências.</p>
+<p>Do ponto de vista tecnológico, o modelo de referência pode orientar a implementação de pipelines mais robustos, automatizados, rastreáveis e monitoráveis, reduzindo retrabalho, <a class="term" href="problemas/falhas-silenciosas.html">falhas silenciosas</a>, <a class="term" href="problemas/duplicidade.html">duplicidade</a> de esforços e dependência de conhecimento tácito. Do ponto de vista institucional, a proposta favorece transparência, governança, auditoria, reutilização de ativos e melhoria da confiança nos produtos analíticos.</p>
+<p>A incorporação de agentes inteligentes, apoiados quando necessário por mecanismos de RAG, fortalece a capacidade de interação com o ecossistema de dados, permitindo que usuários consultem e compreendam ativos analíticos por meio de perguntas em linguagem natural. Essa capacidade, entretanto, é concebida como apoio à descoberta, explicação e governança, e não como substituição dos processos técnicos e metodológicos do modelo de referência.</p>
+<h2 class="section-title" id="fundamentacao-conceitual">8. Fundamentação conceitual</h2>
+<p>A proposta do UnespDataLens-RM articula conceitos de Engenharia de Dados, Ciência de Dados, <a class="term" href="conceitos/governanca-de-dados.html">Governança de Dados</a>, Qualidade de Dados, DataOps, MLOps, Observabilidade, Proveniência, Reprodutibilidade, Feature Engineering, Representações Analíticas, Inteligência Artificial e Design Science Research.</p>
+<p>A Engenharia de Dados fornece a base para construção de pipelines capazes de extrair, integrar, transformar, validar, armazenar e disponibilizar dados. A Ciência de Dados e a Inteligência Artificial fornecem o contexto de uso dos ativos analíticos, incluindo análise exploratória, modelagem preditiva, geração de indicadores, visualização, recomendação, classificação, explicabilidade e apoio à decisão.</p>
+<p>A Governança de Dados estabelece papéis, responsabilidades, políticas, permissões, classificação de sensibilidade, finalidade de uso e conformidade. A Qualidade de Dados permite avaliar dimensões como completude, consistência, validade, unicidade, integridade, atualidade e adequação ao uso. A Proveniência, a Linhagem e a Rastreabilidade permitem reconstruir a origem, as transformações e os produtos derivados dos dados.</p>
+<p>O Versionamento e a Reprodutibilidade permitem preservar versões de dados, regras, scripts, parâmetros, ambientes e resultados, garantindo que análises possam ser reexecutadas ou auditadas. A Feature Engineering e a Feature Store permitem formalizar atributos analíticos reutilizáveis, documentados, versionados e avaliados quanto à qualidade. O Monitoramento, o Drift e a Observabilidade permitem acompanhar a evolução dos dados, detectar mudanças e diagnosticar problemas.</p>
+<p>A Design Science Research fornece a base metodológica para a construção e avaliação do UnespDataLens-RM como artefato científico. Nessa perspectiva, o modelo de referência é entendido como um artefato técnico-metodológico composto por constructos, modelos, métodos, instanciações e princípios de design. Sua validade deve ser avaliada tanto pela consistência interna de sua especificação quanto pela utilidade, aplicabilidade e capacidade de resolver problemas reais de Engenharia Analítica de Dados.</p>
+<h2 class="section-title" id="estrutura-geral-do-unespdatalens-rm">9. Estrutura geral do UnespDataLens-RM</h2>
+<p>O UnespDataLens-RM é organizado em módulos que representam o ciclo completo de Engenharia Analítica de Dados. O pipeline principal contempla os seguintes módulos:</p>
+<ol class="steps">
+<li>Fontes e <a class="term" href="conceitos/inventario-de-dados.html">Inventário de Dados</a>;</li>
+<li>Extração, Ingestão e Armazenamento Bruto;</li>
+<li>Integração e Harmonização;</li>
+<li>Transformação, Limpeza e Enriquecimento;</li>
+<li>Qualidade e Validação de Dados;</li>
+<li>Desbalanceamento, Vieses e Equidade;</li>
+<li>Armazenamento Analítico;</li>
+<li>Disponibilização e Consumo Analítico.</li>
+</ol>
+<p>A esses módulos somam-se módulos transversais:</p>
+<ol class="steps">
+<li>Metadados, Catálogo e Semântica dos Dados;</li>
+<li>Governança, Segurança, Privacidade e Conformidade;</li>
+<li>Proveniência, Linhagem e Rastreabilidade;</li>
+<li>Versionamento e Reprodutibilidade;</li>
+<li>Representações Analíticas: Tabular, Temporal e Grafos;</li>
+<li>Feature Engineering e Feature Store;</li>
+<li>Monitoramento, Drift e Evolução dos Ativos;</li>
+<li>Agentes Inteligentes de Apoio ao Pipeline.</li>
+</ol>
+<p>Além desses módulos, o modelo de referência considera dimensões complementares que atravessam o ecossistema de dados, tais como Data Overload, Data Silos, Data Debt, <a class="term" href="conceitos/data-observability.html">Data Observability</a>, <a class="term" href="conceitos/schema-drift.html">Schema Drift</a>, Data Contracts, Qualidade de Metadados, <a class="term" href="conceitos/data-discoverability.html">Data Discoverability</a>, <a class="term" href="conceitos/data-minimization.html">Data Minimization</a>, <a class="term" href="conceitos/label.html">Label</a> Quality, <a class="term" href="conceitos/data-uncertainty.html">Data Uncertainty</a>, <a class="term" href="conceitos/interoperabilidade-semantica.html">Interoperabilidade Semântica</a>, DataOps e MLOps.</p>
+<h2 class="section-title" id="descricao-sintetica-dos-modulos">10. Descrição sintética dos módulos</h2>
+<h3 id="modulo-1-fontes-e-inventario-de-dados">10.1 Módulo 1 — Fontes e Inventário de Dados</h3>
+<p>O Módulo 1 tem como finalidade identificar, mapear, caracterizar, classificar e documentar as fontes de dados relevantes para o ecossistema analítico. Inclui fontes internas, externas, estruturadas, semiestruturadas, não estruturadas, tabulares, temporais, relacionais, documentais e provenientes de APIs, sistemas, planilhas ou repositórios públicos.</p>
+<p>Esse módulo produz artefatos como inventário de fontes, ficha de <a class="term" href="conceitos/fonte-de-dados.html">fonte de dados</a>, mapa de bases, dicionário preliminar, classificação de sensibilidade, <a class="term" href="artefatos/registro-de-granularidade.html">registro de granularidade</a>, <a class="term" href="artefatos/matriz-de-relacionamento-entre-fontes.html">matriz de relacionamento entre fontes</a> e <a class="term" href="artefatos/relatorio-de-riscos-e-limitacoes.html">relatório de riscos e limitações</a>.</p>
+<h3 id="modulo-2-extracao-ingestao-e-armazenamento-bruto">10.2 Módulo 2 — Extração, Ingestão e Armazenamento Bruto</h3>
+<p>O Módulo 2 operacionaliza a entrada controlada dos dados no ambiente analítico. Envolve extração, ingestão, registro de <a class="term" href="conceitos/logs.html">logs</a>, validação inicial, armazenamento bruto, preservação de snapshots, checksums, manifestos e controle de versões iniciais.</p>
+<p>Esse módulo garante que os dados sejam preservados em seu estado original, permitindo auditoria, reprocessamento e rastreabilidade.</p>
+<h3 id="modulo-3-integracao-e-harmonizacao">10.3 Módulo 3 — Integração e Harmonização</h3>
+<p>O Módulo 3 trata da integração de fontes heterogêneas, da identificação de chaves, entidades comuns, regras de correspondência, conflitos, equivalências semânticas e compatibilidade de granularidade. Seu objetivo é transformar fontes isoladas em bases integradas e coerentes.</p>
+<p>Esse módulo é central para enfrentar <a class="term" href="problemas/silos-de-dados.html">silos de dados</a>, inconsistências entre sistemas e divergências semânticas.</p>
+<h3 id="modulo-4-transformacao-limpeza-e-enriquecimento">10.4 Módulo 4 — Transformação, Limpeza e Enriquecimento</h3>
+<p>O Módulo 4 aplica regras de limpeza, padronização, tratamento de ausentes, remoção de duplicidades, <a class="term" href="metodos/tratamento-de-outliers.html">tratamento de outliers</a>, <a class="term" href="metodos/normalizacao.html">normalização</a>, agregação, recodificação e criação de atributos derivados. Também registra as transformações realizadas, seus parâmetros, justificativas e impactos.</p>
+<p>Esse módulo produz datasets tratados, enriquecidos e preparados para validação, armazenamento analítico e consumo.</p>
+<h3 id="modulo-5-qualidade-e-validacao-de-dados">10.5 Módulo 5 — Qualidade e Validação de Dados</h3>
+<p>O Módulo 5 define e executa regras de qualidade e validação, avaliando dimensões como completude, consistência, validade, unicidade, integridade, atualidade, conformidade, <a class="term" href="metricas/precisao.html">precisão</a>, <a class="term" href="metricas/coerencia-semantica.html">coerência semântica</a> e adequação ao uso.</p>
+<p>Esse módulo permite aprovar, rejeitar, sinalizar ou corrigir datasets antes de sua utilização analítica.</p>
+<h3 id="modulo-6-desbalanceamento-vieses-e-equidade">10.6 Módulo 6 — Desbalanceamento, Vieses e Equidade</h3>
+<p>O Módulo 6 identifica problemas de representatividade, desbalanceamento, vieses técnicos, vieses estatísticos, vieses de cobertura, perdas diferenciais e riscos de equidade. Avalia distribuições por grupos, métricas de <a class="term" href="conceitos/fairness.html">fairness</a> e limitações associadas ao uso de dados em modelos e indicadores.</p>
+<p>Esse módulo é essencial para evitar que ativos analíticos reproduzam ou ampliem desigualdades existentes nos dados.</p>
+<h3 id="modulo-7-armazenamento-analitico">10.7 Módulo 7 — Armazenamento Analítico</h3>
+<p>O Módulo 7 organiza os dados tratados, integrados e validados em estruturas adequadas ao consumo analítico. Pode envolver data warehouses, data lakes, lakehouses, data marts, views, tabelas dimensionais, bancos relacionais, bancos de grafos e formatos colunares.</p>
+<p>Seu objetivo é persistir ativos analíticos com organização, versionamento, controle de acesso, desempenho e adequação ao uso.</p>
+<h3 id="modulo-8-disponibilizacao-e-consumo-analitico">10.8 Módulo 8 — Disponibilização e Consumo Analítico</h3>
+<p>O Módulo 8 trata da publicação e do consumo dos ativos analíticos por usuários, sistemas e produtos. Inclui datasets curados, dashboards, APIs, relatórios, indicadores, views, bases para modelagem e produtos de dados.</p>
+<p>Esse módulo garante que os ativos sejam disponibilizados com finalidade, versão, qualidade, restrição de acesso, público-alvo e limitações documentadas.</p>
+<h3 id="modulo-9-metadados-catalogo-e-semantica-dos-dados">10.9 Módulo 9 — Metadados, Catálogo e Semântica dos Dados</h3>
+<p>O Módulo 9 organiza os metadados técnicos, semânticos, operacionais, analíticos, de qualidade, de governança e de linhagem. Inclui <a class="term" href="conceitos/catalogo-de-dados.html">catálogo de dados</a>, glossário, dicionário de dados, fichas de ativos, modelos semânticos e mapas de equivalência.</p>
+<p>Esse módulo é fundamental para descoberta, compreensão, interoperabilidade semântica, reuso e governança dos dados.</p>
+<h3 id="modulo-10-governanca-seguranca-privacidade-e-conformidade">10.10 Módulo 10 — Governança, Segurança, Privacidade e Conformidade</h3>
+<p>O Módulo 10 define políticas, papéis, responsabilidades, permissões, classificação de sensibilidade, finalidade de uso, restrições de acesso, privacidade, segurança e conformidade. Atua sobre fontes, datasets, features, produtos, dashboards, APIs e modelos.</p>
+<p>Esse módulo garante que o uso dos dados seja controlado, responsável e compatível com requisitos institucionais, éticos e legais.</p>
+<h3 id="modulo-11-proveniencia-linhagem-e-rastreabilidade">10.11 Módulo 11 — Proveniência, Linhagem e Rastreabilidade</h3>
+<p>O Módulo 11 registra a origem, trajetória, transformações, dependências e consumidores dos dados. Permite responder de onde veio determinado dado, por quais processos passou, quais regras foram aplicadas, quais versões foram usadas e quais produtos dependem dele.</p>
+<p>Esse módulo sustenta auditoria, análise de impacto, reprodutibilidade e confiança nos ativos produzidos.</p>
+<h3 id="modulo-12-versionamento-e-reprodutibilidade">10.12 Módulo 12 — Versionamento e Reprodutibilidade</h3>
+<p>O Módulo 12 controla versões de dados, scripts, regras, parâmetros, ambientes, features, modelos, dashboards e produtos analíticos. Também define manifestos de execução e pacotes de reprodutibilidade.</p>
+<p>Esse módulo permite reconstruir análises, comparar versões e auditar resultados.</p>
+<h3 id="modulo-13-representacoes-analiticas-tabular-temporal-e-grafos">10.13 Módulo 13 — Representações Analíticas: Tabular, Temporal e Grafos</h3>
+<p>O Módulo 13 especifica diferentes formas de representação dos dados, incluindo representações tabulares, temporais, longitudinais, sequenciais, relacionais, grafos estáticos, grafos heterogêneos, grafos bipartidos, grafos ponderados e grafos temporais.</p>
+<p>Esse módulo permite adaptar os dados ao tipo de análise computacional necessária.</p>
+<h3 id="modulo-14-feature-engineering-e-feature-store">10.14 Módulo 14 — Feature Engineering e Feature Store</h3>
+<p>O Módulo 14 formaliza a criação, documentação, validação, versionamento, armazenamento, reutilização e monitoramento de features. Inclui atributos derivados, agregados, temporais, relacionais, baseados em grafos, estatísticos, semânticos e textuais.</p>
+<p>Esse módulo permite transformar dados tratados em atributos analíticos reutilizáveis para modelos, indicadores, dashboards e análises.</p>
+<h3 id="modulo-15-monitoramento-drift-e-evolucao-dos-ativos">10.15 Módulo 15 — Monitoramento, Drift e Evolução dos Ativos</h3>
+<p>O Módulo 15 acompanha a saúde, estabilidade, atualização, uso, qualidade, schema, distribuição, drift, obsolescência e evolução dos ativos analíticos. Inclui monitoramento de <a class="term" href="conceitos/data-drift.html">data drift</a>, schema drift, <a class="term" href="conceitos/feature-drift.html">feature drift</a>, <a class="term" href="conceitos/label-drift.html">label drift</a>, <a class="term" href="conceitos/concept-drift.html">concept drift</a> e mudanças no consumo dos produtos.</p>
+<p>Esse módulo permite detectar degradações, falhas, mudanças e necessidades de revisão.</p>
+<h3 id="modulo-16-agentes-inteligentes-de-apoio-ao-pipeline">10.16 Módulo 16 — Agentes Inteligentes de Apoio ao Pipeline</h3>
+<p>O Módulo 16 especifica agentes inteligentes capazes de apoiar consulta, explicação, documentação, recomendação, validação e manutenção dos ativos do UnespDataLens-RM. Esses agentes podem auxiliar usuários na descoberta de dados, interpretação de indicadores, consulta a metadados, explicação de lineage, análise de alertas e orientação sobre governança.</p>
+<p>Nesse módulo, mecanismos de RAG podem ser incorporados como apoio à recuperação de evidências antes da geração de respostas. O RAG permite que os agentes consultem artefatos internos do modelo de referência, como catálogos, glossários, contratos, registros de qualidade, lineage, versões, manifestos e relatórios de monitoramento. Essa incorporação é complementar e não altera o foco central da proposta.</p>
+<h2 class="section-title" id="dimensoes-complementares-do-modelo-de-referencia">11. Dimensões complementares do modelo de referência</h2>
+<p>Além dos módulos principais, o UnespDataLens-RM considera dimensões complementares que ajudam a tratar desafios recorrentes em ecossistemas analíticos complexos.</p>
+<p>A dimensão Data Overload trata da sobrecarga gerada pelo excesso de fontes, atributos, produtos, versões, dashboards, APIs, indicadores e features. Seu objetivo é apoiar curadoria, priorização, recomendação e descontinuação controlada de ativos.</p>
+<p>A dimensão Data Silos trata do isolamento dos dados em sistemas, áreas, bases e repositórios distintos, buscando promover integração, interoperabilidade e compartilhamento controlado.</p>
+<p>A dimensão Data Debt trata do acúmulo de passivos técnicos, metodológicos e organizacionais nos dados, metadados, pipelines e produtos analíticos.</p>
+<p>A dimensão Data Observability trata da capacidade de observar, diagnosticar e explicar o comportamento dos dados, pipelines e produtos ao longo do tempo.</p>
+<p>A dimensão Schema Drift trata das mudanças estruturais em atributos, tipos, domínios, chaves, categorias e granularidades.</p>
+<p>A dimensão Data Contracts formaliza acordos entre produtores e consumidores de dados, definindo expectativas de schema, qualidade, periodicidade, acesso e mudança.</p>
+<p>A dimensão Qualidade de Metadados avalia completude, precisão, consistência, atualidade, clareza, rastreabilidade e utilidade dos metadados.</p>
+<p>A dimensão Data Discoverability trata da capacidade de localizar, compreender, avaliar e reutilizar ativos analíticos.</p>
+<p>A dimensão Data Minimization orienta a coleta, armazenamento e uso apenas dos dados necessários à finalidade analítica.</p>
+<p>A dimensão Label Quality trata da qualidade dos rótulos, variáveis-alvo, classes e desfechos utilizados em modelos e indicadores.</p>
+<p>A dimensão Data Uncertainty trata da identificação, mensuração, documentação e comunicação de incertezas associadas aos dados, atributos, rótulos, features e produtos.</p>
+<p>A dimensão Interoperabilidade Semântica trata da compatibilidade de significado entre fontes, atributos, categorias, indicadores e produtos.</p>
+<p>A dimensão DataOps trata da automação, orquestração, validação, versionamento, monitoramento e melhoria contínua dos pipelines de dados.</p>
+<p>A dimensão MLOps trata da gestão operacional dos modelos, incluindo registro de experimentos, versionamento, explicabilidade, fairness, monitoramento, drift e reentrenamento.</p>
+<p>Essas dimensões não substituem os módulos do modelo de referência, mas funcionam como capacidades complementares que ampliam sua robustez metodológica, técnica e institucional.</p>
+<h2 class="section-title" id="integracao-de-rag-como-apoio-aos-agentes-inteligentes">12. Integração de RAG como apoio aos agentes inteligentes</h2>
+<p>O UnespDataLens-RM poderá incorporar mecanismos de Recuperação Aumentada por Geração, ou RAG, como estratégia de apoio aos agentes inteligentes do pipeline. Essa incorporação não altera o foco central da proposta, que permanece voltado à Engenharia Analítica de Dados, com ênfase em qualidade, governança, proveniência, linhagem, versionamento, reprodutibilidade, representações analíticas, feature engineering e monitoramento dos ativos de dados.</p>
+<p>No modelo de referência, o RAG será utilizado como mecanismo complementar para permitir que agentes inteligentes recuperem evidências a partir de artefatos produzidos pelo próprio UnespDataLens-RM, tais como metadados, catálogos, glossários, contratos de dados, registros de qualidade, lineage, versões, manifestos de execução, relatórios de monitoramento, feature store e documentação de produtos analíticos.</p>
+<p>Com isso, os agentes poderão apoiar usuários na descoberta de dados, explicação de indicadores, interpretação de dashboards, identificação de dependências, consulta a regras de transformação, análise de limitações e recomendação de ações de manutenção ou governança.</p>
+<p>As respostas geradas pelos agentes deverão ser fundamentadas nas evidências recuperadas, respeitando permissões de acesso, restrições de sensibilidade, versionamento dos artefatos e critérios de governança. Quando não houver evidência suficiente, o agente deverá explicitar a limitação, evitando respostas conclusivas. Assim, o RAG será tratado como uma capacidade de apoio à interação inteligente com o ecossistema analítico, sem constituir o núcleo da proposta nem deslocar o objetivo principal do UnespDataLens-RM.</p>
+<h2 class="section-title" id="metodologia-da-pesquisa">13. Metodologia da pesquisa</h2>
+<p>A pesquisa será conduzida com base na abordagem de Design Science Research, adequada para pesquisas que envolvem a construção, formalização, instanciação e avaliação de artefatos técnico-metodológicos.</p>
+<p>O UnespDataLens-RM será tratado como um artefato de pesquisa composto por constructos, modelos, métodos, instanciações e princípios de design. Os constructos correspondem aos conceitos centrais do modelo de referência, como fonte, <a class="term" href="conceitos/ativo-analitico.html">ativo analítico</a>, metadado, qualidade, lineage, versão, feature, contrato, drift e <a class="term" href="conceitos/produto-de-dados.html">produto de dados</a>. Os modelos representam a estrutura modular do modelo de referência, os fluxos de dados, as relações entre módulos, os modelos de metadados, lineage, governança e representações analíticas. Os métodos correspondem aos procedimentos de inventário, ingestão, integração, transformação, validação, versionamento, monitoramento e disponibilização. As instanciações correspondem à implementação experimental ou prototípica dos módulos em cenários reais ou simulados. Os princípios de design correspondem às diretrizes gerais que orientam a construção de pipelines analíticos governados, rastreáveis e reprodutíveis.</p>
+<p>A pesquisa poderá ser organizada nas seguintes etapas:</p>
+<ol class="steps">
+<li>revisão e fundamentação teórica sobre Engenharia Analítica de Dados, DataOps, MLOps, Governança de Dados, Qualidade de Dados, <a class="term" href="conceitos/data-lineage.html">Data Lineage</a>, Reprodutibilidade, Feature Store, Observabilidade e agentes inteligentes;</li>
+<li>especificação conceitual do UnespDataLens-RM, incluindo módulos, dimensões complementares, artefatos, métricas e relações entre componentes;</li>
+<li>formalização dos artefatos técnico-metodológicos, contemplando finalidade, estrutura mínima, regras de construção, métricas associadas, critérios de validação e relações com os módulos;</li>
+<li>implementação de uma instanciação experimental do modelo de referência, com pipelines, repositórios, catálogos, registros de qualidade, versionamento, lineage, feature store, monitoramento e produtos analíticos;</li>
+<li>incorporação de agentes inteligentes de apoio ao pipeline, com possibilidade de uso de RAG para recuperação de evidências internas;</li>
+<li>avaliação do modelo de referência por meio de estudos de caso, cenários experimentais, métricas de qualidade, rastreabilidade, reprodutibilidade, governança, utilidade, usabilidade e capacidade de descoberta;</li>
+<li>análise dos resultados, identificação de limitações, refinamento do modelo de referência e sistematização das contribuições.</li>
+</ol>
+<h2 class="section-title" id="artefatos-esperados">14. Artefatos esperados</h2>
+<p>A pesquisa deverá produzir um conjunto de artefatos técnico-metodológicos associados ao UnespDataLens-RM, entre eles:</p>
+<ul class="list">
+<li>estrutura modular do modelo de referência;</li>
+<li>especificação dos módulos técnico-operacionais;</li>
+<li>especificação dos módulos transversais;</li>
+<li>modelo de metadados;</li>
+<li>catálogo de ativos;</li>
+<li>glossário e dicionário de dados;</li>
+<li><a class="term" href="artefatos/modelo-de-governanca.html">modelo de governança</a> e controle de acesso;</li>
+<li>modelo de lineage e rastreabilidade;</li>
+<li>modelo de versionamento e reprodutibilidade;</li>
+<li>modelo de representações analíticas;</li>
+<li>especificação de feature store;</li>
+<li><a class="term" href="artefatos/plano-de-monitoramento.html">plano de monitoramento</a> e drift;</li>
+<li><a class="term" href="artefatos/modelo-de-agentes-inteligentes.html">modelo de agentes inteligentes</a>;</li>
+<li>estratégia de uso de RAG como apoio aos agentes;</li>
+<li>métricas de avaliação dos módulos;</li>
+<li>artefatos de documentação, validação e auditoria;</li>
+<li>instanciação experimental do modelo de referência;</li>
+<li>relatórios de avaliação.</li>
+</ul>
+<p>Esses artefatos serão especificados segundo a lógica da Design Science Research, com finalidade, estrutura, regras de construção, métricas, critérios de validação e contribuição.</p>
+<h2 class="section-title" id="avaliacao-do-modelo-de-referencia">15. Avaliação do modelo de referência</h2>
+<p>A avaliação do UnespDataLens-RM deverá considerar diferentes dimensões.</p>
+<p>A avaliação de qualidade dos dados verificará completude, consistência, validade, unicidade, integridade, atualidade, conformidade e adequação ao uso.</p>
+<p>A avaliação de metadados e descoberta verificará se os ativos são localizáveis, compreensíveis, documentados, classificados, reutilizáveis e semanticamente consistentes.</p>
+<p>A avaliação de governança verificará se os dados possuem responsáveis, permissões, classificação de sensibilidade, finalidade de uso, restrições e conformidade.</p>
+<p>A avaliação de lineage e rastreabilidade verificará se é possível reconstruir a origem, as transformações, as dependências e os consumidores dos dados.</p>
+<p>A avaliação de versionamento e reprodutibilidade verificará se dados, scripts, regras, parâmetros, ambientes, features e produtos podem ser reconstruídos ou comparados entre versões.</p>
+<p>A avaliação de representações analíticas verificará se os dados podem ser organizados de forma tabular, temporal ou relacional conforme as necessidades analíticas.</p>
+<p>A avaliação de features verificará se os atributos derivados são documentados, versionados, reutilizáveis, rastreáveis e adequados ao uso.</p>
+<p>A avaliação de monitoramento e observabilidade verificará se os ativos são acompanhados ao longo do tempo, com detecção de drift, falhas, obsolescência, alteração de schema e degradação de qualidade.</p>
+<p>A avaliação dos agentes inteligentes verificará utilidade, correção, fundamentação, rastreabilidade, controle de acesso e capacidade de apoiar descoberta, explicação, documentação e manutenção dos ativos.</p>
+<p>Quando mecanismos de RAG forem utilizados, sua avaliação deverá considerar se as respostas dos agentes são baseadas em evidências recuperadas, se indicam limitações, se respeitam permissões, se utilizam versões corretas dos artefatos e se contribuem efetivamente para o uso qualificado do ecossistema analítico.</p>
+<h2 class="section-title" id="resultados-esperados">16. Resultados esperados</h2>
+<p>Espera-se que a pesquisa resulte na especificação e validação de um modelo de referência modular para Engenharia Analítica de Dados capaz de orientar a construção de pipelines mais confiáveis, governados, rastreáveis, versionados e reprodutíveis.</p>
+<p>Entre os principais resultados esperados, destacam-se:</p>
+<ul class="list">
+<li>formalização do modelo de referência UnespDataLens-RM;</li>
+<li>definição de módulos técnico-operacionais e transversais;</li>
+<li>especificação de artefatos, métricas e critérios de validação;</li>
+<li>organização de processos de qualidade, governança, lineage, versionamento e reprodutibilidade;</li>
+<li>criação de mecanismos para representações tabulares, temporais e em grafos;</li>
+<li>estruturação de feature engineering e feature store;</li>
+<li>definição de processos de monitoramento, drift e observabilidade;</li>
+<li>incorporação de agentes inteligentes de apoio ao pipeline;</li>
+<li>uso complementar de RAG para recuperação de evidências pelos agentes;</li>
+<li>produção de uma instanciação experimental do modelo de referência;</li>
+<li>avaliação do modelo de referência em cenários de uso;</li>
+<li>sistematização de diretrizes para aplicação em diferentes domínios.</li>
+</ul>
+<h2 class="section-title" id="contribuicoes-esperadas">17. Contribuições esperadas</h2>
+<p>A proposta apresenta contribuições científicas, tecnológicas e institucionais.</p>
+<p>Como contribuição científica, o UnespDataLens-RM propõe uma formalização integrada de Engenharia Analítica de Dados, articulando módulos, artefatos, métricas, critérios de validação e dimensões complementares. A proposta contribui para reduzir a fragmentação entre Engenharia de Dados, Ciência de Dados, Governança, DataOps, MLOps, Observabilidade e Inteligência Artificial aplicada.</p>
+<p>Como contribuição tecnológica, o modelo de referência orienta a implementação de pipelines mais robustos, automatizados, rastreáveis, governados, versionados e monitoráveis, com potencial de aplicação em diferentes domínios.</p>
+<p>Como contribuição institucional, a proposta favorece a produção de ativos analíticos confiáveis, reutilizáveis e adequados à tomada de decisão baseada em evidências. Também apoia a redução de silos de dados, data debt, sobrecarga informacional, baixa qualidade de metadados e dependência de conhecimento tácito.</p>
+<p>A incorporação de agentes inteligentes, com uso complementar de RAG, contribui para tornar o ecossistema analítico mais acessível, explicável e navegável, sem deslocar o foco central da proposta.</p>
+<h2 class="section-title" id="delimitacao-da-proposta">18. Delimitação da proposta</h2>
+<p>A proposta não tem como objetivo principal desenvolver novos algoritmos de aprendizagem de máquina, novos modelos de linguagem ou uma arquitetura centrada em RAG. O foco está na especificação, implementação e avaliação de um modelo de referência para Engenharia Analítica de Dados.</p>
+<p>Modelos preditivos, agentes inteligentes e mecanismos de RAG poderão ser utilizados como componentes de apoio ou instanciação do modelo de referência, mas não constituem o núcleo da contribuição. O núcleo da proposta está na organização técnico-metodológica dos dados, seus processos, artefatos, métricas, governança, rastreabilidade e reprodutibilidade.</p>
+<h2 class="section-title" id="sintese-da-proposta">19. Síntese da proposta</h2>
+<p>O UnespDataLens-RM é proposto como um modelo de referência modular para Engenharia Analítica de Dados voltado à transformação de dados heterogêneos em ativos analíticos confiáveis, qualificados, documentados, governados, versionados, rastreáveis e reprodutíveis. Sua estrutura contempla módulos técnico-operacionais, módulos transversais e dimensões complementares que abrangem desde o inventário de fontes até a disponibilização e o consumo de produtos analíticos.</p>
+<p>A proposta busca fortalecer a qualidade, a governança, a proveniência, a linhagem, o versionamento, a reprodutibilidade, a interoperabilidade semântica, a observabilidade, o monitoramento e o uso responsável dos dados. Adicionalmente, incorpora agentes inteligentes de apoio ao pipeline, com possibilidade de uso de RAG como mecanismo complementar para recuperação de evidências internas do modelo de referência.</p>
+<p>Dessa forma, o UnespDataLens-RM contribui para estruturar um ecossistema analítico capaz de sustentar análises, indicadores, modelos, dashboards, APIs, grafos, relatórios e decisões baseadas em evidências, preservando rigor técnico, transparência, rastreabilidade, governança e confiabilidade.</p></div></article>
+    <footer class="footer"><strong>UnespDataLens-RM</strong> · Engenharia Analítica de Dados com Governança, Qualidade, Proveniência e Reprodutibilidade</footer>
+  </main>
+</div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
