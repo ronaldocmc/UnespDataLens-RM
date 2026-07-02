@@ -17,12 +17,14 @@ from docx.oxml.ns import qn
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DOCX = Path(r"C:\Users\User\Downloads\UnespDataLens-RM_Projeto_Completo_Final_Ajustado.docx")
 SOURCE_PDF = Path(r"C:\Users\User\Downloads\UnespDataLens-RM_Projeto_Completo_Final_Ajustado.pdf")
+OVERVIEW_IMAGE_SOURCE = Path(r"C:\Users\User\Downloads\unespdatalens-RM.png")
 LEXICON_ROOT = Path(r"C:\Users\User\Documents\unespdatalens-projeto-completo\docs")
 
 SITE_TITLE = "UnespDataLens-RM"
 SITE_SUBTITLE = "Modelo de Referência para Engenharia Analítica de Dados"
 DOWNLOAD_DOCX_NAME = SOURCE_DOCX.name
 DOWNLOAD_PDF_NAME = SOURCE_PDF.name
+OVERVIEW_IMAGE_NAME = "unespdatalens-rm-visao-geral.png"
 
 CATEGORY_LABELS = {
     "conceitos": "Conceitos",
@@ -718,6 +720,8 @@ def build():
         raise FileNotFoundError(SOURCE_DOCX)
     if not SOURCE_PDF.exists():
         raise FileNotFoundError(SOURCE_PDF)
+    if not OVERVIEW_IMAGE_SOURCE.exists():
+        raise FileNotFoundError(OVERVIEW_IMAGE_SOURCE)
     if not LEXICON_ROOT.exists():
         raise FileNotFoundError(LEXICON_ROOT)
 
@@ -990,6 +994,7 @@ def build():
             "Mapa do conhecimento",
             "Uma leitura compacta das etapas do pipeline, das capacidades transversais e das dimensões complementares.",
         )
+        + f'<section class="overview-visual"><h2 class="section-title">Visão geral do modelo</h2><figure class="overview-figure"><img src="assets/img/{OVERVIEW_IMAGE_NAME}" alt="Visão geral do Modelo de Referência UnespDataLens-RM, com missão, princípios, módulos, dimensões, ativos analíticos, avaliação e impactos esperados" loading="eager"><figcaption>Visão geral do Modelo de Referência UnespDataLens-RM.</figcaption></figure></section>'
         + '<section><h2 class="section-title">Pipeline técnico-operacional</h2>'
         + f'<div class="flow">{pipeline_html}</div></section>'
         + '<section><h2 class="section-title">Capacidades transversais</h2>'
@@ -1035,12 +1040,6 @@ def build():
         )
         for category, entries in entries_by_category.items()
     )
-    stats = f"""<div class="stats">
-<div><strong>{len(module_sections)}</strong><span>módulos</span></div>
-<div><strong>{len(dimension_sections)}</strong><span>dimensões</span></div>
-<div><strong>{total_entries}</strong><span>verbetes conectados</span></div>
-<div><strong>{len(doc.tables)}</strong><span>tabelas do documento</span></div>
-</div>"""
     index_content = (
         hero(
             "Modelo de referência",
@@ -1048,7 +1047,7 @@ def build():
             "Estrutura integrada para projetar, documentar, avaliar e operar pipelines de Engenharia Analítica de Dados — do inventário das fontes aos agentes inteligentes.",
             '<a class="btn light" href="modulos/index.html">Explorar módulos</a><a class="btn ghost" href="mapa.html">Ver mapa geral</a>',
         )
-        + stats
+        + f'<section class="overview-visual"><div class="section-heading"><div><span class="eyebrow">Visão sistêmica</span><h2>Visão geral do modelo</h2></div><a href="mapa.html">Explorar o mapa →</a></div><figure class="overview-figure"><a href="mapa.html" aria-label="Abrir o mapa geral do UnespDataLens-RM"><img src="assets/img/{OVERVIEW_IMAGE_NAME}" alt="Visão geral do Modelo de Referência UnespDataLens-RM, com missão, princípios, módulos, dimensões, ativos analíticos, avaliação e impactos esperados" loading="eager"></a><figcaption>Visão integrada do pipeline, dos módulos transversais, das dimensões complementares e dos resultados esperados.</figcaption></figure></section>'
         + '<section><div class="section-heading"><div><span class="eyebrow">Comece pelo pipeline</span><h2>Do dado bruto ao ativo analítico</h2></div><a href="modulos/index.html">Ver os 16 módulos →</a></div>'
         + f'<div class="grid module-grid">{pipeline_preview}</div></section>'
         + '<section><div class="section-heading"><div><span class="eyebrow">Enciclopédia conectada</span><h2>Explore por tipo de conhecimento</h2></div></div>'
@@ -1090,6 +1089,10 @@ def build():
     (ROOT / "assets" / "js" / "search-index.js").write_text(
         f"window.UNESP_DATALENS_INDEX={search_json};\n", encoding="utf-8", newline="\n"
     )
+
+    image_dir = ROOT / "assets" / "img"
+    image_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(OVERVIEW_IMAGE_SOURCE, image_dir / OVERVIEW_IMAGE_NAME)
 
     downloads = ROOT / "downloads"
     downloads.mkdir(parents=True, exist_ok=True)
