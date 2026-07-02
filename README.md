@@ -11,10 +11,10 @@ dados ou instalação de pacotes.
 ## Conteúdo
 
 - 16 módulos integrais;
-- 15 dimensões complementares;
+- 16 dimensões complementares;
 - 318 verbetes conectados;
 - busca global local;
-- documento-fonte disponível em `downloads/`.
+- documentos-fonte em DOCX e PDF disponíveis em `downloads/`.
 
 ## Reconstruir
 

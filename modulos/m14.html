@@ -75,7 +75,7 @@
 <p>No Módulo 1 — Fontes e <a class="term" href="../conceitos/inventario-de-dados.html">Inventário de Dados</a>, identifica atributos candidatos e unidades de análise relevantes.</p>
 <p>No Módulo 2 — Extração, Ingestão e Armazenamento Bruto, utiliza dados brutos e snapshots como base para features reprocessáveis.</p>
 <p>No Módulo 3 — Integração e Harmonização, utiliza entidades integradas, chaves e relações entre fontes para criar features combinadas.</p>
-<p>No Módulo 4 — Transformação, Limpeza e Enriquecimento, recebe atributos tratados, padronizados e enriquecidos, além de produzir atributos derivados.</p>
+<p>No Módulo 4 — Transformação, Limpeza, Enriquecimento e Preparação dos Dados, recebe atributos tratados, padronizados e enriquecidos, além de produzir atributos derivados.</p>
 <p>No Módulo 5 — Qualidade e Validação de Dados, utiliza métricas de qualidade para aprovar, rejeitar ou sinalizar features.</p>
 <p>No Módulo 6 — <a class="term" href="../conceitos/desbalanceamento.html">Desbalanceamento</a>, Vieses e <a class="term" href="../conceitos/equidade.html">Equidade</a>, avalia se features afetam grupos de forma desigual, se funcionam como proxies sensíveis ou se introduzem riscos de viés.</p>
 <p>No Módulo 7 — Armazenamento Analítico, utiliza data marts, views e datasets persistidos para armazenar ou materializar features.</p>
@@ -84,7 +84,7 @@
 <p>No Módulo 10 — Governança, Segurança, <a class="term" href="../conceitos/privacidade.html">Privacidade</a> e <a class="term" href="../metricas/conformidade.html">Conformidade</a>, controla acesso, sensibilidade, restrição de uso e finalidade das features.</p>
 <p>No Módulo 11 — <a class="term" href="../conceitos/proveniencia.html">Proveniência</a>, Linhagem e <a class="term" href="../conceitos/rastreabilidade.html">Rastreabilidade</a>, registra origem, atributos de entrada, regras e dependências das features.</p>
 <p>No Módulo 12 — Versionamento e Reprodutibilidade, controla versões, parâmetros, regras e ambientes usados para gerar features.</p>
-<p>No Módulo 13 — Representações Analíticas, consome representações tabulares, temporais e em grafos para criar features específicas dessas estruturas.</p>
+<p>No Módulo 13 — Representações Analíticas, consome representações tabulares, temporais, espaciais, textuais, semânticas e em grafos para criar features específicas dessas estruturas.</p>
 <h2 class="section-title" id="formalizacao-sintetica-do-modulo">6. Formalização sintética do módulo</h2>
 <p>O Módulo 14 pode ser formalizado como um processo de geração e gestão de features a partir de ativos analíticos.</p>
 <p>Considerando o conjunto de ativos disponíveis:</p>
@@ -467,7 +467,7 @@
 <h3 id="contribuicao-10">21.4 Contribuição</h3>
 <p>Esse artefato garante que análises, modelos e produtos possam ser auditados e reproduzidos a partir das features utilizadas.</p>
 <h2 class="section-title" id="estrutura-operacional-do-modulo">22. Estrutura operacional do módulo</h2>
-<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Datasets tratados, integrados, validados e armazenados; representações tabulares, temporais e em grafos; atributos, eventos, relações, metadados, qualidade, linhagem, versões e requisitos analíticos.</td></tr><tr><td>Processamento</td><td>Identificação de necessidades, seleção de atributos, criação de features tabulares, temporais e relacionais, avaliação de qualidade, verificação de vazamento, documentação, armazenamento e disponibilização na feature store.</td></tr><tr><td>Artefatos</td><td>Plano de feature engineering, catálogo de features, regras de cálculo, matriz de features, features temporais, features relacionais/grafos, relatório de qualidade, registro de riscos, feature store e manifesto de feature set.</td></tr><tr><td>Métricas</td><td>NFC, TFD, TFL, TFV, TFA, TFR, CMF, ETF, TFDri, TFS, TFRP, TFVaz, RF, CPM, IQF e TFM.</td></tr><tr><td>Saídas</td><td>Features documentadas, validadas, versionadas, rastreáveis, governadas, armazenadas e reutilizáveis para modelos, dashboards, APIs, análises, grafos, indicadores e agentes inteligentes.</td></tr></table></div>
+<div class="table-wrap"><table class="table"><tr><th>Elemento</th><th>Descrição</th></tr><tr><td>Entradas</td><td>Datasets tratados, integrados, validados e armazenados; representações tabulares, temporais, espaciais, textuais, semânticas e em grafos; atributos, eventos, relações, metadados, qualidade, linhagem, versões e requisitos analíticos.</td></tr><tr><td>Processamento</td><td>Identificação de necessidades, seleção de atributos, criação de features tabulares, temporais e relacionais, avaliação de qualidade, verificação de vazamento, documentação, armazenamento e disponibilização na feature store.</td></tr><tr><td>Artefatos</td><td>Plano de feature engineering, catálogo de features, regras de cálculo, matriz de features, features temporais, features relacionais/grafos, relatório de qualidade, registro de riscos, feature store e manifesto de feature set.</td></tr><tr><td>Métricas</td><td>NFC, TFD, TFL, TFV, TFA, TFR, CMF, ETF, TFDri, TFS, TFRP, TFVaz, RF, CPM, IQF e TFM.</td></tr><tr><td>Saídas</td><td>Features documentadas, validadas, versionadas, rastreáveis, governadas, armazenadas e reutilizáveis para modelos, dashboards, APIs, análises, grafos, indicadores e agentes inteligentes.</td></tr></table></div>
 <h2 class="section-title" id="criterios-gerais-de-validacao-do-modulo">23. Critérios gerais de validação do módulo</h2>
 <p>O Módulo 14 pode ser considerado adequadamente implementado quando:</p>
 <ol class="steps">
@@ -489,7 +489,7 @@
 <p>Com o Módulo 1 — Fontes e Inventário de Dados, utiliza atributos, entidades, granularidade e fontes candidatas para criação de features.</p>
 <p>Com o Módulo 2 — Extração, Ingestão e Armazenamento Bruto, utiliza snapshots e dados brutos para garantir reprocessabilidade.</p>
 <p>Com o Módulo 3 — Integração e Harmonização, utiliza relações entre fontes e entidades integradas para criar features combinadas.</p>
-<p>Com o Módulo 4 — Transformação, Limpeza e Enriquecimento, utiliza dados tratados e também formaliza atributos derivados mais complexos.</p>
+<p>Com o Módulo 4 — Transformação, Limpeza, Enriquecimento e Preparação dos Dados, utiliza dados tratados e também formaliza atributos derivados mais complexos.</p>
 <p>Com o Módulo 5 — Qualidade e Validação de Dados, utiliza métricas de qualidade para aprovar ou rejeitar features.</p>
 <p>Com o Módulo 6 — Desbalanceamento, Vieses e Equidade, avalia risco de viés, proxies sensíveis e impacto por grupo.</p>
 <p>Com o Módulo 7 — Armazenamento Analítico, utiliza data marts e estruturas persistidas como base para features.</p>

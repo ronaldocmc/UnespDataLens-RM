@@ -15,12 +15,14 @@ from docx.oxml.ns import qn
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_DOCX = Path(r"C:\Users\User\Downloads\UnespDataLens_Modelo_Referencia_Completo.docx")
+SOURCE_DOCX = Path(r"C:\Users\User\Downloads\UnespDataLens-RM_Projeto_Completo_Final_Ajustado.docx")
+SOURCE_PDF = Path(r"C:\Users\User\Downloads\UnespDataLens-RM_Projeto_Completo_Final_Ajustado.pdf")
 LEXICON_ROOT = Path(r"C:\Users\User\Documents\unespdatalens-projeto-completo\docs")
 
 SITE_TITLE = "UnespDataLens-RM"
 SITE_SUBTITLE = "Modelo de Referência para Engenharia Analítica de Dados"
-DOWNLOAD_NAME = "UnespDataLens-RM_Modelo_Referencia_Completo.docx"
+DOWNLOAD_DOCX_NAME = SOURCE_DOCX.name
+DOWNLOAD_PDF_NAME = SOURCE_PDF.name
 
 CATEGORY_LABELS = {
     "conceitos": "Conceitos",
@@ -94,7 +96,16 @@ def slugify(value: str) -> str:
 
 def clean_text(value: str) -> str:
     normalized = " ".join(value.replace("\u00a0", " ").split())
-    return re.sub(r"\bUnespDataLens(?!-RM)\b", SITE_TITLE, normalized)
+    normalized = re.sub(r"\bUnespDataLens(?!-RM)\b", SITE_TITLE, normalized)
+    normalized = normalized.replace(
+        "Transformação, Limpeza e Enriquecimento",
+        "Transformação, Limpeza, Enriquecimento e Preparação dos Dados",
+    )
+    normalized = normalized.replace(
+        "Tabular, Temporal e Grafos",
+        "Tabular, Temporal, Espacial, Textual, Semântica e Grafos",
+    )
+    return normalized
 
 
 def strip_numbering(value: str) -> str:
@@ -705,6 +716,8 @@ def contexts_for_entry(entry: dict, sections: list[dict], limit: int = 6) -> lis
 def build():
     if not SOURCE_DOCX.exists():
         raise FileNotFoundError(SOURCE_DOCX)
+    if not SOURCE_PDF.exists():
+        raise FileNotFoundError(SOURCE_PDF)
     if not LEXICON_ROOT.exists():
         raise FileNotFoundError(LEXICON_ROOT)
 
@@ -751,7 +764,8 @@ def build():
                 "Documento-base",
                 f"Modelo de Referência {SITE_TITLE}",
                 section_summary(overview_section),
-                f'<a class="btn light" href="downloads/{DOWNLOAD_NAME}">Baixar documento completo</a>',
+                f'<a class="btn light" href="downloads/{DOWNLOAD_DOCX_NAME}">Baixar DOCX</a>'
+                f'<a class="btn ghost" href="downloads/{DOWNLOAD_PDF_NAME}">Baixar PDF</a>',
             )
             + f'<details class="mini-toc" open><summary>Nesta página</summary>{toc_html}</details>'
             + f'<div class="prose module-full">{body}</div>'
@@ -1039,7 +1053,7 @@ def build():
         + f'<div class="grid module-grid">{pipeline_preview}</div></section>'
         + '<section><div class="section-heading"><div><span class="eyebrow">Enciclopédia conectada</span><h2>Explore por tipo de conhecimento</h2></div></div>'
         + f'<div class="grid">{category_cards}</div></section>'
-        + f'<section class="source-banner"><div><span class="eyebrow">Fonte integral</span><h2>Documento de referência completo</h2><p>O conteúdo detalhado dos módulos, dimensões, métricas, artefatos e critérios de validação foi preservado e distribuído em uma arquitetura web interligada.</p></div><a class="btn" href="downloads/{DOWNLOAD_NAME}">Baixar .docx</a></section>'
+        + f'<section class="source-banner"><div><span class="eyebrow">Fonte integral</span><h2>Documento de referência completo</h2><p>O conteúdo detalhado dos módulos, dimensões, métricas, artefatos e critérios de validação foi preservado e distribuído em uma arquitetura web interligada.</p></div><div class="source-actions"><a class="btn" href="downloads/{DOWNLOAD_DOCX_NAME}">Baixar DOCX</a><a class="btn secondary" href="downloads/{DOWNLOAD_PDF_NAME}">Baixar PDF</a></div></section>'
     )
     write_page(
         "index.html",
@@ -1079,10 +1093,15 @@ def build():
 
     downloads = ROOT / "downloads"
     downloads.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(SOURCE_DOCX, downloads / DOWNLOAD_NAME)
-    legacy_download = downloads / SOURCE_DOCX.name
-    if legacy_download.exists() and legacy_download.name != DOWNLOAD_NAME:
-        legacy_download.unlink()
+    shutil.copy2(SOURCE_DOCX, downloads / DOWNLOAD_DOCX_NAME)
+    shutil.copy2(SOURCE_PDF, downloads / DOWNLOAD_PDF_NAME)
+    for legacy_name in (
+        "UnespDataLens_Modelo_Referencia_Completo.docx",
+        "UnespDataLens-RM_Modelo_Referencia_Completo.docx",
+    ):
+        legacy_download = downloads / legacy_name
+        if legacy_download.exists() and legacy_name != DOWNLOAD_DOCX_NAME:
+            legacy_download.unlink()
 
     readme = f"""# {SITE_TITLE}
 
@@ -1100,7 +1119,7 @@ dados ou instalação de pacotes.
 - {len(dimension_sections)} dimensões complementares;
 - {total_entries} verbetes conectados;
 - busca global local;
-- documento-fonte disponível em `downloads/`.
+- documentos-fonte em DOCX e PDF disponíveis em `downloads/`.
 
 ## Reconstruir
 

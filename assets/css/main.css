@@ -111,6 +111,7 @@ img { max-width: 100%; }
 .btn:hover { text-decoration: none; filter: brightness(1.08); }
 .btn.light { color: #fff !important; background: var(--blue); }
 .btn.ghost { border: 1px solid var(--blue); color: var(--blue) !important; background: transparent; }
+.btn.secondary { border: 1px solid var(--blue); color: var(--blue) !important; background: #fff; }
 
 .stats {
   display: flex; gap: 0; margin: 0 0 34px; padding-bottom: 20px;
@@ -222,6 +223,7 @@ img { max-width: 100%; }
 }
 .source-banner h2 { margin: 4px 0; color: var(--blue); }
 .source-banner p { max-width: 780px; margin: 0; color: var(--muted); }
+.source-actions { display: flex; gap: 9px; flex-wrap: wrap; }
 
 .index-tools { max-width: 520px; margin: 24px 0; }
 .index-tools label, .search-panel > label { display: block; margin-bottom: 7px; color: var(--blue); font-weight: 800; }
