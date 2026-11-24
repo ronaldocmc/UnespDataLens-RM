@@ -7,6 +7,21 @@
       .replace(/[\u0300-\u036f]/g, "")
       .toLowerCase();
 
+
+  // Integra as instâncias aplicadas à navegação global do UnespDataLens-RM.
+  // O explorador vive em um repositório separado, mas é apresentado como
+  // uma área oficial do mesmo ecossistema.
+  const globalNav = document.querySelector(".top-nav");
+  if (globalNav && !Array.from(globalNav.querySelectorAll("a")).some((a) => a.textContent.trim() === "Instâncias")) {
+    const modulesLink = Array.from(globalNav.querySelectorAll("a")).find((a) => a.textContent.trim() === "Módulos");
+    const instancesLink = document.createElement("a");
+    instancesLink.href = "https://ronaldocmc.github.io/UnespDataLens-Ins/instancias/";
+    instancesLink.textContent = "Instâncias";
+    instancesLink.className = "instances-nav-link";
+    if (modulesLink) modulesLink.insertAdjacentElement("afterend", instancesLink);
+    else globalNav.appendChild(instancesLink);
+  }
+
   const progress = document.querySelector(".reading-progress span");
   if (progress) {
     const updateProgress = () => {
