@@ -59,12 +59,13 @@ img { max-width: 100%; }
   font-size: .74rem; font-weight: 400; line-height: 1.35; letter-spacing: 0;
 }
 .top-nav {
-  display: flex; gap: 4px; width: min(1440px, 100%); margin: 0 auto; padding: 0 24px 11px;
-  overflow-x: auto; scrollbar-width: thin; white-space: nowrap;
+  display: flex; flex-wrap: wrap; gap: 3px 4px;
+  width: min(1440px, 100%); margin: 0 auto; padding: 0 24px 10px;
+  overflow: visible; white-space: normal;
 }
 .top-nav a {
-  display: block; flex: 0 0 auto; padding: 7px 10px; border-radius: 9px;
-  color: #eaf6ff; font-size: .84rem;
+  display: block; flex: 0 0 auto; padding: 6px 8px; border-radius: 9px;
+  color: #eaf6ff; font-size: .78rem; white-space: nowrap;
 }
 .top-nav a:hover, .top-nav a.active {
   color: #fff; background: rgba(255, 255, 255, .13); text-decoration: none;
